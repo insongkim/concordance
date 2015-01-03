@@ -1,18 +1,17 @@
-\name{concord_data}
-\alias{concord_data}
+\name{lengths}
+\alias{lengths}
 
 \docType{data}
-\title{Product Concordance Table}
+\title{Product code lengths}
 
 \description{
-Data table containing concordance table for HS, ISIC, and SITC classifications.
-Pivots on HS (Combined).
+Named list containing full length of various product classification schemes
 }
 
-\usage{data("concord_data")}
+%% \usage{data("lengths")}
 
 \format{
-  A data frame with 6281 observations on the following 12 variables.
+  A named list with 12 entries, one for each of
   \itemize{
     \item{\code{HS}}
     \item{\code{HS0}}
