@@ -1,9 +1,9 @@
 Package: concordance
 Type: Package
 Title: Product Concordance
-Version: 0.2
-Date: 2015-01-01
+Version: 0.3
+Date: 2015-01-02
 Author: Feng Zhu
 Maintainer: Feng Zhu <zhufeng@umich.edu>
-Description: Concordance between HS 1988/92, ISIC Rev. 2/3, and SITC1,2,3,4 product classification codes
+Description: Concordance between HS (Combined), ISIC Rev. 2/3, and SITC1,2,3,4 product classification codes
 License: GPL-2

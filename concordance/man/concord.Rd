@@ -30,11 +30,16 @@ Supports the following classifications: HS, ISIC2, ISIC3,
 
 % \note{}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \examples{
 ## codes.of.origin <- concord_data$isic2 # Vector of values to be converted
 ## concord(codes.of.origin, "isic2", "sitc4")
+
+## concord("121", "sitc3", "hs")
+## % Returns vector (technically list of 1 vector) 10410
+
+## concord(c("121","151") "sitc3", "hs")
+## % Returns list of 2 vectors [[1]] 10410 [[2]] 10110 10111 10119
+## % This list currently incomplete: WITS does not seem to have complete n-to-n data.
 }
 
 \keyword{ concordance }

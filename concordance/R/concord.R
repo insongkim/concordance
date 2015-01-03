@@ -8,20 +8,14 @@ function (sourcevar, origin, destination, warn=FALSE){
     if (!origin %in% origin_codes){stop("Origin code not supported")}
     if (!destination %in% destination_codes){stop("Destination code not supported")}
     
-    dict = na.omit(concord_data[,c(origin, destination)])
+    dict <- na.omit(concord_data[,c(origin, destination)])
     
     # Prepare output vector
-    destination_vector <- rep(NA, length(sourcevar))
+    dest_var <- rep(NA, length(sourcevar))
     # All but regex-based operations
-    matches <- match(sourcevar, dict[, origin])
-    destination_vector <- dict[matches, destination]
+    matches <- which(dict[,origin] %in% sourcevar)
+    differs <- sapply(dict[matches,origin], function(x) which(sourcevar %in% x))
     
-    # Warnings
-    if(warn){
-        nomatch <- sort(unique(sourcevar[is.na(destination_vector)]))
-        if(length(nomatch) > 0){
-            warning("Some values were not matched: ", paste(nomatch, collapse=", "), "\n")
-        }
-    }
-    return(destination_vector)
+    dest_var <- lapply(1:length(sourcevar), function(x) dict[matches[which(differs %in% x)],destination])
+    return(dest_var)
 }

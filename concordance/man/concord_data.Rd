@@ -27,8 +27,4 @@ Pivots on HS (Combined).
 %%\source{}
 %%\references{}
 
-\examples{
-data(concord_data)
-}
-
 \keyword{ datasets }
