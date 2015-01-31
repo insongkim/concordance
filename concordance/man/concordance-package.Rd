@@ -30,21 +30,22 @@ Justin R. Pierce and Peter K. Schott, "Concording U.S. Harmonized System Codes O
 %%\seealso{}
 
 \examples{
-## codes.of.origin <- concord_data$isic2 # Vector of values to be converted
-## concord(codes.of.origin, "isic2", "sitc4")
+data(concord_data, package="concordance")
+codes.of.origin <- concord_data$isic2 # Vector of values to be converted
+concord(codes.of.origin, "isic2", "sitc4")
 
-## concord("00121", "sitc3", "hs")
+concord("00121", "sitc3", "hs")
 ## % Returns vector 10410
 
-## concord(c("00121","00151"), "sitc3", "hs")
+concord(c("00121","00151"), "sitc3", "hs")
 ## % Returns vector 10410 10110 10111 10119
 ## % This list currently incomplete: WITS does not seem to have complete n-to-n data
 
-## concord("0012", "sitc3", "sitc3")
+concord("0012", "sitc3", "sitc3")
 ## % Returns vector 121 122 124
 ## % i.e. 00121, 00122, 00124 are all the SITC3 codes in the database starting with 0012
 
-## concord("0012", "sitc3", "hs")
+concord("0012", "sitc3", "hs")
 ## % Returns vector 10410 10420 20500
 ## % These are all the HS codes corresponding to any of the SITC3 codes starting with 0012
 }
