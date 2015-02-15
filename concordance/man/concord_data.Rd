@@ -31,6 +31,10 @@ Pivots on HS (Combined).
 
 %%\details{}
 
+\examples{
+codes.of.origin <- concord_data$isic2 # Vector of values to be converted
+}
+
 \source{
 Data consolidated from
 - World Integrated Trade Solution (WITS), World Bank (http://wits.worldbank.org/product_concordance.html)

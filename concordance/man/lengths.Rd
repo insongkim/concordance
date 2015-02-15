@@ -8,7 +8,7 @@
 Named list containing full length of various product classification schemes
 }
 
-%% \usage{data("lengths")}
+%%  \usage{data("lengths")}
 
 \format{
   A named list with 12 entries, one for each of

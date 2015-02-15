@@ -1,5 +1,5 @@
 concord <-
-function (sourcevar, origin, destination, warn=FALSE){
+function (sourcevar, origin, destination){
     # Sanity check
     origin_codes <- names(concord_data)
     destination_codes <- names(concord_data)
@@ -12,7 +12,7 @@ function (sourcevar, origin, destination, warn=FALSE){
     dict <- na.omit(concord_data[,c(origin, destination)])
     
     # Remove duplicated inputs 
-    sourcevar <- sourcevar[!duplicated(sourcevar)]
+    # sourcevar <- sourcevar[!duplicated(sourcevar)]
     # If input is shorter than expected, pad it.
     isShort <- sapply(sourcevar, function(x) nchar(x) < lengths[origin])
     shorts <- sourcevar[isShort]
@@ -20,8 +20,16 @@ function (sourcevar, origin, destination, warn=FALSE){
     l <- lengths[origin]
     pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
     sourcevar <- c(fulls, unlist(pads))
-    # Now deal with leading zeroes
+    # If input is longer than expected, truncate it.
+    isLong <- sapply(sourcevar, function(x) nchar(x) > lengths[origin])
+    longs <- sourcevar[isLong]
+    okays <- sourcevar[!isLong]
+    l <- lengths[origin]
+    truncs <- sapply(longs, function(x) floor(as.integer(x) / 10^(nchar(x)-l)) )
+    sourcevar <- c(okays, unlist(truncs))
+    # Now deal with leading zeroes (and remove duplicated inputs)
     sourcevar <- as.integer(sourcevar[!duplicated(sourcevar)])
+    
     
     # Vector operations currently disabled.
     # dest_var <- rep(NA, length(sourcevar)
