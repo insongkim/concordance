@@ -6,13 +6,12 @@
 
 \description{
 Data table containing descriptions for HS, ISIC, and SITC codes
-(Construction in progress, currently contains SITC3, HS, ISIC2.)
 }
 
 \usage{data("codedesc")}
 
 \format{
-  A data frame with 8259 observations on the following 15 variables.
+  A data frame with 8259 observations on the following 25 variables.
   \itemize{
     \item{\code{RowNum}}
     \item{\code{SITC1}}
@@ -25,6 +24,16 @@ Data table containing descriptions for HS, ISIC, and SITC codes
     \item{\code{SITC4.Desc}}
     \item{\code{HS}}
     \item{\code{HS.Desc}}
+    \item{\code{HS0}}
+    \item{\code{HS0.Desc}}
+    \item{\code{HS1}}
+    \item{\code{HS1.Desc}}
+    \item{\code{HS2}}
+    \item{\code{HS2.Desc}}
+    \item{\code{HS3}}
+    \item{\code{HS3.Desc}}
+    \item{\code{HS4}}
+    \item{\code{HS4.Desc}}
     \item{\code{ISIC2}}
     \item{\code{ISIC2.Desc}}
     \item{\code{ISIC3}}
