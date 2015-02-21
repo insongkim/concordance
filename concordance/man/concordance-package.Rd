@@ -12,10 +12,11 @@ Version: \tab 0.5\cr
 Date: \tab 2015-02-15\cr
 License: \tab GPL-2 \cr
 }
+
+Known issues: codedesc dataset currently contains non-ASCII characters
 }
-\author{
-Feng Zhu <zhufeng@umich.edu>
-}
+\author{Feng Zhu <zhufeng@umich.edu>}
+
 \references{
 Data consolidated from
 - World Integrated Trade Solution (WITS), World Bank (http://wits.worldbank.org/product_concordance.html)
@@ -27,7 +28,6 @@ Justin R. Pierce and Peter K. Schott, "Concording U.S. Harmonized System Codes O
 }
 
 \keyword{ concord }
-%%\seealso{}
 
 \examples{
 data(concord_data, package="concordance")
