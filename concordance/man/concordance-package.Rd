@@ -9,7 +9,7 @@
 Package: \tab concordance\cr
 Type: \tab Package\cr
 Version: \tab 0.5\cr
-Date: \tab 2015-02-15\cr
+Date: \tab 2015-02-20\cr
 License: \tab GPL-2 \cr
 }
 
