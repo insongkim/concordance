@@ -34,7 +34,7 @@ Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC
 \note{Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---
 results may be buggy otherwise.
 
-Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for ISIC.}
+Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for SITC.}
 
 \examples{
 ## data(concord_data, package="concordance")
