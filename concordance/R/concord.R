@@ -1,3 +1,4 @@
+utils::globalVariables(c("concord_data","lengths"))
 concord <-
 function (sourcevar, origin, destination){
     # Sanity check

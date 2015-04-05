@@ -20,9 +20,7 @@ Rauch classification look-up table using 4-digit SITC2 codes
 }
 
 %%\details{}
-
-\examples{
-}
+%%\examples{}
 
 \source{
 Data from

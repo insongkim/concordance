@@ -1,3 +1,4 @@
+utils::globalVariables("sitc2_rauch")
 proddiff <-
 function (sourcevar, origin, setting='CON', prop='') {
     # Sanity checks (more folded into call to concord)

@@ -1,27 +1,31 @@
+utils::globalVariables(c("codedesc","desclen"))
 desc <-
 function (sourcevar, origin){
-    # Allow origin / destination to be entered in any case
+    # Allow origin  to be entered in any case
     origin <- toupper(origin)
     # Sanity check
-    origin_codes <- names(codedesc)
-    if (substring(origin,nchar(origin)-4) == '.DESC') { stop("Origin code entered incorrectly") }
+    origin_codes <- rownames(desclen)
     if (!origin %in% origin_codes) { stop("Origin code not supported") }
-    
-    descode <- paste(origin,'.Desc',sep='')
-    dict <- na.omit(codedesc[,c(origin, descode)])
     
     # Remove duplicated inputs 
     sourcevar <- sourcevar[!duplicated(sourcevar)]
+
+    codelen <- desclen[origin,] 
+    
     # If input is shorter than expected, pad it.
-    isShort <- sapply(sourcevar, function(x) nchar(x) < lengths[origin])
-    shorts <- sourcevar[isShort]
-    fulls <- sourcevar[!isShort]
-    l <- lengths[origin]
-    pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
-    sourcevar <- c(fulls, unlist(pads))
+    isLong <- sapply(sourcevar, function(x) nchar(x) > codelen[nchar(x)])
+    sourcevar <- sourcevar[!is.na(isLong)]
+    isLong <- isLong[!is.na(isLong)]
+    longs <- sourcevar[isLong]
+    okays <- sourcevar[!isLong]
+    cuts <- sapply(longs, function(x) substr(x,0,codelen[nchar(x)]))
+    sourcevar <- c(okays, unlist(cuts))
     # Now deal with leading zeroes
     sourcevar <- as.integer(sourcevar[!duplicated(sourcevar)])
-    
+
+    descode <- paste(origin,'Desc',sep='.')
+    dict <- na.omit(codedesc[,c(origin, descode)])
+
     # Vector operations currently disabled.
     # dest_var <- rep(NA, length(sourcevar)
     matches <- which(dict[,origin] %in% sourcevar)
