@@ -8,8 +8,8 @@
 \tabular{ll}{
 Package: \tab concordance\cr
 Type: \tab Package\cr
-Version: \tab 0.7\cr
-Date: \tab 2015-04-05\cr
+Version: \tab 0.8\cr
+Date: \tab 2015-04-24\cr
 License: \tab GPL-2 \cr
 }
 

@@ -33,10 +33,7 @@ Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC
 \note{Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---
 results may be buggy otherwise.
 
-Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for ISIC.
-
-Known bug in current version: when given disaggregated SITC codes, function returns additional nomenclatures 
-corresponding to codes under the top-level code 0.}
+Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for ISIC.}
 
 \examples{
 codes.of.origin <- codedesc$sitc3 # Vector of values to be converted
