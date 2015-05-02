@@ -6,7 +6,6 @@ function (sourcevar, origin, setting='CON', prop='') {
     if (!setting %in% names(sitc2_rauch)[2:3]) {stop("Setting not supported")}
     # Concord to SITC2
     via <- concord(sourcevar, origin, 'SITC2')
-    class(via)
     
     # Truncate SITC2 to 4 digits
     isLong <- as.logical(sapply(via, function(x) nchar(x) > 2))
