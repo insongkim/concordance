@@ -11,7 +11,7 @@ Data table containing descriptions for HS, ISIC, and SITC codes
 \usage{data("codedesc")}
 
 \format{
-  A data frame with 7622 observations on the following 25 variables.
+  A data frame with 7630 observations on the following 25 variables.
   \itemize{
     \item{\code{RowNum}}
     \item{\code{SITC1}}
