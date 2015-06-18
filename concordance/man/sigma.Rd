@@ -7,21 +7,19 @@
 }
 
 \usage{
-sigma(sourcevar, origin, country="USA")
+sigma(sourcevar, origin, country="USA", use_SITC=FALSE, give_avg=TRUE)
 }
 
 \arguments{
   \item{sourcevar}{Vector which contains the codes to be converted}
   \item{origin}{Coding scheme of origin (name enclosed in quotes "")}
-  \item{country}{Country for which to return import demand elasticity}
+  \item{country}{Country for which to return import demand elasticity (default=USA)}
+  \item{use_SITC}{Set to TRUE if you wish to look up elasticities via SITC instead of HS. Only available for the US.}
+  \item{give_avg}{Set to FALSE if you wish to obtain a vector of output elasticities for all matching codes. 
+    When set to TRUE (as by default) the output will be a simple average of all elasticities in this vector.}
 }
 
 \details{ 
-
-Rauch classifies each SITC Rev. 2 industry according to
-three possible types: differentiated products ('n'), reference priced
-('r'), and homogeneous goods traded on an organized exchange ('w').
-
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
    SITC1, SITC2, SITC3, SITC4
 

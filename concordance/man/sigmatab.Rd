@@ -5,13 +5,13 @@
 \title{Table of trade elasticities}
 
 \description{
-Trade elasticity look-up table, using SITCx codes for the US and HS codes for 73 other countries
+Trade elasticity look-up table, using HTS and SITCx codes for the US and HS codes for 73 other countries
 }
 
 \usage{data("sigmatab")}
 
 \format{
-  A data frame with 30827 observations on the following 5 variables.
+  A data frame with 44799 observations on the following 5 variables.
   \itemize{
     \item{\code{iso3}}
     \item{\code{sigma}}
@@ -21,7 +21,7 @@ Trade elasticity look-up table, using SITCx codes for the US and HS codes for 73
   }
 }
 
-\details{Uses 3/4/5-digit SITC2 codes for USA 1972-1988 elasticities and 3/4/5-digit SITC3 codes for USA 1990-2001 elasticities. 
+\details{Uses 10-digit HS3 codes for US elasticities; also has option to use 3/4/5-digit SITC2 codes for USA 1972-1988 elasticities and 3/4/5-digit SITC3 codes for USA 1990-2001 elasticities. 
 
 Uses 3-digit HS3 codes for international elasticities.}
 %%\examples{}
