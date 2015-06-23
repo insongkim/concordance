@@ -1,39 +1,29 @@
-\name{concord_data}
-\alias{concord_data}
+\name{concord_long}
+\alias{concord_long}
 
 \docType{data}
-\title{Product Concordance Table}
+\title{HS-NAICS-SIC Concordance Table}
 
 \description{
-Data table containing concordance table for HS, ISIC, SITC, and BEC classifications.
+Data table containing concordance table for HS, NAICS, and SIC classifications.
 Pivots on HS (Combined).
 }
 
-\usage{data("concord_data")}
+%%\usage{data("concord_long")}
 
 \format{
-  A data frame with 7581 observations on the following 13 variables.
+  A data frame with 54412 observations on the following 3 variables.
   \itemize{
     \item{\code{HS}}
-    \item{\code{HS0}}
-    \item{\code{HS1}}
-    \item{\code{HS2}}
-    \item{\code{HS3}}
-    \item{\code{HS4}}
-    \item{\code{ISIC2}} 
-    \item{\code{ISIC3}} 
-    \item{\code{SITC1}} 
-    \item{\code{SITC2}} 
-    \item{\code{SITC3}} 
-    \item{\code{SITC4}} 
-    \item{\code{BEC}}
+    \item{\code{SIC}} 
+    \item{\code{NAICS}}
     }
 }
 
 %%\details{}
 
 \examples{
-codes.of.origin <- concord_data$isic2 # Vector of values to be converted
+codes.of.origin <- concord_long$SIC # Vector of values to be converted
 }
 
 \source{
