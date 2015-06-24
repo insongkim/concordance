@@ -3,13 +3,13 @@
 
 \docType{package}
 \title{Product Concordance}
-\description{Convert to and from HS0/1/2/3/4/Combined, ISIC Rev. 2/3, SITC1,2,3,4, NAICS, SIC, and BEC; also code nomenclature and trade elasticity look-up.}
+\description{Convert to and from HS0/1/2/3/4/Combined, ISIC Rev. 2/3, SITC1,2,3,4, NAICS, SIC, and BEC; also trade elasticity look-up.}
 \details{
 \tabular{ll}{
 Package: \tab concordance\cr
 Type: \tab Package\cr
-Version: \tab 1.2.1\cr
-Date: \tab 2015-06-23\cr
+Version: \tab 1.2\cr
+Date: \tab 2015-06-22\cr
 License: \tab GPL-2 \cr
 }
 }

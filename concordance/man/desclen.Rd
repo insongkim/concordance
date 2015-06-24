@@ -11,7 +11,7 @@ Named list containing full length of various product classification schemes
 %%  \usage{data("lengths")}
 
 \format{
-  A 14 by 6 matrix, with columns indexed by lengths (1 through 6) and rows named
+  A 12 by 6 matrix, with columns indexed by lengths (1 through 6) and rows named
   \itemize{
     \item{\code{HS}}
     \item{\code{HS0}}
@@ -25,8 +25,6 @@ Named list containing full length of various product classification schemes
     \item{\code{SITC2}} 
     \item{\code{SITC3}} 
     \item{\code{SITC4}}
-    \item{\code{BEC}} 
-    \item{\code{NAICS}}
     }
 }
 
