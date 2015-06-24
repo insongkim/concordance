@@ -13,11 +13,11 @@ desc(sourcevar, origin)
 }
 \details{
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
-   SITC1, SITC2, SITC3, SITC4
+   SITC1, SITC2, SITC3, SITC4, BEC, NAICS
    
    The following strings can be used as arguments for \code{origin} or
    \code{destination}: "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), 
-   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
+   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4", "bec", "naics".
    
    Also accepts truncated (shorter) or disaggregated (longer) codes.
 
