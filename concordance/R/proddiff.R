@@ -5,10 +5,10 @@ function (sourcevar, origin, setting='CON', prop='') {
     setting <- toupper(setting)
     if (!setting %in% names(sitc2_rauch)[2:3]) {stop("Setting not supported")}
     # Concord to SITC2
-    via <- concord(sourcevar, origin, 'SITC2')
+    via <- as.integer(concord(sourcevar, origin, 'SITC2'))
     
     # Truncate SITC2 to 4 digits
-    isLong <- as.logical(sapply(via, function(x) nchar(x) > 2))
+    isLong <- as.logical(sapply(via, function(x) nchar(x) > 4))
     longs <- via[isLong]
     okays <- via[!isLong]
     truncs <- sapply(longs, function(x) floor(as.integer(x) / 10) )
