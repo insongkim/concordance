@@ -27,6 +27,8 @@ function (sourcevar, origin, destination){
         fulls <- sourcevar[!isShort]
         l <- lengths[origin]
         pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
+        # zero correction step
+        pads <- sapply(pads, function(y) sprintf(paste("%0",lengths[origin],"d",sep=""), as.integer(y)))
         sourcevar <- c(fulls, unlist(pads))
       }
       # If input is longer than expected, truncate it.
