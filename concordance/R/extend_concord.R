@@ -18,20 +18,23 @@ extend_concord <-
     # Remove duplicated inputs 
     # sourcevar <- sourcevar[!duplicated(sourcevar)]
     l <- lengths[origin]
-    if (origin == 'HS') { l <- 10 }
+    if (origin == 'HS') { 
+      l <- 10
+      options(scipen=12)
+    }
     # If input is shorter than expected, pad it.
     if (origin != 'BEC') {
       isShort <- sapply(viacodes, function(x) nchar(x) < l)
       shorts <- viacodes[isShort]
       fulls <- viacodes[!isShort]
-      pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
+      pads <- sapply(shorts, function(x) (as.numeric(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
       viacodes <- c(fulls, unlist(pads))
     }
     # If input is longer than expected, truncate it.
     isLong <- sapply(viacodes, function(x) nchar(x) > lengths[origin])
     longs <- viacodes[isLong]
     okays <- viacodes[!isLong]
-    truncs <- sapply(longs, function(x) floor(as.integer(x) / 10^(nchar(x)-l)) )
+    truncs <- sapply(longs, function(x) floor(as.numeric(x) / 10^(nchar(x)-l)) )
     viacodes <- c(okays, unlist(truncs))
     # Now deal with leading zeroes (and remove duplicated inputs)
     viacodes <- viacodes[!duplicated(viacodes)]

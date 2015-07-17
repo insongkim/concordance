@@ -12,7 +12,7 @@ function (sourcevar, origin){
 
     codelen <- desclen[origin,] 
     
-    # If input is shorter than expected, pad it.
+    # No padding---only truncate overlong codes
     isLong <- sapply(sourcevar, function(x) nchar(x) > codelen[nchar(x)])
     sourcevar <- sourcevar[!is.na(isLong)]
     isLong <- isLong[!is.na(isLong)]
@@ -20,8 +20,8 @@ function (sourcevar, origin){
     okays <- sourcevar[!isLong]
     cuts <- sapply(longs, function(x) substr(x,0,codelen[nchar(x)]))
     sourcevar <- c(okays, unlist(cuts))
-    # Now deal with leading zeroes
-    sourcevar <- as.integer(sourcevar[!duplicated(sourcevar)])
+    # Leading zeroes are okay!
+    sourcevar <- sourcevar[!duplicated(sourcevar)]
 
     descode <- paste(origin,'Desc',sep='.')
     dict <- na.omit(codedesc[,c(origin, descode)])
