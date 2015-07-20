@@ -1,4 +1,4 @@
-utils::globalVariables(c("concord_data","lengths"))
+utils::globalVariables(c("concord_data","code_lengths"))
 concord <-
 function (sourcevar, origin, destination){
     # Sanity check
@@ -22,20 +22,20 @@ function (sourcevar, origin, destination){
       # sourcevar <- sourcevar[!duplicated(sourcevar)]
       # If input is shorter than expected, pad it.
       if (origin != 'BEC') {
-        isShort <- sapply(sourcevar, function(x) nchar(x) < lengths[origin])
+        isShort <- sapply(sourcevar, function(x) nchar(x) < code_lengths[origin])
         shorts <- sourcevar[isShort]
         fulls <- sourcevar[!isShort]
-        l <- lengths[origin]
+        l <- code_lengths[origin]
         pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
         # zero correction step
-        pads <- sapply(pads, function(y) sprintf(paste("%0",lengths[origin],"d",sep=""), as.integer(y)))
+        pads <- sapply(pads, function(y) sprintf(paste("%0",code_lengths[origin],"d",sep=""), as.integer(y)))
         sourcevar <- c(fulls, unlist(pads))
       }
       # If input is longer than expected, truncate it.
-      isLong <- sapply(sourcevar, function(x) nchar(x) > lengths[origin])
+      isLong <- sapply(sourcevar, function(x) nchar(x) > code_lengths[origin])
       longs <- sourcevar[isLong]
       okays <- sourcevar[!isLong]
-      l <- lengths[origin]
+      l <- code_lengths[origin]
       truncs <- sapply(longs, function(x) floor(as.integer(x) / 10^(nchar(x)-l)) )
       sourcevar <- c(okays, unlist(truncs))
       # Now deal with leading zeroes (and remove duplicated inputs)

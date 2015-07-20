@@ -1,5 +1,5 @@
-\name{lengths}
-\alias{lengths}
+\name{code_lengths}
+\alias{code_lengths}
 
 \docType{data}
 \title{Product code lengths}
@@ -8,7 +8,7 @@
 Named list containing full length of various product classification schemes
 }
 
-%%  \usage{data("lengths")}
+%%  \usage{data("code_lengths")}
 
 \format{
   A named list with 12 entries, one for each of

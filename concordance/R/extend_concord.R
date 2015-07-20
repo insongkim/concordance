@@ -1,4 +1,4 @@
-utils::globalVariables(c("concord_data","concord_long","lengths","long_codes"))
+utils::globalVariables(c("concord_data","concord_long","code_lengths","long_codes"))
 extend_concord <-
   function (sourcevar, origin, destination){
     # Sanity check
@@ -17,7 +17,7 @@ extend_concord <-
     
     # Remove duplicated inputs 
     # sourcevar <- sourcevar[!duplicated(sourcevar)]
-    l <- lengths[origin]
+    l <- code_lengths[origin]
     if (origin == 'HS') { 
       l <- 10
       options(scipen=12)
@@ -31,7 +31,7 @@ extend_concord <-
       viacodes <- c(fulls, unlist(pads))
     }
     # If input is longer than expected, truncate it.
-    isLong <- sapply(viacodes, function(x) nchar(x) > lengths[origin])
+    isLong <- sapply(viacodes, function(x) nchar(x) > code_lengths[origin])
     longs <- viacodes[isLong]
     okays <- viacodes[!isLong]
     truncs <- sapply(longs, function(x) floor(as.numeric(x) / 10^(nchar(x)-l)) )

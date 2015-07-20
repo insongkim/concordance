@@ -1,4 +1,4 @@
-utils::globalVariables(c("codedesc","desclen"))
+utils::globalVariables(c("codedesc","desclen","code_lengths"))
 desc <-
 function (sourcevar, origin){
     # Allow origin  to be entered in any case
