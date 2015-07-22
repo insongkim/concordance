@@ -3,17 +3,16 @@
 
 \title{desc}
 \description{Product classification description}
-\usage{
-desc(sourcevar, origin)
-}
+\usage{desc(sourcevar, origin)}
 
 \arguments{
   \item{sourcevar}{Vector which contains the codes to be described}
   \item{origin}{Coding scheme of origin (name enclosed in quotes "")}
 }
+
 \details{
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
-   SITC1, SITC2, SITC3, SITC4, BEC, NAICS
+   SITC1, SITC2, SITC3, SITC4, BEC, NAICS.
    
    The following strings can be used as arguments for \code{origin} or
    \code{destination}: "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), 

@@ -14,11 +14,12 @@ concord(sourcevar, origin, destination)
 }
 \details{
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
-   SITC1, SITC2, SITC3, SITC4
+   SITC1, SITC2, SITC3, SITC4, BEC, NAICS and SIC.
 
    The following strings can be used as arguments for \code{origin} or
    \code{destination}: "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), 
-   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
+   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4", "bec",
+   "naics", "sic"
    
    Also performs concordance of truncated (shorter) or disaggregated (longer) codes.
 }
@@ -26,15 +27,13 @@ Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC
    \value{Returns list of concorded codes. Does not differentiate between codes corresponding 
    to different codes in input vector.}
    
-
-%   \references{}
-
 \author{Feng Zhu}
 
 \note{Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---
 results may be buggy otherwise.
 
-Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for SITC.}
+Current full-code lengths in use are 6-digit for HS and NAICS, 4-digit for ISIC and SIC, 5-digit for SITC,
+3-digit for BEC.}
 
 \examples{
 ## data(concord_data, package="concordance")
@@ -72,6 +71,8 @@ concord("1512", "isic3", "isic2")
 
 concord('0111','ISIC3','BEC')
 ## % Returns [1] "111" "021" "112"
+
+
 }
 
 \keyword{ concordance }

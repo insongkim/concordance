@@ -4,9 +4,7 @@
 \docType{data}
 \title{Table of Rauch classifications}
 
-\description{
-Rauch classification look-up table using 4-digit SITC2 codes
-}
+\description{Rauch classification look-up table using 4-digit SITC2 codes}
 
 \usage{data("sitc2_rauch")}
 
@@ -22,9 +20,6 @@ Rauch classification look-up table using 4-digit SITC2 codes
 %%\details{}
 %%\examples{}
 
-\source{
-Data from
-Jon Haveman's International Trade Data page: http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch
-}
+\source{Data from Jon Haveman's International Trade Data page: http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
 
-\keyword{ datasets }
+\keyword{ datasets, rauch }

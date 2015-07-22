@@ -4,15 +4,13 @@
 \docType{data}
 \title{Product Concordance Table}
 
-\description{
-Data table containing concordance table for HS, ISIC, SITC, and BEC classifications.
-Pivots on HS (Combined).
-}
+\description{Data table containing concordance table for HS, ISIC, SITC, and BEC classifications.
+Pivots on HS (Combined).}
 
 \usage{data("concord_data")}
 
 \format{
-  A data frame with 7581 observations on the following 13 variables.
+  A data frame with 8024 observations on the following 13 variables.
   \itemize{
     \item{\code{HS}}
     \item{\code{HS0}}
@@ -30,19 +28,11 @@ Pivots on HS (Combined).
     }
 }
 
-%%\details{}
-
-\examples{
-codes.of.origin <- concord_data$isic2 # Vector of values to be converted
-}
-
-\source{
-Data consolidated from
+\source{Data consolidated from
 - World Integrated Trade Solution (WITS), World Bank (http://wits.worldbank.org/product_concordance.html)
 - UN Statistics Division (http://unstats.un.org/unsd/trade/conversions/HS%20Correlation%20and%20Conversion%20tables.htm)
-- Schott and Pierce's site (http://faculty.som.yale.edu/peterschott/sub_international.htm)
-}
+- Schott and Pierce's site (http://faculty.som.yale.edu/peterschott/sub_international.htm)}
 
 \references{See also Justin R. Pierce and Peter K. Schott, "Concording U.S. Harmonized System Codes Over Time".}
 
-\keyword{ datasets }
+\keyword{ datasets, concordance, concord }

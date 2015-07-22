@@ -3,16 +3,16 @@
 
 \docType{package}
 \title{Product Concordance}
-\description{Convert to and from HS0/1/2/3/4/Combined, ISIC Rev. 2/3, SITC1,2,3,4, NAICS, SIC, and BEC; also code nomenclature and trade elasticity look-up.}
+\description{Convert between HS0/1/2/3/4/Combined, ISIC Rev. 2/3, SITC1,2,3,4, NAICS, SIC, and BEC; also code nomenclature and trade elasticity look-up.}
 \details{
 \tabular{ll}{
 Package: \tab concordance\cr
 Type: \tab Package\cr
-Version: \tab 1.2.5\cr
+Version: \tab 1.4\cr
 Date: \tab 2015-07-22\cr
 License: \tab GPL-2 \cr
-}
-}
+}}
+
 \author{Feng Zhu <zhufeng@umich.edu>}
 
 \references{
@@ -28,7 +28,7 @@ See also
  Quarterly Journal of Economics Volume 121, Issue 2 - May 2006
 }
 
-\keyword{ concord }
+\keyword{ concord, concordance, rauch, sigma, nomenclature, trade }
 
 \examples{
 data(concord_data, package="concordance")
@@ -38,15 +38,21 @@ concord(codes.of.origin, "isic2", "sitc4")
 concord("00121", "sitc3", "hs")
 ## % Returns vector 10410
 
-concord(c("00121","00151"), "sitc3", "hs")
-## % Returns vector 10410 10110 10111 10119
-## % This list currently incomplete: WITS does not seem to have complete n-to-n data
+desc("8702", "hs")
+## % Returns
+## % [1] "Motor vehicles for the transport of ten or more persons, including the driver."
+concord("8702", "hs", "sitc4")
+## % [1] "78311" "78319"
 
-concord("0012", "sitc3", "sitc3")
-## % Returns vector 121 122 124
-## % i.e. 00121, 00122, 00124 are all the SITC3 codes in the database starting with 0012
-
-concord("0012", "sitc3", "hs")
-## % Returns vector 10410 10420 20500
-## % These are all the HS codes corresponding to any of the SITC3 codes starting with 0012
+desc("6522", "sitc1")
+## % [1] "Cotton fabrics, woven, other than grey"
+concord("6522", "sitc1", "hs")
+## %  [1] "580310" "580219" "580124" "580125" "580126" "580123" "580122" "580121" "520941"
+## % [10] "520949" "520823" "520829" "520951" "520943" "520821" "520921" "520822" "520839"
+## % [19] "520851" "520939" "520959" "520852" "520843" "520942" "520849" "520931" "520842"
+## % [28] "520952" "520929" "520922" "520833" "520932" "520832" "520841" "520859" "520853"
+## % [37] "581100" "520831" "521149" "521041" "521143" "521152" "521159" "521031" "521214"
+## % [46] "521051" "521121" "521222" "521059" "521129" "521213" "521142" "521039" "521049"
+## % [55] "521132" "521139" "521225" "521224" "521022" "521032" "521151" "521215" "521029"
+## % [64] "521212" "521122" "521052" "521021" "521042" "521131" "521223" "521141"
 }

@@ -2,6 +2,7 @@ utils::globalVariables(c("concord_data","code_lengths"))
 concord <-
 function (sourcevar, origin, destination){
     # Sanity check
+    if (length(sourcevar) == 0) { return(character(0)) }
     origin_codes <- names(concord_data)
     destination_codes <- names(concord_data)
     # Allow origin / destination to be entered in any case

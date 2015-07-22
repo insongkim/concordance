@@ -4,14 +4,13 @@
 \docType{data}
 \title{Table of Product Classification Descriptions}
 
-\description{
-Data table containing descriptions for HS, ISIC, and SITC codes
-}
+\description{Data table containing descriptions for HS, ISIC, SITC, NAICS  and BEC codes.
+Does not currently contain SIC nomenclature.}
 
 \usage{data("codedesc")}
 
 \format{
-  A data frame with 7630 observations on the following 25 variables.
+  A data frame with 7630 observations on the following 29 variables.
   \itemize{
     \item{\code{RowNum}}
     \item{\code{SITC1}}
@@ -38,20 +37,19 @@ Data table containing descriptions for HS, ISIC, and SITC codes
     \item{\code{ISIC2.Desc}}
     \item{\code{ISIC3}}
     \item{\code{ISIC3.Desc}}
-
+    \item{\code{BEC}}
+    \item{\code{BEC.Desc}}
+    \item{\code{NAICS}}
+    \item{\code{NAICS.Desc}}
   }
 }
-
-%%\details{}
 
 \examples{
 sitc3_descriptions <- codedesc$SITC3.Desc # Vector of descriptions for SITC3
 hs_descriptions <- codedesc$HS.Desc # Vector of descriptions for HS
 }
 
-\source{
-Data consolidated from
-- World Integrated Trade Solution (WITS), World Bank (http://wits.worldbank.org/)
-}
+\source{Data consolidated from
+- World Integrated Trade Solution (WITS), World Bank (http://wits.worldbank.org/)}
 
-\keyword{ datasets }
+\keyword{ datasets, nomenclature }
