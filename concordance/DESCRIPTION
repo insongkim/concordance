@@ -1,7 +1,7 @@
 Package: concordance
 Type: Package
 Title: Product Concordance
-Version: 1.4
+Version: 1.5
 Date: 2015-07-22
 Author: Feng Zhu
 Maintainer: In Song Kim <insong@mit.edu>, Feng Zhu <zhufeng@umich.edu>
