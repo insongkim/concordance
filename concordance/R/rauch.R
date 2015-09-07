@@ -1,4 +1,4 @@
-utils::globalVariables(c("rauch"))
+utils::globalVariables(c("Rauch","hs2sitc"))
 
 getRauch <- function(sourcevar, origin="hs", setting="CON", verbose=FALSE) {
     if(origin == "naics"){
@@ -18,7 +18,7 @@ getRauch_hs <- function(hs, setting="CON", verbose=FALSE) {
             cat("No matches with HS6: trying HS4\n")
         }
 
-        ## try once again by consiering aggregated HS4 products
+        ## try once again by considering aggregated HS4 products
         ## sitc <- concord(substring(hs,1,4), "hs", "sitc2")
         sitc <- unique(substring(hs2sitc[grep("^8515", hs2sitc$hs), "sitc2"], 1, 4))
     }
@@ -142,6 +142,6 @@ getRauch_naics <- function(naics, setting="CON", verbose=FALSE){
         }
         
     } else {
-        stop("No mached HS6 products\n")
+        stop("No matched HS6 products\n")
     }
 }

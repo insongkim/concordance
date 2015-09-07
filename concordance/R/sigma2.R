@@ -1,5 +1,4 @@
-utils::globalVariables("BWsigma")
-
+utils::globalVariables(c("BWsigma", "sigma_data"))
 
 # using 33th, 66th percentile for the cuts for discrete output
 ## HS6
@@ -15,7 +14,6 @@ cut2 <- 4.11648
 ## cut1 <- 2.322837
 ## cut2 <- 4.573323
 
-
 getSigma <- function(sourcevar, origin="hs", continuous=TRUE, verbose=FALSE) {
     if(origin == "naics"){
         return(getSigma_naics(naics=sourcevar, continuous=continuous, verbose=verbose))
@@ -23,7 +21,6 @@ getSigma <- function(sourcevar, origin="hs", continuous=TRUE, verbose=FALSE) {
         return(getSigma_hs(hs=sourcevar, continuous=continuous))
     }
 }
-
 
 getSigma_hs <- function(hs, continuous=TRUE){
     ## getting vector of HS6 products linked with the given naics
@@ -53,7 +50,6 @@ getSigma_hs <- function(hs, continuous=TRUE){
     }
 
 }
-
 
 getSigma_naics <- function(naics, continuous=TRUE, verbose=FALSE){
     ## getting vector of HS6 products linked with the given naics
@@ -108,5 +104,3 @@ getSigma_naics <- function(naics, continuous=TRUE, verbose=FALSE){
     }
 
 }
-
-
