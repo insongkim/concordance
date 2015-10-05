@@ -11,25 +11,25 @@ getSigma(sourcevar, origin, continuous=TRUE, verbose=FALSE)
 }
 
 \arguments{
-  \item{sourcevar}{codes to be converted}
+  \item{sourcevar}{Codes to be converted}
 
   \item{origin}{Coding scheme of origin (name enclosed in quotes "")}
 
-  \item{continuous}{logical. If 'TRUE', returns a numeric value. If
+  \item{continuous}{Logical. If 'TRUE', returns a numeric value. If
   'FALSE', returns one of 'low', 'medium', 'high', where 'low' is less
   than 33th percentile (differentiated), and 'high' is above 66th
   percentile (substitutable).}
+  
+  \item{verbose}{If 'TRUE', displays verbose messages for debugging purposes} 
 
 }
 
 \details{ 
 Supports the following classifications: HS, NAICS
 
-   The following strings can be used as arguments for \code{origin}: "hs" (for HS Combined), "naics".
+The following strings can be used as arguments for \code{origin}: "hs" (for HS Combined), "naics".
 
 }
-
-   \value{}
    
 \references{ 
 C. Broda and D. Weinstein, "Globalization and the Gains from Variety,"
