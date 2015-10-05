@@ -1,5 +1,9 @@
 utils::globalVariables(c("BWsigma", "sigma_data"))
 
+listSigma <- function(sourcevar, origin, country="USA", use_SITC=FALSE) {
+    return(lapply(sourcevar, sigma, origin=origin, country=country, use_SITC=use_SITC, give_avg=FALSE))
+}
+
 getSigma <- function(sourcevar, origin="hs", continuous=TRUE, verbose=FALSE) {
     # using 33th, 66th percentile for the cuts for discrete output
     ## HS6

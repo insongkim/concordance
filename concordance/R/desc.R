@@ -4,6 +4,7 @@ function (sourcevar, origin){
     # Allow origin  to be entered in any case
     origin <- toupper(origin)
     # Sanity check
+    if (length(sourcevar) == 0) { return(character(0)) }
     origin_codes <- rownames(desclen)
     if (!origin %in% origin_codes) { stop("Origin code not supported") }
     
