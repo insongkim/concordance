@@ -67,7 +67,8 @@ concord(c("30310", "30322", "30329"), "hs0", "isic3")
 
 concord("1512", "isic3", "isic2")
 ## % Returns vector 1301 3114
-## % ISIC code 3114 corresponds to Canning, preserving and processing of fish, crustaces and similar foods
+## % ISIC code 3114 corresponds to Canning, preserving and processing of fish, crustaces 
+## % and similar foods
 
 concord('0111','ISIC3','BEC')
 ## % Returns [1] "111" "021" "112"

@@ -25,10 +25,10 @@ sigma <-
     }
     
     # Now deal with leading zeroes (and remove duplicated inputs)
-    via <- as.numeric(sourcevar[!duplicated(sourcevar)])
+    via <- sourcevar[!duplicated(sourcevar)]
     
     contmat <- (sigmatab$iso3 == country)
-    matches <- (suppressWarnings(as.numeric(sigmatab[,viacode])) 
+    matches <- (suppressWarnings(sigmatab[,viacode]) 
                      %in% via)
     
     ctv <- suppressWarnings(sigmatab[which(contmat & matches),"sigma"])

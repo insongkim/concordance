@@ -14,7 +14,7 @@ function (sourcevar, origin, setting='CON', prop='') {
     truncs <- sapply(longs, function(x) floor(as.integer(x) / 10) )
     via <- c(okays, unlist(truncs))
     # Now deal with leading zeroes (and remove duplicated inputs)
-    via <- as.integer(via[!duplicated(via)])
+    via <- via[!duplicated(via)]
     
     # Vector operations currently disabled.
     matches <- which(sitc2_rauch[,"SITC2"] %in% via)

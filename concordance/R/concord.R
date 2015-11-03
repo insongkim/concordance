@@ -19,8 +19,13 @@ function (sourcevar, origin, destination){
       
       dict <- na.omit(concord_data[,c(origin, destination)])
       
-      # Remove duplicated inputs 
-      # sourcevar <- sourcevar[!duplicated(sourcevar)]
+      # Pretruncate superlong inputs
+      isLong <- sapply(sourcevar, function(x) nchar(x) > 9)
+      longs <- sourcevar[isLong]
+      okays <- sourcevar[!isLong]
+      truncs <- sapply(longs, function(x) substr(x,1,9))
+      sourcevar <- c(okays, unlist(truncs))
+      
       # If input is shorter than expected, pad it.
       if (origin != 'BEC') {
         isShort <- sapply(sourcevar, function(x) nchar(x) < code_lengths[origin])

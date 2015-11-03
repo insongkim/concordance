@@ -25,16 +25,17 @@ three possible types: differentiated products ('n'), reference priced
 ('r'), and homogeneous goods traded on an organized exchange ('w').
 
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
-   SITC1, SITC2, SITC3, SITC4
+   SITC1, SITC2, SITC3, SITC4, NAICS
 
-   The following strings can be used as arguments for \code{origin}: "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), 
-   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
+   The following strings can be used as arguments for \code{origin}: "naics", "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
    
    Also accepts aggregated (shorter) or disaggregated (longer) codes.
    
    setting may be set to 'CON' (conservative, the default setting) or 'LIB' (liberal.)
    
    prop may be set to 'w', 'r', or 'n', in which case the function will return the proportion of 'w', 'r', or 'n' in the resulting vector of Rauch indices (or, at the moment, NA if the proportion is zero.) If prop is not set to any of these then the function returns a table showing counts of 'w', 'r', and 'n' in the resulting vector of Rauch indices.
+   
+   You may also wish to look up the getRauch function, which has similar but more specialised functionality, and may work better in some cases.
 }
 
    \value{Concords given list of codes to list of SITC2 codes, then uses this as input to concord to Rauch product differentiation indices. Does not differentiate between codes corresponding to different codes in input vector.}
@@ -64,21 +65,21 @@ Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-dig
 \examples{
 proddiff("020", "hs")
 ## % Returns "rauch
-## % n w 
-## % 1 3"
+## % n r w 
+## % 1 2 3"
 
 proddiff("020", "hs", setting="lib")
 ## % Returns "rauch
-## % r w 
-## % 1 3"
+## % n r w 
+## % 1 2 3"
 
 proddiff("020", "hs", prop='w')
 ## % Returns "w 
-## % 0.75" 
+## % 0.5" 
 
 proddiff("020", "hs", setting='lib', prop='r')
 ## % Returns "r 
-## % 0.25" 
+## % 0.3333333" 
 }
 
 \keyword{ proddiff, rauch }

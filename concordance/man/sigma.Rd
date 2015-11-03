@@ -21,17 +21,18 @@ sigma(sourcevar, origin, country="USA", use_SITC=FALSE, give_avg=TRUE)
 
 \details{ 
 Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, 
-   SITC1, SITC2, SITC3, SITC4
+   SITC1, SITC2, SITC3, SITC4, NAICS
 
-   The following strings can be used as arguments for \code{origin}: "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), 
-   "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
+   The following strings can be used as arguments for \code{origin}: "naics", "hs" (for HS Combined), "hs0" (1988/92), "hs1" (1996), "hs2" (2002), "hs3" (2007), "hs4" (2012), "isic2", "isic3", "sitc1", "sitc2", "sitc3", "sitc4".
    
    Also accepts aggregated (shorter) or disaggregated (longer) codes.
    
-   Use ISO3 codes to specify country. Data is available for 74 countries (the US + 73 others.) For a list of available countries, load sigmatab.rda and type "unique(sigmatab$iso3)".
-}
+   Use ISO3 codes to specify country. Data is available for 74 countries (the US + 73 others.) For a list of available countries, load the package and type "unique(sigmatab$iso3)".
 
-   \value{Concords given list of codes to list of SITC3 codes (for the US) or 3-digit HS3 codes (for other countries), then uses this as input to concord to import demand elasticities. Does not differentiate between codes corresponding to different codes in input vector.}
+   Concords given list of codes to list of SITC3 codes (for the US) or 3-digit HS3 codes (for other countries), then uses this as input to concord to import demand elasticities. Does not differentiate between codes corresponding to different codes in input vector.
+   
+   You may also wish to look up the getSigma function, which has similar but more specialised functionality, and may work better in some cases.
+}
    
 \references{ 
 C. Broda and D. Weinstein, "Globalization and the Gains from Variety,"
@@ -50,11 +51,11 @@ results may be buggy otherwise.
 Current full-code lengths in use are 6-digit for HS, 4-digit for ISIC, and 5-digit for SITC.}
 
 \examples{
-sigma("287", "SITC3")
-# returns [1] 33.55
+sigma("847", "HS")
+# returns [1] 17.48601
 
-sigma("287", "SITC3", "KOR")
-# returns [1] 1.477455 3.071524
+sigma("847", "HS", "KOR")
+# returns [1] 2.545708
 
 sigma("261", "HS3", "KOR")
 # returns [1] 3.071524

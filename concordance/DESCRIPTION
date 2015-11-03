@@ -1,8 +1,8 @@
 Package: concordance
 Type: Package
 Title: Product Concordance
-Version: 1.5.3
-Date: 2015-10-04
+Version: 1.6
+Date: 2015-11-02
 Author: Feng Zhu, In Song Kim
 Maintainer: In Song Kim <insong@mit.edu>, Feng Zhu <zhufeng@umich.edu>
 Description: Concordance between HS (Combined), ISIC Rev. 2/3, and SITC1,2,3,4 product classification codes, as well as BEC, NAICS, and SIC classifications; code nomenclature / descriptions; Rauch classification look-up (via concordance to SITC2) and trade elasticity look-up (via concordance to SITC2/3 or HS3)
