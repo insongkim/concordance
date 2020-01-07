@@ -1,3 +1,8 @@
 # package file
 *.tar.gz
 .DS_Store
+.Rproj.user
+.Rhistory
+*.Rproj
+.Rbuildignore
+.RData

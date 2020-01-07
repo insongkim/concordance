@@ -1,0 +1,64 @@
+#' Concording Different Classification Codes
+#'
+#' \code{concord_v2} concords different classification codes used in international trade.
+#'
+#' @param sourcevar An input character vector of industry/product codes to be converted.
+#' @param origin A string setting the input coding scheme. Currently supports: HS, NAICS2017.
+#' @param destination A string setting the output coding scheme. Currently supports: HS, NAICS2017.
+#' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 6 digits.
+#' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
+#' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
+#' @import tidyverse
+#' @export
+#' @examples
+#' # HS code to NAICS 2017 code
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = FALSE)
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = TRUE)
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 4, all = TRUE)
+#'
+#' # NAICS 2017 code to HS code
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = FALSE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = TRUE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 6, all = FALSE)
+
+# function
+concord_v2 <- function (sourcevar,
+                        origin,
+                        destination,
+                        dest.digit = 6,
+                        all = FALSE) {
+
+  # source functions
+  #devtools::load_all(quiet = TRUE)
+
+  # allow origin / destination to be entered in any case
+  origin <- toupper(origin)
+  destination <- toupper(destination)
+
+  # HS to NAICS2017
+  if (origin == "HS" & destination == "NAICS2017") {
+
+    out <- concord_hs_naics2017(sourcevar,
+                                origin,
+                                destination,
+                                dest.digit,
+                                all)
+
+  } else if (origin == "NAICS2017" & destination == "HS") {
+
+    out <- concord_naics2017_hs(sourcevar,
+                                origin,
+                                destination,
+                                dest.digit,
+                                all)
+
+  } else {
+
+    stop("Concordance not supported")
+
+  }
+
+  return(out)
+
+}
+
