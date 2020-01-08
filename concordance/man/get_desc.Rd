@@ -9,7 +9,7 @@ get_desc(sourcevar, origin)
 \arguments{
 \item{sourcevar}{A character vector of input codes.}
 
-\item{origin}{A string indicating one of the following industry/product classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, SITC1, SITC2, SITC3, SITC4, BEC, NAICS2012, NAICS2017.}
+\item{origin}{A string indicating one of the following industry/product classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, SITC1, SITC2, SITC3, SITC4, BEC, NAICS2012, NAICS2017. Note that descriptions for 10-digit HS codes are from the U.S. Census Bureau and thus are only applicable for U.S. trade data.}
 }
 \value{
 A character vector giving the title/description of each element of the input codes.

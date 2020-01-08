@@ -8,14 +8,15 @@ date()
 # load packages
 library(tidyverse)
 
-# load previous data
+# load previously cleaned data
 load("./data/codedesc.rda")
 
 
 ################################################################################
 ## NAICS 2017
 ################################################################################
-# load data
+# load downloaded data from BLS
+# https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2017
 naics2017.desc <- read_csv("./data-raw/2017_titles_descriptions.csv", col_types = "cccc")
 
 # rename
@@ -34,7 +35,8 @@ save(naics2017.desc,
 ################################################################################
 ## NAICS 2012
 ################################################################################
-# load data
+# load downloaded data from BLS
+# https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2012
 naics2012.desc <- read_csv("./data-raw/2012_titles_descriptions.csv", col_types = "cccc")
 
 # rename
@@ -78,16 +80,16 @@ hs.10d.imp.df <- hs.10d.imp.df %>%
 
 hs.10d.df <- rbind(hs.10d.exp.df, hs.10d.imp.df)
 
+# rename vars
 hs.10d.df <- hs.10d.df %>%
   arrange(COMMODITY) %>%
   distinct() %>%
   rename(code = COMMODITY,
          desc = Descrip_2)
 
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs.desc <- codedesc %>%
   select(HS, HS.Desc) %>%
   distinct() %>%
@@ -109,10 +111,9 @@ save(hs.desc,
 ################################################################################
 ## HS0
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs0.desc <- codedesc %>%
   select(HS0, HS0.Desc) %>%
   distinct() %>%
@@ -129,10 +130,9 @@ save(hs0.desc,
 ################################################################################
 ## HS1
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs1.desc <- codedesc %>%
   select(HS1, HS1.Desc) %>%
   distinct() %>%
@@ -149,10 +149,9 @@ save(hs1.desc,
 ################################################################################
 ## HS2
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs2.desc <- codedesc %>%
   select(HS2, HS2.Desc) %>%
   distinct() %>%
@@ -169,10 +168,9 @@ save(hs2.desc,
 ################################################################################
 ## HS3
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs3.desc <- codedesc %>%
   select(HS3, HS3.Desc) %>%
   distinct() %>%
@@ -189,10 +187,9 @@ save(hs3.desc,
 ################################################################################
 ## HS4
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 hs4.desc <- codedesc %>%
   select(HS4, HS4.Desc) %>%
   distinct() %>%
@@ -209,10 +206,9 @@ save(hs4.desc,
 ################################################################################
 ## ISIC2
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 isic2.desc <- codedesc %>%
   select(ISIC2, ISIC2.Desc) %>%
   distinct() %>%
@@ -229,10 +225,9 @@ save(isic2.desc,
 ################################################################################
 ## ISIC3
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 isic3.desc <- codedesc %>%
   select(ISIC3, ISIC3.Desc) %>%
   distinct() %>%
@@ -249,10 +244,9 @@ save(isic3.desc,
 ################################################################################
 ## SITC1
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 sitc1.desc <- codedesc %>%
   select(SITC1, SITC1.Desc) %>%
   distinct() %>%
@@ -269,10 +263,9 @@ save(sitc1.desc,
 ################################################################################
 ## SITC2
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 sitc2.desc <- codedesc %>%
   select(SITC2, SITC2.Desc) %>%
   distinct() %>%
@@ -289,10 +282,9 @@ save(sitc2.desc,
 ################################################################################
 ## SITC3
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 sitc3.desc <- codedesc %>%
   select(SITC3, SITC3.Desc) %>%
   distinct() %>%
@@ -309,10 +301,9 @@ save(sitc3.desc,
 ################################################################################
 ## SITC4
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 sitc4.desc <- codedesc %>%
   select(SITC4, SITC4.Desc) %>%
   distinct() %>%
@@ -329,10 +320,9 @@ save(sitc4.desc,
 ################################################################################
 ## BEC
 ################################################################################
-# rename
+# subset and rename
 names(codedesc)
 
-# subset and rename
 bec.desc <- codedesc %>%
   select(BEC, BEC.Desc) %>%
   distinct() %>%
@@ -344,5 +334,4 @@ bec.desc <- codedesc %>%
 # save
 save(bec.desc,
      file = "./data/bec-desc.RData")
-
 

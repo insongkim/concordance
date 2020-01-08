@@ -12,6 +12,10 @@ library(tidyverse)
 ################################################################################
 # load and clean data
 ################################################################################
+# load concordance data
+# Source: Peter K. Schott <https://faculty.som.yale.edu/peterschott/international-trade-data/>
+# Concordance of 1989-2017 US HS codes to US SIC, SITC and NAICS codes over time
+# https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip
 exp.data <- read_delim("./data-raw/hs_sic_naics_exports_89_117_20180927.csv",
                        delim = "\t", col_types = "cdccccc")
 imp.data <- read_delim("./data-raw/hs_sic_naics_imports_89_117_20180927.csv",

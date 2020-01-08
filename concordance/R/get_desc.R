@@ -3,7 +3,7 @@
 #' \code{get_desc} returns the description of product codes
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, SITC1, SITC2, SITC3, SITC4, BEC, NAICS2012, NAICS2017.
+#' @param origin A string indicating one of the following industry/product classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, SITC1, SITC2, SITC3, SITC4, BEC, NAICS2012, NAICS2017. Note that descriptions for 10-digit HS codes are from the U.S. Census Bureau and thus are only applicable for U.S. trade data.
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @import tidyverse
 #' @export
@@ -141,7 +141,7 @@ get_desc <- function (sourcevar,
     no.code <- sourcevar[!sourcevar %in% all.origin.codes]
     no.code <- paste0(no.code, collapse = ", ")
 
-    warning(paste(str_extract(origin, "[^_]+"), " code(s): ", no.code, " not supported, imputed NA\n", sep = ""))
+    warning(paste(str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
 
   }
 

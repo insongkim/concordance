@@ -22,6 +22,7 @@ get_desc(sourcevar = c("111121", "326199", "111120", "111120"), origin = "NAICS2
 get_desc(sourcevar = c("111120", "326199", "111120"), origin = "NAICS2012")
 
 # HS
+get_desc(sourcevar = c("1206000069", "8546900000"), origin = "HS")
 get_desc(sourcevar = c("120600", "854690"), origin = "HS")
 
 # HS0
