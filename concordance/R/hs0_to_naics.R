@@ -52,7 +52,7 @@ concord_hs0_naics <- function (sourcevar,
 
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
-  if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits")}
+  if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -62,8 +62,8 @@ concord_hs0_naics <- function (sourcevar,
   origin <- paste(toupper(origin), "_", digits, "d", sep = "")
   destination <- paste(toupper(destination), "_", dest.digit, "d", sep = "")
 
-  if (!origin %in% origin.codes){stop("Origin code not supported")}
-  if (!destination %in% destination.codes){stop("Destination code not supported")}
+  if (!origin %in% origin.codes){stop("Origin code not supported.")}
+  if (!destination %in% destination.codes){stop("Destination code not supported.")}
 
   # check if concordance is available for sourcevar
   all.origin.codes <- dictionary %>%
@@ -74,7 +74,7 @@ concord_hs0_naics <- function (sourcevar,
     no.code <- sourcevar[!sourcevar %in% all.origin.codes]
     no.code <- paste0(no.code, collapse = ", ")
 
-    warning(paste(str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification\n", sep = ""))
+    warning(paste(str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
 
   }
 

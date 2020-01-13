@@ -9,9 +9,9 @@ concord_v2(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: HS, HS0, NAICS.}
+\item{origin}{A string setting the input coding scheme. Currently supports: HS, HS0, HS1, NAICS.}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: HS, HS0, NAICS.}
+\item{destination}{A string setting the output coding scheme. Currently supports: HS, HS0, HS1, NAICS.}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 6 digits.}
 
@@ -34,9 +34,11 @@ concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "H
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = TRUE)
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 6, all = FALSE)
 
-# HS0 to NAICS
+# HS0 <--> NAICS
 concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", dest.digit = 6, all = FALSE)
-
-# NAICS to HS0
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 6, all = FALSE)
+
+# HS1 <--> NAICS
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS1", destination = "NAICS", dest.digit = 6, all = FALSE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS1", dest.digit = 6, all = FALSE)
 }

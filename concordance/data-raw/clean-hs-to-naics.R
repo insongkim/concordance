@@ -10,7 +10,7 @@ library(tidyverse)
 
 
 ################################################################################
-# load and clean data
+# HS (combined) to NAICS (combined)
 ################################################################################
 # load concordance data:
 # Pierce and Schott 2018 <https://faculty.som.yale.edu/peterschott/international-trade-data/>
@@ -83,7 +83,7 @@ hs.naics.sub <- hs.naics %>%
   select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS0 with HS --> NAICS concordance
+# merge HS0 with HS-NAICS concordance
 hs0.naics <- left_join(hs0.df, hs.naics.sub,
                        by = c("HS" = "HS_6d"))
 
@@ -109,3 +109,186 @@ hs0.naics <- hs0.naics %>%
 # save
 save(hs0.naics,
      file = "./data/hs0-naics.RData")
+
+
+################################################################################
+# HS1 to NAICs
+################################################################################
+# load previously cleaned concordance data
+load("./data-raw/concord_data.RData")
+
+# subset and clean
+hs1.df <- concord_data %>%
+  select(HS, HS1) %>%
+  distinct() %>%
+  filter(!(is.na(HS) & is.na(HS1))) %>%
+  filter(!(is.na(HS1)))
+
+# subset
+hs.naics.sub <- hs.naics %>%
+  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# merge HS1 with HS-NAICS concordance
+hs1.naics <- left_join(hs1.df, hs.naics.sub,
+                       by = c("HS" = "HS_6d"))
+
+# check
+hs1.naics %>% filter(is.na(NAICS_6d))
+
+# drop HS 710820, no matches
+# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+hs1.naics <- hs1.naics %>%
+  filter(!is.na(NAICS_6d))
+
+# clean
+hs1.naics <- hs1.naics %>%
+  select(-HS) %>%
+  rename(HS1_6d = HS1) %>%
+  mutate(HS1_4d = str_sub(HS1_6d, start = 1, end = 4),
+         HS1_2d = str_sub(HS1_6d, start = 1, end = 2)) %>%
+  arrange(HS1_6d) %>%
+  distinct() %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d)
+
+# save
+save(hs1.naics,
+     file = "./data/hs1-naics.RData")
+
+
+################################################################################
+# HS2 to NAICs
+################################################################################
+# load previously cleaned concordance data
+load("./data-raw/concord_data.RData")
+
+# subset and clean
+hs2.df <- concord_data %>%
+  select(HS, HS2) %>%
+  distinct() %>%
+  filter(!(is.na(HS) & is.na(HS2))) %>%
+  filter(!(is.na(HS2)))
+
+# subset
+hs.naics.sub <- hs.naics %>%
+  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# merge HS2 with HS-NAICS concordance
+hs2.naics <- left_join(hs2.df, hs.naics.sub,
+                       by = c("HS" = "HS_6d"))
+
+# check
+hs2.naics %>% filter(is.na(NAICS_6d))
+
+# drop HS 710820, no matches
+# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+hs2.naics <- hs2.naics %>%
+  filter(!is.na(NAICS_6d))
+
+# clean
+hs2.naics <- hs2.naics %>%
+  select(-HS) %>%
+  rename(HS2_6d = HS2) %>%
+  mutate(HS2_4d = str_sub(HS2_6d, start = 1, end = 4),
+         HS2_2d = str_sub(HS2_6d, start = 1, end = 2)) %>%
+  arrange(HS2_6d) %>%
+  distinct() %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d)
+
+# save
+save(hs2.naics,
+     file = "./data/hs2-naics.RData")
+
+################################################################################
+# HS3 to NAICs
+################################################################################
+# load previously cleaned concordance data
+load("./data-raw/concord_data.RData")
+
+# subset and clean
+hs3.df <- concord_data %>%
+  select(HS, HS3) %>%
+  distinct() %>%
+  filter(!(is.na(HS) & is.na(HS3))) %>%
+  filter(!(is.na(HS3)))
+
+# subset
+hs.naics.sub <- hs.naics %>%
+  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# merge HS3 with HS-NAICS concordance
+hs3.naics <- left_join(hs3.df, hs.naics.sub,
+                       by = c("HS" = "HS_6d"))
+
+# check
+hs3.naics %>% filter(is.na(NAICS_6d))
+
+# drop HS 710820, no matches
+# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+hs3.naics <- hs3.naics %>%
+  filter(!is.na(NAICS_6d))
+
+# clean
+hs3.naics <- hs3.naics %>%
+  select(-HS) %>%
+  rename(HS3_6d = HS3) %>%
+  mutate(HS3_4d = str_sub(HS3_6d, start = 1, end = 4),
+         HS3_2d = str_sub(HS3_6d, start = 1, end = 2)) %>%
+  arrange(HS3_6d) %>%
+  distinct() %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d)
+
+# save
+save(hs3.naics,
+     file = "./data/hs3-naics.RData")
+
+
+################################################################################
+# HS4 to NAICs
+################################################################################
+# load previously cleaned concordance data
+load("./data-raw/concord_data.RData")
+
+# subset and clean
+hs4.df <- concord_data %>%
+  select(HS, HS4) %>%
+  distinct() %>%
+  filter(!(is.na(HS) & is.na(HS4))) %>%
+  filter(!(is.na(HS4)))
+
+# subset
+hs.naics.sub <- hs.naics %>%
+  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# merge HS4 with HS-NAICS concordance
+hs4.naics <- left_join(hs4.df, hs.naics.sub,
+                       by = c("HS" = "HS_6d"))
+
+# check
+hs4.naics %>% filter(is.na(NAICS_6d))
+
+# drop HS 710820, no matches
+# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+hs4.naics <- hs4.naics %>%
+  filter(!is.na(NAICS_6d))
+
+# clean
+hs4.naics <- hs4.naics %>%
+  select(-HS) %>%
+  rename(HS4_6d = HS4) %>%
+  mutate(HS4_4d = str_sub(HS4_6d, start = 1, end = 4),
+         HS4_2d = str_sub(HS4_6d, start = 1, end = 2)) %>%
+  arrange(HS4_6d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d)
+
+# save
+save(hs4.naics,
+     file = "./data/hs4-naics.RData")

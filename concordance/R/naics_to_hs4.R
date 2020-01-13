@@ -1,10 +1,10 @@
-#' Converts NAICS to HS0 Codes
+#' Converts NAICS to HS4 Codes
 #'
-#' \code{concord_naics_hs0} converts NAICS (combined) to HS0 codes
+#' \code{concord_naics_hs4} converts NAICS (combined) to HS4 codes
 #'
 #' @param sourcevar An input character vector of NAICS codes. Allows 6, 4, or 2 digits.
 #' @param origin A string setting the input industry classification (NAICS).
-#' @param destination A string setting the output industry classification (HS0).
+#' @param destination A string setting the output industry classification (HS4).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 6, 4, or 2 digits. The default is 6 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -12,29 +12,29 @@
 #' @export
 #' @examples
 #' # one input: one-to-multiple match
-#' concord_naics_hs0(sourcevar = "111120", origin = "NAICS", destination = "HS0", all = FALSE)
-#' concord_naics_hs0(sourcevar = "111120", origin = "NAICS", destination = "HS0", all = TRUE)
+#' concord_naics_hs4(sourcevar = "111120", origin = "NAICS", destination = "HS4", all = FALSE)
+#' concord_naics_hs4(sourcevar = "111120", origin = "NAICS", destination = "HS4", all = TRUE)
 #'
 #' # two inputs: one-to-multiple match
-#' concord_naics_hs0(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", all = FALSE)
-#' concord_naics_hs0(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", all = TRUE)
+#' concord_naics_hs4(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", all = FALSE)
+#' concord_naics_hs4(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", all = TRUE)
 #'
 #' # two inputs: repeated
-#' concord_naics_hs0(sourcevar = c("111120", "111120"), origin = "NAICS", destination = "HS0", all = FALSE)
-#' concord_naics_hs0(sourcevar = c("111120", "111120"), origin = "NAICS", destination = "HS0", all = TRUE)
+#' concord_naics_hs4(sourcevar = c("111120", "111120"), origin = "NAICS", destination = "HS4", all = FALSE)
+#' concord_naics_hs4(sourcevar = c("111120", "111120"), origin = "NAICS", destination = "HS4", all = TRUE)
 #'
 #' # sourcevar has different number of digits, will give an error
-#' concord_naics_hs0(sourcevar = c("111120", "11112"), origin = "NAICS", destination = "HS0", all = FALSE)
+#' concord_naics_hs4(sourcevar = c("111120", "11112"), origin = "NAICS", destination = "HS4", all = FALSE)
 #'
 #' # If no match, will return NA
-#' concord_naics_hs0(sourcevar = c("111120", "111121"), origin = "NAICS", destination = "HS0", all = FALSE)
+#' concord_naics_hs4(sourcevar = c("111120", "111121"), origin = "NAICS", destination = "HS4", all = FALSE)
 #'
 #' # 4-digit inputs
-#' concord_naics_hs0(sourcevar = c("1111", "3271"), origin = "NAICS", destination = "HS0", all = FALSE)
+#' concord_naics_hs4(sourcevar = c("1111", "3271"), origin = "NAICS", destination = "HS4", all = FALSE)
 #'
 #' # 4-digit outputs
-#' concord_naics_hs0(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 4, all = FALSE)
-concord_naics_hs0 <- function (sourcevar,
+#' concord_naics_hs4(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", dest.digit = 4, all = FALSE)
+concord_naics_hs4 <- function (sourcevar,
                                origin,
                                destination,
                                dest.digit = 6,
@@ -43,7 +43,7 @@ concord_naics_hs0 <- function (sourcevar,
   # load specific conversion dictionary
   #dictionary <- get(load(paste(DATA_DIR, destination, "-", origin, ".RData", sep = "")))
   #devtools::load_all(quiet = TRUE)
-  dictionary <- hs0.naics
+  dictionary <- hs4.naics
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
@@ -83,9 +83,9 @@ concord_naics_hs0 <- function (sourcevar,
   # calculate weights for matches
   dest.var <- dest.var %>%
     rename(NAICS = 1,
-           HS0 = 2) %>%
-    group_by(NAICS, HS0) %>%
-    mutate(n = length(HS0)) %>%
+           HS4 = 2) %>%
+    group_by(NAICS, HS4) %>%
+    mutate(n = length(HS4)) %>%
     distinct() %>%
     group_by(NAICS) %>%
     mutate(n_sum = sum(n),
@@ -93,7 +93,7 @@ concord_naics_hs0 <- function (sourcevar,
     arrange(dplyr::desc(weight)) %>%
     ungroup() %>%
     select(-n, -n_sum) %>%
-    rename(match = HS0)
+    rename(match = HS4)
 
   # keep info on all matches and weights?
   if (all == TRUE){

@@ -88,14 +88,22 @@ concord_v2(sourcevar = c("111120", "326199"),
 
 
 ################################################################################
-## HS0 --> NAICS
+## HS/HS0/HS1/HS2/HS3/HS4 --> NAICS
 ################################################################################
-concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "NAICS", all = FALSE)
-concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", all = FALSE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "NAICS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS1", destination = "NAICS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS2", destination = "NAICS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS3", destination = "NAICS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS4", destination = "NAICS", dest.digit = 4, all = TRUE)
 
 
 ################################################################################
-## NAICS --> HS0
+## NAICS --> HS/HS0/HS1/HS2/HS3/HS4
 ################################################################################
-concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 4, all = FALSE)
-concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 4, all = FALSE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS1", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS2", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS3", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", dest.digit = 4, all = TRUE)
