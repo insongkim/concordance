@@ -10,8 +10,7 @@ library(concordance)
 
 
 ################################################################################
-## test
-## HS --> NAICS2017
+## HS --> NAICS
 ################################################################################
 # get input description
 get_desc(sourcevar = c("1206000069", "8546900000"), origin = "HS")
@@ -21,7 +20,7 @@ get_desc(sourcevar = c("1206000069", "8546900000"), origin = "HS")
 # one output
 concord_v2(sourcevar = c("1206000069", "8546900000"),
            origin = "HS",
-           destination = "NAICS2017",
+           destination = "NAICS",
            dest.digit = 6,
            all = FALSE)
 
@@ -31,27 +30,26 @@ get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
 # all outputs
 concord_v2(sourcevar = c("1206000069", "8546900000"),
            origin = "HS",
-           destination = "NAICS2017",
+           destination = "NAICS",
            dest.digit = 6,
            all = TRUE)
 
 # 4-digit outputs
 concord_v2(sourcevar = c("1206000069", "8546900000"),
            origin = "HS",
-           destination = "NAICS2017",
+           destination = "NAICS",
            dest.digit = 4,
            all = FALSE)
 
 concord_v2(sourcevar = c("1206000069", "8546900000"),
            origin = "HS",
-           destination = "NAICS2017",
+           destination = "NAICS",
            dest.digit = 4,
            all = TRUE)
 
 
 ################################################################################
-## test
-## NAICS2017 --> HS
+## NAICS --> HS
 ################################################################################
 # get description for NAICS input
 get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
@@ -60,7 +58,7 @@ get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
 
 # one output
 concord_v2(sourcevar = c("111120", "326199"),
-           origin = "NAICS2017",
+           origin = "NAICS",
            destination = "HS",
            dest.digit = 10,
            all = FALSE)
@@ -70,22 +68,34 @@ get_desc(sourcevar = c("1204000000", "3916200010"), origin = "HS")
 
 # all outputs
 concord_v2(sourcevar = c("111120", "326199"),
-           origin = "NAICS2017",
+           origin = "NAICS",
            destination = "HS",
            dest.digit = 10,
            all = TRUE)
 
 # 6-digit outputs
 concord_v2(sourcevar = c("111120", "326199"),
-           origin = "NAICS2017",
+           origin = "NAICS",
            destination = "HS",
            dest.digit = 6,
            all = FALSE)
 
 concord_v2(sourcevar = c("111120", "326199"),
-           origin = "NAICS2017",
+           origin = "NAICS",
            destination = "HS",
            dest.digit = 6,
            all = TRUE)
 
 
+################################################################################
+## HS0 --> NAICS
+################################################################################
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "NAICS", all = FALSE)
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", all = FALSE)
+
+
+################################################################################
+## NAICS --> HS0
+################################################################################
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 4, all = FALSE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 4, all = FALSE)

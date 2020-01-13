@@ -3,25 +3,29 @@
 #' \code{concord_v2} concords different classification codes used in international trade.
 #'
 #' @param sourcevar An input character vector of industry/product codes to be converted.
-#' @param origin A string setting the input coding scheme. Currently supports: HS, NAICS2017.
-#' @param destination A string setting the output coding scheme. Currently supports: HS, NAICS2017.
+#' @param origin A string setting the input coding scheme. Currently supports: HS, HS0, NAICS.
+#' @param destination A string setting the output coding scheme. Currently supports: HS, HS0, NAICS.
 #' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 6 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tidyverse
 #' @export
 #' @examples
-#' # HS code to NAICS 2017 code
-#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = FALSE)
-#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = TRUE)
-#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 4, all = TRUE)
+#' # HS to NAICS code
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = FALSE)
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = TRUE)
+#' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 4, all = TRUE)
 #'
-#' # NAICS 2017 code to HS code
-#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = FALSE)
-#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = TRUE)
-#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 6, all = FALSE)
-
-# function
+#' # NAICS to HS code
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = FALSE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = TRUE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 6, all = FALSE)
+#'
+#' # HS0 to NAICS
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", dest.digit = 6, all = FALSE)
+#'
+#' # NAICS to HS0
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 6, all = FALSE)
 concord_v2 <- function (sourcevar,
                         origin,
                         destination,
@@ -35,22 +39,41 @@ concord_v2 <- function (sourcevar,
   origin <- toupper(origin)
   destination <- toupper(destination)
 
-  # HS to NAICS2017
-  if (origin == "HS" & destination == "NAICS2017") {
+  # HS to NAICS
+  if (origin == "HS" & destination == "NAICS") {
 
-    out <- concord_hs_naics2017(sourcevar,
-                                origin,
-                                destination,
-                                dest.digit,
-                                all)
+    out <- concord_hs_naics(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
 
-  } else if (origin == "NAICS2017" & destination == "HS") {
+  # NAICS to HS
+  } else if (origin == "NAICS" & destination == "HS") {
 
-    out <- concord_naics2017_hs(sourcevar,
-                                origin,
-                                destination,
-                                dest.digit,
-                                all)
+    out <- concord_naics_hs(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+
+  # HS0 to NAICS
+  } else if (origin == "HS0" & destination == "NAICS") {
+
+    out <- concord_hs0_naics(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
+
+  # NAICS to HS0
+  } else if (origin == "NAICS" & destination == "HS0") {
+
+    out <- concord_naics_hs0(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
 
   } else {
 

@@ -9,9 +9,9 @@ concord_v2(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: HS, NAICS2017.}
+\item{origin}{A string setting the input coding scheme. Currently supports: HS, HS0, NAICS.}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: HS, NAICS2017.}
+\item{destination}{A string setting the output coding scheme. Currently supports: HS, HS0, NAICS.}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 6 digits.}
 
@@ -24,13 +24,19 @@ The matched output(s) for each element of the input vector. Either a list object
 \code{concord_v2} concords different classification codes used in international trade.
 }
 \examples{
-# HS code to NAICS 2017 code
-concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = FALSE)
-concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 6, all = TRUE)
-concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS2017", dest.digit = 4, all = TRUE)
+# HS to NAICS code
+concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = FALSE)
+concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = TRUE)
+concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 4, all = TRUE)
 
-# NAICS 2017 code to HS code
-concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = FALSE)
-concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 10, all = TRUE)
-concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS2017", destination = "HS", dest.digit = 6, all = FALSE)
+# NAICS to HS code
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = FALSE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = TRUE)
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 6, all = FALSE)
+
+# HS0 to NAICS
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "NAICS", dest.digit = 6, all = FALSE)
+
+# NAICS to HS0
+concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS0", dest.digit = 6, all = FALSE)
 }
