@@ -3,9 +3,9 @@
 #' \code{concord_v2} concords different classification codes used in international trade.
 #'
 #' @param sourcevar An input character vector of industry/product codes to be converted.
-#' @param origin A string setting the input coding scheme. Currently supports: HS, HS0, HS1, NAICS.
-#' @param destination A string setting the output coding scheme. Currently supports: HS, HS0, HS1, NAICS.
-#' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 6 digits.
+#' @param origin A string setting the input coding scheme. Currently supports: HS, HS0, HS1, NAICS, SITC4.
+#' @param destination A string setting the output coding scheme. Currently supports: HS, HS0, HS1, NAICS, SITC4.
+#' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tidyverse
@@ -15,6 +15,7 @@
 #' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = FALSE)
 #' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 6, all = TRUE)
 #' concord_v2(sourcevar = c("1206000069", "8546900000"), origin = "HS", destination = "NAICS", dest.digit = 4, all = TRUE)
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "NAICS", dest.digit = 6, all = FALSE)
 #'
 #' # NAICS to HS code
 #' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 10, all = FALSE)
@@ -28,10 +29,26 @@
 #' # HS1 <--> NAICS
 #' concord_v2(sourcevar = c("120600", "854690"), origin = "HS1", destination = "NAICS", dest.digit = 6, all = FALSE)
 #' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS1", dest.digit = 6, all = FALSE)
+#'
+#' # HS2 <--> NAICS
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS2", destination = "NAICS", dest.digit = 6, all = FALSE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS2", dest.digit = 6, all = FALSE)
+#'
+#' # HS3 <--> NAICS
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS3", destination = "NAICS", dest.digit = 6, all = FALSE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS3", dest.digit = 6, all = FALSE)
+#'
+#' # HS4 <--> NAICS
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS4", destination = "NAICS", dest.digit = 6, all = FALSE)
+#' concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", dest.digit = 6, all = FALSE)
+#'
+#' # HS <--> SITC4
+#' concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
+#' concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS", dest.digit = 6, all = FALSE)
 concord_v2 <- function (sourcevar,
                         origin,
                         destination,
-                        dest.digit = 6,
+                        dest.digit = 4,
                         all = FALSE) {
 
   # source functions
@@ -148,6 +165,24 @@ concord_v2 <- function (sourcevar,
                              destination,
                              dest.digit,
                              all)
+
+  # HS to SITC4
+  } else if (origin == "HS" & destination == "SITC4") {
+
+    out <- concord_hs_sitc4(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+
+  # SITC4 to HS
+  } else if (origin == "SITC4" & destination == "HS") {
+
+    out <- concord_sitc4_hs(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
 
   } else {
 

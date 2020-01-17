@@ -1,6 +1,6 @@
 #' Converts NAICS to HS0 Codes
 #'
-#' \code{concord_naics_hs0} converts NAICS (combined) to HS0 codes
+#' \code{concord_naics_hs0} converts NAICS (combined) to HS0 codes.
 #'
 #' @param sourcevar An input character vector of NAICS codes. Allows 6, 4, or 2 digits.
 #' @param origin A string setting the input industry classification (NAICS).
@@ -47,6 +47,7 @@ concord_naics_hs0 <- function (sourcevar,
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
+  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
 
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))

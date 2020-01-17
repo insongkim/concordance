@@ -22,7 +22,7 @@ concord_naics_hs1(sourcevar, origin, destination, dest.digit = 6,
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-\code{concord_naics_hs1} converts NAICS (combined) to HS1 codes
+\code{concord_naics_hs1} converts NAICS (combined) to HS1 codes.
 }
 \examples{
 # one input: one-to-multiple match

@@ -247,13 +247,57 @@ save(isic3.desc,
 # subset and rename
 names(codedesc)
 
-sitc1.desc <- codedesc %>%
+sitc1.desc.r <- codedesc %>%
   select(SITC1, SITC1.Desc) %>%
   distinct() %>%
   rename(code = SITC1,
          desc = SITC1.Desc) %>%
   filter(!is.na(code)) %>%
   arrange(code)
+
+# add 5 digit description
+sitc1.desc.5d <- sitc1.desc.r %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+# add 4-digit description
+sitc1.desc.4d.1 <- sitc1.desc.r %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc1.desc.4d.2 <- sitc1.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc1.desc.4d.3 <- sitc1.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+# add 3-digit description
+sitc1.desc.3d.1 <- sitc1.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+sitc1.desc.3d.2 <- sitc1.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+# add 2-digit description
+sitc1.desc.2d <- sitc1.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
+
+# combine
+sitc1.desc <- rbind(sitc1.desc.r, sitc1.desc.5d,
+                    sitc1.desc.4d.1, sitc1.desc.4d.2, sitc1.desc.4d.3,
+                    sitc1.desc.3d.1, sitc1.desc.3d.2,
+                    sitc1.desc.2d) %>%
+  arrange(code) %>%
+  distinct()
+
+# check
+sitc1.desc[duplicated(sitc1.desc$code),]
+
+sitc1.desc <- sitc1.desc[!duplicated(sitc1.desc$code),]
 
 # save
 save(sitc1.desc,
@@ -266,13 +310,57 @@ save(sitc1.desc,
 # subset and rename
 names(codedesc)
 
-sitc2.desc <- codedesc %>%
+sitc2.desc.r <- codedesc %>%
   select(SITC2, SITC2.Desc) %>%
   distinct() %>%
   rename(code = SITC2,
          desc = SITC2.Desc) %>%
   filter(!is.na(code)) %>%
   arrange(code)
+
+# add 5 digit description
+sitc2.desc.5d <- sitc2.desc.r %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+# add 4-digit description
+sitc2.desc.4d.1 <- sitc2.desc.r %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc2.desc.4d.2 <- sitc2.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc2.desc.4d.3 <- sitc2.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+# add 3-digit description
+sitc2.desc.3d.1 <- sitc2.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+sitc2.desc.3d.2 <- sitc2.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+# add 2-digit description
+sitc2.desc.2d <- sitc2.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
+
+# combine
+sitc2.desc <- rbind(sitc2.desc.r, sitc2.desc.5d,
+                    sitc2.desc.4d.1, sitc2.desc.4d.2, sitc2.desc.4d.3,
+                    sitc2.desc.3d.1, sitc2.desc.3d.2,
+                    sitc2.desc.2d) %>%
+  arrange(code) %>%
+  distinct()
+
+# check
+sitc2.desc[duplicated(sitc2.desc$code),]
+
+sitc2.desc <- sitc2.desc[!duplicated(sitc2.desc$code),]
 
 # save
 save(sitc2.desc,
@@ -285,13 +373,57 @@ save(sitc2.desc,
 # subset and rename
 names(codedesc)
 
-sitc3.desc <- codedesc %>%
+sitc3.desc.r <- codedesc %>%
   select(SITC3, SITC3.Desc) %>%
   distinct() %>%
   rename(code = SITC3,
          desc = SITC3.Desc) %>%
   filter(!is.na(code)) %>%
   arrange(code)
+
+# add 5 digit description
+sitc3.desc.5d <- sitc3.desc.r %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+# add 4-digit description
+sitc3.desc.4d.1 <- sitc3.desc.r %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc3.desc.4d.2 <- sitc3.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc3.desc.4d.3 <- sitc3.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+# add 3-digit description
+sitc3.desc.3d.1 <- sitc3.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+sitc3.desc.3d.2 <- sitc3.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+# add 2-digit description
+sitc3.desc.2d <- sitc3.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
+
+# combine
+sitc3.desc <- rbind(sitc3.desc.r, sitc3.desc.5d,
+                    sitc3.desc.4d.1, sitc3.desc.4d.2, sitc3.desc.4d.3,
+                    sitc3.desc.3d.1, sitc3.desc.3d.2,
+                    sitc3.desc.2d) %>%
+  arrange(code) %>%
+  distinct()
+
+# check
+sitc3.desc[duplicated(sitc3.desc$code),]
+
+sitc3.desc <- sitc3.desc[!duplicated(sitc3.desc$code),]
 
 # save
 save(sitc3.desc,
@@ -304,13 +436,57 @@ save(sitc3.desc,
 # subset and rename
 names(codedesc)
 
-sitc4.desc <- codedesc %>%
+sitc4.desc.r <- codedesc %>%
   select(SITC4, SITC4.Desc) %>%
   distinct() %>%
   rename(code = SITC4,
          desc = SITC4.Desc) %>%
   filter(!is.na(code)) %>%
   arrange(code)
+
+# add 5 digit description
+sitc4.desc.5d <- sitc4.desc.r %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+# add 4-digit description
+sitc4.desc.4d.1 <- sitc4.desc.r %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc4.desc.4d.2 <- sitc4.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+sitc4.desc.4d.3 <- sitc4.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
+
+# add 3-digit description
+sitc4.desc.3d.1 <- sitc4.desc.r %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+sitc4.desc.3d.2 <- sitc4.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
+
+# add 2-digit description
+sitc4.desc.2d <- sitc4.desc.r %>%
+  filter(nchar(code) == 1) %>%
+  mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
+
+# combine
+sitc4.desc <- rbind(sitc4.desc.r, sitc4.desc.5d,
+                    sitc4.desc.4d.1, sitc4.desc.4d.2, sitc4.desc.4d.3,
+                    sitc4.desc.3d.1, sitc4.desc.3d.2,
+                    sitc4.desc.2d) %>%
+  arrange(code) %>%
+  distinct()
+
+# check
+sitc4.desc[duplicated(sitc4.desc$code),]
+
+sitc4.desc <- sitc4.desc[!duplicated(sitc4.desc$code),]
 
 # save
 save(sitc4.desc,

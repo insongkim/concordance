@@ -107,3 +107,20 @@ concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "H
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS2", dest.digit = 4, all = TRUE)
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS3", dest.digit = 4, all = TRUE)
 concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS4", dest.digit = 4, all = TRUE)
+
+
+################################################################################
+## HS --> SITC4
+################################################################################
+get_desc(sourcevar = c("120600", "854690"), origin = "HS")
+get_desc(sourcevar = "8546", origin = "HS")
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
+get_desc(sourcevar = c("22240", "77324"), origin = "SITC4")
+
+
+################################################################################
+## SITC4 --> HS
+################################################################################
+get_desc(sourcevar = c("22240", "77324"), origin = "SITC4")
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS", dest.digit = 6, all = FALSE)
+get_desc(sourcevar = c("120600", "854690"), origin = "HS")
