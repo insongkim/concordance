@@ -34,6 +34,9 @@
 #' # if no match, will return NA
 #' concord_hs_sitc4(sourcevar = c("1206000069", "1206000062"), origin = "HS", destination = "SITC4", all = FALSE)
 #'
+#' # 5-digit inputs not supported and will give an error
+#' concord_hs_sitc4(sourcevar = c("12060", "85460"), origin = "HS", destination = "SITC4", all = TRUE)
+#'
 #' # 4-digit inputs
 #' concord_hs_sitc4(sourcevar = c("1206", "8546"), origin = "HS", destination = "SITC4", all = TRUE)
 #'
@@ -46,18 +49,23 @@ concord_hs_sitc4 <- function (sourcevar,
                               all = FALSE) {
 
   # load specific conversion dictionary
-  #dictionary <- get(load(paste(DATA_DIR, origin, "-", destination, ".RData", sep = "")))
-  #devtools::load_all(quiet = TRUE)
   dictionary <- hs.sitc4
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
-  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
-  if (dest.digit > 5) {stop("'dest.digit' for SITC4 codes should be between 1 to 5.")}
+  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes that are NA.")}
+
+  # set acceptable digits for outputs
+  destination.digits <- c(1, 2, 3, 4, 5)
+  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4, 5-digit outputs for SITC codes.")}
 
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits.")}
+
+  # set acceptable digits for inputs
+  origin.digits <- c(2, 4, 6, 10)
+  if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6, 10-digit inputs for HS codes.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -92,10 +100,11 @@ concord_hs_sitc4 <- function (sourcevar,
     rename(HS = 1,
            SITC4 = 2) %>%
     group_by(HS, SITC4) %>%
-    mutate(n = length(SITC4)) %>%
+    mutate(n = length(SITC4),
+           n = ifelse(is.na(SITC4), NA, n)) %>%
     distinct() %>%
     group_by(HS) %>%
-    mutate(n_sum = sum(n),
+    mutate(n_sum = sum(n, na.rm = TRUE),
            weight = n/n_sum) %>%
     arrange(dplyr::desc(weight)) %>%
     ungroup() %>%

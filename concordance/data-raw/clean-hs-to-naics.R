@@ -78,6 +78,10 @@ hs0.df <- concord_data %>%
   filter(!(is.na(HS) & is.na(HS0))) %>%
   filter(!(is.na(HS0)))
 
+# check
+all(nchar(hs0.df$HS) == 6)
+all(nchar(hs0.df$HS0) == 6)
+
 # subset
 hs.naics.sub <- hs.naics %>%
   select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
@@ -89,11 +93,8 @@ hs0.naics <- left_join(hs0.df, hs.naics.sub,
 
 # check
 hs0.naics %>% filter(is.na(NAICS_6d))
-
-# drop HS 710820, no matches
+# HS 710820, no matches
 # (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-hs0.naics <- hs0.naics %>%
-  filter(!is.na(NAICS_6d))
 
 # clean
 hs0.naics <- hs0.naics %>%
@@ -135,11 +136,9 @@ hs1.naics <- left_join(hs1.df, hs.naics.sub,
 
 # check
 hs1.naics %>% filter(is.na(NAICS_6d))
-
-# drop HS 710820, no matches
+# HS 710820, no matches
 # (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-hs1.naics <- hs1.naics %>%
-  filter(!is.na(NAICS_6d))
+
 
 # clean
 hs1.naics <- hs1.naics %>%
@@ -181,11 +180,8 @@ hs2.naics <- left_join(hs2.df, hs.naics.sub,
 
 # check
 hs2.naics %>% filter(is.na(NAICS_6d))
-
-# drop HS 710820, no matches
+# HS 710820, no matches
 # (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-hs2.naics <- hs2.naics %>%
-  filter(!is.na(NAICS_6d))
 
 # clean
 hs2.naics <- hs2.naics %>%
@@ -226,11 +222,8 @@ hs3.naics <- left_join(hs3.df, hs.naics.sub,
 
 # check
 hs3.naics %>% filter(is.na(NAICS_6d))
-
-# drop HS 710820, no matches
+# HS 710820, no matches
 # (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-hs3.naics <- hs3.naics %>%
-  filter(!is.na(NAICS_6d))
 
 # clean
 hs3.naics <- hs3.naics %>%
@@ -259,7 +252,8 @@ hs4.df <- concord_data %>%
   select(HS, HS4) %>%
   distinct() %>%
   filter(!(is.na(HS) & is.na(HS4))) %>%
-  filter(!(is.na(HS4)))
+  filter(!(is.na(HS4))) %>%
+  filter(!is.na(HS))
 
 # subset
 hs.naics.sub <- hs.naics %>%
@@ -272,11 +266,8 @@ hs4.naics <- left_join(hs4.df, hs.naics.sub,
 
 # check
 hs4.naics %>% filter(is.na(NAICS_6d))
-
-# drop HS 710820, no matches
+# HS 710820, no matches
 # (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-hs4.naics <- hs4.naics %>%
-  filter(!is.na(NAICS_6d))
 
 # clean
 hs4.naics <- hs4.naics %>%

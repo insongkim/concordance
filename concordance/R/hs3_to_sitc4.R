@@ -1,57 +1,60 @@
-#' Converting HS4 to NAICS Codes
+#' Converting HS3 to SITC4 Codes
 #'
-#' \code{concord_hs4_naics} converts HS4 to NAICS (combined) codes.
+#' \code{concord_hs3_sitc4} converts HS3 to SITC Revision 4 codes.
 #'
-#' @param sourcevar An input character vector of HS4 codes. Allows 6, 4, or 2 digits.
-#' @param origin A string setting the input industry classification (HS4).
-#' @param destination A string setting the output industry classification (NAICS).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 6, 4, or 2 digits. The default is 6 digits.
+#' @param sourcevar An input character vector of HS3 codes. Allows 6, 4, or 2 digits.
+#' @param origin A string setting the input industry classification (HS3).
+#' @param destination A string setting the output industry classification (SITC4).
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 5 digits. The default is 5 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tidyverse
 #' @export
 #' @examples
 #' # one input: one-to-one match
-#' concord_hs4_naics(sourcevar = "120600", origin = "HS0", destination = "NAICS", all = FALSE)
-#' concord_hs4_naics(sourcevar = "120600", origin = "HS0", destination = "NAICS", all = TRUE)
+#' concord_hs3_sitc4(sourcevar = "120600", origin = "HS3", destination = "SITC4", all = FALSE)
+#' concord_hs3_sitc4(sourcevar = "120600", origin = "HS3", destination = "SITC4", all = TRUE)
 #'
 #' # two inputs: multiple-to-one match
-#' concord_hs4_naics(sourcevar = c("120600", "120500"), origin = "HS4", destination = "NAICS", all = FALSE)
-#' concord_hs4_naics(sourcevar = c("120600", "120500"), origin = "HS4", destination = "NAICS", all = TRUE)
+#' concord_hs3_sitc4(sourcevar = c("010111", "010119"), origin = "HS3", destination = "SITC4", all = FALSE)
+#' concord_hs3_sitc4(sourcevar = c("010111", "010119"), origin = "HS3", destination = "SITC4", all = TRUE)
 #'
 #' # two inputs: repeated
-#' concord_hs4_naics(sourcevar = c("120600", "120600"), origin = "HS4", destination = "NAICS", all = FALSE)
-#'
-#' # one to multiple matches
-#' concord_hs4_naics(sourcevar = c("120600", "854690"), origin = "HS4", destination = "NAICS", all = TRUE)
+#' concord_hs3_sitc4(sourcevar = c("120600", "120600"), origin = "HS3", destination = "SITC4", all = FALSE)
 #'
 #' # sourcevar has different number of digits, gives an error
-#' concord_hs4_naics(sourcevar = c("120600", "1206"), origin = "HS4", destination = "NAICS", all = FALSE)
+#' concord_hs3_sitc4(sourcevar = c("120600", "1206"), origin = "HS3", destination = "SITC4", all = FALSE)
+#'
+#' # sourcevar includes NAs, gives an error
+#' concord_hs3_sitc4(sourcevar = c("120600", NA), origin = "HS3", destination = "SITC4", all = FALSE)
 #'
 #' # if no match, will return NA
-#' concord_hs4_naics(sourcevar = c("120600", "120601"), origin = "HS4", destination = "NAICS", all = FALSE)
+#' concord_hs3_sitc4(sourcevar = c("120600", "120800"), origin = "HS3", destination = "SITC4", all = FALSE)
+#'
+#' # 5-digit inputs not supported and will give an error
+#' concord_hs3_sitc4(sourcevar = c("12060", "85460"), origin = "HS3", destination = "SITC4", all = TRUE)
 #'
 #' # 4-digit inputs
-#' concord_hs4_naics(sourcevar = c("1206", "8546"), origin = "HS4", destination = "NAICS", all = TRUE)
+#' concord_hs3_sitc4(sourcevar = c("1206", "8546"), origin = "HS3", destination = "SITC4", all = TRUE)
 #'
 #' # 4-digit outputs
-#' concord_hs4_naics(sourcevar = c("120600", "854690"), origin = "HS4", destination = "NAICS", dest.digit = 4, all = TRUE)
-concord_hs4_naics <- function (sourcevar,
+#' concord_hs3_sitc4(sourcevar = c("120600", "010111"), origin = "HS3", destination = "SITC4", dest.digit = 4, all = TRUE)
+concord_hs3_sitc4 <- function (sourcevar,
                                origin,
                                destination,
-                               dest.digit = 6,
+                               dest.digit = 5,
                                all = FALSE) {
 
   # load specific conversion dictionary
-  dictionary <- hs4.naics
+  dictionary <- hs3.sitc4
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
-  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
+  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes that are NA.")}
 
   # set acceptable digits for outputs
-  destination.digits <- c(2, 4, 6)
-  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for NAICS codes.")}
+  destination.digits <- c(1, 2, 3, 4, 5)
+  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4, 5-digit outputs for SITC codes.")}
 
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
@@ -59,7 +62,7 @@ concord_hs4_naics <- function (sourcevar,
 
   # set acceptable digits for inputs
   origin.digits <- c(2, 4, 6)
-  if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS4 codes.")}
+  if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS3 codes.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -91,27 +94,27 @@ concord_hs4_naics <- function (sourcevar,
 
   # calculate weights for matches
   dest.var <- dest.var %>%
-    rename(HS4 = 1,
-           NAICS = 2) %>%
-    group_by(HS4, NAICS) %>%
-    mutate(n = length(NAICS),
-           n = ifelse(is.na(NAICS), NA, n)) %>%
+    rename(HS3 = 1,
+           SITC4 = 2) %>%
+    group_by(HS3, SITC4) %>%
+    mutate(n = length(SITC4),
+           n = ifelse(is.na(SITC4), NA, n)) %>%
     distinct() %>%
-    group_by(HS4) %>%
+    group_by(HS3) %>%
     mutate(n_sum = sum(n),
            weight = n/n_sum) %>%
     arrange(dplyr::desc(weight)) %>%
     ungroup() %>%
     select(-n, -n_sum) %>%
-    rename(match = NAICS)
+    rename(match = SITC4)
 
   # keep info on all matches and weights?
   if (all == TRUE){
 
     # merge matches/weights according to input
-    out.merge <- nest_join(tibble(HS4 = sourcevar),
+    out.merge <- nest_join(tibble(HS3 = sourcevar),
                            dest.var,
-                           by = "HS4")
+                           by = "HS3")
 
     names(out.merge$dest.var) <- sourcevar
 
@@ -137,13 +140,13 @@ concord_hs4_naics <- function (sourcevar,
     # keep match with largest weight
     # if multiple matches have the same weights, keep first match
     dest.var.sub <- dest.var %>%
-      group_by(HS4) %>%
+      group_by(HS3) %>%
       slice(1) %>%
       ungroup() %>%
       select(-weight)
 
     # handle repeated inputs
-    out <- dest.var.sub[match(sourcevar, dest.var.sub$HS4), "match"] %>%
+    out <- dest.var.sub[match(sourcevar, dest.var.sub$HS3), "match"] %>%
       pull(match)
 
   }

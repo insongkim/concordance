@@ -41,17 +41,23 @@ concord_naics_hs4 <- function (sourcevar,
                                all = FALSE) {
 
   # load specific conversion dictionary
-  #dictionary <- get(load(paste(DATA_DIR, destination, "-", origin, ".RData", sep = "")))
-  #devtools::load_all(quiet = TRUE)
   dictionary <- hs4.naics
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
   if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
 
+  # set acceptable digits for outputs
+  destination.digits <- c(2, 4, 6)
+  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for HS4 codes.")}
+
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits.")}
+
+  # set acceptable digits for inputs
+  origin.digits <- c(2, 4, 6)
+  if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -86,7 +92,8 @@ concord_naics_hs4 <- function (sourcevar,
     rename(NAICS = 1,
            HS4 = 2) %>%
     group_by(NAICS, HS4) %>%
-    mutate(n = length(HS4)) %>%
+    mutate(n = length(HS4),
+           n = ifelse(is.na(HS4), NA, n)) %>%
     distinct() %>%
     group_by(NAICS) %>%
     mutate(n_sum = sum(n),

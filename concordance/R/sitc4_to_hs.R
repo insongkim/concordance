@@ -41,17 +41,23 @@ concord_sitc4_hs <- function (sourcevar,
                               all = FALSE) {
 
   # load specific conversion dictionary
-  #dictionary <- get(load(paste(DATA_DIR, destination, "-", origin, ".RData", sep = "")))
-  #devtools::load_all(quiet = TRUE)
   dictionary <- hs.sitc4
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
   if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA")}
 
+  # set acceptable digits for outputs
+  destination.digits <- c(2, 4, 6, 10)
+  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6, or 10-digit outputs for HS codes.")}
+
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits.")}
+
+  # set acceptable digits for inputs
+  origin.digits <- c(1, 2, 3, 4, 5)
+  if ((!digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for SITC codes.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -86,7 +92,8 @@ concord_sitc4_hs <- function (sourcevar,
     rename(SITC4 = 1,
            HS = 2) %>%
     group_by(SITC4, HS) %>%
-    mutate(n = length(HS)) %>%
+    mutate(n = length(HS),
+           n = ifelse(is.na(HS), NA, n)) %>%
     distinct() %>%
     group_by(SITC4) %>%
     mutate(n_sum = sum(n),

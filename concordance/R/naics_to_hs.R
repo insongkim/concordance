@@ -35,23 +35,29 @@
 #' # 4-digit outputs
 #' concord_naics_hs(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "HS", dest.digit = 4, all = FALSE)
 concord_naics_hs <- function (sourcevar,
-                                  origin,
-                                  destination,
-                                  dest.digit = 6,
-                                  all = FALSE) {
+                              origin,
+                              destination,
+                              dest.digit = 6,
+                              all = FALSE) {
 
   # load specific conversion dictionary
-  #dictionary <- get(load(paste(DATA_DIR, destination, "-", origin, ".RData", sep = "")))
-  #devtools::load_all(quiet = TRUE)
   dictionary <- hs.naics
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
   if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
 
+  # set acceptable digits for outputs
+  destination.digits <- c(2, 4, 6, 10)
+  if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6, 10-digit outputs for HS codes.")}
+
   # check whether input codes have the same digits
   digits <- unique(nchar(sourcevar))
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits.")}
+
+  # set acceptable digits for inputs
+  origin.digits <- c(2, 4, 6)
+  if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
 
   # get column names of dictionary
   origin.codes <- names(dictionary)
@@ -86,7 +92,8 @@ concord_naics_hs <- function (sourcevar,
     rename(NAICS = 1,
            HS = 2) %>%
     group_by(NAICS, HS) %>%
-    mutate(n = length(HS)) %>%
+    mutate(n = length(HS),
+           n = ifelse(is.na(HS), NA, n)) %>%
     distinct() %>%
     group_by(NAICS) %>%
     mutate(n_sum = sum(n),

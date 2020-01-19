@@ -117,6 +117,7 @@ get_desc(sourcevar = "8546", origin = "HS")
 concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
 get_desc(sourcevar = c("22240", "77324"), origin = "SITC4")
 
+concord_v2(sourcevar = c("710820", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
 
 ################################################################################
 ## SITC4 --> HS

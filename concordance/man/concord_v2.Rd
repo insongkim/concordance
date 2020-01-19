@@ -9,9 +9,9 @@ concord_v2(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: HS, HS0, HS1, NAICS, SITC4.}
+\item{origin}{A string setting the input coding scheme. Currently supports: HS, HS0, HS1, HS2, HS3, HS4, NAICS, SITC4.}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: HS, HS0, HS1, NAICS, SITC4.}
+\item{destination}{A string setting the output coding scheme. Currently supports: HS, HS0, HS1, HS2, HS3, HS4, NAICS, SITC4.}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 4 digits.}
 
@@ -57,5 +57,13 @@ concord_v2(sourcevar = c("111120", "326199"), origin = "NAICS", destination = "H
 
 # HS <--> SITC4
 concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
-concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS", dest.digit = 6, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS", dest.digit = 10, all = FALSE)
+
+# HS0 <--> SITC4
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS0", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS0", dest.digit = 6, all = FALSE)
+
+# HS1 <--> SITC4
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS1", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS1", dest.digit = 6, all = FALSE)
 }

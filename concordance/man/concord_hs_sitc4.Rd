@@ -48,6 +48,9 @@ concord_hs_sitc4(sourcevar = c("1206000069", NA), origin = "HS", destination = "
 # if no match, will return NA
 concord_hs_sitc4(sourcevar = c("1206000069", "1206000062"), origin = "HS", destination = "SITC4", all = FALSE)
 
+# 5-digit inputs not supported and will give an error
+concord_hs_sitc4(sourcevar = c("12060", "85460"), origin = "HS", destination = "SITC4", all = TRUE)
+
 # 4-digit inputs
 concord_hs_sitc4(sourcevar = c("1206", "8546"), origin = "HS", destination = "SITC4", all = TRUE)
 
