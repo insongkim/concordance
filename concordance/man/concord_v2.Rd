@@ -66,4 +66,16 @@ concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS0
 # HS1 <--> SITC4
 concord_v2(sourcevar = c("120600", "854690"), origin = "HS1", destination = "SITC4", dest.digit = 5, all = FALSE)
 concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS1", dest.digit = 6, all = FALSE)
+
+# HS2 <--> SITC4
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS2", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS2", dest.digit = 6, all = FALSE)
+
+# HS3 <--> SITC4
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS3", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS3", dest.digit = 6, all = FALSE)
+
+# HS4 <--> SITC4
+concord_v2(sourcevar = c("120600", "854690"), origin = "HS4", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS4", dest.digit = 6, all = FALSE)
 }

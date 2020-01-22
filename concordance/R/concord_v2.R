@@ -75,8 +75,9 @@ concord_v2 <- function (sourcevar,
   origin <- toupper(origin)
   destination <- toupper(destination)
 
-  # HS to NAICS
-  if (origin == "HS" & destination == "NAICS") {
+  # HS to/from NAICS
+  if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4") & destination == "NAICS") |
+      (origin == "NAICS" & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4"))) {
 
     out <- concord_hs_naics(sourcevar,
                             origin,
@@ -84,212 +85,15 @@ concord_v2 <- function (sourcevar,
                             dest.digit,
                             all)
 
-  # NAICS to HS
-  } else if (origin == "NAICS" & destination == "HS") {
+  # HS to/from SITC4
+  } else if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4") & destination == "SITC4") |
+             (origin == "SITC4" & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4"))) {
 
-    out <- concord_naics_hs(sourcevar,
-                            origin,
-                            destination,
-                            dest.digit,
-                            all)
-
-  # HS0 to NAICS
-  } else if (origin == "HS0" & destination == "NAICS") {
-
-    out <- concord_hs0_naics(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # NAICS to HS0
-  } else if (origin == "NAICS" & destination == "HS0") {
-
-    out <- concord_naics_hs0(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS1 to NAICS
-  } else if (origin == "HS1" & destination == "NAICS") {
-
-    out <- concord_hs1_naics(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # NAICS to HS1
-  } else if (origin == "NAICS" & destination == "HS1") {
-
-    out <- concord_naics_hs1(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS2 to NAICS
-  } else if (origin == "HS2" & destination == "NAICS") {
-
-    out <- concord_hs2_naics(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # NAICS to HS2
-  } else if (origin == "NAICS" & destination == "HS2") {
-
-    out <- concord_naics_hs2(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-    # HS3 to NAICS
-  } else if (origin == "HS3" & destination == "NAICS") {
-
-    out <- concord_hs3_naics(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-    # NAICS to HS3
-  } else if (origin == "NAICS" & destination == "HS3") {
-
-    out <- concord_naics_hs3(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-    # HS4 to NAICS
-  } else if (origin == "HS4" & destination == "NAICS") {
-
-    out <- concord_hs4_naics(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-    # NAICS to HS4
-  } else if (origin == "NAICS" & destination == "HS4") {
-
-    out <- concord_naics_hs4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS to SITC4
-  } else if (origin == "HS" & destination == "SITC4") {
-
-    out <- concord_hs_sitc4(sourcevar,
-                            origin,
-                            destination,
-                            dest.digit,
-                            all)
-
-  # SITC4 to HS
-  } else if (origin == "SITC4" & destination == "HS") {
-
-    out <- concord_sitc4_hs(sourcevar,
-                            origin,
-                            destination,
-                            dest.digit,
-                            all)
-
-  # HS0 to SITC4
-  } else if (origin == "HS0" & destination == "SITC4") {
-
-    out <- concord_hs0_sitc4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # SITC4 to HS0
-  } else if (origin == "SITC4" & destination == "HS0") {
-
-    out <- concord_sitc4_hs0(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS1 to SITC4
-  } else if (origin == "HS1" & destination == "SITC4") {
-
-    out <- concord_hs1_sitc4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # SITC4 to HS1
-  } else if (origin == "SITC4" & destination == "HS1") {
-
-    out <- concord_sitc4_hs1(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS2 to SITC4
-  } else if (origin == "HS2" & destination == "SITC4") {
-
-    out <- concord_hs2_sitc4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # SITC4 to HS2
-  } else if (origin == "SITC4" & destination == "HS2") {
-
-    out <- concord_sitc4_hs2(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS3 to SITC4
-  } else if (origin == "HS3" & destination == "SITC4") {
-
-    out <- concord_hs3_sitc4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # SITC4 to HS3
-  } else if (origin == "SITC4" & destination == "HS3") {
-
-    out <- concord_sitc4_hs3(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # HS4 to SITC4
-  } else if (origin == "HS4" & destination == "SITC4") {
-
-    out <- concord_hs4_sitc4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
-
-  # SITC4 to HS4
-  } else if (origin == "SITC4" & destination == "HS4") {
-
-    out <- concord_sitc4_hs4(sourcevar,
-                             origin,
-                             destination,
-                             dest.digit,
-                             all)
+    out <- concord_hs_sitc(sourcevar,
+                           origin,
+                           destination,
+                           dest.digit,
+                           all)
 
   } else {
 

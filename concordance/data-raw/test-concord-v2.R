@@ -117,7 +117,12 @@ get_desc(sourcevar = "8546", origin = "HS")
 concord_v2(sourcevar = c("120600", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
 get_desc(sourcevar = c("22240", "77324"), origin = "SITC4")
 
-concord_v2(sourcevar = c("710820", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = FALSE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS", destination = "SITC4", dest.digit = 5, all = TRUE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS0", destination = "SITC4", dest.digit = 5, all = TRUE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS1", destination = "SITC4", dest.digit = 5, all = TRUE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS2", destination = "SITC4", dest.digit = 5, all = TRUE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS3", destination = "SITC4", dest.digit = 5, all = TRUE)
+concord_v2(sourcevar = c("120600","710820", "854690"), origin = "HS4", destination = "SITC4", dest.digit = 5, all = TRUE)
 
 ################################################################################
 ## SITC4 --> HS
@@ -125,3 +130,10 @@ concord_v2(sourcevar = c("710820", "854690"), origin = "HS", destination = "SITC
 get_desc(sourcevar = c("22240", "77324"), origin = "SITC4")
 concord_v2(sourcevar = c("22240", "77324"), origin = "SITC4", destination = "HS", dest.digit = 6, all = FALSE)
 get_desc(sourcevar = c("120600", "854690"), origin = "HS")
+
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS0", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS1", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS2", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS3", dest.digit = 4, all = TRUE)
+concord_v2(sourcevar = c("2224", "7732"), origin = "SITC4", destination = "HS4", dest.digit = 4, all = TRUE)
