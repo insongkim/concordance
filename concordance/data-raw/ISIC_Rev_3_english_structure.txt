@@ -1,0 +1,530 @@
+Code          Description
+A             Agriculture, hunting and forestry
+01            Agriculture, hunting and related service activities
+011           Growing of crops; market gardening; horticulture
+0111          Growing of cereals and other crops n.e.c.
+0112          Growing of vegetables, horticultural specialties and nursery products
+0113          Growing of fruit, nuts, beverage and spice crops
+012           Farming of animals
+0121          Farming of cattle, sheep, goats, horses, asses, mules and hinnies; dairy farming
+0122          Other animal farming; production of animal products n.e.c.
+013           Growing of crops combined with farming of animals (mixed farming)
+0130          Growing of crops combined with farming of animals (mixed farming)
+014           Agricultural and animal husbandry service activities, except veterinary activities
+0140          Agricultural and animal husbandry service activities, except veterinary activities
+015           Hunting, trapping and game propagation including related service activities
+0150          Hunting, trapping and game propagation including related service activities
+02            Forestry, logging and related service activities
+020           Forestry, logging and related service activities
+0200          Forestry, logging and related service activities
+B             Fishing
+05            Fishing, operation of fish hatcheries and fish farms; service activities incidental to fishing
+050           Fishing, operation of fish hatcheries and fish farms; service activities incidental to fishing
+0500          Fishing, operation of fish hatcheries and fish farms; service activities incidental to fishing
+C             Mining and quarrying
+10            Mining of coal and lignite; extraction of peat
+101           Mining and agglomeration of hard coal
+1010          Mining and agglomeration of hard coal
+102           Mining and agglomeration of lignite
+1020          Mining and agglomeration of lignite
+103           Extraction and agglomeration of peat
+1030          Extraction and agglomeration of peat
+11            Extraction of crude petroleum and natural gas; service activities incidental to oil and gas extraction excluding surveying
+111           Extraction of crude petroleum and natural gas
+1110          Extraction of crude petroleum and natural gas
+112           Service activities incidental to oil and gas extraction excluding surveying
+1120          Service activities incidental to oil and gas extraction excluding surveying
+12            Mining of uranium and thorium ores
+120           Mining of uranium and thorium ores
+1200          Mining of uranium and thorium ores
+13            Mining of metal ores
+131           Mining of iron ores
+1310          Mining of iron ores
+132           Mining of non-ferrous metal ores, except uranium and thorium ores
+1320          Mining of non-ferrous metal ores, except uranium and thorium ores
+14            Other mining and quarrying
+141           Quarrying of stone, sand and clay
+1410          Quarrying of stone, sand and clay
+142           Mining and quarrying n.e.c.
+1421          Mining of chemical and fertilizer minerals
+1422          Extraction of salt
+1429          Other mining and quarrying n.e.c.
+D             Manufacturing
+15            Manufacture of food products and beverages
+151           Production, processing and preservation of meat, fish, fruit, vegetables, oils and fats
+1511          Production, processing and preserving of meat and meat products
+1512          Processing and preserving of fish and fish products
+1513          Processing and preserving of fruit and vegetables
+1514          Manufacture of vegetable and animal oils and fats
+152           Manufacture of dairy products
+1520          Manufacture of dairy products
+153           Manufacture of grain mill products, starches and starch products, and prepared animal feeds
+
+1531          Manufacture of grain mill products
+1532          Manufacture of starches and starch products
+1533          Manufacture of prepared animal feeds
+154           Manufacture of other food products
+1541          Manufacture of bakery products
+1542          Manufacture of sugar
+1543          Manufacture of cocoa, chocolate and sugar confectionery
+1544          Manufacture of macaroni, noodles, couscous and similar farinaceous products
+1549          Manufacture of other food products n.e.c.
+155           Manufacture of beverages
+1551          Distilling, rectifying and blending of spirits; ethyl alcohol production from fermented materials
+1552          Manufacture of wines
+1553          Manufacture of malt liquors and malt
+1554          Manufacture of soft drinks; production of mineral waters
+16            Manufacture of tobacco products
+160           Manufacture of tobacco products
+1600          Manufacture of tobacco products
+17            Manufacture of textiles
+171           Spinning, weaving and finishing of textiles
+1711          Preparation and spinning of textile fibres; weaving of textiles
+1712          Finishing of textiles
+172           Manufacture of other textiles
+1721          Manufacture of made-up textile articles, except apparel
+1722          Manufacture of carpets and rugs
+1723          Manufacture of cordage, rope, twine and netting
+1729          Manufacture of other textiles n.e.c.
+173           Manufacture of knitted and crocheted fabrics and articles
+1730          Manufacture of knitted and crocheted fabrics and articles
+18            Manufacture of wearing apparel; dressing and dyeing of fur
+181           Manufacture of wearing apparel, except fur apparel
+1810          Manufacture of wearing apparel, except fur apparel
+182           Dressing and dyeing of fur; manufacture of articles of fur
+1820          Dressing and dyeing of fur; manufacture of articles of fur
+19            Tanning and dressing of leather; manufacture of luggage, handbags, saddlery, harness and footwear
+191           Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness
+1911          Tanning and dressing of leather
+1912          Manufacture of luggage, handbags and the like, saddlery and harness
+192           Manufacture of footwear
+1920          Manufacture of footwear
+20            Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials
+201           Sawmilling and planing of wood
+2010          Sawmilling and planing of wood
+202           Manufacture of products of wood, cork, straw and plaiting materials
+2021          Manufacture of veneer sheets; manufacture of plywood, laminboard, particle board and other panels and boards
+2022          Manufacture of builders' carpentry and joinery
+2023          Manufacture of wooden containers
+2029          Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials
+21            Manufacture of paper and paper products
+210           Manufacture of paper and paper products
+2101          Manufacture of pulp, paper and paperboard
+2102          Manufacture of corrugated paper and paperboard and of containers of paper and paperboard
+2109          Manufacture of other articles of paper and paperboard
+22            Publishing, printing and reproduction of recorded media
+221           Publishing
+2211          Publishing of books, brochures, musical books and other publications
+2212          Publishing of newspapers, journals and periodicals
+2213          Publishing of recorded media
+2219          Other publishing
+222           Printing and service activities related to printing
+2221          Printing
+2222          Service activities related to printing
+223           Reproduction of recorded media
+2230          Reproduction of recorded media
+23            Manufacture of coke, refined petroleum products and nuclear fuel
+231           Manufacture of coke oven products
+2310          Manufacture of coke oven products
+232           Manufacture of refined petroleum products
+2320          Manufacture of refined petroleum products
+233           Processing of nuclear fuel
+2330          Processing of nuclear fuel
+24            Manufacture of chemicals and chemical products
+241           Manufacture of basic chemicals
+2411          Manufacture of basic chemicals, except fertilizers and nitrogen compounds
+2412          Manufacture of fertilizers and nitrogen compounds
+2413          Manufacture of plastics in primary forms and of synthetic rubber
+242           Manufacture of other chemical products
+2421          Manufacture of pesticides and other agro-chemical products
+2422          Manufacture of paints, varnishes and similar coatings, printing ink and mastics
+2423          Manufacture of pharmaceuticals, medicinal chemicals and botanical products
+2424          Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations
+2429          Manufacture of other chemical products n.e.c.
+243           Manufacture of man-made fibres
+2430          Manufacture of man-made fibres
+25            Manufacture of rubber and plastics products
+251           Manufacture of rubber products
+2511          Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres
+2519          Manufacture of other rubber products
+252           Manufacture of plastics products
+2520          Manufacture of plastics products
+26            Manufacture of other non-metallic mineral products
+261           Manufacture of glass and glass products
+2610          Manufacture of glass and glass products
+269           Manufacture of non-metallic mineral products n.e.c.
+2691          Manufacture of non-structural non-refractory ceramic ware
+2692          Manufacture of refractory ceramic products
+2693          Manufacture of structural non-refractory clay and ceramic products
+2694          Manufacture of cement, lime and plaster
+2695          Manufacture of articles of concrete, cement and plaster
+2696          Cutting, shaping and finishing of stone
+2699          Manufacture of other non-metallic mineral products n.e.c.
+27            Manufacture of basic metals
+271           Manufacture of basic iron and steel
+2710          Manufacture of basic iron and steel
+272           Manufacture of basic precious and non-ferrous metals
+2720          Manufacture of basic precious and non-ferrous metals
+273           Casting of metals
+2731          Casting of iron and steel
+2732          Casting of non-ferrous metals
+28            Manufacture of fabricated metal products, except machinery and equipment
+281           Manufacture of structural metal products, tanks, reservoirs and steam generators
+2811          Manufacture of structural metal products
+2812          Manufacture of tanks, reservoirs and containers of metal
+2813          Manufacture of steam generators, except central heating hot water boilers
+289           Manufacture of other fabricated metal products; metal working service activities
+2891          Forging, pressing, stamping and roll-forming of metal; powder metallurgy
+2892          Treatment and coating of metals; general mechanical engineering on a fee or contract basis
+2893          Manufacture of cutlery, hand tools and general hardware
+2899          Manufacture of other fabricated metal products n.e.c.
+29            Manufacture of machinery and equipment n.e.c.
+291           Manufacture of general purpose machinery
+2911          Manufacture of engines and turbines, except aircraft, vehicle and cycle engines
+2912          Manufacture of pumps, compressors, taps and valves
+2913          Manufacture of bearings, gears, gearing and driving elements
+2914          Manufacture of ovens, furnaces and furnace burners
+2915          Manufacture of lifting and handling equipment
+2919          Manufacture of other general purpose machinery
+292           Manufacture of special purpose machinery
+2921          Manufacture of agricultural and forestry machinery
+2922          Manufacture of machine-tools
+2923          Manufacture of machinery for metallurgy
+2924          Manufacture of machinery for mining, quarrying and construction
+2925          Manufacture of machinery for food, beverage and tobacco processing
+2926          Manufacture of machinery for textile, apparel and leather production
+2927          Manufacture of weapons and ammunition
+2929          Manufacture of other special purpose machinery
+293           Manufacture of domestic appliances n.e.c.
+2930          Manufacture of domestic appliances n.e.c.
+30            Manufacture of office, accounting and computing machinery
+300           Manufacture of office, accounting and computing machinery
+3000          Manufacture of office, accounting and computing machinery
+31            Manufacture of electrical machinery and apparatus n.e.c.
+311           Manufacture of electric motors, generators and transformers
+3110          Manufacture of electric motors, generators and transformers
+312           Manufacture of electricity distribution and control apparatus
+3120          Manufacture of electricity distribution and control apparatus
+313           Manufacture of insulated wire and cable
+3130          Manufacture of insulated wire and cable
+314           Manufacture of accumulators, primary cells and primary batteries
+3140          Manufacture of accumulators, primary cells and primary batteries
+315           Manufacture of electric lamps and lighting equipment
+3150          Manufacture of electric lamps and lighting equipment
+319           Manufacture of other electrical equipment n.e.c.
+3190          Manufacture of other electrical equipment n.e.c.
+32            Manufacture of radio, television and communication equipment and apparatus
+321           Manufacture of electronic valves and tubes and other electronic components
+3210          Manufacture of electronic valves and tubes and other electronic components
+322           Manufacture of television and radio transmitters and apparatus for line telephony and line telegraphy
+3220          Manufacture of television and radio transmitters and apparatus for line telephony and line telegraphy
+323           Manufacture of television and radio receivers, sound or video recording or reproducing apparatus, and associated goods
+3230          Manufacture of television and radio receivers, sound or video recording or reproducing apparatus, and associated goods
+33            Manufacture of medical, precision and optical instruments, watches and clocks
+331           Manufacture of medical appliances and instruments and appliances for measuring, checking, testing, navigating and other purposes, except optical instruments
+3311          Manufacture of medical and surgical equipment and orthopaedic appliances
+3312          Manufacture of instruments and appliances for measuring, checking, testing, navigating and other purposes, except industrial process control equipment
+3313          Manufacture of industrial process control equipment
+332           Manufacture of optical instruments and photographic equipment
+3320          Manufacture of optical instruments and photographic equipment
+333           Manufacture of watches and clocks
+3330          Manufacture of watches and clocks
+34            Manufacture of motor vehicles, trailers and semi-trailers
+341           Manufacture of motor vehicles
+3410          Manufacture of motor vehicles
+342           Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers
+3420          Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers
+343           Manufacture of parts and accessories for motor vehicles and their engines
+3430          Manufacture of parts and accessories for motor vehicles and their engines
+35            Manufacture of other transport equipment
+351           Building and repairing of ships and boats
+3511          Building and repairing of ships
+3512          Building and repairing of pleasure and sporting boats
+352           Manufacture of railway and tramway locomotives and rolling stock
+3520          Manufacture of railway and tramway locomotives and rolling stock
+353           Manufacture of aircraft and spacecraft
+3530          Manufacture of aircraft and spacecraft
+359           Manufacture of transport equipment n.e.c.
+3591          Manufacture of motorcycles
+3592          Manufacture of bicycles and invalid carriages
+3599          Manufacture of other transport equipment n.e.c.
+36            Manufacture of furniture; manufacturing n.e.c.
+361           Manufacture of furniture
+3610          Manufacture of furniture
+369           Manufacturing n.e.c.
+3691          Manufacture of jewellery and related articles
+3692          Manufacture of musical instruments
+3693          Manufacture of sports goods
+3694          Manufacture of games and toys
+3699          Other manufacturing n.e.c.
+37            Recycling
+371           Recycling of metal waste and scrap
+3710          Recycling of metal waste and scrap
+372           Recycling of non-metal waste and scrap
+3720          Recycling of non-metal waste and scrap
+E             Electricity, gas and water supply
+40            Electricity, gas, steam and hot water supply
+401           Production, collection and distribution of electricity
+4010          Production, collection and distribution of electricity
+402           Manufacture of gas; distribution of gaseous fuels through mains
+4020          Manufacture of gas; distribution of gaseous fuels through mains
+403           Steam and hot water supply
+4030          Steam and hot water supply
+41            Collection, purification and distribution of water
+410           Collection, purification and distribution of water
+4100          Collection, purification and distribution of water
+F             Construction
+45            Construction
+451           Site preparation
+4510          Site preparation
+452           Building of complete constructions or parts thereof; civil engineering
+4520          Building of complete constructions or parts thereof; civil engineering
+453           Building installation
+4530          Building installation
+454           Building completion
+4540          Building completion
+455           Renting of construction or demolition equipment with operator
+4550          Renting of construction or demolition equipment with operator
+G             Wholesale and retail trade; repair of motor vehicles, motorcycles and personal and household goods
+50            Sale, maintenance and repair of motor vehicles and motorcycles; retail sale of automotive fuel
+501           Sale of motor vehicles
+5010          Sale of motor vehicles
+502           Maintenance and repair of motor vehicles
+5020          Maintenance and repair of motor vehicles
+503           Sale of motor vehicle parts and accessories
+5030          Sale of motor vehicle parts and accessories
+504           Sale, maintenance and repair of motorcycles and related parts and accessories
+5040          Sale, maintenance and repair of motorcycles and related parts and accessories
+505           Retail sale of automotive fuel
+5050          Retail sale of automotive fuel
+51            Wholesale trade and commission trade, except of motor vehicles and motorcycles
+511           Wholesale on a fee or contract basis
+5110          Wholesale on a fee or contract basis
+512           Wholesale of agricultural raw materials, live animals, food, beverages and tobacco
+5121          Wholesale of agricultural raw materials and live animals
+5122          Wholesale of food, beverages and tobacco
+513           Wholesale of household goods
+5131          Wholesale of textiles, clothing  and footwear
+5139          Wholesale of other household goods
+514           Wholesale of non-agricultural intermediate products, waste and scrap
+5141          Wholesale of solid, liquid and gaseous fuels and related products
+5142          Wholesale of metals and metal ores
+5143          Wholesale of construction materials, hardware, plumbing and heating equipment and supplies
+5149          Wholesale of other intermediate products, waste and scrap
+515           Wholesale of machinery, equipment and supplies
+5150          Wholesale of machinery, equipment and supplies
+519           Other wholesale
+5190          Other wholesale
+52            Retail trade, except of motor vehicles and motorcycles; repair of personal and household goods
+521           Non-specialized retail trade in stores
+5211          Retail sale in non-specialized stores with food, beverages or tobacco predominating
+5219          Other retail sale in non-specialized stores
+522           Retail sale of food, beverages and tobacco in specialized stores
+5220          Retail sale of food, beverages and tobacco in specialized stores
+523           Other retail trade of new goods in specialized stores
+5231          Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles
+5232          Retail sale of textiles, clothing, footwear and leather goods
+5233          Retail sale of household appliances, articles and equipment
+5234          Retail sale of hardware, paint and glass
+5239          Other retail sale in specialized stores
+524           Retail sale of second-hand goods in stores
+5240          Retail sale of second-hand goods in stores
+525           Retail trade not in stores
+5251          Retail sale via mail order houses
+5252          Retail sale via stalls and markets
+5259          Other non-store retail sale
+526           Repair of personal and household goods
+5260          Repair of personal and household goods
+H             Hotels and restaurants
+55            Hotels and restaurants
+551           Hotels; camping sites and other provision of short-stay accommodation
+5510          Hotels; camping sites and other provision of short-stay accommodation
+552           Restaurants, bars and canteens
+5520          Restaurants, bars and canteens
+I             Transport, storage and communications
+60            Land transport; transport via pipelines
+601           Transport via railways
+6010          Transport via railways
+602           Other land transport
+6021          Other scheduled passenger land transport
+6022          Other non-scheduled passenger land transport
+6023          Freight transport by road
+603           Transport via pipelines
+6030          Transport via pipelines
+61            Water transport
+611           Sea and coastal water transport
+6110          Sea and coastal water transport
+612           Inland water transport
+6120          Inland water transport
+62            Air transport
+621           Scheduled air transport
+6210          Scheduled air transport
+622           Non-scheduled air transport
+6220          Non-scheduled air transport
+63            Supporting and auxiliary transport activities; activities of travel agencies
+630           Supporting and auxiliary transport activities; activities of travel agencies
+6301          Cargo handling
+6302          Storage and warehousing
+6303          Other supporting transport activities
+6304          Activities of travel agencies and tour operators; tourist assistance activities n.e.c.
+6309          Activities of other transport agencies
+64            Post and telecommunications
+641           Post and courier activities
+6411          National post activities
+6412          Courier activities other than national post activities
+642           Telecommunications
+6420          Telecommunications
+J             Financial intermediation
+65            Financial intermediation, except insurance and pension funding
+651           Monetary intermediation
+6511          Central banking
+6519          Other monetary intermediation
+659           Other financial intermediation
+6591          Financial leasing
+6592          Other credit granting
+6599          Other financial intermediation n.e.c.
+66            Insurance and pension funding, except compulsory social security
+660           Insurance and pension funding, except compulsory social security
+6601          Life insurance
+6602          Pension funding
+6603          Non-life insurance
+67            Activities auxiliary to financial intermediation
+671           Activities auxiliary to financial intermediation, except insurance and pension funding
+6711          Administration of financial markets
+6712          Security dealing activities
+6719          Activities auxiliary to financial intermediation n.e.c.
+672           Activities auxiliary to insurance and pension funding
+6720          Activities auxiliary to insurance and pension funding
+K             Real estate, renting and business activities
+70            Real estate activities
+701           Real estate activities with own or leased property
+7010          Real estate activities with own or leased property
+702           Real estate activities on a fee or contract basis
+7020          Real estate activities on a fee or contract basis
+71            Renting of machinery and equipment without operator and of personal and household goods
+711           Renting of transport equipment
+7111          Renting of land transport equipment
+7112          Renting of water transport equipment
+7113          Renting of air transport equipment
+712           Renting of other machinery and equipment
+7121          Renting of agricultural machinery and equipment
+7122          Renting of construction and civil engineering machinery and equipment
+7123          Renting of office machinery and equipment (including computers)
+7129          Renting of other machinery and equipment n.e.c.
+713           Renting of personal and household goods n.e.c.
+7130          Renting of personal and household goods n.e.c.
+72            Computer and related activities
+721           Hardware consultancy
+7210          Hardware consultancy
+722           Software consultancy and supply
+7220          Software consultancy and supply
+723           Data processing
+7230          Data processing
+724           Data base activities
+7240          Data base activities
+725           Maintenance and repair of office, accounting and computing machinery
+7250          Maintenance and repair of office, accounting and computing machinery
+729           Other computer related activities
+7290          Other computer related activities
+73            Research and development
+731           Research and experimental development on natural sciences and engineering (NSE)
+7310          Research and experimental development on natural sciences and engineering (NSE)
+732           Research and experimental development on social sciences and humanities (SSH)
+7320          Research and experimental development on social sciences and humanities (SSH)
+74            Other business activities
+741           Legal, accounting, book-keeping and auditing activities; tax consultancy; market research and public opinion polling; business and management consultancy
+7411          Legal activities
+7412          Accounting, book-keeping and auditing activities; tax consultancy
+7413          Market research and public opinion polling
+7414          Business and management consultancy activities
+742           Architectural, engineering and other technical activities
+7421          Architectural and engineering activities and related technical consultancy
+7422          Technical testing and analysis
+743           Advertising
+7430          Advertising
+749           Business activities n.e.c.
+7491          Labour recruitment and provision of personnel
+7492          Investigation and security activities
+7493          Building-cleaning activities
+7494          Photographic activities
+7495          Packaging activities
+7499          Other business activities n.e.c.
+L             Public administration and defence; compulsory social security
+75            Public administration and defence; compulsory social security
+751           Administration of the State and the economic and social policy of the community
+7511          General (Over-all) public service activities
+7512          Regulation of the activities of agencies that provide health care, education, cultural services and other social services excluding social security
+7513          Regulation of and contribution to more efficient operation of business
+7514          Ancillary service activities for the government as a whole
+752           Provision of services to the community as a whole
+7521          Foreign affairs
+7522          Defence activities
+7523          Public order and safety activities
+753           Compulsory social security activities
+7530          Compulsory social security activities
+M             Education
+80            Education
+801           Primary education
+8010          Primary education
+802           Secondary education
+8021          General secondary education
+8022          Technical and vocational secondary education
+803           Higher education
+8030          Higher education
+809           Adult and other education
+8090          Adult and other education
+N             Health and social work
+85            Health and social work
+851           Human health activities
+8511          Hospital activities
+8512          Medical and dental practice activities
+8519          Other human health activities
+852           Veterinary activities
+8520          Veterinary activities
+853           Social work activities
+8531          Social work with accommodation
+8532          Social work without accommodation
+O             Other community, social and personal service activities
+90            Sewage and refuse disposal, sanitation and similar activities
+900           Sewage and refuse disposal, sanitation and similar activities
+9000          Sewage and refuse disposal, sanitation and similar activities
+91            Activities of membership organizations n.e.c.
+911           Activities of business, employers and professional organizations
+9111          Activities of business and employers organizations
+9112          Activities of professional organizations
+912           Activities of trade unions
+9120          Activities of trade unions
+919           Activities of other membership organizations
+9191          Activities of religious organizations
+9192          Activities of political organizations
+9199          Activities of other membership organizations n.e.c.
+92            Recreational, cultural and sporting activities
+921           Motion picture, radio, television and other entertainment activities
+9211          Motion picture and video production and distribution
+9212          Motion picture projection
+9213          Radio and television activities
+9214          Dramatic arts, music and other arts activities
+9219          Other entertainment activities n.e.c.
+922           News agency activities
+9220          News agency activities
+923           Library, archives, museums and other cultural activities
+9231          Library and archives activities
+9232          Museums activities and preservation of historical sites and buildings
+9233          Botanical and zoological gardens and nature reserves activities
+924           Sporting and other recreational activities
+9241          Sporting activities
+9249          Other recreational activities
+93            Other service activities
+930           Other service activities
+9301          Washing, and (dry-) cleaning of textile and fur products
+9302          Hairdressing and other beauty treatment
+9303          Funeral and related activities
+9309          Other service activities n.e.c.
+P             Private households with employed persons
+95            Private households with employed persons
+950           Private households with employed persons
+9500          Private households with employed persons
+Q             Extra-territorial organizations and bodies
+99            Extra-territorial organizations and bodies
+990           Extra-territorial organizations and bodies
+9900          Extra-territorial organizations and bodies

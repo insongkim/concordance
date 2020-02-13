@@ -1,0 +1,166 @@
+{
+    "more": false,
+    "classCode": "BEC",
+    "className": "BEC",
+    "minimumInputLength": 0,
+    "results": [
+        {
+            "id": "ALL",
+            "text": "ALL - All BEC categories",
+            "parent": "#"
+        },
+        {
+            "id": "TOTAL",
+            "text": "TOTAL - Total of all BEC categories",
+            "parent": "#"
+        },
+        { "id": "AG1", "text": "AG1 - All 1-digit BEC commodities", "parent": "#" },
+        { "id": "AG2", "text": "AG2 - All 2-digit BEC commodities", "parent": "#" },
+        { "id": "AG3", "text": "AG3 - All 3-digit BEC commodities", "parent": "#" },
+        {
+            "id": "1",
+            "text": "1 - Food and beverages",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "2",
+            "text": "2 - Industrial supplies nes",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "3",
+            "text": "3 - Fuels and lubricants",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "4",
+            "text": "4 - Capital goods (except transport equipment), and parts and accessories thereof",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "5",
+            "text": "5 - Transport equipment, and parts and accessories thereof",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "6",
+            "text": "6 - Consumption goods nes",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "7",
+            "text": "7 - Goods nes",
+            "parent": "TOTAL"
+        },
+        {
+            "id": "11",
+            "text": "11 - Food and beverages, primary",
+            "parent": "1"
+        },
+        {
+            "id": "12",
+            "text": "12 - Food and beverages, processed",
+            "parent": "1"
+        },
+        {
+            "id": "21",
+            "text": "21 - Industrial supplies nes, primary",
+            "parent": "2"
+        },
+        {
+            "id": "22",
+            "text": "22 - Industrial supplies nes, processed",
+            "parent": "2"
+        },
+        {
+            "id": "31",
+            "text": "31 - Fuels and lubricants, primary",
+            "parent": "3"
+        },
+        {
+            "id": "32",
+            "text": "32 - Fuels and lubricants, processed",
+            "parent": "3"
+        },
+        {
+            "id": "41",
+            "text": "41 - Capital goods (except transport equipment)",
+            "parent": "4"
+        },
+        {
+            "id": "42",
+            "text": "42 - Parts and accessories of capital goods (except transport equipment)",
+            "parent": "4"
+        },
+        {
+            "id": "51",
+            "text": "51 - Transport equipment, passenger motor cars",
+            "parent": "5"
+        },
+        {
+            "id": "52",
+            "text": "52 - Transport equipment, other",
+            "parent": "5"
+        },
+        {
+            "id": "53",
+            "text": "53 - Parts and accessories of transport equipment",
+            "parent": "5"
+        },
+        {
+            "id": "61",
+            "text": "61 - Consumption goods nes, durable",
+            "parent": "6"
+        },
+        {
+            "id": "62",
+            "text": "62 - Consumption goods nes, semi-durable",
+            "parent": "6"
+        },
+        {
+            "id": "63",
+            "text": "63 - Consumption goods nes, non-durable",
+            "parent": "6"
+        },
+        {
+            "id": "111",
+            "text": "111 - Food and beverages, primary, mainly for industry",
+            "parent": "11"
+        },
+        {
+            "id": "112",
+            "text": "112 - Food and beverages, primary, mainly for household consumption",
+            "parent": "11"
+        },
+        {
+            "id": "121",
+            "text": "121 - Food and beverages, processed, mainly for industry",
+            "parent": "12"
+        },
+        {
+            "id": "122",
+            "text": "122 - Food and beverages, processed, mainly for household consumption",
+            "parent": "12"
+        },
+        {
+            "id": "321",
+            "text": "321 - Fuels and lubricants, processed, motor spirit",
+            "parent": "32"
+        },
+        {
+            "id": "322",
+            "text": "322 - Fuels and lubricants, processed (other than motor spirit)",
+            "parent": "32"
+        },
+        {
+            "id": "521",
+            "text": "521 - Transport equipment, other, industrial",
+            "parent": "52"
+        },
+        {
+            "id": "522",
+            "text": "522 - Transport equipment, other, non-industrial",
+            "parent": "52"
+        }
+    ]
+}

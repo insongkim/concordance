@@ -1,24 +1,18 @@
 #' Looking Up Product Description
 #'
-#' \code{get_desc} returns the description of product codes
+#' \code{get_desc} returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: HS, HS0, HS1, HS2, HS3, HS4, ISIC2, ISIC3, SITC1, SITC2, SITC3, SITC4, BEC, NAICS2012, NAICS2017. Note that descriptions for 10-digit HS codes are from the U.S. Census Bureau and thus are only applicable for U.S. trade data.
+#' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0", "HS1", "HS2", "HS3", "HS4", "HS5", "SITC1", "SITC2", "SITC3", "SITC4", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2", "ISIC3", "ISIC4", "BEC".
 #' @return A character vector giving the title/description of each element of the input codes.
-#' @import tidyverse
+#' @import tibble tidyr purrr dplyr stringr
 #' @export
 #' @examples
-#' # NAICS 2017
-#' get_desc(sourcevar = c("111120", "326199", "111120"), origin = "naics2017")
-#'
-#' # Returns NA when there are no matches and gives warning
-#' get_desc(sourcevar = c("111121", "326199", "111120", "111120"), origin = "naics2017")
-#'
-#' # NAICS 2012
-#' get_desc(sourcevar = c("111120", "326199", "111120"), origin = "naics2012")
-#'
 #' # HS
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS")
+#'
+#' # Returns NA when no concordances exist and gives warning message
+#' get_desc(sourcevar = c("120600", "120601", "854690"), origin = "HS")
 #'
 #' # HS0
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS0")
@@ -35,11 +29,29 @@
 #' # HS4
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS4")
 #'
+#' # HS5
+#' get_desc(sourcevar = c("120600", "854690"), origin = "HS5")
+#'
+#' # NAICS 2002
+#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2002")
+#'
+#' # NAICS 2007
+#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2007")
+#'
+#' # NAICS 2012
+#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2012")
+#'
+#' # NAICS 2017
+#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
+#'
 #' # ISIC2
 #' get_desc(sourcevar = c("3114", "3831"), origin = "ISIC2")
 #'
 #' # ISIC3
 #' get_desc(sourcevar = c("1512", "3110"), origin = "ISIC3")
+#'
+#' # ISIC4
+#' get_desc(sourcevar = c("1512", "3110"), origin = "ISIC4")
 #'
 #' # SITC1
 #' get_desc(sourcevar = c("4216", "7232"), origin = "SITC1")
@@ -64,76 +76,132 @@ get_desc <- function (sourcevar,
   # allow origin to be entered in any case
   origin <- toupper(origin)
 
-  # naics 2017
+  # load description data
   if (origin == "NAICS2017") {
 
-    desc.df <- naics2017.desc
+    desc.df <- concordance::naics2017_desc
 
   } else if (origin == "NAICS2012"){
 
-    desc.df <- naics2012.desc
+    desc.df <- concordance::naics2012_desc
+
+  } else if (origin == "NAICS2007"){
+
+    desc.df <- concordance::naics2007_desc
+
+  } else if (origin == "NAICS2002"){
+
+    desc.df <- concordance::naics2002_desc
 
   } else if (origin == "HS"){
 
-    desc.df <- hs.desc
+    desc.df <- concordance::hs_desc
 
   } else if (origin == "HS0"){
 
-    desc.df <- hs0.desc
+    desc.df <- concordance::hs0_desc
 
   } else if (origin == "HS1"){
 
-    desc.df <- hs1.desc
+    desc.df <- concordance::hs1_desc
 
   } else if (origin == "HS2"){
 
-    desc.df <- hs2.desc
+    desc.df <- concordance::hs2_desc
 
   } else if (origin == "HS3"){
 
-    desc.df <- hs3.desc
+    desc.df <- concordance::hs3_desc
 
   } else if (origin == "HS4"){
 
-    desc.df <- hs4.desc
+    desc.df <- concordance::hs4_desc
+
+  } else if (origin == "HS5"){
+
+    desc.df <- concordance::hs5_desc
 
   } else if (origin == "ISIC2"){
 
-    desc.df <- isic2.desc
+    desc.df <- concordance::isic2_desc
 
   } else if (origin == "ISIC3"){
 
-    desc.df <- isic3.desc
+    desc.df <- concordance::isic3_desc
+
+  } else if (origin == "ISIC4"){
+
+    desc.df <- concordance::isic4_desc
 
   } else if (origin == "SITC1"){
 
-    desc.df <- sitc1.desc
+    desc.df <- concordance::sitc1_desc
 
   } else if (origin == "SITC2"){
 
-    desc.df <- sitc2.desc
+    desc.df <- concordance::sitc2_desc
 
   } else if (origin == "SITC3"){
 
-    desc.df <- sitc3.desc
+    desc.df <- concordance::sitc3_desc
 
   } else if (origin == "SITC4"){
 
-    desc.df <- sitc4.desc
+    desc.df <- concordance::sitc4_desc
 
   } else if (origin == "BEC"){
 
-    desc.df <- bec.desc
+    desc.df <- concordance::bec_desc
 
   } else {
 
-    stop("Concordance not supported")
+    stop("Conversion dictionary not available.")
+
+  }
+
+  # check whether input codes have the same digits
+  digits <- unique(nchar(sourcevar))
+  if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
+
+  # set acceptable digits
+  if (origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5"){
+
+    origin.digits <- c(2, 4, 6)
+
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS codes.")}
+
+  } else if (origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017") {
+
+    origin.digits <- c(2, 3, 4, 5, 6)
+
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 3, 4, 5, 6-digit inputs for NAICS codes.")}
+
+  } else if (origin == "SITC1" | origin == "SITC2" | origin == "SITC3" | origin == "SITC4") {
+
+    origin.digits <- c(1, 2, 3, 4, 5)
+
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for SITC codes.")}
+
+  } else if (origin == "BEC") {
+
+    origin.digits <- c(1, 2, 3)
+
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC codes.")}
+
+  } else if (origin == "ISIC2" | origin == "ISIC3" | origin == "ISIC4") {
+
+    origin.digits <- c(1, 2, 3, 4)
+
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
+
+  } else {
+
+    stop("Concordance not supported.")
 
   }
 
   # check if concordance is available for sourcevar
-  all.origin.codes <- desc.df %>%
-    pull(code)
+  all.origin.codes <- desc.df$code
 
   # return NA and give warning message if concordance is missing
   if (!all(sourcevar %in% all.origin.codes)){

@@ -7,29 +7,53 @@ date()
 
 # load packages
 library(tidyverse)
+library(jsonlite)
 
-# load previously cleaned data
-load("./data/codedesc.rda")
+# # load previously cleaned data
+# load("./data/codedesc.rda")
 
 
 ################################################################################
-## NAICS 2017
+## NAICS 2002
 ################################################################################
-# load downloaded data from BLS
-# https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2017
-naics2017.desc <- read_csv("./data-raw/2017_titles_descriptions.csv", col_types = "cccc")
+# load downloaded data from Census
+# https://www.census.gov/eos/www/naics/reference_files_tools/2002/naics_6_02.txt
+naics2002_desc <- read_table("./data-raw/naics_2_6_02.txt",
+                             skip = 8, col_types = "cc",  col_names = FALSE)
 
 # rename
-names(naics2017.desc)
+names(naics2002_desc)
 
-naics2017.desc <- naics2017.desc %>%
-  select(NAICS, `2017 NAICS Full Title`) %>%
-  rename(code = NAICS,
-         desc  = `2017 NAICS Full Title`)
+naics2002_desc <- naics2002_desc %>%
+  rename(code = X1,
+         desc  = X2) %>%
+  mutate(code = str_trim(code, "both"))
 
 # save
-save(naics2017.desc,
-     file = "./data/naics2017-desc.RData")
+save(naics2002_desc,
+     file = "./data/naics2002_desc.RData")
+
+
+################################################################################
+## NAICS 2007
+################################################################################
+# load downloaded data from Census
+# https://www.census.gov/eos/www/naics/reference_files_tools/2007/naics07_6.txt
+naics2007_desc <- read_table("./data-raw/naics07.txt",
+                             skip = 2, col_types = "ccc", col_names = FALSE)
+
+# rename
+names(naics2007_desc)
+
+naics2007_desc <- naics2007_desc %>%
+  select(X2, X3) %>%
+  rename(code = X2,
+         desc  = X3) %>%
+  mutate(code = str_trim(code, "both"))
+
+# save
+save(naics2007_desc,
+     file = "./data/naics2007_desc.RData")
 
 
 ################################################################################
@@ -37,257 +61,306 @@ save(naics2017.desc,
 ################################################################################
 # load downloaded data from BLS
 # https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2012
-naics2012.desc <- read_csv("./data-raw/2012_titles_descriptions.csv", col_types = "cccc")
+naics2012_desc <- read_csv("./data-raw/2012_titles_descriptions.csv", col_types = "cccc")
 
 # rename
-names(naics2012.desc)
+names(naics2012_desc)
 
-naics2012.desc <- naics2012.desc %>%
+naics2012_desc <- naics2012_desc %>%
   select(NAICS, `2012 NAICS Full Title`) %>%
   rename(code = NAICS,
          desc  = `2012 NAICS Full Title`)
 
 # save
-save(naics2012.desc,
-     file = "./data/naics2012-desc.RData")
+save(naics2012_desc,
+     file = "./data/naics2012_desc.RData")
 
 
 ################################################################################
-## HS Combined
+## NAICS 2017
 ################################################################################
-# load 2019 Schedule B info from the Census Bureau
-# https://www.census.gov/foreign-trade/reference/codes/index.html#concordance
-hs.10d.exp.df <- read_table("./data-raw/hs-10d-2019-imp-code.txt", col_names = FALSE)
-hs.10d.imp.df <- read_table("./data-raw/hs-10d-2019-exp-code.txt", col_names = FALSE)
+# load downloaded data from BLS
+# https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2017
+naics2017_desc <- read_csv("./data-raw/2017_titles_descriptions.csv", col_types = "cccc")
 
-# add column names for export data following
-# https://www.census.gov/foreign-trade/schedules/b/2019/exp-stru.txt
-names(hs.10d.exp.df) <- c("COMMODITY", "Descrip_1", "Descrip_2",
-                          "QUANTITY_1", "QUANTITY_2",
-                          "SITC", "END_USE", "USDA", "NAICS", "HITECH")
+# rename
+names(naics2017_desc)
 
-# add column names for import data following
-# https://www.census.gov/foreign-trade/schedules/b/2019/imp-stru.txt
-names(hs.10d.imp.df) <- c("COMMODITY", "Descrip_1", "Descrip_2",
-                          "QUANTITY_1",
-                          "SITC", "END_USE", "USDA", "NAICS", "HITECH")
-
-# subset and combine
-hs.10d.exp.df <- hs.10d.exp.df %>%
-  select(COMMODITY, Descrip_2)
-hs.10d.imp.df <- hs.10d.imp.df %>%
-  select(COMMODITY, Descrip_2)
-
-hs.10d.df <- rbind(hs.10d.exp.df, hs.10d.imp.df)
-
-# rename vars
-hs.10d.df <- hs.10d.df %>%
-  arrange(COMMODITY) %>%
-  distinct() %>%
-  rename(code = COMMODITY,
-         desc = Descrip_2)
-
-# subset and rename
-names(codedesc)
-
-hs.desc <- codedesc %>%
-  select(HS, HS.Desc) %>%
-  distinct() %>%
-  rename(code = HS,
-         desc  = HS.Desc) %>%
-  mutate(desc = toupper(desc)) %>%
-  filter(!is.na(code)) %>%
-  arrange(code)
-
-# combine
-hs.desc <- rbind(hs.desc, hs.10d.df) %>%
-  arrange(code)
+naics2017_desc <- naics2017_desc %>%
+  select(NAICS, `2017 NAICS Full Title`) %>%
+  rename(code = NAICS,
+         desc  = `2017 NAICS Full Title`)
 
 # save
-save(hs.desc,
-     file = "./data/hs-desc.RData")
+save(naics2017_desc,
+     file = "./data/naics2017_desc.RData")
 
 
 ################################################################################
 ## HS0
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationH0.json
+# read json
+hs0.desc.r <- fromJSON(file.path("./data-raw", "classificationH0.json"))
 
-hs0.desc <- codedesc %>%
-  select(HS0, HS0.Desc) %>%
-  distinct() %>%
-  rename(code = HS0,
-         desc = HS0.Desc) %>%
-  filter(!is.na(code)) %>%
+hs0_desc <- hs0.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(hs0.desc,
-     file = "./data/hs0-desc.RData")
+save(hs0_desc,
+     file = "./data/hs0_desc.RData")
 
 
 ################################################################################
 ## HS1
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationH1.json
+# read json
+hs1.desc.r <- fromJSON(file.path("./data-raw", "classificationH1.json"))
 
-hs1.desc <- codedesc %>%
-  select(HS1, HS1.Desc) %>%
-  distinct() %>%
-  rename(code = HS1,
-         desc = HS1.Desc) %>%
-  filter(!is.na(code)) %>%
+hs1_desc <- hs1.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(hs1.desc,
-     file = "./data/hs1-desc.RData")
+save(hs1_desc,
+     file = "./data/hs1_desc.RData")
 
 
 ################################################################################
 ## HS2
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationH2.json
+# read json
+hs2.desc.r <- fromJSON(file.path("./data-raw", "classificationH2.json"))
 
-hs2.desc <- codedesc %>%
-  select(HS2, HS2.Desc) %>%
-  distinct() %>%
-  rename(code = HS2,
-         desc = HS2.Desc) %>%
-  filter(!is.na(code)) %>%
+hs2_desc <- hs2.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(hs2.desc,
-     file = "./data/hs2-desc.RData")
+save(hs2_desc,
+     file = "./data/hs2_desc.RData")
 
 
 ################################################################################
 ## HS3
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationH3.json
+# read json
+hs3.desc.r <- fromJSON(file.path("./data-raw", "classificationH3.json"))
 
-hs3.desc <- codedesc %>%
-  select(HS3, HS3.Desc) %>%
-  distinct() %>%
-  rename(code = HS3,
-         desc = HS3.Desc) %>%
-  filter(!is.na(code)) %>%
+hs3_desc <- hs3.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(hs3.desc,
-     file = "./data/hs3-desc.RData")
+save(hs3_desc,
+     file = "./data/hs3_desc.RData")
 
 
 ################################################################################
 ## HS4
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationH4.json
+# read json
+hs4.desc.r <- fromJSON(file.path("./data-raw", "classificationH4.json"))
 
-hs4.desc <- codedesc %>%
-  select(HS4, HS4.Desc) %>%
-  distinct() %>%
-  rename(code = HS4,
-         desc = HS4.Desc) %>%
-  filter(!is.na(code)) %>%
+hs4_desc <- hs4.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(hs4.desc,
-     file = "./data/hs4-desc.RData")
+save(hs4_desc,
+     file = "./data/hs4_desc.RData")
+
+
+################################################################################
+## HS5
+################################################################################
+# https://comtrade.un.org/data/cache/classificationH5.json
+# read json
+hs5.desc.r <- fromJSON(file.path("./data-raw", "classificationH5.json"))
+
+hs5_desc <- hs5.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
+  arrange(code)
+
+# save
+save(hs5_desc,
+     file = "./data/hs5_desc.RData")
+
+
+################################################################################
+## HS Combined
+################################################################################
+# combine all HS codes
+hs.desc <- rbind(hs0.desc %>% mutate(classification = "HS0"),
+                 hs1.desc %>% mutate(classification = "HS1"),
+                 hs2.desc %>% mutate(classification = "HS2"),
+                 hs3.desc %>% mutate(classification = "HS3"),
+                 hs4.desc %>% mutate(classification = "HS4"),
+                 hs5.desc %>% mutate(classification = "HS5"))
+
+# drop duplicates
+hs.desc <- hs.desc %>%
+  distinct_at(vars(code, desc), .keep_all = TRUE) %>%
+  arrange(code)
+
+# paste desc
+hs.desc <- hs.desc %>%
+  mutate(desc = paste(desc, " (", classification, ")", sep = ""))
+
+# check multiple entries
+check.df <- hs.desc %>%
+  group_by(code) %>%
+  mutate(n = length(desc)) %>%
+  filter(n > 1)
+
+# append desc from different years
+hs_desc <- hs.desc %>%
+  group_by(code) %>%
+  mutate(desc = paste0(desc, collapse = "; "),
+         n = length(desc)) %>%
+  slice(1) %>%
+  ungroup() %>%
+  mutate(desc = ifelse(n == 1, str_replace_all(desc, "\\(HS.*\\)$", ""), desc),
+         desc = str_trim(desc, side = "right")) %>%
+  select(code, desc)
+
+# save
+save(hs_desc,
+     file = "./data/hs_desc.RData")
 
 
 ################################################################################
 ## ISIC2
 ################################################################################
-# subset and rename
-names(codedesc)
+# load UN data
+# https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_2_english_structure.txt
+isic2.desc.r <- read_table("./data-raw/ISIC_Rev_2_english_structure.txt")
 
-isic2.desc <- codedesc %>%
-  select(ISIC2, ISIC2.Desc) %>%
-  distinct() %>%
-  rename(code = ISIC2,
-         desc = ISIC2.Desc) %>%
-  filter(!is.na(code)) %>%
-  arrange(code)
+isic2_desc <- isic2.desc.r %>%
+  rename(code = Code,
+         desc = Description)
 
 # save
-save(isic2.desc,
-     file = "./data/isic2-desc.RData")
+save(isic2_desc,
+     file = "./data/isic2_desc.RData")
 
 
 ################################################################################
 ## ISIC3
 ################################################################################
-# subset and rename
-names(codedesc)
+# load UN data
+# https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_3_english_structure.txt
+isic3.desc.r <- read_table("./data-raw/ISIC_Rev_3_english_structure.txt")
 
-isic3.desc <- codedesc %>%
-  select(ISIC3, ISIC3.Desc) %>%
-  distinct() %>%
-  rename(code = ISIC3,
-         desc = ISIC3.Desc) %>%
-  filter(!is.na(code)) %>%
-  arrange(code)
+isic3_desc <- isic3.desc.r %>%
+  rename(code = Code,
+         desc = Description)
 
 # save
-save(isic3.desc,
-     file = "./data/isic3-desc.RData")
+save(isic3_desc,
+     file = "./data/isic3_desc.RData")
+
+
+################################################################################
+## ISIC4
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_4_english_structure.txt
+isic4.desc.r <- read_delim("./data-raw/ISIC_Rev_4_english_structure.txt", delim = ",")
+
+isic4_desc <- isic4.desc.r %>%
+  rename(code = Code,
+         desc = Description)
+
+# save
+save(isic4_desc,
+     file = "./data/isic4_desc.RData")
 
 
 ################################################################################
 ## SITC1
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationS1.json
+# read json
+sitc1.desc.r <- fromJSON(file.path("./data-raw", "classificationS1.json"))
 
-sitc1.desc.r <- codedesc %>%
-  select(SITC1, SITC1.Desc) %>%
-  distinct() %>%
-  rename(code = SITC1,
-         desc = SITC1.Desc) %>%
-  filter(!is.na(code)) %>%
+sitc1.desc <- sitc1.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # add 5 digit description
-sitc1.desc.5d <- sitc1.desc.r %>%
+sitc1.desc.5d.1 <- sitc1.desc %>%
+  filter(nchar(code) == 4) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc1.desc.5d.2 <- sitc1.desc %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc1.desc.5d.3 <- sitc1.desc %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc1.desc.5d.4 <- sitc1.desc %>%
+  filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
 
 # add 4-digit description
-sitc1.desc.4d.1 <- sitc1.desc.r %>%
+sitc1.desc.4d.1 <- sitc1.desc %>%
   filter(nchar(code) == 3) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc1.desc.4d.2 <- sitc1.desc.r %>%
+sitc1.desc.4d.2 <- sitc1.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc1.desc.4d.3 <- sitc1.desc.r %>%
+sitc1.desc.4d.3 <- sitc1.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
 # add 3-digit description
-sitc1.desc.3d.1 <- sitc1.desc.r %>%
+sitc1.desc.3d.1 <- sitc1.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
-sitc1.desc.3d.2 <- sitc1.desc.r %>%
+sitc1.desc.3d.2 <- sitc1.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
 # add 2-digit description
-sitc1.desc.2d <- sitc1.desc.r %>%
+sitc1.desc.2d <- sitc1.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
 
 # combine
-sitc1.desc <- rbind(sitc1.desc.r, sitc1.desc.5d,
+sitc1.desc <- rbind(sitc1.desc,
+                    sitc1.desc.5d.1, sitc1.desc.5d.2, sitc1.desc.5d.3, sitc1.desc.5d.4,
                     sitc1.desc.4d.1, sitc1.desc.4d.2, sitc1.desc.4d.3,
                     sitc1.desc.3d.1, sitc1.desc.3d.2,
                     sitc1.desc.2d) %>%
@@ -297,60 +370,74 @@ sitc1.desc <- rbind(sitc1.desc.r, sitc1.desc.5d,
 # check
 sitc1.desc[duplicated(sitc1.desc$code),]
 
-sitc1.desc <- sitc1.desc[!duplicated(sitc1.desc$code),]
+sitc1_desc <- sitc1.desc[!duplicated(sitc1.desc$code),]
 
 # save
-save(sitc1.desc,
-     file = "./data/sitc1-desc.RData")
+save(sitc1_desc,
+     file = "./data/sitc1_desc.RData")
 
 
 ################################################################################
 ## SITC2
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationS2.json
+# read json
+sitc2.desc.r <- fromJSON(file.path("./data-raw", "classificationS2.json"))
 
-sitc2.desc.r <- codedesc %>%
-  select(SITC2, SITC2.Desc) %>%
-  distinct() %>%
-  rename(code = SITC2,
-         desc = SITC2.Desc) %>%
-  filter(!is.na(code)) %>%
+sitc2.desc <- sitc2.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # add 5 digit description
-sitc2.desc.5d <- sitc2.desc.r %>%
+sitc2.desc.5d.1 <- sitc2.desc %>%
+  filter(nchar(code) == 4) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc2.desc.5d.2 <- sitc2.desc %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc2.desc.5d.3 <- sitc2.desc %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc2.desc.5d.4 <- sitc2.desc %>%
+  filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
 
 # add 4-digit description
-sitc2.desc.4d.1 <- sitc2.desc.r %>%
+sitc2.desc.4d.1 <- sitc2.desc %>%
   filter(nchar(code) == 3) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc2.desc.4d.2 <- sitc2.desc.r %>%
+sitc2.desc.4d.2 <- sitc2.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc2.desc.4d.3 <- sitc2.desc.r %>%
+sitc2.desc.4d.3 <- sitc2.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
 # add 3-digit description
-sitc2.desc.3d.1 <- sitc2.desc.r %>%
+sitc2.desc.3d.1 <- sitc2.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
-sitc2.desc.3d.2 <- sitc2.desc.r %>%
+sitc2.desc.3d.2 <- sitc2.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
 # add 2-digit description
-sitc2.desc.2d <- sitc2.desc.r %>%
+sitc2.desc.2d <- sitc2.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
 
 # combine
-sitc2.desc <- rbind(sitc2.desc.r, sitc2.desc.5d,
+sitc2.desc <- rbind(sitc2.desc,
+                    sitc2.desc.5d.1, sitc2.desc.5d.2, sitc2.desc.5d.3, sitc2.desc.5d.4,
                     sitc2.desc.4d.1, sitc2.desc.4d.2, sitc2.desc.4d.3,
                     sitc2.desc.3d.1, sitc2.desc.3d.2,
                     sitc2.desc.2d) %>%
@@ -360,60 +447,74 @@ sitc2.desc <- rbind(sitc2.desc.r, sitc2.desc.5d,
 # check
 sitc2.desc[duplicated(sitc2.desc$code),]
 
-sitc2.desc <- sitc2.desc[!duplicated(sitc2.desc$code),]
+sitc2_desc <- sitc2.desc[!duplicated(sitc2.desc$code),]
 
 # save
-save(sitc2.desc,
-     file = "./data/sitc2-desc.RData")
+save(sitc2_desc,
+     file = "./data/sitc2_desc.RData")
 
 
 ################################################################################
 ## SITC3
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationS3.json
+# read json
+sitc3.desc.r <- fromJSON(file.path("./data-raw", "classificationS3.json"))
 
-sitc3.desc.r <- codedesc %>%
-  select(SITC3, SITC3.Desc) %>%
-  distinct() %>%
-  rename(code = SITC3,
-         desc = SITC3.Desc) %>%
-  filter(!is.na(code)) %>%
+sitc3.desc <- sitc3.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # add 5 digit description
-sitc3.desc.5d <- sitc3.desc.r %>%
+sitc3.desc.5d.1 <- sitc3.desc %>%
+  filter(nchar(code) == 4) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc3.desc.5d.2 <- sitc3.desc %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc3.desc.5d.3 <- sitc3.desc %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc3.desc.5d.4 <- sitc3.desc %>%
+  filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
 
 # add 4-digit description
-sitc3.desc.4d.1 <- sitc3.desc.r %>%
+sitc3.desc.4d.1 <- sitc3.desc %>%
   filter(nchar(code) == 3) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc3.desc.4d.2 <- sitc3.desc.r %>%
+sitc3.desc.4d.2 <- sitc3.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc3.desc.4d.3 <- sitc3.desc.r %>%
+sitc3.desc.4d.3 <- sitc3.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
 # add 3-digit description
-sitc3.desc.3d.1 <- sitc3.desc.r %>%
+sitc3.desc.3d.1 <- sitc3.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
-sitc3.desc.3d.2 <- sitc3.desc.r %>%
+sitc3.desc.3d.2 <- sitc3.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
 # add 2-digit description
-sitc3.desc.2d <- sitc3.desc.r %>%
+sitc3.desc.2d <- sitc3.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
 
 # combine
-sitc3.desc <- rbind(sitc3.desc.r, sitc3.desc.5d,
+sitc3.desc <- rbind(sitc3.desc,
+                    sitc3.desc.5d.1, sitc3.desc.5d.2, sitc3.desc.5d.3, sitc3.desc.5d.4,
                     sitc3.desc.4d.1, sitc3.desc.4d.2, sitc3.desc.4d.3,
                     sitc3.desc.3d.1, sitc3.desc.3d.2,
                     sitc3.desc.2d) %>%
@@ -423,60 +524,74 @@ sitc3.desc <- rbind(sitc3.desc.r, sitc3.desc.5d,
 # check
 sitc3.desc[duplicated(sitc3.desc$code),]
 
-sitc3.desc <- sitc3.desc[!duplicated(sitc3.desc$code),]
+sitc3_desc <- sitc3.desc[!duplicated(sitc3.desc$code),]
 
 # save
-save(sitc3.desc,
-     file = "./data/sitc3-desc.RData")
+save(sitc3_desc,
+     file = "./data/sitc3_desc.RData")
 
 
 ################################################################################
 ## SITC4
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationS4.json
+# read json
+sitc4.desc.r <- fromJSON(file.path("./data-raw", "classificationS4.json"))
 
-sitc4.desc.r <- codedesc %>%
-  select(SITC4, SITC4.Desc) %>%
-  distinct() %>%
-  rename(code = SITC4,
-         desc = SITC4.Desc) %>%
-  filter(!is.na(code)) %>%
+sitc4.desc <- sitc4.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # add 5 digit description
-sitc4.desc.5d <- sitc4.desc.r %>%
+sitc4.desc.5d.1 <- sitc4.desc %>%
+  filter(nchar(code) == 4) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc4.desc.5d.2 <- sitc4.desc %>%
+  filter(nchar(code) == 3) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc4.desc.5d.3 <- sitc4.desc %>%
+  filter(nchar(code) == 2) %>%
+  mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
+
+sitc4.desc.5d.4 <- sitc4.desc %>%
+  filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 5, side = "right", pad = "0"))
 
 # add 4-digit description
-sitc4.desc.4d.1 <- sitc4.desc.r %>%
+sitc4.desc.4d.1 <- sitc4.desc %>%
   filter(nchar(code) == 3) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc4.desc.4d.2 <- sitc4.desc.r %>%
+sitc4.desc.4d.2 <- sitc4.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
-sitc4.desc.4d.3 <- sitc4.desc.r %>%
+sitc4.desc.4d.3 <- sitc4.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 4, side = "right", pad = "0"))
 
 # add 3-digit description
-sitc4.desc.3d.1 <- sitc4.desc.r %>%
+sitc4.desc.3d.1 <- sitc4.desc %>%
   filter(nchar(code) == 2) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
-sitc4.desc.3d.2 <- sitc4.desc.r %>%
+sitc4.desc.3d.2 <- sitc4.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 3, side = "right", pad = "0"))
 
 # add 2-digit description
-sitc4.desc.2d <- sitc4.desc.r %>%
+sitc4.desc.2d <- sitc4.desc %>%
   filter(nchar(code) == 1) %>%
   mutate(code = str_pad(code, width = 2, side = "right", pad = "0"))
 
 # combine
-sitc4.desc <- rbind(sitc4.desc.r, sitc4.desc.5d,
+sitc4.desc <- rbind(sitc4.desc,
+                    sitc4.desc.5d.1, sitc4.desc.5d.2, sitc4.desc.5d.3, sitc4.desc.5d.4,
                     sitc4.desc.4d.1, sitc4.desc.4d.2, sitc4.desc.4d.3,
                     sitc4.desc.3d.1, sitc4.desc.3d.2,
                     sitc4.desc.2d) %>%
@@ -486,28 +601,28 @@ sitc4.desc <- rbind(sitc4.desc.r, sitc4.desc.5d,
 # check
 sitc4.desc[duplicated(sitc4.desc$code),]
 
-sitc4.desc <- sitc4.desc[!duplicated(sitc4.desc$code),]
+sitc4_desc <- sitc4.desc[!duplicated(sitc4.desc$code),]
 
 # save
-save(sitc4.desc,
-     file = "./data/sitc4-desc.RData")
+save(sitc4_desc,
+     file = "./data/sitc4_desc.RData")
 
 
 ################################################################################
 ## BEC
 ################################################################################
-# subset and rename
-names(codedesc)
+# https://comtrade.un.org/data/cache/classificationBEC.json
+# read json
+bec.desc.r <- fromJSON(file.path("./data-raw", "classificationBEC.json"))
 
-bec.desc <- codedesc %>%
-  select(BEC, BEC.Desc) %>%
-  distinct() %>%
-  rename(code = BEC,
-         desc = BEC.Desc) %>%
-  filter(!is.na(code)) %>%
+bec_desc <- bec.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
   arrange(code)
 
 # save
-save(bec.desc,
-     file = "./data/bec-desc.RData")
+save(bec_desc,
+     file = "./data/bec_desc.RData")
 

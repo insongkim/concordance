@@ -1,0 +1,277 @@
+Code          Description
+1             Agriculture, Hunting, Forestry and Fishing
+11            Agriculture and Hunting
+111           Agriculture and livestock production
+1110          Agriculture and livestock production
+112           Agricultural services
+1120          Agricultural services
+113           Hunting, trapping and game propagation
+1130          Hunting, trapping and game propagation
+12            Forestry and logging
+121           Forestry
+1210          Forestry
+122           Logging
+1220          Logging
+13            Fishing
+130           Fishing
+1301          Ocean and coastal fishing
+1302          Fishing not elsewhere classified
+2             Mining and Quarrying
+21            Coal Mining
+210           Coal Mining
+2100          Coal Mining
+22            Crude Petroleum and Natural Gas Production
+220           Crude Petroleum and Natural Gas Production
+2200          Crude Petroleum and Natural Gas Production
+23            Metal Ore Mining
+230           Metal Ore Mining
+2301          Iron ore mining
+2302          Non-ferrous ore mining
+29            Other Mining
+290           Other Mining
+2901          Stone quarrying, clay and sand pits
+2902          Chemical and fertilizer mineral mining
+2903          Salt mining
+2909          Mining and quarrying not elsewhere classified
+3             Manufacturing
+31            Manufacture of Food, Beverages and Tobacco
+311-312       Food manufacturing
+3111          Slaughtering, preparing and preserving meat
+3112          Manufacture of dairy products
+3113          Canning and preserving of fruits and vegetables
+3114          Canning, preserving and processing of fish, crustaces and similar foods
+3115          Manufacture of vegetable and animal oils and fats
+3116          Grain mill products
+3117          Manufacture of bakery products
+3118          Sugar factories and refineries
+3119          Manufacture of cocoa, chocolate and sugar confectionery
+3121          Manufacture of food products not elsewhere classified
+3122          Manufacture of prepared animal feeds
+313           Beverage industries
+3131          Distilling, rectifying and blending spirits
+3132          Wine industries
+3133          Malt liquors and malt
+3134          Soft drinks and carbonated waters industries
+314           Tobacco manufactures
+3140          Tobacco manufactures
+32            Textile, Wearing Apparel and Leather Industries
+321           Manufacture of textiles
+3211          Spinning, weaving and finishing textiles
+3212          Manufacture of made-up textile goods except wearing apparel
+3213          Knitting mills
+3214          Manufacture of carpets and rugs
+3215          Cordage, rope and twine industries
+3219          Manufacture of textiles not elsewhere classified
+322           Manufacture of wearing apparel, except footwear
+3220          Manufacture of wearing apparel, except footwear
+323           Manufacture of leather and products of leather, leather substitutes and fur, except footwear and wearing apparel
+3231          Tanneries and leather finishing
+3232          Fur dressing and dyeing industries
+3233          Manufacture of products of leather and leather substitutes, except footwear and wearing apparel
+324           Manufacture of footwear, except vulcanized or moulded rubber or plastic footwear
+3240          Manufacture of footwear, except vulcanized or moulded rubber or plastic footwear
+33            Manufacture of Wood and Wood Products, Including Furniture
+331           Manufacture of wood and wood and cork products, except furniture
+3311          Sawmills, planing and other wood mills
+3312          Manufacture of wooden and cane containers and small cane ware
+3319          Manufacture of wood and cork products not elsewhere classified
+332           Manufacture of furniture and fixtures, except primarily of metal
+3320          Manufacture of furniture and fixtures, except primarily of metal
+34            Manufacture of Paper and Paper Products, Printing and Publishing
+341           Manufacture of paper and paper products
+3411          Manufacture of pulp, paper and paperboard
+3412          Manufacture of containers and boxes of paper and paperboard
+3419          Manufacture of pulp, paper and paperboard articles not elsewhere classified
+342           Printing, publishing and allied industries
+3420          Printing, publishing and allied industries
+35            Manufacture of Chemicals and Chemical, Petroleum, Coal, Rubber and Plastic Products
+351           Manufacture of industrial chemicals
+3511          Manufacture of basic industrial chemicals except fertilizers
+3512          Manufacture of fertilizers and pesticides
+3513          Manufacture of synthetic resins, plastic materials and man-made fibres except glass
+352           Manufacture of other chemical products
+3521          Manufacture of paints, varnishes and laquers
+3522          Manufacture of drugs and medicines
+3523          Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations
+3529          Manufacture of chemical products not elsewhere classified
+353           Petroleum refineries
+3530          Petroleum refineries
+354           Manufacture of miscellaneous products of petroleum and coal
+3540          Manufacture of miscellaneous products of petroleum and coal
+355           Manufacture of rubber products
+3551          Tyre and tube industries
+3559          Manufacture of rubber products not elsewhere classified
+356           Manufacture of plastic products not elsewhere classified
+3560          Manufacture of plastic products not elsewhere classified
+36            Manufacture of Non-Metallic Mineral Products, except Products of Petroleum and Coal
+361           Manufacture of pottery, china and earthenware
+3610          Manufacture of pottery, china and earthenware
+362           Manufacture of glass and glass products
+3620          Manufacture of glass and glass products
+369           Manufacture of other non-metallic mineral products
+3691          Manufacture of structural clay products
+3692          Manufacture of cement, lime and plaster
+3699          Manufacture of non-metallic mineral products not elsewhere classified
+37            Basic Metal Industries
+371           Iron and steel basic industries
+3710          Iron and steel basic industries
+372           Non-ferrous metal basic industries
+3720          Non-ferrous metal basic industries
+38            Manufacture of Fabricated Metal Products, Machinery and Equipment
+381           Manufacture of fabricated metal products, except machinery and equipment
+3811          Manufacture of cutlery, hand tools and general hardware
+3812          Manufacture of furniture and fixtures primarily of metal
+3813          Manufacture of structural metal products
+3819          Manufacture of fabricated metal products except machinery and equipment not elsewhere classified
+382           Manufacture of machinery except electrical
+3821          Manufacture of engines and turbines
+3822          Manufacture of agricultural machinery and equipment
+3823          Manufacture of metal and wood working machinery
+3824          Manufacture of special industrial machinery and equipment except metal and wood working machinery
+3825          Manufacture of office, computing and accounting machinery
+3829          Machinery and equipment except electrical not elsewhere classified
+383           Manufacture of electrical machinery apparatus, appliances and supplies
+3831          Manufacture of electrical industrial machinery and apparatus
+3832          Manufacture of radio, television and communication equipment and apparatus
+3833          Manufacture of electrical appliances and housewares
+3839          Manufacture of electrical apparatus and supplies not elsewhere classified
+384           Manufacture of transport equipment
+3841          Ship building and repairing
+3842          Manufacture of railroad eqquipment
+3843          Manufacture of motor vehicles
+3844          Manufacture of motorcycles and bicycles
+3845          Manufacture of aircraft
+3849          Manufacture of transport equipment not elsewhere classified
+385           Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere classified, and of photographic and optical goods
+3851          Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere classified
+3852          Manufacture of photographic and optical goods
+3853          Manufacture of watches and clocks
+39            Other Manufacturing Industries
+390           Other Manufacturing Industries
+3901          Manufacture of jewellery and related articles
+3902          Manufacture of musical instruments
+3903          Manufacture of sporting and athletic goods
+3909          Manufacturing industries not elsewhere classified
+4             Electricity, Gas and Water
+41            Electricity, Gas and Steam
+410           Electricity, Gas and Steam
+4101          Electric light and power
+4102          Gas manufacture and distribution
+4103          Steam and hot water supply
+42            Water Works and Supply
+420           Water Works and Supply
+4200          Water Works and Supply
+5             Construction
+50            Construction
+500           Construction
+5000          Construction
+6             Wholesale and Retail Trade and Restaurants and Hotels
+61            Wholesale Trade
+610           Wholesale Trade
+6100          Wholesale Trade
+62            Retail Trade
+620           Retail Trade
+6200          Retail Trade
+63            Restaurants and Hotels
+631           Restaurants, cafés and other eating and drinking places
+6310          Restaurants, cafés and other eating and drinking places
+632           Hotels, rooming houses, camps and other lodging places
+6320          Hotels, rooming houses, camps and other lodging places
+7             Transport, Storage and Communication
+71            Transport and Storage
+711           Land transport
+7111          Railway transport
+7112          Urban, suburban and inter-urban highway passenger transport
+7113          Other passenger land transport
+7114          Freight transport by road
+7115          Pipeline transport
+7116          Supporting services to land transport
+712           Water transport
+7121          Ocean and coastal water transport
+7122          Inland water transport
+7123          Supporting services to water transport
+713           Air transport
+7131          Air transport carriers
+7132          Supporting services to air transport
+719           Services allied to transport
+7191          Services incidental to transport
+7192          Storage and warehousing
+72            Communication
+720           Communication
+7200          Communication
+8             Financing, Insurance, Real Estate and Business Services
+81            Financial Institutions
+810           Financial Institutions
+8101          Monetary institutions
+8102          Other financial institutions
+8103          Financial services
+82            Insurance
+820           Insurance
+8200          Insurance
+83            Real estate and Business Services
+831           Real estate
+8310          Real estate
+832           Business services except machinery and equipment rental and leasing
+8321          Legal services
+8322          Accounting, auditing and bookkeeping services
+8323          Data processing and tabulating services
+8324          Engineering, architectural and technical services
+8325          Advertising services
+8329          Business services, except machinery and equipment rental and leasing, not elsewhere classified
+833           Machinery and equipment rental and leasing
+8330          Machinery and equipment rental and leasing
+9             Community, Social and Personal Services
+91            Public Administration and Defence
+910           Public Administration and Defence
+9100          Public Administration and Defence
+92            Sanitary and Similar Services
+920           Sanitary and Similar Services
+9200          Sanitary and Similar Services
+93            Social and Related Community Services
+931           Education services
+9310          Education services
+932           Research and scientific institutes
+9320          Research and scientific institutes
+933           Medical, dental, other health and veterinary services
+9331          Medical, dental and other health services
+9332          Veterinary services
+934           Welfare institutions
+9340          Welfare institutions
+935           Business, professional and labour associations
+9350          Business, professional and labour associations
+939           Other social and related community services
+9391          Religious organizations
+9399          Social and related community services not elsewhere classified
+94            Recreational and Cultural Services
+941           Motion picture and other entertainment services
+9411          Motion picture production
+9412          Motion picture distribution and projection
+9413          Radio and television broadcasting
+9414          Theatrical producers and entertainment services
+9415          Authors, music composers and other independent artists not elsewhere classified
+942           Libraries, museums, botanical and zoological gardens, and other cultural services not elsewhere classified
+9420          Libraries, museums, botanical and zoological gardens, and other cultural services not elsewhere classified
+949           Amusement and recreational services not elsewhere classified
+9490          Amusement and recreational services not elsewhere classified
+95            Personal and Household Services
+951           Repair services not elsewhere classified
+9511          Repair of footwear and other leather goods
+9512          Electrical repair shops
+9513          Repair of motor vehicles and motorcycles
+9514          Watch, clock and jewellery repair
+9519          Other repair shops not elsewhere classified
+952           Laundries, laundry services, and cleaning and dyeing plants
+9520          Laundries, laundry services, and cleaning and dyeing plants
+953           Domestic services
+9530          Domestic services
+959           Miscellaneous personal services
+9591          Barber and beauty shops
+9592          Photographic studios, including commercial photography
+9599          Personal services not elsewhere classified
+96            International and Other Extra-Territorial Bodies
+960           International and Other Extra-Territorial Bodies
+9600          International and Other Extra-Territorial Bodies
+0             Activities not Adequately Defined
+00            Activities not adequately defined
+000           Activities not adequately defined
+0000          Activities not adequately defined

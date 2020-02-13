@@ -2,11 +2,19 @@ Package: concordance
 Type: Package
 Title: Product Concordance
 Version: 2.0
-Date: 2020-01-07
+Date: 2020-02-12
 Author: Steven Liao, In Song Kim, Sayumi Miyano, Feng Zhu
 Maintainer: Steven Liao <steven.liao@ucr.edu>
-Description: A set of utilities for matching products in different classification codes used in international trade research. It supports concordance between HS (Combined), ISIC Rev. 2,3, and SITC1,2,3,4 product classification codes, as well as BEC, NAICS, and SIC classifications. It also provides code nomenclature / descriptions look-up, Rauch classification look-up (via concordance to SITC2) and trade elasticity look-up (via concordance to SITC2/3 or HS3.ss).
+Description: A set of utilities for matching products in different classification codes used in international trade research. It supports concordance between HS (HS0, HS1, HS2, HS3, HS4, HS5, Combined), SITC1,2,3,4 product classification codes, NAICS (Combined), as well as BEC, ISIC, and SIC classifications. It also provides code nomenclature / descriptions look-up, Rauch classification look-up (via concordance to SITC2) and trade elasticity look-up (via concordance to SITC2/3 or HS3.ss).
 License: GPL-2
-Depends: R (>= 2.10.1), tidyverse (>= 1.2.1)
+Depends: R (>= 3.5.0)
+Imports: 
+    dplyr (>= 0.8.3),
+    purrr (>= 0.3.2),
+    rlang (>= 0.4.0),
+    stringr (>= 1.4.0),
+    tibble (>= 2.1.3),
+    tidyr (>= 1.0.0)
 LazyData: true
 RoxygenNote: 6.1.1
+Encoding: UTF-8

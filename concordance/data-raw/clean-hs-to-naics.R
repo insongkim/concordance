@@ -7,6 +7,7 @@ date()
 
 # load packages
 library(tidyverse)
+library(readxl)
 
 
 ################################################################################
@@ -40,10 +41,10 @@ setdiff(exp.data$commodity, imp.data$commodity)
 setdiff(imp.data$commodity, exp.data$commodity)
 
 # combine all
-hs.naics <- rbind(exp.data, imp.data)
+hs_naics <- rbind(exp.data, imp.data)
 
 # clean
-hs.naics <- hs.naics %>%
+hs_naics <- hs_naics %>%
   select(commodity, naics) %>%
   filter(nchar(commodity) != 1) %>%
   filter(naics != ".") %>%
@@ -56,230 +57,240 @@ hs.naics <- hs.naics %>%
          NAICS_4d = str_sub(NAICS_6d, start = 1, end = 4),
          NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)) %>%
   arrange(HS_10d) %>%
-  distinct() %>%
-  select(HS_10d, HS_6d, HS_4d, HS_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
-
-# save
-save(hs.naics,
-     file = "./data/hs-naics.RData")
-
-
-################################################################################
-# HS0 to NAICs
-################################################################################
-# load previously cleaned concordance data
-load("./data-raw/concord_data.RData")
-
-# subset and clean
-hs0.df <- concord_data %>%
-  select(HS, HS0) %>%
-  distinct() %>%
-  filter(!(is.na(HS) & is.na(HS0))) %>%
-  filter(!(is.na(HS0)))
-
-# check
-all(nchar(hs0.df$HS) == 6)
-all(nchar(hs0.df$HS0) == 6)
-
-# subset
-hs.naics.sub <- hs.naics %>%
-  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  select(HS_6d, HS_4d, HS_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS0 with HS-NAICS concordance
-hs0.naics <- left_join(hs0.df, hs.naics.sub,
-                       by = c("HS" = "HS_6d"))
 
-# check
-hs0.naics %>% filter(is.na(NAICS_6d))
-# HS 710820, no matches
-# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+# missing HS4 codes: 710820
+# GOLD (INCLUDING GOLD PLATED WITH PLATINUM) UNWROUGHT OR IN SEMI-MANUFACTURED FORMS, OR IN POWDER FORM.- MONETARY
+# add
+# missing HS5 codes: "440111" "440112" "440140" "440311" "440312" "440321" "440322" "440323" "440324" "440325" "440326" "440393" "440394" "440395" "440396" "440397" "440398" "440611" "440612" "440691" "440692" "440711" "440712" "440719" "440796" "440797" "441233" "441234" "630420" "999999"
+miss.vec <- c("710820", "440111", "440112", "440140", "440311", "440312",
+              "440321", "440322", "440323", "440324", "440325", "440326",
+              "440393", "440394", "440395", "440396", "440397", "440398",
+              "440611", "440612", "440691", "440692", "440711", "440712",
+              "440719", "440796", "440797", "441233", "441234", "630420",
+              "999999")
+miss.rows <- tibble(HS_6d = miss.vec,
+                    HS_4d = str_sub(miss.vec, start = 1, end = 4),
+                    HS_2d = str_sub(miss.vec, start = 1, end = 2),
+                    NAICS_6d = NA,
+                    NAICS_4d = NA,
+                    NAICS_2d = NA)
 
-# clean
-hs0.naics <- hs0.naics %>%
-  select(-HS) %>%
-  rename(HS0_6d = HS0) %>%
-  mutate(HS0_4d = str_sub(HS0_6d, start = 1, end = 4),
-         HS0_2d = str_sub(HS0_6d, start = 1, end = 2)) %>%
-  arrange(HS0_6d) %>%
+# combine
+hs_naics <- rbind(hs_naics, miss.rows) %>%
+  arrange(HS_6d)
+
+# save
+save(hs_naics,
+     file = "./data/hs_naics.RData")
+
+
+################################################################################
+# HS0 to NAICS (combined)
+################################################################################
+# load WB data to get a list of HS0 codes
+# https://wits.worldbank.org/product_concordance.html
+# http://wits.worldbank.org/data/public/concordance/Concordance_H0_to_S4.zip
+hs0.vec <- read_csv("./data-raw/JobID-12_Concordance_H0_to_S4.CSV") %>%
+  select(`HS 1988/92 Product Code`, `SITC Revision 4 Product Code`) %>%
+  rename(HS0_6d = `HS 1988/92 Product Code`,
+         SITC4_5d = `SITC Revision 4 Product Code`) %>%
+  pull(HS0_6d) %>%
+  unique()
+
+# subset and clean
+hs0_naics <- hs_naics %>%
+  filter(HS_6d %in% hs0.vec) %>%
+  rename(HS0_6d = HS_6d,
+         HS0_4d = HS_4d,
+         HS0_2d = HS_2d) %>%
   distinct() %>%
   select(HS0_6d, HS0_4d, HS0_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
-
-# save
-save(hs0.naics,
-     file = "./data/hs0-naics.RData")
-
-
-################################################################################
-# HS1 to NAICs
-################################################################################
-# load previously cleaned concordance data
-load("./data-raw/concord_data.RData")
-
-# subset and clean
-hs1.df <- concord_data %>%
-  select(HS, HS1) %>%
-  distinct() %>%
-  filter(!(is.na(HS) & is.na(HS1))) %>%
-  filter(!(is.na(HS1)))
-
-# subset
-hs.naics.sub <- hs.naics %>%
-  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS1 with HS-NAICS concordance
-hs1.naics <- left_join(hs1.df, hs.naics.sub,
-                       by = c("HS" = "HS_6d"))
-
 # check
-hs1.naics %>% filter(is.na(NAICS_6d))
-# HS 710820, no matches
-# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+n_distinct(hs0_naics$HS0_6d)
+n_distinct(hs0.vec)
+setdiff(unique(hs0_naics$HS0_6d), hs0.vec)
+setdiff(hs0.vec, hs0_naics$HS0_6d)
+
+# save
+save(hs0_naics,
+     file = "./data/hs0_naics.RData")
 
 
-# clean
-hs1.naics <- hs1.naics %>%
-  select(-HS) %>%
-  rename(HS1_6d = HS1) %>%
-  mutate(HS1_4d = str_sub(HS1_6d, start = 1, end = 4),
-         HS1_2d = str_sub(HS1_6d, start = 1, end = 2)) %>%
-  arrange(HS1_6d) %>%
+################################################################################
+# HS1 to NAICS (combined)
+################################################################################
+# load WB data to get a list of HS1 codes
+# https://wits.worldbank.org/product_concordance.html
+# http://wits.worldbank.org/data/public/concordance/Concordance_H1_to_S4.zip
+hs1.vec <- read_csv("./data-raw/JobID-25_Concordance_H1_to_S4.CSV") %>%
+  select(`HS 1996 Product Code`, `SITC Revision 4 Product Code`) %>%
+  rename(HS1_6d = `HS 1996 Product Code`,
+         SITC4_5d = `SITC Revision 4 Product Code`) %>%
+  pull(HS1_6d) %>%
+  unique()
+
+# subset and clean
+hs1_naics <- hs_naics %>%
+  filter(HS_6d %in% hs1.vec) %>%
+  rename(HS1_6d = HS_6d,
+         HS1_4d = HS_4d,
+         HS1_2d = HS_2d) %>%
   distinct() %>%
   select(HS1_6d, HS1_4d, HS1_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
-
-# save
-save(hs1.naics,
-     file = "./data/hs1-naics.RData")
-
-
-################################################################################
-# HS2 to NAICs
-################################################################################
-# load previously cleaned concordance data
-load("./data-raw/concord_data.RData")
-
-# subset and clean
-hs2.df <- concord_data %>%
-  select(HS, HS2) %>%
-  distinct() %>%
-  filter(!(is.na(HS) & is.na(HS2))) %>%
-  filter(!(is.na(HS2)))
-
-# subset
-hs.naics.sub <- hs.naics %>%
-  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS2 with HS-NAICS concordance
-hs2.naics <- left_join(hs2.df, hs.naics.sub,
-                       by = c("HS" = "HS_6d"))
-
 # check
-hs2.naics %>% filter(is.na(NAICS_6d))
-# HS 710820, no matches
-# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+n_distinct(hs1_naics$HS1_6d)
+n_distinct(hs1.vec)
+setdiff(unique(hs1_naics$HS1_6d), hs1.vec)
+setdiff(hs1.vec, hs1_naics$HS1_6d)
 
-# clean
-hs2.naics <- hs2.naics %>%
-  select(-HS) %>%
-  rename(HS2_6d = HS2) %>%
-  mutate(HS2_4d = str_sub(HS2_6d, start = 1, end = 4),
-         HS2_2d = str_sub(HS2_6d, start = 1, end = 2)) %>%
-  arrange(HS2_6d) %>%
+# save
+save(hs1_naics,
+     file = "./data/hs1_naics.RData")
+
+
+################################################################################
+# HS2 to NAICS (combined)
+################################################################################
+# load WB data to get a list of HS1 codes
+# https://wits.worldbank.org/product_concordance.html
+# http://wits.worldbank.org/data/public/concordance/Concordance_H2_to_S4.zip
+hs2.vec <- read_csv("./data-raw/JobID-39_Concordance_H2_to_S4.CSV") %>%
+  select(`HS 2002 Product Code`, `SITC Revision 4 Product Code`) %>%
+  rename(HS2_6d = `HS 2002 Product Code`,
+         SITC4_5d = `SITC Revision 4 Product Code`) %>%
+  pull(HS2_6d) %>%
+  unique()
+
+# subset and clean
+hs2_naics <- hs_naics %>%
+  filter(HS_6d %in% hs2.vec) %>%
+  rename(HS2_6d = HS_6d,
+         HS2_4d = HS_4d,
+         HS2_2d = HS_2d) %>%
   distinct() %>%
   select(HS2_6d, HS2_4d, HS2_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
-
-# save
-save(hs2.naics,
-     file = "./data/hs2-naics.RData")
-
-################################################################################
-# HS3 to NAICs
-################################################################################
-# load previously cleaned concordance data
-load("./data-raw/concord_data.RData")
-
-# subset and clean
-hs3.df <- concord_data %>%
-  select(HS, HS3) %>%
-  distinct() %>%
-  filter(!(is.na(HS) & is.na(HS3))) %>%
-  filter(!(is.na(HS3)))
-
-# subset
-hs.naics.sub <- hs.naics %>%
-  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS3 with HS-NAICS concordance
-hs3.naics <- left_join(hs3.df, hs.naics.sub,
-                       by = c("HS" = "HS_6d"))
-
 # check
-hs3.naics %>% filter(is.na(NAICS_6d))
-# HS 710820, no matches
-# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
+n_distinct(hs2_naics$HS2_6d)
+n_distinct(hs2.vec)
+setdiff(unique(hs2_naics$HS2_6d), hs2.vec)
+setdiff(hs2.vec, hs2_naics$HS2_6d)
 
-# clean
-hs3.naics <- hs3.naics %>%
-  select(-HS) %>%
-  rename(HS3_6d = HS3) %>%
-  mutate(HS3_4d = str_sub(HS3_6d, start = 1, end = 4),
-         HS3_2d = str_sub(HS3_6d, start = 1, end = 2)) %>%
-  arrange(HS3_6d) %>%
+# save
+save(hs2_naics,
+     file = "./data/hs2_naics.RData")
+
+
+################################################################################
+# HS3 to NAICS (combined)
+################################################################################
+# load WB data to get a list of HS1 codes
+# https://wits.worldbank.org/product_concordance.html
+# http://wits.worldbank.org/data/public/concordance/Concordance_H3_to_S4.zip
+hs3.vec <- read_csv("./data-raw/JobID-54_Concordance_H3_to_S4.CSV") %>%
+  select(`HS 2007 Product Code`, `SITC Revision 4 Product Code`) %>%
+  rename(HS3_6d = `HS 2007 Product Code`,
+         SITC4_5d = `SITC Revision 4 Product Code`) %>%
+  pull(HS3_6d) %>%
+  unique()
+
+# subset and clean
+hs3_naics <- hs_naics %>%
+  filter(HS_6d %in% hs3.vec) %>%
+  rename(HS3_6d = HS_6d,
+         HS3_4d = HS_4d,
+         HS3_2d = HS_2d) %>%
   distinct() %>%
   select(HS3_6d, HS3_4d, HS3_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
-
-# save
-save(hs3.naics,
-     file = "./data/hs3-naics.RData")
-
-
-################################################################################
-# HS4 to NAICs
-################################################################################
-# load previously cleaned concordance data
-load("./data-raw/concord_data.RData")
-
-# subset and clean
-hs4.df <- concord_data %>%
-  select(HS, HS4) %>%
-  distinct() %>%
-  filter(!(is.na(HS) & is.na(HS4))) %>%
-  filter(!(is.na(HS4))) %>%
-  filter(!is.na(HS))
-
-# subset
-hs.naics.sub <- hs.naics %>%
-  select(HS_6d, NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
   distinct()
 
-# merge HS4 with HS-NAICS concordance
-hs4.naics <- left_join(hs4.df, hs.naics.sub,
-                       by = c("HS" = "HS_6d"))
-
 # check
-hs4.naics %>% filter(is.na(NAICS_6d))
-# HS 710820, no matches
-# (Gold (including gold plated with platinum) unwrought or in semimanufactured forms, or in powder form: Monetary)
-
-# clean
-hs4.naics <- hs4.naics %>%
-  select(-HS) %>%
-  rename(HS4_6d = HS4) %>%
-  mutate(HS4_4d = str_sub(HS4_6d, start = 1, end = 4),
-         HS4_2d = str_sub(HS4_6d, start = 1, end = 2)) %>%
-  arrange(HS4_6d) %>%
-  distinct() %>%
-  select(HS4_6d, HS4_4d, HS4_2d,
-         NAICS_6d, NAICS_4d, NAICS_2d)
+n_distinct(hs3_naics$HS3_6d)
+n_distinct(hs3.vec)
+setdiff(unique(hs3_naics$HS3_6d), hs3.vec)
+setdiff(hs3.vec, hs3_naics$HS3_6d)
 
 # save
-save(hs4.naics,
-     file = "./data/hs4-naics.RData")
+save(hs3_naics,
+     file = "./data/hs3_naics.RData")
+
+
+################################################################################
+# HS4 to NAICS (combined)
+################################################################################
+# load UN data to get HS codes
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/trade/classifications/tables/HS%202012%20to%20SITC%20Rev.4%20Correlation%20and%20conversion%20tables.xls
+hs4.vec <- read_excel("./data-raw/HS 2012 to SITC Rev.4 Correlation and conversion tables.xls",
+                          sheet = 2, col_names = TRUE, skip = 1) %>%
+  rename(HS4_6d = `HS 2012`,
+         SITC4_5d = `SITC Rev. 4`) %>%
+  mutate(HS4_6d = str_replace_all(HS4_6d, "\\.", "")) %>%
+  pull(HS4_6d)
+
+# subset and clean
+hs4_naics <- hs_naics %>%
+  filter(HS_6d %in% hs4.vec) %>%
+  rename(HS4_6d = HS_6d,
+         HS4_4d = HS_4d,
+         HS4_2d = HS_2d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs4_naics$HS4_6d)
+n_distinct(hs4.vec)
+setdiff(unique(hs4_naics$HS4_6d), hs4.vec)
+setdiff(hs4.vec, hs4_naics$HS4_6d)
+
+# save
+save(hs4_naics,
+     file = "./data/hs4_naics.RData")
+
+
+################################################################################
+# HS5 to NAICS (combined)
+################################################################################
+# load UN data to get HS codes
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/trade/classifications/tables/HS2017toSITC4ConversionAndCorrelationTables.xlsx
+hs5.vec <- read_excel("./data-raw/HS2017toSITC4ConversionAndCorrelationTables.xlsx") %>%
+  rename(HS5_6d = `From HS 2017`,
+         SITC4_5d = `To SITC Rev. 4`) %>%
+  pull(HS5_6d)
+
+# subset and clean
+hs5_naics <- hs_naics %>%
+  filter(HS_6d %in% hs5.vec) %>%
+  rename(HS5_6d = HS_6d,
+         HS5_4d = HS_4d,
+         HS5_2d = HS_2d) %>%
+  distinct() %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs5_naics$HS5_6d)
+n_distinct(hs5.vec)
+setdiff(unique(hs5_naics$HS5_6d), hs5.vec)
+setdiff(hs5.vec, hs5_naics$HS5_6d)
+
+# save
+save(hs5_naics,
+     file = "./data/hs5_naics.RData")

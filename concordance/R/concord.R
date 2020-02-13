@@ -1,61 +1,86 @@
-utils::globalVariables(c("concord_data","code_lengths"))
-concord <-
-function (sourcevar, origin, destination){
-    # Sanity check
-    if (length(sourcevar) == 0) { return(character(0)) }
-    origin_codes <- names(concord_data)
-    destination_codes <- names(concord_data)
-    # Allow origin / destination to be entered in any case
-    origin <- toupper(origin)
-    destination <- toupper(destination)
-    
-    # NAICS / SIC concordance (via HS) are in a separate table
-    # to avoid ballooning existing tables (since these have many many-to-many's)
-    if (origin %in% long_codes || destination %in% long_codes) { 
-      return(extend_concord(sourcevar, origin, destination)) }
-    else {
-      if (!origin %in% origin_codes){stop("Origin code not supported")}
-      if (!destination %in% destination_codes){stop("Destination code not supported")}
-      
-      dict <- na.omit(concord_data[,c(origin, destination)])
-      
-      # Pretruncate superlong inputs
-      isLong <- sapply(sourcevar, function(x) nchar(x) > 9)
-      longs <- sourcevar[isLong]
-      okays <- sourcevar[!isLong]
-      truncs <- sapply(longs, function(x) substr(x,1,9))
-      sourcevar <- c(okays, unlist(truncs))
-      
-      # If input is shorter than expected, pad it.
-      if (origin != 'BEC') {
-        isShort <- sapply(sourcevar, function(x) nchar(x) < code_lengths[origin])
-        shorts <- sourcevar[isShort]
-        fulls <- sourcevar[!isShort]
-        l <- code_lengths[origin]
-        pads <- sapply(shorts, function(x) (as.integer(x) * 10^(l-nchar(x))):((as.integer(x)+1) * 10^(l-nchar(x)) - 1))
-        # zero correction step
-        pads <- sapply(pads, function(y) sprintf(paste("%0",code_lengths[origin],"d",sep=""), as.integer(y)))
-        sourcevar <- c(fulls, unlist(pads))
-      }
-      # If input is longer than expected, truncate it.
-      isLong <- sapply(sourcevar, function(x) nchar(x) > code_lengths[origin])
-      longs <- sourcevar[isLong]
-      okays <- sourcevar[!isLong]
-      l <- code_lengths[origin]
-      truncs <- sapply(longs, function(x) floor(as.integer(x) / 10^(nchar(x)-l)) )
-      sourcevar <- c(okays, unlist(truncs))
-      # Now deal with leading zeroes (and remove duplicated inputs)
-      sourcevar <- sourcevar[!duplicated(sourcevar)]
-      
-      # Vector operations currently disabled.
-      # dest_var <- rep(NA, length(sourcevar)
-      matches <- which(dict[,origin] %in% sourcevar)
-      # differs <- sapply(dict[matches,origin], function(x) which(sourcevar %in% x))
-      # dest_var <- lapply(1:length(sourcevar), function(x) dict[matches[which(differs %in% x)],destination])
-      
-      dest_var <- dict[matches, destination]
-      dest_var <- dest_var[!duplicated(dest_var)]
-      
-      return(dest_var)
-    }
+#' Concording Different Classification Codes
+#'
+#' \code{concord} concords different classification codes used in international trade.
+#'
+#' @param sourcevar An input character vector of industry/product codes to be converted.
+#' @param origin A string setting the input coding scheme. Currently supports: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", "NAICS" (combined).
+#' @param destination A string setting the output coding scheme. Currently supports: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", "NAICS" (combined).
+#' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 4 digits.
+#' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
+#' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
+#' @export
+#' @references Concordances draw on HS-NAICS concordance tables from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>, HS-SITC concordance tables from the World Bank's World Integrated Trade Solution (WITS) <https://wits.worldbank.org/product_concordance.html>, and United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>.
+#' @examples
+#' # HS <--> NAICS
+#' concord(sourcevar = c("120600", "854690"),
+#'         origin = "HS", destination = "NAICS",
+#'         dest.digit = 6, all = TRUE)
+#' concord(sourcevar = c("111120", "326199"),
+#'         origin = "NAICS", destination = "HS",
+#'         dest.digit = 6, all = TRUE)
+#'
+#' # HS <--> SITC4
+#' concord(sourcevar = c("120600", "854690"),
+#'         origin = "HS", destination = "SITC4",
+#'         dest.digit = 5, all = TRUE)
+#' concord(sourcevar = c("22240", "77324"),
+#'         origin = "SITC4", destination = "HS",
+#'         dest.digit = 6, all = TRUE)
+#'
+#'# SITC4 <--> NAICS
+#' concord(sourcevar = c("22240", "77324"),
+#'         origin = "SITC4", destination = "NAICS",
+#'         dest.digit = 6, all = TRUE)
+#' concord(sourcevar = c("111120", "326199"),
+#'         origin = "NAICS", destination = "SITC4",
+#'         dest.digit = 5, all = TRUE)
+concord <- function (sourcevar,
+                     origin,
+                     destination,
+                     dest.digit = 4,
+                     all = FALSE) {
+
+  # allow origin / destination to be entered in any case
+  origin <- toupper(origin)
+  destination <- toupper(destination)
+
+  # HS to/from NAICS
+  if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & destination == "NAICS") |
+      (origin == "NAICS" & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+
+    out <- concord_hs_naics(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+
+  # HS to/from SITC
+  } else if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4")) |
+             ((origin == "SITC1" | origin == "SITC2" | origin == "SITC3"| origin == "SITC4") & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+
+    out <- concord_hs_sitc(sourcevar,
+                           origin,
+                           destination,
+                           dest.digit,
+                           all)
+
+  # SITC to/from NAICS
+  } else if (((origin == "SITC1" | origin == "SITC2" | origin == "SITC3"| origin == "SITC4") & (destination == "NAICS")) |
+             ((origin == "NAICS") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4"))) {
+
+    out <- concord_sitc_naics(sourcevar,
+                              origin,
+                              destination,
+                              dest.digit,
+                              all)
+
+  } else {
+
+    stop("Concordance not supported")
+
+  }
+
+  return(out)
+
 }
+
