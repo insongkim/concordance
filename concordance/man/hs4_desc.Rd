@@ -17,6 +17,6 @@ hs4_desc
 }
 \description{
 A dataset containing the description of products under the HS4
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

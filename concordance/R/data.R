@@ -1,7 +1,7 @@
 #' NAICS 2002 Description
 #'
 #' A dataset containing the description of products under the NAICS 2002
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 2341 rows and 2 variables:
 #' \describe{
@@ -14,7 +14,7 @@
 #' NAICS 2007 Description
 #'
 #' A dataset containing the description of products under the NAICS 2007
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 2328 rows and 2 variables:
 #' \describe{
@@ -27,7 +27,7 @@
 #' NAICS 2012 Description
 #'
 #' A dataset containing the description of products under the NAICS 2012
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 2229 rows and 2 variables:
 #' \describe{
@@ -40,7 +40,7 @@
 #' NAICS 2017 Description
 #'
 #' A dataset containing the description of products under the NAICS 2017
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 2217 rows and 2 variables:
 #' \describe{
@@ -53,7 +53,7 @@
 #' HS0 Description
 #'
 #' A dataset containing the description of products under the HS0
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6380 rows and 2 variables:
 #' \describe{
@@ -66,7 +66,7 @@
 #' HS1 Description
 #'
 #' A dataset containing the description of products under the HS1
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6473 rows and 2 variables:
 #' \describe{
@@ -79,7 +79,7 @@
 #' HS2 Description
 #'
 #' A dataset containing the description of products under the HS2
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6568 rows and 2 variables:
 #' \describe{
@@ -92,7 +92,7 @@
 #' HS3 Description
 #'
 #' A dataset containing the description of products under the HS3
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6372 rows and 2 variables:
 #' \describe{
@@ -105,7 +105,7 @@
 #' HS4 Description
 #'
 #' A dataset containing the description of products under the HS4
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6528 rows and 2 variables:
 #' \describe{
@@ -118,7 +118,7 @@
 #' HS5 Description
 #'
 #' A dataset containing the description of products under the HS5
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 6708 rows and 2 variables:
 #' \describe{
@@ -131,7 +131,7 @@
 #' HS (Combined) Description
 #'
 #' A dataset containing the description of products under the HS (Combined)
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 7911 rows and 2 variables:
 #' \describe{
@@ -143,7 +143,7 @@
 #' ISIC2 Description
 #'
 #' A dataset containing the description of products under the ISIC2
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 276 rows and 2 variables:
 #' \describe{
@@ -156,7 +156,7 @@
 #' ISIC3 Description
 #'
 #' A dataset containing the description of products under the ISIC3
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 528 rows and 2 variables:
 #' \describe{
@@ -169,7 +169,7 @@
 #' ISIC4 Description
 #'
 #' A dataset containing the description of products under the ISIC4
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 766 rows and 2 variables:
 #' \describe{
@@ -182,7 +182,7 @@
 #' SITC1 Description
 #'
 #' A dataset containing the description of products under the SITC1
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 3024 rows and 2 variables:
 #' \describe{
@@ -195,7 +195,7 @@
 #' SITC2 Description
 #'
 #' A dataset containing the description of products under the SITC2
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 3988 rows and 2 variables:
 #' \describe{
@@ -208,7 +208,7 @@
 #' SITC3 Description
 #'
 #' A dataset containing the description of products under the SITC3
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 5951 rows and 2 variables:
 #' \describe{
@@ -221,7 +221,7 @@
 #' SITC4 Description
 #'
 #' A dataset containing the description of products under the SITC4
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 7239 rows and 2 variables:
 #' \describe{
@@ -234,7 +234,7 @@
 #' BEC Description
 #'
 #' A dataset containing the description of products under the BEC
-#' classification. The variables are as follows:
+#' classification.
 #'
 #' @format A data frame with 29 rows and 2 variables:
 #' \describe{
@@ -247,7 +247,6 @@
 #' HS0-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5012 rows and 8 variables:
 #' \describe{
@@ -266,7 +265,6 @@
 #' HS0-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5017 rows and 8 variables:
 #' \describe{
@@ -285,7 +283,6 @@
 #' HS0-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5017 rows and 8 variables:
 #' \describe{
@@ -304,7 +301,6 @@
 #' HS0-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5018 rows and 8 variables:
 #' \describe{
@@ -323,7 +319,6 @@
 #' HS1-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS1 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5106 rows and 8 variables:
 #' \describe{
@@ -342,7 +337,6 @@
 #' HS1-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS1 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5111 rows and 8 variables:
 #' \describe{
@@ -361,7 +355,6 @@
 #' HS1-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS1 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5111 rows and 8 variables:
 #' \describe{
@@ -380,7 +373,6 @@
 #' HS1-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS1 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5111 rows and 8 variables:
 #' \describe{
@@ -399,7 +391,6 @@
 #' HS2-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS2 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5217 rows and 8 variables:
 #' \describe{
@@ -418,7 +409,6 @@
 #' HS2-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS2 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5222 rows and 8 variables:
 #' \describe{
@@ -437,7 +427,6 @@
 #' HS2-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS2 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5222 rows and 8 variables:
 #' \describe{
@@ -456,7 +445,6 @@
 #' HS2-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS2 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5220 rows and 8 variables:
 #' \describe{
@@ -475,7 +463,6 @@
 #' HS3-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS3 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5045 rows and 8 variables:
 #' \describe{
@@ -494,7 +481,6 @@
 #' HS3-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS3 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5050 rows and 8 variables:
 #' \describe{
@@ -513,7 +499,6 @@
 #' HS3-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS3 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5050 rows and 8 variables:
 #' \describe{
@@ -532,7 +517,6 @@
 #' HS3-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS3 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5050 rows and 8 variables:
 #' \describe{
@@ -551,7 +535,6 @@
 #' HS4-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS4 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5199 rows and 8 variables:
 #' \describe{
@@ -570,7 +553,6 @@
 #' HS4-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS4 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5205 rows and 8 variables:
 #' \describe{
@@ -589,7 +571,6 @@
 #' HS4-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS4 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5206 rows and 8 variables:
 #' \describe{
@@ -608,7 +589,6 @@
 #' HS4-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS4 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5205 rows and 8 variables:
 #' \describe{
@@ -627,7 +607,6 @@
 #' HS5-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS5 and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5381 rows and 8 variables:
 #' \describe{
@@ -646,7 +625,6 @@
 #' HS5-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS5 and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5387 rows and 8 variables:
 #' \describe{
@@ -665,7 +643,6 @@
 #' HS5-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS5 and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5387 rows and 8 variables:
 #' \describe{
@@ -684,7 +661,6 @@
 #' HS5-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS5 and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 5387 rows and 8 variables:
 #' \describe{
@@ -703,7 +679,6 @@
 #' HS-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and SITC1 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 7683 rows and 8 variables:
 #' \describe{
@@ -722,7 +697,6 @@
 #' HS-SITC2 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and SITC2 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8346 rows and 8 variables:
 #' \describe{
@@ -741,7 +715,6 @@
 #' HS-SITC3 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and SITC3 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 6826 rows and 8 variables:
 #' \describe{
@@ -760,7 +733,6 @@
 #' HS-SITC4 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and SITC4 classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 6582 rows and 8 variables:
 #' \describe{
@@ -779,7 +751,6 @@
 #' HS-NAICS Concordance
 #'
 #' A dataset containing concordances between HS (combined) and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 10399 rows and 6 variables:
 #' \describe{
@@ -796,7 +767,6 @@
 #' HS0-NAICS Concordance
 #'
 #' A dataset containing concordances between HS0 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8058 rows and 6 variables:
 #' \describe{
@@ -813,7 +783,6 @@
 #' HS1-NAICS Concordance
 #'
 #' A dataset containing concordances between HS1 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8297 rows and 6 variables:
 #' \describe{
@@ -830,7 +799,6 @@
 #' HS2-NAICS Concordance
 #'
 #' A dataset containing concordances between HS2 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8609 rows and 6 variables:
 #' \describe{
@@ -847,7 +815,6 @@
 #' HS3-NAICS Concordance
 #'
 #' A dataset containing concordances between HS3 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8545 rows and 6 variables:
 #' \describe{
@@ -864,7 +831,6 @@
 #' HS4-NAICS Concordance
 #'
 #' A dataset containing concordances between HS4 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8790 rows and 6 variables:
 #' \describe{
@@ -881,7 +847,6 @@
 #' HS5-NAICS Concordance
 #'
 #' A dataset containing concordances between HS5 and NAICS (combined) classification.
-#' The variables are as follows:
 #'
 #' @format A data frame with 8973 rows and 6 variables:
 #' \describe{
@@ -898,7 +863,6 @@
 #' SITC1-NAICS Concordance
 #'
 #' A dataset containing concordances between SITC1 and NAICS (combined) classification via HS (combined).
-#' The variables are as follows:
 #'
 #' @format A data frame with 3797 rows and 8 variables:
 #' \describe{
@@ -917,7 +881,6 @@
 #' SITC2-NAICS Concordance
 #'
 #' A dataset containing concordances between SITC2 and NAICS (combined) classification via HS (combined).
-#' The variables are as follows:
 #'
 #' @format A data frame with 5065 rows and 8 variables:
 #' \describe{
@@ -936,7 +899,6 @@
 #' SITC3-NAICS Concordance
 #'
 #' A dataset containing concordances between SITC3 and NAICS (combined) classification via HS (combined).
-#' The variables are as follows:
 #'
 #' @format A data frame with 6024 rows and 8 variables:
 #' \describe{
@@ -955,7 +917,6 @@
 #' SITC4-NAICS Concordance
 #'
 #' A dataset containing concordances between SITC4 and NAICS (combined) classification via HS (combined).
-#' The variables are as follows:
 #'
 #' @format A data frame with 5714 rows and 8 variables:
 #' \describe{
@@ -970,3 +931,134 @@
 #' }
 #' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc4_naics"
+
+#' SITC2-SITC1 Concordance
+#'
+#' A dataset containing concordances between SITC2 and SITC1 classification.
+#'
+#' @format A data frame with 1833 rows and 10 variables:
+#' \describe{
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#'   \item{SITC1_5d}{5-digit SITC1 Code}
+#'   \item{SITC1_4d}{4-digit SITC1 Code}
+#'   \item{SITC1_3d}{3-digit SITC1 Code}
+#'   \item{SITC1_2d}{2-digit SITC1 Code}
+#'   \item{SITC1_1d}{1-digit SITC1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"sitc2_sitc1"
+
+#' SITC3-SITC1 Concordance
+#'
+#' A dataset containing concordances between SITC3 and SITC1 classification.
+#'
+#' @format A data frame with 3118 rows and 10 variables:
+#' \describe{
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#'   \item{SITC1_5d}{5-digit SITC1 Code}
+#'   \item{SITC1_4d}{4-digit SITC1 Code}
+#'   \item{SITC1_3d}{3-digit SITC1 Code}
+#'   \item{SITC1_2d}{2-digit SITC1 Code}
+#'   \item{SITC1_1d}{1-digit SITC1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"sitc3_sitc1"
+
+#' SITC4-SITC1 Concordance
+#'
+#' A dataset containing concordances between SITC4 and SITC1 classification.
+#'
+#' @format A data frame with 3199 rows and 10 variables:
+#' \describe{
+#'   \item{SITC4_5d}{5-digit SITC4 Code}
+#'   \item{SITC4_4d}{4-digit SITC4 Code}
+#'   \item{SITC4_3d}{3-digit SITC4 Code}
+#'   \item{SITC4_2d}{2-digit SITC4 Code}
+#'   \item{SITC4_1d}{1-digit SITC4 Code}
+#'   \item{SITC1_5d}{5-digit SITC1 Code}
+#'   \item{SITC1_4d}{4-digit SITC1 Code}
+#'   \item{SITC1_3d}{3-digit SITC1 Code}
+#'   \item{SITC1_2d}{2-digit SITC1 Code}
+#'   \item{SITC1_1d}{1-digit SITC1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"sitc4_sitc1"
+
+#' SITC3-SITC2 Concordance
+#'
+#' A dataset containing concordances between SITC3 and SITC2 classification.
+#'
+#' @format A data frame with 3121 rows and 10 variables:
+#' \describe{
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"sitc3_sitc2"
+
+#' SITC4-SITC2 Concordance
+#'
+#' A dataset containing concordances between SITC4 and SITC2 classification.
+#'
+#' @format A data frame with 3271 rows and 10 variables:
+#' \describe{
+#'   \item{SITC4_5d}{5-digit SITC4 Code}
+#'   \item{SITC4_4d}{4-digit SITC4 Code}
+#'   \item{SITC4_3d}{3-digit SITC4 Code}
+#'   \item{SITC4_2d}{2-digit SITC4 Code}
+#'   \item{SITC4_1d}{1-digit SITC4 Code}
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"sitc4_sitc2"
+
+#' A dataset containing concordances between SITC4 and SITC3 classification.
+#'
+#' @format A data frame with 3488 rows and 10 variables:
+#' \describe{
+#'   \item{SITC4_5d}{5-digit SITC4 Code}
+#'   \item{SITC4_4d}{4-digit SITC4 Code}
+#'   \item{SITC4_3d}{3-digit SITC4 Code}
+#'   \item{SITC4_2d}{2-digit SITC4 Code}
+#'   \item{SITC4_1d}{1-digit SITC4 Code}
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/sitcrev4.htm}
+"sitc4_sitc3"
+
+#' SITC2-Rauch Concordance
+#'
+#' A dataset containing concordances between SITC2 and Rauch's classification.
+#'
+#' @format A data frame with 1189 rows and 3 variables:
+#' \describe{
+#'   \item{SITC2}{SITC2 Code}
+#'   \item{CON}{Conservative classification}
+#'   \item{LIB}{Liberal classification}
+#' }
+#' @source Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
+"sitc2_rauch"

@@ -21,6 +21,5 @@ hs4_naics
 }
 \description{
 A dataset containing concordances between HS4 and NAICS (combined) classification.
-The variables are as follows:
 }
 \keyword{datasets}

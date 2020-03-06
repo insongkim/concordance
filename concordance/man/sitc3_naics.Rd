@@ -23,6 +23,5 @@ sitc3_naics
 }
 \description{
 A dataset containing concordances between SITC3 and NAICS (combined) classification via HS (combined).
-The variables are as follows:
 }
 \keyword{datasets}

@@ -17,6 +17,6 @@ sitc1_desc
 }
 \description{
 A dataset containing the description of products under the SITC1
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

@@ -1,5 +1,3 @@
-utils::globalVariables(c("n_sum", "weight"))
-
 #' Converting HS and NAICS Codes
 #'
 #' \code{concord_hs_naics} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from NAICS (combined) codes.
@@ -11,9 +9,10 @@ utils::globalVariables(c("n_sum", "weight"))
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
-#' @importFrom rlang := !!
+#' @importFrom rlang := !! .data
 #' @export
-#' @references Concordances draw on HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
+#' @source HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
+#' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' ## HS combined to NAICS
 #' # one input: one-to-one match
@@ -256,7 +255,7 @@ concord_hs_naics <- function (sourcevar,
     no.code <- sourcevar[!sourcevar %in% all.origin.codes]
     no.code <- paste0(no.code, collapse = ", ")
 
-    warning(paste(str_extract(origin.var, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
+    warning(paste("Matches for ", str_extract(origin.var, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
 
   }
 
@@ -274,11 +273,11 @@ concord_hs_naics <- function (sourcevar,
     distinct() %>%
     filter(!(is.na(n) & sum(!is.na(n)) > 0)) %>%
     group_by(!!as.name(origin)) %>%
-    mutate(n_sum = sum(n),
-           weight = n/n_sum) %>%
-    arrange(dplyr::desc(weight)) %>%
+    mutate(n_sum = sum(.data$n),
+           weight = .data$n/.data$n_sum) %>%
+    arrange(dplyr::desc(.data$weight)) %>%
     ungroup() %>%
-    select(-n, -n_sum) %>%
+    select(-n, -.data$n_sum) %>%
     rename(match = !!as.name(destination))
 
   # keep info on all matches and weights?
@@ -316,7 +315,7 @@ concord_hs_naics <- function (sourcevar,
       group_by(!!as.name(origin)) %>%
       slice(1) %>%
       ungroup() %>%
-      select(-weight)
+      select(-.data$weight)
 
     # handle repeated inputs
     out <- dest.var.sub[match(sourcevar, dest.var.sub %>% pull(!!as.name(origin))), "match"] %>%

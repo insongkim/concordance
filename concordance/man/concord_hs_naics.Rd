@@ -3,6 +3,9 @@
 \name{concord_hs_naics}
 \alias{concord_hs_naics}
 \title{Converting HS and NAICS Codes}
+\source{
+HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
+}
 \usage{
 concord_hs_naics(sourcevar, origin, destination, dest.digit = 6,
   all = FALSE)
@@ -23,6 +26,9 @@ The matched output(s) for each element of the input vector. Either a list object
 }
 \description{
 \code{concord_hs_naics} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from NAICS (combined) codes.
+}
+\note{
+Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 ## HS combined to NAICS
@@ -170,7 +176,4 @@ concord_hs_naics(sourcevar = c("1111", "3271"),
 concord_hs_naics(sourcevar = c("111120", "326199"),
                  origin = "NAICS", destination = "HS5",
                  dest.digit = 4, all = TRUE)
-}
-\references{
-Concordances draw on HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
 }

@@ -17,6 +17,6 @@ hs3_desc
 }
 \description{
 A dataset containing the description of products under the HS3
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

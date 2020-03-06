@@ -23,6 +23,5 @@ hs2_sitc3
 }
 \description{
 A dataset containing concordances between HS2 and SITC3 classification.
-The variables are as follows:
 }
 \keyword{datasets}

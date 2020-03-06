@@ -23,6 +23,5 @@ hs_sitc2
 }
 \description{
 A dataset containing concordances between HS (combined) and SITC2 classification.
-The variables are as follows:
 }
 \keyword{datasets}

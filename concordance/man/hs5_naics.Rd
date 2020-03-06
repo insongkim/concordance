@@ -21,6 +21,5 @@ hs5_naics
 }
 \description{
 A dataset containing concordances between HS5 and NAICS (combined) classification.
-The variables are as follows:
 }
 \keyword{datasets}

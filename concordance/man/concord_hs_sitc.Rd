@@ -3,6 +3,13 @@
 \name{concord_hs_sitc}
 \alias{concord_hs_sitc}
 \title{Converting HS and SITC Codes}
+\source{
+Concordance tables provided by:
+\itemize{
+  \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
+  \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
+}
+}
 \usage{
 concord_hs_sitc(sourcevar, origin, destination, dest.digit = 4,
   all = FALSE)
@@ -23,6 +30,9 @@ The matched output(s) for each element of the input vector. Either a list object
 }
 \description{
 \code{concord_hs_sitc} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
+}
+\note{
+Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 ## HS combined to SITC4
@@ -250,7 +260,4 @@ concord_hs_sitc(sourcevar = c("2224", "7732"),
 concord_hs_sitc(sourcevar = c("2224", "7732"),
                 origin = "SITC1", destination = "HS5",
                 dest.digit = 6, all = TRUE)
-}
-\references{
-Concordances draw on concordance tables provided by the World Bank's World Integrated Trade Solution (WITS) <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>.
 }

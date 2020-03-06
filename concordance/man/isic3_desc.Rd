@@ -17,6 +17,6 @@ isic3_desc
 }
 \description{
 A dataset containing the description of products under the ISIC3
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

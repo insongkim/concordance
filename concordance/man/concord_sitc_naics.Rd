@@ -3,6 +3,13 @@
 \name{concord_sitc_naics}
 \alias{concord_sitc_naics}
 \title{Converting SITC and NAICS Codes}
+\source{
+SITC-NAICS concordances are mapped through HS (combined):
+\itemize{
+  \item SITC-HS concordance tables are from the World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics (https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp).
+  \item HS-NAICS concordance tables are from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
+}
+}
 \usage{
 concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4,
   all = FALSE)
@@ -23,6 +30,9 @@ The matched output(s) for each element of the input vector. Either a list object
 }
 \description{
 \code{concord_sitc_naics} converts SITC codes (Revision 1, 2, 3, 4) to and from NAICS (combined) codes.
+}
+\note{
+Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
 ## SITC4 to NAICS
@@ -101,7 +111,4 @@ concord_sitc_naics(sourcevar = c("111120", "326199"),
 concord_sitc_naics(sourcevar = c("111120", "326199"),
                    origin = "NAICS", destination = "SITC1",
                    dest.digit = 4, all = TRUE)
-}
-\references{
-SITC-NAICS concordances are mapped through HS (combined). SITC-HS concordance tables are from the World Bank's World Integrated Trade Solution (WITS) <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics (https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp). HS-NAICS concordance tables are from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
 }

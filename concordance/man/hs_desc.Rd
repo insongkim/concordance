@@ -14,6 +14,6 @@ hs_desc
 }
 \description{
 A dataset containing the description of products under the HS (Combined)
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

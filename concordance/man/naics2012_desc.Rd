@@ -17,6 +17,6 @@ naics2012_desc
 }
 \description{
 A dataset containing the description of products under the NAICS 2012
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

@@ -23,6 +23,5 @@ hs5_sitc4
 }
 \description{
 A dataset containing concordances between HS5 and SITC4 classification.
-The variables are as follows:
 }
 \keyword{datasets}

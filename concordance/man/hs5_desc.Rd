@@ -17,6 +17,6 @@ hs5_desc
 }
 \description{
 A dataset containing the description of products under the HS5
-classification. The variables are as follows:
+classification.
 }
 \keyword{datasets}

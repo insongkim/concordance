@@ -17,6 +17,9 @@ A character vector giving the title/description of each element of the input cod
 \description{
 \code{get_desc} returns the description of product codes.
 }
+\note{
+Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+}
 \examples{
 # HS
 get_desc(sourcevar = c("120600", "854690"), origin = "HS")
