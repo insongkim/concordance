@@ -89,6 +89,15 @@ concord <- function (sourcevar,
                         dest.digit,
                         all)
 
+  # Within HS
+  } else if (((origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+
+    out <- concord_hs(sourcevar,
+                      origin,
+                      destination,
+                      dest.digit,
+                      all)
+
   } else {
 
     stop("Concordance not supported")

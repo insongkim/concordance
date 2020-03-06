@@ -73,46 +73,6 @@ concord_hs_naics(sourcevar = c("120600", "854690"),
                  origin = "HS", destination = "NAICS",
                  dest.digit = 4, all = TRUE)
 
-## HS0 to NAICS
-concord_hs_naics(sourcevar = c("1206", "8546"),
-                 origin = "HS0", destination = "NAICS",
-                 all = TRUE)
-concord_hs_naics(sourcevar = c("120600", "854690"),
-                 origin = "HS0", destination = "NAICS",
-                 dest.digit = 4, all = TRUE)
-
-## HS1 to NAICS
-concord_hs_naics(sourcevar = c("1206", "8546"),
-                 origin = "HS1", destination = "NAICS",
-                 all = TRUE)
-concord_hs_naics(sourcevar = c("120600", "854690"),
-                 origin = "HS1", destination = "NAICS",
-                 dest.digit = 4, all = TRUE)
-
-## HS2 to NAICS
-concord_hs_naics(sourcevar = c("1206", "8546"),
-                 origin = "HS2", destination = "NAICS",
-                 all = TRUE)
-concord_hs_naics(sourcevar = c("120600", "854690"),
-                 origin = "HS2", destination = "NAICS",
-                 dest.digit = 4, all = TRUE)
-
-## HS3 to NAICS
-concord_hs_naics(sourcevar = c("1206", "8546"),
-                 origin = "HS3", destination = "NAICS",
-                 all = TRUE)
-concord_hs_naics(sourcevar = c("120600", "854690"),
-                 origin = "HS3", destination = "NAICS",
-                 dest.digit = 4, all = TRUE)
-
-## HS4 to NAICS
-concord_hs_naics(sourcevar = c("1206", "8546"),
-                 origin = "HS4", destination = "NAICS",
-                 all = TRUE)
-concord_hs_naics(sourcevar = c("120600", "854690"),
-                 origin = "HS4", destination = "NAICS",
-                 dest.digit = 4, all = TRUE)
-
 ## HS5 to NAICS
 concord_hs_naics(sourcevar = c("1206", "8546"),
                  origin = "HS5", destination = "NAICS",
@@ -127,53 +87,5 @@ concord_hs_naics(sourcevar = c("1111", "3271"),
                  all = TRUE)
 concord_hs_naics(sourcevar = c("111120", "326199"),
                  origin = "NAICS", destination = "HS",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS0
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS0",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS0",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS1
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS1",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS1",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS2
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS2",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS2",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS3
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS3",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS3",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS4
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS4",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS4",
-                 dest.digit = 4, all = TRUE)
-
-## NAICS to HS5
-concord_hs_naics(sourcevar = c("1111", "3271"),
-                 origin = "NAICS", destination = "HS5",
-                 all = FALSE)
-concord_hs_naics(sourcevar = c("111120", "326199"),
-                 origin = "NAICS", destination = "HS5",
                  dest.digit = 4, all = TRUE)
 }

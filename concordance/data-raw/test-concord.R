@@ -423,3 +423,80 @@ concord(sourcevar = c("111120", "326199"),
         origin = "NAICS", destination = "SITC4",
         dest.digit = 5, all = TRUE)
 
+
+################################################################################
+## Within SITC
+################################################################################
+## SITC2 and SITC1
+concord(sourcevar = c("22240", "04110"), origin = "SITC2",
+             destination = "SITC1", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22180", "04100"), origin = "SITC1",
+             destination = "SITC2", dest.digit = 5, all = TRUE)
+
+## SITC3 and SITC1
+concord(sourcevar = c("22240", "04110"), origin = "SITC3",
+             destination = "SITC1", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22180", "04100"), origin = "SITC1",
+             destination = "SITC3", dest.digit = 5, all = TRUE)
+
+## SITC4 and SITC1
+concord(sourcevar = c("22240", "04110"), origin = "SITC4",
+             destination = "SITC1", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22180", "04100"), origin = "SITC1",
+             destination = "SITC4", dest.digit = 5, all = TRUE)
+
+## SITC3 and SITC2
+concord(sourcevar = c("22240", "04110"), origin = "SITC3",
+             destination = "SITC2", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22240", "04110"), origin = "SITC2",
+             destination = "SITC3", dest.digit = 5, all = TRUE)
+
+## SITC4 and SITC2
+concord(sourcevar = c("22240", "04110"), origin = "SITC4",
+             destination = "SITC2", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22240", "04110"), origin = "SITC2",
+             destination = "SITC4", dest.digit = 5, all = TRUE)
+
+## SITC4 and SITC3
+concord(sourcevar = c("22240", "04110"), origin = "SITC4",
+             destination = "SITC3", dest.digit = 5, all = TRUE)
+concord(sourcevar = c("22240", "04110"), origin = "SITC3",
+             destination = "SITC4", dest.digit = 5, all = TRUE)
+
+# Convert SITC1 to SITC4
+concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
+             destination = "SITC1", dest.digit = 5, all = TRUE)
+concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
+             destination = "SITC4", dest.digit = 5, all = TRUE)
+
+
+################################################################################
+## Within HS
+################################################################################
+concord(sourcevar = c("1206", "8546"),
+        origin = "HS5", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("1206", "8546"),
+        origin = "HS5", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("1206", "8546"),
+        origin = "HS5", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("1206", "8546"),
+        origin = "HS5", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("1206", "8546"),
+        origin = "HS5", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("010111", "382390"),
+        origin = "HS0", destination = "HS5",
+        dest.digit = 6, all = TRUE)
+
+concord(sourcevar = c("010111", "382390"),
+        origin = "HS0", destination = "HS5",
+        dest.digit = 4, all = TRUE)

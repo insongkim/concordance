@@ -6,7 +6,6 @@
 \source{
 Concordance tables provided by:
 \itemize{
-  \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 }
 }
@@ -35,39 +34,11 @@ The matched output(s) for each element of the input vector. Either a list object
 Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
-## SITC2 and SITC1
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC2",
-             destination = "SITC1", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
-             destination = "SITC2", dest.digit = 5, all = TRUE)
-
-## SITC3 and SITC1
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC3",
-             destination = "SITC1", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
-             destination = "SITC3", dest.digit = 5, all = TRUE)
-
-## SITC4 and SITC1
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
-             destination = "SITC1", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
-             destination = "SITC4", dest.digit = 5, all = TRUE)
-
-## SITC3 and SITC2
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC3",
-             destination = "SITC2", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC2",
-             destination = "SITC3", dest.digit = 5, all = TRUE)
-
-## SITC4 and SITC2
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
-             destination = "SITC2", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC2",
-             destination = "SITC4", dest.digit = 5, all = TRUE)
-
-## SITC4 and SITC3
+# Convert SITC4 to SITC3
 concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
              destination = "SITC3", dest.digit = 5, all = TRUE)
-concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC3",
+
+# Convert SITC1 to SITC4
+concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
              destination = "SITC4", dest.digit = 5, all = TRUE)
 }

@@ -3,7 +3,7 @@
 #' \code{get_desc} returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0", "HS1", "HS2", "HS3", "HS4", "HS5", "SITC1", "SITC2", "SITC3", "SITC4", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2", "ISIC3", "ISIC4", "BEC".
+#' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2", "ISIC3", "ISIC4", "BEC".
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @import tibble tidyr purrr dplyr stringr
 #' @export

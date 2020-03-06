@@ -26,24 +26,18 @@
 #' }
 #' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
+#' # SITC2 input
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "r")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "w")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "n")
 #'
-#' get_proddiff(sourcevar = c("2224", "0411"), origin = "SITC2", setting = "CON", prop = "")
-#' get_proddiff(sourcevar = c("222", "041"), origin = "SITC2", setting = "CON", prop = "")
-#'
+#' # Other SITC classifications
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC3", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC4", setting = "CON", prop = "")
 #'
+#' # Other classifications
 #' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "")
-#' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "LIB", prop = "")
-#'
-#' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "w")
-#' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "r")
-#' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "n")
-#'
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
 get_proddiff <- function (sourcevar,
                           origin,

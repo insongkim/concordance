@@ -76,39 +76,8 @@ concord_sitc_naics(sourcevar = c("2224", "0019"),
 concord_sitc_naics(sourcevar = c("22240", "00190"),
                    origin = "SITC4", destination = "NAICS",
                    dest.digit = 6, all = TRUE)
-
-## SITC3 to NAICS
-concord_sitc_naics(sourcevar = c("22240", "00190"),
-                   origin = "SITC3", destination = "NAICS",
-                   dest.digit = 6, all = TRUE)
-
-## SITC2 to NAICS (00190 does not exist in SITC2)
-concord_sitc_naics(sourcevar = c("22240", "00190"),
-                   origin = "SITC2", destination = "NAICS",
-                   dest.digit = 6, all = TRUE)
-
-## SITC1 to NAICS (22240, 00190 does not exist in SITC1)
-concord_sitc_naics(sourcevar = c("22240", "00190"),
-                   origin = "SITC1", destination = "NAICS",
-                   dest.digit = 6, all = TRUE)
-
 ## NAICS to SITC4
 concord_sitc_naics(sourcevar = c("111120", "326199"),
                    origin = "NAICS", destination = "SITC4",
-                   dest.digit = 4, all = TRUE)
-
-## NAICS to SITC3
-concord_sitc_naics(sourcevar = c("111120", "326199"),
-                   origin = "NAICS", destination = "SITC3",
-                   dest.digit = 4, all = TRUE)
-
-## NAICS to SITC2
-concord_sitc_naics(sourcevar = c("111120", "326199"),
-                   origin = "NAICS", destination = "SITC2",
-                   dest.digit = 4, all = TRUE)
-
-## NAICS to SITC1
-concord_sitc_naics(sourcevar = c("111120", "326199"),
-                   origin = "NAICS", destination = "SITC1",
                    dest.digit = 4, all = TRUE)
 }

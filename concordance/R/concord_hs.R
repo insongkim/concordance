@@ -1,11 +1,11 @@
-#' Concord Within SITC Codes
+#' Concord Within HS Codes
 #'
-#' \code{concord_sitc} converts codes within the SITC classification (Revision 1, 2, 3, 4).
+#' \code{concord_hs} converts codes within the HS classification (HS0, HS1, HS2, HS3, HS4, HS5).
 #'
-#' @param sourcevar An input character vector of SITC codes. The function accepts 1 to 5-digit SITC codes.
-#' @param origin A string setting the input industry classification: "SITC1", "SITC2", "SITC3", "SITC4".
-#' @param destination A string setting the output industry classification: "SITC1", "SITC2", "SITC3", "SITC4".
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit SITC codes. The default is 4 digits.
+#' @param sourcevar An input character vector of HS codes. The function accepts 2, 4, 6-digit HS codes.
+#' @param origin A string setting the input industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), and "HS5" (2017).
+#' @param destination A string setting the output industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), and "HS5" (2017).
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6-digit HS codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -15,45 +15,83 @@
 #' \itemize{
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+#' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
-#' # Convert SITC4 to SITC3
-#' concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
-#'              destination = "SITC3", dest.digit = 5, all = TRUE)
+#' # Convert HS5 to HS4
+#' concord(sourcevar = c("1206", "8546"),
+#'         origin = "HS5", destination = "HS4",
+#'         dest.digit = 4, all = TRUE)
 #'
-#' # Convert SITC1 to SITC4
-#' concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
-#'              destination = "SITC4", dest.digit = 5, all = TRUE)
-concord_sitc <- function (sourcevar,
-                          origin,
-                          destination,
-                          dest.digit = 4,
-                          all = FALSE) {
+#' # Convert HS0 to HS5
+#' concord(sourcevar = c("010111", "382390"),
+#'         origin = "HS0", destination = "HS5",
+#'         dest.digit = 6, all = TRUE)
+concord_hs <- function (sourcevar,
+                        origin,
+                        destination,
+                        dest.digit = 4,
+                        all = FALSE) {
 
   # load specific conversion dictionary
-  if ((origin == "SITC2" & destination == "SITC1") | (origin == "SITC1" & destination == "SITC2")) {
+  if ((origin == "HS5" & destination == "HS4") | (origin == "HS4" & destination == "HS5")) {
 
-    dictionary <- concordance::sitc2_sitc1
+    dictionary <- concordance::hs5_hs4
 
-  } else if ((origin == "SITC3" & destination == "SITC1") | (origin == "SITC1" & destination == "SITC3")){
+  } else if ((origin == "HS5" & destination == "HS3") | (origin == "HS3" & destination == "HS5")){
 
-    dictionary <- concordance::sitc3_sitc1
+    dictionary <- concordance::hs5_hs3
 
-  } else if ((origin == "SITC4" & destination == "SITC1") | (origin == "SITC1" & destination == "SITC4")){
+  } else if ((origin == "HS5" & destination == "HS2") | (origin == "HS2" & destination == "HS5")){
 
-    dictionary <- concordance::sitc4_sitc1
+    dictionary <- concordance::hs5_hs2
 
-  } else if ((origin == "SITC3" & destination == "SITC2") | (origin == "SITC2" & destination == "SITC3")){
+  } else if ((origin == "HS5" & destination == "HS1") | (origin == "HS1" & destination == "HS5")){
 
-    dictionary <- concordance::sitc3_sitc2
+    dictionary <- concordance::hs5_hs1
 
-  } else if ((origin == "SITC4" & destination == "SITC2") | (origin == "SITC2" & destination == "SITC4")){
+  } else if ((origin == "HS5" & destination == "HS0") | (origin == "HS0" & destination == "HS5")){
 
-    dictionary <- concordance::sitc4_sitc2
+    dictionary <- concordance::hs5_hs0
 
-  } else if ((origin == "SITC4" & destination == "SITC3") | (origin == "SITC3" & destination == "SITC4")){
+  } else if ((origin == "HS4" & destination == "HS3") | (origin == "HS3" & destination == "HS4")){
 
-    dictionary <- concordance::sitc4_sitc3
+    dictionary <- concordance::hs4_hs3
+
+  } else if ((origin == "HS4" & destination == "HS2") | (origin == "HS2" & destination == "HS4")){
+
+    dictionary <- concordance::hs4_hs2
+
+  } else if ((origin == "HS4" & destination == "HS1") | (origin == "HS1" & destination == "HS4")){
+
+    dictionary <- concordance::hs4_hs1
+
+  } else if ((origin == "HS4" & destination == "HS0") | (origin == "HS0" & destination == "HS4")){
+
+    dictionary <- concordance::hs4_hs0
+
+  } else if ((origin == "HS3" & destination == "HS2") | (origin == "HS2" & destination == "HS3")){
+
+    dictionary <- concordance::hs3_hs2
+
+  } else if ((origin == "HS3" & destination == "HS1") | (origin == "HS1" & destination == "HS3")){
+
+    dictionary <- concordance::hs3_hs1
+
+  } else if ((origin == "HS3" & destination == "HS0") | (origin == "HS0" & destination == "HS3")){
+
+    dictionary <- concordance::hs3_hs0
+
+  } else if ((origin == "HS2" & destination == "HS1") | (origin == "HS1" & destination == "HS2")){
+
+    dictionary <- concordance::hs2_hs1
+
+  } else if ((origin == "HS2" & destination == "HS0") | (origin == "HS0" & destination == "HS2")){
+
+    dictionary <- concordance::hs2_hs0
+
+  } else if ((origin == "HS1" & destination == "HS0") | (origin == "HS0" & destination == "HS1")){
+
+    dictionary <- concordance::hs1_hs0
 
   } else {
 
@@ -70,15 +108,15 @@ concord_sitc <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
-  if ((origin == "SITC1" | origin == "SITC2" | origin == "SITC3" | origin == "SITC4") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3"| destination == "SITC4")){
+  if ((origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5")){
 
-    origin.digits <- c(1, 2, 3, 4, 5)
+    origin.digits <- c(2, 4, 6)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit outputs for SITC codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS codes.")}
 
-    destination.digits <- c(1, 2, 3, 4, 5)
+    destination.digits <- c(2, 4, 6)
 
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4, 5-digit outputs for SITC codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit inputs for HS codes.")}
 
   } else {
 
