@@ -31,7 +31,7 @@ The matched output(s) for each element of the input vector. Either a list object
 \code{concord_sitc} converts codes within the SITC classification (Revision 1, 2, 3, 4).
 }
 \note{
-Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
 # Convert SITC4 to SITC3

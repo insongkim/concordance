@@ -16,7 +16,7 @@
 #'   \item SITC-HS concordance tables are from the World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics (https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp).
 #'   \item HS-NAICS concordance tables are from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
 #' }
-#' @note Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 #' @examples
 #' ## SITC4 to NAICS
 #' # one input: one-to-one match

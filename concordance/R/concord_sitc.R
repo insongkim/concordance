@@ -15,7 +15,7 @@
 #' \itemize{
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeroes in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 #' @examples
 #' # Convert SITC4 to SITC3
 #' concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",

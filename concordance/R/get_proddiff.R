@@ -1,21 +1,12 @@
 #' Looking Up Product Differentiation
 #'
-#' \code{get_proddiff} returns Rauch's classification of product differentiation.
+#' \code{get_proddiff} returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 #'
-#' @param sourcevar An input character vector of industry/product codes to be converted.
-#' @param origin A string setting the input coding scheme.
+#' @param sourcevar An input character vector of industry/product codes.
+#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", and "NAICS".
 #' @param setting For Rauch classification: choose "CON" (conservative, default) or "LIB" (liberal).
-#' @param prop If set to "w", "r", or "n", the function counts the proportion of the letter in the resulting vector of Rauch classifications.
+#' @param prop Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes the frequencies and proportions of "w", "r", and "n".
 #' @return Concords each element of the input vector to SITC2 codes, then uses the corresponding codes as input to concord to Rauch product differentiation indices.
-#' @details
-#' \itemize{
-#'   \item Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
-#'   \item Supports the following classifications: HS, HS0, HS1, HS2, HS3, HS4, SITC1, SITC2, SITC3, SITC4, NAICS.
-#'   \item The following strings can be used as arguments for \code{origin}: "NAICS", "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), SITC1, SITC2, SITC3, SITC4.
-#'   \item \code{setting} may be set to "CON" (conservative, the default setting) or "LIB" (liberal).
-#'   \item \code{prop} may be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes the frequencies and proportions of "w", "r", and "n".
-#'   \item You may also wish to look up the getRauch function, which has similar but more specialised functionality, and may work better in some cases.
-#' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export
@@ -24,7 +15,7 @@
 #'   \item Rauch, James E. "Networks versus markets in international trade." Journal of international Economics 48.1 (1999): 7-35.
 #'   \item C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics Volume 121, Issue 2 - May 2006
 #' }
-#' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' # SITC2 input
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "")

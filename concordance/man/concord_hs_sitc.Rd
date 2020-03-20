@@ -32,7 +32,7 @@ The matched output(s) for each element of the input vector. Either a list object
 \code{concord_hs_sitc} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
 }
 \note{
-Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 ## HS combined to SITC4

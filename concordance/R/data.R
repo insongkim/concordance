@@ -1302,3 +1302,36 @@
 #' }
 #' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs1_hs0"
+
+#' Sigma Table (3-Digit HS0)
+#'
+#' A dataset containing import demand elasticities by HS0 3-digit codes from Broda and Weinstein (QJE, 2006) for 73 countries.
+#'
+#' @format A data frame with 11293 rows and 4 variables:
+#' \describe{
+#'   \item{iso3c}{ISO 3-letter Country Code}
+#'   \item{HS0_3d}{3-digit HS0 Code}
+#'   \item{HS0_2d}{2-digit HS0 Code}
+#'   \item{sigma}{Import Demand Elasticity}
+#' }
+#' @references C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
+#' @source \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
+"sigma_hs0"
+
+#' Sigma Table (5-Digit SITC3)
+#'
+#' A dataset containing import demand elasticities for the United States by 5-digit SITC3 codes from Broda and Weinstein (QJE, 2006).
+#'
+#' @format A data frame with 2716 rows and 7 variables:
+#' \describe{
+#'   \item{iso3c}{ISO 3-letter Country Code}
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#'   \item{sigma}{Import Demand Elasticity}
+#' }
+#' @references C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
+#' @source \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
+"sigma_sitc3"

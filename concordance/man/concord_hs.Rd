@@ -30,7 +30,7 @@ The matched output(s) for each element of the input vector. Either a list object
 \code{concord_hs} converts codes within the HS classification (HS0, HS1, HS2, HS3, HS4, HS5).
 }
 \note{
-Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 # Convert HS5 to HS4
