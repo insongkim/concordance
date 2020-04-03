@@ -10,7 +10,7 @@ get_sigma(sourcevar, origin, country = "USA", use_SITC = FALSE,
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes.}
 
-\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", and "NAICS".}
+\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), and "NAICS" (NAICS combined).}
 
 \item{country}{A string setting the ISO3 country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".}
 

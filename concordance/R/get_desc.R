@@ -3,7 +3,7 @@
 #' Returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2", "ISIC3", "ISIC4", "BEC".
+#' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC".
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @source Data consolidated from
 #' \itemize{

@@ -17,9 +17,9 @@ concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4,
 \arguments{
 \item{sourcevar}{An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.}
 
-\item{origin}{A string setting the input industry classification: "SITC1", "SITC2", "SITC3", "SITC4", "NAICS" (NAICS combined).}
+\item{origin}{A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (NAICS combined).}
 
-\item{destination}{A string setting the output industry classification: "SITC1", "SITC2", "SITC3", "SITC4", "NAICS" (NAICS combined).}
+\item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (NAICS combined).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS. The default is 4 digits.}
 

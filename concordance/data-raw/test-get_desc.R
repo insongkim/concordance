@@ -23,6 +23,7 @@ get_desc(sourcevar = c("111120", "326199", "111120"), origin = "NAICS2012")
 
 # HS
 get_desc(sourcevar = c("120600", "854690"), origin = "HS")
+
 # gives error if number of digits not acceptable
 get_desc(sourcevar = c("12060", "85469"), origin = "HS")
 
@@ -50,7 +51,7 @@ get_desc(sourcevar = c("3114", "3831"), origin = "ISIC2")
 # ISIC3
 get_desc(sourcevar = c("1512", "3110"), origin = "ISIC3")
 
-# ISIC4
+# ISIC4, code 3110 removed
 get_desc(sourcevar = c("1512", "3110"), origin = "ISIC4")
 
 # SITC1

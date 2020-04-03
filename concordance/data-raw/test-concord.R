@@ -500,3 +500,4 @@ concord(sourcevar = c("010111", "382390"),
 concord(sourcevar = c("010111", "382390"),
         origin = "HS0", destination = "HS5",
         dest.digit = 4, all = TRUE)
+
