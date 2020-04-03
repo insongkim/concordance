@@ -1,6 +1,6 @@
 #' Concord Within HS Codes
 #'
-#' \code{concord_hs} converts codes within the HS classification (HS0, HS1, HS2, HS3, HS4, HS5).
+#' Concords codes within the HS classification (HS0, HS1, HS2, HS3, HS4, HS5).
 #'
 #' @param sourcevar An input character vector of HS codes. The function accepts 2, 4, 6-digit HS codes.
 #' @param origin A string setting the input industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), and "HS5" (2017).

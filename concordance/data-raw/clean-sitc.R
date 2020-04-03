@@ -47,7 +47,7 @@ sitc2_sitc1 <- sitc2_sitc1 %>%
 
 # save
 save(sitc2_sitc1,
-     file = "./data/sitc2_sitc1.RData")
+     file = "./data/sitc2_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -87,7 +87,7 @@ sitc3_sitc1 <- sitc3_sitc1 %>%
 
 # save
 save(sitc3_sitc1,
-     file = "./data/sitc3_sitc1.RData")
+     file = "./data/sitc3_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -127,7 +127,7 @@ sitc3_sitc2 <- sitc3_sitc2 %>%
 
 # save
 save(sitc3_sitc2,
-     file = "./data/sitc3_sitc2.RData")
+     file = "./data/sitc3_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -173,7 +173,7 @@ sitc4_sitc3 <- sitc4_sitc3 %>%
 
 # save
 save(sitc4_sitc3,
-     file = "./data/sitc4_sitc3.RData")
+     file = "./data/sitc4_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -206,7 +206,7 @@ sitc4_sitc2 <- sitc4_sitc2_merge %>%
 
 # save
 save(sitc4_sitc2,
-     file = "./data/sitc4_sitc2.RData")
+     file = "./data/sitc4_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -236,6 +236,6 @@ sitc4_sitc1 <- sitc4_sitc1_merge %>%
 
 # save
 save(sitc4_sitc1,
-     file = "./data/sitc4_sitc1.RData")
+     file = "./data/sitc4_sitc1.RData", compress = "xz")
 
 

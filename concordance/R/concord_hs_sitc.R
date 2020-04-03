@@ -1,6 +1,6 @@
 #' Converting HS and SITC Codes
 #'
-#' \code{concord_hs_sitc} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
+#' Concords HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
 #'
 #' @param sourcevar An input character vector of HS or SITC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 5-digit codes for SITC.
 #' @param origin A string setting the input industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4".

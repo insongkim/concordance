@@ -3,6 +3,15 @@
 \name{get_desc}
 \alias{get_desc}
 \title{Looking Up Product Description}
+\source{
+Data consolidated from
+\itemize{
+  \item The U.S. Census Bureau <https://www.census.gov/>
+  \item The U.S. Bureau of Labor Statistics <https://www.bls.gov/>
+  \item UN Comtrade <https://comtrade.un.org/>
+  \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
+}
+}
 \usage{
 get_desc(sourcevar, origin)
 }
@@ -15,7 +24,7 @@ get_desc(sourcevar, origin)
 A character vector giving the title/description of each element of the input codes.
 }
 \description{
-\code{get_desc} returns the description of product codes.
+Returns the description of product codes.
 }
 \note{
 Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

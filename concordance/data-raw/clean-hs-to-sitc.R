@@ -44,7 +44,7 @@ hs0_sitc4 <- hs0_sitc4 %>%
 
 # save
 save(hs0_sitc4,
-     file = "./data/hs0_sitc4.RData")
+     file = "./data/hs0_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -81,7 +81,7 @@ hs0_sitc3 <- hs0_sitc3 %>%
 
 # save
 save(hs0_sitc3,
-     file = "./data/hs0_sitc3.RData")
+     file = "./data/hs0_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -118,7 +118,7 @@ hs0_sitc2 <- hs0_sitc2 %>%
 
 # save
 save(hs0_sitc2,
-     file = "./data/hs0_sitc2.RData")
+     file = "./data/hs0_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -155,7 +155,7 @@ hs0_sitc1 <- hs0_sitc1 %>%
 
 # save
 save(hs0_sitc1,
-     file = "./data/hs0_sitc1.RData")
+     file = "./data/hs0_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -192,7 +192,7 @@ hs1_sitc4 <- hs1_sitc4 %>%
 
 # save
 save(hs1_sitc4,
-     file = "./data/hs1_sitc4.RData")
+     file = "./data/hs1_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -229,7 +229,7 @@ hs1_sitc3 <- hs1_sitc3 %>%
 
 # save
 save(hs1_sitc3,
-     file = "./data/hs1_sitc3.RData")
+     file = "./data/hs1_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -266,7 +266,7 @@ hs1_sitc2 <- hs1_sitc2 %>%
 
 # save
 save(hs1_sitc2,
-     file = "./data/hs1_sitc2.RData")
+     file = "./data/hs1_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -303,7 +303,7 @@ hs1_sitc1 <- hs1_sitc1 %>%
 
 # save
 save(hs1_sitc1,
-     file = "./data/hs1_sitc1.RData")
+     file = "./data/hs1_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -340,7 +340,7 @@ hs2_sitc4 <- hs2_sitc4 %>%
 
 # save
 save(hs2_sitc4,
-     file = "./data/hs2_sitc4.RData")
+     file = "./data/hs2_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -377,7 +377,7 @@ hs2_sitc3 <- hs2_sitc3 %>%
 
 # save
 save(hs2_sitc3,
-     file = "./data/hs2_sitc3.RData")
+     file = "./data/hs2_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -414,7 +414,7 @@ hs2_sitc2 <- hs2_sitc2 %>%
 
 # save
 save(hs2_sitc2,
-     file = "./data/hs2_sitc2.RData")
+     file = "./data/hs2_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -451,7 +451,7 @@ hs2_sitc1 <- hs2_sitc1 %>%
 
 # save
 save(hs2_sitc1,
-     file = "./data/hs2_sitc1.RData")
+     file = "./data/hs2_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -488,7 +488,7 @@ hs3_sitc4 <- hs3_sitc4 %>%
 
 # save
 save(hs3_sitc4,
-     file = "./data/hs3_sitc4.RData")
+     file = "./data/hs3_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -525,7 +525,7 @@ hs3_sitc3 <- hs3_sitc3 %>%
 
 # save
 save(hs3_sitc3,
-     file = "./data/hs3_sitc3.RData")
+     file = "./data/hs3_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -562,7 +562,7 @@ hs3_sitc2 <- hs3_sitc2 %>%
 
 # save
 save(hs3_sitc2,
-     file = "./data/hs3_sitc2.RData")
+     file = "./data/hs3_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -599,7 +599,7 @@ hs3_sitc1 <- hs3_sitc1 %>%
 
 # save
 save(hs3_sitc1,
-     file = "./data/hs3_sitc1.RData")
+     file = "./data/hs3_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -639,7 +639,7 @@ hs4_sitc4 <- hs4_sitc4 %>%
 
 # save
 save(hs4_sitc4,
-     file = "./data/hs4_sitc4.RData")
+     file = "./data/hs4_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -680,7 +680,7 @@ hs4_sitc3 <- hs4_sitc3 %>%
 
 # save
 save(hs4_sitc3,
-     file = "./data/hs4_sitc3.RData")
+     file = "./data/hs4_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -725,7 +725,7 @@ hs4_sitc2 <- hs4_sitc2 %>%
 
 # save
 save(hs4_sitc2,
-     file = "./data/hs4_sitc2.RData")
+     file = "./data/hs4_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -770,7 +770,7 @@ hs4_sitc1 <- hs4_sitc1 %>%
 
 # save
 save(hs4_sitc1,
-     file = "./data/hs4_sitc1.RData")
+     file = "./data/hs4_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -811,7 +811,7 @@ hs5_sitc4 <- hs5_sitc4 %>%
 
 # save
 save(hs5_sitc4,
-     file = "./data/hs5_sitc4.RData")
+     file = "./data/hs5_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -852,7 +852,7 @@ hs5_sitc3 <- hs5_sitc3 %>%
 
 # save
 save(hs5_sitc3,
-     file = "./data/hs5_sitc3.RData")
+     file = "./data/hs5_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -893,7 +893,7 @@ hs5_sitc2 <- hs5_sitc2 %>%
 
 # save
 save(hs5_sitc2,
-     file = "./data/hs5_sitc2.RData")
+     file = "./data/hs5_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -934,7 +934,7 @@ hs5_sitc1 <- hs5_sitc1 %>%
 
 # save
 save(hs5_sitc1,
-     file = "./data/hs5_sitc1.RData")
+     file = "./data/hs5_sitc1.RData", compress = "xz")
 
 
 ################################################################################
@@ -982,7 +982,7 @@ hs_sitc4 %>%
 
 # save
 save(hs_sitc4,
-     file = "./data/hs_sitc4.RData")
+     file = "./data/hs_sitc4.RData", compress = "xz")
 
 
 ################################################################################
@@ -1030,7 +1030,7 @@ hs_sitc3 %>%
 
 # save
 save(hs_sitc3,
-     file = "./data/hs_sitc3.RData")
+     file = "./data/hs_sitc3.RData", compress = "xz")
 
 
 ################################################################################
@@ -1078,7 +1078,7 @@ hs_sitc2 %>%
 
 # save
 save(hs_sitc2,
-     file = "./data/hs_sitc2.RData")
+     file = "./data/hs_sitc2.RData", compress = "xz")
 
 
 ################################################################################
@@ -1126,4 +1126,4 @@ hs_sitc1 %>%
 
 # save
 save(hs_sitc1,
-     file = "./data/hs_sitc1.RData")
+     file = "./data/hs_sitc1.RData", compress = "xz")

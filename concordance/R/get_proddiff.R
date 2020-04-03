@@ -1,20 +1,17 @@
 #' Looking Up Product Differentiation
 #'
-#' \code{get_proddiff} returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
+#' Returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 #'
 #' @param sourcevar An input character vector of industry/product codes.
-#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", and "NAICS".
-#' @param setting For Rauch classification: choose "CON" (conservative, default) or "LIB" (liberal).
-#' @param prop Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes the frequencies and proportions of "w", "r", and "n".
+#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).
+#' @param setting Choose "CON" (conservative, default) or "LIB" (liberal) for Rauch classification.
+#' @param prop Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes all the frequencies and proportions of "w", "r", and "n".
 #' @return Concords each element of the input vector to SITC2 codes, then uses the corresponding codes as input to concord to Rauch product differentiation indices.
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export
-#' @references
-#' \itemize{
-#'   \item Rauch, James E. "Networks versus markets in international trade." Journal of international Economics 48.1 (1999): 7-35.
-#'   \item C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics Volume 121, Issue 2 - May 2006
-#' }
+#' @source Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
+#' @references Rauch, James E. "Networks Versus Markets in International Trade," Journal of International Economics 48(1) (June 1999): 7-35.
 #' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' # SITC2 input
@@ -22,6 +19,7 @@
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "r")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "w")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "n")
+#' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "LIB", prop = "")
 #'
 #' # Other SITC classifications
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC3", setting = "CON", prop = "")
@@ -30,6 +28,7 @@
 #' # Other classifications
 #' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
+#' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "r")
 get_proddiff <- function (sourcevar,
                           origin,
                           setting = "CON",
@@ -40,12 +39,12 @@ get_proddiff <- function (sourcevar,
 
     if (!setting %in% names(concordance::sitc2_rauch)[2:3]) {
 
-        stop("Setting not supported")
+        stop("Setting not supported.")
 
     }
 
     # set rauch types
-    rauch.types <- c('w','r','n')
+    rauch.types <- c("w", "r", "n")
 
     if(origin == "SITC2") {
 
@@ -53,22 +52,22 @@ get_proddiff <- function (sourcevar,
 
         if (digits > 4) {
 
-            sourcevar.4d <- as.integer(str_sub(sourcevar, start = 1, end = 4))
+            sourcevar.4d <- str_sub(sourcevar, start = 1, end = 4)
 
         } else if (digits < 4) {
 
-            sourcevar.4d <- as.integer(str_pad(sourcevar, width = 4, side = "right", pad = "0"))
+            sourcevar.4d <- str_pad(sourcevar, width = 4, side = "right", pad = "0")
 
         } else {
 
-            sourcevar.4d <- as.integer(sourcevar)
+            sourcevar.4d <- sourcevar
 
         }
 
         # extract rauch for the matches of each input
         rauch.list <- map(sourcevar.4d, function(x){
 
-            rauch.sub <- concordance::sitc2_rauch[match(x, concordance::sitc2_rauch[,"SITC2"]), setting]
+            rauch.sub <- concordance::sitc2_rauch[match(x, concordance::sitc2_rauch[,"SITC2"]$SITC2), setting]
 
             rauch.sub
         })
@@ -81,9 +80,9 @@ get_proddiff <- function (sourcevar,
         # extract rauch for the matches of each input
         rauch.list <- map(1:length(sourcevar), function(x){
 
-            via.match.sub <- as.integer(pluck(via, x, "match"))
+            via.match.sub <- pluck(via, x, "match")
 
-            rauch.sub <- concordance::sitc2_rauch[match(via.match.sub, concordance::sitc2_rauch[,"SITC2"]), setting]
+            rauch.sub <- concordance::sitc2_rauch[match(via.match.sub, concordance::sitc2_rauch[,"SITC2"]$SITC2), setting]
 
             rauch.sub
         })
@@ -102,12 +101,12 @@ get_proddiff <- function (sourcevar,
     }
 
     # extract frequency and calculate proportions
-    rauch.freq <- map(rauch.list, function (x) {
+    rauch.freq <- map(sourcevar, function (x) {
 
         freq.r <- map_df(rauch.types, function(y) {
 
             freq.sub <- tibble(rauch = y,
-                               freq = sum(grepl(y, x)))
+                               freq = sum(grepl(y, rauch.list[[x]][[1]])))
             return(freq.sub)
         })
 
@@ -117,8 +116,12 @@ get_proddiff <- function (sourcevar,
             select(.data$rauch, .data$freq, .data$proportion)
 
         freq.c <- as.data.frame(freq.c)
+
+        return(freq.c)
     })
 
+    # set list names to input vector
+    names(rauch.freq) <- sourcevar
 
     # if prop is specified, calculate relevant proportions, otherwise return full list
     if (tolower(prop) %in% rauch.types) {

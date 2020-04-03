@@ -1,6 +1,6 @@
 #' Looking Up Product Elasticity
 #'
-#' \code{get_sigma} returns product-level import demand elasticities using HS0 3-digit estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
+#' Returns product-level import demand elasticities using HS0 3-digit estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 #'
 #' @param sourcevar An input character vector of industry/product codes.
 #' @param origin A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", and "NAICS".

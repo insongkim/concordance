@@ -44,7 +44,7 @@ sitc4_naics <- sitc4.naics.m %>%
 
 # save
 save(sitc4_naics,
-     file = "./data/sitc4_naics.RData")
+     file = "./data/sitc4_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -78,7 +78,7 @@ sitc3_naics <- sitc3.naics.m %>%
 
 # save
 save(sitc3_naics,
-     file = "./data/sitc3_naics.RData")
+     file = "./data/sitc3_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -112,7 +112,7 @@ sitc2_naics <- sitc2.naics.m %>%
 
 # save
 save(sitc2_naics,
-     file = "./data/sitc2_naics.RData")
+     file = "./data/sitc2_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -146,7 +146,7 @@ sitc1_naics <- sitc1.naics.m %>%
 
 # save
 save(sitc1_naics,
-     file = "./data/sitc1_naics.RData")
+     file = "./data/sitc1_naics.RData", compress = "xz")
 
 
 

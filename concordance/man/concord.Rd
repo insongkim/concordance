@@ -29,7 +29,7 @@ concord(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-\code{concord} concords different classification codes used in international trade.
+Concords different classification codes used in international trade.
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

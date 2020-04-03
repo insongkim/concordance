@@ -3,23 +3,26 @@
 \name{get_proddiff}
 \alias{get_proddiff}
 \title{Looking Up Product Differentiation}
+\source{
+Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
+}
 \usage{
 get_proddiff(sourcevar, origin, setting = "CON", prop = "")
 }
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes.}
 
-\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", and "NAICS".}
+\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
 
-\item{setting}{For Rauch classification: choose "CON" (conservative, default) or "LIB" (liberal).}
+\item{setting}{Choose "CON" (conservative, default) or "LIB" (liberal) for Rauch classification.}
 
-\item{prop}{Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes the frequencies and proportions of "w", "r", and "n".}
+\item{prop}{Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes all the frequencies and proportions of "w", "r", and "n".}
 }
 \value{
 Concords each element of the input vector to SITC2 codes, then uses the corresponding codes as input to concord to Rauch product differentiation indices.
 }
 \description{
-\code{get_proddiff} returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
+Returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
@@ -30,6 +33,7 @@ get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON",
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "r")
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "w")
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "n")
+get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "LIB", prop = "")
 
 # Other SITC classifications
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC3", setting = "CON", prop = "")
@@ -38,10 +42,8 @@ get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC4", setting = "CON",
 # Other classifications
 get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "")
 get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
+get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "r")
 }
 \references{
-\itemize{
-  \item Rauch, James E. "Networks versus markets in international trade." Journal of international Economics 48.1 (1999): 7-35.
-  \item C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics Volume 121, Issue 2 - May 2006
-}
+Rauch, James E. "Networks Versus Markets in International Trade," Journal of International Economics 48(1) (June 1999): 7-35.
 }

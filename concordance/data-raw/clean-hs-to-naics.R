@@ -85,7 +85,7 @@ hs_naics <- rbind(hs_naics, miss.rows) %>%
 
 # save
 save(hs_naics,
-     file = "./data/hs_naics.RData")
+     file = "./data/hs_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -120,7 +120,7 @@ setdiff(hs0.vec, hs0_naics$HS0_6d)
 
 # save
 save(hs0_naics,
-     file = "./data/hs0_naics.RData")
+     file = "./data/hs0_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -155,7 +155,7 @@ setdiff(hs1.vec, hs1_naics$HS1_6d)
 
 # save
 save(hs1_naics,
-     file = "./data/hs1_naics.RData")
+     file = "./data/hs1_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -190,7 +190,7 @@ setdiff(hs2.vec, hs2_naics$HS2_6d)
 
 # save
 save(hs2_naics,
-     file = "./data/hs2_naics.RData")
+     file = "./data/hs2_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -225,7 +225,7 @@ setdiff(hs3.vec, hs3_naics$HS3_6d)
 
 # save
 save(hs3_naics,
-     file = "./data/hs3_naics.RData")
+     file = "./data/hs3_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -260,7 +260,7 @@ setdiff(hs4.vec, hs4_naics$HS4_6d)
 
 # save
 save(hs4_naics,
-     file = "./data/hs4_naics.RData")
+     file = "./data/hs4_naics.RData", compress = "xz")
 
 
 ################################################################################
@@ -293,4 +293,4 @@ setdiff(hs5.vec, hs5_naics$HS5_6d)
 
 # save
 save(hs5_naics,
-     file = "./data/hs5_naics.RData")
+     file = "./data/hs5_naics.RData", compress = "xz")

@@ -1,6 +1,6 @@
 #' Concord Within SITC Codes
 #'
-#' \code{concord_sitc} converts codes within the SITC classification (Revision 1, 2, 3, 4).
+#' Concords codes within the SITC classification (Revision 1, 2, 3, 4).
 #'
 #' @param sourcevar An input character vector of SITC codes. The function accepts 1 to 5-digit SITC codes.
 #' @param origin A string setting the input industry classification: "SITC1", "SITC2", "SITC3", "SITC4".

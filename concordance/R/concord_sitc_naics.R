@@ -1,6 +1,6 @@
 #' Converting SITC and NAICS Codes
 #'
-#' \code{concord_sitc_naics} converts SITC codes (Revision 1, 2, 3, 4) to and from NAICS (combined) codes.
+#' Concords SITC codes (Revision 1, 2, 3, 4) to and from NAICS (combined) codes.
 #'
 #' @param sourcevar An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.
 #' @param origin A string setting the input industry classification: "SITC1", "SITC2", "SITC3", "SITC4", "NAICS" (NAICS combined).

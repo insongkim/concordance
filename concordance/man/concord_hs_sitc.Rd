@@ -29,7 +29,7 @@ concord_hs_sitc(sourcevar, origin, destination, dest.digit = 4,
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-\code{concord_hs_sitc} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
+Concords HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

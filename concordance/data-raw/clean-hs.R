@@ -41,7 +41,7 @@ hs5_hs4 <- hs5_hs4 %>%
 
 # save
 save(hs5_hs4,
-     file = "./data/hs5_hs4.RData")
+     file = "./data/hs5_hs4.RData", compress = "xz")
 
 
 ################################################################################
@@ -76,7 +76,7 @@ hs5_hs3 <- hs5_hs3 %>%
 
 # save
 save(hs5_hs3,
-     file = "./data/hs5_hs3.RData")
+     file = "./data/hs5_hs3.RData", compress = "xz")
 
 
 ################################################################################
@@ -111,7 +111,7 @@ hs5_hs2 <- hs5_hs2 %>%
 
 # save
 save(hs5_hs2,
-     file = "./data/hs5_hs2.RData")
+     file = "./data/hs5_hs2.RData", compress = "xz")
 
 
 ################################################################################
@@ -146,7 +146,7 @@ hs5_hs1 <- hs5_hs1 %>%
 
 # save
 save(hs5_hs1,
-     file = "./data/hs5_hs1.RData")
+     file = "./data/hs5_hs1.RData", compress = "xz")
 
 
 ################################################################################
@@ -181,7 +181,7 @@ hs5_hs0 <- hs5_hs0 %>%
 
 # save
 save(hs5_hs0,
-     file = "./data/hs5_hs0.RData")
+     file = "./data/hs5_hs0.RData", compress = "xz")
 
 
 ################################################################################
@@ -216,7 +216,7 @@ hs4_hs3 <- hs4_hs3 %>%
 
 # save
 save(hs4_hs3,
-     file = "./data/hs4_hs3.RData")
+     file = "./data/hs4_hs3.RData", compress = "xz")
 
 
 ################################################################################
@@ -251,7 +251,7 @@ hs4_hs2 <- hs4_hs2 %>%
 
 # save
 save(hs4_hs2,
-     file = "./data/hs4_hs2.RData")
+     file = "./data/hs4_hs2.RData", compress = "xz")
 
 
 ################################################################################
@@ -286,7 +286,7 @@ hs4_hs1 <- hs4_hs1 %>%
 
 # save
 save(hs4_hs1,
-     file = "./data/hs4_hs1.RData")
+     file = "./data/hs4_hs1.RData", compress = "xz")
 
 
 ################################################################################
@@ -321,7 +321,7 @@ hs4_hs0 <- hs4_hs0 %>%
 
 # save
 save(hs4_hs0,
-     file = "./data/hs4_hs0.RData")
+     file = "./data/hs4_hs0.RData", compress = "xz")
 
 
 ################################################################################
@@ -356,7 +356,7 @@ hs3_hs2 <- hs3_hs2 %>%
 
 # save
 save(hs3_hs2,
-     file = "./data/hs3_hs2.RData")
+     file = "./data/hs3_hs2.RData", compress = "xz")
 
 
 ################################################################################
@@ -391,7 +391,7 @@ hs3_hs1 <- hs3_hs1 %>%
 
 # save
 save(hs3_hs1,
-     file = "./data/hs3_hs1.RData")
+     file = "./data/hs3_hs1.RData", compress = "xz")
 
 
 ################################################################################
@@ -426,7 +426,7 @@ hs3_hs0 <- hs3_hs0 %>%
 
 # save
 save(hs3_hs0,
-     file = "./data/hs3_hs0.RData")
+     file = "./data/hs3_hs0.RData", compress = "xz")
 
 
 ################################################################################
@@ -461,7 +461,7 @@ hs2_hs1 <- hs2_hs1 %>%
 
 # save
 save(hs2_hs1,
-     file = "./data/hs2_hs1.RData")
+     file = "./data/hs2_hs1.RData", compress = "xz")
 
 
 ################################################################################
@@ -496,7 +496,7 @@ hs2_hs0 <- hs2_hs0 %>%
 
 # save
 save(hs2_hs0,
-     file = "./data/hs2_hs0.RData")
+     file = "./data/hs2_hs0.RData", compress = "xz")
 
 
 ################################################################################
@@ -531,5 +531,5 @@ hs1_hs0 <- hs1_hs0 %>%
 
 # save
 save(hs1_hs0,
-     file = "./data/hs1_hs0.RData")
+     file = "./data/hs1_hs0.RData", compress = "xz")
 

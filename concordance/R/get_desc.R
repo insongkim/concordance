@@ -1,10 +1,17 @@
 #' Looking Up Product Description
 #'
-#' \code{get_desc} returns the description of product codes.
+#' Returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
 #' @param origin A string indicating one of the following industry/product classifications: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1", "SITC2", "SITC3", "SITC4", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2", "ISIC3", "ISIC4", "BEC".
 #' @return A character vector giving the title/description of each element of the input codes.
+#' @source Data consolidated from
+#' \itemize{
+#'   \item The U.S. Census Bureau <https://www.census.gov/>
+#'   \item The U.S. Bureau of Labor Statistics <https://www.bls.gov/>
+#'   \item UN Comtrade <https://comtrade.un.org/>
+#'   \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
+#' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @export
 #' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

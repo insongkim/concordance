@@ -11,7 +11,7 @@ library(readxl)
 library(foreign)
 library(countrycode)
 
-options(scipen=999)
+options(scipen = 999)
 
 
 ################################################################################
@@ -43,7 +43,7 @@ max(table(sigma_hs0$iso3c))
 
 # save
 save(sigma_hs0,
-     file = "./data/sigma_hs0.RData")
+     file = "./data/sigma_hs0.RData", compress = "xz")
 
 
 ################################################################################
@@ -78,7 +78,7 @@ n_distinct(sigma_sitc3$SITC3_5d) == nrow(sigma_sitc3)
 
 # save
 save(sigma_sitc3,
-     file = "./data/sigma_sitc3.RData")
+     file = "./data/sigma_sitc3.RData", compress = "xz")
 
 
 # ################################################################################

@@ -31,7 +31,7 @@ naics2002_desc <- naics2002_desc %>%
 
 # save
 save(naics2002_desc,
-     file = "./data/naics2002_desc.RData")
+     file = "./data/naics2002_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -53,7 +53,7 @@ naics2007_desc <- naics2007_desc %>%
 
 # save
 save(naics2007_desc,
-     file = "./data/naics2007_desc.RData")
+     file = "./data/naics2007_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -73,7 +73,7 @@ naics2012_desc <- naics2012_desc %>%
 
 # save
 save(naics2012_desc,
-     file = "./data/naics2012_desc.RData")
+     file = "./data/naics2012_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -93,7 +93,7 @@ naics2017_desc <- naics2017_desc %>%
 
 # save
 save(naics2017_desc,
-     file = "./data/naics2017_desc.RData")
+     file = "./data/naics2017_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -112,7 +112,7 @@ hs0_desc <- hs0.desc.r$results %>%
 
 # save
 save(hs0_desc,
-     file = "./data/hs0_desc.RData")
+     file = "./data/hs0_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -131,7 +131,7 @@ hs1_desc <- hs1.desc.r$results %>%
 
 # save
 save(hs1_desc,
-     file = "./data/hs1_desc.RData")
+     file = "./data/hs1_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -150,7 +150,7 @@ hs2_desc <- hs2.desc.r$results %>%
 
 # save
 save(hs2_desc,
-     file = "./data/hs2_desc.RData")
+     file = "./data/hs2_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -169,7 +169,7 @@ hs3_desc <- hs3.desc.r$results %>%
 
 # save
 save(hs3_desc,
-     file = "./data/hs3_desc.RData")
+     file = "./data/hs3_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -188,7 +188,7 @@ hs4_desc <- hs4.desc.r$results %>%
 
 # save
 save(hs4_desc,
-     file = "./data/hs4_desc.RData")
+     file = "./data/hs4_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -207,37 +207,37 @@ hs5_desc <- hs5.desc.r$results %>%
 
 # save
 save(hs5_desc,
-     file = "./data/hs5_desc.RData")
+     file = "./data/hs5_desc.RData", compress = "xz")
 
 
 ################################################################################
 ## HS Combined
 ################################################################################
 # combine all HS codes
-hs.desc <- rbind(hs0.desc %>% mutate(classification = "HS0"),
-                 hs1.desc %>% mutate(classification = "HS1"),
-                 hs2.desc %>% mutate(classification = "HS2"),
-                 hs3.desc %>% mutate(classification = "HS3"),
-                 hs4.desc %>% mutate(classification = "HS4"),
-                 hs5.desc %>% mutate(classification = "HS5"))
+hs_desc <- rbind(hs0_desc %>% mutate(classification = "HS0"),
+                 hs1_desc %>% mutate(classification = "HS1"),
+                 hs2_desc %>% mutate(classification = "HS2"),
+                 hs3_desc %>% mutate(classification = "HS3"),
+                 hs4_desc %>% mutate(classification = "HS4"),
+                 hs5_desc %>% mutate(classification = "HS5"))
 
 # drop duplicates
-hs.desc <- hs.desc %>%
+hs_desc <- hs_desc %>%
   distinct_at(vars(code, desc), .keep_all = TRUE) %>%
   arrange(code)
 
 # paste desc
-hs.desc <- hs.desc %>%
+hs_desc <- hs_desc %>%
   mutate(desc = paste(desc, " (", classification, ")", sep = ""))
 
 # check multiple entries
-check.df <- hs.desc %>%
+check.df <- hs_desc %>%
   group_by(code) %>%
   mutate(n = length(desc)) %>%
   filter(n > 1)
 
 # append desc from different years
-hs_desc <- hs.desc %>%
+hs_desc <- hs_desc %>%
   group_by(code) %>%
   mutate(desc = paste0(desc, collapse = "; "),
          n = length(desc)) %>%
@@ -249,7 +249,7 @@ hs_desc <- hs.desc %>%
 
 # save
 save(hs_desc,
-     file = "./data/hs_desc.RData")
+     file = "./data/hs_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -265,7 +265,7 @@ isic2_desc <- isic2.desc.r %>%
 
 # save
 save(isic2_desc,
-     file = "./data/isic2_desc.RData")
+     file = "./data/isic2_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -281,7 +281,7 @@ isic3_desc <- isic3.desc.r %>%
 
 # save
 save(isic3_desc,
-     file = "./data/isic3_desc.RData")
+     file = "./data/isic3_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -297,7 +297,7 @@ isic4_desc <- isic4.desc.r %>%
 
 # save
 save(isic4_desc,
-     file = "./data/isic4_desc.RData")
+     file = "./data/isic4_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -374,7 +374,7 @@ sitc1_desc <- sitc1.desc[!duplicated(sitc1.desc$code),]
 
 # save
 save(sitc1_desc,
-     file = "./data/sitc1_desc.RData")
+     file = "./data/sitc1_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -451,7 +451,7 @@ sitc2_desc <- sitc2.desc[!duplicated(sitc2.desc$code),]
 
 # save
 save(sitc2_desc,
-     file = "./data/sitc2_desc.RData")
+     file = "./data/sitc2_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -528,7 +528,7 @@ sitc3_desc <- sitc3.desc[!duplicated(sitc3.desc$code),]
 
 # save
 save(sitc3_desc,
-     file = "./data/sitc3_desc.RData")
+     file = "./data/sitc3_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -605,7 +605,7 @@ sitc4_desc <- sitc4.desc[!duplicated(sitc4.desc$code),]
 
 # save
 save(sitc4_desc,
-     file = "./data/sitc4_desc.RData")
+     file = "./data/sitc4_desc.RData", compress = "xz")
 
 
 ################################################################################
@@ -624,5 +624,5 @@ bec_desc <- bec.desc.r$results %>%
 
 # save
 save(bec_desc,
-     file = "./data/bec_desc.RData")
+     file = "./data/bec_desc.RData", compress = "xz")
 

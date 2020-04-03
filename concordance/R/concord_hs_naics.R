@@ -1,6 +1,6 @@
 #' Converting HS and NAICS Codes
 #'
-#' \code{concord_hs_naics} converts HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from NAICS (combined) codes.
+#' Concords HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from NAICS (combined) codes.
 #'
 #' @param sourcevar An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and NAICS.
 #' @param origin A string setting the input industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (NAICS combined).
