@@ -4,11 +4,13 @@
 \name{isic3_desc}
 \alias{isic3_desc}
 \title{ISIC3 Description}
-\format{A data frame with 528 rows and 2 variables:
+\format{
+A data frame with 528 rows and 2 variables:
 \describe{
   \item{code}{ISIC3 Code}
   \item{desc}{ISIC3 Description}
-}}
+}
+}
 \source{
 \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
 }

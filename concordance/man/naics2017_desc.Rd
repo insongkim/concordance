@@ -4,11 +4,13 @@
 \name{naics2017_desc}
 \alias{naics2017_desc}
 \title{NAICS 2017 Description}
-\format{A data frame with 2217 rows and 2 variables:
+\format{
+A data frame with 2217 rows and 2 variables:
 \describe{
   \item{code}{NAICS 2017 Code}
   \item{desc}{NAICS 2017 Description}
-}}
+}
+}
 \source{
 \url{https://data.bls.gov/cew/apps/bls_naics/v2/bls_naics_app.htm#tab=download&naics=2017}
 }

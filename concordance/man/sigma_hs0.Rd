@@ -4,13 +4,15 @@
 \name{sigma_hs0}
 \alias{sigma_hs0}
 \title{Sigma Table (3-Digit HS0)}
-\format{A data frame with 11293 rows and 4 variables:
+\format{
+A data frame with 11293 rows and 4 variables:
 \describe{
   \item{iso3c}{ISO 3-letter Country Code}
   \item{HS0_3d}{3-digit HS0 Code}
   \item{HS0_2d}{2-digit HS0 Code}
   \item{sigma}{Import Demand Elasticity}
-}}
+}
+}
 \source{
 \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
 }

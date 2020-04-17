@@ -4,7 +4,8 @@
 \name{sitc3_sitc2}
 \alias{sitc3_sitc2}
 \title{SITC3-SITC2 Concordance}
-\format{A data frame with 3121 rows and 10 variables:
+\format{
+A data frame with 3121 rows and 10 variables:
 \describe{
   \item{SITC3_5d}{5-digit SITC3 Code}
   \item{SITC3_4d}{4-digit SITC3 Code}
@@ -16,7 +17,8 @@
   \item{SITC2_3d}{3-digit SITC2 Code}
   \item{SITC2_2d}{2-digit SITC2 Code}
   \item{SITC2_1d}{1-digit SITC2 Code}
-}}
+}
+}
 \source{
 \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 }

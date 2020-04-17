@@ -10,8 +10,7 @@ Concordance tables provided by:
 }
 }
 \usage{
-concord_sitc(sourcevar, origin, destination, dest.digit = 4,
-  all = FALSE)
+concord_sitc(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 }
 \arguments{
 \item{sourcevar}{An input character vector of SITC codes. The function accepts 1 to 5-digit SITC codes.}
@@ -34,11 +33,11 @@ Concords codes within the SITC classification (Revision 1, 2, 3, 4).
 Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
-# Convert SITC4 to SITC3
+# SITC4 to SITC3
 concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
              destination = "SITC3", dest.digit = 5, all = TRUE)
 
-# Convert SITC1 to SITC4
+# SITC1 to SITC4
 concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
              destination = "SITC4", dest.digit = 5, all = TRUE)
 }

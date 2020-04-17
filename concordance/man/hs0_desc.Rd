@@ -4,11 +4,13 @@
 \name{hs0_desc}
 \alias{hs0_desc}
 \title{HS0 Description}
-\format{A data frame with 6380 rows and 2 variables:
+\format{
+A data frame with 6380 rows and 2 variables:
 \describe{
   \item{code}{HS0 Code}
   \item{desc}{HS0 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationH0.json}
 }

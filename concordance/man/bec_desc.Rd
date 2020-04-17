@@ -4,11 +4,13 @@
 \name{bec_desc}
 \alias{bec_desc}
 \title{BEC Description}
-\format{A data frame with 29 rows and 2 variables:
+\format{
+A data frame with 29 rows and 2 variables:
 \describe{
   \item{code}{BEC Code}
   \item{desc}{BEC Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationBEC.json}
 }

@@ -4,11 +4,13 @@
 \name{hs_desc}
 \alias{hs_desc}
 \title{HS (Combined) Description}
-\format{A data frame with 7911 rows and 2 variables:
+\format{
+A data frame with 7911 rows and 2 variables:
 \describe{
   \item{code}{HS Code}
   \item{desc}{HS Description}
-}}
+}
+}
 \usage{
 hs_desc
 }

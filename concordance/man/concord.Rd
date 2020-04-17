@@ -35,26 +35,35 @@ Concords different classification codes used in international trade.
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
-# HS <--> NAICS
+# HS to NAICS
 concord(sourcevar = c("120600", "854690"),
         origin = "HS", destination = "NAICS",
         dest.digit = 6, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "NAICS",
+        dest.digit = 6, all = FALSE)
+
+# NAICS to HS
 concord(sourcevar = c("111120", "326199"),
         origin = "NAICS", destination = "HS",
         dest.digit = 6, all = TRUE)
 
-# HS <--> SITC4
+# HS to SITC4
 concord(sourcevar = c("120600", "854690"),
         origin = "HS", destination = "SITC4",
         dest.digit = 5, all = TRUE)
+
+# SITC4 to HS
 concord(sourcevar = c("22240", "77324"),
         origin = "SITC4", destination = "HS",
         dest.digit = 6, all = TRUE)
 
-# SITC4 <--> NAICS
+# SITC4 to NAICS
 concord(sourcevar = c("22240", "77324"),
         origin = "SITC4", destination = "NAICS",
         dest.digit = 6, all = TRUE)
+
+# NAICS to SITC4
 concord(sourcevar = c("111120", "326199"),
         origin = "NAICS", destination = "SITC4",
         dest.digit = 5, all = TRUE)

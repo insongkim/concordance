@@ -4,11 +4,13 @@
 \name{hs3_desc}
 \alias{hs3_desc}
 \title{HS3 Description}
-\format{A data frame with 6372 rows and 2 variables:
+\format{
+A data frame with 6372 rows and 2 variables:
 \describe{
   \item{code}{HS3 Code}
   \item{desc}{HS3 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationH3.json}
 }

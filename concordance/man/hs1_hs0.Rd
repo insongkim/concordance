@@ -4,7 +4,8 @@
 \name{hs1_hs0}
 \alias{hs1_hs0}
 \title{HS1-HS0 Concordance}
-\format{A data frame with 5130 rows and 6 variables:
+\format{
+A data frame with 5130 rows and 6 variables:
 \describe{
   \item{HS1_6d}{6-digit HS1 Code}
   \item{HS1_4d}{4-digit HS1 Code}
@@ -12,7 +13,8 @@
   \item{HS0_6d}{6-digit HS0 Code}
   \item{HS0_4d}{4-digit HS0 Code}
   \item{HS0_2d}{2-digit HS0 Code}
-}}
+}
+}
 \source{
 \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 }

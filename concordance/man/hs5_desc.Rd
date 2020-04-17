@@ -4,11 +4,13 @@
 \name{hs5_desc}
 \alias{hs5_desc}
 \title{HS5 Description}
-\format{A data frame with 6708 rows and 2 variables:
+\format{
+A data frame with 6708 rows and 2 variables:
 \describe{
   \item{code}{HS5 Code}
   \item{desc}{HS5 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationH5.json}
 }

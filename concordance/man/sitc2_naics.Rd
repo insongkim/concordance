@@ -4,7 +4,8 @@
 \name{sitc2_naics}
 \alias{sitc2_naics}
 \title{SITC2-NAICS Concordance}
-\format{A data frame with 5065 rows and 8 variables:
+\format{
+A data frame with 5065 rows and 8 variables:
 \describe{
   \item{SITC2_5d}{5-digit SITC2 Code}
   \item{SITC2_4d}{4-digit SITC2 Code}
@@ -14,7 +15,8 @@
   \item{NAICS_6d}{6-digit NAICS Code}
   \item{NAICS_4d}{4-digit NAICS Code}
   \item{NAICS_2d}{2-digit NAICS Code}
-}}
+}
+}
 \source{
 \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 }

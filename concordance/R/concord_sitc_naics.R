@@ -45,7 +45,7 @@
 #'                    origin = "SITC4", destination = "NAICS",
 #'                    dest.digit = 6, all = TRUE)
 #'
-#' # if no match, will return NA
+#' # if no match, will return NA and give warning message
 #' concord_sitc_naics(sourcevar = c("22240", "00160"),
 #'                    origin = "SITC4", destination = "NAICS",
 #'                    dest.digit = 6, all = FALSE)
@@ -59,6 +59,7 @@
 #' concord_sitc_naics(sourcevar = c("22240", "00190"),
 #'                    origin = "SITC4", destination = "NAICS",
 #'                    dest.digit = 6, all = TRUE)
+#'
 #' ## NAICS to SITC4
 #' concord_sitc_naics(sourcevar = c("111120", "326199"),
 #'                    origin = "NAICS", destination = "SITC4",

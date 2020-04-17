@@ -4,12 +4,14 @@
 \name{sitc2_rauch}
 \alias{sitc2_rauch}
 \title{SITC2-Rauch Concordance}
-\format{A data frame with 1189 rows and 3 variables:
+\format{
+A data frame with 1189 rows and 3 variables:
 \describe{
   \item{SITC2}{SITC2 Code}
   \item{CON}{Conservative classification}
   \item{LIB}{Liberal classification}
-}}
+}
+}
 \source{
 Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
 }

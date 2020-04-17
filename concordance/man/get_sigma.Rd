@@ -3,16 +3,24 @@
 \name{get_sigma}
 \alias{get_sigma}
 \title{Looking Up Product Elasticity}
+\source{
+Data from David E. Weinstein' webpage: \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
+}
 \usage{
-get_sigma(sourcevar, origin, country = "USA", use_SITC = FALSE,
-  give_avg = TRUE)
+get_sigma(
+  sourcevar,
+  origin,
+  country = "USA",
+  use_SITC = FALSE,
+  give_avg = TRUE
+)
 }
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes.}
 
 \item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), and "NAICS" (NAICS combined).}
 
-\item{country}{A string setting the ISO3 country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".}
+\item{country}{A string setting the ISO 3-letter country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".}
 
 \item{use_SITC}{Is set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.}
 

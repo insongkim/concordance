@@ -4,7 +4,8 @@
 \name{hs1_naics}
 \alias{hs1_naics}
 \title{HS1-NAICS Concordance}
-\format{A data frame with 8297 rows and 6 variables:
+\format{
+A data frame with 8297 rows and 6 variables:
 \describe{
   \item{HS1_6d}{6-digit HS1 Code}
   \item{HS1_4d}{4-digit HS1 Code}
@@ -12,7 +13,8 @@
   \item{NAICS_6d}{6-digit NAICS Code}
   \item{NAICS_4d}{4-digit NAICS Code}
   \item{NAICS_2d}{2-digit NAICS Code}
-}}
+}
+}
 \source{
 Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 }

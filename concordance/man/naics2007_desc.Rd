@@ -4,11 +4,13 @@
 \name{naics2007_desc}
 \alias{naics2007_desc}
 \title{NAICS 2007 Description}
-\format{A data frame with 2328 rows and 2 variables:
+\format{
+A data frame with 2328 rows and 2 variables:
 \describe{
   \item{code}{NAICS 2007 Code}
   \item{desc}{NAICS 2007 Description}
-}}
+}
+}
 \source{
 \url{https://www.census.gov/eos/www/naics/reference_files_tools/2007/naics07_6.txt}
 }

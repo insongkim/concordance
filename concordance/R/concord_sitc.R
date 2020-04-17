@@ -17,11 +17,11 @@
 #' }
 #' @note Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 #' @examples
-#' # Convert SITC4 to SITC3
+#' # SITC4 to SITC3
 #' concord_sitc(sourcevar = c("22240", "04110"), origin = "SITC4",
 #'              destination = "SITC3", dest.digit = 5, all = TRUE)
 #'
-#' # Convert SITC1 to SITC4
+#' # SITC1 to SITC4
 #' concord_sitc(sourcevar = c("22180", "04100"), origin = "SITC1",
 #'              destination = "SITC4", dest.digit = 5, all = TRUE)
 concord_sitc <- function (sourcevar,

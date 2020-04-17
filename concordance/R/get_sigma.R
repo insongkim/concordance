@@ -4,13 +4,14 @@
 #'
 #' @param sourcevar An input character vector of industry/product codes.
 #' @param origin A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), and "NAICS" (NAICS combined).
-#' @param country A string setting the ISO3 country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".
+#' @param country A string setting the ISO 3-letter country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".
 #' @param use_SITC Is set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.
 #' @param give_avg Set to FALSE if you wish to obtain the full vector of elasticities for all matching codes of each element in the input vector. When set to TRUE (as by default) each output element will be a simple average of all elasticities in the corresponding vector.
 #' @return Concords vector of input codes to 3-digit HS0 codes and then extracts the corresponding product-level import demand elasticities in the country selected by the user. For the United States, Broda and Weinstein (2006) have also estimated elasticities based on more fine-grained 5-digit SITC3 codes. Set \code{use_SITC} to TRUE to obtain elasticities in the United States via this method.
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export
+#' @source Data from David E. Weinstein' webpage: \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
 #' @references C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
 #' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples

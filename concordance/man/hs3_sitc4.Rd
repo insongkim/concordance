@@ -4,7 +4,8 @@
 \name{hs3_sitc4}
 \alias{hs3_sitc4}
 \title{HS3-SITC4 Concordance}
-\format{A data frame with 5050 rows and 8 variables:
+\format{
+A data frame with 5050 rows and 8 variables:
 \describe{
   \item{HS3_6d}{6-digit HS3 Code}
   \item{HS3_4d}{4-digit HS3 Code}
@@ -14,7 +15,8 @@
   \item{SITC4_3d}{3-digit SITC4 Code}
   \item{SITC4_2d}{2-digit SITC4 Code}
   \item{SITC4_1d}{1-digit SITC4 Code}
-}}
+}
+}
 \source{
 \url{https://wits.worldbank.org/product_concordance.html}
 }

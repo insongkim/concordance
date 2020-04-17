@@ -11,8 +11,7 @@ SITC-NAICS concordances are mapped through HS (combined):
 }
 }
 \usage{
-concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4,
-  all = FALSE)
+concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 }
 \arguments{
 \item{sourcevar}{An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.}
@@ -62,7 +61,7 @@ concord_sitc_naics(sourcevar = c("22240", "00190"),
                    origin = "SITC4", destination = "NAICS",
                    dest.digit = 6, all = TRUE)
 
-# if no match, will return NA
+# if no match, will return NA and give warning message
 concord_sitc_naics(sourcevar = c("22240", "00160"),
                    origin = "SITC4", destination = "NAICS",
                    dest.digit = 6, all = FALSE)
@@ -76,6 +75,7 @@ concord_sitc_naics(sourcevar = c("2224", "0019"),
 concord_sitc_naics(sourcevar = c("22240", "00190"),
                    origin = "SITC4", destination = "NAICS",
                    dest.digit = 6, all = TRUE)
+
 ## NAICS to SITC4
 concord_sitc_naics(sourcevar = c("111120", "326199"),
                    origin = "NAICS", destination = "SITC4",

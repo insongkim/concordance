@@ -41,7 +41,7 @@
 #'                  origin = "HS", destination = "NAICS",
 #'                  all = TRUE)
 #'
-#' # if no match, will return NA
+#' # if no match, will return NA and give warning message
 #' concord_hs_naics(sourcevar = c("120600", "120800"),
 #'                  origin = "HS", destination = "NAICS",
 #'                  all = FALSE)

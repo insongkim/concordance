@@ -4,11 +4,13 @@
 \name{sitc4_desc}
 \alias{sitc4_desc}
 \title{SITC4 Description}
-\format{A data frame with 7239 rows and 2 variables:
+\format{
+A data frame with 7239 rows and 2 variables:
 \describe{
   \item{code}{SITC4 Code}
   \item{desc}{SITC4 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationS4.json}
 }

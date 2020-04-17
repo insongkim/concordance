@@ -4,11 +4,13 @@
 \name{hs2_desc}
 \alias{hs2_desc}
 \title{HS2 Description}
-\format{A data frame with 6568 rows and 2 variables:
+\format{
+A data frame with 6568 rows and 2 variables:
 \describe{
   \item{code}{HS2 Code}
   \item{desc}{HS2 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationH2.json}
 }

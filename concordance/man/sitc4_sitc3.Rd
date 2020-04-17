@@ -4,7 +4,8 @@
 \name{sitc4_sitc3}
 \alias{sitc4_sitc3}
 \title{A dataset containing concordances between SITC4 and SITC3 classification.}
-\format{A data frame with 3488 rows and 10 variables:
+\format{
+A data frame with 3488 rows and 10 variables:
 \describe{
   \item{SITC4_5d}{5-digit SITC4 Code}
   \item{SITC4_4d}{4-digit SITC4 Code}
@@ -16,7 +17,8 @@
   \item{SITC3_3d}{3-digit SITC3 Code}
   \item{SITC3_2d}{2-digit SITC3 Code}
   \item{SITC3_1d}{1-digit SITC3 Code}
-}}
+}
+}
 \source{
 \url{https://unstats.un.org/unsd/trade/sitcrev4.htm}
 }

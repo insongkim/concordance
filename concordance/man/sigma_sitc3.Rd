@@ -4,7 +4,8 @@
 \name{sigma_sitc3}
 \alias{sigma_sitc3}
 \title{Sigma Table (5-Digit SITC3)}
-\format{A data frame with 2716 rows and 7 variables:
+\format{
+A data frame with 2716 rows and 7 variables:
 \describe{
   \item{iso3c}{ISO 3-letter Country Code}
   \item{SITC3_5d}{5-digit SITC3 Code}
@@ -13,7 +14,8 @@
   \item{SITC3_2d}{2-digit SITC3 Code}
   \item{SITC3_1d}{1-digit SITC3 Code}
   \item{sigma}{Import Demand Elasticity}
-}}
+}
+}
 \source{
 \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
 }

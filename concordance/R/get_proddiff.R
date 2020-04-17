@@ -21,11 +21,11 @@
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "n")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "LIB", prop = "")
 #'
-#' # Other SITC classifications
+#' # Using other SITC classifications as input
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC3", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC4", setting = "CON", prop = "")
 #'
-#' # Other classifications
+#' # Using other classifications as input
 #' get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "r")

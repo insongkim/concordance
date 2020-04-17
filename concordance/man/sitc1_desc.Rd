@@ -4,11 +4,13 @@
 \name{sitc1_desc}
 \alias{sitc1_desc}
 \title{SITC1 Description}
-\format{A data frame with 3024 rows and 2 variables:
+\format{
+A data frame with 3024 rows and 2 variables:
 \describe{
   \item{code}{SITC1 Code}
   \item{desc}{SITC1 Description}
-}}
+}
+}
 \source{
 \url{https://comtrade.un.org/data/cache/classificationS1.json}
 }

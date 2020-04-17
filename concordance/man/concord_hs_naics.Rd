@@ -7,8 +7,7 @@
 HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
 }
 \usage{
-concord_hs_naics(sourcevar, origin, destination, dest.digit = 6,
-  all = FALSE)
+concord_hs_naics(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 }
 \arguments{
 \item{sourcevar}{An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and NAICS.}
@@ -58,7 +57,7 @@ concord_hs_naics(sourcevar = c("120600", "854690"),
                  origin = "HS", destination = "NAICS",
                  all = TRUE)
 
-# if no match, will return NA
+# if no match, will return NA and give warning message
 concord_hs_naics(sourcevar = c("120600", "120800"),
                  origin = "HS", destination = "NAICS",
                  all = FALSE)

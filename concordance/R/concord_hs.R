@@ -17,12 +17,12 @@
 #' }
 #' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
-#' # Convert HS5 to HS4
+#' # HS5 to HS4
 #' concord(sourcevar = c("1206", "8546"),
 #'         origin = "HS5", destination = "HS4",
 #'         dest.digit = 4, all = TRUE)
 #'
-#' # Convert HS0 to HS5
+#' # HS0 to HS5
 #' concord(sourcevar = c("010111", "382390"),
 #'         origin = "HS0", destination = "HS5",
 #'         dest.digit = 6, all = TRUE)
