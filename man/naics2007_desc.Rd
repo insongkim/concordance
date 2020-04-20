@@ -12,7 +12,7 @@ A data frame with 2328 rows and 2 variables:
 }
 }
 \source{
-\url{https://www.census.gov/eos/www/naics/reference_files_tools/2007/naics07_6.txt}
+\url{https://www.census.gov/eos/www/naics/}
 }
 \usage{
 naics2007_desc

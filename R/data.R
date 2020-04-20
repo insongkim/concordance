@@ -8,7 +8,7 @@
 #'   \item{code}{NAICS 2002 Code}
 #'   \item{desc}{NAICS 2002 Description}
 #' }
-#' @source \url{https://www.census.gov/eos/www/naics/reference_files_tools/2002/naics_6_02.txt}
+#' @source \url{https://www.census.gov/eos/www/naics/}
 "naics2002_desc"
 
 #' NAICS 2007 Description
@@ -21,7 +21,7 @@
 #'   \item{code}{NAICS 2007 Code}
 #'   \item{desc}{NAICS 2007 Description}
 #' }
-#' @source \url{https://www.census.gov/eos/www/naics/reference_files_tools/2007/naics07_6.txt}
+#' @source \url{https://www.census.gov/eos/www/naics/}
 "naics2007_desc"
 
 #' NAICS 2012 Description

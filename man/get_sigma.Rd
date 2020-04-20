@@ -52,5 +52,5 @@ get_sigma(sourcevar = c("0101", "0207", "0101"), origin = "HS5",
           country = "USA", use_SITC = TRUE, give_avg = TRUE)
 }
 \references{
-C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
+Broda, Christian, and David E. Weinstein. 2006. "Globalization and the Gains from Variety," Quarterly Journal of Economics, 121(2): 541--585.
 }

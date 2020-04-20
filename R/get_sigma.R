@@ -12,7 +12,7 @@
 #' @importFrom rlang := !! .data
 #' @export
 #' @source Data from David E. Weinstein' webpage: \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
-#' @references C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
+#' @references Broda, Christian, and David E. Weinstein. 2006. "Globalization and the Gains from Variety," Quarterly Journal of Economics, 121(2): 541--585.
 #' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' get_sigma(sourcevar = c("21170", "69978", "21170", "21171"), origin = "SITC4",

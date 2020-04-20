@@ -45,5 +45,5 @@ get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON
 get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "r")
 }
 \references{
-Rauch, James E. "Networks Versus Markets in International Trade," Journal of International Economics 48(1) (June 1999): 7-35.
+Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.
 }
