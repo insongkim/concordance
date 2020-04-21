@@ -18,7 +18,7 @@ A data frame with 6826 rows and 8 variables:
 }
 }
 \source{
-\url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 }
 \usage{
 hs_sitc3

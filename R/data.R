@@ -259,7 +259,7 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs0_sitc1"
 
 #' HS0-SITC2 Concordance
@@ -277,7 +277,7 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs0_sitc2"
 
 #' HS0-SITC3 Concordance
@@ -295,7 +295,7 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs0_sitc3"
 
 #' HS0-SITC4 Concordance
@@ -313,7 +313,7 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs0_sitc4"
 
 #' HS1-SITC1 Concordance
@@ -331,7 +331,7 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs1_sitc1"
 
 #' HS1-SITC2 Concordance
@@ -349,7 +349,7 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs1_sitc2"
 
 #' HS1-SITC3 Concordance
@@ -367,7 +367,7 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs1_sitc3"
 
 #' HS1-SITC4 Concordance
@@ -385,7 +385,7 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs1_sitc4"
 
 #' HS2-SITC1 Concordance
@@ -403,7 +403,7 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs2_sitc1"
 
 #' HS2-SITC2 Concordance
@@ -421,7 +421,7 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs2_sitc2"
 
 #' HS2-SITC3 Concordance
@@ -439,7 +439,7 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs2_sitc3"
 
 #' HS2-SITC4 Concordance
@@ -457,7 +457,7 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs2_sitc4"
 
 #' HS3-SITC1 Concordance
@@ -475,7 +475,7 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs3_sitc1"
 
 #' HS3-SITC2 Concordance
@@ -493,7 +493,7 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs3_sitc2"
 
 #' HS3-SITC3 Concordance
@@ -511,7 +511,7 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs3_sitc3"
 
 #' HS3-SITC4 Concordance
@@ -529,7 +529,7 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}
+#' @source https://wits.worldbank.org/product_concordance.html
 "hs3_sitc4"
 
 #' HS4-SITC1 Concordance
@@ -691,7 +691,7 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs_sitc1"
 
 #' HS-SITC2 Concordance
@@ -709,7 +709,7 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs_sitc2"
 
 #' HS-SITC3 Concordance
@@ -727,7 +727,7 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs_sitc3"
 
 #' HS-SITC4 Concordance
@@ -745,7 +745,7 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs_sitc4"
 
 #' HS-NAICS Concordance
@@ -875,7 +875,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc1_naics"
 
 #' SITC2-NAICS Concordance
@@ -893,7 +893,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc2_naics"
 
 #' SITC3-NAICS Concordance
@@ -911,7 +911,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc3_naics"
 
 #' SITC4-NAICS Concordance
@@ -929,7 +929,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source \url{https://wits.worldbank.org/product_concordance.html}; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc4_naics"
 
 #' SITC2-SITC1 Concordance

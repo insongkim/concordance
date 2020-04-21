@@ -18,7 +18,7 @@ A data frame with 5111 rows and 8 variables:
 }
 }
 \source{
-\url{https://wits.worldbank.org/product_concordance.html}
+https://wits.worldbank.org/product_concordance.html
 }
 \usage{
 hs1_sitc2
