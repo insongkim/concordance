@@ -6,7 +6,7 @@
 \source{
 SITC-NAICS concordances are mapped through HS (combined):
 \itemize{
-  \item SITC-HS concordance tables are from the World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics (https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp).
+  \item SITC-HS concordance tables are from the World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html> and United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>.
   \item HS-NAICS concordance tables are from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
 }
 }

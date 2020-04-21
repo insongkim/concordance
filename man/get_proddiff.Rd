@@ -4,7 +4,7 @@
 \alias{get_proddiff}
 \title{Looking Up Product Differentiation}
 \source{
-Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
+Data from Jon Haveman's International Trade Data page <http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch>.
 }
 \usage{
 get_proddiff(sourcevar, origin, setting = "CON", prop = "")
@@ -14,15 +14,15 @@ get_proddiff(sourcevar, origin, setting = "CON", prop = "")
 
 \item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
 
-\item{setting}{Choose "CON" (conservative, default) or "LIB" (liberal) for Rauch classification.}
+\item{setting}{Choose "CON" (conservative, default) or "LIB" (liberal) classification.}
 
-\item{prop}{Can be set to "w", "r", or "n", in which case the function will return the proportion of "w", "r", or "n" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes all the frequencies and proportions of "w", "r", and "n".}
+\item{prop}{Can be set to "n", "r", or "w", in which case the function will return, respectively, the proportion of type "n", "r", or "w" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes all the frequencies and proportions of type "w", "r", and "n".}
 }
 \value{
-Concords each element of the input vector to SITC2 codes, then uses the corresponding codes as input to concord to Rauch product differentiation indices.
+Concords each element of the input vector to 4-digit SITC2 codes, then uses the corresponding codes as input to extract Rauch product differentiation indices.
 }
 \description{
-Returns Rauch's classification of product differentiation. Rauch classifies each SITC Rev. 2 industry according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
+Returns Rauch's classification of product differentiation. Rauch classifies 4-digit SITC2 codes according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

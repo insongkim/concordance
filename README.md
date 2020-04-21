@@ -163,7 +163,7 @@ or `prop = "w"`, in which case the function will return the proportion of "w",
 "r", or "n" in the resulting vector of Rauch indices.
 
 ```r
-# get the proportion of "r" products
+# get the proportion of type "r"
 get_proddiff(sourcevar = c("120600", "854690"), origin = "HS5", prop = "r")
 ```
 ```

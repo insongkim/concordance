@@ -4,7 +4,7 @@
 \alias{get_sigma}
 \title{Looking Up Product Elasticity}
 \source{
-Data from David E. Weinstein' webpage: \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
+Data from David E. Weinstein's webpage <http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html>.
 }
 \usage{
 get_sigma(
@@ -24,13 +24,13 @@ get_sigma(
 
 \item{use_SITC}{Is set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.}
 
-\item{give_avg}{Set to FALSE if you wish to obtain the full vector of elasticities for all matching codes of each element in the input vector. When set to TRUE (as by default) each output element will be a simple average of all elasticities in the corresponding vector.}
+\item{give_avg}{Set to FALSE if you wish to obtain the full vector of elasticities for all matching codes of each element in the input vector. When set to TRUE (as by default) each output element will be a simple average of all elasticities (of matched codes) in the corresponding vector.}
 }
 \value{
-Concords vector of input codes to 3-digit HS0 codes and then extracts the corresponding product-level import demand elasticities in the country selected by the user. For the United States, Broda and Weinstein (2006) have also estimated elasticities based on more fine-grained 5-digit SITC3 codes. Set \code{use_SITC} to TRUE to obtain elasticities in the United States via this method.
+Concords vector of input codes to 3-digit HS0 codes and then extracts the corresponding product-level import demand elasticities in the country selected by the user. For the United States (only), Broda and Weinstein (2006) have also estimated elasticities based on more fine-grained 5-digit SITC3 codes. Set \code{use_SITC} to TRUE to obtain elasticities in the United States via this method.
 }
 \description{
-Returns product-level import demand elasticities using HS0 3-digit estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
+Returns product-level import demand elasticities using 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
