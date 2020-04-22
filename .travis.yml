@@ -1,0 +1,16 @@
+language: r
+cache: packages
+sudo: required
+
+r_build_args: --resave-data
+
+r_packages:
+  - devtools
+  
+r_github_packages:
+  - insongkim/concordance
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
