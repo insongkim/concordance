@@ -18,16 +18,16 @@ concordance between the classifications below:
 - "SITC2" (1974) 
 - "SITC3" (1985) 
 - "SITC4" (2006)
-- "NAICS" (combined). 
+- "NAICS" (combined)
 
 Support between the above and BEC, ISIC, and SIC classifications will be offered 
 soon. 
 
 Additionally, the package provides functions for: 
 
-- Code nomenclature / descriptions look-up
+- Code nomenclature / descriptions look-up (for HS, SITC, NAICS, BEC, ISIC classification codes)
 - Rauch classification (product differentiation) look-up (via concordance to SITC2)
-- Trade elasticity look-up (via concordance to HS0 or SITC3 codes).
+- Trade elasticity look-up (via concordance to HS0 or SITC3 codes)
 
 
 Installation Instructions
@@ -98,7 +98,7 @@ function. The example below converts HS5 to NAICS codes.
 
 Users can choose to retain all matches for each input by setting `all = TRUE`. 
 This option will also return the share of occurrences for each matched output 
-among all matched outputs.
+among all matched outputs at the user-specified digit level.
 
 ```r
 # HS to NAICS
@@ -125,8 +125,7 @@ $`854690`$weight
 
 Alternatively, users can simply obtain the matched output with the largest 
 share of occurrences (the mode match) with `all = FALSE` (default). If the 
-mode consists of multiple matches, the function will return the first matched 
-output.
+mode consists of multiple matches, the function will return the first matched output.
 
 ```r
 concord(sourcevar = c("120600", "854690"),
@@ -145,6 +144,63 @@ get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
 ```
 ```
 [1] "Oilseed (except Soybean) Farming" "All Other Plastics Product Manufacturing"
+```
+
+More technically, the function works by matching an input code to the most fine-grained 
+level of destination codes in our package (e.g., the 6-digit NAICS codes 
+above) and then calculates the occurrence share of each matched code at the 
+user-specified digit-level. Mode(s) can occur when users choose destination 
+codes at a more aggregated level and multiple finer-grained matched codes 
+belong to certain groups at that level. 
+
+We illustrate the above mechanics using HS5 code "8546" as an example. When 
+users ask for 6-digit NAICS codes (the most fine-grained level available), HS5 
+code "8546" is matched to five NAICS codes: "327212", "327113", "327110", "326199", 
+and "335932", with weights of 0.2 (1/5) each.
+
+```r
+concord(sourcevar = "8546",
+        origin = "HS5", destination = "NAICS",
+        dest.digit = 6, all = TRUE)
+```
+```
+$`8546`
+$`8546`$match
+[1] "327212" "327113" "327110" "326199" "335932"
+
+$`8546`$weight
+[1] 0.2 0.2 0.2 0.2 0.2
+```
+
+Instead, when users ask for 4-digit NAICS codes, HS5 code "8546" is matched 
+to four NAICS codes: "3271", "3272", "3261", "3359". NAICS code "3271" gets a 
+weight of 0.4 since it consists of two finer-grained matches "327113" and 
+"327110" out of the 5 total matches (2/5).
+
+```r
+concord(sourcevar = "8546",
+        origin = "HS5", destination = "NAICS",
+        dest.digit = 4, all = TRUE)
+```
+```
+$`8546`
+$`8546`$match
+[1] "3271" "3272" "3261" "3359"
+
+$`8546`$weight
+[1] 0.4 0.2 0.2 0.2
+```
+
+Thus, when `all = FALSE`, the function will retain the matched code with the largest 
+weight "3271".
+
+```r
+concord(sourcevar = "8546",
+        origin = "HS5", destination = "NAICS",
+        dest.digit = 4, all = FALSE)
+```
+```
+[1] "3271"
 ```
 
 ### Getting Product Differentiation
