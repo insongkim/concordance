@@ -9,7 +9,16 @@ Authors@R: c(
   person("Sayumi", "Miyano", email = "smiyano@princeton.edu", role = c("aut")),
   person("Feng", "Zhu", email = "zucxjo@gmail.com", role = c("aut"))
   )
-Description: A set of utilities for matching products in different classification codes used in international trade research. It supports concordance between HS (HS0, HS1, HS2, HS3, HS4, HS5, Combined), SITC1, 2, 3, 4 product classification codes, NAICS (Combined), as well as BEC, ISIC, and SIC classifications. It also provides code nomenclature / descriptions look-up, Rauch classification look-up (via concordance to SITC2) and trade elasticity look-up (via concordance to HS0 or SITC3 codes).
+Description: A set of utilities for matching products in different
+	     classification codes used in international trade
+	     research. It supports concordance between Harmonized
+	     System (HS0, HS1, HS2, HS3, HS4, HS5, Combined), SITC1,
+	     2, 3, 4 product classification codes, NAICS (Combined),
+	     as well as BEC, ISIC, and SIC classifications. It also
+	     provides code nomenclature / descriptions look-up, Rauch
+	     classification look-up (via concordance to SITC2) and
+	     trade elasticity look-up (via concordance to HS0 or SITC3
+	     codes).
 License: GPL-2
 Depends: R (>= 3.6.0)
 Imports: 
@@ -20,5 +29,6 @@ Imports:
     tibble (>= 3.0.0),
     tidyr (>= 1.0.2)
 LazyData: true
+BugReports: https://github.com/insongkim/concordance/issues
 RoxygenNote: 7.1.0
 Encoding: UTF-8
