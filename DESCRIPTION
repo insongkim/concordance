@@ -18,7 +18,7 @@ Description: A set of utilities for matching products in different
 	     as well as the Broad Economic Categories (BEC), the International 
 	     Standard of Industrial Classification (ISIC), and the Standard Industrial 
 	     Classification (SIC). It also provides code nomenclature/descriptions 
-	     look-up, Rauch classification look-up (via concordance to SITC2) and
+	     look-up, Rauch classification look-up (via concordance to SITC2), and
 	     trade elasticity look-up (via concordance to HS0 or SITC3
 	     codes).
 License: GPL-2

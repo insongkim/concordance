@@ -7,21 +7,28 @@ This R package provides a set of utilities for matching products in different
 classification codes used in international trade research. It currently supports 
 concordance between the classifications below:
 
-- "HS" (HS combined)
-- "HS0" (1988/92)
-- "HS1" (1996) 
-- "HS2" (2002) 
-- "HS3" (2007)
-- "HS4" (2012) 
-- "HS5" (2017)
-- "SITC1" (1950)
-- "SITC2" (1974) 
-- "SITC3" (1985) 
-- "SITC4" (2006)
-- "NAICS" (combined)
+- Harmonized System
+  * "HS0" (1988/92)
+  * "HS1" (1996) 
+  * "HS2" (2002) 
+  * "HS3" (2007)
+  * "HS4" (2012) 
+  * "HS5" (2017)
+  * "HS" (HS combined)
+- Standard International Trade Classification
+  * "SITC1" (1950)
+  * "SITC2" (1974) 
+  * "SITC3" (1985) 
+  * "SITC4" (2006)
+- North American Industry Classification System
+  * "NAICS" (combined)
 
-Support between the above and BEC, ISIC, and SIC classifications will be offered 
-soon. 
+Support between the above and the below classifications will be offered 
+soon:
+
+- Broad Economic Categories (BEC)
+- International Standard of Industrial Classification (ISIC)
+- Standard Industrial Classification (SIC)
 
 Additionally, the package provides functions for: 
 
@@ -50,6 +57,28 @@ Then, load `devtools` and use the function `install_github()` to install `concor
 ``` r
 library(devtools)
 install_github("insongkim/concordance", dependencies=TRUE)
+```
+
+Citation
+-------------------------
+
+To cite 'concordance' in publications use:
+
+```
+  Steven Liao, In Song Kim, Sayumi Miyano, Feng Zhu (2020). concordance: Product Concordance. R package version
+  2.0.0. https://CRAN.R-project.org/package=concordance
+```
+  
+A BibTeX entry for LaTeX users is:
+
+```
+  @Manual{,
+    title = {concordance: Product Concordance},
+    author = {Steven Liao and In Song Kim and Sayumi Miyano and Feng Zhu},
+    year = {2020},
+    note = {R package version 2.0.0},
+    url = {https://CRAN.R-project.org/package=concordance},
+  }
 ```
 
 Usage Examples
