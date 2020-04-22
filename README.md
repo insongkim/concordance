@@ -62,7 +62,7 @@ install_github("insongkim/concordance", dependencies=TRUE)
 Citation
 -------------------------
 
-To cite 'concordance' in publications use:
+To cite `concordance` in publications use:
 
 ```
   Steven Liao, In Song Kim, Sayumi Miyano, Feng Zhu (2020). concordance: Product Concordance. R package version
