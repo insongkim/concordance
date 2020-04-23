@@ -1,10 +1,10 @@
 #' Converting HS and SITC Codes
 #'
-#' Concords HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from SITC (Revision 1, 2, 3, 4) codes.
+#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from Standard International Trade Classification codes (SITC Revision 1, 2, 3, 4).
 #'
 #' @param sourcevar An input character vector of HS or SITC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 5-digit codes for SITC.
-#' @param origin A string setting the input industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), and "SITC4" (2006).
-#' @param destination A string setting the output industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006).
+#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), and "SITC4" (2006).
+#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 5 digits for SITC codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -23,6 +23,7 @@
 #' concord_hs_sitc(sourcevar = "120600",
 #'                 origin = "HS", destination = "SITC4",
 #'                 dest.digit = 5, all = FALSE)
+#'
 #' concord_hs_sitc(sourcevar = "120600",
 #'                 origin = "HS", destination = "SITC4",
 #'                 dest.digit = 5, all = TRUE)
@@ -31,6 +32,7 @@
 #' concord_hs_sitc(sourcevar = c("010110", "010119"),
 #'                 origin = "HS", destination = "SITC4",
 #'                 dest.digit = 5, all = FALSE)
+#'
 #' concord_hs_sitc(sourcevar = c("010110", "010119"),
 #'                 origin = "HS", destination = "SITC4",
 #'                 dest.digit = 5, all = TRUE)
@@ -59,6 +61,11 @@
 #' concord_hs_sitc(sourcevar = c("120600", "854610"),
 #'                 origin = "HS", destination = "SITC4",
 #'                 dest.digit = 3, all = TRUE)
+#'
+#' ## SITC4 to HS combined
+#' concord_hs_sitc(sourcevar = c("22240", "77322"),
+#'                 origin = "SITC4", destination = "HS",
+#'                 dest.digit = 6, all = FALSE)
 concord_hs_sitc <- function (sourcevar,
                              origin,
                              destination,

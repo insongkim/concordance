@@ -12,9 +12,9 @@ concord_hs_naics(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and NAICS.}
 
-\item{origin}{A string setting the input industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (NAICS combined).}
+\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (combined).}
 
-\item{destination}{A string setting the output industry classification: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (NAICS combined).}
+\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (combined).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS and NAICS. The default is 6 digits.}
 
@@ -24,7 +24,7 @@ concord_hs_naics(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords HS codes (HS, HS0, HS1, HS2, HS3, HS4, HS5) to and from NAICS (combined) codes.
+Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from North American Industry Classification System codes (NAICS combined).
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
@@ -76,6 +76,7 @@ concord_hs_naics(sourcevar = c("120600", "854690"),
 concord_hs_naics(sourcevar = c("1206", "8546"),
                  origin = "HS5", destination = "NAICS",
                  all = TRUE)
+
 concord_hs_naics(sourcevar = c("120600", "854690"),
                  origin = "HS5", destination = "NAICS",
                  dest.digit = 4, all = TRUE)
@@ -84,6 +85,7 @@ concord_hs_naics(sourcevar = c("120600", "854690"),
 concord_hs_naics(sourcevar = c("1111", "3271"),
                  origin = "NAICS", destination = "HS",
                  all = TRUE)
+
 concord_hs_naics(sourcevar = c("111120", "326199"),
                  origin = "NAICS", destination = "HS",
                  dest.digit = 4, all = TRUE)

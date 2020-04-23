@@ -12,7 +12,7 @@ get_proddiff(sourcevar, origin, setting = "CON", prop = "")
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes.}
 
-\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
+\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
 
 \item{setting}{Choose "CON" (conservative, default) or "LIB" (liberal) classification.}
 
@@ -30,19 +30,26 @@ Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)
 \examples{
 # SITC2 input
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "")
+
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "r")
+
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "w")
+
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "n")
+
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "LIB", prop = "")
 
-# Using other SITC classifications as input
+# SITC3 input
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC3", setting = "CON", prop = "")
+
+# SITC4 input
 get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC4", setting = "CON", prop = "")
 
-# Using other classifications as input
+# HS input
 get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CON", prop = "")
+
+# NAICS input
 get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
-get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "r")
 }
 \references{
 Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.

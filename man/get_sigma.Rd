@@ -18,11 +18,11 @@ get_sigma(
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes.}
 
-\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS" (for HS Combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), and "NAICS" (NAICS combined).}
+\item{origin}{A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), and "NAICS" (combined).}
 
 \item{country}{A string setting the ISO 3-letter country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".}
 
-\item{use_SITC}{Is set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.}
+\item{use_SITC}{Set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.}
 
 \item{give_avg}{Set to FALSE if you wish to obtain the full vector of elasticities for all matching codes of each element in the input vector. When set to TRUE (as by default) each output element will be a simple average of all elasticities (of matched codes) in the corresponding vector.}
 }
@@ -30,24 +30,23 @@ get_sigma(
 Concords vector of input codes to 3-digit HS0 codes and then extracts the corresponding product-level import demand elasticities in the country selected by the user. For the United States (only), Broda and Weinstein (2006) have also estimated elasticities based on more fine-grained 5-digit SITC3 codes. Set \code{use_SITC} to TRUE to obtain elasticities in the United States via this method.
 }
 \description{
-Returns product-level import demand elasticities using 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
+Returns product-level import demand elasticities based on 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
-get_sigma(sourcevar = c("21170", "69978", "21170", "21171"), origin = "SITC4",
+# South Korea, SITC4 input
+get_sigma(sourcevar = c("21170", "69978", "21170"), origin = "SITC4",
           country = "KOR", use_SITC = FALSE, give_avg = TRUE)
-get_sigma(sourcevar = c("21170", "69978", "21170", "21171"), origin = "SITC4",
+
+get_sigma(sourcevar = c("21170", "69978", "21170"), origin = "SITC4",
           country = "KOR", use_SITC = FALSE, give_avg = FALSE)
 
-get_sigma(sourcevar = c("21170", "69978", "21170", "21171"), origin = "SITC3",
-          country = "USA", use_SITC = TRUE, give_avg = TRUE)
-get_sigma(sourcevar = c("21170", "69978", "21170", "21171"), origin = "SITC3",
-          country = "USA", use_SITC = TRUE, give_avg = FALSE)
-
+# United States, HS5 input, SITC3 estimates
 get_sigma(sourcevar = c("0101", "0207", "0101"), origin = "HS5",
           country = "USA", use_SITC = TRUE, give_avg = FALSE)
+
 get_sigma(sourcevar = c("0101", "0207", "0101"), origin = "HS5",
           country = "USA", use_SITC = TRUE, give_avg = TRUE)
 }

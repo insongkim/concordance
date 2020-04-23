@@ -27,7 +27,7 @@ concord_sitc(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords codes within the SITC classification (Revision 1, 2, 3, 4).
+Concords codes within the Standard International Trade Classification classification (SITC Revision 1, 2, 3, 4).
 }
 \note{
 Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.

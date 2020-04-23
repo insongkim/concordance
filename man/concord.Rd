@@ -17,9 +17,9 @@ concord(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
+\item{origin}{A string setting the input coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: "HS" (HS combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
+\item{destination}{A string setting the output coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 4 digits.}
 
