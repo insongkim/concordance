@@ -761,7 +761,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs_naics"
 
 #' HS0-NAICS Concordance
@@ -777,7 +777,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs0_naics"
 
 #' HS1-NAICS Concordance
@@ -793,7 +793,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs1_naics"
 
 #' HS2-NAICS Concordance
@@ -809,7 +809,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs2_naics"
 
 #' HS3-NAICS Concordance
@@ -825,7 +825,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs3_naics"
 
 #' HS4-NAICS Concordance
@@ -841,7 +841,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs4_naics"
 
 #' HS5-NAICS Concordance
@@ -857,7 +857,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs5_naics"
 
 #' SITC1-NAICS Concordance
@@ -875,7 +875,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc1_naics"
 
 #' SITC2-NAICS Concordance
@@ -893,7 +893,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc2_naics"
 
 #' SITC3-NAICS Concordance
@@ -911,7 +911,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc3_naics"
 
 #' SITC4-NAICS Concordance
@@ -929,7 +929,7 @@
 #'   \item{NAICS_4d}{4-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
-#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+#' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc4_naics"
 
 #' SITC2-SITC1 Concordance
