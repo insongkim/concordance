@@ -16,7 +16,7 @@ A data frame with 8297 rows and 6 variables:
 }
 }
 \source{
-Pierce and Schott (2009, 2018),\url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 }
 \usage{
 hs1_naics

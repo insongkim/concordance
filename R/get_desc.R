@@ -168,7 +168,11 @@ get_desc <- function (sourcevar,
   }
 
   # check whether input codes have the same digits
-  digits <- unique(nchar(sourcevar))
+  # NAICS code has some unusual 2-digit codes, exclude them when counting digits
+  exempt.naics <- c("31-33", "44-45", "48-49")
+  sourcevar.sub <- sourcevar[!sourcevar %in% exempt.naics]
+
+  digits <- unique(nchar(sourcevar.sub))
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits

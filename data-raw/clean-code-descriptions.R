@@ -27,7 +27,8 @@ names(naics2002_desc)
 naics2002_desc <- naics2002_desc %>%
   rename(code = X1,
          desc  = X2) %>%
-  mutate(code = str_trim(code, "both"))
+  mutate(code = str_trim(code, "both"),
+         desc = str_replace_all(desc, "[\"]", ""))
 
 # save
 save(naics2002_desc,
@@ -49,7 +50,8 @@ naics2007_desc <- naics2007_desc %>%
   select(X2, X3) %>%
   rename(code = X2,
          desc  = X3) %>%
-  mutate(code = str_trim(code, "both"))
+  mutate(code = str_trim(code, "both"),
+         desc = str_replace_all(desc, "[\"]", ""))
 
 # save
 save(naics2007_desc,
@@ -69,7 +71,8 @@ names(naics2012_desc)
 naics2012_desc <- naics2012_desc %>%
   select(NAICS, `2012 NAICS Full Title`) %>%
   rename(code = NAICS,
-         desc  = `2012 NAICS Full Title`)
+         desc  = `2012 NAICS Full Title`) %>%
+  mutate(desc = str_replace_all(desc, "[\"]", ""))
 
 # save
 save(naics2012_desc,
@@ -89,7 +92,8 @@ names(naics2017_desc)
 naics2017_desc <- naics2017_desc %>%
   select(NAICS, `2017 NAICS Full Title`) %>%
   rename(code = NAICS,
-         desc  = `2017 NAICS Full Title`)
+         desc  = `2017 NAICS Full Title`) %>%
+  mutate(desc = str_replace_all(desc, "[\"]", ""))
 
 # save
 save(naics2017_desc,
