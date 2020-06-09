@@ -236,7 +236,7 @@
 #' A dataset containing the description of products under the BEC
 #' classification.
 #'
-#' @format A data frame with 29 rows and 2 variables:
+#' @format A data frame with 50 rows and 2 variables:
 #' \describe{
 #'   \item{code}{BEC Code}
 #'   \item{desc}{BEC Description}

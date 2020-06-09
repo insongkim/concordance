@@ -5,7 +5,7 @@
 \alias{bec_desc}
 \title{BEC Description}
 \format{
-A data frame with 29 rows and 2 variables:
+A data frame with 50 rows and 2 variables:
 \describe{
   \item{code}{BEC Code}
   \item{desc}{BEC Description}

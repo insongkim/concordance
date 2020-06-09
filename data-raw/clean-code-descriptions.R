@@ -619,12 +619,29 @@ save(sitc4_desc,
 # read json
 bec.desc.r <- fromJSON(file.path("./data-raw", "classificationBEC.json"))
 
-bec_desc <- bec.desc.r$results %>%
+bec.desc.3d <- bec.desc.r$results %>%
   filter(parent != "#") %>%
   mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
   rename(code = id) %>%
   mutate(code = str_pad(code, width = 3, side = "left", pad = "0")) %>%
   select(code, desc) %>%
+  arrange(code)
+
+bec.desc.2d <- bec.desc.r$results %>%
+  filter(nchar(id) == 2) %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
+  arrange(code)
+
+bec.desc.1d <- bec.desc.r$results %>%
+  filter(nchar(id) == 1) %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
+  arrange(code)
+
+bec_desc <- rbind(bec.desc.3d, bec.desc.2d, bec.desc.1d) %>%
   arrange(code)
 
 # save
