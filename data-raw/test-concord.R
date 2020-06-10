@@ -65,6 +65,30 @@ concord(sourcevar = c("120600", "854690"),
         dest.digit = 4,
         all = TRUE)
 
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS",
+        destination = "NAICS2002",
+        dest.digit = 4,
+        all = TRUE)
+
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS",
+        destination = "NAICS2007",
+        dest.digit = 4,
+        all = TRUE)
+
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS",
+        destination = "NAICS2012",
+        dest.digit = 4,
+        all = TRUE)
+
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS",
+        destination = "NAICS2017",
+        dest.digit = 4,
+        all = TRUE)
+
 
 ################################################################################
 ## NAICS --> HS
@@ -100,6 +124,30 @@ concord(sourcevar = c("111120", "326199"),
 
 concord(sourcevar = c("111120", "326199"),
         origin = "NAICS",
+        destination = "HS",
+        dest.digit = 6,
+        all = TRUE)
+
+concord(sourcevar = c("111120", "326199"),
+        origin = "NAICS2002",
+        destination = "HS",
+        dest.digit = 6,
+        all = TRUE)
+
+concord(sourcevar = c("111120", "326199"),
+        origin = "NAICS2007",
+        destination = "HS",
+        dest.digit = 6,
+        all = TRUE)
+
+concord(sourcevar = c("111120", "326199"),
+        origin = "NAICS2012",
+        destination = "HS",
+        dest.digit = 6,
+        all = TRUE)
+
+concord(sourcevar = c("111120", "326199"),
+        origin = "NAICS2017",
         destination = "HS",
         dest.digit = 6,
         all = TRUE)
@@ -526,3 +574,46 @@ concord(sourcevar = c("010111", "382390"),
         origin = "HS0", destination = "HS5",
         dest.digit = 4, all = TRUE)
 
+
+################################################################################
+## Within NAICS
+################################################################################
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2017", destination = "NAICS2002",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2017", destination = "NAICS2007",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2017", destination = "NAICS2012",
+        dest.digit = 6, all = TRUE)
+
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2012", destination = "NAICS2002",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2012", destination = "NAICS2007",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2012", destination = "NAICS2017",
+        dest.digit = 6, all = TRUE)
+
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2007", destination = "NAICS2002",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2007", destination = "NAICS2012",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2007", destination = "NAICS2017",
+        dest.digit = 6, all = TRUE)
+
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2002", destination = "NAICS2007",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2002", destination = "NAICS2012",
+        dest.digit = 6, all = TRUE)
+concord(sourcevar = c("2111", "3352"),
+        origin = "NAICS2002", destination = "NAICS2017",
+        dest.digit = 6, all = TRUE)

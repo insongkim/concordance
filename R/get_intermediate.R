@@ -119,7 +119,7 @@ get_intermediate <- function (sourcevar,
   exempt.naics <- c("31-33", "44-45", "48-49")
   sourcevar.sub <- sourcevar[!sourcevar %in% exempt.naics]
 
-  # avoid the case where user only put in unusal 2-digit codes
+  # avoid errors in the case where users only put in unusal 2-digit codes
   if(all(length(sourcevar.sub) == 0 & sourcevar %in% exempt.naics)) {
 
     sourcevar.sub <- "31"

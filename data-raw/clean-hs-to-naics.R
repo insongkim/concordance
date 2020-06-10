@@ -62,7 +62,7 @@ hs_naics <- hs_naics %>%
   distinct()
 
 
-# missing HS4 codes: 710820
+# missing HS5 codes: 710820
 # GOLD (INCLUDING GOLD PLATED WITH PLATINUM) UNWROUGHT OR IN SEMI-MANUFACTURED FORMS, OR IN POWDER FORM.- MONETARY
 # add
 # missing HS5 codes: "440111" "440112" "440140" "440311" "440312" "440321" "440322" "440323" "440324" "440325" "440326" "440393" "440394" "440395" "440396" "440397" "440398" "440611" "440612" "440691" "440692" "440711" "440712" "440719" "440796" "440797" "441233" "441234" "630420" "999999"
@@ -96,6 +96,138 @@ hs_naics <- hs_naics %>%
 # save
 save(hs_naics,
      file = "./data/hs_naics.RData", compress = "xz")
+
+
+################################################################################
+# HS to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs_naics2002 <- hs_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS_6d, HS_4d, HS_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs_naics2002$NAICS2002_6d)
+
+# save
+save(hs_naics2002,
+     file = "./data/hs_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs_naics2007 <- hs_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS_6d, HS_4d, HS_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs_naics2007$NAICS2007_6d)
+
+# save
+save(hs_naics2007,
+     file = "./data/hs_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs_naics2012 <- hs_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS_6d, HS_4d, HS_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs_naics2012$NAICS2012_6d)
+
+# save
+save(hs_naics2012,
+     file = "./data/hs_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs_naics2017 <- hs_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS_6d, HS_4d, HS_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs_naics2017$NAICS2017_6d)
+
+# save
+save(hs_naics2017,
+     file = "./data/hs_naics2017.RData", compress = "xz")
 
 
 ################################################################################
@@ -134,6 +266,138 @@ save(hs0_naics,
 
 
 ################################################################################
+# HS0 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs0_naics2002 <- hs0_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs0_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs0_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs0_naics2002$NAICS2002_6d)
+
+# save
+save(hs0_naics2002,
+     file = "./data/hs0_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS0 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs0_naics2007 <- hs0_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs0_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs0_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs0_naics2007$NAICS2007_6d)
+
+# save
+save(hs0_naics2007,
+     file = "./data/hs0_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS0 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs0_naics2012 <- hs0_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs0_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs0_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs0_naics2012$NAICS2012_6d)
+
+# save
+save(hs0_naics2012,
+     file = "./data/hs0_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS0 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs0_naics2017 <- hs0_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs0_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs0_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs0_naics2017$NAICS2017_6d)
+
+# save
+save(hs0_naics2017,
+     file = "./data/hs0_naics2017.RData", compress = "xz")
+
+
+################################################################################
 # HS1 to NAICS (combined)
 ################################################################################
 # load WB data to get a list of HS1 codes
@@ -166,6 +430,138 @@ setdiff(hs1.vec, hs1_naics$HS1_6d)
 # save
 save(hs1_naics,
      file = "./data/hs1_naics.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs1_naics2002 <- hs1_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs1_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs1_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs1_naics2002$NAICS2002_6d)
+
+# save
+save(hs1_naics2002,
+     file = "./data/hs1_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs1_naics2007 <- hs1_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs1_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs1_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs1_naics2007$NAICS2007_6d)
+
+# save
+save(hs1_naics2007,
+     file = "./data/hs1_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs1_naics2012 <- hs1_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs1_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs1_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs1_naics2012$NAICS2012_6d)
+
+# save
+save(hs1_naics2012,
+     file = "./data/hs1_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs1_naics2017 <- hs1_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs1_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs1_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs1_naics2017$NAICS2017_6d)
+
+# save
+save(hs1_naics2017,
+     file = "./data/hs1_naics2017.RData", compress = "xz")
 
 
 ################################################################################
@@ -204,6 +600,138 @@ save(hs2_naics,
 
 
 ################################################################################
+# HS2 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs2_naics2002 <- hs2_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs2_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs2_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs2_naics2002$NAICS2002_6d)
+
+# save
+save(hs2_naics2002,
+     file = "./data/hs2_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS2 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs2_naics2007 <- hs2_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs2_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs2_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs2_naics2007$NAICS2007_6d)
+
+# save
+save(hs2_naics2007,
+     file = "./data/hs2_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS2 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs2_naics2012 <- hs2_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs2_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs2_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs2_naics2012$NAICS2012_6d)
+
+# save
+save(hs2_naics2012,
+     file = "./data/hs2_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS2 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs2_naics2017 <- hs2_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs2_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs2_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs2_naics2017$NAICS2017_6d)
+
+# save
+save(hs2_naics2017,
+     file = "./data/hs2_naics2017.RData", compress = "xz")
+
+
+################################################################################
 # HS3 to NAICS (combined)
 ################################################################################
 # load WB data to get a list of HS1 codes
@@ -236,6 +764,138 @@ setdiff(hs3.vec, hs3_naics$HS3_6d)
 # save
 save(hs3_naics,
      file = "./data/hs3_naics.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs3_naics2002 <- hs3_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs3_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs3_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs3_naics2002$NAICS2002_6d)
+
+# save
+save(hs3_naics2002,
+     file = "./data/hs3_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs3_naics2007 <- hs3_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs3_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs3_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs3_naics2007$NAICS2007_6d)
+
+# save
+save(hs3_naics2007,
+     file = "./data/hs3_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs3_naics2012 <- hs3_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs3_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs3_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs3_naics2012$NAICS2012_6d)
+
+# save
+save(hs3_naics2012,
+     file = "./data/hs3_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs3_naics2017 <- hs3_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs3_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs3_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs3_naics2017$NAICS2017_6d)
+
+# save
+save(hs3_naics2017,
+     file = "./data/hs3_naics2017.RData", compress = "xz")
 
 
 ################################################################################
@@ -274,6 +934,138 @@ save(hs4_naics,
 
 
 ################################################################################
+# HS4 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs4_naics2002 <- hs4_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs4_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs4_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs4_naics2002$NAICS2002_6d)
+
+# save
+save(hs4_naics2002,
+     file = "./data/hs4_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS4 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs4_naics2007 <- hs4_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs4_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs4_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs4_naics2007$NAICS2007_6d)
+
+# save
+save(hs4_naics2007,
+     file = "./data/hs4_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS4 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs4_naics2012 <- hs4_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs4_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs4_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs4_naics2012$NAICS2012_6d)
+
+# save
+save(hs4_naics2012,
+     file = "./data/hs4_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS4 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs4_naics2017 <- hs4_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs4_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs4_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs4_naics2017$NAICS2017_6d)
+
+# save
+save(hs4_naics2017,
+     file = "./data/hs4_naics2017.RData", compress = "xz")
+
+
+################################################################################
 # HS5 to NAICS (combined)
 ################################################################################
 # load UN data to get HS codes
@@ -304,3 +1096,135 @@ setdiff(hs5.vec, hs5_naics$HS5_6d)
 # save
 save(hs5_naics,
      file = "./data/hs5_naics.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to NAICS2002
+################################################################################
+# load NAICS2002 codes
+load("./data/naics2002_desc.RData")
+
+naics2002.vec <- naics2002_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs5_naics2002 <- hs5_naics %>%
+  filter(NAICS_6d %in% naics2002.vec) %>%
+  rename(NAICS2002_6d = NAICS_6d,
+         NAICS2002_4d = NAICS_4d,
+         NAICS2002_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs5_naics2002$NAICS2002_6d)
+n_distinct(naics2002.vec)
+setdiff(unique(hs5_naics2002$NAICS2002_6d), naics2002.vec)
+setdiff(naics2002.vec, hs5_naics2002$NAICS2002_6d)
+
+# save
+save(hs5_naics2002,
+     file = "./data/hs5_naics2002.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to NAICS2007
+################################################################################
+# load NAICS2007 codes
+load("./data/naics2007_desc.RData")
+
+naics2007.vec <- naics2007_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs5_naics2007 <- hs5_naics %>%
+  filter(NAICS_6d %in% naics2007.vec) %>%
+  rename(NAICS2007_6d = NAICS_6d,
+         NAICS2007_4d = NAICS_4d,
+         NAICS2007_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs5_naics2007$NAICS2007_6d)
+n_distinct(naics2007.vec)
+setdiff(unique(hs5_naics2007$NAICS2007_6d), naics2007.vec)
+setdiff(naics2007.vec, hs5_naics2007$NAICS2007_6d)
+
+# save
+save(hs5_naics2007,
+     file = "./data/hs5_naics2007.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to NAICS2012
+################################################################################
+# load NAICS2012 codes
+load("./data/naics2012_desc.RData")
+
+naics2012.vec <- naics2012_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs5_naics2012 <- hs5_naics %>%
+  filter(NAICS_6d %in% naics2012.vec) %>%
+  rename(NAICS2012_6d = NAICS_6d,
+         NAICS2012_4d = NAICS_4d,
+         NAICS2012_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs5_naics2012$NAICS2012_6d)
+n_distinct(naics2012.vec)
+setdiff(unique(hs5_naics2012$NAICS2012_6d), naics2012.vec)
+setdiff(naics2012.vec, hs5_naics2012$NAICS2012_6d)
+
+# save
+save(hs5_naics2012,
+     file = "./data/hs5_naics2012.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to NAICS2017
+################################################################################
+# load NAICS2017 codes
+load("./data/naics2017_desc.RData")
+
+naics2017.vec <- naics2017_desc %>%
+  filter(nchar(code) == 6) %>%
+  pull(code) %>%
+  unique()
+
+# subset and clean
+hs5_naics2017 <- hs5_naics %>%
+  filter(NAICS_6d %in% naics2017.vec) %>%
+  rename(NAICS2017_6d = NAICS_6d,
+         NAICS2017_4d = NAICS_4d,
+         NAICS2017_2d = NAICS_2d) %>%
+  distinct() %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         NAICS2017_6d, NAICS2017_4d, NAICS2017_2d) %>%
+  distinct()
+
+# check
+n_distinct(hs5_naics2017$NAICS2017_6d)
+n_distinct(naics2017.vec)
+setdiff(unique(hs5_naics2017$NAICS2017_6d), naics2017.vec)
+setdiff(naics2017.vec, hs5_naics2017$NAICS2017_6d)
+
+# save
+save(hs5_naics2017,
+     file = "./data/hs5_naics2017.RData", compress = "xz")

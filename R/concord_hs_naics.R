@@ -1,10 +1,10 @@
 #' Converting HS and NAICS Codes
 #'
-#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from North American Industry Classification System codes (NAICS combined).
+#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 #'
 #' @param sourcevar An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and NAICS.
-#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (combined).
-#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS" (combined).
+#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
+#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS and NAICS. The default is 6 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -84,29 +84,141 @@ concord_hs_naics <- function (sourcevar,
 
     dictionary <- concordance::hs_naics
 
+  } else if ((origin == "HS" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS")) {
+
+    dictionary <- concordance::hs_naics2002
+
+  } else if ((origin == "HS" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS")) {
+
+    dictionary <- concordance::hs_naics2007
+
+  } else if ((origin == "HS" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS")) {
+
+    dictionary <- concordance::hs_naics2012
+
+  } else if ((origin == "HS" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS")) {
+
+    dictionary <- concordance::hs_naics2017
+
   } else if ((origin == "HS0" & destination == "NAICS") | (origin == "NAICS" & destination == "HS0")) {
 
     dictionary <- concordance::hs0_naics
+
+  } else if ((origin == "HS0" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS0")) {
+
+    dictionary <- concordance::hs0_naics2002
+
+  } else if ((origin == "HS0" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS0")) {
+
+    dictionary <- concordance::hs0_naics2007
+
+  } else if ((origin == "HS0" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS0")) {
+
+    dictionary <- concordance::hs0_naics2012
+
+  } else if ((origin == "HS0" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS0")) {
+
+    dictionary <- concordance::hs0_naics2017
 
   } else if ((origin == "HS1" & destination == "NAICS") | (origin == "NAICS" & destination == "HS1")) {
 
     dictionary <- concordance::hs1_naics
 
+  } else if ((origin == "HS1" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS1")) {
+
+    dictionary <- concordance::hs1_naics2002
+
+  } else if ((origin == "HS1" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS1")) {
+
+    dictionary <- concordance::hs1_naics2007
+
+  } else if ((origin == "HS1" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS1")) {
+
+    dictionary <- concordance::hs1_naics2012
+
+  } else if ((origin == "HS1" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS1")) {
+
+    dictionary <- concordance::hs1_naics2017
+
   } else if ((origin == "HS2" & destination == "NAICS") | (origin == "NAICS" & destination == "HS2")) {
 
     dictionary <- concordance::hs2_naics
+
+  } else if ((origin == "HS2" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS2")) {
+
+    dictionary <- concordance::hs2_naics2002
+
+  } else if ((origin == "HS2" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS2")) {
+
+    dictionary <- concordance::hs2_naics2007
+
+  } else if ((origin == "HS2" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS2")) {
+
+    dictionary <- concordance::hs2_naics2012
+
+  } else if ((origin == "HS2" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS2")) {
+
+    dictionary <- concordance::hs2_naics2017
 
   } else if ((origin == "HS3" & destination == "NAICS") | (origin == "NAICS" & destination == "HS3")) {
 
     dictionary <- concordance::hs3_naics
 
+  } else if ((origin == "HS3" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS3")) {
+
+    dictionary <- concordance::hs3_naics2002
+
+  } else if ((origin == "HS3" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS3")) {
+
+    dictionary <- concordance::hs3_naics2007
+
+  } else if ((origin == "HS3" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS3")) {
+
+    dictionary <- concordance::hs3_naics2012
+
+  } else if ((origin == "HS3" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS3")) {
+
+    dictionary <- concordance::hs3_naics2017
+
   } else if ((origin == "HS4" & destination == "NAICS") | (origin == "NAICS" & destination == "HS4")) {
 
     dictionary <- concordance::hs4_naics
 
+  } else if ((origin == "HS4" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS4")) {
+
+    dictionary <- concordance::hs4_naics2002
+
+  } else if ((origin == "HS4" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS4")) {
+
+    dictionary <- concordance::hs4_naics2007
+
+  } else if ((origin == "HS4" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS4")) {
+
+    dictionary <- concordance::hs4_naics2012
+
+  } else if ((origin == "HS4" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS4")) {
+
+    dictionary <- concordance::hs4_naics2017
+
   } else if ((origin == "HS5" & destination == "NAICS") | (origin == "NAICS" & destination == "HS5")) {
 
     dictionary <- concordance::hs5_naics
+
+  } else if ((origin == "HS5" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS5")) {
+
+    dictionary <- concordance::hs5_naics2002
+
+  } else if ((origin == "HS5" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS5")) {
+
+    dictionary <- concordance::hs5_naics2007
+
+  } else if ((origin == "HS5" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS5")) {
+
+    dictionary <- concordance::hs5_naics2012
+
+  } else if ((origin == "HS5" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS5")) {
+
+    dictionary <- concordance::hs5_naics2017
 
   } else {
 
@@ -123,7 +235,7 @@ concord_hs_naics <- function (sourcevar,
   exempt.naics <- c("31-33", "44-45", "48-49")
   sourcevar.sub <- sourcevar[!sourcevar %in% exempt.naics]
 
-  # avoid the case where user only put in unusal 2-digit codes
+  # avoid errors in the case where users only put in unusal 2-digit codes
   if(all(length(sourcevar.sub) == 0 & sourcevar %in% exempt.naics)) {
 
     sourcevar.sub <- "31"
@@ -135,7 +247,7 @@ concord_hs_naics <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
-  if ((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & destination == "NAICS"){
+  if (str_detect(origin, "HS") & str_detect(destination, "NAICS")){
 
     origin.digits <- c(2, 4, 6)
 
@@ -145,7 +257,7 @@ concord_hs_naics <- function (sourcevar,
 
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for NAICS codes.")}
 
-  } else if (origin == "NAICS" & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5")) {
+  } else if (str_detect(origin, "NAICS") & str_detect(destination, "HS")) {
 
     origin.digits <- c(2, 4, 6)
 
