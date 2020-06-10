@@ -15,8 +15,13 @@ library(concordance)
 # NAICS 2017
 get_desc(sourcevar = c("111120", "326199", "111120"), origin = "NAICS2017")
 
+get_desc(sourcevar = c("31-33", "44-45", "42", "48-49"), origin = "NAICS2017")
+
 # Returns NA when there are no matches and gives warning
 get_desc(sourcevar = c("111121", "326199", "111120", "111120"), origin = "NAICS2017")
+
+# gives error when input digit does not exist
+get_desc(sourcevar = c("111", "326"), origin = "NAICS2017")
 
 # NAICS 2012
 get_desc(sourcevar = c("111120", "326199", "111120"), origin = "NAICS2012")

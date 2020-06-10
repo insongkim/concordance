@@ -1,11 +1,11 @@
-#' Looking Up Product Description
+#' Looking Up the Level of Intermediate Goods Production
 #'
-#' Returns the description of product codes.
+#' Calculates and returns the level (proportion) of intermediate goods production in an industry based on product descriptions.
 #'
-#' @param sourcevar A character vector of input codes.
+#' @param sourcevar An input character vector of industry codes to look up.
 #' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC".
-#' @return A character vector giving the title/description of each element of the input codes.
-#' @source Data consolidated from
+#' @return Uses keywords ("part(s)", "intermediate", and "component") to identify intermediate-goods producing industries (at the most disaggregated level in the description data), and then calculates and returns the proportion these industries occupy among each input code.
+#' @source Product descriptions consolidated from
 #' \itemize{
 #'   \item The U.S. Census Bureau <https://www.census.gov/>
 #'   \item The U.S. Bureau of Labor Statistics <https://www.bls.gov/>
@@ -13,73 +13,20 @@
 #'   \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
 #' }
 #' @import tibble tidyr purrr dplyr stringr
+#' @importFrom rlang := !! .data
 #' @export
-#' @note Always include leading zeroes in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
+#' # NAICS
+#' get_intermediate(sourcevar = c("11", "31-33", "42"), origin = "NAICS2017")
+#' get_intermediate(sourcevar = c("3131", "3363"), origin = "NAICS2017")
+#'
 #' # HS
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS")
+#' get_intermediate(sourcevar = c("03", "84"), origin = "HS5")
 #'
-#' # Returns NA when no concordances exist and gives warning message
-#' get_desc(sourcevar = c("120600", "120601", "854690"), origin = "HS")
-#'
-#' # HS0
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS0")
-#'
-#' # HS1
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS1")
-#'
-#' # HS2
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS2")
-#'
-#' # HS3
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS3")
-#'
-#' # HS4
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS4")
-#'
-#' # HS5
-#' get_desc(sourcevar = c("120600", "854690"), origin = "HS5")
-#'
-#' # NAICS 2002
-#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2002")
-#'
-#' # NAICS 2007
-#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2007")
-#'
-#' # NAICS 2012
-#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2012")
-#'
-#' # NAICS 2017
-#' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2017")
-#'
-#' # ISIC2
-#' get_desc(sourcevar = c("3114", "3831"), origin = "ISIC2")
-#'
-#' # ISIC3
-#' get_desc(sourcevar = c("1512", "3110"), origin = "ISIC3")
-#'
-#' # ISIC4
-#' get_desc(sourcevar = c("1512", "3110"), origin = "ISIC4")
-#'
-#' # SITC1
-#' get_desc(sourcevar = c("4216", "7232"), origin = "SITC1")
-#'
-#' # SITC2
-#' get_desc(sourcevar = c("4236", "7732"), origin = "SITC2")
-#'
-#' # SITC3
-#' get_desc(sourcevar = c("4221", "7732"), origin = "SITC3")
-#'
-#' # SITC4
-#' get_desc(sourcevar = c("4221", "7732"), origin = "SITC4")
-#'
-#' # BEC
-#' get_desc(sourcevar = c("001", "111"), origin = "BEC")
-get_desc <- function (sourcevar,
-                      origin) {
-
-  # sanity check
-  if (length(sourcevar) == 0) {return(character(0))}
+#' # SITC
+#' get_intermediate(sourcevar = c("05", "75"), origin = "SITC4")
+get_intermediate <- function (sourcevar,
+                              origin) {
 
   # allow origin to be entered in any case
   origin <- toupper(origin)
@@ -220,10 +167,62 @@ get_desc <- function (sourcevar,
 
   }
 
-  # check if concordance is available for sourcevar
-  all.origin.codes <- desc.df$code
+  # set keywords for intermediate goods
+  keywords <- c(" part",
+                "^part",
+                "intermediate",
+                "component")
 
-  # return NA and give warning message if concordance is missing
+  # set words to exclude if picked up with keywords above
+  exclude.words <- c("party",
+                     "particles",
+                     "partition",
+                     "edible parts")
+
+  # extract maximum digits in description df
+  max.digit <- max(nchar(desc.df$code))
+  max.digit
+
+  # calculate the proportion of industries with intermediate goods
+  intermediate.disaggregate <- desc.df %>%
+    mutate(intermediate = ifelse(str_detect(desc, regex(paste(keywords, collapse = "|"), ignore_case = TRUE)) &
+                                   !str_detect(desc, regex(paste(exclude.words, collapse = "|"), ignore_case = TRUE)), 1, 0)) %>%
+    filter(nchar(.data$code) == max.digit) %>%
+    mutate(n_disaggregate = n(),
+           code_target = str_sub(.data$code, 1, digits)) %>%
+    group_by(.data$code_target) %>%
+    mutate(n_target_group = n()) %>%
+    summarize(n_intermediate = sum(.data$intermediate, na.rm = TRUE),
+              n_target_group = first(.data$n_target_group),
+              n_disaggregate = first(.data$n_disaggregate)) %>%
+    ungroup() %>%
+    mutate(proportion = .data$n_intermediate/.data$n_target_group)
+
+  # combine 31-33, 44-45, 48-49 for 2-digit NAICS
+  if(str_detect(origin, "NAICS")) {
+
+    intermediate.disaggregate <- intermediate.disaggregate %>%
+      mutate(code_target = if_else(.data$code_target == "31", "31-33", .data$code_target),
+             code_target = if_else(.data$code_target == "32", "31-33", .data$code_target),
+             code_target = if_else(.data$code_target == "33", "31-33", .data$code_target),
+             code_target = if_else(.data$code_target == "44", "44-45", .data$code_target),
+             code_target = if_else(.data$code_target == "45", "44-45", .data$code_target),
+             code_target = if_else(.data$code_target == "48", "48-49", .data$code_target),
+             code_target = if_else(.data$code_target == "49", "48-49", .data$code_target)) %>%
+      group_by(.data$code_target) %>%
+      mutate(n_target_group = sum(.data$n_target_group, na.rm = TRUE)) %>%
+      summarize(n_intermediate = sum(.data$n_intermediate, na.rm = TRUE),
+                n_target_group = first(.data$n_target_group),
+                n_disaggregate = first(.data$n_disaggregate)) %>%
+      ungroup() %>%
+      mutate(proportion = .data$n_intermediate/.data$n_target_group)
+
+  }
+
+  # check if proportion is available for sourcevar
+  all.origin.codes <- intermediate.disaggregate$code_target
+
+  # return NA and give warning message if proportion is missing
   if (!all(sourcevar %in% all.origin.codes)){
 
     no.code <- sourcevar[!sourcevar %in% all.origin.codes]
@@ -235,11 +234,11 @@ get_desc <- function (sourcevar,
 
   # match description
   matches <- which(all.origin.codes %in% sourcevar)
-  dest.var <- desc.df[matches, c("code", "desc")]
+  dest.var <- intermediate.disaggregate[matches, c("code_target", "proportion")]
 
   # handle repeated inputs
-  out <- dest.var[match(sourcevar, dest.var$code),] %>%
-    pull(desc)
+  out <- dest.var[match(sourcevar, dest.var$code_target),] %>%
+    pull(.data$proportion)
 
   return(out)
 

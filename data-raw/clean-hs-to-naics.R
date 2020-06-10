@@ -83,6 +83,16 @@ miss.rows <- tibble(HS_6d = miss.vec,
 hs_naics <- rbind(hs_naics, miss.rows) %>%
   arrange(HS_6d)
 
+# fix unusual 2-digit NAICS codes
+hs_naics <- hs_naics %>%
+  mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "32", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "33", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "44", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "45", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "48", "48-49", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "49", "48-49", NAICS_2d))
+
 # save
 save(hs_naics,
      file = "./data/hs_naics.RData", compress = "xz")

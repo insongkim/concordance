@@ -8,6 +8,7 @@
 #' @param dest.digit An integer indicating the preferred number of digits for outputs. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
+#' @import stringr
 #' @export
 #' @source Data consolidated from
 #' \itemize{
@@ -60,8 +61,8 @@ concord <- function (sourcevar,
   destination <- toupper(destination)
 
   # HS to/from NAICS
-  if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & destination == "NAICS") |
-      (origin == "NAICS" & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+  if ((str_detect(origin, "HS") & destination == "NAICS") |
+      (origin == "NAICS" & str_detect(destination, "HS"))) {
 
     out <- concord_hs_naics(sourcevar,
                             origin,
@@ -70,8 +71,8 @@ concord <- function (sourcevar,
                             all)
 
   # HS to/from SITC
-  } else if (((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4")) |
-             ((origin == "SITC1" | origin == "SITC2" | origin == "SITC3"| origin == "SITC4") & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+  } else if ((str_detect(origin, "HS") & str_detect(destination, "SITC")) |
+             (str_detect(origin, "SITC") & str_detect(destination, "HS"))) {
 
     out <- concord_hs_sitc(sourcevar,
                            origin,
@@ -80,8 +81,8 @@ concord <- function (sourcevar,
                            all)
 
   # SITC to/from NAICS
-  } else if (((origin == "SITC1" | origin == "SITC2" | origin == "SITC3"| origin == "SITC4") & (destination == "NAICS")) |
-             ((origin == "NAICS") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4"))) {
+  } else if ((str_detect(origin, "SITC") & (destination == "NAICS")) |
+             ((origin == "NAICS") & str_detect(destination, "SITC"))) {
 
     out <- concord_sitc_naics(sourcevar,
                               origin,
@@ -90,7 +91,7 @@ concord <- function (sourcevar,
                               all)
 
   # Within SITC
-  } else if (((origin == "SITC1" | origin == "SITC2" | origin == "SITC3"| origin == "SITC4") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4"))) {
+  } else if ((str_detect(origin, "SITC") & str_detect(destination, "SITC"))) {
 
     out <- concord_sitc(sourcevar,
                         origin,
@@ -99,7 +100,7 @@ concord <- function (sourcevar,
                         all)
 
   # Within HS
-  } else if (((origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5"))) {
+  } else if ((str_detect(origin, "HS") & str_detect(destination, "HS"))) {
 
     out <- concord_hs(sourcevar,
                       origin,

@@ -119,7 +119,19 @@ concord_hs_naics <- function (sourcevar,
   if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
 
   # check whether input codes have the same digits
-  digits <- unique(nchar(sourcevar))
+  # NAICS code has some unusual 2-digit codes, exclude them when counting digits
+  exempt.naics <- c("31-33", "44-45", "48-49")
+  sourcevar.sub <- sourcevar[!sourcevar %in% exempt.naics]
+
+  # avoid the case where user only put in unusal 2-digit codes
+  if(all(length(sourcevar.sub) == 0 & sourcevar %in% exempt.naics)) {
+
+    sourcevar.sub <- "31"
+
+  }
+
+  digits <- unique(nchar(sourcevar.sub))
+
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
@@ -187,7 +199,7 @@ concord_hs_naics <- function (sourcevar,
     distinct() %>%
     filter(!(is.na(n) & sum(!is.na(n)) > 0)) %>%
     group_by(!!as.name(origin)) %>%
-    mutate(n_sum = sum(.data$n),
+    mutate(n_sum = sum(.data$n, na.rm = TRUE),
            weight = .data$n/.data$n_sum) %>%
     arrange(dplyr::desc(.data$weight)) %>%
     ungroup() %>%

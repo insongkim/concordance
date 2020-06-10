@@ -40,7 +40,14 @@ sitc4_naics <- sitc4.naics.m %>%
   select(SITC4_5d, SITC4_4d, SITC4_3d, SITC4_2d, SITC4_1d,
          NAICS_6d, NAICS_4d, NAICS_2d) %>%
   arrange(SITC4_5d) %>%
-  filter_all(any_vars(!is.na(.)))
+  filter_all(any_vars(!is.na(.))) %>%
+  mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "32", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "33", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "44", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "45", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "48", "48-49", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "49", "48-49", NAICS_2d))
 
 # save
 save(sitc4_naics,
@@ -74,7 +81,14 @@ sitc3_naics <- sitc3.naics.m %>%
   select(SITC3_5d, SITC3_4d, SITC3_3d, SITC3_2d, SITC3_1d,
          NAICS_6d, NAICS_4d, NAICS_2d) %>%
   arrange(SITC3_5d) %>%
-  filter_all(any_vars(!is.na(.)))
+  filter_all(any_vars(!is.na(.))) %>%
+  mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "32", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "33", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "44", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "45", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "48", "48-49", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "49", "48-49", NAICS_2d))
 
 # save
 save(sitc3_naics,
@@ -108,7 +122,14 @@ sitc2_naics <- sitc2.naics.m %>%
   select(SITC2_5d, SITC2_4d, SITC2_3d, SITC2_2d, SITC2_1d,
          NAICS_6d, NAICS_4d, NAICS_2d) %>%
   arrange(SITC2_5d) %>%
-  filter_all(any_vars(!is.na(.)))
+  filter_all(any_vars(!is.na(.))) %>%
+  mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "32", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "33", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "44", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "45", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "48", "48-49", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "49", "48-49", NAICS_2d))
 
 # save
 save(sitc2_naics,
@@ -142,7 +163,14 @@ sitc1_naics <- sitc1.naics.m %>%
   select(SITC1_5d, SITC1_4d, SITC1_3d, SITC1_2d, SITC1_1d,
          NAICS_6d, NAICS_4d, NAICS_2d) %>%
   arrange(SITC1_5d) %>%
-  filter_all(any_vars(!is.na(.)))
+  filter_all(any_vars(!is.na(.))) %>%
+  mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "32", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "33", "31-33", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "44", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "45", "44-45", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "48", "48-49", NAICS_2d),
+         NAICS_2d = if_else(NAICS_2d == "49", "48-49", NAICS_2d))
 
 # save
 save(sitc1_naics,

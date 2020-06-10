@@ -162,7 +162,7 @@ concord_hs <- function (sourcevar,
     distinct() %>%
     filter(!(is.na(n) & sum(!is.na(n)) > 0)) %>%
     group_by(!!as.name(origin)) %>%
-    mutate(n_sum = sum(.data$n),
+    mutate(n_sum = sum(.data$n, na.rm = TRUE),
            weight = .data$n/.data$n_sum) %>%
     arrange(dplyr::desc(.data$weight)) %>%
     ungroup() %>%

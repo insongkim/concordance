@@ -104,6 +104,19 @@ concord(sourcevar = c("111120", "326199"),
         dest.digit = 6,
         all = TRUE)
 
+# unusual 2-digit NAICS
+concord(sourcevar = c("31-33", "44-45", "48-49", "11"),
+        origin = "NAICS",
+        destination = "HS",
+        dest.digit = 2,
+        all = FALSE)
+
+concord(sourcevar = c("31-33", "44-45", "11"),
+        origin = "NAICS",
+        destination = "HS",
+        dest.digit = 2,
+        all = TRUE)
+
 
 ################################################################################
 ## HS --> NAICS
@@ -129,6 +142,14 @@ concord(sourcevar = c("120600", "854690"),
 concord(sourcevar = c("120600", "854690"),
         origin = "HS5", destination = "NAICS",
         dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "NAICS",
+        dest.digit = 2, all = TRUE)
+
+# unusual 2-digit NAICS
+concord(sourcevar = c("020110", "071290"),
+        origin = "HS5", destination = "NAICS",
+        dest.digit = 2, all = TRUE)
 
 
 ################################################################################
@@ -182,7 +203,7 @@ concord(sourcevar = c("120600", NA),
         origin = "HS", destination = "SITC4",
         dest.digit = 5, all = FALSE)
 
-# the number of digits for inputs not supported and will give an error
+# the number of digits for inputs is not supported and will give an error
 concord(sourcevar = c("12060", "85460"),
         origin = "HS", destination = "SITC4",
         dest.digit = 5, all = TRUE)
@@ -392,7 +413,7 @@ concord(sourcevar = c("22240", "00190", NA),
         origin = "SITC4", destination = "NAICS",
         dest.digit = 6, all = FALSE)
 
-# 6-digit SITC4 inputs not supported and will give an error
+# 6-digit SITC4 inputs does not exist and will give an error
 concord(sourcevar = c("222400", "001900"),
         origin = "SITC4", destination = "NAICS",
         dest.digit = 6, all = TRUE)
@@ -422,6 +443,10 @@ concord(sourcevar = c("111120", "326199"),
 concord(sourcevar = c("111120", "326199"),
         origin = "NAICS", destination = "SITC4",
         dest.digit = 5, all = TRUE)
+
+concord(sourcevar = c("31-33", "51"),
+        origin = "NAICS", destination = "SITC4",
+        dest.digit = 4, all = TRUE)
 
 
 ################################################################################
