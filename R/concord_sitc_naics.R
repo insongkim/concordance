@@ -1,10 +1,10 @@
 #' Converting SITC and NAICS Codes
 #'
-#' Concords Standard International Trade Classification classification codes (SITC Revision 1, 2, 3, 4) to and from North American Industry Classification System codes (NAICS combined).
+#' Concords Standard International Trade Classification classification codes (SITC Revision 1, 2, 3, 4) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 #'
 #' @param sourcevar An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.
-#' @param origin A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).
-#' @param destination A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).
+#' @param origin A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
+#' @param destination A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -75,17 +75,369 @@ concord_sitc_naics <- function (sourcevar,
 
     dictionary <- concordance::sitc1_naics
 
+  } else if ((origin == "SITC1" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "SITC1")) {
+
+    dictionary <- concordance::sitc1_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2002_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_2d = .data$NAICS_2d) %>%
+      select(.data$SITC1_5d, .data$SITC1_4d, .data$SITC1_3d, .data$SITC1_2d, .data$SITC1_1d,
+             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC1" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "SITC1")) {
+
+    dictionary <- concordance::sitc1_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2007_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_2d = .data$NAICS_2d) %>%
+      select(.data$SITC1_5d, .data$SITC1_4d, .data$SITC1_3d, .data$SITC1_2d, .data$SITC1_1d,
+             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC1" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "SITC1")) {
+
+    dictionary <- concordance::sitc1_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2012_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_2d = .data$NAICS_2d) %>%
+      select(.data$SITC1_5d, .data$SITC1_4d, .data$SITC1_3d, .data$SITC1_2d, .data$SITC1_1d,
+             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC1" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "SITC1")) {
+
+    dictionary <- concordance::sitc1_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2017_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_2d = .data$NAICS_2d) %>%
+      select(.data$SITC1_5d, .data$SITC1_4d, .data$SITC1_3d, .data$SITC1_2d, .data$SITC1_1d,
+             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+      distinct()
+
   } else if ((origin == "SITC2" & destination == "NAICS") | (origin == "NAICS" & destination == "SITC2")) {
 
     dictionary <- concordance::sitc2_naics
+
+  } else if ((origin == "SITC2" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "SITC2")) {
+
+    dictionary <- concordance::sitc2_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2002_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_2d = .data$NAICS_2d) %>%
+      select(.data$SITC2_5d, .data$SITC2_4d, .data$SITC2_3d, .data$SITC2_2d, .data$SITC2_1d,
+             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC2" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "SITC2")) {
+
+    dictionary <- concordance::sitc2_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2007_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_2d = .data$NAICS_2d) %>%
+      select(.data$SITC2_5d, .data$SITC2_4d, .data$SITC2_3d, .data$SITC2_2d, .data$SITC2_1d,
+             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC2" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "SITC2")) {
+
+    dictionary <- concordance::sitc2_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2012_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_2d = .data$NAICS_2d) %>%
+      select(.data$SITC2_5d, .data$SITC2_4d, .data$SITC2_3d, .data$SITC2_2d, .data$SITC2_1d,
+             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC2" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "SITC2")) {
+
+    dictionary <- concordance::sitc2_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2017_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_2d = .data$NAICS_2d) %>%
+      select(.data$SITC2_5d, .data$SITC2_4d, .data$SITC2_3d, .data$SITC2_2d, .data$SITC2_1d,
+             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+      distinct()
 
   } else if ((origin == "SITC3" & destination == "NAICS") | (origin == "NAICS" & destination == "SITC3")) {
 
     dictionary <- concordance::sitc3_naics
 
+  } else if ((origin == "SITC3" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "SITC3")) {
+
+    dictionary <- concordance::sitc3_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2002_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_2d = .data$NAICS_2d) %>%
+      select(.data$SITC3_5d, .data$SITC3_4d, .data$SITC3_3d, .data$SITC3_2d, .data$SITC3_1d,
+             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC3" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "SITC3")) {
+
+    dictionary <- concordance::sitc3_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2007_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_2d = .data$NAICS_2d) %>%
+      select(.data$SITC3_5d, .data$SITC3_4d, .data$SITC3_3d, .data$SITC3_2d, .data$SITC3_1d,
+             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC3" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "SITC3")) {
+
+    dictionary <- concordance::sitc3_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2012_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_2d = .data$NAICS_2d) %>%
+      select(.data$SITC3_5d, .data$SITC3_4d, .data$SITC3_3d, .data$SITC3_2d, .data$SITC3_1d,
+             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC3" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "SITC3")) {
+
+    dictionary <- concordance::sitc3_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2017_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_2d = .data$NAICS_2d) %>%
+      select(.data$SITC3_5d, .data$SITC3_4d, .data$SITC3_3d, .data$SITC3_2d, .data$SITC3_1d,
+             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+      distinct()
+
   } else if ((origin == "SITC4" & destination == "NAICS") | (origin == "NAICS" & destination == "SITC4")) {
 
     dictionary <- concordance::sitc4_naics
+
+  } else if ((origin == "SITC4" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "SITC4")) {
+
+    dictionary <- concordance::sitc4_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2002_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_2d = .data$NAICS_2d) %>%
+      select(.data$SITC4_5d, .data$SITC4_4d, .data$SITC4_3d, .data$SITC4_2d, .data$SITC4_1d,
+             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC4" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "SITC4")) {
+
+    dictionary <- concordance::sitc4_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2007_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_2d = .data$NAICS_2d) %>%
+      select(.data$SITC4_5d, .data$SITC4_4d, .data$SITC4_3d, .data$SITC4_2d, .data$SITC4_1d,
+             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC4" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "SITC4")) {
+
+    dictionary <- concordance::sitc4_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2012_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_2d = .data$NAICS_2d) %>%
+      select(.data$SITC4_5d, .data$SITC4_4d, .data$SITC4_3d, .data$SITC4_2d, .data$SITC4_1d,
+             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+      distinct()
+
+  } else if ((origin == "SITC4" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "SITC4")) {
+
+    dictionary <- concordance::sitc4_naics
+
+    # load version codes
+    naics.vec <- concordance::naics2017_desc
+
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_2d = .data$NAICS_2d) %>%
+      select(.data$SITC4_5d, .data$SITC4_4d, .data$SITC4_3d, .data$SITC4_2d, .data$SITC4_1d,
+             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+      distinct()
 
   } else {
 
@@ -114,7 +466,7 @@ concord_sitc_naics <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
-  if (str_detect(origin, "SITC") & destination == "NAICS"){
+  if (str_detect(origin, "SITC") & str_detect(destination, "NAICS")){
 
     origin.digits <- c(1, 2, 3, 4, 5)
 
@@ -124,7 +476,7 @@ concord_sitc_naics <- function (sourcevar,
 
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for NAICS codes.")}
 
-  } else if (origin == "NAICS" & str_detect(destination, "SITC")) {
+  } else if (str_detect(origin, "NAICS") & str_detect(destination, "SITC")) {
 
     origin.digits <- c(2, 4, 6)
 

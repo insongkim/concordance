@@ -16,9 +16,9 @@ concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.}
 
-\item{origin}{A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
+\item{origin}{A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
-\item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS" (combined).}
+\item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS. The default is 4 digits.}
 
@@ -28,7 +28,7 @@ concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords Standard International Trade Classification classification codes (SITC Revision 1, 2, 3, 4) to and from North American Industry Classification System codes (NAICS combined).
+Concords Standard International Trade Classification classification codes (SITC Revision 1, 2, 3, 4) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 }
 \note{
 Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
