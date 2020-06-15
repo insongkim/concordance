@@ -108,7 +108,7 @@ concord_hs <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
-  if ((origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5")){
+  if (str_detect(origin, "HS") & str_detect(destination, "HS")){
 
     origin.digits <- c(2, 4, 6)
 

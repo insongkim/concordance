@@ -24,6 +24,6 @@ A data frame with 5381 rows and 8 variables:
 hs5_sitc1
 }
 \description{
-A dataset containing concordances between HS5 and SITC1 classification.
+A dataset containing concordances between HS5 and SITC1 classifications.
 }
 \keyword{datasets}

@@ -642,6 +642,81 @@ concord(sourcevar = c("2224", "7732"),
 
 
 ################################################################################
+## HS --> ISIC
+################################################################################
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS0", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS1", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS2", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS3", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS4", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3",
+        dest.digit = 3, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3",
+        dest.digit = 2, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3",
+        dest.digit = 1, all = TRUE)
+
+
+################################################################################
+## ISIC --> HS
+################################################################################
+get_desc(sourcevar = c("0111", "3190"),
+         origin = "ISIC3")
+
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS5",
+        dest.digit = 4, all = TRUE)
+
+get_desc(concord(sourcevar = c("0111", "3190"),
+                 origin = "ISIC3", destination = "HS5",
+                 dest.digit = 4, all = FALSE),
+         origin = "HS5")
+
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC3", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("0111", "3190"),
+        origin = "ISIC2", destination = "HS",
+        dest.digit = 4, all = TRUE)
+
+
+################################################################################
 ## SITC <--> NAICS
 ################################################################################
 # sourcevar has different number of digits, gives an error
@@ -913,3 +988,50 @@ concord(sourcevar = c("2111", "3352"),
 concord(sourcevar = c("2111", "3352"),
         origin = "NAICS2002", destination = "NAICS2017",
         dest.digit = 6, all = TRUE)
+
+
+################################################################################
+## Within NAICS
+################################################################################
+# ISIC3 to ISIC2
+get_desc(sourcevar = c("0111", "1721"),
+         origin = "ISIC3")
+# "Growing of cereals and other crops n.e.c."               "Manufacture of made-up textile articles, except apparel"
+
+concord(sourcevar = c("0111", "1721"),
+        origin = "ISIC3", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1721"),
+        origin = "ISIC3", destination = "ISIC2",
+        dest.digit = 4, all = FALSE)
+get_desc(concord(sourcevar = c("0111", "1721"),
+                 origin = "ISIC3", destination = "ISIC2",
+                 dest.digit = 4, all = FALSE),
+         origin = "ISIC2")
+# "Agriculture and livestock production"                        "Manufacture of made-up textile goods except wearing apparel"
+
+concord(sourcevar = c("0111", "1721"),
+        origin = "ISIC3", destination = "ISIC2",
+        dest.digit = 3, all = TRUE)
+concord(sourcevar = c("0111", "1721"),
+        origin = "ISIC3", destination = "ISIC2",
+        dest.digit = 2, all = TRUE)
+concord(sourcevar = c("0111", "1721"),
+        origin = "ISIC3", destination = "ISIC2",
+        dest.digit = 1, all = TRUE)
+
+# ISIC2 to ISIC3
+get_desc(sourcevar = c("1110", "3212"),
+         origin = "ISIC2")
+# "Agriculture and livestock production"                        "Manufacture of made-up textile goods except wearing apparel"
+
+concord(sourcevar = c("1110", "3212"),
+        origin = "ISIC2", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3212"),
+        origin = "ISIC2", destination = "ISIC3",
+        dest.digit = 4, all = FALSE)
+
+get_desc(sourcevar = c("0111", "1721"),
+         origin = "ISIC3")
+# "Growing of cereals and other crops n.e.c."               "Manufacture of made-up textile articles, except apparel"

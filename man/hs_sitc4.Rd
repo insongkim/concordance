@@ -24,6 +24,6 @@ https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org
 hs_sitc4
 }
 \description{
-A dataset containing concordances between HS (combined) and SITC4 classification.
+A dataset containing concordances between HS (combined) and SITC4 classifications.
 }
 \keyword{datasets}

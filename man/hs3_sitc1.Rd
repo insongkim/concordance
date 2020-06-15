@@ -24,6 +24,6 @@ https://wits.worldbank.org/product_concordance.html
 hs3_sitc1
 }
 \description{
-A dataset containing concordances between HS3 and SITC1 classification.
+A dataset containing concordances between HS3 and SITC1 classifications.
 }
 \keyword{datasets}

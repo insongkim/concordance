@@ -22,6 +22,6 @@ Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.a
 hs3_naics
 }
 \description{
-A dataset containing concordances between HS3 and NAICS (combined) classification.
+A dataset containing concordances between HS3 and NAICS (combined) classifications.
 }
 \keyword{datasets}

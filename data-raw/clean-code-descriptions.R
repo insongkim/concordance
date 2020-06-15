@@ -267,6 +267,13 @@ isic2_desc <- isic2.desc.r %>%
   rename(code = Code,
          desc = Description)
 
+# add description from World Bank
+isic2.augment <- tibble(code = c("99", "999", "9999"),
+                        desc = rep("Goods not elsewhere classified", 3))
+
+isic2_desc <- rbind(isic2_desc,
+                    isic2.augment)
+
 # save
 save(isic2_desc,
      file = "./data/isic2_desc.RData", compress = "xz")
@@ -282,6 +289,13 @@ isic3.desc.r <- read_table("./data-raw/ISIC_Rev_3_english_structure.txt")
 isic3_desc <- isic3.desc.r %>%
   rename(code = Code,
          desc = Description)
+
+# add description from World Bank
+isic3.augment <- tibble(code = c("999", "9999"),
+                        desc = rep("Goods not elsewhere classified", 2))
+
+isic3_desc <- rbind(isic3_desc,
+                    isic3.augment)
 
 # save
 save(isic3_desc,
