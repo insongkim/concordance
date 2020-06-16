@@ -166,6 +166,19 @@
 #' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
 "isic3_desc"
 
+#' ISIC3.1 Description
+#'
+#' A dataset containing the description of products under the ISIC3.1
+#' classification.
+#'
+#' @format A data frame with 540 rows and 2 variables:
+#' \describe{
+#'   \item{code}{ISIC3.1 Code}
+#'   \item{desc}{ISIC3.1 Description}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic3.1_desc"
+
 #' ISIC4 Description
 #'
 #' A dataset containing the description of products under the ISIC4
@@ -1098,6 +1111,40 @@
 #' @source https://wits.worldbank.org/product_concordance.html
 "hs5_isic3"
 
+#' HS-ISIC3.1 Concordance
+#'
+#' A dataset containing concordances between HS (combined) and ISIC3.1 classifications.
+#'
+#' @format A data frame with 6873 rows and 7 variables:
+#' \describe{
+#'   \item{HS_6d}{6-digit HS Code}
+#'   \item{HS_4d}{4-digit HS Code}
+#'   \item{HS_2d}{2-digit HS Code}
+#'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_2d}{2-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_1d}{1-digit ISIC3.1 Code}
+#' }
+#' @source https://wits.worldbank.org/product_concordance.html
+"hs_isic31"
+
+#' HS-ISIC4 Concordance
+#'
+#' A dataset containing concordances between HS (combined) and ISIC4 classifications.
+#'
+#' @format A data frame with 22885 rows and 7 variables:
+#' \describe{
+#'   \item{HS_6d}{6-digit HS Code}
+#'   \item{HS_4d}{4-digit HS Code}
+#'   \item{HS_2d}{2-digit HS Code}
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#' }
+#' @source https://wits.worldbank.org/product_concordance.html
+"hs_isic4"
+
 #' SITC1-NAICS Concordance
 #'
 #' A dataset containing concordances between SITC1 and NAICS (combined) classification via HS (combined).
@@ -1636,6 +1683,96 @@
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
 "naics2012_naics2002"
+
+#' ISIC4-ISIC3.1 Concordance
+#'
+#' A dataset containing concordances between ISIC4 and ISIC3.1 classifications.
+#'
+#' @format A data frame with 737 rows and 8 variables:
+#' \describe{
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_2d}{2-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_1d}{1-digit ISIC3.1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic4_isic31"
+
+#' ISIC4-ISIC3 Concordance
+#'
+#' A dataset containing concordances between ISIC4 and ISIC3 classifications.
+#'
+#' @format A data frame with 798 rows and 8 variables:
+#' \describe{
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#'   \item{ISIC3_4d}{4-digit ISIC3 Code}
+#'   \item{ISIC3_3d}{3-digit ISIC3 Code}
+#'   \item{ISIC3_2d}{2-digit ISIC3 Code}
+#'   \item{ISIC3_1d}{1-digit ISIC3 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic4_isic3"
+
+#' ISIC4-ISIC2 Concordance
+#'
+#' A dataset containing concordances between ISIC4 and ISIC2 classifications.
+#'
+#' @format A data frame with 1706 rows and 8 variables:
+#' \describe{
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#'   \item{ISIC2_4d}{4-digit ISIC2 Code}
+#'   \item{ISIC2_3d}{3-digit ISIC2 Code}
+#'   \item{ISIC2_2d}{2-digit ISIC2 Code}
+#'   \item{ISIC2_1d}{1-digit ISIC2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic4_isic2"
+
+#' ISIC3.1-ISIC3 Concordance
+#'
+#' A dataset containing concordances between ISIC3.1 and ISIC3 classifications.
+#'
+#' @format A data frame with 316 rows and 8 variables:
+#' \describe{
+#'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_2d}{2-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_1d}{1-digit ISIC3.1 Code}
+#'   \item{ISIC3_4d}{4-digit ISIC3 Code}
+#'   \item{ISIC3_3d}{3-digit ISIC3 Code}
+#'   \item{ISIC3_2d}{2-digit ISIC3 Code}
+#'   \item{ISIC3_1d}{1-digit ISIC3 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic31_isic3"
+
+#' ISIC3.1-ISIC2 Concordance
+#'
+#' A dataset containing concordances between ISIC3.1 and ISIC2 classifications.
+#'
+#' @format A data frame with 636 rows and 8 variables:
+#' \describe{
+#'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_2d}{2-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_1d}{1-digit ISIC3.1 Code}
+#'   \item{ISIC2_4d}{4-digit ISIC2 Code}
+#'   \item{ISIC2_3d}{3-digit ISIC2 Code}
+#'   \item{ISIC2_2d}{2-digit ISIC2 Code}
+#'   \item{ISIC2_1d}{1-digit ISIC2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
+"isic31_isic2"
 
 #' ISIC3-ISIC2 Concordance
 #'

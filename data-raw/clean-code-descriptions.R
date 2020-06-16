@@ -303,6 +303,29 @@ save(isic3_desc,
 
 
 ################################################################################
+## ISIC3.1
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/classifications/Econ/Download/In%20Text/ISIC_Rev_3_1_english_structure.txt
+isic3.1.desc.r <- read_delim("./data-raw/ISIC_Rev_3_1_english_structure.txt", delim = ",")
+
+isic3.1_desc <- isic3.1.desc.r %>%
+  rename(code = Code,
+         desc = Description)
+
+# add description from World Bank
+isic3.1.augment <- tibble(code = c("999", "9999"),
+                          desc = rep("Goods not elsewhere classified", 2))
+
+isic3.1_desc <- rbind(isic3.1_desc,
+                      isic3.1.augment)
+
+# save
+save(isic3.1_desc,
+     file = "./data/isic3.1_desc.RData", compress = "xz")
+
+
+################################################################################
 ## ISIC4
 ################################################################################
 # load UN data

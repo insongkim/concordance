@@ -15,9 +15,9 @@ concord_hs_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of HS or ISIC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 4-digit codes for ISIC.}
 
-\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989).}
+\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
-\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989).}
+\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.}
 
@@ -27,7 +27,7 @@ concord_hs_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3).
+Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 }
 \note{
 Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.

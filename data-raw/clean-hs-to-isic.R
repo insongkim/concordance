@@ -183,21 +183,17 @@ save(hs3_isic2,
 load("./data/hs4_hs3.RData")
 
 # merge
-hs4_isic2 <- left_join(hs4_hs3 %>%
-                         select(HS4_6d, HS3_6d),
-                       hs3_isic2 %>%
-                         select(HS3_6d, contains("ISIC2")),
+hs4_isic2 <- left_join(hs4_hs3,
+                       hs3_isic2,
                        by = "HS3_6d")
 
 # subset and clean
 names(hs4_isic2)
 
 hs4_isic2 <- hs4_isic2 %>%
-  mutate(HS4_4d = str_sub(HS4_6d, start = 1, end = 4),
-         HS4_2d = str_sub(HS4_6d, start = 1, end = 2)) %>%
-  distinct() %>%
   select(HS4_6d, HS4_4d, HS4_2d,
          ISIC2_4d, ISIC2_3d, ISIC2_2d, ISIC2_1d) %>%
+  distinct() %>%
   arrange(HS4_6d)
 
 # check
@@ -215,21 +211,17 @@ save(hs4_isic2,
 load("./data/hs5_hs3.RData")
 
 # merge
-hs5_isic2 <- left_join(hs5_hs3 %>%
-                         select(HS5_6d, HS3_6d),
-                       hs3_isic2 %>%
-                         select(HS3_6d, contains("ISIC2")),
+hs5_isic2 <- left_join(hs5_hs3,
+                       hs3_isic2,
                        by = "HS3_6d")
 
 # subset and clean
 names(hs5_isic2)
 
 hs5_isic2 <- hs5_isic2 %>%
-  mutate(HS5_4d = str_sub(HS5_6d, start = 1, end = 4),
-         HS5_2d = str_sub(HS5_6d, start = 1, end = 2)) %>%
-  distinct() %>%
   select(HS5_6d, HS5_4d, HS5_2d,
          ISIC2_4d, ISIC2_3d, ISIC2_2d, ISIC2_1d) %>%
+  distinct() %>%
   arrange(HS5_6d)
 
 # check
@@ -322,36 +314,17 @@ hs0_isic3 <- hs0_isic3 %>%
   select(HS0_6d, HS0_4d, HS0_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
   arrange(HS0_6d) %>%
-  mutate(ISIC3_1d = case_when(ISIC3_1d == "0" ~ "AtB",
+  mutate(ISIC3_1d = case_when(ISIC3_2d == "01" | ISIC3_2d == "02" ~ "A",
+                              ISIC3_2d == "05" ~ "B",
                               ISIC3_2d == "10" | ISIC3_2d == "11" | ISIC3_2d == "12" | ISIC3_2d == "13" | ISIC3_2d == "14" ~ "C",
-                              ISIC3_2d == "15" | ISIC3_2d == "16" ~ "15t16",
-                              ISIC3_2d == "17" | ISIC3_2d == "18" ~ "17t18",
-                              ISIC3_2d == "19" ~ "19",
-                              ISIC3_2d == "20" ~ "20",
-                              ISIC3_2d == "21" | ISIC3_2d == "22" ~ "21t22",
-                              ISIC3_2d == "23" ~ "23",
-                              ISIC3_2d == "24" ~ "24",
-                              ISIC3_2d == "25" ~ "25",
-                              ISIC3_2d == "26" ~ "26",
-                              ISIC3_2d == "27" | ISIC3_2d == "28" ~ "27t28",
-                              ISIC3_2d == "29" ~ "29",
-                              ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" ~ "30t33",
-                              ISIC3_2d == "34" | ISIC3_2d == "35" ~ "34t35",
-                              ISIC3_2d == "36" | ISIC3_2d == "37" ~ "36t37",
+                              ISIC3_2d == "15" | ISIC3_2d == "16" | ISIC3_2d == "17" | ISIC3_2d == "18" | ISIC3_2d == "19" | ISIC3_2d == "20" | ISIC3_2d == "21" | ISIC3_2d == "22" | ISIC3_2d == "23" | ISIC3_2d == "24" | ISIC3_2d == "25" | ISIC3_2d == "26" | ISIC3_2d == "27" | ISIC3_2d == "28" | ISIC3_2d == "29" | ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" | ISIC3_2d == "34" | ISIC3_2d == "35" | ISIC3_2d == "36" | ISIC3_2d == "37" ~ "D",
                               ISIC3_2d == "40" | ISIC3_2d == "41" ~ "E",
                               ISIC3_2d == "45" ~ "F",
-                              ISIC3_2d == "50" ~ "50",
-                              ISIC3_2d == "51" ~ "51",
-                              ISIC3_2d == "52" ~ "52",
+                              ISIC3_2d == "50"| ISIC3_2d == "51" | ISIC3_2d == "52" ~ "G",
                               ISIC3_2d == "55" ~ "H",
-                              ISIC3_2d == "60" ~ "60",
-                              ISIC3_2d == "61" ~ "61",
-                              ISIC3_2d == "62" ~ "62",
-                              ISIC3_2d == "63" ~ "63",
-                              ISIC3_2d == "64" ~ "64",
+                              ISIC3_2d == "60" | ISIC3_2d == "61" | ISIC3_2d == "62" | ISIC3_2d == "63" | ISIC3_2d == "64" ~ "I",
                               ISIC3_2d == "65" | ISIC3_2d == "66" | ISIC3_2d == "67" ~ "J",
-                              ISIC3_2d == "70" ~ "70",
-                              ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "71t74",
+                              ISIC3_2d == "70" | ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "K",
                               ISIC3_2d == "75" ~ "L",
                               ISIC3_2d == "80" ~ "M",
                               ISIC3_2d == "85" ~ "N",
@@ -359,7 +332,6 @@ hs0_isic3 <- hs0_isic3 %>%
                               ISIC3_2d == "95" ~ "P",
                               ISIC3_2d == "99" ~ "Q",
                               TRUE ~ NA_character_))
-
 
 # check
 hs0_isic3 %>% filter(is.na(ISIC3_1d))
@@ -404,36 +376,17 @@ hs1_isic3 <- hs1_isic3 %>%
   select(HS1_6d, HS1_4d, HS1_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
   arrange(HS1_6d) %>%
-  mutate(ISIC3_1d = case_when(ISIC3_1d == "0" ~ "AtB",
+  mutate(ISIC3_1d = case_when(ISIC3_2d == "01" | ISIC3_2d == "02" ~ "A",
+                              ISIC3_2d == "05" ~ "B",
                               ISIC3_2d == "10" | ISIC3_2d == "11" | ISIC3_2d == "12" | ISIC3_2d == "13" | ISIC3_2d == "14" ~ "C",
-                              ISIC3_2d == "15" | ISIC3_2d == "16" ~ "15t16",
-                              ISIC3_2d == "17" | ISIC3_2d == "18" ~ "17t18",
-                              ISIC3_2d == "19" ~ "19",
-                              ISIC3_2d == "20" ~ "20",
-                              ISIC3_2d == "21" | ISIC3_2d == "22" ~ "21t22",
-                              ISIC3_2d == "23" ~ "23",
-                              ISIC3_2d == "24" ~ "24",
-                              ISIC3_2d == "25" ~ "25",
-                              ISIC3_2d == "26" ~ "26",
-                              ISIC3_2d == "27" | ISIC3_2d == "28" ~ "27t28",
-                              ISIC3_2d == "29" ~ "29",
-                              ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" ~ "30t33",
-                              ISIC3_2d == "34" | ISIC3_2d == "35" ~ "34t35",
-                              ISIC3_2d == "36" | ISIC3_2d == "37" ~ "36t37",
+                              ISIC3_2d == "15" | ISIC3_2d == "16" | ISIC3_2d == "17" | ISIC3_2d == "18" | ISIC3_2d == "19" | ISIC3_2d == "20" | ISIC3_2d == "21" | ISIC3_2d == "22" | ISIC3_2d == "23" | ISIC3_2d == "24" | ISIC3_2d == "25" | ISIC3_2d == "26" | ISIC3_2d == "27" | ISIC3_2d == "28" | ISIC3_2d == "29" | ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" | ISIC3_2d == "34" | ISIC3_2d == "35" | ISIC3_2d == "36" | ISIC3_2d == "37" ~ "D",
                               ISIC3_2d == "40" | ISIC3_2d == "41" ~ "E",
                               ISIC3_2d == "45" ~ "F",
-                              ISIC3_2d == "50" ~ "50",
-                              ISIC3_2d == "51" ~ "51",
-                              ISIC3_2d == "52" ~ "52",
+                              ISIC3_2d == "50"| ISIC3_2d == "51" | ISIC3_2d == "52" ~ "G",
                               ISIC3_2d == "55" ~ "H",
-                              ISIC3_2d == "60" ~ "60",
-                              ISIC3_2d == "61" ~ "61",
-                              ISIC3_2d == "62" ~ "62",
-                              ISIC3_2d == "63" ~ "63",
-                              ISIC3_2d == "64" ~ "64",
+                              ISIC3_2d == "60" | ISIC3_2d == "61" | ISIC3_2d == "62" | ISIC3_2d == "63" | ISIC3_2d == "64" ~ "I",
                               ISIC3_2d == "65" | ISIC3_2d == "66" | ISIC3_2d == "67" ~ "J",
-                              ISIC3_2d == "70" ~ "70",
-                              ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "71t74",
+                              ISIC3_2d == "70" | ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "K",
                               ISIC3_2d == "75" ~ "L",
                               ISIC3_2d == "80" ~ "M",
                               ISIC3_2d == "85" ~ "N",
@@ -441,7 +394,6 @@ hs1_isic3 <- hs1_isic3 %>%
                               ISIC3_2d == "95" ~ "P",
                               ISIC3_2d == "99" ~ "Q",
                               TRUE ~ NA_character_))
-
 
 # check
 hs1_isic3 %>% filter(is.na(ISIC3_1d))
@@ -486,36 +438,17 @@ hs2_isic3 <- hs2_isic3 %>%
   select(HS2_6d, HS2_4d, HS2_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
   arrange(HS2_6d) %>%
-  mutate(ISIC3_1d = case_when(ISIC3_1d == "0" ~ "AtB",
+  mutate(ISIC3_1d = case_when(ISIC3_2d == "01" | ISIC3_2d == "02" ~ "A",
+                              ISIC3_2d == "05" ~ "B",
                               ISIC3_2d == "10" | ISIC3_2d == "11" | ISIC3_2d == "12" | ISIC3_2d == "13" | ISIC3_2d == "14" ~ "C",
-                              ISIC3_2d == "15" | ISIC3_2d == "16" ~ "15t16",
-                              ISIC3_2d == "17" | ISIC3_2d == "18" ~ "17t18",
-                              ISIC3_2d == "19" ~ "19",
-                              ISIC3_2d == "20" ~ "20",
-                              ISIC3_2d == "21" | ISIC3_2d == "22" ~ "21t22",
-                              ISIC3_2d == "23" ~ "23",
-                              ISIC3_2d == "24" ~ "24",
-                              ISIC3_2d == "25" ~ "25",
-                              ISIC3_2d == "26" ~ "26",
-                              ISIC3_2d == "27" | ISIC3_2d == "28" ~ "27t28",
-                              ISIC3_2d == "29" ~ "29",
-                              ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" ~ "30t33",
-                              ISIC3_2d == "34" | ISIC3_2d == "35" ~ "34t35",
-                              ISIC3_2d == "36" | ISIC3_2d == "37" ~ "36t37",
+                              ISIC3_2d == "15" | ISIC3_2d == "16" | ISIC3_2d == "17" | ISIC3_2d == "18" | ISIC3_2d == "19" | ISIC3_2d == "20" | ISIC3_2d == "21" | ISIC3_2d == "22" | ISIC3_2d == "23" | ISIC3_2d == "24" | ISIC3_2d == "25" | ISIC3_2d == "26" | ISIC3_2d == "27" | ISIC3_2d == "28" | ISIC3_2d == "29" | ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" | ISIC3_2d == "34" | ISIC3_2d == "35" | ISIC3_2d == "36" | ISIC3_2d == "37" ~ "D",
                               ISIC3_2d == "40" | ISIC3_2d == "41" ~ "E",
                               ISIC3_2d == "45" ~ "F",
-                              ISIC3_2d == "50" ~ "50",
-                              ISIC3_2d == "51" ~ "51",
-                              ISIC3_2d == "52" ~ "52",
+                              ISIC3_2d == "50"| ISIC3_2d == "51" | ISIC3_2d == "52" ~ "G",
                               ISIC3_2d == "55" ~ "H",
-                              ISIC3_2d == "60" ~ "60",
-                              ISIC3_2d == "61" ~ "61",
-                              ISIC3_2d == "62" ~ "62",
-                              ISIC3_2d == "63" ~ "63",
-                              ISIC3_2d == "64" ~ "64",
+                              ISIC3_2d == "60" | ISIC3_2d == "61" | ISIC3_2d == "62" | ISIC3_2d == "63" | ISIC3_2d == "64" ~ "I",
                               ISIC3_2d == "65" | ISIC3_2d == "66" | ISIC3_2d == "67" ~ "J",
-                              ISIC3_2d == "70" ~ "70",
-                              ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "71t74",
+                              ISIC3_2d == "70" | ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "K",
                               ISIC3_2d == "75" ~ "L",
                               ISIC3_2d == "80" ~ "M",
                               ISIC3_2d == "85" ~ "N",
@@ -568,36 +501,17 @@ hs3_isic3 <- hs3_isic3 %>%
   select(HS3_6d, HS3_4d, HS3_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
   arrange(HS3_6d) %>%
-  mutate(ISIC3_1d = case_when(ISIC3_1d == "0" ~ "AtB",
+  mutate(ISIC3_1d = case_when(ISIC3_2d == "01" | ISIC3_2d == "02" ~ "A",
+                              ISIC3_2d == "05" ~ "B",
                               ISIC3_2d == "10" | ISIC3_2d == "11" | ISIC3_2d == "12" | ISIC3_2d == "13" | ISIC3_2d == "14" ~ "C",
-                              ISIC3_2d == "15" | ISIC3_2d == "16" ~ "15t16",
-                              ISIC3_2d == "17" | ISIC3_2d == "18" ~ "17t18",
-                              ISIC3_2d == "19" ~ "19",
-                              ISIC3_2d == "20" ~ "20",
-                              ISIC3_2d == "21" | ISIC3_2d == "22" ~ "21t22",
-                              ISIC3_2d == "23" ~ "23",
-                              ISIC3_2d == "24" ~ "24",
-                              ISIC3_2d == "25" ~ "25",
-                              ISIC3_2d == "26" ~ "26",
-                              ISIC3_2d == "27" | ISIC3_2d == "28" ~ "27t28",
-                              ISIC3_2d == "29" ~ "29",
-                              ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" ~ "30t33",
-                              ISIC3_2d == "34" | ISIC3_2d == "35" ~ "34t35",
-                              ISIC3_2d == "36" | ISIC3_2d == "37" ~ "36t37",
+                              ISIC3_2d == "15" | ISIC3_2d == "16" | ISIC3_2d == "17" | ISIC3_2d == "18" | ISIC3_2d == "19" | ISIC3_2d == "20" | ISIC3_2d == "21" | ISIC3_2d == "22" | ISIC3_2d == "23" | ISIC3_2d == "24" | ISIC3_2d == "25" | ISIC3_2d == "26" | ISIC3_2d == "27" | ISIC3_2d == "28" | ISIC3_2d == "29" | ISIC3_2d == "30" | ISIC3_2d == "31" | ISIC3_2d == "32" | ISIC3_2d == "33" | ISIC3_2d == "34" | ISIC3_2d == "35" | ISIC3_2d == "36" | ISIC3_2d == "37" ~ "D",
                               ISIC3_2d == "40" | ISIC3_2d == "41" ~ "E",
                               ISIC3_2d == "45" ~ "F",
-                              ISIC3_2d == "50" ~ "50",
-                              ISIC3_2d == "51" ~ "51",
-                              ISIC3_2d == "52" ~ "52",
+                              ISIC3_2d == "50"| ISIC3_2d == "51" | ISIC3_2d == "52" ~ "G",
                               ISIC3_2d == "55" ~ "H",
-                              ISIC3_2d == "60" ~ "60",
-                              ISIC3_2d == "61" ~ "61",
-                              ISIC3_2d == "62" ~ "62",
-                              ISIC3_2d == "63" ~ "63",
-                              ISIC3_2d == "64" ~ "64",
+                              ISIC3_2d == "60" | ISIC3_2d == "61" | ISIC3_2d == "62" | ISIC3_2d == "63" | ISIC3_2d == "64" ~ "I",
                               ISIC3_2d == "65" | ISIC3_2d == "66" | ISIC3_2d == "67" ~ "J",
-                              ISIC3_2d == "70" ~ "70",
-                              ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "71t74",
+                              ISIC3_2d == "70" | ISIC3_2d == "71" | ISIC3_2d == "72" | ISIC3_2d == "73" | ISIC3_2d == "74" ~ "K",
                               ISIC3_2d == "75" ~ "L",
                               ISIC3_2d == "80" ~ "M",
                               ISIC3_2d == "85" ~ "N",
@@ -605,7 +519,6 @@ hs3_isic3 <- hs3_isic3 %>%
                               ISIC3_2d == "95" ~ "P",
                               ISIC3_2d == "99" ~ "Q",
                               TRUE ~ NA_character_))
-
 
 # check
 hs3_isic3 %>% filter(is.na(ISIC3_1d))
@@ -623,21 +536,17 @@ save(hs3_isic3,
 load("./data/hs4_hs3.RData")
 
 # merge
-hs4_isic3 <- left_join(hs4_hs3 %>%
-                         select(HS4_6d, HS3_6d),
-                       hs3_isic3 %>%
-                         select(HS3_6d, contains("ISIC3")),
+hs4_isic3 <- left_join(hs4_hs3,
+                       hs3_isic3,
                        by = "HS3_6d")
 
 # subset and clean
 names(hs4_isic3)
 
 hs4_isic3 <- hs4_isic3 %>%
-  mutate(HS4_4d = str_sub(HS4_6d, start = 1, end = 4),
-         HS4_2d = str_sub(HS4_6d, start = 1, end = 2)) %>%
-  distinct() %>%
   select(HS4_6d, HS4_4d, HS4_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
+  distinct() %>%
   arrange(HS4_6d)
 
 # check
@@ -655,21 +564,17 @@ save(hs4_isic3,
 load("./data/hs5_hs3.RData")
 
 # merge
-hs5_isic3 <- left_join(hs5_hs3 %>%
-                         select(HS5_6d, HS3_6d),
-                       hs3_isic3 %>%
-                         select(HS3_6d, contains("ISIC3")),
+hs5_isic3 <- left_join(hs5_hs3,
+                       hs3_isic3,
                        by = "HS3_6d")
 
 # subset and clean
 names(hs5_isic3)
 
 hs5_isic3 <- hs5_isic3 %>%
-  mutate(HS5_4d = str_sub(HS5_6d, start = 1, end = 4),
-         HS5_2d = str_sub(HS5_6d, start = 1, end = 2)) %>%
-  distinct() %>%
   select(HS5_6d, HS5_4d, HS5_2d,
          ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
+  distinct() %>%
   arrange(HS5_6d)
 
 # check
@@ -726,3 +631,431 @@ hs_isic3 %>%
 # save
 save(hs_isic3,
      file = "./data/hs_isic3.RData", compress = "xz")
+
+
+################################################################################
+# HS0 to ISIC3.1
+################################################################################
+# HS0 --> ISIC3 --> ISIC3.1
+load("./data/hs0_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs0_isic31 <- left_join(hs0_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs0_isic31)
+
+hs0_isic31 <- hs0_isic31 %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS0_6d)
+
+# check
+unique(hs0_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs0_isic31,
+#      file = "./data/hs0_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to ISIC3.1
+################################################################################
+# HS1 --> ISIC3 --> ISIC3.1
+load("./data/hs1_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs1_isic31 <- left_join(hs1_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs1_isic31)
+
+hs1_isic31 <- hs1_isic31 %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS1_6d)
+
+# check
+unique(hs1_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs1_isic31,
+#      file = "./data/hs1_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS2 to ISIC3.1
+################################################################################
+# HS2 --> ISIC3 --> ISIC3.1
+load("./data/hs2_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs2_isic31 <- left_join(hs2_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs2_isic31)
+
+hs2_isic31 <- hs2_isic31 %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS2_6d)
+
+# check
+unique(hs2_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs2_isic31,
+#      file = "./data/hs2_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to ISIC3.1
+################################################################################
+# HS3 --> ISIC3 --> ISIC3.1
+load("./data/hs3_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs3_isic31 <- left_join(hs3_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs3_isic31)
+
+hs3_isic31 <- hs3_isic31 %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS3_6d)
+
+# check
+unique(hs3_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs3_isic31,
+#      file = "./data/hs3_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS4 to ISIC3.1
+################################################################################
+# HS4 --> ISIC3 --> ISIC3.1
+load("./data/hs4_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs4_isic31 <- left_join(hs4_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs4_isic31)
+
+hs4_isic31 <- hs4_isic31 %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS4_6d)
+
+# check
+unique(hs4_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs4_isic31,
+#      file = "./data/hs4_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to ISIC3.1
+################################################################################
+# HS5 --> ISIC3 --> ISIC3.1
+load("./data/hs5_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs5_isic31 <- left_join(hs5_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs5_isic31)
+
+hs5_isic31 <- hs5_isic31 %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS5_6d)
+
+# check
+unique(hs5_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs5_isic31,
+#      file = "./data/hs5_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS (combined) to ISIC3.1
+################################################################################
+# combine
+hs.isic31.r <- rbind(hs0_isic31 %>% rename(HS_6d = HS0_6d,
+                                           HS_4d = HS0_4d,
+                                           HS_2d = HS0_2d),
+                     hs1_isic31 %>% rename(HS_6d = HS1_6d,
+                                           HS_4d = HS1_4d,
+                                           HS_2d = HS1_2d),
+                     hs2_isic31 %>% rename(HS_6d = HS2_6d,
+                                           HS_4d = HS2_4d,
+                                           HS_2d = HS2_2d),
+                     hs3_isic31 %>% rename(HS_6d = HS3_6d,
+                                           HS_4d = HS3_4d,
+                                           HS_2d = HS3_2d),
+                     hs4_isic31 %>% rename(HS_6d = HS4_6d,
+                                           HS_4d = HS4_4d,
+                                           HS_2d = HS4_2d),
+                     hs5_isic31 %>% rename(HS_6d = HS5_6d,
+                                           HS_4d = HS5_4d,
+                                           HS_2d = HS5_2d))
+
+# clean
+hs_isic31 <- hs.isic31.r %>%
+  distinct() %>%
+  arrange(HS_6d)
+
+# check
+hs_isic31 %>%
+  group_by(HS_6d) %>%
+  count() %>%
+  filter(n > 1) %>%
+  arrange(desc(n))
+
+# save
+save(hs_isic31,
+     file = "./data/hs_isic31.RData", compress = "xz")
+
+
+################################################################################
+# HS0 to ISIC4
+################################################################################
+# HS0 --> ISIC3 --> ISIC4
+load("./data/hs0_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs0_isic4 <- left_join(hs0_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs0_isic4)
+
+hs0_isic4 <- hs0_isic4 %>%
+  select(HS0_6d, HS0_4d, HS0_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS0_6d)
+
+# check
+unique(hs0_isic4$ISIC4_1d)
+
+# # save
+# save(hs0_isic4,
+#      file = "./data/hs0_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS1 to ISIC4
+################################################################################
+# HS1 --> ISIC3 --> ISIC4
+load("./data/hs1_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs1_isic4 <- left_join(hs1_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs1_isic4)
+
+hs1_isic4 <- hs1_isic4 %>%
+  select(HS1_6d, HS1_4d, HS1_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS1_6d)
+
+# check
+unique(hs1_isic4$ISIC4_1d)
+
+# # save
+# save(hs1_isic4,
+#      file = "./data/hs1_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS2 to ISIC4
+################################################################################
+# HS2 --> ISIC3 --> ISIC4
+load("./data/hs2_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs2_isic4 <- left_join(hs2_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs2_isic4)
+
+hs2_isic4 <- hs2_isic4 %>%
+  select(HS2_6d, HS2_4d, HS2_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS2_6d)
+
+# check
+unique(hs2_isic4$ISIC4_1d)
+
+# # save
+# save(hs2_isic4,
+#      file = "./data/hs2_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS3 to ISIC4
+################################################################################
+# HS3 --> ISIC3 --> ISIC4
+load("./data/hs3_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs3_isic4 <- left_join(hs3_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs3_isic4)
+
+hs3_isic4 <- hs3_isic4 %>%
+  select(HS3_6d, HS3_4d, HS3_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS3_6d)
+
+# check
+unique(hs3_isic4$ISIC4_1d)
+
+# # save
+# save(hs3_isic4,
+#      file = "./data/hs3_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS4 to ISIC4
+################################################################################
+# HS4 --> ISIC3 --> ISIC4
+load("./data/hs4_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs4_isic4 <- left_join(hs4_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs4_isic4)
+
+hs4_isic4 <- hs4_isic4 %>%
+  select(HS4_6d, HS4_4d, HS4_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS4_6d)
+
+# check
+unique(hs4_isic4$ISIC4_1d)
+
+# # save
+# save(hs4_isic4,
+#      file = "./data/hs4_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS5 to ISIC4
+################################################################################
+# HS5 --> ISIC3 --> ISIC4
+load("./data/hs5_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs5_isic4 <- left_join(hs5_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs5_isic4)
+
+hs5_isic4 <- hs5_isic4 %>%
+  select(HS5_6d, HS5_4d, HS5_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS5_6d)
+
+# check
+unique(hs5_isic4$ISIC4_1d)
+
+# # save
+# save(hs5_isic4,
+#      file = "./data/hs5_isic4.RData", compress = "xz")
+
+
+################################################################################
+# HS (combined) to ISIC4
+################################################################################
+# combine
+hs.isic4.r <- rbind(hs0_isic4 %>% rename(HS_6d = HS0_6d,
+                                         HS_4d = HS0_4d,
+                                         HS_2d = HS0_2d),
+                    hs1_isic4 %>% rename(HS_6d = HS1_6d,
+                                         HS_4d = HS1_4d,
+                                         HS_2d = HS1_2d),
+                    hs2_isic4 %>% rename(HS_6d = HS2_6d,
+                                         HS_4d = HS2_4d,
+                                         HS_2d = HS2_2d),
+                    hs3_isic4 %>% rename(HS_6d = HS3_6d,
+                                         HS_4d = HS3_4d,
+                                         HS_2d = HS3_2d),
+                    hs4_isic4 %>% rename(HS_6d = HS4_6d,
+                                         HS_4d = HS4_4d,
+                                         HS_2d = HS4_2d),
+                    hs5_isic4 %>% rename(HS_6d = HS5_6d,
+                                         HS_4d = HS5_4d,
+                                         HS_2d = HS5_2d))
+
+# clean
+hs_isic4 <- hs.isic4.r %>%
+  distinct() %>%
+  arrange(HS_6d)
+
+# check
+hs_isic4 %>%
+  group_by(HS_6d) %>%
+  count() %>%
+  filter(n > 1) %>%
+  arrange(desc(n))
+
+# save
+save(hs_isic4,
+     file = "./data/hs_isic4.RData", compress = "xz")

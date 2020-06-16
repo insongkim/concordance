@@ -15,9 +15,9 @@ concord_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of ISIC codes. The function accepts 1 to 4-digit ISIC codes.}
 
-\item{origin}{A string setting the input industry classification: "ISIC2" (1968), "ISIC3" (1989).}
+\item{origin}{A string setting the input industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
-\item{destination}{A string setting the output industry classification: "ISIC2" (1968), "ISIC3" (1989).}
+\item{destination}{A string setting the output industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 4-digit ISIC codes. The default is 4 digits.}
 
@@ -27,7 +27,7 @@ concord_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords codes within the International Standard Industrial Classification codes (ISIC Revision 2, 3).
+Concords codes within the International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 }
 \note{
 Always include leading zeros in codes (e.g. use ISIC3 code 0111 instead of 111)---results may be buggy otherwise.

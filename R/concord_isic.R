@@ -1,10 +1,10 @@
 #' Concord Within ISIC Codes
 #'
-#' Concords codes within the International Standard Industrial Classification codes (ISIC Revision 2, 3).
+#' Concords codes within the International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 #'
 #' @param sourcevar An input character vector of ISIC codes. The function accepts 1 to 4-digit ISIC codes.
-#' @param origin A string setting the input industry classification: "ISIC2" (1968), "ISIC3" (1989).
-#' @param destination A string setting the output industry classification: "ISIC2" (1968), "ISIC3" (1989).
+#' @param origin A string setting the input industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
+#' @param destination A string setting the output industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 4-digit ISIC codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -28,7 +28,27 @@ concord_isic <- function (sourcevar,
                           all = FALSE) {
 
   # load specific conversion dictionary
-  if ((origin == "ISIC3" & destination == "ISIC2") | (origin == "ISIC2" & destination == "ISIC3")) {
+  if ((origin == "ISIC4" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "ISIC4")) {
+
+    dictionary <- concordance::isic4_isic31
+
+  } else if ((origin == "ISIC4" & destination == "ISIC3") | (origin == "ISIC3" & destination == "ISIC4")) {
+
+    dictionary <- concordance::isic4_isic3
+
+  } else if ((origin == "ISIC4" & destination == "ISIC2") | (origin == "ISIC2" & destination == "ISIC4")) {
+
+    dictionary <- concordance::isic4_isic2
+
+  } else if ((origin == "ISIC3.1" & destination == "ISIC3") | (origin == "ISIC3" & destination == "ISIC3.1")) {
+
+    dictionary <- concordance::isic31_isic3
+
+  } else if ((origin == "ISIC3.1" & destination == "ISIC2") | (origin == "ISIC2" & destination == "ISIC3.1")) {
+
+    dictionary <- concordance::isic31_isic2
+
+  } else if ((origin == "ISIC3" & destination == "ISIC2") | (origin == "ISIC2" & destination == "ISIC3")) {
 
     dictionary <- concordance::isic3_isic2
 
