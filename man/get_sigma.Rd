@@ -33,7 +33,7 @@ Concords vector of input codes to 3-digit HS0 codes and then extracts the corres
 Returns product-level import demand elasticities based on 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 }
 \note{
-Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 # South Korea, SITC4 input

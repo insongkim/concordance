@@ -25,7 +25,7 @@ Concords each element of the input vector to 4-digit SITC2 codes, then uses the 
 Returns Rauch's classification of product differentiation. Rauch classifies 4-digit SITC2 codes according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 }
 \note{
-Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 # SITC2 input

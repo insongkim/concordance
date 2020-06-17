@@ -12,7 +12,7 @@
 #' @importFrom rlang := !! .data
 #' @export
 #' @source HS-NAICS concordance tables between 1989 and 2017 from Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>.
-#' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' ## HS combined to NAICS
 #' # one input: one-to-one match

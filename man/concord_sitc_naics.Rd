@@ -31,7 +31,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords Standard International Trade Classification classification codes (SITC Revision 1, 2, 3, 4) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 }
 \note{
-Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
 ## SITC4 to NAICS

@@ -16,7 +16,7 @@
 #'   \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' # HS to NAICS
 #' concord(sourcevar = c("120600", "854690"),
@@ -100,6 +100,26 @@ concord <- function (sourcevar,
              (str_detect(origin, "NAICS") & str_detect(destination, "SITC"))) {
 
     out <- concord_sitc_naics(sourcevar,
+                              origin,
+                              destination,
+                              dest.digit,
+                              all)
+
+  # SITC to/from ISIC
+  } else if ((str_detect(origin, "SITC") & str_detect(destination, "ISIC")) |
+             (str_detect(origin, "ISIC") & str_detect(destination, "SITC"))) {
+
+    out <- concord_sitc_isic(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
+
+  # NAICS to/from ISIC
+  } else if ((str_detect(origin, "ISIC") & str_detect(destination, "NAICS")) |
+             (str_detect(origin, "NAICS") & str_detect(destination, "ISIC"))) {
+
+    out <- concord_naics_isic(sourcevar,
                               origin,
                               destination,
                               dest.digit,

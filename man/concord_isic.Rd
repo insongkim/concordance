@@ -30,7 +30,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords codes within the International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 }
 \note{
-Always include leading zeros in codes (e.g. use ISIC3 code 0111 instead of 111)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use ISIC3 code 0111 instead of 111)---results may be buggy otherwise.
 }
 \examples{
 # ISIC3 to ISIC2

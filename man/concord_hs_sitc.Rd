@@ -31,7 +31,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from Standard International Trade Classification codes (SITC Revision 1, 2, 3, 4).
 }
 \note{
-Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 ## HS combined to SITC4

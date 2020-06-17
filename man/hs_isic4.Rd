@@ -5,7 +5,7 @@
 \alias{hs_isic4}
 \title{HS-ISIC4 Concordance}
 \format{
-A data frame with 22885 rows and 7 variables:
+A data frame with 22,885 rows and 7 variables:
 \describe{
   \item{HS_6d}{6-digit HS Code}
   \item{HS_4d}{4-digit HS Code}

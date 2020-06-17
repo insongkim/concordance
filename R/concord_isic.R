@@ -15,7 +15,7 @@
 #' \itemize{
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeros in codes (e.g. use ISIC3 code 0111 instead of 111)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g., use ISIC3 code 0111 instead of 111)---results may be buggy otherwise.
 #' @examples
 #' # ISIC3 to ISIC2
 #' concord_isic(sourcevar = c("0111", "1721"),

@@ -869,6 +869,415 @@ concord(sourcevar = c("31-33", "51"),
 
 
 ################################################################################
+## HS <--> ISIC
+################################################################################
+## HS0
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS0", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS0", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS0", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS0", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS1
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS1", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS1", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS1", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS1", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS2
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS2", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS2", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS2", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS2", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS3
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS3", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS3", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS3", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS3", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS4
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS4", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS4", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS4", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS4", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS5
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS5", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+## HS
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("120600", "854690"),
+        origin = "HS", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+
+# check description
+get_desc(sourcevar = c("120600", "854690"),
+         origin = "HS5")
+get_desc(sourcevar = c("0111", "2599"),
+         origin = "ISIC4")
+
+## ISIC2
+concord(sourcevar = c("0111", "2599"), origin = "ISIC4", destination = "ISIC2", dest.digit = 4, all = FALSE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS5",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+        origin = "ISIC2", destination = "HS",
+        dest.digit = 4, all = TRUE)
+
+## ISIC3
+concord(sourcevar = c("0111", "2599"), origin = "ISIC4", destination = "ISIC3", dest.digit = 4, all = FALSE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS5",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3", destination = "HS",
+        dest.digit = 4, all = TRUE)
+
+## ISIC3.1
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS5",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2899"),
+        origin = "ISIC3.1", destination = "HS",
+        dest.digit = 4, all = TRUE)
+
+## ISIC4
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS0",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS2",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS5",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2599"),
+        origin = "ISIC4", destination = "HS",
+        dest.digit = 4, all = TRUE)
+
+
+################################################################################
+## NAICS <--> ISIC
+################################################################################
+## NAICS2017
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2017", destination = "ISIC4",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2017", destination = "ISIC3.1",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2017", destination = "ISIC3",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2017", destination = "ISIC2",
+                   dest.digit = 4, all = TRUE)
+get_desc(sourcevar = c("111120", "326199"),
+         origin = "NAICS2017")
+get_desc(sourcevar = c("1110", "3240"),
+         origin = "ISIC2")
+
+## NAICS2012
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2012", destination = "ISIC4",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2012", destination = "ISIC3.1",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2012", destination = "ISIC3",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2012", destination = "ISIC2",
+                   dest.digit = 4, all = TRUE)
+
+## NAICS2007
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2007", destination = "ISIC4",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2007", destination = "ISIC3.1",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2007", destination = "ISIC3",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2007", destination = "ISIC2",
+                   dest.digit = 4, all = TRUE)
+
+## NAICS2002
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2002", destination = "ISIC4",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2002", destination = "ISIC3.1",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2002", destination = "ISIC3",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("111120", "326199"),
+                   origin = "NAICS2002", destination = "ISIC2",
+                   dest.digit = 4, all = TRUE)
+
+## ISIC4
+concord(sourcevar = c("0111", "2220"),
+                   origin = "ISIC4", destination = "NAICS2017",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2220"),
+                   origin = "ISIC4", destination = "NAICS2012",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2220"),
+                   origin = "ISIC4", destination = "NAICS2007",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "2220"),
+                   origin = "ISIC4", destination = "NAICS2002",
+                   dest.digit = 4, all = TRUE)
+
+## ISIC3.1
+concord(sourcevar = c("0111", "2220"),
+         origin = "ISIC4", destination = "ISIC3.1",
+         dest.digit = 4, all = FALSE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3.1", destination = "NAICS2017",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3.1", destination = "NAICS2012",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3.1", destination = "NAICS2007",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3.1", destination = "NAICS2002",
+                   dest.digit = 4, all = TRUE)
+
+## ISIC3
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3", destination = "NAICS2017",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3", destination = "NAICS2012",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3", destination = "NAICS2007",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("0111", "1920"),
+                   origin = "ISIC3", destination = "NAICS2002",
+                   dest.digit = 4, all = TRUE)
+
+## ISIC2
+concord(sourcevar = c("0111", "2220"),
+        origin = "ISIC4", destination = "ISIC2",
+        dest.digit = 4, all = FALSE)
+concord(sourcevar = c("1110", "3240"),
+                   origin = "ISIC2", destination = "NAICS2017",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+                   origin = "ISIC2", destination = "NAICS2012",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+                   origin = "ISIC2", destination = "NAICS2007",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+                   origin = "ISIC2", destination = "NAICS2002",
+                   dest.digit = 4, all = TRUE)
+concord(sourcevar = c("1110", "3240"),
+                   origin = "ISIC2", destination = "NAICS2017",
+                   dest.digit = 4, all = TRUE)
+
+################################################################################
+## SITC <--> ISIC
+################################################################################
+## SITC3 to ISIC3
+get_desc(sourcevar = c("22240", "04110"),
+         origin = "SITC3")
+
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC3", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+get_desc(concord(sourcevar = c("22240", "04110"),
+                 origin = "SITC3", destination = "ISIC3",
+                 dest.digit = 4, all = FALSE),
+         origin = "ISIC3")
+
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC4", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC4", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC4", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC4", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC3", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC3", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC3", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC3", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC2", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC2", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC2", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22240", "04110"),
+        origin = "SITC2", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+
+concord(sourcevar = c("22240", "04110"),
+       origin = "SITC4", destination = "SITC1",
+       dest.digit = 5, all = FALSE)
+concord(sourcevar = c("22180", "04100"),
+        origin = "SITC1", destination = "ISIC4",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22180", "04100"),
+        origin = "SITC1", destination = "ISIC3.1",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22180", "04100"),
+        origin = "SITC1", destination = "ISIC3",
+        dest.digit = 4, all = TRUE)
+concord(sourcevar = c("22180", "04100"),
+        origin = "SITC1", destination = "ISIC2",
+        dest.digit = 4, all = TRUE)
+
+# check
+get_desc(sourcevar = c("22180", "04100"),
+         origin = "SITC1")
+get_desc(concord(sourcevar = c("22180", "04100"),
+                 origin = "SITC1", destination = "ISIC2",
+                 dest.digit = 4, all = FALSE),
+         "ISIC2")
+
+
+################################################################################
 ## Within SITC
 ################################################################################
 ## SITC2 and SITC1

@@ -12,7 +12,7 @@
 #' @export
 #' @source Data from Jon Haveman's International Trade Data page <http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch>.
 #' @references Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.
-#' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' # SITC2 input
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "")

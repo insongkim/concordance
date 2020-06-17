@@ -30,7 +30,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords codes within the Standard International Trade Classification classification (SITC Revision 1, 2, 3, 4).
 }
 \note{
-Always include leading zeros in codes (e.g. use SITC code 01211 instead of 1211)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use SITC code 01211 instead of 1211)---results may be buggy otherwise.
 }
 \examples{
 # SITC4 to SITC3

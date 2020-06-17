@@ -1115,7 +1115,7 @@
 #'
 #' A dataset containing concordances between HS (combined) and ISIC3.1 classifications.
 #'
-#' @format A data frame with 6873 rows and 7 variables:
+#' @format A data frame with 6,873 rows and 7 variables:
 #' \describe{
 #'   \item{HS_6d}{6-digit HS Code}
 #'   \item{HS_4d}{4-digit HS Code}
@@ -1132,7 +1132,7 @@
 #'
 #' A dataset containing concordances between HS (combined) and ISIC4 classifications.
 #'
-#' @format A data frame with 22885 rows and 7 variables:
+#' @format A data frame with 22,885 rows and 7 variables:
 #' \describe{
 #'   \item{HS_6d}{6-digit HS Code}
 #'   \item{HS_4d}{4-digit HS Code}
@@ -1216,6 +1216,112 @@
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "sitc4_naics"
+
+#' NAICS2002-ISIC3.1 Concordance
+#'
+#' A dataset containing concordances between NAICS2002 and ISIC3.1 classifications.
+#'
+#' @format A data frame with 1960 rows and 7 variables:
+#' \describe{
+#'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
+#'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_2d}{2-digit ISIC3.1 Code}
+#'   \item{ISIC3.1_1d}{1-digit ISIC3.1 Code}
+#' }
+#' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
+"naics2002_isic31"
+
+#' NAICS2007-ISIC4 Concordance
+#'
+#' A dataset containing concordances between NAICS2007 and ISIC4 classifications.
+#'
+#' @format A data frame with 1765 rows and 7 variables:
+#' \describe{
+#'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#' }
+#' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
+"naics2007_isic4"
+
+#' NAICS2012-ISIC4 Concordance
+#'
+#' A dataset containing concordances between NAICS2012 and ISIC4 classifications.
+#'
+#' @format A data frame with 1663 rows and 7 variables:
+#' \describe{
+#'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#' }
+#' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
+"naics2012_isic4"
+
+#' NAICS2017-ISIC4 Concordance
+#'
+#' A dataset containing concordances between NAICS2017 and ISIC4 classifications.
+#'
+#' @format A data frame with 1653 rows and 7 variables:
+#' \describe{
+#'   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+#'   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+#'   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
+#'   \item{ISIC4_4d}{4-digit ISIC4 Code}
+#'   \item{ISIC4_3d}{3-digit ISIC4 Code}
+#'   \item{ISIC4_2d}{2-digit ISIC4 Code}
+#'   \item{ISIC4_1d}{1-digit ISIC4 Code}
+#' }
+#' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
+"naics2017_isic4"
+
+#' SITC2-ISIC2 Concordance
+#'
+#' A dataset containing concordances between SITC2 and ISIC2 classifications.
+#'
+#' @format A data frame with 1687 rows and 9 variables:
+#' \describe{
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#'   \item{ISIC2_4d}{4-digit ISIC2 Code}
+#'   \item{ISIC2_3d}{3-digit ISIC2 Code}
+#'   \item{ISIC2_2d}{2-digit ISIC2 Code}
+#'   \item{ISIC2_1d}{1-digit ISIC2 Code}
+#' }
+#' @source \url{https://wits.worldbank.org/product_concordance.html}
+"sitc2_isic2"
+
+#' SITC3-ISIC3 Concordance
+#'
+#' A dataset containing concordances between SITC3 and ISIC3 classifications.
+#'
+#' @format A data frame with 3069 rows and 9 variables:
+#' \describe{
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#'   \item{ISIC3_4d}{4-digit ISIC3 Code}
+#'   \item{ISIC3_3d}{3-digit ISIC3 Code}
+#'   \item{ISIC3_2d}{2-digit ISIC3 Code}
+#'   \item{ISIC3_1d}{1-digit ISIC3 Code}
+#' }
+#' @source \url{https://ec.europa.eu/eurostat}
+"sitc3_isic3"
 
 #' SITC2-SITC1 Concordance
 #'

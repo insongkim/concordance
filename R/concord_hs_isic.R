@@ -15,14 +15,15 @@
 #' \itemize{
 #'   \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
 #' }
-#' @note Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
-#' ## HS combined to ISIC3
-#' concord_hs_isic(sourcevar = "120600",
-#'                 origin = "HS", destination = "ISIC3",
+#' ## HS5 to ISIC4
+#' concord_hs_isic(sourcevar = c("120600", "854690"),
+#'                 origin = "HS5", destination = "ISIC4",
 #'                 dest.digit = 4, all = TRUE)
+#'
 #' ## ISIC4 to HS5
-#' concord_hs_isic(sourcevar = "0111",
+#' concord_hs_isic(sourcevar = c("0111", "2599"),
 #'                 origin = "ISIC4", destination = "HS5",
 #'                 dest.digit = 4, all = TRUE)
 concord_hs_isic <- function (sourcevar,
@@ -31,7 +32,7 @@ concord_hs_isic <- function (sourcevar,
                              dest.digit = 4,
                              all = FALSE) {
 
-  # load specific conversion dictionary
+  # load/create specific conversion dictionary
   # HS and ISIC2
   if ((origin == "HS" & destination == "ISIC2") | (origin == "ISIC2" & destination == "HS")) {
 
@@ -102,7 +103,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -110,6 +111,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS0_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS0_6d)
 
   } else if ((origin == "HS1" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS1")) {
@@ -119,7 +121,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -127,6 +129,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS1_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS1_6d)
 
   } else if ((origin == "HS2" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS2")) {
@@ -136,7 +139,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -144,6 +147,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS2_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS2_6d)
 
   } else if ((origin == "HS3" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS3")) {
@@ -153,7 +157,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -161,6 +165,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS3_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS3_6d)
 
   } else if ((origin == "HS4" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS4")) {
@@ -170,7 +175,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -178,6 +183,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS4_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS4_6d)
 
   } else if ((origin == "HS5" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS5")) {
@@ -187,7 +193,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic31_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -195,6 +201,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS5_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS5_6d)
 
   # HS and ISIC4
@@ -209,7 +216,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -217,6 +224,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS0_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS0_6d)
 
   } else if ((origin == "HS1" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS1")) {
@@ -226,7 +234,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -234,6 +242,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS1_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS1_6d)
 
   } else if ((origin == "HS2" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS2")) {
@@ -243,7 +252,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -251,6 +260,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS2_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS2_6d)
 
   } else if ((origin == "HS3" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS3")) {
@@ -260,7 +270,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -268,6 +278,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS3_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS3_6d)
 
   } else if ((origin == "HS4" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS4")) {
@@ -277,7 +288,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -285,6 +296,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS4_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS4_6d)
 
   } else if ((origin == "HS5" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS5")) {
@@ -294,7 +306,7 @@ concord_hs_isic <- function (sourcevar,
     dictionary.2 <- concordance::isic4_isic3
 
     # merge
-    dictionary <- left_join(dictionary.1,
+    dictionary <- full_join(dictionary.1,
                             dictionary.2,
                             by = "ISIC3_4d")
 
@@ -302,6 +314,7 @@ concord_hs_isic <- function (sourcevar,
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
+      filter(!(is.na(.data$HS5_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS5_6d)
 
   } else {

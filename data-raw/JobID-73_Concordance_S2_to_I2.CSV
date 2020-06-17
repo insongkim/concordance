@@ -1,0 +1,1688 @@
+SITC Revision 2 Product Code,SITC Revision 2 Product Description,ISIC Revision 2 Product Code,ISIC Revision 2 Product Description
+334,"Petroleum products,refined",3530,Petroleum refineries
+0013,"Swine, live",1110,Agricultural and livestock production
+0015,"Horses, asses, mules and hinnies, live",1110,Agricultural and livestock production
+0112,"Meat of sheep and goats, fresh, chilled or frozen",3111,"Slaughtering, preparing and preserving meat"
+0113,"Meat of swine, fresh, chilled or frozen",3111,"Slaughtering, preparing and preserving meat"
+0114,"Poultry,dead & edible offals ex.liver,fresh/frozen",3111,"Slaughtering, preparing and preserving meat"
+0115,"Meat of horses,asses,etc.,fresh,chilled,frozen",3111,"Slaughtering, preparing and preserving meat"
+0116,Edible offals of animals in headings 001.1-001.5,3111,"Slaughtering, preparing and preserving meat"
+0121,"Bacon,ham & other dried,salted,smoked meat/ swine",3111,"Slaughtering, preparing and preserving meat"
+0129,"Meat & edib.offals,n.e.s.salt.in brine dried/smok.",3111,"Slaughtering, preparing and preserving meat"
+0141,Meat extracts and meat juices; fish extracts,3111,"Slaughtering, preparing and preserving meat"
+0142,"Sausages & the like,of meat,meat offal or blood",3111,"Slaughtering, preparing and preserving meat"
+0149,Other prepared or preserved meat or meat offals,3111,"Slaughtering, preparing and preserving meat"
+0223,"Milk & cream,fresh,not concentrated or sweetened",3112,Manufacture of dairy products
+0230,Butter,3112,Manufacture of dairy products
+0240,Cheese and curd,3112,Manufacture of dairy products
+0251,Eggs in shell,1110,Agricultural and livestock production
+0252,Eggs not in shell,3112,Manufacture of dairy products
+0341,"Fish,fresh(live/dead)or chilled,excl.fillets",1301,Ocean and coastal fishing
+0342,"Fish,frozen (excluding fillets)",1301,Ocean and coastal fishing
+0343,"Fish fillets,fresh or chilled",1301,Ocean and coastal fishing
+0344,"Fish fillets,frozen",1301,Ocean and coastal fishing
+0360,"Crustaceans and molluscs,fresh,chilled,frozen etc.",1301,Ocean and coastal fishing
+0371,"Fish,prepared or preserved,n.e.s. including caviar",3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+0372,"Crustaceans and molluscs,prepared or preserved",3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+0411,"Durum wheat,unmilled",1110,Agricultural and livestock production
+0412,"Other wheat (including spelt) and meslin,unmilled",1110,Agricultural and livestock production
+0430,"Barley,unmilled",1110,Agricultural and livestock production
+0440,"Maize (corn),unmilled",1110,Agricultural and livestock production
+0451,"Rye,unmilled",1110,Agricultural and livestock production
+0452,"Oats,unmilled",1110,Agricultural and livestock production
+0482,"Malt,roasted or not (including malt flour)",3133,Malt liqors and malt
+0483,"Macaroni,spaghetti and similar products",3117,Manufacture of bakery products
+0488,"Malt extract;prep.of flour etc,for infant food",3117,Manufacture of bakery products
+0541,"Potatoes,fresh or chilled,excl.sweet potatoes",1110,Agricultural and livestock production
+0542,"Beans,peas,lentils & other leguminous vegetables",1110,Agricultural and livestock production
+0544,"Tomatoes,fresh or chilled",1110,Agricultural and livestock production
+0561,"Vegetables,dried,dehydrated or evaporated",3113,Canning and preserving of fruits and vegetables
+0573,"Bananas,fresh or dried",1110,Agricultural and livestock production
+0574,"Apples,fresh",1110,Agricultural and livestock production
+0576,"Figs,fresh or dried",1110,Agricultural and livestock production
+0582,"Fruit,fruit-peel & parts of plants,pres. by sugar",3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+0583,"Jams,fruit jellies, marmalades,fruit puree,cooked",3113,Canning and preserving of fruits and vegetables
+0611,"Sugars,beet and cane,raw,solid",3118,Sugar factories and refineries
+0612,Refined sugars and other prod. of ref. beet/cane,3118,Sugar factories and refineries
+0615,"Molasses,whether or not decolourized",3118,Sugar factories and refineries
+0616,Natural honey,1110,Agricultural and livestock production
+0619,Other sugars;sugar syrups;artificial honey;caramel,3118,Sugar factories and refineries
+0620,Sugar confectionery and other sugar preparations,3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+0712,"Extracts,essences/concent.of coffee & chicory",3121,Manufacture of food products not elsewhere classified
+0721,"Cocoa beans,whole or broken,raw or roasted",1110,Agricultural and livestock production
+0722,"Cocoa powder,unsweetened",3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+0730,Chocolate & other food preptns. containing cocoa,3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+0741,Tea,1110,Agricultural and livestock production
+0742,Mate,1110,Agricultural and livestock production
+0751,Pepper ; pimento,1110,Agricultural and livestock production
+0913,"Lard,other pig fat & poultry,rendered/solvent-ext.",3111,"Slaughtering, preparing and preserving meat"
+1122,"Other fermented beverages n.e.s (cider,perry mead)",3132,Wine industries
+1123,"Beer made from malt (includ.ale,stout and porter)",3133,Malt liqors and malt
+1213,Tobacco refuse,1110,Agricultural and livestock production
+1221,Cigars and cheroots; cigarillos,3140,Tobacco manufactures
+1222,Cigarettes,3140,Tobacco manufactures
+1223,"Tobacco,manufactured (inc.smoking,chewing tobacco)",3140,Tobacco manufactures
+2111,"Bovine & equine hides (other than calf),raw",3111,"Slaughtering, preparing and preserving meat"
+2112,"Calf skins,raw (fresh,salted,dried,pickled/limed",3111,"Slaughtering, preparing and preserving meat"
+2114,"Goat & kid skins,raw (fresh,salted,dried,pickled)",1110,Agricultural and livestock production
+2116,"Sheep & lamb skins with wool on,raw (fresh,salted)",3111,"Slaughtering, preparing and preserving meat"
+2117,"Sheep & lamb skins without the wool,raw(fresh etc)",3111,"Slaughtering, preparing and preserving meat"
+2221,"Groundnuts (peanuts),green,whether or not shelled",1110,Agricultural and livestock production
+2222,Soya beans,1110,Agricultural and livestock production
+2223,Cotton seeds,3211,"Spinning, weawing and finishing textiles"
+2224,Sunflower seeds,1110,Agricultural and livestock production
+2225,Sesame (sesamum)seeds,1110,Agricultural and livestock production
+2226,Rape and colza seeds,1110,Agricultural and livestock production
+2231,Copra,1110,Agricultural and livestock production
+2232,Palm nuts and palm kernels,1110,Agricultural and livestock production
+2234,Linseed,1110,Agricultural and livestock production
+2235,Castor oil seeds,1110,Agricultural and livestock production
+2238,Oil seeds and oleaginous fruit. n.e.s.,1110,Agricultural and livestock production
+2239,Flours or meals/oil seeds/oleag.fruit non defatted,3115,Manufacture of vegetable and animal oils and fats
+2481,Railway or tramway sleepers (ties)of wood,3311,"Sawmille, planing and other wood mills"
+2511,"Waste paper,paperboard;only for use paper-making",3411,"Manufacture of pulp, paper and paperboard"
+2512,Mechanical wood pulp,3411,"Manufacture of pulp, paper and paperboard"
+2516,"Chemical wood pulp,dissolving grades",3411,"Manufacture of pulp, paper and paperboard"
+2613,Raw silk (not thrown),1110,Agricultural and livestock production
+2631,"Cotton (other than linters),not carded or combed",1110,Agricultural and livestock production
+2632,Cotton linters,3211,"Spinning, weawing and finishing textiles"
+2633,Cotton waste (including pulled or garnetted rags),3211,"Spinning, weawing and finishing textiles"
+2634,"Cotton,carded or combed",3211,"Spinning, weawing and finishing textiles"
+2640,"Jute & other textile bast fibres,nes,raw/processed",1110,Agricultural and livestock production
+2652,"True hemp,raw or processed,not spun;tow and waste",1110,Agricultural and livestock production
+2654,"Sisal & other fibres of agave family,raw or proce.",1110,Agricultural and livestock production
+2655,"Manila hemp,raw or processed,not spun;tow & waste",1110,Agricultural and livestock production
+2681,"Seep's or lambs' wool,greasy or fleece-washed",1110,Agricultural and livestock production
+2682,"Sheep's or lambs'wool,degreased,in the mass",3211,"Spinning, weawing and finishing textiles"
+2683,"Fine animal hair,not carded or combed",1110,Agricultural and livestock production
+2687,"Sheep's/lamb's wool/other aimal hair,carded/combed",3211,"Spinning, weawing and finishing textiles"
+2711,Guano & other natural animal/vegetable fertilizers,2902,Chemical and fertilizer mineral mining
+2712,"Sodium nitrate,natural,contain.<16.3% of nitrogen",2902,Chemical and fertilizer mineral mining
+2714,"Potassium salts,natural,crude",2902,Chemical and fertilizer mineral mining
+2733,"Sands,natural,of all kinds,whether or not coloured",2901,"Stone quarrying, clay and sand pits"
+2734,"Pebbles and crushed or broken stone,gravel,macadam",2901,"Stone quarrying, clay and sand pits"
+2741,Sulphur of all kinds,2902,Chemical and fertilizer mineral mining
+2742,"Iron pyrites,unroasted",2902,Chemical and fertilizer mineral mining
+2771,"Industrial diamonds,sorted,whether or not worked",2909,Mining and quarrying not elsewhere classified
+2783,"Common salt;rock sat,sea salt;pur.sodium chrloride",2903,Salt mining
+2784,Asbestos,2909,Mining and quarrying not elsewhere classified
+2814,"Roasted iron pyrites,whether or not agglomerated",3511,Manufacture of basic industrial chemicals except fertilizer
+2815,"Iron ore and concentrates,not agglomerated",2301,Iron ore mining
+2816,"Iron ore agglomerates (sinters,pellets,briquettes)",2301,Iron ore mining
+2860,Ores and concentrates of uranium and thorium,2302,Non-ferrous metal ore mining
+2874,Lead ores and concentrates,2302,Non-ferrous metal ore mining
+2875,Zinc ores and concentrates,2302,Non-ferrous metal ore mining
+2876,Tin ores and concentrates,2302,Non-ferrous metal ore mining
+2877,Manganese ores and concentrates,2302,Non-ferrous metal ore mining
+2881,"Ash & residues,contain.metals/metallic compounds",3720,Non-ferrous metal basic industries
+2922,"Shellac,seed lac,stick lac,resins,gum-resins,etc.",1110,Agricultural and livestock production
+2923,Veget.mater.of a kind used primar.for plaiting,1110,Agricultural and livestock production
+2924,"Plants,seeds,fruit used in perfumery,pharmacy",1210,Forestry
+2925,"Seeds,fruit & spores,nes,of a kind used for sowing",1110,Agricultural and livestock production
+3221,"Anthracite,whether/not pulverized,not agglomerated",2100,Coal mining
+3222,"Other coal,whether/not pulverized,not agglomerated",2100,Coal mining
+3223,"Lignite,whether or not pulverized,not agglomerated",2100,Coal mining
+3224,"Peat,whether/not compres.into bales not agglomera.",2909,Mining and quarrying not elsewhere classified
+3330,Petrol.oils & crude oils obt.from bitumin.minerals,2200,Crude Petroleum and Natural Gas Production
+3414,Petroleum gases and other gaseous hydrocarbons nes,2200,Crude Petroleum and Natural Gas Production
+3415,"Coal gas,water gas,producer gas & similar gases",9999,Goods not elsewhere classified
+3510,Electric current,4101,Electric light and power
+4232,Soya bean oil,3115,Manufacture of vegetable and animal oils and fats
+4233,Cotton seed oil,3115,Manufacture of vegetable and animal oils and fats
+4234,Groundnut (peanut) oil,3115,Manufacture of vegetable and animal oils and fats
+4235,Olive oil,3115,Manufacture of vegetable and animal oils and fats
+4236,Sunflower seed oil,3115,Manufacture of vegetable and animal oils and fats
+4241,Linseed oil,3115,Manufacture of vegetable and animal oils and fats
+4242,Palm oil,3115,Manufacture of vegetable and animal oils and fats
+4243,Coconut (copra) oil,3115,Manufacture of vegetable and animal oils and fats
+4244,Palm kernel oil,3115,Manufacture of vegetable and animal oils and fats
+4245,Castor oil,3115,Manufacture of vegetable and animal oils and fats
+4249,"Fixed vegetable oils,n.e.s",3115,Manufacture of vegetable and animal oils and fats
+4311,"Oils,animal & vegetable,boiled,oxidized, etc.",3115,Manufacture of vegetable and animal oils and fats
+4312,"Anim./veget.oils & fats,wholly/partly hydrogenated",3115,Manufacture of vegetable and animal oils and fats
+5114,Sulphon.nitrat./nitrosat.derivativ.of hydrocarbons,3511,Manufacture of basic industrial chemicals except fertilizer
+5122,Cyclic.alcohols & their halogenated derivatives,3511,Manufacture of basic industrial chemicals except fertilizer
+5139,"Carboxylic acids with alcohol,phenol etc.function",3511,Manufacture of basic industrial chemicals except fertilizer
+5145,Amine-function compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+5146,Single or complex oxygen-function amino-compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+5147,Carboxyamide-function compounds;& other compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+5154,Organo-sulphur compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+5241,Fissile chemical elements and isotopes,3511,Manufacture of basic industrial chemicals except fertilizer
+5311,Synthetic organic dyestuffs,3511,Manufacture of basic industrial chemicals except fertilizer
+5323,"Synth.org.tanning substances,& inorg.tanning subst",3511,Manufacture of basic industrial chemicals except fertilizer
+5331,"Other colouring matter,inorganic products",3511,Manufacture of basic industrial chemicals except fertilizer
+5332,Printing ink,3529,Manufacture of chemical products not elsewhere classified
+5411,"Provitamins & vitamins,narural/reprod.by synthesis",3522,Manufacture of drugs and medicines
+5414,"Vegetab.alkaloids,natural/reproduced by synthesis",3522,Manufacture of drugs and medicines
+5513,"Essential oils,concretes & absolutes;resinoids",3529,Manufacture of chemical products not elsewhere classified
+5514,Mixtures of two or more odoriferous substances,3529,Manufacture of chemical products not elsewhere classified
+5530,"Perfumery,cosmetics and toilet preparations",3523,"Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations"
+5541,Soap;organic surface-active products & preparatns,3523,"Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations"
+5542,"Organic surface-active agents,n.e.s.",3523,"Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations"
+5543,"Polishes & creams,for footwear,furniture or floors",3523,"Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations"
+5722,"Safety fuses,detonating fus.;percussion & det.caps",3529,Manufacture of chemical products not elsewhere classified
+5723,"Pyrotechnic articles:(firework,railway fog etc.)",3529,Manufacture of chemical products not elsewhere classified
+5827,Silicones,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5829,"Other condensation,polycondensation/polyadd.produ.",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5837,Polyvinyl acetate,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5838,Ion exchangers of polymerization/copolymeriz.type,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5839,Other polymerization and copolimerization products,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5841,Regenerated cellulose,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+5911,Insecticides packed for sale etc.,3512,Manufacture of fertilizers and pesticides
+5912,Fungicides packed for sale etc.,3512,Manufacture of fertilizers and pesticides
+5913,Weed killers (herbicides)packed for sale etc.,3512,Manufacture of fertilizers and pesticides
+5982,"Anti-knock preparations,oxidation inhibitors etc.",3529,Manufacture of chemical products not elsewhere classified
+6112,"Composition leather fibre,in slabs etc.,sheets,etc",3231,Tanneries and leather finishing
+6113,Calf leather,3231,Tanneries and leather finishing
+6114,Leather of other bovine cattle and equine leather,3231,Tanneries and leather finishing
+6115,Sheep and lamb skin leather,3231,Tanneries and leather finishing
+6121,Articles of leather or of composition leather,3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+6122,"Saddlery and harness,or any material for animals",3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+6123,Parts of footwear,3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+6129,Other articles of leather or of composit. leather,3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+6130,"Furskins,tanned/dressed,pieces/cuttings of furskin",3232,Fur dessing and dyeing industries
+6251,"Tyres,pneumatic,new,of a kind used on motor cars",3551,Tyre and tube industries
+6252,"Tyres,pneumat.,new,of a kind used on buses,lorries",3551,Tyre and tube industries
+6253,"Tyres,pneumatic,new,of a kind used on aircraft",3551,Tyre and tube industries
+6254,"Tyres,pneum.new.of a kind used on motor/bicycles",3551,Tyre and tube industries
+6281,Hygienic and pharmaceutical articles of rubber,3559,Manufacture of rubber products not elsewhere classified
+6282,"Transmission,conveyor/elevator belts of rubber",3559,Manufacture of rubber products not elsewhere classified
+6341,"Wood sawn lengthwise,sliced/peeled,but not prepar.",3311,"Sawmille, planing and other wood mills"
+6342,Plywood consisting of sheets of wood,3311,"Sawmille, planing and other wood mills"
+6351,"Wooden packing cases,boxes,crates,drums etc.",3312,Manufacture of wooden and cane containers and small can ware
+6352,"Casks,barrels,vats,tubs,buckets & oth.coopers'prod",3312,Manufacture of wooden and cane containers and small can ware
+6353,Builders' carpentry and joinery,3311,"Sawmille, planing and other wood mills"
+6411,Newsprint,3411,"Manufacture of pulp, paper and paperboard"
+6421,"Boxes,bags & oth.packing containers,of paper/papbd",3412,Manufacture of containers and boxes of paper and paperboard
+6422,"Writing blocks,envelopes,etc.correspondence cards",3419,"Manufacture of pulp, paper and paperboard articles not elsewhere classified"
+6423,"Registers,exercise books,note books,etc.",3420,"Printing, publishing and allied industries"
+6532,"Fabrics,woven contain.85% of discontin.synth.fibr.",3211,"Spinning, weawing and finishing textiles"
+6536,"Fabrics,woven contain.85% of discont.regener.fibr.",3211,"Spinning, weawing and finishing textiles"
+6541,"Fabrics,woven,of silk,of noil or other waste silk",3211,"Spinning, weawing and finishing textiles"
+6544,"Fabrics,woven,of flax or of ramie",3211,"Spinning, weawing and finishing textiles"
+6545,"Fabrics,woven,of jute or of other textile bast fib",3211,"Spinning, weawing and finishing textiles"
+6546,"Fabrics of glass fibre,pile fab.tulle,lace,knitted",3211,"Spinning, weawing and finishing textiles"
+6571,"Felt & articl.of felt,nes,whether/not impregnated",3212,Manufacture of made-up textile goods except wea ing apparel
+6572,"Bonded fibre fabrics,similar bonded yarn fabrics",3212,Manufacture of made-up textile goods except wea ing apparel
+6581,"Sacks and bags,of textile materials",3212,Manufacture of made-up textile goods except wea ing apparel
+6593,"Kelem,schumacks and karamanie rugs and the like",3214,Manufacture of carpets and rugs
+6597,Plaits and similar products of plaiting materials,3214,Manufacture of carpets and rugs
+6611,"Quicklime,slaked lime and hydraulic lime",3692,"Manufacture of cement, lime and plaster"
+6612,"Portland cement,ciment fondu,slag cement etc.",3692,"Manufacture of cement, lime and plaster"
+6631,"Hand polishing stones,whetstones,oilstones,hones",3699,Manufacture of non-metallic mineral products not elsewhere classified
+6632,Natural or artificial abrasive powder or grain,3699,Manufacture of non-metallic mineral products not elsewhere classified
+6635,"Slag wool,rock wool and similar mineral wools",3699,Manufacture of non-metallic mineral products not elsewhere classified
+6637,"Refractory goods(eg.,retorts,crucibles etc ) n.e.s",3699,Manufacture of non-metallic mineral products not elsewhere classified
+6642,Optical glass and elements of optical glass,3620,Manufacture of glass and glass products
+6643,"Drawn or blown glass,unworked,in rectangles",3620,Manufacture of glass and glass products
+6644,"Cast,rolled,drawn or blown glass,in rectangles",3620,Manufacture of glass and glass products
+6645,"Cast or rolled glass,unworked,whether figured/not",3620,Manufacture of glass and glass products
+6647,Safety glass consisting of toughened/laminat.glass,3620,Manufacture of glass and glass products
+6648,"Glass mirrors(incl.rear-view mir.),unframed,framed",3620,Manufacture of glass and glass products
+6652,"Glassware used for table,kitchen,indoor decoration",3620,Manufacture of glass and glass products
+6664,Tableware & other articles of porcelain or china,3610,"Manufacture of pottery, china and earthenware"
+6665,Tableware & other articles of oth.kinds of pottery,3610,"Manufacture of pottery, china and earthenware"
+6666,"Statuettes & oth.ornaments,& articles of adornment",3610,"Manufacture of pottery, china and earthenware"
+6671,"Pearls,unworked/worked,not mounted,set or strung",1301,Ocean and coastal fishing
+6673,"Oth.precious & semi-precious stones,unwork.cut etc",3901,Manufacture of jewellery and related articles
+6674,Synthetic/reconstructed precious/semi-prec.stones,3511,Manufacture of basic industrial chemicals except fertilizer
+6712,"Pig iron,cast iron and spiegeleisen,in pigs,blocks",3710,Iron and steel basic industries
+6747,"Tinned sheets and plates,of steel",3710,Iron and steel basic industries
+6781,"Tubes and pipes,of cast iron",3710,Iron and steel basic industries
+6782,seamlesstubes and pipes;blanks for tubes & pipes,3710,Iron and steel basic industries
+6783,"Other tubes and pipes,of iron or steel",3710,Iron and steel basic industries
+6785,"Tube & pipe fittings(joints,elbows)of iron/steel",3710,Iron and steel basic industries
+6793,"Steel & iron forgings & stampings,in rough state",3710,Iron and steel basic industries
+6831,"Nickel & nickel alloys,unwrought (ingots,pigs,etc)",3720,Non-ferrous metal basic industries
+6841,"Aluminium and aluminium alloys,unwrought",3720,Non-ferrous metal basic industries
+6861,"Zinc and zinc alloys,unwrought",3720,Non-ferrous metal basic industries
+6871,"Tin and tin alloys,unwrought",3720,Non-ferrous metal basic industries
+6880,"Uranium depleted in u235 & thorium,& their alloys",3720,Non-ferrous metal basic industries
+6911,Structures & parts of struc.;iron/steel;plates,3813,Manufacture of structural metal products
+6912,"Structures & parts of struc.;aluminium;plates,rods",3813,Manufacture of structural metal products
+6932,"Wire,twisted hoop for fencing of iron or steel",3710,Iron and steel basic industries
+6951,Hand tools of a kind used in agriculture etc,3811,"Manufacture of cutlery, hand tools and general hardware"
+6992,"Chain and parts thereof,of iron or steel",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+7111,Steam & other vapour generating boilers,3813,Manufacture of structural metal products
+7112,"Auxiliary plant for use with boilers,of 711.1-",3813,Manufacture of structural metal products
+7126,"Steam & other vapour power units,steam engines",3821,Manufacture of engines and turbines
+7129,Parts of the power units of 712.6-,3821,Manufacture of engines and turbines
+7132,Int.combustion piston engines for propelling veh.,3843,Manufacture of motor vehicles
+7138,"Int.comb.piston engines,n.e.s.",3821,Manufacture of engines and turbines
+7139,Parts of int.comb.piston engines of 713.2-/3-/8-,3829,Machinery and equipment except electrical not elsewhere classified
+7144,Reaction engines,3845,Manufacture of aircraft
+7161,"Motors & generators,direct current",3831,Manufacture of electrical industrial machinery and apparatus
+7163,Rotary converters,3831,Manufacture of electrical industrial machinery and apparatus
+7169,Parts of rotating electric plant,3831,Manufacture of electrical industrial machinery and apparatus
+7187,Nuclear reactors and parts,3813,Manufacture of structural metal products
+7223,Track-laying tractors,3822,Manufacture of agricultural machinery and equipment
+7224,"Wheeled tractors,not incl. in 744.11/783.2-",3822,Manufacture of agricultural machinery and equipment
+7233,"Road rollers,mechanically propelled",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+7239,Parts of the machinery of 723.41 to 723.46,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+7248,"Mach.for preparing,tanning or working hides",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+7252,Paper & paperboard cutting mach.of all kinds,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+7367,Other mach.-tools for working metal or met.carbide,3823,Manufacture of metal and wood working machinery
+7368,"Work holders,self-opening dieheads & tool holders",3823,Manufacture of metal and wood working machinery
+7369,Parts of the machine-tools of 736--,3823,Manufacture of metal and wood working machinery
+7411,Producer gas and water gas generators and parts,3829,Machinery and equipment except electrical not elsewhere classified
+7412,Furnace burners for liquid fuel and parts,3829,Machinery and equipment except electrical not elsewhere classified
+7415,Air conditioning mach.self-contained and parts,3829,Machinery and equipment except electrical not elsewhere classified
+7416,Mach.plant & sim.lab.equip.involv.a temp.change,3829,Machinery and equipment except electrical not elsewhere classified
+7421,"Reciprocating pumps,other than 742.81",3829,Machinery and equipment except electrical not elsewhere classified
+7422,"Centrifugal pumps,other than 742.81",3829,Machinery and equipment except electrical not elsewhere classified
+7423,"Rotary pumps,other than 742.81",3829,Machinery and equipment except electrical not elsewhere classified
+7429,Parts of the pumps & liq.elevators of 742--,3829,Machinery and equipment except electrical not elsewhere classified
+7431,"Air pumps,vacuum pumps & compressors",3829,Machinery and equipment except electrical not elsewhere classified
+7434,"Fans,blowers and the like,and parts",3829,Machinery and equipment except electrical not elsewhere classified
+7435,Centrifuges,3829,Machinery and equipment except electrical not elsewhere classified
+7436,Filtering & purifying mach.for liquids & gases,3829,Machinery and equipment except electrical not elsewhere classified
+7439,"Parts of the machines of 743.5-,743.6-",3829,Machinery and equipment except electrical not elsewhere classified
+7449,Parts of the machinery of 744.2-,3829,Machinery and equipment except electrical not elsewhere classified
+7491,"Ball,roller or needle roller bearings",3829,Machinery and equipment except electrical not elsewhere classified
+7492,"Taps,cocks,valves etc.for pipes,tanks,vats etc",3829,Machinery and equipment except electrical not elsewhere classified
+7493,"Transmission shafts,cranks,bearing housings etc.",3829,Machinery and equipment except electrical not elsewhere classified
+7521,Analogue & hybrid data processing machines,3825,"Manufacture of office, computing and accounting machinery"
+7522,Complete digital data processing machines,3825,"Manufacture of office, computing and accounting machinery"
+7523,Complete digital central processing units,3825,"Manufacture of office, computing and accounting machinery"
+7524,"Digital central storage units,separately consigned",3825,"Manufacture of office, computing and accounting machinery"
+7525,"Peripheral units,incl.control & adapting units",3825,"Manufacture of office, computing and accounting machinery"
+7528,Off-line data processing equipment. n.e.s.,3825,"Manufacture of office, computing and accounting machinery"
+7599,"Parts of and accessories suitable for 751.2-,752--",3825,"Manufacture of office, computing and accounting machinery"
+7611,"Television receivers,colour",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7612,"Television receivers,monochrome",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7621,Radio-broadcast receivers for motor vehicles,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7622,"Radio-broadcast receivers portable,incl.sound rec.",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7628,Other radio-broadcast receivers,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7641,Elect.line telephonic & telegraphic apparatus,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7642,"Microphones,loudspeakers,amplifiers",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7643,Radiotelegraphic & radiotelephonic transmitters,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7721,"Elect.app.such as switches,relays,fuses,plugs etc.",3831,Manufacture of electrical industrial machinery and apparatus
+7722,Printed circuits and parts thereof,3831,Manufacture of electrical industrial machinery and apparatus
+7723,"Resistors,fixed or variable and parts",3831,Manufacture of electrical industrial machinery and apparatus
+7731,"Insulated,elect.wire,cable,bars,strip and the like",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+7741,Electro-medical apparatus,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7742,App.based on the use of x-rays or of radiations,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7753,Dish washing machines of household type,3833,Manufacture of electrical appliances and housewares
+7754,Shavers & hair clippers with motor and parts,3833,Manufacture of electrical appliances and housewares
+7761,"Television picture tubes,cathode ray",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7762,Other electr.valves and tubes,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7763,"Diodes,transistors and sim.semi-conductor devices",3832,"Manufacture of radio, television and communication equipment and apparatus"
+7764,Electronic microcircuits,3832,"Manufacture of radio, television and communication equipment and apparatus"
+7784,Tools for working in the hand with elect.motor,3823,Manufacture of metal and wood working machinery
+7810,"Passenger motor cars,for transport of pass.& goods",3843,Manufacture of motor vehicles
+7821,Motor vehicles for transport of goods/materials,3843,Manufacture of motor vehicles
+7822,Special purpose motor lorries and vans,3843,Manufacture of motor vehicles
+7831,Public-service type passenger motor vehicles etc.,3843,Manufacture of motor vehicles
+7832,Road tractors and semi-trailers,3843,Manufacture of motor vehicles
+7841,Chassis fitted with engines for motor vehicles,3843,Manufacture of motor vehicles
+7842,Bodies for the motor vehicles of 722/781/782/783,3843,Manufacture of motor vehicles
+7849,Other parts & accessories of motor vehicles,3843,Manufacture of motor vehicles
+7851,"Motorcycles,auto-cycles and cycles with an aux.mot",3844,Manufacture of motorcycles and bicycles
+7852,"Cyles,not motorized",3844,Manufacture of motorcycles and bicycles
+7911,"Rail locomotives,electric",3842,Manufacture of railroad equipment
+7912,Other rail locomotives; tenders,3842,Manufacture of railroad equipment
+7913,"Railway & tramway coaches,vans,trucks etc.",3842,Manufacture of railroad equipment
+7914,Railway & tramway passenger coaches & luggage vans,3842,Manufacture of railroad equipment
+7921,Helicopters,3845,Manufacture of aircraft
+7922,Aircraft not exceeding an unladen weight 2000 kg,3845,Manufacture of aircraft
+7923,Aircraft not exceeding an unladen weight 15000 kg,3845,Manufacture of aircraft
+7924,Aircraft exceeding an unladen weight of 15000 kg,3845,Manufacture of aircraft
+7929,"Parts of heading 792--,excl.tyres,engines",3845,Manufacture of aircraft
+7931,Warships of all kinds,3841,Shipbuilding and repairing
+7933,"Ships,boats and other vessels for breaking up",3841,Shipbuilding and repairing
+8121,Boilers & radiators for central heating,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+8122,"Sinks,wash basins,bidets,water closet pans,etc",3610,"Manufacture of pottery, china and earthenware"
+8481,"Art.of apparel & clothing accessories,of leather",3220,"Manufacture of wearing apparel, except footwear"
+8731,"Gas,liquid,electricity meters",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+8732,"Revolution counters,taximeters and the like",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+8743,"Instr.non electrical,for measuring,checking flow",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+8744,Instr.& app.for physical or chemical analysis,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+8749,"Parts,n.e.s.accessories for 873--,8743-,87454,8748",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+8821,Chemical products & flashlight materials,3529,Manufacture of chemical products not elsewhere classified
+8830,"Cinematograph film,exposed-developed,neg.or pos.",9999,Goods not elsewhere classified
+8922,"Newspapers journals,periodicals",3420,"Printing, publishing and allied industries"
+8931,Art.for the conveyance or packing of goods,3560,Manufacture of plastic products not elsewhere classified
+8932,Sanitary or toilet art.of materials of div.58,3560,Manufacture of plastic products not elsewhere classified
+8933,Ornamental art.and objects of mat.of div.58,3560,Manufacture of plastic products not elsewhere classified
+8935,Art.of electric lighting of materials of div.58,3560,Manufacture of plastic products not elsewhere classified
+8941,"Baby carriages,and parts",3849,Manufacture of transport equipment not elsewhere classified
+8972,Imitation jewellery,3909,Manufacturing industries not elsewhere classified
+8974,Other articles of precious metal,3901,Manufacture of jewellery and related articles
+8989,Parts of and accessories for musical instruments,3902,Manufacture of musical instruments
+9410,"Animals,live,n.e.s.,incl. zoo-animals",1130,"Hunting, trapping and game propagation"
+9610,Coin(other than gold) not being legal tender,3901,Manufacture of jewellery and related articles
+00111,"Bovine species pure bred,for breeding",1110,Agricultural and livestock production
+00119,Bovine species other than pure bred breeding stock,1110,Agricultural and livestock production
+00121,"Sheep, live",1110,Agricultural and livestock production
+00122,"Goats, live",1110,Agricultural and livestock production
+00141,"Poultry,live of a weight not exceeding 185 grammes",1110,Agricultural and livestock production
+00149,"Poultry,live of a weight exceeding 185 grammes",1110,Agricultural and livestock production
+01111,Meat of bovine animals with bone in,3111,"Slaughtering, preparing and preserving meat"
+01112,Meat of bovine animals boneless,3111,"Slaughtering, preparing and preserving meat"
+01181,"Poultry liver,fresh,chilled,frozen,salted/in brine",3111,"Slaughtering, preparing and preserving meat"
+01189,"Meat & edible offals,fresh,chilled or frozen",3111,"Slaughtering, preparing and preserving meat"
+02241,Whey,3112,Manufacture of dairy products
+02242,Milk in powder/granul.(weight not more 1.5% of fat,3112,Manufacture of dairy products
+02243,Milk & cream powder (weight more than 1.5% of fat),3112,Manufacture of dairy products
+02249,"Milk & cream,preserved,concentrated or sweetened",3112,Manufacture of dairy products
+03501,Fish meal fit for human consumption,1301,Ocean and coastal fishing
+03502,"Cod(not in fillets),dried,whether or not salted",1301,Ocean and coastal fishing
+03503,"Fish,dried,salted or in brine (other than cod)",1301,Ocean and coastal fishing
+03504,"Fish,smoked (whether or not cooked)",1301,Ocean and coastal fishing
+04211,Rice in the husk (paddy or rough rice),1110,Agricultural and livestock production
+04212,"Rice,husked but not further prepared (cargo rice)",1110,Agricultural and livestock production
+04221,"Rice,semi/wholly milled,excl.broken rice",3116,Grain mill products
+04222,Broken rice,3116,Grain mill products
+04591,"Millet,unmilled",1110,Agricultural and livestock production
+04592,"Sorghum,unmilled",1110,Agricultural and livestock production
+04599,"Other cereals,unmilled,n.e.s.",1110,Agricultural and livestock production
+04601,Flour of wheat or of meslin,3116,Grain mill products
+04602,"Groats,meal and pellets,of wheat",3116,Grain mill products
+04701,Cereal flours (other than of wheat or of meslin),3116,Grain mill products
+04702,"Cereal groats,meal and pellets(other than of wheat",3116,Grain mill products
+04811,Other worked cereal grains;germ of cereals,3116,Grain mill products
+04812,Prepared foods obtain. by the swelling or roasting,3116,Grain mill products
+04841,"Bread,ships,biscuits & other ordinary bakers wares",3117,Manufacture of bakery products
+04842,"Pastry,biscuits,cakes and other fine bakers wares",3117,Manufacture of bakery products
+05451,"Onions,shallots,garlic,leeks & alliaceous veget.",1110,Agricultural and livestock production
+05459,"Vegetables,fresh or chilled,n.e.s.",1110,Agricultural and livestock production
+05461,"Vegetables, preserved by freezing,cooked or not",3113,Canning and preserving of fruits and vegetables
+05462,Vegetables provisionally preserved in brine etc.,3113,Canning and preserving of fruits and vegetables
+05481,"Manioc,arrowroot,salep,jerusalem artichokes etc.",1110,Agricultural and livestock production
+05482,"Sugar beet,whole or sliced,fresh,dried or powdered",1110,Agricultural and livestock production
+05484,Hop cones and lupulin,1110,Agricultural and livestock production
+05488,Vegetable products of a kind used for human food,1110,Agricultural and livestock production
+05643,"Flour,meal and flakes of potato",3116,Grain mill products
+05645,Tapioca & sago & substitutes obtained from potato,3121,Manufacture of food products not elsewhere classified
+05649,Flours of the leguminous vegetables and fruits,3116,Grain mill products
+05651,"Vegetables & fruit,prepared/preserved by vinegar",3113,Canning and preserving of fruits and vegetables
+05659,Veget.prepared/preserved otherwise than by vinegar,3113,Canning and preserving of fruits and vegetables
+05711,"Oranges,fresh or dried",1110,Agricultural and livestock production
+05712,"Mandarins,clementines & citrus hybrids fresh/dried",1110,Agricultural and livestock production
+05721,"Lemons and limes,fresh or dried",1110,Agricultural and livestock production
+05722,"Grapefruit,fresh or dried",1110,Agricultural and livestock production
+05729,"Citrus fruit,n.e.s.,fresh or dried",1110,Agricultural and livestock production
+05751,"Grapes,fresh",1110,Agricultural and livestock production
+05752,"Grapes,dried (raisins)",1110,Agricultural and livestock production
+05771,"Coconuts,fresh or dried,shelled or not",1110,Agricultural and livestock production
+05772,"Brazil nuts,fresh or dried,shelled or not",1110,Agricultural and livestock production
+05773,"Cashew nuts,fresh or dried,shelled or not",1110,Agricultural and livestock production
+05774,"Almonds.fresh or dried,shelled or not",1110,Agricultural and livestock production
+05775,"Hazelnuts,fresh or dried,shelled or not",1110,Agricultural and livestock production
+05779,"Edible nuts,fresh or dried,n.e.s. shelled or not",1110,Agricultural and livestock production
+05792,"Pears and quinces,fresh",1110,Agricultural and livestock production
+05793,"Stone fruit,n.e.s.,fresh",1110,Agricultural and livestock production
+05794,"Berries,fresh",1110,Agricultural and livestock production
+05795,"Pineapples,fresh or dried",1110,Agricultural and livestock production
+05796,"Dates,fresh or dried",1110,Agricultural and livestock production
+05797,"Avocados,mangoes,guavas,fresh or dried",1110,Agricultural and livestock production
+05798,Other fresh fruit,1110,Agricultural and livestock production
+05799,Other dried fruit,1110,Agricultural and livestock production
+05851,Orange juice,3113,Canning and preserving of fruits and vegetables
+05852,Grapefruit juice,3113,Canning and preserving of fruits and vegetables
+05853,Juice of any other citrus fruit,3113,Canning and preserving of fruits and vegetables
+05854,Pineapple juice,3113,Canning and preserving of fruits and vegetables
+05855,Tomato juice,3113,Canning and preserving of fruits and vegetables
+05857,Juice of any other fruit or vegetable,3113,Canning and preserving of fruits and vegetables
+05858,Mixtures of fruit or vegetable juices,3113,Canning and preserving of fruits and vegetables
+05861,"Fruit,preserved by freezing,no sugar added",3113,Canning and preserving of fruits and vegetables
+05863,Fruit provisionally preserved,3113,Canning and preserving of fruits and vegetables
+05864,"Peel of melons or citrus fruit,fresh,frozen,dried",3113,Canning and preserving of fruits and vegetables
+05891,"Nuts,roasted (including roasted groundnuts)",3113,Canning and preserving of fruits and vegetables
+05899,"Fruit and nuts,prepared or preserved,n.e.s.",3113,Canning and preserving of fruits and vegetables
+07111,"Coffee,not roasted;coffee husks and skins",1110,Agricultural and livestock production
+07112,"Coffee,roasted",3121,Manufacture of food products not elsewhere classified
+07113,Coffee substitutes contain. coffee in any proport.,3121,Manufacture of food products not elsewhere classified
+07231,Cocoa paste whether or not defatted,3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+07232,Cocoa butter (fat or oil),3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+07521,Vanilla,1110,Agricultural and livestock production
+07522,Cinnamon and cinnamon-tree flowers,1110,Agricultural and livestock production
+07523,"Cloves (whole fruit,cloves and stems)",1110,Agricultural and livestock production
+07524,"Nutmeg,mace and cardamoms",1110,Agricultural and livestock production
+07525,"Seeds of anise,badian,fennel,coriander,cumin etc.",1110,Agricultural and livestock production
+07526,Ginger (excl.ginger preserved in sugar/syrup),1110,Agricultural and livestock production
+07528,"Thyme,saffron,bay leaves;other spices",1110,Agricultural and livestock production
+08111,"Cereal straw and husks,unprepared,or chopped",1110,Agricultural and livestock production
+08112,"Mangolds,swedes,fodder roots;hay,lucerne,clover",1110,Agricultural and livestock production
+08119,Products of veg.origin of a kind used for ani.food,1110,Agricultural and livestock production
+08121,"Bran,sharps & other residues of maize or rice",3116,Grain mill products
+08122,"Bran,sharps & other residues of other cereals",3116,Grain mill products
+08123,"Bran,sharps & other residues of leguminous veget.",3116,Grain mill products
+08131,Oil-cake of soya beans,3115,Manufacture of vegetable and animal oils and fats
+08132,Oil-cake of groundnuts,3115,Manufacture of vegetable and animal oils and fats
+08133,Oil-cake of cotton seeds,3115,Manufacture of vegetable and animal oils and fats
+08134,Oil-cake of linseed,3115,Manufacture of vegetable and animal oils and fats
+08135,Oil-cake of sunflower seeds,3115,Manufacture of vegetable and animal oils and fats
+08136,Oil-cake of rape or colza seeds,3115,Manufacture of vegetable and animal oils and fats
+08137,Oil-cake of coconut (copra),3115,Manufacture of vegetable and animal oils and fats
+08138,Oil-cake of palm nuts and kernels,3115,Manufacture of vegetable and animal oils and fats
+08139,Oil-cake of other oil seeds and oleaginous fruits,3115,Manufacture of vegetable and animal oils and fats
+08141,"Flours & meals of meat/offals,unfit for human food",3111,"Slaughtering, preparing and preserving meat"
+08142,"Flours & meals of fish,unfit for human consumption",3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+08192,"Cocoa shells,husks,skins and waste",3119,"Manufacture of cocoa, chocolate and sugar confectionery"
+08193,Beet-pulp.bagasse & other waste of sugar manufact.,3118,Sugar factories and refineries
+08194,Wine lees;argol,3132,Wine industries
+08199,Sweetened forage; other preptns.for animal feeding,3122,Manufacture of prepared animal feeds
+09141,Margarine,3115,Manufacture of vegetable and animal oils and fats
+09149,Imitation lard & other prepated edible fats n.e.s.,3115,Manufacture of vegetable and animal oils and fats
+09801,Homogenized composite food preparations,3121,Manufacture of food products not elsewhere classified
+09802,"Extracts,essences or concentrates of tea or mate",3121,Manufacture of food products not elsewhere classified
+09803,Mustard flour and prepared mustard,3121,Manufacture of food products not elsewhere classified
+09804,Sauces;mixed condiments and mixed seasonings,3121,Manufacture of food products not elsewhere classified
+09805,"Soups and broths,in liquid,solid or powder form",3121,Manufacture of food products not elsewhere classified
+09806,Natural yeasts; prepared baking powders,3121,Manufacture of food products not elsewhere classified
+09807,Vinegar and substitutes for vinegar,3121,Manufacture of food products not elsewhere classified
+09808,"Edible products of animal origine,n.e.s.",1110,Agricultural and livestock production
+09809,"Food preparations,n.e.s.",3121,Manufacture of food products not elsewhere classified
+11101,Waters (includ.spa & aerated waters);ice and snow,3134,Sort drings and carbonated waters industries
+11102,"Lemonade,flavoured spa waters & flavoured waters .",3134,Sort drings and carbonated waters industries
+11211,Grape must in fermentation/with ferment.arrested,3131,"Distilling, rectifying and blending spirits"
+11212,Wine of fresh grapes;grape must,3132,Wine industries
+11213,Vermouths & other wines of fresh grapes flavoured,3132,Wine industries
+11241,Whisky,3134,Sort drings and carbonated waters industries
+11242,Spirits obtained by distilling wine or grape marc,3134,Sort drings and carbonated waters industries
+11249,"Spirits and distilled alcoholic beverages,n.e.s.",3134,Sort drings and carbonated waters industries
+12111,"Tobacco flue-cured,of the virginia type",1110,Agricultural and livestock production
+12121,"Tobacco flue-cured,of the virginia type",1110,Agricultural and livestock production
+21191,Parings & other waste of leather,3220,"Manufacture of wearing apparel, except footwear"
+21199,"Hides and skins,n.e.s.raw (fresh,salted,dried etc)",1130,"Hunting, trapping and game propagation"
+21201,"Mink skins,raw",1110,Agricultural and livestock production
+21209,"Other furskins,raw",1130,"Hunting, trapping and game propagation"
+23201,"Nat.rubber latex,whether/not with add.synth.rubber",1110,Agricultural and livestock production
+23202,Natural rubber (other than latex),1110,Agricultural and livestock production
+23203,"Balata,gutta-percha and similar natural gums",1110,Agricultural and livestock production
+23312,"Other synth.rubb.latex,whether/not prevulcanized",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23313,Polybutadiene rubber (br),3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23314,Polychlorobutaidene rubber (cr),3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23315,Polybutadiene-styrene rubber (sbr),3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23316,Butyl rubber (iir),3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23319,Other synthetic rubbers;factice derived from oils,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+23321,Reclaimed rubber,3559,Manufacture of rubber products not elsewhere classified
+23322,Waste paring scrap of unhard.rubb.fit for recovery,3559,Manufacture of rubber products not elsewhere classified
+24401,"Cork,natural,unworked,crushed,granulated/ground",1210,Forestry
+24402,"Cork,natural,in blocks,plates,sheets or strips",3319,Manufacture of wood and cork products not elsewhere classified
+24501,"Fuel wood in logs,in billets,in twigs/in faggots",1210,Forestry
+24502,Wood charcoal(incl.shell & nut char.)agglomer./not,1210,Forestry
+24602,Pulpwood in chips or particles,1220,Logging
+24603,Wood waste (including sawdust),1220,Logging
+24711,"Sawlogs in the rough,whether/not stripped of bark",1220,Logging
+24721,"Sawlogs in the rough,whether/not stripped of bark",1220,Logging
+24821,"Wood of conifer.spec.sawn lengthwise,sliced/peeled",3311,"Sawmille, planing and other wood mills"
+24822,"Wood of conifer.spec.,planed,tongued,grooved,etc.",3311,"Sawmille, planing and other wood mills"
+24831,"Wood of non-conif.spec.sawn lengthwise,slic./peel.",3311,"Sawmille, planing and other wood mills"
+24832,"Wood of non-conif.spec.planed,tongued,grooved,etc.",3311,"Sawmille, planing and other wood mills"
+25171,"Chemical wood pulp,unbleached",3411,"Manufacture of pulp, paper and paperboard"
+25172,"Chemical wood pulp,bleached or semi-bleached",3411,"Manufacture of pulp, paper and paperboard"
+25181,"Chemical wood pulp,unbleached",3411,"Manufacture of pulp, paper and paperboard"
+25182,"Chemical wood pulp,bleached or semi-bleached",3411,"Manufacture of pulp, paper and paperboard"
+25191,Semi-chemical wood pulp,3411,"Manufacture of pulp, paper and paperboard"
+25192,"Pulp,other than wood pulp",3411,"Manufacture of pulp, paper and paperboard"
+26141,Silk worm cocoons suitable for reeling,1110,Agricultural and livestock production
+26142,Silk waste(incl.cocoons unsuitable for reeling)etc,3211,"Spinning, weawing and finishing textiles"
+26511,"Flax,raw or retted",1110,Agricultural and livestock production
+26512,"Flax,broken,scutched,hackled but not spun",1110,Agricultural and livestock production
+26513,Flax tow and waste (incl.pulled or garnetted rags),3211,"Spinning, weawing and finishing textiles"
+26591,Coir and coir waste(incl.pulled or garnetted rags),1110,Agricultural and livestock production
+26599,"Other veget.textile fibres,n.e.s.,raw or processed",1110,Agricultural and livestock production
+26651,Synthetic fibres polyamide,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26652,Synthetic fibres polyester,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26653,Synthetic fibres acrylic,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26659,"Synthetic fibres other than polyamide,polyest. etc",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26661,Continuous filament of polyamide fibres,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26662,Continuous filament of polyester fibres,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26663,Continuous filament of acrylic fibres,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26669,Continuous filament of other synthetic fibres,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26671,Synthetic fibres polyamide,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26672,Synthetic fibres polyester,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26673,Synthetic fibres acrylic,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26679,"Synthetic fibres other than polyamide,polyest. etc",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26711,"Regenerated fibres (discontinuous),not carded etc.",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26712,Continuous filament tow for the manuf.of reg.fib.,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+26713,"Regenerat.fibr.(discontin./waste)carded,combed etc",3211,"Spinning, weawing and finishing textiles"
+26721,Waste synthetic fibres,3211,"Spinning, weawing and finishing textiles"
+26722,Waste regenerated fibres,3211,"Spinning, weawing and finishing textiles"
+26851,"Horsehair & waste,whether or not put up on a layer",3211,"Spinning, weawing and finishing textiles"
+26859,"Other coarse animal hair,not carded or combed",3211,"Spinning, weawing and finishing textiles"
+26861,Waste of sheep's/lamb's not pulled or garneted,3211,"Spinning, weawing and finishing textiles"
+26862,Waste of sheep's/lamb's pulled or garnetted,3211,"Spinning, weawing and finishing textiles"
+26901,"Clothing,cloth.accessories,travel.rugs & blankets",3211,"Spinning, weawing and finishing textiles"
+26902,"Used or new rags,scrap twine,cordage,rope & cables",3211,"Spinning, weawing and finishing textiles"
+27131,Natural calcium phosphates unground,2902,Chemical and fertilizer mineral mining
+27132,Natural calcium phosphates ground,2902,Chemical and fertilizer mineral mining
+27311,Slate(including slate only roughly worked),2901,"Stone quarrying, clay and sand pits"
+27312,"Marble,travertine,ecaussine and other calcar.stone",2901,"Stone quarrying, clay and sand pits"
+27313,"Granite,porphyry,basalt,sandstone and other stone",2901,"Stone quarrying, clay and sand pits"
+27322,Limestone flux & calcar.stone used for lime/cement,2901,"Stone quarrying, clay and sand pits"
+27323,Gypsum and anhydrite,2901,"Stone quarrying, clay and sand pits"
+27324,Calcined gypsum and plasters with calcium sulphate,2901,"Stone quarrying, clay and sand pits"
+27721,Dust & powder of natural or synth.precious stones,3699,Manufacture of non-metallic mineral products not elsewhere classified
+27722,"Pumice stone;emery;natural corundum,nat.garnet etc",2909,Mining and quarrying not elsewhere classified
+27821,"Clay,andalusite,kyanite,etc.whether /not clacined",2901,"Stone quarrying, clay and sand pits"
+27822,"Graphite,natural",2909,Mining and quarrying not elsewhere classified
+27823,"Dolomite,whether or not calcined,incl.d.not worked",2901,"Stone quarrying, clay and sand pits"
+27824,"Magnesium carbonate,natur.,whether or not calcined",2901,"Stone quarrying, clay and sand pits"
+27851,"Quartz,quartzite only roughly worked",2909,Mining and quarrying not elsewhere classified
+27852,Mica (including splittings); mica waste,2909,Mining and quarrying not elsewhere classified
+27853,"Cryolite and chiolite,natural",2909,Mining and quarrying not elsewhere classified
+27854,"Felspar,leucite,nepheline and nepheline syenite",2909,Mining and quarrying not elsewhere classified
+27861,"Slag,dross etc. & waste from manufac.of iron/steel",3710,Iron and steel basic industries
+27862,"Slag and ash, n.e.s.(including kelp)",3710,Iron and steel basic industries
+27891,Chalk,2901,"Stone quarrying, clay and sand pits"
+27892,Natural barium sulphate;natural barium carbonate,2902,Chemical and fertilizer mineral mining
+27893,Natural steatite(incl.nat.st.roughly work.)talc,2909,Mining and quarrying not elsewhere classified
+27894,Crude natural borates and concentrates thereof,2902,Chemical and fertilizer mineral mining
+27895,Siliceous fossil meals & similar siliceous earths,2909,Mining and quarrying not elsewhere classified
+27896,"Bitumen and asphalt,natural;bituminous shale",2909,Mining and quarrying not elsewhere classified
+27899,Mineral substances n.e.s.,2902,Chemical and fertilizer mineral mining
+28201,Waste of pig or cast iron,9999,Goods not elsewhere classified
+28202,Waste of alloy steel,9999,Goods not elsewhere classified
+28209,Waste of other iron or steel,9999,Goods not elsewhere classified
+28711,Copper ores and concentrates,2302,Non-ferrous metal ore mining
+28712,Copper matte;cement copper (precipitated copper),3720,Non-ferrous metal basic industries
+28721,Nickel ores and concentrates,2302,Non-ferrous metal ore mining
+28722,"Nickel mattes,sinters & other intermediat.products",3720,Non-ferrous metal basic industries
+28731,Aluminium ores and concentrates,2302,Non-ferrous metal ore mining
+28732,Alumina (aluminium oxide),3511,Manufacture of basic industrial chemicals except fertilizer
+28791,Chromium ores and concentrates,2302,Non-ferrous metal ore mining
+28792,Tungsten (or wolfram) ores and concentrates,2302,Non-ferrous metal ore mining
+28793,"Ores & concentr.of molybdenum,niobium,tantalum etc",2302,Non-ferrous metal ore mining
+28799,"Other base metal ores and concentrates,n.e.s.",2302,Non-ferrous metal ore mining
+28821,Copper waste and scrap,3720,Non-ferrous metal basic industries
+28822,Nickel waste and scrap,3720,Non-ferrous metal basic industries
+28823,Aluminium waste and scrap,3720,Non-ferrous metal basic industries
+28824,Lead waste and scrap,3720,Non-ferrous metal basic industries
+28825,Zinc waste and scrap (other than dust),3720,Non-ferrous metal basic industries
+28826,Tin waste and scrap,3720,Non-ferrous metal basic industries
+28901,Ores and concentrates of precious metals,2302,Non-ferrous metal ore mining
+28902,"Gold-silversmiths and jewellers sweepings,ex.gold",3901,Manufacture of jewellery and related articles
+29111,"Bones (incl.of whales,seals etc)unworked,defatted",3111,"Slaughtering, preparing and preserving meat"
+29115,"Coral & similar substances,unworked/simply prepar.",1302,Fishing not elsewhere classified
+29116,"Ivory,tortoise-shell,horns,antlers,hooves, etc.",3111,"Slaughtering, preparing and preserving meat"
+29191,"Human hair,unworked,wheter or not washed/scoured",9999,Goods not elsewhere classified
+29192,"Pigs,hogs,and boars bristels or hair;waste",3111,"Slaughtering, preparing and preserving meat"
+29193,"Guts,bladders and stomachs of animals (no fish)",3111,"Slaughtering, preparing and preserving meat"
+29194,Fish waste,3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+29196,"Skins and other parts of birds,with their feathers",1110,Agricultural and livestock production
+29197,Natural sponges,1301,Ocean and coastal fishing
+29198,"Ambergris,castoreum etc;for pharmaceutic.products",1130,"Hunting, trapping and game propagation"
+29199,Animal prod.nes;dead ani.unfit for human consumpt.,3111,"Slaughtering, preparing and preserving meat"
+29261,"Bulbs,tubers,tuberous roots,corms,crowns in growth",1110,Agricultural and livestock production
+29269,"Other live plants (includ.trees,shrubs,bushes etc)",1110,Agricultural and livestock production
+29271,Cut flowers & buds for bouquets/ornamental purpos.,1110,Agricultural and livestock production
+29272,"Foliage,branch.& other parts,fresh,dried,dyed etc.",1110,Agricultural and livestock production
+29291,Vegetable saps and extracts; pectic substances,1210,Forestry
+29292,"Veget.materials,whether or not put up on a layer",3219,Manufacture of textiles not elsewhere classified
+29293,Veg.materials of a kind used in brushes or brooms,1110,Agricultural and livestock production
+29298,Vegetable materials and vegetable products n.e.s.,1210,Forestry
+32311,Briquet.ovoids & sim.solid fuels manufac.from coal,2100,Coal mining
+32312,Lignite agglomerated,2100,Coal mining
+32321,"Coke & semi-coke of coal,whether/not agglomerated",3540,Manufacture of miscellaneous products of petroleum and coal
+33452,Lubricating preparations,3530,Petroleum refineries
+33511,Petroleum jelly (petrolatum),3530,Petroleum refineries
+33512,"Paraffin wax,micro-crystalline wax,slack wax,etc.",3530,Petroleum refineries
+33521,"Tar distilled from coal,from lignite or from peat",3530,Petroleum refineries
+33522,Benzole,3530,Petroleum refineries
+33523,Toluole,3530,Petroleum refineries
+33524,Xylole,3530,Petroleum refineries
+33525,"Oils and other products,n.e.s.of dist.of coal tar",3530,Petroleum refineries
+33531,Pitch obtain.from coal tar/from other mineral tars,3530,Petroleum refineries
+33532,Pitch coke,3540,Manufacture of miscellaneous products of petroleum and coal
+33541,Petroleum bitumen & other residues of petrol.oils,3530,Petroleum refineries
+33542,Petroleum coke,3530,Petroleum refineries
+33543,Bituminous mixtures based on natural asphalt,3530,Petroleum refineries
+34131,Liquefied propane and butane,2200,Crude Petroleum and Natural Gas Production
+34139,"Liquefied gaseous hydrocarbons,n.e.s.",2200,Crude Petroleum and Natural Gas Production
+41111,Fish liver oil,3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+41112,Fish oils and fats (other than fish liver oil),3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+41113,Oils and fats of marine mammals,3114,"Canning, preserving and processing of fish, crustacea and similar foods"
+41131,"Pig fat free of lean meat and poultry fat,",3111,"Slaughtering, preparing and preserving meat"
+41132,"Fats of bovine cattle,sheep or goats,premier jus",3111,"Slaughtering, preparing and preserving meat"
+41133,"Lard stearin,oleostearin & tallow stearin;lard oil",3111,"Slaughtering, preparing and preserving meat"
+41134,Wool grease and fatty substances derived therefrom,3111,"Slaughtering, preparing and preserving meat"
+41139,"Animal oils & fats,nes:oil & fats from bones/waste",3111,"Slaughtering, preparing and preserving meat"
+42391,"Rape,colza and mustard oils",3115,Manufacture of vegetable and animal oils and fats
+42392,Sesame (sesamum)oil,3115,Manufacture of vegetable and animal oils and fats
+43131,Fatty acids;acid oils from refining,3115,Manufacture of vegetable and animal oils and fats
+43133,Residues resulting from treatment fatty substances,3115,Manufacture of vegetable and animal oils and fats
+43143,"Vegetable waxes,whether or not coloured",3115,Manufacture of vegetable and animal oils and fats
+43144,"Spermaceti,crude pressed or refined",3115,Manufacture of vegetable and animal oils and fats
+51111,Ethylene,3511,Manufacture of basic industrial chemicals except fertilizer
+51112,Propylene,3511,Manufacture of basic industrial chemicals except fertilizer
+51113,"Butylenes,butadienes and methylbutadienes",3511,Manufacture of basic industrial chemicals except fertilizer
+51119,Other acyclic hydrocarbons,3511,Manufacture of basic industrial chemicals except fertilizer
+51121,Cyclohexane,3511,Manufacture of basic industrial chemicals except fertilizer
+51122,"Benzene,chemically or commercially pure",3511,Manufacture of basic industrial chemicals except fertilizer
+51123,"Toluene,chemically or commercially pure",3511,Manufacture of basic industrial chemicals except fertilizer
+51124,"Xylenes,chemically or commercially pure",3511,Manufacture of basic industrial chemicals except fertilizer
+51125,Styrene,3511,Manufacture of basic industrial chemicals except fertilizer
+51126,Ethylbenzene,3511,Manufacture of basic industrial chemicals except fertilizer
+51129,Other cyclic hydrocarbons,3511,Manufacture of basic industrial chemicals except fertilizer
+51131,Vinyl chloride (chloroethylene),3511,Manufacture of basic industrial chemicals except fertilizer
+51132,Trichloroethylene,3511,Manufacture of basic industrial chemicals except fertilizer
+51133,Tetrachloroethylene,3511,Manufacture of basic industrial chemicals except fertilizer
+51139,Other halogenated derivatives of hydrocarbons,3511,Manufacture of basic industrial chemicals except fertilizer
+51211,Methyl alcohol (methanol),3511,Manufacture of basic industrial chemicals except fertilizer
+51212,Propyl and isopropyl alcohols (propanols),3511,Manufacture of basic industrial chemicals except fertilizer
+51213,Butyl alcohols (butanols),3511,Manufacture of basic industrial chemicals except fertilizer
+51214,Octyl alcohols (octanols),3511,Manufacture of basic industrial chemicals except fertilizer
+51215,Ethylene glycol (ethanediol),3511,Manufacture of basic industrial chemicals except fertilizer
+51216,Ethyl alcohol (ethanol)or neutral spirits,3511,Manufacture of basic industrial chemicals except fertilizer
+51217,Fatty alcohols,3511,Manufacture of basic industrial chemicals except fertilizer
+51218,Glycerol (glycerin) and glycerol lyes,3523,"Manufacture of soap and cleaning preparations, perfumes, cosmetics and other toilet preparations"
+51219,Other acyclic alcohols & halogenated derivatives,3511,Manufacture of basic industrial chemicals except fertilizer
+51234,"Phenol(hydroxybenzene),chemically pure,& its salts",3511,Manufacture of basic industrial chemicals except fertilizer
+51235,"Cresols,n.e.s,and their salts",3511,Manufacture of basic industrial chemicals except fertilizer
+51236,Other phenols and phenol-alcohols,3511,Manufacture of basic industrial chemicals except fertilizer
+51237,"Halogenated,sulphonated,etc.derivatives of phenol",3511,Manufacture of basic industrial chemicals except fertilizer
+51371,Acetic acid and its salts,3511,Manufacture of basic industrial chemicals except fertilizer
+51372,Esters of acetic acid,3511,Manufacture of basic industrial chemicals except fertilizer
+51373,Methacrylic acid and its salts and esters,3511,Manufacture of basic industrial chemicals except fertilizer
+51379,"Other monocarboxylic acids,& anhydrides,etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+51381,Maleic anhydride,3511,Manufacture of basic industrial chemicals except fertilizer
+51382,Phthalic anhydride,3511,Manufacture of basic industrial chemicals except fertilizer
+51383,Dioctyl orthophthalates,3511,Manufacture of basic industrial chemicals except fertilizer
+51384,Esters of terephthalic acid,3511,Manufacture of basic industrial chemicals except fertilizer
+51389,"Polycarboxylic acids and anhydrides,halides,etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+51481,"Quaternary ammonium salts and hydroxides,lecithin",3511,Manufacture of basic industrial chemicals except fertilizer
+51482,Carboxyimide-function compounds etc.,3511,Manufacture of basic industrial chemicals except fertilizer
+51483,Acrylonitrile,3511,Manufacture of basic industrial chemicals except fertilizer
+51484,Other nitrile-function compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+51485,"Diazo-,azo-,and azoxy-compounds",3511,Manufacture of basic industrial chemicals except fertilizer
+51486,Organic derivatives of hydrazine/of hydroxylamine,3511,Manufacture of basic industrial chemicals except fertilizer
+51489,Compounds with other nitrogen functions,3511,Manufacture of basic industrial chemicals except fertilizer
+51551,Organo-mercury compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+51561,Lactams,3511,Manufacture of basic industrial chemicals except fertilizer
+51569,Other heterocyclic compounds;nucleic acids,3511,Manufacture of basic industrial chemicals except fertilizer
+51571,Sulphonamides,3511,Manufacture of basic industrial chemicals except fertilizer
+51611,"Ethers,ether-alcohols,ether-phenols etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+51612,"Acetals,hemiacetals & single/complex oxygen-funct.",3511,Manufacture of basic industrial chemicals except fertilizer
+51613,Ethylene oxide (oxirane),3511,Manufacture of basic industrial chemicals except fertilizer
+51614,Propylene oxide,3511,Manufacture of basic industrial chemicals except fertilizer
+51619,"Other epoxides,epoxyalcohols,epoxyphenols,etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+51621,"Aldehydes,aldehyde-alcohols,aldehyde-phenols,etc",3511,Manufacture of basic industrial chemicals except fertilizer
+51622,"Halogenated,sulphonat.nitrat./nitrosat.derivatives",3511,Manufacture of basic industrial chemicals except fertilizer
+51623,Acetone,3511,Manufacture of basic industrial chemicals except fertilizer
+51624,Ethyl methyl ketone,3511,Manufacture of basic industrial chemicals except fertilizer
+51629,"Other ketones,ketone-alcohols,ketone-phenols,etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+51631,"Phosphoric esters,their salts,& their derivatives",3511,Manufacture of basic industrial chemicals except fertilizer
+51639,"Other inorganic esters,their salts & derivatives",3511,Manufacture of basic industrial chemicals except fertilizer
+51691,Enzymes,3511,Manufacture of basic industrial chemicals except fertilizer
+51692,"Sugars,chemically pure(other than sucrose,glucose)",3511,Manufacture of basic industrial chemicals except fertilizer
+51699,Other organic compounds,3511,Manufacture of basic industrial chemicals except fertilizer
+52211,"Oxygen,nitrogen,hydrogen and rare gases",3511,Manufacture of basic industrial chemicals except fertilizer
+52212,"Selenium,tellurium,phosphorus,arsenic,silicon,etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+52213,Chlorine,3511,Manufacture of basic industrial chemicals except fertilizer
+52214,"Fluorine,bromine and iodine",3511,Manufacture of basic industrial chemicals except fertilizer
+52215,"Sulphur,sublimed or precipitated;colloidal sulphur",3511,Manufacture of basic industrial chemicals except fertilizer
+52216,Mercury,3511,Manufacture of basic industrial chemicals except fertilizer
+52217,Alkali and alkaline-earth metals;rare earth metals,3511,Manufacture of basic industrial chemicals except fertilizer
+52218,"Carbon (including carbon black),n.e.s.",3529,Manufacture of chemical products not elsewhere classified
+52221,Hydrochloric acid and chlorosulphuric acid,3511,Manufacture of basic industrial chemicals except fertilizer
+52222,Sulphuric acid; oleum,3511,Manufacture of basic industrial chemicals except fertilizer
+52223,Nitric acid;sulphonitric acids,3511,Manufacture of basic industrial chemicals except fertilizer
+52224,"Phosphorus pentoxide and phosp.acids,meta/ortho/p.",3511,Manufacture of basic industrial chemicals except fertilizer
+52225,Boric oxide and boric acid,3511,Manufacture of basic industrial chemicals except fertilizer
+52229,Other inorganic acids & oxygen comp.of non-metals,3511,Manufacture of basic industrial chemicals except fertilizer
+52231,"Halides,oxyhalides & oth.halog.comp.of non-metals",3511,Manufacture of basic industrial chemicals except fertilizer
+52232,Sulphides of non-metals;phosphorus trisulphide,3511,Manufacture of basic industrial chemicals except fertilizer
+52241,Zinc oxide and zinc peroxide,3511,Manufacture of basic industrial chemicals except fertilizer
+52242,Chromium oxides and hydroxides,3511,Manufacture of basic industrial chemicals except fertilizer
+52243,Manganese oxides,3511,Manufacture of basic industrial chemicals except fertilizer
+52244,"Iron oxides & hydroxides,of >70% of fe2o3",3511,Manufacture of basic industrial chemicals except fertilizer
+52245,Cobalt oxides and hydroxides,3511,Manufacture of basic industrial chemicals except fertilizer
+52246,Titanium oxides,3511,Manufacture of basic industrial chemicals except fertilizer
+52247,Lead oxides;red lead and orange lead,3511,Manufacture of basic industrial chemicals except fertilizer
+52251,"Ammonia,anhydrous,or in aqueous solution",3511,Manufacture of basic industrial chemicals except fertilizer
+52252,"Sodium hydroxide (caustic soda),solid",3511,Manufacture of basic industrial chemicals except fertilizer
+52253,Sodium hydroxide in aqueous solution,3511,Manufacture of basic industrial chemicals except fertilizer
+52254,Potassium hydroxide;peroxides of sodium/potassium,3511,Manufacture of basic industrial chemicals except fertilizer
+52255,"Oxid.hydrox.& perox.of strontium,barium/magnesium",3511,Manufacture of basic industrial chemicals except fertilizer
+52256,Aluminium hydroxide,3511,Manufacture of basic industrial chemicals except fertilizer
+52257,Artificial corundum,3511,Manufacture of basic industrial chemicals except fertilizer
+52259,Hydrazine & hydroxylamine & their inorganic salts,3511,Manufacture of basic industrial chemicals except fertilizer
+52311,"Fluorides;fluorosilicates,fluoroborates and salts",3511,Manufacture of basic industrial chemicals except fertilizer
+52312,Chlorides and oxychlorides,3511,Manufacture of basic industrial chemicals except fertilizer
+52313,Chlorites and hypochlorites,3511,Manufacture of basic industrial chemicals except fertilizer
+52314,Chlorates and perchlorates,3511,Manufacture of basic industrial chemicals except fertilizer
+52315,Sulphides;polysulphides,3511,Manufacture of basic industrial chemicals except fertilizer
+52316,Dithionites;sulphoxylates,3511,Manufacture of basic industrial chemicals except fertilizer
+52317,Sulphites and thiosulphates,3511,Manufacture of basic industrial chemicals except fertilizer
+52318,"Sodium sulphate,sod.hydrog.sulph.& sod.pyrosulpha.",3511,Manufacture of basic industrial chemicals except fertilizer
+52319,Other sulphates(including alums)and persulphates,3511,Manufacture of basic industrial chemicals except fertilizer
+52321,Nitrites and nitrates,3511,Manufacture of basic industrial chemicals except fertilizer
+52322,"Phosphites,hypophosphites and phosphates",3511,Manufacture of basic industrial chemicals except fertilizer
+52323,Neutral sodium carbonate,3511,Manufacture of basic industrial chemicals except fertilizer
+52324,Carbonates and percarbonates,3511,Manufacture of basic industrial chemicals except fertilizer
+52325,Cyanides and complex cyanides,3511,Manufacture of basic industrial chemicals except fertilizer
+52326,"Fulminates,cyanates and thiocyanates",3511,Manufacture of basic industrial chemicals except fertilizer
+52327,Silicates;commercial sodium & potassium silicates,3511,Manufacture of basic industrial chemicals except fertilizer
+52328,Borates and perborates,3511,Manufacture of basic industrial chemicals except fertilizer
+52329,"Salts & peroxysalts of inorganic acids,n.e.s.",3511,Manufacture of basic industrial chemicals except fertilizer
+52331,"Salts of metallic acids (e.g.,chromates etc.",3511,Manufacture of basic industrial chemicals except fertilizer
+52332,Colloidal precious metals;amalgams of prec.metals,3511,Manufacture of basic industrial chemicals except fertilizer
+52391,"Hydrogen peroxide,(incl.solid hydrogen peroxide)",3511,Manufacture of basic industrial chemicals except fertilizer
+52392,Phosphides,3511,Manufacture of basic industrial chemicals except fertilizer
+52393,Calcium carbide,3511,Manufacture of basic industrial chemicals except fertilizer
+52394,"Carbides,other than calcium carbide",3511,Manufacture of basic industrial chemicals except fertilizer
+52395,"Hydrides,nitrides and azides,silicides and borides",3511,Manufacture of basic industrial chemicals except fertilizer
+52399,"Other inorganic compounds,n.e.s.(liquid/comp.air)",3511,Manufacture of basic industrial chemicals except fertilizer
+52491,"Isotopes and their coumpounds,inorganic or organic",3511,Manufacture of basic industrial chemicals except fertilizer
+52492,"Compounds,inorganic/organic,of thorium,of uranium",3511,Manufacture of basic industrial chemicals except fertilizer
+53121,"Synth.organ.products used as luminophores,indigo",3511,Manufacture of basic industrial chemicals except fertilizer
+53122,Colour lakes,3511,Manufacture of basic industrial chemicals except fertilizer
+53221,Tanning extracts of vegetable origin;tannins,3511,Manufacture of basic industrial chemicals except fertilizer
+53222,Colouring matter of veget.origin/of animal origin,3511,Manufacture of basic industrial chemicals except fertilizer
+53341,Water-thinned paints,3521,"Manufacture of paints, varnishes and lacquers"
+53342,Other paints & enamels;varnishes & lacquers;n.e.s.,3521,"Manufacture of paints, varnishes and lacquers"
+53344,Distempers;prepared water pigments;stamping foils,3521,"Manufacture of paints, varnishes and lacquers"
+53351,"Prepared pigments,prepar.opacifiers & prep.colours",3511,Manufacture of basic industrial chemicals except fertilizer
+53352,"Artists',students'and signboard painters'colours",9999,Goods not elsewhere classified
+53353,Prepared driers,3521,"Manufacture of paints, varnishes and lacquers"
+53354,Glaziers'putty;grafting putty;painters'fillings,3521,"Manufacture of paints, varnishes and lacquers"
+54131,"Penicillins,their derivatives,not incl.in 541.7",3522,Manufacture of drugs and medicines
+54132,"Streptomycins,their derivatives,not incl.in 541.7",3522,Manufacture of drugs and medicines
+54133,"Tetracyclines,their derivatives,not incl.in 541.7",3522,Manufacture of drugs and medicines
+54139,"Other antibiotics n.e.s.,not incl. in 541.7",3522,Manufacture of drugs and medicines
+54151,"Insulin n.e.s.,not incl. in 541.7",3522,Manufacture of drugs and medicines
+54152,"Pituitary (anterior) and similar hormones,no 541.7",3522,Manufacture of drugs and medicines
+54153,"Adrenal cortical hormones n.e.s., no 541.7",3522,Manufacture of drugs and medicines
+54159,"Other hormones,hormon.derivatives & other steroids",3522,Manufacture of drugs and medicines
+54161,"Glycosid.,natur./reprod.by synthesis,& their salts",3522,Manufacture of drugs and medicines
+54162,"Organo-therapeutic glands or other organs,dried",3522,Manufacture of drugs and medicines
+54164,Antisera and microbial vaccines,3522,Manufacture of drugs and medicines
+54171,Medicaments contain.antibiotics/derivativ.thereof,3522,Manufacture of drugs and medicines
+54172,Medicaments contain.hormones but not antibiotics,3522,Manufacture of drugs and medicines
+54173,Medic.cont.alkaloids but neith.hormon.nor antibio.,3522,Manufacture of drugs and medicines
+54179,Medicaments containing other substances,3522,Manufacture of drugs and medicines
+54191,"Wadding,gauze,bandages and similar articles",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+54199,Other pharmaceutical goods,3522,Manufacture of drugs and medicines
+56211,Ammonium nitrate,3512,Manufacture of fertilizers and pesticides
+56212,Ammonium sulphonitrate,3512,Manufacture of fertilizers and pesticides
+56213,Ammonium sulphate,3512,Manufacture of fertilizers and pesticides
+56215,Calcium cyanamide:not more than 25% wt.of nitrogen,3512,Manufacture of fertilizers and pesticides
+56216,Urea,3512,Manufacture of fertilizers and pesticides
+56219,"Mineral or chemical fertilizers,nitrogenous,n.e.s.",3512,Manufacture of fertilizers and pesticides
+56221,Basic slag (thomas slag),3710,Iron and steel basic industries
+56222,Superphosphates,3512,Manufacture of fertilizers and pesticides
+56229,"Mineral or chemical fertilizers,phosphatic,n.e.s.",3512,Manufacture of fertilizers and pesticides
+56231,Potassium chloride,3512,Manufacture of fertilizers and pesticides
+56232,Potassium sulphate ;not more than 52% by wt.of k20,3512,Manufacture of fertilizers and pesticides
+56239,"Mineral or chemical fertilizers,potassic,n.e.s.",3512,Manufacture of fertilizers and pesticides
+56291,"Fertiliz.nes.contain.:nitrog.,phosphorus,potassium",3512,Manufacture of fertilizers and pesticides
+56292,"Fertilizers,n.e.s.containing:nitrogen & phosphorus",3512,Manufacture of fertilizers and pesticides
+56299,"Other fertilizers,n.e.s.;in tablets,lozenges etc.",3512,Manufacture of fertilizers and pesticides
+57211,Propellent powders,3529,Manufacture of chemical products not elsewhere classified
+57212,Prepared explosives(other than propellent powders),3529,Manufacture of chemical products not elsewhere classified
+58211,Phenoplasts in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58221,Aminoplasts in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58231,Alkyds in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58232,"Alkyds in the form of plates,sheets,film,foil etc.",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58241,Polyamides in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58251,Polyurethanes in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58261,Epoxide resins in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58311,Polyethylene in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58312,"Polyethylene in the form of monofil,seamless tubes",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58313,"Polyethylene in the form of plates,sheets,film,etc",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58319,Polyethylene in the form of waste and scrap,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58321,Polypropylene in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58322,"Polypropylene in the form of plates,sheets,film",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58331,Polystyrene in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58333,"Polystyrene in the form of plates,sheets,film,foil",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58339,Polystyrene in the form of waste and scrap,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58341,Polyvinyl chloride in primary forms,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58342,"Polyvinyl chlor.in the form of monofil,sticks",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58343,"Polyvinyl chlor.in the form of plates.sheets,strip",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58349,Polyvinyl chloride in the form of waste and scrap,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58351,"Copo.of vinyl chloride & vinyl acet.,in prim.forms",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58361,"Acrylic polymers,etc.in primary forms",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58362,"Acryl.poly.etc.in the form of plates,sheets,strip",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58421,Cellulose nitrates non-plasticized,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58431,Cellulose acetates non plasticized,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58432,Cellulose acetates plasticized,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58491,"Other chemical derivativ.of cellulose,non-plastic.",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58492,"Other chemical derivativ.of cellulose,plasticized",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58493,Vulcanized fibre,3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58521,Hardened proteins (hardened casein & hard.gelatin),3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+58522,"Alginic acid,its salts and esters",3513,"Manufacture of synthetic resins, plastic materials and man-made fibres except glass"
+59141,Disinfectants packed for sale etc.,3512,Manufacture of fertilizers and pesticides
+59149,Anti-sprout.prod.rat poisons etc.packed for sale,3512,Manufacture of fertilizers and pesticides
+59211,Starches;inulin,3121,Manufacture of food products not elsewhere classified
+59212,"Wheat gluten,whether or not dried",3121,Manufacture of food products not elsewhere classified
+59221,"Casein,caseinates and other casein derivatives",3112,Manufacture of dairy products
+59222,"Albumins,albuminates and other albumin derivatives",3121,Manufacture of food products not elsewhere classified
+59223,Gelatin & gelat.derivatives;glues deriv.from bones,3529,Manufacture of chemical products not elsewhere classified
+59224,Peptones & other protein substanc.& their derivat.,3511,Manufacture of basic industrial chemicals except fertilizer
+59225,Dextrins & dextrin glues;soluble/roasted starches,3121,Manufacture of food products not elsewhere classified
+59229,"Prepared glues,n.e.s.",3529,Manufacture of chemical products not elsewhere classified
+59811,Tall oil,3511,Manufacture of basic industrial chemicals except fertilizer
+59812,Concentrated sulphite lye,3411,"Manufacture of pulp, paper and paperboard"
+59813,Spirits of turpentine and other terpenic solvents,3511,Manufacture of basic industrial chemicals except fertilizer
+59814,"Rosin and resin acids,and derivatives thereof",3511,Manufacture of basic industrial chemicals except fertilizer
+59819,Wood tar ; wood tar oils,3511,Manufacture of basic industrial chemicals except fertilizer
+59831,Artificial waxes (including water-soluble waxes),3529,Manufacture of chemical products not elsewhere classified
+59832,Artificial graphite ;colloidal graphite,3511,Manufacture of basic industrial chemicals except fertilizer
+59833,Prepared rubber accelerators,3511,Manufacture of basic industrial chemicals except fertilizer
+59891,"Prepared glazings,prepared dressings,prep.mordants",3529,Manufacture of chemical products not elsewhere classified
+59892,Activated carbon;activat.natural mineral products,3511,Manufacture of basic industrial chemicals except fertilizer
+59893,Prep.culture media for developm.of micro-organisms,3522,Manufacture of drugs and medicines
+59894,Preparations and charges for fire extinguishers,3529,Manufacture of chemical products not elsewhere classified
+59895,Modelling pastes(inc.those for children's amusent),3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+59896,Pickling preparations for metal surfaces,3529,Manufacture of chemical products not elsewhere classified
+59897,Composite solvents and thinners for varhishes etc.,3521,"Manufacture of paints, varnishes and lacquers"
+59898,Compound catalysts,3540,Manufacture of miscellaneous products of petroleum and coal
+59899,"Other chemical products and preparations,n.e.s",3511,Manufacture of basic industrial chemicals except fertilizer
+61161,Goat and kid skin leather,3231,Tanneries and leather finishing
+61169,"Leather,n.e.s.",3231,Tanneries and leather finishing
+61181,Chamois-dressed leather,3231,Tanneries and leather finishing
+61183,Patent leather and imitation patent leather,3231,Tanneries and leather finishing
+62101,"Plates,sheets and strip,n.e.s.,of rubber",3559,Manufacture of rubber products not elsewhere classified
+62102,Unvulcanized natural or synthetic rubber,3559,Manufacture of rubber products not elsewhere classified
+62103,Vulcanized rubber thread and cord,3559,Manufacture of rubber products not elsewhere classified
+62104,"Plates,sheets,strip,rods & profile shapes,of rubb.",3559,Manufacture of rubber products not elsewhere classified
+62105,"Piping and tubing,of unhardened vulcanized rubber",3559,Manufacture of rubber products not elsewhere classified
+62591,Inner tubes,3551,Tyre and tube industries
+62599,"Tyres,n.e.s.,tyre cases,interchang.treads/flaps",3551,Tyre and tube industries
+62898,"Articles of unhardened vulcanized rubber,n.e.s.",3559,Manufacture of rubber products not elsewhere classified
+62899,"Articles of hardened rubber,n.e.s.",3559,Manufacture of rubber products not elsewhere classified
+63301,Articles of natural cork,3319,Manufacture of wood and cork products not elsewhere classified
+63302,Agglomerated cork & articles of agglomerated cork,3319,Manufacture of wood and cork products not elsewhere classified
+63431,"Improved wood,in sheets,blocks or the like",3311,"Sawmille, planing and other wood mills"
+63432,"Reconstituted wood in sheets,blocks or the like",3311,"Sawmille, planing and other wood mills"
+63491,Hoopwood;split poles;pickets and stakes of wood,1220,Logging
+63493,Wood wool and wood flour,3311,"Sawmille, planing and other wood mills"
+63541,"Wooden picture frames,mirror frames and the like",3319,Manufacture of wood and cork products not elsewhere classified
+63542,Household utensils of wood,3319,Manufacture of wood and cork products not elsewhere classified
+63549,"Std.lamps,tabl.lamp.& lighting fittings of wood",3312,Manufacture of wooden and cane containers and small can ware
+63591,"Wooden tools,tool bodies,tool handles,etc.of wood",3319,Manufacture of wood and cork products not elsewhere classified
+63599,"Other articles of wood,n.e.s.",3311,"Sawmille, planing and other wood mills"
+64121,Printing & writing paper uncoated,3411,"Manufacture of pulp, paper and paperboard"
+64122,"Printing & writing paper coated,impregnated etc.",3411,"Manufacture of pulp, paper and paperboard"
+64131,"Kraft liner,in rolls or sheets",3411,"Manufacture of pulp, paper and paperboard"
+64132,"Sack kraft paper,in rolls or sheets",3411,"Manufacture of pulp, paper and paperboard"
+64139,"Kraft paper & paperboard,in rolls or sheets,n.e.s.",3411,"Manufacture of pulp, paper and paperboard"
+64151,"Semi-chemical fluting paper,in rolls or sheets",3411,"Manufacture of pulp, paper and paperboard"
+64152,"Sulphite wrapping paper,in rolls or sheets",3411,"Manufacture of pulp, paper and paperboard"
+64153,Parchment or greaseproof paper and paperboard,3411,"Manufacture of pulp, paper and paperboard"
+64159,"Other paper and paperboard,in rolls or sheets,nes.",3411,"Manufacture of pulp, paper and paperboard"
+64161,Building board compressed (hardboard),3411,"Manufacture of pulp, paper and paperboard"
+64162,Building board non compressed (insulating board),3411,"Manufacture of pulp, paper and paperboard"
+64171,"Kraft paper,creped/crinkled,whether/not perforated",3411,"Manufacture of pulp, paper and paperboard"
+64172,"Paper,creped/crinkled,for household or toilet use",3411,"Manufacture of pulp, paper and paperboard"
+64173,"Other creped/crinkl.paper,wheth./not embos./perfo.",3411,"Manufacture of pulp, paper and paperboard"
+64174,"Paper & paperboard,corrugated,embossed/perforated",3411,"Manufacture of pulp, paper and paperboard"
+64181,Paper & paperbd.coat./impregnat.with artifi.resins,3411,"Manufacture of pulp, paper and paperboard"
+64182,"Paper & paperbd.tarred,bituminiz./asphalt.in rolls",3411,"Manufacture of pulp, paper and paperboard"
+64189,"Paper & paperbd.impregnat.,coat.,surface-coloured",3411,"Manufacture of pulp, paper and paperboard"
+64192,"Composite paper & paperbd.,not surface-coated etc.",3411,"Manufacture of pulp, paper and paperboard"
+64196,"Filter blocks,slabs and plates,of paper pulp",3419,"Manufacture of pulp, paper and paperboard articles not elsewhere classified"
+64197,Wallpaper & lincrusta;window transparencies paper,3419,"Manufacture of pulp, paper and paperboard articles not elsewhere classified"
+64241,"Cigarette paper,cut to size",3419,"Manufacture of pulp, paper and paperboard articles not elsewhere classified"
+64242,Carbon and other copying papers & transfer papers,3909,Manufacturing industries not elsewhere classified
+64243,"Toilet paper,cut to size,in rolls or in sheets",3411,"Manufacture of pulp, paper and paperboard"
+64244,Gummed or adhesive paper in strips or rolls,3411,"Manufacture of pulp, paper and paperboard"
+64281,"Bobbins,spools & similar supports of paper pulp",3412,Manufacture of containers and boxes of paper and paperboard
+64282,Cards for punched card machin.wheth./not in strips,3411,"Manufacture of pulp, paper and paperboard"
+64283,"Trays,dishes,plates,cups & the like,of paper pulp",3411,"Manufacture of pulp, paper and paperboard"
+64284,"Handkerchiefs,cleansing tissues,& oth.paper linen",3411,"Manufacture of pulp, paper and paperboard"
+64285,Sanitary towels & tampons of paper/cellulo.wadding,3411,"Manufacture of pulp, paper and paperboard"
+64289,"Other articles of paper pulp,paper,paperboard nes.",3411,"Manufacture of pulp, paper and paperboard"
+65111,"Silk yarn,not put up for retail sale",3211,"Spinning, weawing and finishing textiles"
+65116,"Yarn spun from noil/waste silk,not put up for sale",3211,"Spinning, weawing and finishing textiles"
+65117,Silk yarn etc.or waste silk put up for retail sale,3211,"Spinning, weawing and finishing textiles"
+65121,Wool tops,3211,"Spinning, weawing and finishing textiles"
+65122,Yarn contain.85% wgt of carded wool not for sale,3211,"Spinning, weawing and finishing textiles"
+65123,"Yarn contain.85% wgt of combed,wool not for sale",3211,"Spinning, weawing and finishing textiles"
+65124,Yarn of fine anim.hair not put up for retail sale,3211,"Spinning, weawing and finishing textiles"
+65125,Yarn of horsehair/coarse anim.hair not for sale,3211,"Spinning, weawing and finishing textiles"
+65126,Yarn containing >85% of wool/fine animal hair,3211,"Spinning, weawing and finishing textiles"
+65127,Card.wool contain.less than 85% wgt.not for sale,3211,"Spinning, weawing and finishing textiles"
+65128,Comb.wool contain.less than 85% wgt.not for sale,3211,"Spinning, weawing and finishing textiles"
+65129,Wool contain.less than 85% by wgt.put up for sale,3211,"Spinning, weawing and finishing textiles"
+65131,Cotton yarn measur.14000m.p.kg.not for retail sale,3211,"Spinning, weawing and finishing textiles"
+65132,"Cotton yarn,>14000 but <40000m per kg.",3211,"Spinning, weawing and finishing textiles"
+65133,"Cotton yarn,>40000 but <80000m per kg.",3211,"Spinning, weawing and finishing textiles"
+65134,Cotton yarn measur.80000m or more p.kg not f.sale,3211,"Spinning, weawing and finishing textiles"
+65135,Cotton yarn put up for retail sale,3211,"Spinning, weawing and finishing textiles"
+65141,"Yarn textured of continuous polyamide fibres,n.e.s",3211,"Spinning, weawing and finishing textiles"
+65142,"Yarn non-textured of contin.polyamide fibres,n.e.s",3211,"Spinning, weawing and finishing textiles"
+65143,Other non-textured yarn of contin.polyamide fibres,3211,"Spinning, weawing and finishing textiles"
+65144,"Yarn textured,of continuous polyester fibres,n.e.s",3211,"Spinning, weawing and finishing textiles"
+65147,Yarn of other continuous synth.fibres not for sale,3211,"Spinning, weawing and finishing textiles"
+65148,Yarn contain.85% by wgt of discontin.synth.fibres,3211,"Spinning, weawing and finishing textiles"
+65149,"Monofil,strip & imitatn.catgut,synth.fib.materials",3211,"Spinning, weawing and finishing textiles"
+65151,Yarn of >85% continuous synthetic fibres,3211,"Spinning, weawing and finishing textiles"
+65152,Yarn of >85% discontinuous synthetic fibres,3211,"Spinning, weawing and finishing textiles"
+65166,"Yarn mixed mainly or solely with cotton,not f.sale",3211,"Spinning, weawing and finishing textiles"
+65168,"Yarn mixed with fibres other than cotton,wool etc.",3211,"Spinning, weawing and finishing textiles"
+65169,Yarn put up for retail sale,3211,"Spinning, weawing and finishing textiles"
+65171,"Yarn of continuous viscose rayon,not for ret.sale",3211,"Spinning, weawing and finishing textiles"
+65173,Yarn of oth.continuous regenerated textiles fibres,3211,"Spinning, weawing and finishing textiles"
+65174,Yarn contain.85% by wgt.discontin.regenerat.fibres,3211,"Spinning, weawing and finishing textiles"
+65175,"Yarn of discont.<85% regen.fibres,mixed w.cotton",3211,"Spinning, weawing and finishing textiles"
+65178,Monofil & imitatn.catgut of regener.fibr.materials,3211,"Spinning, weawing and finishing textiles"
+65191,"Metallized yarn,being textile yarn spun with metal",3211,"Spinning, weawing and finishing textiles"
+65195,"Yarn,slivers and rovings of glass fibre",3211,"Spinning, weawing and finishing textiles"
+65196,"Flax or ramie yarn,not put up for retail sale",3211,"Spinning, weawing and finishing textiles"
+65199,"Yarn of other vegetable textile fibres,n.e.s.",3211,"Spinning, weawing and finishing textiles"
+65212,"Terry towelling & similar,of cotton,unbleached etc",3211,"Spinning, weawing and finishing textiles"
+65214,"Other woven fabrics contain.85% of cotton,unbleach",3211,"Spinning, weawing and finishing textiles"
+65215,Oth.woven fabrics contain.less than 85% of cotton,3211,"Spinning, weawing and finishing textiles"
+65221,"Cotton gauze,bleached,mercerized,dyed,printed etc",3211,"Spinning, weawing and finishing textiles"
+65222,"Terry towelling & similar,of cotton bleached etc.",3211,"Spinning, weawing and finishing textiles"
+65223,"Pile fabrics and chenille fabrics,woven,of cotton",3211,"Spinning, weawing and finishing textiles"
+65224,Oth.woven fabrics cont.85% of cotton bleached etc.,3211,"Spinning, weawing and finishing textiles"
+65225,Oth.woven fabrics cont.less than 85% of cot.bleach,3211,"Spinning, weawing and finishing textiles"
+65314,Tyre cord fabric of contin.synth.textile materials,3211,"Spinning, weawing and finishing textiles"
+65315,"Fabrics,woven,contain.85% of contin.synth.text.mat",3211,"Spinning, weawing and finishing textiles"
+65341,Fabrics mixed mainly or solely with cotton,3211,"Spinning, weawing and finishing textiles"
+65342,Fabrics mixed with wool or fine animal hair,3211,"Spinning, weawing and finishing textiles"
+65343,Fabrics mixed with contin.man-made texti.materials,3211,"Spinning, weawing and finishing textiles"
+65349,Fabrics mixed with fibres oth.than cotton.wool etc,3211,"Spinning, weawing and finishing textiles"
+65355,"Fabrics,woven contain.85% of contin.regener.t.mat.",3211,"Spinning, weawing and finishing textiles"
+65356,"Fabricc,woven of continuous regener.text.materials",3211,"Spinning, weawing and finishing textiles"
+65381,"Fabrics,mixed mainly or solely with cotton",3211,"Spinning, weawing and finishing textiles"
+65382,"Fabrics,mixed mainly solely with wool,fin.ani.hair",3211,"Spinning, weawing and finishing textiles"
+65383,"Fabrics,mixed with contin.man-made text.materials",3211,"Spinning, weawing and finishing textiles"
+65389,"Fabrics,mixed with fibres oth.than cotton,wool etc",3211,"Spinning, weawing and finishing textiles"
+65397,Pile fabrics synthetic,3211,"Spinning, weawing and finishing textiles"
+65398,Pile fabrics regenerated,3211,"Spinning, weawing and finishing textiles"
+65421,Fabrics of >85% carded wool or carded fine an.hair,3211,"Spinning, weawing and finishing textiles"
+65422,Fabrics of >85% combed wool or combed fine an.hair,3211,"Spinning, weawing and finishing textiles"
+65432,"Fabr.,woven,of wool etc.mix.with discont.synt.fibr",3211,"Spinning, weawing and finishing textiles"
+65433,Fabr.wool mix.with fibr.oth.than cont/disc.synth.f,3211,"Spinning, weawing and finishing textiles"
+65434,"Pile & chenille fabrics,woven of wool/fin.ani.hair",3211,"Spinning, weawing and finishing textiles"
+65491,"Fabrics,woven,of metal thread/of metallized yarn",3211,"Spinning, weawing and finishing textiles"
+65492,"Fabrics,woven,of horsehair/of oth.coarse anim.hair",3211,"Spinning, weawing and finishing textiles"
+65498,"Fabrics,woven of paper yarn & oth.veget.text.fibr.",3211,"Spinning, weawing and finishing textiles"
+65499,"Pile fabrics and chenille fabrics,woven,n.e.s.",3211,"Spinning, weawing and finishing textiles"
+65521,Knitted/crocheted fabrics of wool/fine animal hair,3213,Knitting mills
+65522,Knitted/crocheted fabrics of cotton,3213,Knitting mills
+65523,Knitted/crocheted fabrics of regenerated fibres,3213,Knitting mills
+65529,Knitted/crocheted fabrics of other fibres,3213,Knitting mills
+65601,Narrow woven fabrics consist.of warp without weft,3211,"Spinning, weawing and finishing textiles"
+65602,"Woven labels,badges and the like,not embroidered",3211,"Spinning, weawing and finishing textiles"
+65603,"Chenille & gimped yarn,braids & ornament.trimmings",3211,"Spinning, weawing and finishing textiles"
+65604,"Tulle and other net fabrics,plain",3211,"Spinning, weawing and finishing textiles"
+65605,Tull.& oth.net fab.figured;hand/mechanic.made lace,3211,"Spinning, weawing and finishing textiles"
+65606,"Embroidery,in the piece,in strips or in motifs",3212,Manufacture of made-up textile goods except wea ing apparel
+65731,Textile fabrics coated with gum/amylaceous substa.,3219,Manufacture of textiles not elsewhere classified
+65732,"Text.fabr.coated,with prepar.of cellulose derivat.",3219,Manufacture of textiles not elsewhere classified
+65733,Rubberized textile fabrics,3559,Manufacture of rubber products not elsewhere classified
+65739,Textile fabrics otherwise impregnated or coated,3219,Manufacture of textiles not elsewhere classified
+65751,"Twine,cordage,ropes and cables,plaited or not",3215,"Cordage, rope and twine industries"
+65752,"Nets and netting made of twine,cordage or rope",3215,"Cordage, rope and twine industries"
+65759,"Oth.articl.made from yarn,twine,cordage,rope/cabl.",3215,"Cordage, rope and twine industries"
+65761,"Hat-forms,hat bodies and hoods of felt",3220,"Manufacture of wearing apparel, except footwear"
+65762,"Hat-shapes,plaited/made from plaited/other strips",3220,"Manufacture of wearing apparel, except footwear"
+65771,"Wadding and articles of wadding,n.e.s.",3219,Manufacture of textiles not elsewhere classified
+65772,"Wicks,of woven,plaited/knitted textile materials",3219,Manufacture of textiles not elsewhere classified
+65773,Textile fabrics & articles used in machinary/plant,3219,Manufacture of textiles not elsewhere classified
+65791,Textile hosepiping and similar tubing,3219,Manufacture of textiles not elsewhere classified
+65792,"Transmission,conveyor/elevat.belts of text.materi.",3219,Manufacture of textiles not elsewhere classified
+65821,Tarpaulins etc.of cotton,3212,Manufacture of made-up textile goods except wea ing apparel
+65829,Tarpaulins etc.other than of cotton,3212,Manufacture of made-up textile goods except wea ing apparel
+65831,"Travelling rugs and blankets,of wool/fin.anim.hair",3212,Manufacture of made-up textile goods except wea ing apparel
+65832,"Travelling rugs and blankets,of cotton",3212,Manufacture of made-up textile goods except wea ing apparel
+65833,"Travelling rugs and blankets,of synthetic fibres",3212,Manufacture of made-up textile goods except wea ing apparel
+65839,"Travelling rugs and blankets,of other fibres",3212,Manufacture of made-up textile goods except wea ing apparel
+65841,Bed linen of cotton,3212,Manufacture of made-up textile goods except wea ing apparel
+65842,Bed linen of other fibres,3212,Manufacture of made-up textile goods except wea ing apparel
+65843,Table linen of cotton,3212,Manufacture of made-up textile goods except wea ing apparel
+65844,Table linen of other fibres,3212,Manufacture of made-up textile goods except wea ing apparel
+65845,Toilet and kitchen linen of cotton,3212,Manufacture of made-up textile goods except wea ing apparel
+65846,Toilet and kitchen linen of other fibres,3212,Manufacture of made-up textile goods except wea ing apparel
+65849,Other furnishing articles of other fibres,3212,Manufacture of made-up textile goods except wea ing apparel
+65891,"Tapestries,hand-made,of the type gobelins,flanders",3212,Manufacture of made-up textile goods except wea ing apparel
+65898,"Made-up text.articles,knitted/crochet.not elastic",3212,Manufacture of made-up textile goods except wea ing apparel
+65899,"Made-up text.articles,not knitted or crocheted nes",3212,Manufacture of made-up textile goods except wea ing apparel
+65911,Floor cover.prepar.on a base of paper/paperboard,3219,Manufacture of textiles not elsewhere classified
+65912,Linoleum and materials prepared on a textile base,3219,Manufacture of textiles not elsewhere classified
+65921,Carpets of wool or fine animal hair,3214,Manufacture of carpets and rugs
+65929,Carpets of other textile materials,3214,Manufacture of carpets and rugs
+65941,"Carpets of wool/fine animal hair,tufted",3214,Manufacture of carpets and rugs
+65942,"Carpets of wool/fine animal hair,woven",3214,Manufacture of carpets and rugs
+65951,"Carpets of man made text.materials,tufted",3214,Manufacture of carpets and rugs
+65952,"Carpets of man made text.materials,woven",3214,Manufacture of carpets and rugs
+65961,"Carpets of other text.materials,tufted",3214,Manufacture of carpets and rugs
+65962,"Carpets other than knotted,tufted,or of felt",3214,Manufacture of carpets and rugs
+65963,"Floor coverings of felt,of tufted felt etc.",3214,Manufacture of carpets and rugs
+66131,"Road & paving setts,curbs & flagst.of natur.stone",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66132,"Building & monument.stone,worked,nes mosaic cubes",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66133,"Slate,worked,and articles of slate",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66181,Articles of asphalt or of similar material,3540,Manufacture of miscellaneous products of petroleum and coal
+66182,"Panels,boards,tiles,etc.of veget.fibre,of wood fib",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66183,"Artic.of asbestos-cement,of cellulose fibre-cement",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66231,"Heat-insulating bricks,blocks,tiles & oth.heat-ins",3691,Manufacture of structural clay products
+66232,"Refract.bricks,blocks,tiles & simil.refract.constr",3691,Manufacture of structural clay products
+66233,"Refractory cements,mortars & similar compositions",3691,Manufacture of structural clay products
+66241,Building bricks,3691,Manufacture of structural clay products
+66242,"Roofing tiles,chimney-pots & oth.ceramic construct",3691,Manufacture of structural clay products
+66243,"Ceramic piping,conduits and guttering",3691,Manufacture of structural clay products
+66244,"Unglazed ceramic setts,flags and paving",3691,Manufacture of structural clay products
+66245,"Glazed ceramic setts,flags and paving",3691,Manufacture of structural clay products
+66331,Articles of plastering material,3699,Manufacture of non-metallic mineral products not elsewhere classified
+66332,"Articles of cement,of concrete/of artificial stone",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66333,"Mica,worked,and articles of mica",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66339,"Articles of stone/of other mineral substances,nes",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66381,Fabricated asbestos and articles thereof,3699,Manufacture of non-metallic mineral products not elsewhere classified
+66382,"Friction material for brakes,for clutches etc.",3699,Manufacture of non-metallic mineral products not elsewhere classified
+66391,"Laboratory,chemical or industrial wares,ceramic",3610,"Manufacture of pottery, china and earthenware"
+66392,"Other articles of ceramic materials,n.e.s.",3610,"Manufacture of pottery, china and earthenware"
+66414,Glass in the mass;waste glass,3620,Manufacture of glass and glass products
+66415,"Glass in balls,rods and tubes,unworked",3620,Manufacture of glass and glass products
+66491,"Cast,rolled,drawn/blown glass cut to shape or bent",3620,Manufacture of glass and glass products
+66492,"Glass envelopes for electric lamps,electronic valv",3620,Manufacture of glass and glass products
+66493,"Clock and watch glasses and similar glasses,curved",3620,Manufacture of glass and glass products
+66494,"Glass fibre and articles made therefrom,n.e.s.",3620,Manufacture of glass and glass products
+66511,"Carboys,bottles,jars,pots,tubular containers",3620,Manufacture of glass and glass products
+66512,Glass inners for vacuum flasks/oth.vacuum vessels,3620,Manufacture of glass and glass products
+66581,"Laboratory,hygienic and pharmaceutical glasware",3620,Manufacture of glass and glass products
+66582,"Glass beads,imitation pearls,imit.precious stones",3620,Manufacture of glass and glass products
+66589,"Other articles of glass,n.e.s.",3620,Manufacture of glass and glass products
+66721,"Diamonds,rough,unsorted",2909,Mining and quarrying not elsewhere classified
+66722,"Diamonds,sorted,rough/simply sawn,cleaved/bruted",3901,Manufacture of jewellery and related articles
+66729,"Diamonds,cut/otherwise worked,not mounted or set",3901,Manufacture of jewellery and related articles
+67131,"Shot and angular grit,of iron or steel",3710,Iron and steel basic industries
+67132,Iron or steel powders (includ.sponge iron powder),3710,Iron and steel basic industries
+67133,"Sponge iron or steel,not in powder form",3710,Iron and steel basic industries
+67161,Ferro-manganese,3710,Iron and steel basic industries
+67162,Ferro-silicon,3710,Iron and steel basic industries
+67169,Other ferro-alloys,3710,Iron and steel basic industries
+67241,Ingots of iron or steel,3710,Iron and steel basic industries
+67243,Ingots of stainless or heat-resisting steel,3710,Iron and steel basic industries
+67244,Ingots of other alloy steel,3710,Iron and steel basic industries
+67245,"Puddled bars & pilings;blocks,lumps & simil.forms",3710,Iron and steel basic industries
+67251,Blooms etc.of other than high carbon/alloy steel,3710,Iron and steel basic industries
+67254,Blooms etc.of stainless or heat-resisting steel,3710,Iron and steel basic industries
+67255,Blooms etc.of other alloy steel,3710,Iron and steel basic industries
+67271,Iron/steel coils of oth.than high carbon/alloy st.,3710,Iron and steel basic industries
+67272,Iron/steel coils of high carbon steel,3710,Iron and steel basic industries
+67274,Iron/steel coils of stainless/heat-resisting steel,3710,Iron and steel basic industries
+67275,Iron/steel coils of other alloy steel,3710,Iron and steel basic industries
+67311,Wire rod of other than high carbon or alloy steel,3710,Iron and steel basic industries
+67312,Wire rod of high carbon steel,3710,Iron and steel basic industries
+67314,Wire rod of stainless or heat-resisting steel,3710,Iron and steel basic industries
+67315,Wire rod of other alloy steel,3710,Iron and steel basic industries
+67322,"Bars & rods,of high carbon steel",3710,Iron and steel basic industries
+67324,"Bars & rods,of stainless or heat-resisting steel",3710,Iron and steel basic industries
+67325,"Bars & rods,of other alloy steel",3710,Iron and steel basic industries
+67326,"Bars & rods,not furth.work.than hot rolled/extrud.",3710,Iron and steel basic industries
+67327,"Bars & rods,forged,cold-formed or cold finished",3710,Iron and steel basic industries
+67331,"U,i,h,sects.hot-rolled or extruded under 80 mm",3710,Iron and steel basic industries
+67332,"U.i,h,sects.hot-rolled or extruded, 80 mm or more",3710,Iron and steel basic industries
+67333,"Oth.angles,shapes & sectns.hot-rolled or extruded",3710,Iron and steel basic industries
+67334,"Angles,shapes & sectns.cold-formed or cold-finishd",3710,Iron and steel basic industries
+67336,"Sheet piling of iron/stl.wheth./not drilled,etc.",3710,Iron and steel basic industries
+67338,"Angles,shapes & sects.,stainless/heat-resistg.stl.",3710,Iron and steel basic industries
+67339,"Angles,shapes and sections,of other alloy steel",3710,Iron and steel basic industries
+67441,"Sheets & plates,of oth.than high carbon/alloy stl.",3710,Iron and steel basic industries
+67443,"Sheets & plates,of stainless or heat-resisting stl",3710,Iron and steel basic industries
+67444,"Sheets & plates,of other alloy steel",3710,Iron and steel basic industries
+67451,"Sheets & plates,of oth-than high carbon/alloy stl.",3710,Iron and steel basic industries
+67453,"Sheets & plates,of stainless or heat-resisting stl",3710,Iron and steel basic industries
+67454,"Sheets & plates,of other alloy steel",3710,Iron and steel basic industries
+67461,"Sheets & plates,of oth.than high carbon/alloy stl.",3710,Iron and steel basic industries
+67463,"Sheets & plates,of stainl.or heat resist.stl.,<3mm",3710,Iron and steel basic industries
+67464,"Sheets & plates,of other alloy steel; of < 3mm",3710,Iron and steel basic industries
+67491,"Oth.sheets & plates,of oth.than high cbn/alloy stl",3710,Iron and steel basic industries
+67493,"Oth.sheets & plates,of stainless/heat-resistg.stl.",3710,Iron and steel basic industries
+67494,"Other sheets and plates,of other alloy steel",3710,Iron and steel basic industries
+67601,Rails of iron or steel,3710,Iron and steel basic industries
+67602,Oth.railway & tramway track construction material,3710,Iron and steel basic industries
+67701,"Iron/steel wire,of oth.than high carbon/alloy stl.",3710,Iron and steel basic industries
+67702,"Iron/steel wire,of high carbon steel",3710,Iron and steel basic industries
+67704,"Iron/steel wire,of stainless/heat-resisting steel",3710,Iron and steel basic industries
+67705,"Iron/steel wire,of other alloy steel",3710,Iron and steel basic industries
+67941,Castings of iron,3710,Iron and steel basic industries
+68112,"Rolled silver,unworked or semi-manufactured",3720,Non-ferrous metal basic industries
+68113,"Silver,unwrought, in primary forms",3720,Non-ferrous metal basic industries
+68114,"Silver,semi-manufactured,rods,sections,wire,etc.",3720,Non-ferrous metal basic industries
+68122,Rolled platinum or other platinum group metals,3720,Non-ferrous metal basic industries
+68123,"Platinum and platinum alloys,unwrought",3720,Non-ferrous metal basic industries
+68124,Oth.metals of the platinum group & alloys thereof,3720,Non-ferrous metal basic industries
+68125,Platin.& oth.metals of platin.grp.& alloys thereof,3720,Non-ferrous metal basic industries
+68211,Unrefined copper,3720,Non-ferrous metal basic industries
+68212,"Refined copper,unwrought",3720,Non-ferrous metal basic industries
+68213,Master alloys of copper,3720,Non-ferrous metal basic industries
+68221,"Bars,rods,angles,shapes & sectns.wrought,of copper",3720,Non-ferrous metal basic industries
+68222,"Plates,sheets and strip,wrought,of copper",3720,Non-ferrous metal basic industries
+68223,"Copper foil,of a thickness not exceeding 0,15mm",3720,Non-ferrous metal basic industries
+68224,Copper powders and flakes,3720,Non-ferrous metal basic industries
+68225,"Tubes,pipes,blanks therefor;hollow bars of copper",3720,Non-ferrous metal basic industries
+68226,"Tube and pipe fittings,of copper",3720,Non-ferrous metal basic industries
+68321,"Bars,rods,angles,shapes & sectns.wrought,of nickel",3720,Non-ferrous metal basic industries
+68322,"Plates,sheets & strip,wrought,of nickel;nick.foil",3720,Non-ferrous metal basic industries
+68323,"Tubes,pipes,blanks therefor;hollow bars of nickel",3720,Non-ferrous metal basic industries
+68421,"Bars,rods,angles,shapes & sectns.wrgt.of aluminium",3720,Non-ferrous metal basic industries
+68422,"Plates,sheets and strip,wrought,of aluminium",3720,Non-ferrous metal basic industries
+68423,"Aluminium foil,of a thickness not exceeding 0,20mm",3720,Non-ferrous metal basic industries
+68424,Aluminium powders and flakes,3720,Non-ferrous metal basic industries
+68425,"Tubes,pipes,blanks therefor;hollow bars of alumin.",3720,Non-ferrous metal basic industries
+68426,"Tube and pipe fittings,of aluminium",3720,Non-ferrous metal basic industries
+68511,Unrefined lead,3720,Non-ferrous metal basic industries
+68512,"Refined lead,unwrought",3720,Non-ferrous metal basic industries
+68521,"Bars,rods,angles,shapes & sections,wrought of lead",3720,Non-ferrous metal basic industries
+68522,"Plates,sheets and strip,wrought,of lead, >1700g/m2",3720,Non-ferrous metal basic industries
+68524,"Tubes,pipes & blanks therefor;hollow bars of lead",3720,Non-ferrous metal basic industries
+68631,"Bars,rods,angles,shapes & sections,wrought,of zinc",3720,Non-ferrous metal basic industries
+68632,"Plates,sheets and strip,wrought,of zinc;zinc foil",3720,Non-ferrous metal basic industries
+68633,"Zinc powders,dust and flakes",3720,Non-ferrous metal basic industries
+68634,"Tubes,pipes & blanks therefor;hollow bars of zinc",3720,Non-ferrous metal basic industries
+68721,"Bars,rods,angles,shapes & sections,wrought,of tin",3720,Non-ferrous metal basic industries
+68722,"Plates,sheets and strip,wrought,of tin, > 1 kg/m2",3720,Non-ferrous metal basic industries
+68723,"Tin foil,of a weight not exceeding 1kg/m2",3720,Non-ferrous metal basic industries
+68724,"Tubes,pipes & blanks therefor;hollow bars of tin",3720,Non-ferrous metal basic industries
+68911,"Tungsten,unwrought;tungsten waste and scrap",3720,Non-ferrous metal basic industries
+68912,"Molybdenum,unwrought;molybdenum waste and scrap",3720,Non-ferrous metal basic industries
+68913,"Tantalum,unwrought;tantalum waste and scrap",3720,Non-ferrous metal basic industries
+68914,Magnesium waste and scrap,3720,Non-ferrous metal basic industries
+68915,"Magnesium,unwrought",3720,Non-ferrous metal basic industries
+68991,"Beryllium,unwrought;beryllium waste and scrap",3720,Non-ferrous metal basic industries
+68999,"Other base metals,n.e.s.unwrought;cermets,unwrght.",3720,Non-ferrous metal basic industries
+69211,Containers of iron or steel,3813,Manufacture of structural metal products
+69213,Containers of aluminium,3813,Manufacture of structural metal products
+69241,"Casks,drums,boxes of sheet or plate for pack.gds.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69242,"Casks,drums,boxes of aluminium for packing goods",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69243,Containers of iron/steel for compressed gas,3813,Manufacture of structural metal products
+69244,Containers of aluminium for compressed gas,3813,Manufacture of structural metal products
+69311,Stranded wire etc.of iron or steel,3710,Iron and steel basic industries
+69312,Stranded wire etc.of copper,3720,Non-ferrous metal basic industries
+69313,Stranded wire etc.of aluminium,3720,Non-ferrous metal basic industries
+69351,"Gauze,cloth,grill of iron or steel",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69352,"Gauze,cloth,grill of copper",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69401,"Nails,tacks,staples,spiked cramps,studs,of copper",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69402,Bolts & nuts screws & rivets of iron or steel,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69403,"Nails,tacks,staples,spiked cramps rivets of copper",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69531,Saws & blades for hand or machine saws,3811,"Manufacture of cutlery, hand tools and general hardware"
+69532,Wrenches and spanners,3811,"Manufacture of cutlery, hand tools and general hardware"
+69533,Files and rasps,3811,"Manufacture of cutlery, hand tools and general hardware"
+69534,"Other hand tools,pincers,tweezers and the like",3811,"Manufacture of cutlery, hand tools and general hardware"
+69539,"Hand tools n.e.s.blow lamps,anvils,port.forges",3811,"Manufacture of cutlery, hand tools and general hardware"
+69541,"Interchang.tools for pressing,stamping drilling",3811,"Manufacture of cutlery, hand tools and general hardware"
+69542,Knives & cutting blades for mach./mechan.applianc.,3811,"Manufacture of cutlery, hand tools and general hardware"
+69543,"Tool tips & plates,sticks and the like",3823,Manufacture of metal and wood working machinery
+69603,Razors and razor blades,3811,"Manufacture of cutlery, hand tools and general hardware"
+69604,Scissors and blades therefor,3811,"Manufacture of cutlery, hand tools and general hardware"
+69605,"Other articles of cutlery,secateurs,chiropody sets",3811,"Manufacture of cutlery, hand tools and general hardware"
+69606,"Spoons,forks,fish-eaters and sim.kitchenware",3811,"Manufacture of cutlery, hand tools and general hardware"
+69608,Knives with cutting blades serrated or not,3811,"Manufacture of cutlery, hand tools and general hardware"
+69731,Cooking apparatus & plate warmers with burners,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69732,"Stoves-grates,fires & oth.space heaters",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69733,"Parts,n.e.s.of the app.under 697.31-697.32",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69734,"Cooking & heating app.of copper,for dom.purposes",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69741,Art.commonly used for dom.purp.of iron or steel,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69742,Art.commonly used for dom.purp.of copper,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69743,Art.commonly used for dom.purp.of aluminium,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69751,Sanitary ware for indoor use of iron or steel,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69752,Sanitary ware for indoor use of copper,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69753,Sanitary ware for indoor use of aluminium,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69781,"Coffee-mills,juice-extractors for dom.purposes",3811,"Manufacture of cutlery, hand tools and general hardware"
+69782,Statuettes & other ornaments used indoors,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69911,Locks and padlocks and parts thereof of base metal,3811,"Manufacture of cutlery, hand tools and general hardware"
+69912,"Safes,strong boxes,strong room doors and the like",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69913,Base metal fittings & mountings for furniture,3811,"Manufacture of cutlery, hand tools and general hardware"
+69931,"Needles for hand sewing,bodkins,crochet hooks etc.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69932,"Pins,hairpins and curling grips of iron or steel",3909,Manufacturing industries not elsewhere classified
+69933,"Clasps,frames with clasps for handbags & the like",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69941,Springs & leaves for springs of iron or steel,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69942,Springs & leaves for springs of copper,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69961,Flexible tubing and piping of base metal,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69962,"Bells and gongs and parts thereof,non electric",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69963,"Stoppers,crown corks,bottle caps etc of base met.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69964,"Sign-plates,name plates,numbers,letters,etc.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69965,"Wire,rods,tubes,plates & similar prod.for solder.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69971,"Anchors & grapnels,parts thereof,of iron or steel",3811,"Manufacture of cutlery, hand tools and general hardware"
+69979,Other articles of iron or steel,3811,"Manufacture of cutlery, hand tools and general hardware"
+69981,Articles n.e.s.of copper,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69982,Articles n.e.s.of nickel,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69983,Articles n.e.s.of aluminium,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69984,Articles n.e.s.of lead,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69985,Articles n.e.s.of zinc,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69986,Articles n.e.s.of tin,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69991,"Tungsten,wrought.& art.of tungsten",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69992,"Molybdenum,wrought & art.of molybdenum",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69993,"Tantalum,wrought & art.of tantalum",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69994,"Wrought bars,rods,angles,shapes of magnesium",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69995,"Beryllium,wrought & art.of beryllium",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+69999,"Base metals,n.e.s. wrought & art. of such metals",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+71191,Parts of boilers of 711.1-,3813,Manufacture of structural metal products
+71199,Parts of apparatus/appliances of 711.2-,3813,Manufacture of structural metal products
+71311,Internal combustion piston engines for aircraft,3845,Manufacture of aircraft
+71319,Parts of aircraft engines of 713.11,3845,Manufacture of aircraft
+71331,Int.combustion piston engines for outboard prop.,3841,Shipbuilding and repairing
+71332,Int.comb.piston engines for other than outboard,3841,Shipbuilding and repairing
+71481,Turbo-propellers,3845,Manufacture of aircraft
+71488,"Other gas turbines,n.e.s.",3821,Manufacture of engines and turbines
+71491,Parts of reaction engines & turbo propellers,3845,Manufacture of aircraft
+71499,Parts of engines and motors of 714.88 and 718.88,3821,Manufacture of engines and turbines
+71621,Elect.motors other than direct current,3831,Manufacture of electrical industrial machinery and apparatus
+71622,"Generators,alternating current",3831,Manufacture of electrical industrial machinery and apparatus
+71623,Generating sets with int.comb.piston engines,3831,Manufacture of electrical industrial machinery and apparatus
+71882,Other hydraulic engines and motors,3821,Manufacture of engines and turbines
+71888,Other engines and motors n.e.s.,3821,Manufacture of engines and turbines
+71889,Regulators and parts for the engines of 718.81/82,3821,Manufacture of engines and turbines
+72111,Ploughs,3822,Manufacture of agricultural machinery and equipment
+72112,"Seeders,planters fertilizer distributors,spreaders",3822,Manufacture of agricultural machinery and equipment
+72113,"Scarifiers,cultivators,weeders,hoes & harrows",3822,Manufacture of agricultural machinery and equipment
+72118,Other agric. & hortic.machinery for soil prepar.,3822,Manufacture of agricultural machinery and equipment
+72119,Parts of the machinery of 721.1-,3822,Manufacture of agricultural machinery and equipment
+72121,Lawn movers,3822,Manufacture of agricultural machinery and equipment
+72122,Combined harvester-threshers,3822,Manufacture of agricultural machinery and equipment
+72123,"Other harvesting and threshing machinery,presses",3822,Manufacture of agricultural machinery and equipment
+72124,Winnowing & similar cleaning machines for seed etc,3822,Manufacture of agricultural machinery and equipment
+72129,Parts of machines of 721.2-,3822,Manufacture of agricultural machinery and equipment
+72131,Milking machines,3822,Manufacture of agricultural machinery and equipment
+72138,Other dairy machinery,3822,Manufacture of agricultural machinery and equipment
+72139,Parts of the machinery of 721.3-,3822,Manufacture of agricultural machinery and equipment
+72191,"Presses,crushers & other mach of wine/cider making",3822,Manufacture of agricultural machinery and equipment
+72197,"Other agric.hortic.,poultry-bee keeping machinery",3822,Manufacture of agricultural machinery and equipment
+72198,Parts of the machinery of 721.91,3822,Manufacture of agricultural machinery and equipment
+72199,Parts of the machinery of 721.97,3822,Manufacture of agricultural machinery and equipment
+72341,"Bulldozers,angledozers & levellers,self propelled",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72342,"Mechanical shovels & excavators,self propelled",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72343,"Other excavating,levelling,boring machinery etc.",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72344,Boring & sinking machinery not self-propelled,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72345,"Pile-drivers,snow-ploughs not self-propelled",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72346,"Other excavating,levelling,extracting machinery",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72348,Mach.& mechanical appliances for public works,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72431,Sewing machines,3829,Machinery and equipment except electrical not elsewhere classified
+72439,"Sewing mach.needles,furn. for sewing mach. 724.3",3829,Machinery and equipment except electrical not elsewhere classified
+72441,Mach.for extruding man-made textiles,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72442,Mach.for processing natural of man-made tex.fibres,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72443,Textile spinning & twisting mach.etc,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72449,Parts of the mach.and accessories of 724.4-,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72451,Weaving machines (looms),3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72452,Knitting machines,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72453,"Mach.for making gimped yarn,tulle lace etc",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72454,Mach.for the manufacture or finishing of felt,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72461,Auxil.machinery for headings 724.51/52/53 724.61,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72469,Parts & acces. for mach. of 724.51-53 and 724.61,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72471,Clothes-washing-machines of a capacity exceed.6kg,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72472,Dry-cleaning machines,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72473,"Drying machines,industrial. for 741.6-,743.5-",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72474,"Mach for washing,cleaning,bleaching dyeing etc.",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72479,"Parts of the machines of 724.7- and 775.1-,",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72511,Mach.for making cellulosic pulp,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72512,Mach.for making/finishing paper or paperboard,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72591,Parts of the mach. of 725.1-,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72599,Parts of the mach. of 725.2-,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72631,"Mach.,appar.,access.for type founding or setting",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72632,"Printing type,impressed flongs & matrices etc.",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72641,Rotary printing presses,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72671,Printing machinery,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72672,Mach.for uses ancillary to printing,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72681,Bookbinding machinery,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72689,Parts of bookbinding machinery,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72691,Parts of the machines of 726.31,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72699,"Parts of the machines of 726.4-,726.7-",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72711,Mach.for working cereals or dried vegetables,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72719,Parts of the machinery of 727.11,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72721,Mach.for the animal & vegetable fats & oil indust.,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72722,"Mach.used in bakery,chocolate,macaroni semilar ind",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72729,Parts of the food processing mach. of 727.22,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72811,"Mach.tools for working stone,ceramics asbestos etc",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72812,"Mach.tools for working wood,cork,bone,plastics etc",3823,Manufacture of metal and wood working machinery
+72819,Parts of the machinery of 728.1-,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72831,"Mach.for sorting,screening,separating,washing ores",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72832,"Mach.for crushing or grinding earth,stone,ores",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72833,"Mach.for mixing or kneading earth,stone,ores",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72834,"Mach.for agglomerating,moulding etc.solid fuels",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72839,Parts of the machinery of 728.3-,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72841,Glass working machines and parts,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72842,Mach. for the rubber & artifical plastic mat.ind.,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72843,Mach.& appliances for tobacco industry,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72844,Mach.& appliances for treating wood,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72845,Mach.& appliances for treating metals or carbides,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72848,Other mach.having individual functions,3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+72849,"Parts of the mach.of 723.48 & 727.21, 727.42/48",3824,Manufacture of special industrial machinery and equipment except metal and wood working machinery
+73611,Mach.tools for working metals by electronic proces,3823,Manufacture of metal and wood working machinery
+73612,Gear cutting machinery,3823,Manufacture of metal and wood working machinery
+73613,"Lathes,metalworking",3823,Manufacture of metal and wood working machinery
+73614,"Reaming or milling machines,metalworking",3823,Manufacture of metal and wood working machinery
+73615,"Drilling & boring machines,metalworking",3823,Manufacture of metal and wood working machinery
+73616,"Sawing machines,metalworking",3823,Manufacture of metal and wood working machinery
+73617,"Planing machines,metalworking",3823,Manufacture of metal and wood working machinery
+73618,Tapping or screw-cutting machines,3823,Manufacture of metal and wood working machinery
+73619,"Sharpening,trimming,trueing,grinding etc.machines",3823,Manufacture of metal and wood working machinery
+73621,"Forging & stamping machines,metalworking",3823,Manufacture of metal and wood working machinery
+73622,"Bending forming,folding & flattening machines",3823,Manufacture of metal and wood working machinery
+73623,"Shearing,punching or notching machines",3823,Manufacture of metal and wood working machinery
+73628,Other metalworking presses,3823,Manufacture of metal and wood working machinery
+73711,"Converters,ladles,ingot moulds and casting mach.",3823,Manufacture of metal and wood working machinery
+73719,Parts of the machines of 737.11,3823,Manufacture of metal and wood working machinery
+73721,Rolling mills,3823,Manufacture of metal and wood working machinery
+73729,Rolls for and parts of rolling mills,3823,Manufacture of metal and wood working machinery
+73731,"Gas-operated welding,brazing,surface-tempering m.",3823,Manufacture of metal and wood working machinery
+73732,"Electric welding,brazing,cutting mach.and parts",3823,Manufacture of metal and wood working machinery
+74131,"Ind.& lab.electric furnaces,ovens,induction equip.",3829,Machinery and equipment except electrical not elsewhere classified
+74132,"Ind.& lab.furnaces & ovens,non electric,and parts",3829,Machinery and equipment except electrical not elsewhere classified
+74141,"Refrigerators & refrig.equipment,ex.household",3829,Machinery and equipment except electrical not elsewhere classified
+74149,Parts of refrigerators and refrigerating equipment,3829,Machinery and equipment except electrical not elsewhere classified
+74281,Pumps for dispensing fuel or lubricants,3829,Machinery and equipment except electrical not elsewhere classified
+74288,"Pumps for liquids,n.e.s.,liq.elevators,chain kind",3829,Machinery and equipment except electrical not elsewhere classified
+74411,"Work trucks,mechanic. propel.,for short distances",3829,Machinery and equipment except electrical not elsewhere classified
+74419,Parts of the trucks of 744.11,3829,Machinery and equipment except electrical not elsewhere classified
+74421,"Pulley tackle and hoist,winches,capstans",3829,Machinery and equipment except electrical not elsewhere classified
+74422,"Ships derricks,cranes,mobile lifting frames",3829,Machinery and equipment except electrical not elsewhere classified
+74423,"Elevators and conveyors,pneumatic",3829,Machinery and equipment except electrical not elsewhere classified
+74424,Lifts and skip hoists,3829,Machinery and equipment except electrical not elsewhere classified
+74425,"Escalators,moving stairs and pavements",3829,Machinery and equipment except electrical not elsewhere classified
+74428,"Other lifting,handling,loading machinery,n.e.s.",3829,Machinery and equipment except electrical not elsewhere classified
+74511,"Tools for working in the hand,pneumatic motor",3829,Machinery and equipment except electrical not elsewhere classified
+74519,Parts of the tools of 745.11,3829,Machinery and equipment except electrical not elsewhere classified
+74521,"Calendering & sim.rolling mach,and cylinders,parts",3829,Machinery and equipment except electrical not elsewhere classified
+74522,"Mach.for cleaning,filling,closing etc.bottles,cans",3829,Machinery and equipment except electrical not elsewhere classified
+74523,Parts of the machinery of 745.22 and 775.3-,3829,Machinery and equipment except electrical not elsewhere classified
+74524,Automatic vending machines and parts,3829,Machinery and equipment except electrical not elsewhere classified
+74525,Weighing machinery incl.weight-operated counting,3825,"Manufacture of office, computing and accounting machinery"
+74526,"Weighing machine,weights of all kinds and parts",3825,"Manufacture of office, computing and accounting machinery"
+74527,"Mechanical appliances,spray guns,fire extinguisher",3829,Machinery and equipment except electrical not elsewhere classified
+74991,"Moulding boxes for metal foundry,moulds",3823,Manufacture of metal and wood working machinery
+74992,Gaskets & sim.joints of metal sheeting,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+74999,Machinery parts not containing electrical connect.,3829,Machinery and equipment except electrical not elsewhere classified
+75111,"Typewriters,electric",3825,"Manufacture of office, computing and accounting machinery"
+75112,"Typewritters,non electric",3825,"Manufacture of office, computing and accounting machinery"
+75121,Calculating machines,3825,"Manufacture of office, computing and accounting machinery"
+75122,"Accounting machines,bookkeeping machines",3825,"Manufacture of office, computing and accounting machinery"
+75123,Cash registers incorporating a calculating device,3825,"Manufacture of office, computing and accounting machinery"
+75128,"Postage-franking,ticket-issuing etc.machines",3825,"Manufacture of office, computing and accounting machinery"
+75181,"Duplicating machines,hectograph or stencil etc",3825,"Manufacture of office, computing and accounting machinery"
+75182,Photo-copying apparatus,3825,"Manufacture of office, computing and accounting machinery"
+75188," other office machines,adressing,coin-sorting etc.",3825,"Manufacture of office, computing and accounting machinery"
+75911,Parts of and accessories suitable for 751.1-,3825,"Manufacture of office, computing and accounting machinery"
+75915,Parts of and accessories suitable for 751.18/81/88,3825,"Manufacture of office, computing and accounting machinery"
+75919,Parts of and accessories suitable for 751.82,3825,"Manufacture of office, computing and accounting machinery"
+76311,"Gramophones,electric,coin-operated",3832,"Manufacture of radio, television and communication equipment and apparatus"
+76318,Other electric gramophones & record players,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76381,Television image and sound recorders/reproducers,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76388,Dictating mach.and other sound recorders,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76481,Radiotelephonic or radiotelegraphic receivers,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76482,Television cameras,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76483,"Radio navigational aid apparatus,radar apparatus",3832,"Manufacture of radio, television and communication equipment and apparatus"
+76491,Parts of apparatus of 764.1-,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76492,Parts of apparatus of 764.2-,3832,"Manufacture of radio, television and communication equipment and apparatus"
+76493,"Parts of a apparatus of 761--,762--,764.3-,764.8-",3832,"Manufacture of radio, television and communication equipment and apparatus"
+76499,Parts of apparatus of 763--,3832,"Manufacture of radio, television and communication equipment and apparatus"
+77111,Liquid dielectric transformers,3831,Manufacture of electrical industrial machinery and apparatus
+77118,Other electric transformers,3831,Manufacture of electrical industrial machinery and apparatus
+77121,"Static converters,rectifiers & rectifying app.",3831,Manufacture of electrical industrial machinery and apparatus
+77122,Inductors,3831,Manufacture of electrical industrial machinery and apparatus
+77129,Parts of electric power machinery of 771--,3831,Manufacture of electrical industrial machinery and apparatus
+77322,Electrical insulators of glass,3610,"Manufacture of pottery, china and earthenware"
+77323,Electrical insulators of ceramic materials,3620,Manufacture of glass and glass products
+77324,Electrical insulators of other materials,3560,Manufacture of plastic products not elsewhere classified
+77325,"Insulating fittings for electrical machines,glass",3610,"Manufacture of pottery, china and earthenware"
+77326,"Insulating fittings for electrical machines,ceram.",3620,Manufacture of glass and glass products
+77327,Insulating fittings for electrical machines other,3560,Manufacture of plastic products not elsewhere classified
+77511,"Clothes washing machines,not exceeding 6 kgs",3829,Machinery and equipment except electrical not elsewhere classified
+77512,"Clothes drying machines,other than industrial",3829,Machinery and equipment except electrical not elsewhere classified
+77521,Refrigerators of household type,3829,Machinery and equipment except electrical not elsewhere classified
+77522,Deep-freezers of household type,3829,Machinery and equipment except electrical not elsewhere classified
+77571,Vacuum cleaners & floor polishers,3833,Manufacture of electrical appliances and housewares
+77572,Vented hoods and room fans,3833,Manufacture of electrical appliances and housewares
+77573,"Food grinders & mixers,fruit-juice extractors",3833,Manufacture of electrical appliances and housewares
+77578,"Other electro-mechanical,dom.appliances",3833,Manufacture of electrical appliances and housewares
+77579,Parts of elec.-mech.domestic appl.of 775.7-,3833,Manufacture of electrical appliances and housewares
+77581,Electr.storage water heaters & immersion heaters,3833,Manufacture of electrical appliances and housewares
+77582,"Electr.soil heating apparatus,space heating",3833,Manufacture of electrical appliances and housewares
+77583,"Electr.hair dressing apparatus,curlers etc.",3833,Manufacture of electrical appliances and housewares
+77584,Electric smoothing irons,3833,Manufacture of electrical appliances and housewares
+77585,Electric blankets,3212,Manufacture of made-up textile goods except wea ing apparel
+77586,"Electro-thermic domestic appliances, n.e.s.",3833,Manufacture of electrical appliances and housewares
+77587,Electric heating resistors,3833,Manufacture of electrical appliances and housewares
+77589,Parts of the appliances of 775.81/82/83/84/86/87,3833,Manufacture of electrical appliances and housewares
+77681,"Piezo-electric crystals,mounted",3832,"Manufacture of radio, television and communication equipment and apparatus"
+77689,Parts of components of 776--,3832,"Manufacture of radio, television and communication equipment and apparatus"
+77811,Primary cells and primary batteries and parts,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77812,Electric accumulators,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77819,Parts of electric accumulators,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77821,"Filament lamps,no infra-red-ultra-violet lamps",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77822,"Discharge lamps,other than ultra-violet",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77824,"Infra-red lamps,ultra-violet lamps & arc-lamps",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77829,Parts of the lamps of 778.2-,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77831,Electr.starting & ignition equipment,3831,Manufacture of electrical industrial machinery and apparatus
+77832,"Electr.lighting & signaling equip.,defrosters etc.",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77881,"Electro-magnets,permanent magnets,clamps,vices etc",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+77882,"Elect.traffic control equip.for railways,roads etc",3832,"Manufacture of radio, television and communication equipment and apparatus"
+77883,Elect.sound & visual signalling apparatus,3832,"Manufacture of radio, television and communication equipment and apparatus"
+77884,"Elect.capacitors,condensers, fixed or variable",3832,"Manufacture of radio, television and communication equipment and apparatus"
+77885,Particle accelerators and parts,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+77886,Other elect.appl.having individual functions,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77887,"Carbon brushes,arc-lamp carbons,carbon electrodes",3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+77889,Elect.parts of machinery and apparatus n.e.s.,3839,Manufacture of electrical apparatus and supplies not elsewhere classified
+78531,"Invalid cariages,motorized or not",3844,Manufacture of motorcycles and bicycles
+78539,Parts of accessories of 785--,3844,Manufacture of motorcycles and bicycles
+78611,Trailers & semi-trailers of the caravan type,3829,Machinery and equipment except electrical not elsewhere classified
+78612,Trailers & semi-trailers for transport of goods,3843,Manufacture of motor vehicles
+78613,"Containers, spec.designed for carriage",3843,Manufacture of motor vehicles
+78681,"Other vehicles,not mechanically propelled",3844,Manufacture of motorcycles and bicycles
+78689,"Parts of the trailers of 786.11,786.12,786.81",3843,Manufacture of motor vehicles
+79151,"Rail&tramway rolling stock,workshops,cranes etc.",3842,Manufacture of railroad equipment
+79152,"Rail&tramway goods vans,wagons and trucks",3842,Manufacture of railroad equipment
+79191,Rail&tramway track fixtures&fittings;for signal.,3813,Manufacture of structural metal products
+79199,Parts of the headings 791.1- to 791.5-,3842,Manufacture of railroad equipment
+79281,Aircraft not fitted with means of propulsion,3845,Manufacture of aircraft
+79282,Balloons and airships,3845,Manufacture of aircraft
+79283,Catapults & sim.aircraft launching gear,3829,Machinery and equipment except electrical not elsewhere classified
+79321,Yachts & other vessels for pleasure or sports,3841,Shipbuilding and repairing
+79322,Tankers of all kinds,3841,Shipbuilding and repairing
+79323,Other vessels for the transport of goods,3841,Shipbuilding and repairing
+79324,"Trawlers and other fishing vessels,factory ships",3841,Shipbuilding and repairing
+79381,Vessels specially designed for towing,3841,Shipbuilding and repairing
+79382,"Light vessels,fire-floats,dredgers of all kind",3841,Shipbuilding and repairing
+79383,Floating structures other than vessels,3841,Shipbuilding and repairing
+81241,"Illuminating glassware,optical elements of glass",3620,Manufacture of glass and glass products
+81242,Lamps & lighting fittings of base metal and parts,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+81243,Portable electric battery and magneto lamps,3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+82111,"Chairs & seats,incl.chairs convertible in beds",3320,"Manufacture of furniture and fixtures, except primarily of metal"
+82119,Parts of the chairs and seats of 821.11,3320,"Manufacture of furniture and fixtures, except primarily of metal"
+82121,"Medical,dental,surgical or veterinary furniture",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+82122,"Mattress supports,eiderdowns,cushions,pouffes etc.",3320,"Manufacture of furniture and fixtures, except primarily of metal"
+82191,"Furniture,n.e.s. of metal",3812,Manufacture of furnitures and fixtures primarily of metal
+82192,"Furniture,n.e.s. of wood",3320,"Manufacture of furniture and fixtures, except primarily of metal"
+82199,"Furniture,n.e.s. of other materials and parts",3320,"Manufacture of furniture and fixtures, except primarily of metal"
+83101,Handbags,3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+83102,Travel goods and toilet cases,3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+83109,"Other similar containers, leather,fibres etc",3233,"Manufacture of products of leather and leather substitutes, except footwear and wearing apparel"
+84211,Overcoats and other coats of wool or animal hair,3220,"Manufacture of wearing apparel, except footwear"
+84219,Overcoats and other coats of other fabrics,3220,"Manufacture of wearing apparel, except footwear"
+84221,"Suits,men's,of wool or fine animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84223,"Suits,men's,of man-made fibres",3220,"Manufacture of wearing apparel, except footwear"
+84231,"Trousers,breeches etc.of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84241,"Jackets,blazers of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84291,Outer garments of fabrics of 657.32/33/39,3220,"Manufacture of wearing apparel, except footwear"
+84292,Outer garments of wool or animal hair,3220,"Manufacture of wearing apparel, except footwear"
+84293,Outer garments of cotton,3220,"Manufacture of wearing apparel, except footwear"
+84294,Outer garments of man-made fibres,3220,"Manufacture of wearing apparel, except footwear"
+84299,Outer garments of other fibres,3220,"Manufacture of wearing apparel, except footwear"
+84311,Coats and jackets of wool or animal hair,3220,"Manufacture of wearing apparel, except footwear"
+84312,Coats and jackets of cotton,3220,"Manufacture of wearing apparel, except footwear"
+84321,"Suits,costumes,women's,of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84331,"Dresses,women's,of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84341,"Skirts,women's,of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84351,Blouses of cotton,3220,"Manufacture of wearing apparel, except footwear"
+84391,Other outer garments of the fabrics 657.32/33/39,3220,"Manufacture of wearing apparel, except footwear"
+84392,Other outer garments of wool or animal hair,3220,"Manufacture of wearing apparel, except footwear"
+84393,Other outer garments of cotton,3220,"Manufacture of wearing apparel, except footwear"
+84394,Other outer garments of man made fibres,3220,"Manufacture of wearing apparel, except footwear"
+84399,Other outer garments of other fibres,3220,"Manufacture of wearing apparel, except footwear"
+84411,"Shirts,men's,of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84412,"Shirts,men's,of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84421,"Under garments,excl.shirts,of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84422,"Under garments,excl.shirts,of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84429,"Under garments,excl.shirts,of other fibres",3220,"Manufacture of wearing apparel, except footwear"
+84431,"Under garments,womens,of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84432,"Under garments,womens,of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84511,"Jerseys,pull-overs,etc.of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84512,"Jerseys,pull-overs,etc.of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84521,"Dresses,skirts,suits etc,of wool or animal hair",3220,"Manufacture of wearing apparel, except footwear"
+84522,"Dresses,skirts,suits etc,of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84523,"Dresses,skirts,suits etc,of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84524,"Dresses,skirts,suits etc,of regenerated fibres",3220,"Manufacture of wearing apparel, except footwear"
+84591,Other outer garments & clothing wool or an.hair,3220,"Manufacture of wearing apparel, except footwear"
+84592,Other outer garments & clothing of cotton,3220,"Manufacture of wearing apparel, except footwear"
+84593,Other outer garments & clothing of synthet. fibres,3220,"Manufacture of wearing apparel, except footwear"
+84594,Other outer garments & clothing of regener. fibres,3220,"Manufacture of wearing apparel, except footwear"
+84599,Other outer garments & clothing of other fibres,3220,"Manufacture of wearing apparel, except footwear"
+84621,"Shirts,men s,knitted of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84629,"Other under garments,knitted,of cotton",3220,"Manufacture of wearing apparel, except footwear"
+84631,"Panty hose (tights),knitted,of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84632,"Shirts,men s,knitted of synthetic fibres",3220,"Manufacture of wearing apparel, except footwear"
+84651,Brassieres,3220,"Manufacture of wearing apparel, except footwear"
+84652,"Corsets,braces,garters and the like",3220,"Manufacture of wearing apparel, except footwear"
+84711,Handkerchiefs,3220,"Manufacture of wearing apparel, except footwear"
+84712,"Shawls,scrarves,mufflers,veils and the like",3220,"Manufacture of wearing apparel, except footwear"
+84713,"Ties,bow ties & cravats of textile fabrics",3220,"Manufacture of wearing apparel, except footwear"
+84714,"Gloves,mittens,stockings,socks of text.fabrics",3220,"Manufacture of wearing apparel, except footwear"
+84719,"Made up accessories,n.e.s., of textile fabbrics",3220,"Manufacture of wearing apparel, except footwear"
+84721,"Gloves,mittens,mitts,knitted or crocheted",3220,"Manufacture of wearing apparel, except footwear"
+84722,"Stockings,ankle-socks and the like",3220,"Manufacture of wearing apparel, except footwear"
+84821,Art.of apparel of artificial plastic materials,3220,"Manufacture of wearing apparel, except footwear"
+84822,Art.of apparel of unhardened vulcanized rubber,3220,"Manufacture of wearing apparel, except footwear"
+84831,"Articles of furskin,n.e.s.",3220,"Manufacture of wearing apparel, except footwear"
+84832,Artificial fur & articles made thereof,3220,"Manufacture of wearing apparel, except footwear"
+84841,Felt hats and other felt headgear,3220,"Manufacture of wearing apparel, except footwear"
+84842,"Hats & other headgear,plaited or made from strips",3220,"Manufacture of wearing apparel, except footwear"
+84843,"Hats & other headgear,knitted or crocheted",3220,"Manufacture of wearing apparel, except footwear"
+84848,"Head-bands,linings,covers,hat frames etc.",3220,"Manufacture of wearing apparel, except footwear"
+84849,"Other headgear,lined or trimmed",3220,"Manufacture of wearing apparel, except footwear"
+85101,"Footwear with outer soles & uppers,rubber/plastic",3560,Manufacture of plastic products not elsewhere classified
+85102,Footwear with outer soles of leather,3240,"Manufacture of footwear, except vulcanized or moulded rubber or plastic footwear"
+85103,Footwear with outer soles of wood or cork,3240,"Manufacture of footwear, except vulcanized or moulded rubber or plastic footwear"
+85104,Footwear with outer soles of other materials,3240,"Manufacture of footwear, except vulcanized or moulded rubber or plastic footwear"
+87101,"Refracting telescopes,prismatic or not",3852,Manufacture of photographic and optical goods
+87102,"Astronomical instruments,n.e.s.",3852,Manufacture of photographic and optical goods
+87103,Microscopes & diffraction apparatus,3852,Manufacture of photographic and optical goods
+87104,Compound optical microscopes,3852,Manufacture of photographic and optical goods
+87109,Optical appliances and instruments,3852,Manufacture of photographic and optical goods
+87201,Dental instruments and appliances,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87202,"Medical,surgical,veterinary instruments",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87203,"Mechano-therapy appliances,massage app.etc.",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87411,"Navigational instruments,non-electrical,compasses",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87412,"Surveying,hydrographic,meteorological instruments",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87421,"Drawing,marking-out,disc calculators and the like",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87429,"Parts,n.e.s.& accessories for the instrum.of 87421",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87451,Balances of a sensitivity of 5 cg or better,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87452,"Instruments,app.or models for demomstr. purposes",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87453,"Mach.& app.for testing hardness,strength of mat.",3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87454,Hydrometers and similar instruments,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87482,Electronic instr.for measuring ionizing radiations,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87483,Other electronic measuring instr.& apparatus,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+87489,Other electrical measuring instruments and app.,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+88111,"Photographic,cameras",3852,Manufacture of photographic and optical goods
+88112,"Photographic,flashlight apparatus",3852,Manufacture of photographic and optical goods
+88119,Parts of apparatus of 881.1-,3852,Manufacture of photographic and optical goods
+88121,"Cinematographic cameras,projectors,sound-rec,<16mm",3852,Manufacture of photographic and optical goods
+88129,Parts of apparatus of 881.2-,3852,Manufacture of photographic and optical goods
+88131,"Image projectors,photographic enlargers & reducers",3852,Manufacture of photographic and optical goods
+88139,App.& equip.of a kind used in photo-cinematogr.lab,3852,Manufacture of photographic and optical goods
+88221,"Photographic plates,sensitized,unexposed",3529,Manufacture of chemical products not elsewhere classified
+88222,"Film in rolls,sensitized,unexposed",3529,Manufacture of chemical products not elsewhere classified
+88223,"Paper,paperboard & cloth,unexposed,sensitized",3529,Manufacture of chemical products not elsewhere classified
+88225,"Plates,un-/perforated film exposed & developed",9999,Goods not elsewhere classified
+88411,"Lenses,prisms,mirrors,optical elements,unmounted",3852,Manufacture of photographic and optical goods
+88412,"Lenses,prisus,mirrors,optical elements,mounted",3852,Manufacture of photographic and optical goods
+88421,"Frames and mountings,parts for spectacles etc.",3852,Manufacture of photographic and optical goods
+88422,"Spectacles,pince-nez,lorgnettes and the like",3852,Manufacture of photographic and optical goods
+88511,"Pocket watches,wrist watches",3853,Manufacture of watches and clocks
+88512,Clocks with watch movements,3853,Manufacture of watches and clocks
+88513,"Watch movements,assembled",3853,Manufacture of watches and clocks
+88514,Watch cases and parts,3853,Manufacture of watches and clocks
+88521,"Instrument panel clocks for vehicles,aircraft etc.",3853,Manufacture of watches and clocks
+88522,"Clocks,n.e.s.",3853,Manufacture of watches and clocks
+88523,Time of day recording apparatus,3853,Manufacture of watches and clocks
+88524,Time switches with clock or watch movement,3853,Manufacture of watches and clocks
+88525,"Clock movements,assembled",3853,Manufacture of watches and clocks
+88526,Clock cases and cases of a similar type,3853,Manufacture of watches and clocks
+88529,"Clock and watch parts,n.e.s.",3853,Manufacture of watches and clocks
+89211,"Printed books,booklets,brochures,leaflets",3420,"Printing, publishing and allied industries"
+89212,Childrens picture & painting books,3420,"Printing, publishing and allied industries"
+89213,Maps and similar charts of all kinds,3420,"Printing, publishing and allied industries"
+89241,Transfers (decalcomanias),3420,"Printing, publishing and allied industries"
+89242,"Picture postcards,christmas cards,etc.",3420,"Printing, publishing and allied industries"
+89281,Paper and paperboard labels,3420,"Printing, publishing and allied industries"
+89282,"Plans and drawings,for industrial purposes",3420,"Printing, publishing and allied industries"
+89283,"Unused postage,revenue and similar stamps",3420,"Printing, publishing and allied industries"
+89284,Calendars of any kind of paper or paperboard,3420,"Printing, publishing and allied industries"
+89285,"Music,printed or in manuscript",3420,"Printing, publishing and allied industries"
+89286,"Trade advertising material,com.catalogues etc.",3420,"Printing, publishing and allied industries"
+89289,"Other printed matter,n.e.s.",3420,"Printing, publishing and allied industries"
+89391,Polyvinyl chloride in the form of plates,3560,Manufacture of plastic products not elsewhere classified
+89394,Office or school supplies of mat.of div.58,3560,Manufacture of plastic products not elsewhere classified
+89399,"Other articles,n.e.s.of mat.of div.58",3560,Manufacture of plastic products not elsewhere classified
+89421,Wheeled toys designed to be ridden,3844,Manufacture of motorcycles and bicycles
+89422,Dolls,3560,Manufacture of plastic products not elsewhere classified
+89423,"Toys,n.e.s.;working models for recreational purp.",3909,Manufacturing industries not elsewhere classified
+89424,"Equipment for parlour,table-tennis,etc. games",3909,Manufacturing industries not elsewhere classified
+89425,"Carnival articles,entertainment art. etc.",3909,Manufacturing industries not elsewhere classified
+89461,"Firearms,pistols,revolvers for blank ammunition",3829,Machinery and equipment except electrical not elsewhere classified
+89462,"Other arms,air-spring & sim. pistols,rifles",3829,Machinery and equipment except electrical not elsewhere classified
+89463,"Sporting,hunting & target-shooting ammunition",3829,Machinery and equipment except electrical not elsewhere classified
+89471,"Fish-hooks,line fishing rods and tackle etc.",3903,Manufacture of sporting and athletic goods
+89472,Appl.appa.acces.for gymnastics or for sports,3903,Manufacture of sporting and athletic goods
+89473,"Roundabouts,swings,shooting galleries etc.",3829,Machinery and equipment except electrical not elsewhere classified
+89511,"Filing cabinets,racks,sim.office equipment",3812,Manufacture of furnitures and fixtures primarily of metal
+89512,"Fittings for loose-leaf binders,clips,staples etc.",3819,Manufacture of fabricated metal products except machinery and equipement not elsewhere classified
+89521,"Fountain pens,stylograph pens and pencils",3909,Manufacturing industries not elsewhere classified
+89522,Pen nibs and nib points,3909,Manufacturing industries not elsewhere classified
+89523,"Pencils,pencil leads,slate p.,pastels,charcoals",3909,Manufacturing industries not elsewhere classified
+89591,Writing and other inks,3529,Manufacture of chemical products not elsewhere classified
+89592,"Slates & boards,with writing surfaces",3699,Manufacture of non-metallic mineral products not elsewhere classified
+89593,"Date,sealing or numbering stamps and the like",3909,Manufacturing industries not elsewhere classified
+89594,"Typewriter and sim.ribbons,ink-pads",3909,Manufacturing industries not elsewhere classified
+89601,"Paintings,drawings & pastels",9999,Goods not elsewhere classified
+89602,"Original engravings,prints and lithographs",9999,Goods not elsewhere classified
+89603,Original sculptures and statuary,9999,Goods not elsewhere classified
+89604,"Postage,revenue and sim.stamps",9999,Goods not elsewhere classified
+89605,"Collections of zoological,botanical etc.interest",9999,Goods not elsewhere classified
+89606,Antiques of an age exceeding 100 years,9999,Goods not elsewhere classified
+89731,Art.of jewellery & parts of precious metal,3901,Manufacture of jewellery and related articles
+89732,Art.of goldsmiths etc.wares and parts,3901,Manufacture of jewellery and related articles
+89733,"Art.of-or incorporating,pearls,precious stones",3901,Manufacture of jewellery and related articles
+89811,"Pianos;harpsichords,harps",3902,Manufacture of musical instruments
+89819,Other string musical instruments,3902,Manufacture of musical instruments
+89821,Pipe and reed organs,3902,Manufacture of musical instruments
+89822,"Accordions,concertinas etc.",3902,Manufacture of musical instruments
+89823,Other wind musical instruments,3902,Manufacture of musical instruments
+89824,Percussion musical instruments,3902,Manufacture of musical instruments
+89825,"Electro-magnetic,electrostatic etc,musical instr.",3902,Manufacture of musical instruments
+89829,"Musical instruments,n.e.s., fairground organs,etc",3902,Manufacture of musical instruments
+89831,Prepared media for sound or similar recording,3909,Manufacturing industries not elsewhere classified
+89832,"Gramophome records,recorded tapes etc.",3909,Manufacturing industries not elsewhere classified
+89911,"Worked tortoise-shell,ivory,bone,coral etc.art.",3909,Manufacturing industries not elsewhere classified
+89919,Worked vegetable or mineral carving material,3909,Manufacturing industries not elsewhere classified
+89931,"Candles,tapers,night-lights and the like",3529,Manufacture of chemical products not elsewhere classified
+89932,"Matches,excl. bengal matches",3529,Manufacture of chemical products not elsewhere classified
+89934,Mechanical lighters and parts,3909,Manufacturing industries not elsewhere classified
+89935,"Smoking pipes,pipe bowls,cigar holders,parts",3909,Manufacturing industries not elsewhere classified
+89939,Ferro-cerium & other pyrophoric alloys,3511,Manufacture of basic industrial chemicals except fertilizer
+89941,"Umbrellas and sunshades,walking-sticks,etc",3909,Manufacturing industries not elsewhere classified
+89942,"Walking-sticks,canes,whips etc.",3909,Manufacturing industries not elsewhere classified
+89949,"Parts,fittings,trimmings of art.of 899.41/899.42",3909,Manufacturing industries not elsewhere classified
+89961,Hearing aids,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+89962,"Orthopaedic appl.,surgical belts,art. teeth,etc",3852,Manufacture of photographic and optical goods
+89971,"Basketwork,wickerwork etc. of plaiting materials",3909,Manufacturing industries not elsewhere classified
+89972,"Brooms and brushes etc.of mat,bound together",3909,Manufacturing industries not elsewhere classified
+89981,Hand sieves and hand riddles,3851,"Manufacture of professional and scientific, and measuring and controlling equipment not elsewhere cl"
+89982,Powder puffs and pads,3909,Manufacturing industries not elsewhere classified
+89983,"Buttons and button moulds,studs,cuff-links etc.",3909,Manufacturing industries not elsewhere classified
+89984,Slide fasteners and parts,3909,Manufacturing industries not elsewhere classified
+89985,"Combs,hair-slides and the like",3909,Manufacturing industries not elsewhere classified
+89986,Scent and similar sprays for toilet purposes,3909,Manufacturing industries not elsewhere classified
+89987,Tailors dummies & lay figures for window dressing,3909,Manufacturing industries not elsewhere classified
+89991,"Articles made from gut,bladders,tendons",3903,Manufacture of sporting and athletic goods
+89992,Skins and other parts of birds,3909,Manufacturing industries not elsewhere classified
+89993,"Artificial flowers,foliage or fruit",3909,Manufacturing industries not elsewhere classified
+89994,"Human hair,dressed,thinned,wool/an.hair for wigs",3909,Manufacturing industries not elsewhere classified
+89995,"Wigs,false beards,eyebrows and the like",3909,Manufacturing industries not elsewhere classified
+89997,"Vacuum flasks and other vacuum vessels,parts",3811,"Manufacture of cutlery, hand tools and general hardware"
+89998,Parachutes and parts,3212,Manufacture of made-up textile goods except wea ing apparel
+95101,Tanks and other armoured fighting vehicles,3829,Machinery and equipment except electrical not elsewhere classified
+95102,Artillery weapons machine-guns etc.,3829,Machinery and equipment except electrical not elsewhere classified
+95104,"Side-arms and parts,scabbards and sheaths",3829,Machinery and equipment except electrical not elsewhere classified
+95105,Revolvers and pistols,3829,Machinery and equipment except electrical not elsewhere classified
+95106,"Bombs,grenades,torpedoes,mines,missiles etc.",3829,Machinery and equipment except electrical not elsewhere classified
+95109,Parts of arms,3829,Machinery and equipment except electrical not elsewhere classified
+97101,"Gold,non-monetary unwrought,semi manufactured",3720,Non-ferrous metal basic industries
+97102,Rolled gold on base metalor silver,3720,Non-ferrous metal basic industries
+97103,"Goldsmiths ,sweepings,residues,lemels etc.",3901,Manufacture of jewellery and related articles

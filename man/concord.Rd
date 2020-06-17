@@ -32,7 +32,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords different classification codes used in international trade.
 }
 \note{
-Always include leading zeros in codes (e.g. use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
 # HS to NAICS
