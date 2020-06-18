@@ -1898,6 +1898,22 @@
 #' @source \url{https://unstats.un.org/unsd/classifications/Econ/ISIC}
 "isic3_isic2"
 
+#' ISIC3-WIOT2013 Concordance
+#'
+#' A dataset containing concordances between ISIC3 and WIOT2013 industry codes.
+#'
+#' @format A data frame with 585 rows and 6 variables:
+#' \describe{
+#'   \item{ISIC3_4d}{4-digit ISIC3 Code}
+#'   \item{ISIC3_3d}{3-digit ISIC3 Code}
+#'   \item{ISIC3_2d}{2-digit ISIC3 Code}
+#'   \item{ISIC3_1d}{1-digit ISIC3 Code}
+#'   \item{WIOT2013_c}{WIOT 2013 Character Code}
+#'   \item{WIOT2013_n}{WIOT 2013 Numeric Code}
+#' }
+#' @source \url{http://www.wiod.org/release13}
+"wiod_2013"
+
 #' Sigma Table (3-Digit HS0)
 #'
 #' A dataset containing import demand elasticities by HS0 3-digit codes from Broda and Weinstein (QJE, 2006) for 73 countries.
@@ -1930,3 +1946,21 @@
 #' @references C. Broda and D. Weinstein, "Globalization and the Gains from Variety," Quarterly Journal of Economics, Volume 121, Issue 2 - May 2006.
 #' @source \url{http://www.columbia.edu/~dew35/TradeElasticities/TradeElasticities.html}
 "sigma_sitc3"
+
+#' Upstreamness and Downstreamness Table
+#'
+#' A dataset containing upstreamness and downstreamness estimates for 41 countries, 35 industries, and 17 years from Antras and Chor (2018).
+#'
+#' @format A data frame with 24,395 rows and 7 variables:
+#' \describe{
+#'   \item{YEAR}{Year}
+#'   \item{ISO3C}{ISO 3-letter Country Code}
+#'   \item{WIOT2013_n}{WIOT 2013 Industry Code}
+#'   \item{GVC_Ui}{Upstreamness (net inventories correction)}
+#'   \item{GVC_FUGOi}{Final-use to gross-output (net inventories correction)}
+#'   \item{GVC_Di}{Downstreamness (net inventories correction)}
+#'   \item{GVC_VAGOi}{Value-added to gross-output (net inventories correction)}
+#' }
+#' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+#' @source \url{https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains}
+"upstream"
