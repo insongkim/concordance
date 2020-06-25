@@ -34,7 +34,7 @@ Returns Antras and Chor (2018)'s measures of industry upstreamness and downstrea
 }
 \examples{
 # ISIC3
-get_upstream(sourcevar = c("01", "29", "29", "54", "80"), origin = "ISIC3",
+get_upstream(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
              country = "USA", year = "2011",
              setting = "GVC_Ui")
 

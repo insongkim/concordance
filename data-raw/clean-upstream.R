@@ -113,7 +113,8 @@ upstream <- upstream %>%
   rename(YEAR = year,
          ISO3C = cty_name,
          WIOT2013_n = ind_num) %>%
-  mutate(YEAR = as.character(YEAR))
+  mutate(YEAR = as.character(YEAR),
+         ISO3C = toupper(ISO3C))
 
 # save
 save(upstream,
