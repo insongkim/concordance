@@ -18,9 +18,12 @@ Description: A set of utilities for matching products in different
 	     2012, 2017, combined), as well as the Broad Economic Categories (BEC), 
 	     the International Standard of Industrial Classification (ISIC2, ISIC3, 
 	     ISIC3.1, ISIC4), and the Standard Industrial Classification (SIC). It 
-	     also provides code nomenclature/descriptions look-up, Rauch 
-	     classification look-up (via concordance to SITC2), and trade elasticity 
-	     look-up (via concordance to HS0 or SITC3 codes).
+	     also provides code nomenclature/descriptions look-up, product code 
+	     look-up based on user-specified keywords, Rauch classification look-up 
+	     (via concordance to SITC2), trade elasticity look-up (via concordance 
+	     to HS0 or SITC3 codes), upstreamness/downstreamness look-up (via 
+	     concordance to ISIC3 codes), and intermediateness look-up (via product 
+	     descriptions).
 License: GPL-2
 Depends: R (>= 3.6.0)
 Imports: 

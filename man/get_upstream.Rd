@@ -20,10 +20,10 @@ get_upstream(sourcevar, origin, country, year, setting = "GVC_Ui")
 
 \item{setting}{Choose one of the four available measures from Antras and Chor (2018).
 \itemize{
-  \item{"GVC_Ui": Upstreamness (net inventories correction). This is the defult measure.}
-  \item{"GVC_FUGOi": Final-use to gross-output (net inventories correction).}
-  \item{"GVC_Di": Downstreamness (net inventories correction).}
-  \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction).}
+  \item{"GVC_Ui": Upstreamness (net inventories correction). This is the defult measure. Larger values are associated with higher levels of upstreamness.}
+  \item{"GVC_FUGOi": Final-use to gross-output (net inventories correction). Lower values are associated with higher levels of upstreamness.}
+  \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
+  \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 }}
 }
 \value{

@@ -8,10 +8,10 @@
 #' @param year An input integer vector setting the year for which to return values. Antras and Chor (2018) provide estimates for 1995-2011. The default returns estimates for 2011.
 #' @param setting Choose one of the four available measures from Antras and Chor (2018).
 #' \itemize{
-#'   \item{"GVC_Ui": Upstreamness (net inventories correction). This is the defult measure.}
-#'   \item{"GVC_FUGOi": Final-use to gross-output (net inventories correction).}
-#'   \item{"GVC_Di": Downstreamness (net inventories correction).}
-#'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction).}
+#'   \item{"GVC_Ui": Upstreamness (net inventories correction). This is the defult measure. Larger values are associated with higher levels of upstreamness.}
+#'   \item{"GVC_FUGOi": Final-use to gross-output (net inventories correction). Lower values are associated with higher levels of upstreamness.}
+#'   \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
+#'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 #' }
 #' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
 #' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
