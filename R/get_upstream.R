@@ -5,7 +5,7 @@
 #' @param sourcevar An input character vector of industry codes to look up.
 #' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008).
 #' @param country A string setting the ISO 3-letter country code for which to return values (default = "USA"). Antras and Chor (2018) provide estimates for 40 countries and the Rest of the World (RoW). For a list of available countries, load the package and type "unique(upstream$ISO3C)".
-#' @param year An input integer vector setting the year for which to return values. Antras and Chor (2018) provide estimates for 1995-2011. The default returns estimates for 2011.
+#' @param year An integer setting the year for which to return values. Antras and Chor (2018) provide estimates for 1995-2011. The default returns estimates for 2011.
 #' @param setting Choose one of the four available measures from Antras and Chor (2018).
 #' \itemize{
 #'   \item{"GVC_Ui": Upstreamness (net inventories correction). This is the defult measure. Larger values are associated with higher levels of upstreamness.}

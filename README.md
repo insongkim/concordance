@@ -22,20 +22,31 @@ concordance between the classifications below:
   * "SITC3" (1985) 
   * "SITC4" (2006)
 - North American Industry Classification System
+  * "NAICS2002"
+  * "NAICS2007" 
+  * "NAICS2012" 
+  * "NAICS2017"
   * "NAICS" (combined)
+- International Standard Industrial Classification
+  * "ISIC2" (1968)
+  * "ISIC3" (1989)
+  * "ISIC3.1" (2002)
+  * "ISIC4" (2008)
 
 Support between the above and the below classifications will be offered 
 soon:
 
 - Broad Economic Categories (BEC)
-- International Standard of Industrial Classification (ISIC)
 - Standard Industrial Classification (SIC)
 
 Additionally, the package provides functions for: 
 
-- Code nomenclature / descriptions look-up (for HS, SITC, NAICS, BEC, ISIC classification codes)
+- Code nomenclature/descriptions look-up (for HS, SITC, NAICS, ISIC, BEC classification codes)
+- Product code look-up based on user-specified keywords
 - Rauch classification (product differentiation) look-up (via concordance to SITC2)
 - Trade elasticity look-up (via concordance to HS0 or SITC3 codes)
+- Industry upstreamness/downstreamness look-up (via concordance to ISIC3 codes)
+- Industry intermediateness look-up (via product descriptions)
 
 
 Installation Instructions
@@ -86,8 +97,8 @@ Usage Examples
 -------------------------
 
 ### Getting Product Description
-Users can look up the product description of different classification 
-codes using the `get_desc` function. The example below focuses on HS codes.
+The `get_desc` function allows users to look up the product description of 
+different classification codes. The example below focuses on HS codes.
 
 ```r
 # load package
@@ -105,7 +116,6 @@ are supported. Note that users should always include leading zeroes in
 the codes (e.g. use HS code 010110 instead of 10110) -- results may be buggy otherwise.
 
 ```r
-# get product description
 get_desc(sourcevar = c("1206", "8546"), origin = "HS5")
 ```
 ```
@@ -113,7 +123,6 @@ get_desc(sourcevar = c("1206", "8546"), origin = "HS5")
 ```
 
 ```r
-# get product description
 get_desc(sourcevar = c("12", "85"), origin = "HS5")
 ```
 ```
@@ -121,10 +130,51 @@ get_desc(sourcevar = c("12", "85"), origin = "HS5")
 [2] "Electrical machinery and equipment and parts thereof; sound recorders and reproducers; television image and sound recorders and reproducers, parts and accessories of such articles"
 ```
 
-### Concording Different Classification Codes
+### Getting Product Codes By Keywords
+The `get_product` function allows users to look up product codes for which 
+descriptions match user-specified keywords. 
 
-Users can concord between different classification codes using the `concord` 
-function. The example below converts HS5 to NAICS codes. 
+The function utilizes the function stringr::str_detect for pattern detection. 
+The argument ``pattern`` takes specific string patterns to search for,
+``origin`` indicates the classification system of focus, ``digits`` sets the 
+number of digits of the output codes, ``type`` sets the type of pattern 
+interpretation (e.g., "regex", "fixed", "coll", see ``?str_detect`` for further 
+details), and ``ignore.case`` decides whether to ignore case differences (TRUE 
+by default). The example below returns manufacture-related NAICS codes.
+
+```r
+manu.vec <- get_product(pattern = "manu", origin = "NAICS2017", digits = 4,
+                        type = "regex", ignore.case = TRUE)
+manu.vec
+```
+```
+[1] "3111" "3113" "3114" "3115" "3118" "3119" "3121" "3122" "3152" "3159" "3162" "3169" "3212" "3219" "3222" "3241" "3251" "3252" "3253" "3254" "3255" "3256" "3259"
+[24] "3261" "3262" "3271" "3272" "3273" "3274" "3279" "3311" "3312" "3322" "3323" "3324" "3325" "3326" "3327" "3329" "3331" "3332" "3333" "3334" "3335" "3336" "3339"
+[47] "3341" "3342" "3343" "3344" "3345" "3346" "3351" "3352" "3353" "3359" "3361" "3362" "3363" "3364" "3365" "3369" "3371" "3372" "3379" "3391" "3399"
+```
+
+Users can double-check the product descriptions with ``get_desc``.
+
+```r
+get_desc(manu.vec, origin = "NAICS2017")
+```
+```
+[1] "Animal Food Manufacturing"                                                                   
+[2] "Sugar and Confectionery Product Manufacturing"                                               
+[3] "Fruit and Vegetable Preserving and Specialty Food Manufacturing"                             
+[4] "Dairy Product Manufacturing"                                                                 
+[5] "Bakeries and Tortilla Manufacturing"                                                         
+[6] "Other Food Manufacturing"                                                                    
+[7] "Beverage Manufacturing"                                                                      
+[8] "Tobacco Manufacturing"                                                                       
+[9] "Cut and Sew Apparel Manufacturing"                                                           
+[10] "Apparel Accessories and Other Apparel Manufacturing"
+...
+```
+
+### Concording Different Classification Codes
+The `concord` function allows users to concord between different classification 
+codes. The example below converts HS5 to NAICS2017 codes. 
 
 Users can choose to retain all matches for each input by setting `all = TRUE`. 
 This option will also return the share of occurrences for each matched output 
@@ -133,7 +183,7 @@ among all matched outputs at the user-specified digit level.
 ```r
 # HS to NAICS
 concord(sourcevar = c("120600", "854690"),
-        origin = "HS5", destination = "NAICS",
+        origin = "HS5", destination = "NAICS2017",
         dest.digit = 6, all = TRUE)
 ```
 ```
@@ -159,7 +209,7 @@ mode consists of multiple matches, the function will return the first matched ou
 
 ```r
 concord(sourcevar = c("120600", "854690"),
-        origin = "HS5", destination = "NAICS",
+        origin = "HS5", destination = "NAICS2017",
         dest.digit = 6, all = FALSE)
 ```
 ```
@@ -351,8 +401,70 @@ get_sigma(sourcevar = c("120600", "854690"), origin = "HS5",
 [1] 2.562991 1.345522
 ```
 
+### Getting Industry Upstreamness/Downstreamness
+Antras and Chor (2018) estimate industry-level upstreamness/downstreamness for 
+2-digit ISIC3 codes in 40 countries (+ Rest of 
+the World, RoW) between 1995 and 2011. 
+
+The `get_upstream` function concords users' input codes to 2-digit ISIC3 codes 
+and then extracts the corresponding industry-level upstreamness/downstreamness 
+in the country and year selected by the user. 
+
+The argument ``sourcevar`` sets the industry codes to look up, ``origin`` 
+indicates the classification system of the input codes, ``country`` 
+takes ISO 3-letter codes, ``year`` takes an integer between 1995 and 2011, 
+and ``setting`` accepts one of the four available measures as defined in 
+Antras and Chor (2018):
+
+- `"GVC_Ui"`: Upstreamness (net inventories correction). This is the defult measure. Larger values are associated with higher levels of upstreamness.
+- `"GVC_FUGOi"`: Final-use to gross-output (net inventories correction). Lower values are associated with higher levels of upstreamness.
+- `"GVC_Di"`: Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.
+- `"GVC_VAGOi"`: Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamnes
+
+The example below returns the upstreamness ("GVC_Ui") of HS5 industries in 
+the United States in 2011.
+
+```r
+get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
+             country = "USA", year = "2011",
+             setting = "GVC_Ui")
+```
+```
+[1] 2.595109 2.595109 2.563818 1.795285
+```
+
+### Getting Industry Intermediateness
+The `get_intermediate` function calculates and returns the proportion
+of intermediate goods production in an industry based on product descriptions. 
+
+The function uses keywords ("part(s)", "intermediate", and "component") to 
+identify intermediate-goods producing industries (at the most disaggregated 
+level in the description data), and then calculates and returns the proportion 
+these industries occupy among each input code. Larger values indicate higher 
+levels of intermediateness in an industry.
+
+For example, users can get the level/proportion of intermediate goods 
+production in the 4-digit NAICS2017 industries below.
+```r
+get_intermediate(sourcevar = c("3131", "3363"), origin = "NAICS2017")
+```
+```
+[1] 0.0 0.5
+```
+
+Or the level/proportion of intermediate goods 
+production in the 2-digit HS5 industries below.
+```r
+get_intermediate(sourcevar = c("03", "84"), origin = "HS5")
+```
+```
+[1] 0.0000000 0.1937984
+```
+
 References
 -------------------------
 
+- Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
 - Broda, Christian, and David E. Weinstein. 2006. "Globalization and the Gains from Variety," Quarterly Journal of Economics, 121(2): 541--585.
 - Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.
+
