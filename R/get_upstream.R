@@ -135,9 +135,19 @@ get_upstream <- function (sourcevar,
   if (!all(sourcevar.post %in% all.origin.codes)){
 
     no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-    no.code <- paste0(no.code, collapse = ", ")
 
-    warning(paste("Matches for ", str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
+    # do nothing when all missing matches are NAs
+    if (all(is.na(no.code))){
+
+    # produce warning message for non-NA matched 2-digit ISIC3 codes that have no corresponding WIOT code (should not happen but flag just in case)
+    } else {
+
+      no.code <- no.code[!is.na(no.code)]
+      no.code <- paste0(no.code, collapse = ", ")
+
+      warning(paste("Matches for 2-digit ISIC3 code(s): ", no.code, " not found and returned NA. Please double check input codes and their concordance with 2-digit ISIC3 codes.\n", sep = ""))
+
+    }
 
   }
 

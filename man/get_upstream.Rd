@@ -16,7 +16,7 @@ get_upstream(sourcevar, origin, country, year, setting = "GVC_Ui")
 
 \item{country}{A string setting the ISO 3-letter country code for which to return values (default = "USA"). Antras and Chor (2018) provide estimates for 40 countries and the Rest of the World (RoW). For a list of available countries, load the package and type "unique(upstream$ISO3C)".}
 
-\item{year}{An input integer vector setting the year for which to return values. Antras and Chor (2018) provide estimates for 1995-2011. The default returns estimates for 2011.}
+\item{year}{An integer setting the year for which to return values. Antras and Chor (2018) provide estimates for 1995-2011. The default returns estimates for 2011.}
 
 \item{setting}{Choose one of the four available measures from Antras and Chor (2018).
 \itemize{
