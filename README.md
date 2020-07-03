@@ -77,7 +77,7 @@ Citation
 To cite `concordance` in publications use:
 
 ```
-  Steven Liao, In Song Kim, Sayumi Miyano, Feng Zhu (2020). concordance: Product Concordance. 
+  Steven Liao, In Song Kim, Sayumi Miyano, Hao Zhang (2020). concordance: Product Concordance. 
   R package version 2.0.0. https://CRAN.R-project.org/package=concordance
 ```
   
@@ -86,7 +86,7 @@ A BibTeX entry for LaTeX users is:
 ```
   @Manual{,
     title = {concordance: Product Concordance},
-    author = {Steven Liao and In Song Kim and Sayumi Miyano and Feng Zhu},
+    author = {Steven Liao and In Song Kim and Sayumi Miyano and Hao Zhang},
     year = {2020},
     note = {R package version 2.0.0},
     url = {https://CRAN.R-project.org/package=concordance},
