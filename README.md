@@ -2,7 +2,7 @@
 [![R build
 status](https://github.com/r-lib/usethis/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/usethis/actions) [![Build Status](https://travis-ci.org/insongkim/concordance.svg?branch=master)](https://travis-ci.org/insongkim/concordance) ![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/concordance)  [![CRAN status](https://www.r-pkg.org/badges/version/concordance)](https://CRAN.R-project.org/package=concordance)
 
-Authors: Steven Liao (steven.liao@ucr.edu), In Song Kim (insong@mit.edu), Sayumi Miyano (smiyano@princeton.edu), Feng Zhu (zucxjo@gmail.com)
+Authors: Steven Liao (steven.liao@ucr.edu), In Song Kim (insong@mit.edu), Sayumi Miyano (smiyano@princeton.edu), Hao Zhang (hzhang3@mit.edu)
 
 This R package provides a set of utilities for matching products in different 
 classification codes used in international trade research. It currently supports 
