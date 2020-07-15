@@ -447,7 +447,6 @@ concord_sitc_naics <- function (sourcevar,
 
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
-  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA.")}
 
   # check whether input codes have the same digits
   # NAICS code has some unusual 2-digit codes, exclude them when counting digits
@@ -461,8 +460,11 @@ concord_sitc_naics <- function (sourcevar,
 
   }
 
+  # get the number of unique digits, excluding NAs
   digits <- unique(nchar(sourcevar.sub))
+  digits <- digits[!is.na(digits)]
 
+  # check whether input codes have the same digits
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits for inputs and outputs
@@ -524,6 +526,8 @@ concord_sitc_naics <- function (sourcevar,
   dest.var <- dest.var %>%
     rename(!!origin := 1,
            !!destination := 2) %>%
+    # if input is NA then match should be NA
+    mutate(!!as.name(destination) := if_else(is.na(!!as.name(origin)), NA_character_, !!as.name(destination))) %>%
     group_by(!!as.name(origin), !!as.name(destination)) %>%
     mutate(n = length(!!as.name(destination)),
            n = ifelse(is.na(!!as.name(destination)), NA, n)) %>%

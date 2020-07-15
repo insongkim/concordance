@@ -55,7 +55,9 @@ get_proddiff <- function (sourcevar,
 
     if(origin == "SITC2") {
 
+        # get the number of unique digits, excluding NAs
         digits <- unique(nchar(sourcevar))
+        digits <- digits[!is.na(digits)]
 
         if (digits > 4) {
 
@@ -119,7 +121,8 @@ get_proddiff <- function (sourcevar,
 
         freq.c <- freq.r %>%
             mutate(tot = sum(.data$freq),
-                   proportion = .data$freq/.data$tot) %>%
+                   proportion = .data$freq/.data$tot,
+                   proportion = if_else(is.nan(.data$proportion), NA_real_, .data$proportion)) %>%
             select(.data$rauch, .data$freq, .data$proportion)
 
         freq.c <- as.data.frame(freq.c)
@@ -129,6 +132,9 @@ get_proddiff <- function (sourcevar,
 
     # set list names to input vector
     names(rauch.freq) <- sourcevar
+
+    # force NA to string so that map_df can run without error
+    names(rauch.freq) <- if_else(is.na(names(rauch.freq)), "NA", names(rauch.freq))
 
     # if prop is specified, calculate relevant proportions, otherwise return full list
     if (tolower(prop) %in% rauch.types) {
@@ -142,6 +148,9 @@ get_proddiff <- function (sourcevar,
         })
 
         out <- unlist(out)
+
+        # convert NaNs to NAs
+        out[is.nan(out)] <- NA
 
     } else {
 

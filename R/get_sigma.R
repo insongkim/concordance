@@ -34,6 +34,10 @@ get_sigma <- function (sourcevar,
                        use_SITC = FALSE,
                        give_avg = TRUE) {
 
+  # sanity check
+  if (length(sourcevar) == 0) {return(character(0))}
+  if (any(is.na(sourcevar)) == TRUE) {stop("'sourcevar' has codes with NA. Please remove NAs.")}
+
   # check whether input codes have the same digits
   # NAICS code has some unusual 2-digit codes, exclude them when counting digits
   exempt.naics <- c("31-33", "44-45", "48-49")

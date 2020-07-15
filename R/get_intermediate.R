@@ -126,8 +126,11 @@ get_intermediate <- function (sourcevar,
 
   }
 
+  # get the number of unique digits, excluding NAs
   digits <- unique(nchar(sourcevar.sub))
+  digits <- digits[!is.na(digits)]
 
+  # check whether input codes have the same digits
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
 
   # set acceptable digits
