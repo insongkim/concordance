@@ -71,6 +71,8 @@ library(devtools)
 install_github("insongkim/concordance", dependencies=TRUE)
 ```
 
+If `concordance` was previously installed, please uninstall the package, restart R, and then reinstall the developer version following instructions above.
+
 Citation
 -------------------------
 
@@ -130,7 +132,7 @@ get_desc(sourcevar = c("12", "85"), origin = "HS5")
 [2] "Electrical machinery and equipment and parts thereof; sound recorders and reproducers; television image and sound recorders and reproducers, parts and accessories of such articles"
 ```
 
-### Getting Product Codes By Keywords
+### Getting Product Codes By Keywords (developer version only)
 The `get_product` function allows users to look up product codes for which 
 descriptions match user-specified keywords. 
 
@@ -401,7 +403,7 @@ get_sigma(sourcevar = c("120600", "854690"), origin = "HS5",
 [1] 2.562991 1.345522
 ```
 
-### Getting Industry Upstreamness/Downstreamness
+### Getting Industry Upstreamness/Downstreamness (developer version only)
 Antras and Chor (2018) estimate industry-level upstreamness/downstreamness for 
 2-digit ISIC3 codes in 40 countries (+ Rest of 
 the World, RoW) between 1995 and 2011. 
@@ -433,7 +435,7 @@ get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
 [1] 2.595109 2.595109 2.563818 1.795285
 ```
 
-### Getting Industry Intermediateness
+### Getting Industry Intermediateness (developer version only)
 The `get_intermediate` function calculates and returns the proportion
 of intermediate goods production in an industry based on product descriptions. 
 
