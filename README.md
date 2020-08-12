@@ -404,9 +404,9 @@ get_sigma(sourcevar = c("120600", "854690"), origin = "HS5",
 ```
 
 ### Getting Industry Upstreamness/Downstreamness (developer version only)
-Antras and Chor (2018) estimate industry-level upstreamness/downstreamness for 
-2-digit ISIC3 codes in 40 countries (+ Rest of 
-the World, RoW) between 1995 and 2011. 
+Building on Antras, Chor, Fally, Hillberry (2012), Antras and Chor (2018) 
+estimate industry-level upstreamness/downstreamness for 2-digit ISIC3 codes 
+in 40 countries (+ Rest of the World, RoW) between 1995 and 2011.
 
 The `get_upstream` function concords users' input codes to 2-digit ISIC3 codes 
 and then extracts the corresponding industry-level upstreamness/downstreamness 
@@ -466,6 +466,7 @@ get_intermediate(sourcevar = c("03", "84"), origin = "HS5")
 References
 -------------------------
 
+- Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows". American Economic Review Papers and Proceedings, May 2012, 102(3): 412-416.
 - Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
 - Broda, Christian, and David E. Weinstein. 2006. "Globalization and the Gains from Variety," Quarterly Journal of Economics, 121(2): 541--585.
 - Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.

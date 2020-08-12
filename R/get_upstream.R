@@ -1,6 +1,6 @@
 #' Looking Up the Upstreamness and Downstreamness of Industries
 #'
-#' Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness.
+#' Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness, which builds on Antras, Chor, Fally, Hillberry (2012).
 #'
 #' @param sourcevar An input character vector of industry codes to look up.
 #' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008).
@@ -15,7 +15,11 @@
 #' }
 #' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
 #' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
-#' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+#' @references
+#' \itemize{
+#' \item Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows". American Economic Review Papers and Proceedings, May 2012, 102(3): 412-416.
+#' \item Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+#' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export

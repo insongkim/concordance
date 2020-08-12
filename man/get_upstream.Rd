@@ -30,7 +30,7 @@ get_upstream(sourcevar, origin, country, year, setting = "GVC_Ui")
 Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
 }
 \description{
-Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness.
+Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness, which builds on Antras, Chor, Fally, Hillberry (2012).
 }
 \examples{
 # ISIC3
@@ -44,5 +44,8 @@ get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
              setting = "GVC_Ui")
 }
 \references{
-Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+\itemize{
+\item Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows". American Economic Review Papers and Proceedings, May 2012, 102(3): 412-416.
+\item Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+}
 }
