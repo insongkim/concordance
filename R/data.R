@@ -257,6 +257,30 @@
 #' @source \url{https://comtrade.un.org/data/cache/classificationBEC.json}
 "bec_desc"
 
+#' BEA Description for year 2002
+#'
+#' A dataset containing the description of products under the BEA industry classification in 2002
+#'
+#' @format A data frame with 430 rows and 2 variables:
+#' \describe{
+#'   \item{code}{BEA Code}
+#'   \item{desc}{BEA Description}
+#' }
+#' @source \url{https://www.bea.gov/industry/benchmark-input-output-data}
+"bea2002_desc"
+
+#' BEA Description for year 2012
+#'
+#' A dataset containing the description of products under the BEA industry classification in 2007 and 2012
+#'
+#' @format A data frame with 409 rows and 2 variables:
+#' \describe{
+#'   \item{code}{BEA Code}
+#'   \item{desc}{BEA Description}
+#' }
+#' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
+"bea2012_desc"
+
 #' HS0-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC1 classification.
@@ -1914,6 +1938,48 @@
 #' @source \url{http://www.wiod.org/release13}
 "wiod_2013"
 
+#' BEA2002-NAICS2002 Concordance
+#'
+#' A dataset containing concordances between BEA2002 and NAICS2002 classification.
+#'
+#' @format A data frame with 1,335 rows and 4 variables:
+#' \describe{
+#'   \item{BEA2002}{6-digit BEA2002 Code}
+#'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
+#' }
+#' @source \url{https://www.bea.gov/industry/benchmark-input-output-data}
+"bea2002_naics2002"
+
+#' BEA2007-NAICS2007 Concordance
+#'
+#' A dataset containing concordances between BEA2007 and NAICS2007 classification.
+#'
+#' @format A data frame with 1,376 rows and 4 variables:
+#' \describe{
+#'   \item{BEA2007}{6-digit BEA2007 Code}
+#'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
+#' }
+#' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
+"bea2007_naics2007"
+
+#' BEA2012-NAICS2012 Concordance
+#'
+#' A dataset containing concordances between BEA2012 and NAICS2012 classification.
+#'
+#' @format A data frame with 1,376 rows and 4 variables:
+#' \describe{
+#'   \item{BEA2012}{6-digit BEA2012 Code}
+#'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
+#' }
+#' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
+"bea2012_naics2012"
+
 #' Sigma Table (3-Digit HS0)
 #'
 #' A dataset containing import demand elasticities by HS0 3-digit codes from Broda and Weinstein (QJE, 2006) for 73 countries.
@@ -1964,3 +2030,18 @@
 #' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
 #' @source \url{https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains}
 "upstream"
+
+#' US Detaled Upstreamness Table
+#'
+#' A dataset containing upstreamness estimates for 426 industries in 2002 and 405 industries in 2007 and 2012 based on Antras and Chor (2012).
+#'
+#' @format A data frame with 1,236 rows and 4 variables:
+#' \describe{
+#'   \item{YEAR}{Year}
+#'   \item{CODE}{BEA Industry Code}
+#'   \item{GVC_Ui}{Upstreamness (net inventories correction)}
+#'   \item{BEA_CLASS}{Year of BEA Industry Code}
+#' }
+#' @references Antras, Pol, and Davin Chor. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review: Papers and Proceedings, Volume 102, Issue 3: 412-416.
+#' @source \url{https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows}
+"upstream_us_detailed"

@@ -124,4 +124,3 @@ colnames(upstream_us_detailed)[c(1,2)] <- c("CODE", "GVC_Ui")
 # save
 save(upstream_us_detailed,
      file = "./data/upstream_us_detailed.RData", compress = "xz")
-
