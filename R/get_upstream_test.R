@@ -14,6 +14,10 @@
 #'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 #' }
 #' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras and Chor (2012).
+#' \itemize{
+#'   \item{"FALSE": Do not report detailed measures. This is the default.}
+#'   \item{"TRUE": Report the detailed measures.}
+#' }
 #' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
 #' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
 #' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
@@ -35,9 +39,9 @@ get_upstream <- function (sourcevar,
                           origin,
                           country,
                           year,
-                          setting = "GVC_Ui"
+                          setting = "GVC_Ui",
                           detailed = FALSE) {
-
+  
   # load data
   upstream <- concordance::upstream
   wiod <- concordance::wiod_2013
@@ -108,143 +112,140 @@ get_upstream <- function (sourcevar,
       filter(.data$YEAR == year) %>%
       filter(.data$ISO3C %in% country) %>%
       select(.data$YEAR, .data$ISO3C, .data$WIOT2013_n, !!as.name(setting))
-    
+
     # check years
     if (!(year %in% as.character(seq(1995, 2011, by = 1)))) {stop("The input 'year' is not supported. Please ensure that the 'year' is between 1995 and 2011.")}
-    
+
     # get WIOD industry code
     if(origin == "ISIC3" & digits == 2) {
-      
+
       sourcevar.post <- sourcevar
-      
+
     } else if(origin == "ISIC3" & digits > 2) {
-      
+
       sourcevar.post <- str_sub(sourcevar, 1, 2)
-      
+
     } else if(origin == "ISIC3" & digits < 2) {
-      
+
       stop("Please input at least two digits for ISIC3 codes.")
-      
+
     } else {
-      
+
       # concord to 2-digit ISIC3
       sourcevar.post <- concord(sourcevar, origin, "ISIC3", dest.digit = 2, all = FALSE)
-      
+
     }
-    
+
     # check if concordance is available
     all.origin.codes <- wiod$ISIC3_2d
-    
+
     if (!all(sourcevar.post %in% all.origin.codes)){
-      
+
       no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-      
+
       # do nothing when all missing matches are NAs
       if (all(is.na(no.code))){
-        
+
         # produce warning message for non-NA matched 2-digit ISIC3 codes that have no corresponding WIOT code (should not happen but flag just in case)
       } else {
-        
+
         no.code <- no.code[!is.na(no.code)]
         no.code <- paste0(no.code, collapse = ", ")
-        
+
         warning(paste("Matches for 2-digit ISIC3 code(s): ", no.code, " not found and returned NA. Please double check input codes and their concordance with 2-digit ISIC3 codes.\n", sep = ""))
-        
+
       }
-      
+
     }
-    
+
     # concord 2-digit ISIC3 codes to WIOT2013 numeric codes
     matches.1 <- match(sourcevar.post, all.origin.codes)
     wiot.vec <- wiod[matches.1, "WIOT2013_n"]$WIOT2013_n
-    
+
     # extract estimates
     matches.2 <- match(wiot.vec, upstream.sub$WIOT2013_n)
     out <- upstream.sub[matches.2, ] %>%
       pull(!!as.name(setting))
-    
+
     # remove attributes
     attributes(out) <- NULL
-  
+
   }else{
-    
+
     # check years
     if (!(year %in% as.character(seq(2002, 2012, by = 5)))) {stop("The input 'year' is not supported by detailed measurements. Please ensure that the 'year' is either 2002, 2007, or 2012.")}
-    
+
     # recheck country
     if (!(country %in% "USA")) {stop("Note that the detailed measures only exist for USA")}
-    
+
     # recheck measurement
     if (setting != "GVC_Ui") {stop("Note that the detailed measures only exist for GVC_Ui")}
-    
+
     # load detailed data - need to fix loading path
-    load("~/GitHub/concordance/data/upstream_us_detailed.RData")
+    upstream_us_detailed <- concordance::upstream_us_detailed
     upstream_us_detailed <- upstream_us_detailed %>% filter(YEAR == year)
-    
+
     if (year == "2002"){
-      load("~/GitHub/concordance/data/bea2002_naics2002.RData")
-      bea_naics <- bea2002_naics2002
+      bea_naics <- concordance::bea2002_naics2002
       colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
       class <- "NAICS2002"
     }else if (year == "2007"){
-      bea_naics <- load("~/GitHub/concordance/data/bea2007_naics2007.RData")
-      bea_naics <- bea2007_naics2007
+      bea_naics <- concordance::bea2007_naics2007
       colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
       class <- "NAICS2007"
     }else{
-      bea_naics <- load("~/GitHub/concordance/data/bea2012_naics2012.RData")
-      bea_naics <- bea2012_naics2012
+      bea_naics <- concordance::bea2012_naics2012
       colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
       class <- "NAICS2012"
     }
-    
+
     # get NAICS industry code
     if (substr(origin, 1, 5) == "NAICS") {
       sourcevar.post <- sourcevar
     }else{
       sourcevar.post <- concord(sourcevar, origin, class, dest.digit = digits, all = FALSE)
     }
-    
+
     # check if concordance is available
     if (digits == 2){
-     all.origin.codes <- bea_naics$NAICS_2d 
+     all.origin.codes <- bea_naics$NAICS_2d
     }else if (digits == 4) {
       all.origin.codes <- bea_naics$NAICS_4d
     }else {
       all.origin.codes <- bea_naics$NAICS_6d
     }
-    
+
     if (!all(sourcevar.post %in% all.origin.codes)){
-      
+
       no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-      
+
       # do nothing when all missing matches are NAs
       if (all(is.na(no.code))){
-        
+
       } else {
-        
+
         no.code <- no.code[!is.na(no.code)]
         no.code <- paste0(no.code, collapse = ", ")
-        
+
         warning(paste("Matches for NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
-        
+
       }
-      
+
     }
-    
+
     # concord NAICS codes to BEA industry codes
     matches.1 <- match(sourcevar.post, all.origin.codes)
     bea.vec <- bea_naics[matches.1, "BEA"]$BEA
-    
+
     # extract estimates
     matches.2 <- match(bea.vec, upstream_us_detailed$CODE)
-    out <- upstream_us_detailed[matches.2, "GVC_Ui"] 
+    out <- upstream_us_detailed[matches.2, "GVC_Ui"]
     # %>%  pull(!!as.name(setting))
-    
+
     # remove attributes
     attributes(out) <- NULL
   }
 
   return(out)
-  
+
 }
