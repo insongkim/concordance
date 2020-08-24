@@ -24,12 +24,13 @@
 #' # ISIC3
 #' get_upstream(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
 #'              country = "USA", year = "2011",
-#'              setting = "GVC_Ui")
+#'              setting = "GVC_Ui", detailed = FALSE)
 #'
 #' # HS5
 #' get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
-#'              country = "USA", year = "2011",
-#'              setting = "GVC_Ui")
+#'              country = "USA", year = "2012",
+#'              setting = "GVC_Ui", detailed = TRUE)
+
 get_upstream <- function (sourcevar,
                           origin,
                           country,
@@ -51,9 +52,6 @@ get_upstream <- function (sourcevar,
 
   # convert year to numeric to be safe
   year <- as.character(year)
-
-  # check years
-  if (!(year %in% as.character(seq(1995, 2012, by = 1)))) {stop("The input 'year' is not supported. Please ensure that the 'year' is between 1995 and 2012.")}
 
   # check country
   if (!(country %in% unique(upstream$ISO3C))) {stop("The input 'country' is not supported. Please ensure that the 'country' is available in Antras and Chor (2018) and the ISO 3-letter country code is correct.")}
@@ -111,7 +109,7 @@ get_upstream <- function (sourcevar,
       filter(.data$ISO3C %in% country) %>%
       select(.data$YEAR, .data$ISO3C, .data$WIOT2013_n, !!as.name(setting))
     
-    # recheck years
+    # check years
     if (!(year %in% as.character(seq(1995, 2011, by = 1)))) {stop("The input 'year' is not supported. Please ensure that the 'year' is between 1995 and 2011.")}
     
     # get WIOD industry code
@@ -170,7 +168,7 @@ get_upstream <- function (sourcevar,
   
   }else{
     
-    # recheck years
+    # check years
     if (!(year %in% as.character(seq(2002, 2012, by = 5)))) {stop("The input 'year' is not supported by detailed measurements. Please ensure that the 'year' is either 2002, 2007, or 2012.")}
     
     # recheck country
@@ -200,7 +198,7 @@ get_upstream <- function (sourcevar,
       class <- "NAICS2012"
     }
     
-    # get BEA industry code
+    # get NAICS industry code
     if (substr(origin, 1, 5) == "NAICS") {
       sourcevar.post <- sourcevar
     }else{
@@ -248,5 +246,5 @@ get_upstream <- function (sourcevar,
   }
 
   return(out)
-
+  
 }
