@@ -199,9 +199,9 @@ get_desc <- function (sourcevar,
 
   } else if (str_detect(origin, "NAICS")) {
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- c(2, 3, 4, 6)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 3, 4, 6-digit inputs for NAICS codes.")}
 
   } else if (str_detect(origin, "SITC")) {
 
