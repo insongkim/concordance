@@ -13,7 +13,7 @@
 #'   \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
 #'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 #' }
-#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras and Chor (2012).
+#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras and Chor (2012). Note that the measures only exist for USA in 2002, 2007, and 2012.
 #' \itemize{
 #'   \item{"FALSE": Do not report detailed measures. This is the default.}
 #'   \item{"TRUE": Report the detailed measures.}
@@ -26,16 +26,16 @@
 #' @export
 #' @examples
 #' # ISIC3
-#' get_upstream(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
+#' get_upstream_test(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
 #'              country = "USA", year = "2011",
 #'              setting = "GVC_Ui", detailed = FALSE)
 #'
 #' # HS5
-#' get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
+#' get_upstream_test(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
 #'              country = "USA", year = "2012",
 #'              setting = "GVC_Ui", detailed = TRUE)
 
-get_upstream <- function (sourcevar,
+get_upstream_test <- function (sourcevar,
                           origin,
                           country,
                           year,
@@ -173,17 +173,17 @@ get_upstream <- function (sourcevar,
   }else{
 
     # check years
-    if (!(year %in% as.character(seq(2002, 2012, by = 5)))) {stop("The input 'year' is not supported by detailed measurements. Please ensure that the 'year' is either 2002, 2007, or 2012.")}
+    if (!(year %in% as.character(seq(2002, 2012, by = 5)))) {stop("The input 'year' is not supported by detailed measurements. Please make sure that the 'year' is either 2002, 2007, or 2012.")}
 
     # recheck country
-    if (!(country %in% "USA")) {stop("Note that the detailed measures only exist for USA")}
+    if (!(country %in% "USA")) {stop("Note that the detailed measures only exist for USA.")}
 
     # recheck measurement
-    if (setting != "GVC_Ui") {stop("Note that the detailed measures only exist for GVC_Ui")}
+    if (setting != "GVC_Ui") {stop("Note that the detailed measures only exist for GVC_Ui.")}
 
-    # load detailed data - need to fix loading path
+    # load detailed data
     upstream_us_detailed <- concordance::upstream_us_detailed
-    upstream_us_detailed <- upstream_us_detailed %>% filter(YEAR == year)
+    upstream_us_detailed <- upstream_us_detailed %>% filter(.data$YEAR == year)
 
     if (year == "2002"){
       bea_naics <- concordance::bea2002_naics2002
@@ -198,18 +198,18 @@ get_upstream <- function (sourcevar,
       colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
       class <- "NAICS2012"
     }
-
+    
     # get NAICS industry code
-    if (substr(origin, 1, 5) == "NAICS") {
+    if (str_detect(origin, "NAICS")) {
       sourcevar.post <- sourcevar
     }else{
-      sourcevar.post <- concord(sourcevar, origin, class, dest.digit = digits, all = FALSE)
+      sourcevar.post <- concord(sourcevar, origin, class, dest.digit = 6, all = FALSE)
     }
 
     # check if concordance is available
-    if (digits == 2){
+    if (digits == 2 & str_detect(origin, "NAICS")){
      all.origin.codes <- bea_naics$NAICS_2d
-    }else if (digits == 4) {
+    }else if (digits == 4 & str_detect(origin, "NAICS")) {
       all.origin.codes <- bea_naics$NAICS_4d
     }else {
       all.origin.codes <- bea_naics$NAICS_6d
@@ -227,25 +227,47 @@ get_upstream <- function (sourcevar,
         no.code <- no.code[!is.na(no.code)]
         no.code <- paste0(no.code, collapse = ", ")
 
-        warning(paste("Matches for NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
+        warning(paste("Matches for corresponding NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
 
       }
 
     }
+    
+    # create data frame
+    sourcevar.post <- as.data.frame(sourcevar.post)
+    sourcevar.post$obs <- 1:nrow(sourcevar.post)
 
-    # concord NAICS codes to BEA industry codes
-    matches.1 <- match(sourcevar.post, all.origin.codes)
-    bea.vec <- bea_naics[matches.1, "BEA"]$BEA
-
+    # concord NAICS codes to BEA industry codes and extract estimates
+    if (digits == 2 & str_detect(origin, "NAICS")){
+      
+      colnames(sourcevar.post) <- c("NAICS_2d", "obs")
+      matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_2d")
+      
+      }else if (digits == 4 & str_detect(origin, "NAICS")){
+      
+        colnames(sourcevar.post) <- c("NAICS_4d", "obs")
+        matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_4d")
+      
+      }else {
+        
+        colnames(sourcevar.post) <- c("NAICS_6d", "obs")
+        matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_6d")
+        
+      }
+    
+    # merge and calculate mean estimates
+    colnames(matches.1)[3] <- "CODE"
+    matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
+    out <- matches.1 %>%
+      group_by(obs) %>%
+      summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
+    
     # extract estimates
-    matches.2 <- match(bea.vec, upstream_us_detailed$CODE)
-    out <- upstream_us_detailed[matches.2, "GVC_Ui"]
-    # %>%  pull(!!as.name(setting))
-
+    out <- out[, "Mean"]
+    out <- unlist(out)
+      
     # remove attributes
     attributes(out) <- NULL
   }
-
   return(out)
-
 }
