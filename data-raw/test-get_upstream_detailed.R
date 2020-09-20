@@ -64,23 +64,35 @@ get_upstream_test(sourcevar = c("00111", "72111"), origin = "SITC4",
 # ISIC3
 get_upstream_test(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
                   country = "USA", year = "2011",
-              setting = "GVC_Ui", detailed = FALSE)
+              setting = "GVC_Ui")
 
 # HS5
 get_upstream_test(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
              country = "USA", year = "2012",
              setting = "GVC_Ui", detailed = TRUE)
 
-get_upstream_test(sourcevar = c("1121", "2371"), origin = "NAICS2002",
+get_upstream_test(sourcevar = c("120600", "854690"), origin = "HS5",
                   country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
 
-get_upstream_test(sourcevar = c("2371", "1121"), origin = "NAICS2002",
+get_upstream_test(sourcevar = c("120600", "120600", "120600", "854690"), origin = "HS5",
                   country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
 
-get_upstream_test(sourcevar = c("2371", "1121"), origin = "NAICS2002",
-                  country = "USA", year = "2006",
+get_upstream_test(sourcevar = c("1206", "8546"), origin = "HS5",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("12", "85"), origin = "HS5",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar =c("120600", "120400"), origin = "HS5",
+                  country = "USA", year = "2012",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar =c("999999"), origin = "HS5",
+                  country = "USA", year = "2012",
                   setting = "GVC_Ui", detailed = TRUE)
 
 # ISIC3
@@ -96,8 +108,20 @@ get_upstream_test(sourcevar = c("01", "29", "80"), origin = "ISIC3",
                   country = "USA", year = "2012",
                   setting = "GVC_Ui", detailed = TRUE)
 
+get_upstream_test(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
+                  country = "USA", year = "2012",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("29", "01", "29", "80"), origin = "ISIC3",
+                  country = "USA", year = "2012",
+                  setting = "GVC_Ui", detailed = TRUE)
+
 # SITC
 get_upstream_test(sourcevar = c("72111"), origin = "SITC4",
+                  country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("7211"), origin = "SITC4",
                   country = "USA", year = "2007",
                   setting = "GVC_Ui", detailed = TRUE)
 
@@ -106,7 +130,43 @@ get_upstream_test(sourcevar = c("00111", "72111"), origin = "SITC4",
                   setting = "GVC_Ui", detailed = TRUE)
 
 # NAICS
-get_upstream_test(sourcevar = c("11", "11", "23"), origin = "NAICS",
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
                   country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
+                  country = "USA", year = "2012",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
+                  country = "USA", year = "2003",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
+                  country = "USA", year = "2012",
+                  setting = "GVC_Di", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("23", "11"), origin = "NAICS",
+                  country = "CAN", year = "2012",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("111411", "111331", "111411"), origin = "NAICS",
+                  country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = "111", origin = "NAICS",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = "11122", origin = "NAICS",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = "1", origin = "NAICS",
+                  country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
 

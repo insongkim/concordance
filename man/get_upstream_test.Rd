@@ -4,7 +4,7 @@
 \alias{get_upstream_test}
 \title{Looking Up the Upstreamness and Downstreamness of Industries}
 \source{
-Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
+Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows>.
 }
 \usage{
 get_upstream_test(
@@ -33,17 +33,17 @@ get_upstream_test(
   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 }}
 
-\item{detailed}{Choose whether to use detailed industry-level GVC_Ui from Antras and Chor (2012). Note that the measures only exist for USA in 2002, 2007, and 2012.
+\item{detailed}{Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
 \itemize{
   \item{"FALSE": Do not report detailed measures. This is the default.}
   \item{"TRUE": Report the detailed measures.}
 }}
 }
 \value{
-Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
+Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted estimates of upstreamness.
 }
 \description{
-Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness.
+Returns measures of industry upstreamness and downstreamness based on Antras and Chor (2018) and Antras, Chor, Fally and Hillberry (2012).
 }
 \examples{
 # ISIC3
@@ -58,4 +58,5 @@ get_upstream_test(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
 }
 \references{
 Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review Papers and Proceedings 102(3), 412-416.
 }

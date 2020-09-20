@@ -1,6 +1,6 @@
 #' Looking Up the Upstreamness and Downstreamness of Industries
 #'
-#' Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness.
+#' Returns measures of industry upstreamness and downstreamness based on Antras and Chor (2018) and Antras, Chor, Fally and Hillberry (2012).
 #'
 #' @param sourcevar An input character vector of industry codes to look up.
 #' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008).
@@ -13,14 +13,15 @@
 #'   \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
 #'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 #' }
-#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras and Chor (2012). Note that the measures only exist for USA in 2002, 2007, and 2012.
+#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
 #' \itemize{
 #'   \item{"FALSE": Do not report detailed measures. This is the default.}
 #'   \item{"TRUE": Report the detailed measures.}
 #' }
-#' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
-#' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
+#' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted estimates of upstreamness.
+#' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows>.
 #' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+#' Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review Papers and Proceedings 102(3), 412-416.
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export
@@ -203,7 +204,9 @@ get_upstream_test <- function (sourcevar,
     if (str_detect(origin, "NAICS")) {
       sourcevar.post <- sourcevar
     }else{
-      sourcevar.post <- concord(sourcevar, origin, class, dest.digit = 6, all = FALSE)
+      sourcevar.naics <- concord(sourcevar, origin, class, dest.digit = 6, all =TRUE)
+      sourcevar.post <- map_df(sourcevar.naics, function(x){out <- tibble(code = pluck(x, 1))})
+      sourcevar.post <- pull(sourcevar.post, code)
     }
 
     # check if concordance is available
@@ -225,6 +228,7 @@ get_upstream_test <- function (sourcevar,
       } else {
 
         no.code <- no.code[!is.na(no.code)]
+        no.code <- unique(no.code)
         no.code <- paste0(no.code, collapse = ", ")
 
         warning(paste("Matches for corresponding NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
@@ -234,40 +238,67 @@ get_upstream_test <- function (sourcevar,
     }
     
     # create data frame
-    sourcevar.post <- as.data.frame(sourcevar.post)
-    sourcevar.post$obs <- 1:nrow(sourcevar.post)
-
+    if (str_detect(origin, "NAICS")) {
+      matched.df <- as.data.frame(sourcevar.post)
+      matched.df$naics <- matched.df$sourcevar.post
+      matched.df$weight <- 1
+      matched.df$index <- 1:nrow(matched.df)
+    
+      }else{
+    
+      matched.df <- map2_df(1:length(sourcevar), sourcevar.naics, function(x, y){
+        out <- tibble(input = rep(sourcevar[[x]], length(pluck(sourcevar.post[[x]], 1))),
+                    code = pluck(y, 1))})
+      weight <- map_df(sourcevar.naics, function(x){out <- tibble(weight = pluck(x, 2))})
+      index <- map_df(1:length(sourcevar), function(x){out <- tibble(index =rep(x, length(pluck(sourcevar.naics, x, 1))))})
+      matched.df <- cbind(matched.df, weight, index)
+    }
+    
     # concord NAICS codes to BEA industry codes and extract estimates
     if (digits == 2 & str_detect(origin, "NAICS")){
       
-      colnames(sourcevar.post) <- c("NAICS_2d", "obs")
-      matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_2d")
+      colnames(matched.df) <- c("input", "NAICS_2d", "weight" ,"index")
+      matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_2d")
       
       }else if (digits == 4 & str_detect(origin, "NAICS")){
       
-        colnames(sourcevar.post) <- c("NAICS_4d", "obs")
-        matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_4d")
+        colnames(matched.df) <- c("input", "NAICS_4d", "weight" ,"index")
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_4d")
       
       }else {
         
-        colnames(sourcevar.post) <- c("NAICS_6d", "obs")
-        matches.1 <- left_join(sourcevar.post, bea_naics, by = "NAICS_6d")
+        colnames(matched.df) <- c("input", "NAICS_6d", "weight" ,"index")
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_6d")
         
       }
+    colnames(matches.1)[5] <- "CODE"
+    matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
     
     # merge and calculate mean estimates
-    colnames(matches.1)[3] <- "CODE"
-    matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
-    out <- matches.1 %>%
-      group_by(obs) %>%
-      summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
+    if (str_detect(origin, "NAICS")) {
+  
+        out <- matches.1 %>%
+          group_by(index) %>%
+          summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
+      
+    }else{
+      
+      matches.1$GVC_Ui_wt <- matches.1$GVC_Ui * matches.1$weight
+      out <- matches.1 %>%
+        group_by(index) %>%
+        summarize(Mean = sum(GVC_Ui_wt, na.rm=TRUE), .groups = 'drop')
+    }
     
     # extract estimates
     out <- out[, "Mean"]
     out <- unlist(out)
+    
+    # reset 0 to NA for missing sourcevar.post
+    out[out == 0] <- NA
       
     # remove attributes
     attributes(out) <- NULL
   }
   return(out)
 }
+
