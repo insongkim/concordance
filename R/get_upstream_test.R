@@ -13,7 +13,7 @@
 #'   \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
 #'   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 #' }
-#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
+#' @param detailed Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally, and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
 #' \itemize{
 #'   \item{"FALSE": Do not report detailed measures. This is the default.}
 #'   \item{"TRUE": Report the detailed measures.}
@@ -234,15 +234,38 @@ get_upstream_test <- function (sourcevar,
         warning(paste("Matches for corresponding NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
 
       }
-
     }
     
-    # create data frame
+    # create data frame and extract estimates
     if (str_detect(origin, "NAICS")) {
       matched.df <- as.data.frame(sourcevar.post)
-      matched.df$naics <- matched.df$sourcevar.post
-      matched.df$weight <- 1
       matched.df$index <- 1:nrow(matched.df)
+      
+      if (digits == 2){
+        
+        colnames(matched.df)[1] <- "NAICS_2d"
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_2d")
+        
+      }else if (digits == 4){
+        
+        colnames(matched.df)[1] <- "NAICS_4d"
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_4d")
+        
+      }else {
+        
+        colnames(matched.df)[1] <- "NAICS_6d"
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_6d")
+        
+      }
+      
+      # concord with BEA
+      colnames(matches.1)[3] <- "CODE"
+      matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
+
+      # calculate mean estimates
+      out <- matches.1 %>%
+        group_by(index) %>%
+        summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
     
       }else{
     
@@ -252,37 +275,17 @@ get_upstream_test <- function (sourcevar,
       weight <- map_df(sourcevar.naics, function(x){out <- tibble(weight = pluck(x, 2))})
       index <- map_df(1:length(sourcevar), function(x){out <- tibble(index =rep(x, length(pluck(sourcevar.naics, x, 1))))})
       matched.df <- cbind(matched.df, weight, index)
-    }
     
-    # concord NAICS codes to BEA industry codes and extract estimates
-    if (digits == 2 & str_detect(origin, "NAICS")){
-      
-      colnames(matched.df) <- c("input", "NAICS_2d", "weight" ,"index")
-      matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_2d")
-      
-      }else if (digits == 4 & str_detect(origin, "NAICS")){
-      
-        colnames(matched.df) <- c("input", "NAICS_4d", "weight" ,"index")
-        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_4d")
-      
-      }else {
-        
-        colnames(matched.df) <- c("input", "NAICS_6d", "weight" ,"index")
-        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_6d")
-        
-      }
-    colnames(matches.1)[5] <- "CODE"
-    matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
+      # concord NAICS codes to BEA industry codes and extract estimates
+      colnames(matched.df) <- c("input", "NAICS_6d", "weight" ,"index")
+      matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_6d")
+ 
+      # merge with estimates
+      colnames(matches.1)[5] <- "CODE"
+      matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
     
-    # merge and calculate mean estimates
-    if (str_detect(origin, "NAICS")) {
-  
-        out <- matches.1 %>%
-          group_by(index) %>%
-          summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
-      
-    }else{
-      
+      # merge and calculate weighted means
+
       matches.1$GVC_Ui_wt <- matches.1$GVC_Ui * matches.1$weight
       out <- matches.1 %>%
         group_by(index) %>%

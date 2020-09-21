@@ -33,7 +33,7 @@ get_upstream_test(
   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 }}
 
-\item{detailed}{Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
+\item{detailed}{Choose whether to use detailed industry-level GVC_Ui from Antras, Chor, Fally, and Hillberry (2012). Note that this measure only exists for USA in 2002, 2007, and 2012. 
 \itemize{
   \item{"FALSE": Do not report detailed measures. This is the default.}
   \item{"TRUE": Report the detailed measures.}

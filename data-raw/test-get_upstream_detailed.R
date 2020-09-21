@@ -169,4 +169,3 @@ get_upstream_test(sourcevar = "11122", origin = "NAICS",
 get_upstream_test(sourcevar = "1", origin = "NAICS",
                   country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
-
