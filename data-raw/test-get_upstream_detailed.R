@@ -8,6 +8,7 @@ date()
 # load packages
 library(concordance)
 
+?get_upstream_test
 
 # ISIC3 ("54" doesn't exist in ISIC3)
 get_upstream_test(sourcevar = c("0111", "2911", "2911", "5400", "8010"), origin = "ISIC3",
@@ -68,8 +69,12 @@ get_upstream_test(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
 
 # HS5
 get_upstream_test(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
-             country = "USA", year = "2012",
+             country = "USA", year = "2007",
              setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
+                  country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = FALSE)
 
 get_upstream_test(sourcevar = c("120600", "854690"), origin = "HS5",
                   country = "USA", year = "2002",
@@ -169,3 +174,12 @@ get_upstream_test(sourcevar = "11122", origin = "NAICS",
 get_upstream_test(sourcevar = "1", origin = "NAICS",
                   country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = "1", origin = "NAICS",
+                  country = "USA", year = "2002",
+                  setting = "GVC_Ui", detailed = TRUE)
+
+get_upstream_test(sourcevar = c("333998", "333292"), origin = "NAICS",
+                  country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = TRUE)
+

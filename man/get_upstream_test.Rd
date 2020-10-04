@@ -40,7 +40,7 @@ get_upstream_test(
 }}
 }
 \value{
-Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted estimates of upstreamness.
+Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to calculate weighted estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted average of upstreamness estimates.
 }
 \description{
 Returns measures of industry upstreamness and downstreamness based on Antras and Chor (2018) and Antras, Chor, Fally and Hillberry (2012).

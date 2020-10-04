@@ -18,7 +18,7 @@
 #'   \item{"FALSE": Do not report detailed measures. This is the default.}
 #'   \item{"TRUE": Report the detailed measures.}
 #' }
-#' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted estimates of upstreamness.
+#' @return Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to calculate weighted estimates of upstreamness or downstreamness. For detailed measures, concords each element of the input vector to 6-digit BEA codes, then calculates the weighted average of upstreamness estimates.
 #' @source Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows, https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows>.
 #' @references Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
 #' Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review Papers and Proceedings 102(3), 412-416.
@@ -133,43 +133,89 @@ get_upstream_test <- function (sourcevar,
     } else {
 
       # concord to 2-digit ISIC3
-      sourcevar.post <- concord(sourcevar, origin, "ISIC3", dest.digit = 2, all = FALSE)
-
+      sourcevar.isic <- concord(sourcevar, origin, "ISIC3", dest.digit = 2, all = TRUE)
+      sourcevar.post <- map_df(sourcevar.isic, function(x){
+        out <- tibble(code = pluck(x, 1))})
+      sourcevar.post <- sourcevar.post %>% 
+        pull(.data$code)
     }
 
-    # check if concordance is available
-    all.origin.codes <- wiod$ISIC3_2d
-
-    if (!all(sourcevar.post %in% all.origin.codes)){
-
-      no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-
-      # do nothing when all missing matches are NAs
-      if (all(is.na(no.code))){
-
-        # produce warning message for non-NA matched 2-digit ISIC3 codes that have no corresponding WIOT code (should not happen but flag just in case)
-      } else {
-
-        no.code <- no.code[!is.na(no.code)]
-        no.code <- paste0(no.code, collapse = ", ")
-
-        warning(paste("Matches for 2-digit ISIC3 code(s): ", no.code, " not found and returned NA. Please double check input codes and their concordance with 2-digit ISIC3 codes.\n", sep = ""))
-
+      # check if concordance is available
+      all.origin.codes <- wiod$ISIC3_2d
+      
+      if (!all(sourcevar.post %in% all.origin.codes)){
+      
+        no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
+      
+        # do nothing when all missing matches are NAs
+        if (all(is.na(no.code))){
+      
+          # produce warning message for non-NA matched 2-digit ISIC3 codes that have no corresponding WIOT code (should not happen but flag just in case)
+        } else {
+      
+          no.code <- no.code[!is.na(no.code)]
+          no.code <- paste0(no.code, collapse = ", ")
+      
+          warning(paste("Matches for 2-digit ISIC3 code(s): ", no.code, " not found and returned NA. Please double check input codes and their concordance with 2-digit ISIC3 codes.\n", sep = ""))
+      
+        }
+      
       }
-
-    }
-
-    # concord 2-digit ISIC3 codes to WIOT2013 numeric codes
-    matches.1 <- match(sourcevar.post, all.origin.codes)
-    wiot.vec <- wiod[matches.1, "WIOT2013_n"]$WIOT2013_n
-
-    # extract estimates
-    matches.2 <- match(wiot.vec, upstream.sub$WIOT2013_n)
-    out <- upstream.sub[matches.2, ] %>%
-      pull(!!as.name(setting))
-
-    # remove attributes
-    attributes(out) <- NULL
+    
+    if(origin == "ISIC3") {
+      
+      # concord 2-digit ISIC3 codes to WIOT2013 numeric codes
+      matches.1 <- match(sourcevar.post, all.origin.codes)
+      wiot.vec <- wiod[matches.1, "WIOT2013_n"]$WIOT2013_n
+      
+      # extract estimates
+      matches.2 <- match(wiot.vec, upstream.sub$WIOT2013_n)
+      out <- upstream.sub[matches.2, ] %>%
+        pull(!!as.name(setting))
+      
+      # remove attributes
+      attributes(out) <- NULL
+    
+    }else{
+        
+      matched.df <- map2_df(1:length(sourcevar), sourcevar.isic, function(x, y){
+        out <- tibble(input = rep(sourcevar[[x]], length(pluck(sourcevar.post[[x]], 1))),
+                      code = pluck(y, 1))})
+      weight <- map_df(sourcevar.isic, function(x){out <- tibble(weight = pluck(x, 2))})
+      index <- map_df(1:length(sourcevar), function(x){out <- tibble(index = rep(x, length(pluck(sourcevar.isic, x, 1))))})
+      matched.df <- cbind(matched.df, weight, index)
+      
+      # concord NAICS codes to BEA industry codes and extract estimates
+      colnames(matched.df) <- c("input", "ISIC3_2d", "weight" ,"index")
+      matches.1 <- left_join(matched.df, wiod, by = "ISIC3_2d")
+      
+      # merge with estimates
+      colnames(upstream.sub)[4] <- "ESTIMATES"
+      matches.1 <- left_join(matches.1, upstream.sub, by = "WIOT2013_n")
+      
+      # merge and calculate weighted means
+      out <- matches.1 %>%
+        mutate(isic_na = if_else(is.na(ISIC3_2d), 0, 1),
+               weight_temp = weight * isic_na) %>%
+        group_by(index) %>%
+        mutate(weight_max = sum(.data$weight_temp, na.rm = TRUE),
+               weight_normalize = weight_temp/weight_max,
+               mean = sum(weight_normalize * ESTIMATES, na.rm = TRUE),
+               mean = ifelse(is.nan(mean), NA, mean)) %>%
+        slice(1) %>%
+        ungroup()
+    
+      # extract estimates
+      out <- out[, "mean"]
+      out <- unlist(out)
+      
+      # reset 0 to NA if any
+      out[out == 0] <- NA
+      
+      # remove attributes
+      attributes(out) <- NULL
+    
+      }
 
   }else{
 
@@ -205,35 +251,10 @@ get_upstream_test <- function (sourcevar,
       sourcevar.post <- sourcevar
     }else{
       sourcevar.naics <- concord(sourcevar, origin, class, dest.digit = 6, all =TRUE)
-      sourcevar.post <- map_df(sourcevar.naics, function(x){out <- tibble(code = pluck(x, 1))})
-      sourcevar.post <- pull(sourcevar.post, code)
-    }
-
-    # check if concordance is available
-    if (digits == 2 & str_detect(origin, "NAICS")){
-     all.origin.codes <- bea_naics$NAICS_2d
-    }else if (digits == 4 & str_detect(origin, "NAICS")) {
-      all.origin.codes <- bea_naics$NAICS_4d
-    }else {
-      all.origin.codes <- bea_naics$NAICS_6d
-    }
-
-    if (!all(sourcevar.post %in% all.origin.codes)){
-
-      no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-
-      # do nothing when all missing matches are NAs
-      if (all(is.na(no.code))){
-
-      } else {
-
-        no.code <- no.code[!is.na(no.code)]
-        no.code <- unique(no.code)
-        no.code <- paste0(no.code, collapse = ", ")
-
-        warning(paste("Matches for corresponding NAICS code(s): ", no.code, " not available for detailed measures.\n", sep = ""))
-
-      }
+      sourcevar.post <- map_df(sourcevar.naics, function(x){
+        out <- tibble(code = pluck(x, 1))})
+      sourcevar.post <- sourcevar.post %>% 
+        pull(.data$code)
     }
     
     # create data frame and extract estimates
@@ -265,7 +286,8 @@ get_upstream_test <- function (sourcevar,
       # calculate mean estimates
       out <- matches.1 %>%
         group_by(index) %>%
-        summarize(Mean = mean(GVC_Ui, na.rm=TRUE), .groups = 'drop')
+        summarize(mean = mean(.data$GVC_Ui, na.rm = TRUE), 
+                  mean = ifelse(is.nan(mean), NA, mean), .groups = 'drop')
     
       }else{
     
@@ -273,7 +295,7 @@ get_upstream_test <- function (sourcevar,
         out <- tibble(input = rep(sourcevar[[x]], length(pluck(sourcevar.post[[x]], 1))),
                     code = pluck(y, 1))})
       weight <- map_df(sourcevar.naics, function(x){out <- tibble(weight = pluck(x, 2))})
-      index <- map_df(1:length(sourcevar), function(x){out <- tibble(index =rep(x, length(pluck(sourcevar.naics, x, 1))))})
+      index <- map_df(1:length(sourcevar), function(x){out <- tibble(index = rep(x, length(pluck(sourcevar.naics, x, 1))))})
       matched.df <- cbind(matched.df, weight, index)
     
       # concord NAICS codes to BEA industry codes and extract estimates
@@ -286,17 +308,24 @@ get_upstream_test <- function (sourcevar,
     
       # merge and calculate weighted means
 
-      matches.1$GVC_Ui_wt <- matches.1$GVC_Ui * matches.1$weight
+     
       out <- matches.1 %>%
+        mutate(bea_na = if_else(is.na(BEA_CLASS), 0, 1),
+               weight_temp = weight * bea_na) %>%
         group_by(index) %>%
-        summarize(Mean = sum(GVC_Ui_wt, na.rm=TRUE), .groups = 'drop')
+        mutate(weight_max = sum(.data$weight_temp, na.rm = TRUE),
+               weight_normalize = weight_temp/weight_max,
+               mean = sum(weight_normalize * GVC_Ui, na.rm = TRUE),
+               mean = ifelse(is.nan(mean), NA, mean)) %>%
+        slice(1) %>%
+        ungroup()
     }
-    
+   
     # extract estimates
-    out <- out[, "Mean"]
+    out <- out[, "mean"]
     out <- unlist(out)
     
-    # reset 0 to NA for missing sourcevar.post
+    # reset 0 to NA if any
     out[out == 0] <- NA
       
     # remove attributes
