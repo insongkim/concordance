@@ -8,6 +8,7 @@ date()
 # load packages
 library(concordance)
 
+
 ?get_upstream_test
 
 # ISIC3 ("54" doesn't exist in ISIC3)
@@ -179,7 +180,11 @@ get_upstream_test(sourcevar = "1", origin = "NAICS",
                   country = "USA", year = "2002",
                   setting = "GVC_Ui", detailed = TRUE)
 
+# NAICS - BEA concordance does not exist
 get_upstream_test(sourcevar = c("333998", "333292"), origin = "NAICS",
                   country = "USA", year = "2007",
                   setting = "GVC_Ui", detailed = TRUE)
 
+get_upstream_test(sourcevar = c("999991", "333292"), origin = "NAICS",
+                  country = "USA", year = "2007",
+                  setting = "GVC_Ui", detailed = TRUE)

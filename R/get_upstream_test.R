@@ -246,6 +246,7 @@ get_upstream_test <- function (sourcevar,
       class <- "NAICS2012"
     }
     
+   
     # get NAICS industry code
     if (str_detect(origin, "NAICS")) {
       sourcevar.post <- sourcevar
@@ -255,6 +256,30 @@ get_upstream_test <- function (sourcevar,
         out <- tibble(code = pluck(x, 1))})
       sourcevar.post <- sourcevar.post %>% 
         pull(.data$code)
+    }
+    
+    # check if concordance is available
+    
+    if (str_detect(origin, "NAICS")) {
+      all.origin.codes <- c(bea_naics$NAICS_6d, bea_naics$NAICS_4d, bea_naics$NAICS_2d)
+      
+      if (!all(sourcevar.post %in% all.origin.codes)){
+        
+        no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
+        
+        # do nothing when all missing matches are NAs
+        if (all(is.na(no.code))){
+          
+          # produce warning message for non-NA matched 2-digit ISIC3 codes that have no corresponding WIOT code (should not happen but flag just in case)
+        } else {
+          
+          no.code <- no.code[!is.na(no.code)]
+          no.code <- paste0(no.code, collapse = ", ")
+          
+          warning(paste("Matches for 6-digit BEA code(s): ", no.code, " not found and returned NA. Please double check input codes", sep = ""))
+          
+        }
+      }
     }
     
     # create data frame and extract estimates
@@ -307,8 +332,6 @@ get_upstream_test <- function (sourcevar,
       matches.1 <- left_join(matches.1, upstream_us_detailed, by = "CODE")
     
       # merge and calculate weighted means
-
-     
       out <- matches.1 %>%
         mutate(bea_na = if_else(is.na(BEA_CLASS), 0, 1),
                weight_temp = weight * bea_na) %>%
