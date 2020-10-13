@@ -2,7 +2,7 @@ Package: concordance
 Type: Package
 Title: Product Concordance
 Version: 2.1.0
-Date: 2020-07-03
+Date: 2020-10-12
 Authors@R: c(
   person("Steven", "Liao", email = "steven.liao@ucr.edu", role = c("aut", "cre")),
   person("In Song", "Kim", email = "insong@mit.edu", role = c("aut")),
@@ -22,7 +22,7 @@ Description: A set of utilities for matching products in different
 	     look-up based on user-specified keywords, Rauch classification look-up 
 	     (via concordance to SITC2), trade elasticity look-up (via concordance 
 	     to HS0 or SITC3 codes), upstreamness/downstreamness look-up (via 
-	     concordance to ISIC3 codes), and intermediateness look-up (via product 
+	     concordance to ISIC3 and NAICS codes), and intermediateness look-up (via product 
 	     descriptions).
 License: GPL-2
 Depends: R (>= 3.6.0)
