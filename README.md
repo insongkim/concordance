@@ -409,8 +409,8 @@ estimate industry-level upstreamness/downstreamness for 2-digit ISIC3 codes
 in 40 countries (+ Rest of the World, RoW) between 1995 and 2011.
 
 The `get_upstream` function concords users' input codes to 2-digit ISIC3 codes 
-and then extracts the corresponding industry-level upstreamness/downstreamness 
-in the country and year selected by the user. 
+and then uses the corresponding codes as input to calculate weighted estimates 
+of upstreamness or downstreamness in the country and year selected by the user. 
 
 The argument ``sourcevar`` sets the industry codes to look up, ``origin`` 
 indicates the classification system of the input codes, ``country`` 
@@ -429,10 +429,26 @@ the United States in 2011.
 ```r
 get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
              country = "USA", year = "2011",
-             setting = "GVC_Ui")
+             setting = "GVC_Ui", detailed = FALSE)
 ```
 ```
 [1] 2.595109 2.595109 2.563818 1.795285
+```
+
+The argument ``detailed`` allows users to return more detailed industry-level 
+GVC_Ui estimates following Antras, Chor, Fally, and Hillberry (2012). When 
+set to ``TRUE``, the function concords each element of the input vector to 
+6-digit BEA codes, and then calculates weighted average estimates of 
+upstreamness (GVC_Ui). Note that such estimates only exist for USA in 2002, 
+2007, and 2012.
+
+```r
+get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
+             country = "USA", year = "2012",
+             setting = "GVC_Ui", detailed = TRUE)
+```
+```
+[1] 2.488410 2.488410 2.515886 1.588522
 ```
 
 ### Getting Industry Intermediateness (developer version only)
