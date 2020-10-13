@@ -15,7 +15,7 @@ library(concordance)
 ## BEA 2002
 ################################################################################
 # load downloaded data from BEA
-# https://www.bea.gov/industry/benchmark-input-output-data, zipped file "2002 Standard Make and Use Tables at the detailed level (ZIP)", file "Appendix A_rev 4-24-08" 
+# https://www.bea.gov/industry/benchmark-input-output-data, zipped file "2002 Standard Make and Use Tables at the detailed level (ZIP)", file "Appendix A_rev 4-24-08"
 bea2002_desc <- read_csv("./data-raw/BEA2002_DESC.csv", col_types = cols(.default = "c"))
 
 # check names
@@ -43,7 +43,7 @@ save(bea2012_desc,
 # BEA2002 to NAICS2002
 ################################################################################
 # load concordance data:
-# https://www.bea.gov/industry/benchmark-input-output-data, zipped file "2002 Standard Make and Use Tables at the detailed level (ZIP)", file "Appendix A_rev 4-24-08" 
+# https://www.bea.gov/industry/benchmark-input-output-data, zipped file "2002 Standard Make and Use Tables at the detailed level (ZIP)", file "Appendix A_rev 4-24-08"
 bea2002_naics2002 <- read_csv("./data-raw/2002_BEA_to_2002_NAICS.csv", col_types = cols(.default = "c"))
 
 # check names
@@ -99,7 +99,7 @@ save(bea2012_naics2012 ,
      file = "./data/bea2012_naics2012.RData", compress = "xz")
 
 ################################################################################
-# Antras and Chor (2012, 2013) 
+# Antras and Chor (2012, 2013)
 ################################################################################
 # load upstreamness data:
 # original estimates for 2002 from Antras and Chor (2012) and calculated estimates based on their methods for 2007 and 2012
@@ -119,8 +119,9 @@ upstream2012$BEA_CLASS <- "BEA2012"
 
 # compile the table
 upstream_us_detailed <- rbind(upstream2002, upstream2007, upstream2012)
-colnames(upstream_us_detailed)[c(1,2)] <- c("CODE", "GVC_Ui") 
+colnames(upstream_us_detailed)[c(1,2)] <- c("CODE", "GVC_Ui")
 
 # save
 save(upstream_us_detailed,
      file = "./data/upstream_us_detailed.RData", compress = "xz")
+
