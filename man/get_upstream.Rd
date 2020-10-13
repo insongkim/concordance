@@ -4,15 +4,26 @@
 \alias{get_upstream}
 \title{Looking Up the Upstreamness and Downstreamness of Industries}
 \source{
-Data from Pol Antras' webpage <https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>.
+Data from Pol Antras' webpage:
+\itemize{
+  \item{<https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains>}
+  \item{<https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows>}
+}
 }
 \usage{
-get_upstream(sourcevar, origin, country, year, setting = "GVC_Ui")
+get_upstream(
+  sourcevar,
+  origin,
+  country,
+  year,
+  setting = "GVC_Ui",
+  detailed = FALSE
+)
 }
 \arguments{
 \item{sourcevar}{An input character vector of industry codes to look up.}
 
-\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008).}
+\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
 \item{country}{A string setting the ISO 3-letter country code for which to return values (default = "USA"). Antras and Chor (2018) provide estimates for 40 countries and the Rest of the World (RoW). For a list of available countries, load the package and type "unique(upstream$ISO3C)".}
 
@@ -25,24 +36,33 @@ get_upstream(sourcevar, origin, country, year, setting = "GVC_Ui")
   \item{"GVC_Di": Downstreamness (net inventories correction). Larger values are associated with higher levels of downstreamness.}
   \item{"GVC_VAGOi": Value-added to gross-output (net inventories correction). Lower values are associated with higher levels of downstreamness}
 }}
+
+\item{detailed}{Choose whether to return more detailed industry-level GVC_Ui estimates following Antras, Chor, Fally, and Hillberry (2012). Note that these estimates only exist for USA in 2002, 2007, and 2012.
+\itemize{
+  \item{"FALSE": Do not report detailed measures. This is the default.}
+  \item{"TRUE": Report the detailed measures.}
+}}
 }
 \value{
-Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to extract estimates of upstreamness or downstreamness.
+Concords each element of the input vector to 2-digit ISIC3 codes, then uses the corresponding codes as input to calculate weighted estimates of upstreamness or downstreamness. For detailed estimates, the function concords each element of the input vector to 6-digit BEA codes, and then calculates weighted average estimates of upstreamness (GVC_Ui).
 }
 \description{
-Returns Antras and Chor (2018)'s measures of industry upstreamness and downstreamness.
+Returns measures of industry upstreamness and downstreamness based on Antras and Chor (2018) and Antras, Chor, Fally and Hillberry (2012).
 }
 \examples{
 # ISIC3
 get_upstream(sourcevar = c("01", "29", "29", "80"), origin = "ISIC3",
              country = "USA", year = "2011",
-             setting = "GVC_Ui")
+             setting = "GVC_Ui", detailed = FALSE)
 
 # HS5
 get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS5",
-             country = "USA", year = "2011",
-             setting = "GVC_Ui")
+             country = "USA", year = "2012",
+             setting = "GVC_Ui", detailed = TRUE)
 }
 \references{
-Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.
+\itemize{
+  \item{Antras, Pol, and Davin Chor. 2018. "On the Measurement of Upstreamness and Downstreamness in Global Value Chains." World Trade Evolution: Growth, Productivity and Employment, 126-194. Taylor & Francis Group.}
+  \item{Antras, Pol, Davin Chor, Thibault Fally, and Russell Hillberry. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review Papers and Proceedings 102(3), 412-416.}
+}
 }
