@@ -35,10 +35,14 @@ sitc4_naics <- sitc4.naics.m %>%
          SITC4_3d = str_sub(SITC4_5d, start = 1, end = 3),
          SITC4_2d = str_sub(SITC4_5d, start = 1, end = 2),
          SITC4_1d = str_sub(SITC4_5d, start = 1, end = 1),
+         NAICS_5d = str_sub(NAICS_6d, start = 1, end = 5),
          NAICS_4d = str_sub(NAICS_6d, start = 1, end = 4),
-         NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)) %>%
+         NAICS_3d = str_sub(NAICS_6d, start = 1, end = 3),
+         NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)
+         ) %>%
   select(SITC4_5d, SITC4_4d, SITC4_3d, SITC4_2d, SITC4_1d,
-         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_5d, NAICS_4d, NAICS_3d, NAICS_2d
+         ) %>%
   arrange(SITC4_5d) %>%
   filter_all(any_vars(!is.na(.))) %>%
   mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
@@ -76,10 +80,12 @@ sitc3_naics <- sitc3.naics.m %>%
          SITC3_3d = str_sub(SITC3_5d, start = 1, end = 3),
          SITC3_2d = str_sub(SITC3_5d, start = 1, end = 2),
          SITC3_1d = str_sub(SITC3_5d, start = 1, end = 1),
+         NAICS_5d = str_sub(NAICS_6d, start = 1, end = 5),
          NAICS_4d = str_sub(NAICS_6d, start = 1, end = 4),
+         NAICS_3d = str_sub(NAICS_6d, start = 1, end = 3),
          NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)) %>%
   select(SITC3_5d, SITC3_4d, SITC3_3d, SITC3_2d, SITC3_1d,
-         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_5d, NAICS_4d, NAICS_3d, NAICS_2d) %>%
   arrange(SITC3_5d) %>%
   filter_all(any_vars(!is.na(.))) %>%
   mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
@@ -117,10 +123,12 @@ sitc2_naics <- sitc2.naics.m %>%
          SITC2_3d = str_sub(SITC2_5d, start = 1, end = 3),
          SITC2_2d = str_sub(SITC2_5d, start = 1, end = 2),
          SITC2_1d = str_sub(SITC2_5d, start = 1, end = 1),
+         NAICS_5d = str_sub(NAICS_6d, start = 1, end = 5),
          NAICS_4d = str_sub(NAICS_6d, start = 1, end = 4),
+         NAICS_3d = str_sub(NAICS_6d, start = 1, end = 3),
          NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)) %>%
   select(SITC2_5d, SITC2_4d, SITC2_3d, SITC2_2d, SITC2_1d,
-         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_5d, NAICS_4d, NAICS_3d, NAICS_2d) %>%
   arrange(SITC2_5d) %>%
   filter_all(any_vars(!is.na(.))) %>%
   mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
@@ -158,10 +166,12 @@ sitc1_naics <- sitc1.naics.m %>%
          SITC1_3d = str_sub(SITC1_5d, start = 1, end = 3),
          SITC1_2d = str_sub(SITC1_5d, start = 1, end = 2),
          SITC1_1d = str_sub(SITC1_5d, start = 1, end = 1),
+         NAICS_5d = str_sub(NAICS_6d, start = 1, end = 5),
          NAICS_4d = str_sub(NAICS_6d, start = 1, end = 4),
+         NAICS_3d = str_sub(NAICS_6d, start = 1, end = 3),
          NAICS_2d = str_sub(NAICS_6d, start = 1, end = 2)) %>%
   select(SITC1_5d, SITC1_4d, SITC1_3d, SITC1_2d, SITC1_1d,
-         NAICS_6d, NAICS_4d, NAICS_2d) %>%
+         NAICS_6d, NAICS_5d, NAICS_4d, NAICS_3d, NAICS_2d) %>%
   arrange(SITC1_5d) %>%
   filter_all(any_vars(!is.na(.))) %>%
   mutate(NAICS_2d = if_else(NAICS_2d == "31", "31-33", NAICS_2d),
@@ -175,9 +185,3 @@ sitc1_naics <- sitc1.naics.m %>%
 # save
 save(sitc1_naics,
      file = "./data/sitc1_naics.RData", compress = "xz")
-
-
-
-
-
-

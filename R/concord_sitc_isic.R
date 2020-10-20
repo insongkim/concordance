@@ -491,7 +491,7 @@ concord_sitc_isic <- function (sourcevar,
 
       if(nrow(x) == 0){
 
-        out.sub <- list(match = NA,
+        out.sub <- list(match = NA_character_,
                         weight = NA)
 
       } else {

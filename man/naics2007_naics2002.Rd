@@ -5,13 +5,17 @@
 \alias{naics2007_naics2002}
 \title{NAICS2007-NAICS2002 Concordance}
 \format{
-A data frame with 1200 rows and 6 variables:
+A data frame with 1200 rows and 10 variables:
 \describe{
   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+  \item{NAICS2007_5d}{5-digit NAICS2007 Code}
   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+  \item{NAICS2007_3d}{3-digit NAICS2007 Code}
   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+  \item{NAICS2002_5d}{5-digit NAICS2002 Code}
   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+  \item{NAICS2002_3d}{3-digit NAICS2002 Code}
   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 }
 }

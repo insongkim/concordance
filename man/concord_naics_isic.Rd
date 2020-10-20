@@ -13,13 +13,13 @@ Concordance tables provided by:
 concord_naics_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 }
 \arguments{
-\item{sourcevar}{An input character vector of NAICS or ISIC codes. The function accepts 2, 4, 6-digit codes for NAICS and 1 to 4-digit codes for ISIC.}
+\item{sourcevar}{An input character vector of NAICS or ISIC codes. The function accepts 2 to 6-digit codes for NAICS and 1 to 4-digit codes for ISIC.}
 
 \item{origin}{A string setting the input industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
 \item{destination}{A string setting the output industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
 
-\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for NAICS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.}
+\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2 to 6 digits for NAICS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.}
 
 \item{all}{Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.}
 }

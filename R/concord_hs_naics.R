@@ -2,10 +2,10 @@
 #'
 #' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 #'
-#' @param sourcevar An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and NAICS.
+#' @param sourcevar An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and 2 to 6-digit codes for NAICS.
 #' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
 #' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS and NAICS. The default is 6 digits.
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS and 2 to 6-digit codes for NAICS. The default is 6 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -100,10 +100,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS_6d, .data$HS_4d, .data$HS_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
 
@@ -123,10 +125,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS_6d, .data$HS_4d, .data$HS_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS")) {
@@ -145,10 +149,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS_6d, .data$HS_4d, .data$HS_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS")) {
@@ -167,10 +173,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS_6d, .data$HS_4d, .data$HS_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS0" & destination == "NAICS") | (origin == "NAICS" & destination == "HS0")) {
@@ -193,10 +201,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS0" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS0")) {
@@ -215,10 +225,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS0" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS0")) {
@@ -237,10 +249,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS0" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS0")) {
@@ -259,10 +273,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS0_6d, .data$HS0_4d, .data$HS0_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS1" & destination == "NAICS") | (origin == "NAICS" & destination == "HS1")) {
@@ -285,10 +301,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS1" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS1")) {
@@ -307,10 +325,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS1" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS1")) {
@@ -329,10 +349,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS1" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS1")) {
@@ -351,10 +373,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS1_6d, .data$HS1_4d, .data$HS1_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS2" & destination == "NAICS") | (origin == "NAICS" & destination == "HS2")) {
@@ -377,10 +401,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS2" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS2")) {
@@ -399,10 +425,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS2" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS2")) {
@@ -421,10 +449,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS2" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS2")) {
@@ -443,10 +473,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS2_6d, .data$HS2_4d, .data$HS2_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS3" & destination == "NAICS") | (origin == "NAICS" & destination == "HS3")) {
@@ -469,10 +501,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS3" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS3")) {
@@ -491,10 +525,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS3" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS3")) {
@@ -513,10 +549,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS3" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS3")) {
@@ -535,10 +573,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS3_6d, .data$HS3_4d, .data$HS3_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS4" & destination == "NAICS") | (origin == "NAICS" & destination == "HS4")) {
@@ -561,10 +601,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS4" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS4")) {
@@ -583,10 +625,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS4" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS4")) {
@@ -605,10 +649,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS4" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS4")) {
@@ -627,10 +673,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS4_6d, .data$HS4_4d, .data$HS4_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else if ((origin == "HS5" & destination == "NAICS") | (origin == "NAICS" & destination == "HS5")) {
@@ -653,10 +701,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
              NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
              NAICS2002_2d = .data$NAICS_2d) %>%
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
-             .data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d) %>%
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
       distinct()
 
   } else if ((origin == "HS5" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS5")) {
@@ -675,10 +725,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
              NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
              NAICS2007_2d = .data$NAICS_2d) %>%
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
-             .data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d) %>%
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
       distinct()
 
   } else if ((origin == "HS5" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS5")) {
@@ -697,10 +749,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
              NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
              NAICS2012_2d = .data$NAICS_2d) %>%
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
-             .data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d) %>%
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
       distinct()
 
   } else if ((origin == "HS5" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS5")) {
@@ -719,10 +773,12 @@ concord_hs_naics <- function (sourcevar,
     dictionary <- dictionary %>%
       filter(.data$NAICS_6d %in% naics.vec) %>%
       rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
              NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
              NAICS2017_2d = .data$NAICS_2d) %>%
       select(.data$HS5_6d, .data$HS5_4d, .data$HS5_2d,
-             .data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d) %>%
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
   } else {
@@ -760,15 +816,15 @@ concord_hs_naics <- function (sourcevar,
 
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS codes.")}
 
-    destination.digits <- c(2, 4, 6)
+    destination.digits <- seq(2, 6, 1)
 
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for NAICS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2 to 6-digit outputs for NAICS codes.")}
 
   } else if (str_detect(origin, "NAICS") & str_detect(destination, "HS")) {
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- seq(2, 6, 1)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
 
     destination.digits <- c(2, 4, 6)
 
@@ -842,7 +898,7 @@ concord_hs_naics <- function (sourcevar,
 
       if(nrow(x) == 0){
 
-        out.sub <- list(match = NA,
+        out.sub <- list(match = NA_character_,
                         weight = NA)
 
       } else {

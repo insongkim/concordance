@@ -5,10 +5,12 @@
 \alias{naics2002_isic31}
 \title{NAICS2002-ISIC3.1 Concordance}
 \format{
-A data frame with 1960 rows and 7 variables:
+A data frame with 1960 rows and 9 variables:
 \describe{
   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+  \item{NAICS2002_5d}{5-digit NAICS2002 Code}
   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+  \item{NAICS2002_3d}{3-digit NAICS2002 Code}
   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}

@@ -2,10 +2,10 @@
 #'
 #' Concords codes within the North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017).
 #'
-#' @param sourcevar An input character vector of NAICS codes. The function accepts 2, 4, 6-digit NAICS codes.
+#' @param sourcevar An input character vector of NAICS codes. The function accepts 2 to 6-digit NAICS codes.
 #' @param origin A string setting the input industry classification: "NAICS2002", "NAICS2007", "NAICS2012", and "NAICS2017".
 #' @param destination A string setting the output industry classification: "NAICS2002", "NAICS2007", "NAICS2012", and "NAICS2017".
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6-digit NAICS codes. The default is 4 digits.
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2 to 6-digit NAICS codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -87,13 +87,13 @@ concord_naics <- function (sourcevar,
   # set acceptable digits for inputs and outputs
   if (str_detect(origin, "NAICS") & str_detect(destination, "NAICS")){
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- seq(2, 6, 1)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
 
-    destination.digits <- c(2, 4, 6)
+    destination.digits <- seq(2, 6, 1)
 
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2 to 6-digit inputs for NAICS codes.")}
 
   } else {
 
@@ -163,7 +163,7 @@ concord_naics <- function (sourcevar,
 
       if(nrow(x) == 0){
 
-        out.sub <- list(match = NA,
+        out.sub <- list(match = NA_character_,
                         weight = NA)
 
       } else {

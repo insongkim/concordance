@@ -31,7 +31,9 @@ naics2017_isic4 <- naics2017_isic4_r %>%
          ISIC4_4d = if_else(nchar(ISIC4_4d) == 2, str_pad(ISIC4_4d, 4, side = "both", pad = "0"), ISIC4_4d),
          ISIC4_4d = if_else(ISIC4_4d == "4330\r\n\r\n", "4330", ISIC4_4d)) %>%
   filter(NAICS2017_6d != "0") %>%
-  mutate(NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+  mutate(NAICS2017_5d = str_sub(NAICS2017_6d, start = 1, end = 5),
+         NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+         NAICS2017_3d = str_sub(NAICS2017_6d, start = 1, end = 3),
          NAICS2017_2d = str_sub(NAICS2017_6d, start = 1, end = 2),
          ISIC4_3d = str_sub(ISIC4_4d, start = 1, end = 3),
          ISIC4_2d = str_sub(ISIC4_4d, start = 1, end = 2),
@@ -58,7 +60,7 @@ naics2017_isic4 <- naics2017_isic4_r %>%
                               ISIC4_2d == "97" | ISIC4_2d == "98" ~ "T",
                               ISIC4_2d == "99" ~ "U",
                               TRUE ~ NA_character_)) %>%
-  select(NAICS2017_6d, NAICS2017_4d, NAICS2017_2d,
+  select(NAICS2017_6d, NAICS2017_5d, NAICS2017_4d, NAICS2017_3d, NAICS2017_2d,
          ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
   arrange(NAICS2017_6d)
 
@@ -93,7 +95,9 @@ naics2012_isic4 <- naics2012_isic4_r %>%
          ISIC4_4d = if_else(ISIC4_4d == "4330\r\n\r\n", "4330", ISIC4_4d),
          ISIC4_4d = str_replace_all(ISIC4_4d, "X", "0")) %>%
   filter(NAICS2012_6d != "0") %>%
-  mutate(NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+  mutate(NAICS2012_5d = str_sub(NAICS2012_6d, start = 1, end = 5),
+         NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+         NAICS2012_3d = str_sub(NAICS2012_6d, start = 1, end = 3),
          NAICS2012_2d = str_sub(NAICS2012_6d, start = 1, end = 2),
          ISIC4_3d = str_sub(ISIC4_4d, start = 1, end = 3),
          ISIC4_2d = str_sub(ISIC4_4d, start = 1, end = 2),
@@ -120,7 +124,7 @@ naics2012_isic4 <- naics2012_isic4_r %>%
                               ISIC4_2d == "97" | ISIC4_2d == "98" ~ "T",
                               ISIC4_2d == "99" ~ "U",
                               TRUE ~ NA_character_)) %>%
-  select(NAICS2012_6d, NAICS2012_4d, NAICS2012_2d,
+  select(NAICS2012_6d, NAICS2012_5d, NAICS2012_4d, NAICS2012_3d, NAICS2012_2d,
          ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
   arrange(NAICS2012_6d)
 
@@ -156,7 +160,9 @@ naics2007_isic4 <- naics2007_isic4_r %>%
          ISIC4_4d = if_else(ISIC4_4d == "4330\r\n\r\n", "4330", ISIC4_4d),
          ISIC4_4d = str_replace_all(ISIC4_4d, "X", "0")) %>%
   filter(NAICS2007_6d != "0") %>%
-  mutate(NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+  mutate(NAICS2007_5d = str_sub(NAICS2007_6d, start = 1, end = 5),
+         NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+         NAICS2007_3d = str_sub(NAICS2007_6d, start = 1, end = 3),
          NAICS2007_2d = str_sub(NAICS2007_6d, start = 1, end = 2),
          ISIC4_3d = str_sub(ISIC4_4d, start = 1, end = 3),
          ISIC4_2d = str_sub(ISIC4_4d, start = 1, end = 2),
@@ -183,7 +189,7 @@ naics2007_isic4 <- naics2007_isic4_r %>%
                               ISIC4_2d == "97" | ISIC4_2d == "98" ~ "T",
                               ISIC4_2d == "99" ~ "U",
                               TRUE ~ NA_character_)) %>%
-  select(NAICS2007_6d, NAICS2007_4d, NAICS2007_2d,
+  select(NAICS2007_6d, NAICS2007_5d, NAICS2007_4d, NAICS2007_3d, NAICS2007_2d,
          ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
   arrange(NAICS2007_6d)
 
@@ -215,7 +221,9 @@ naics2002_isic31 <- naics2002_isic31_r %>%
   rename(NAICS2002_6d = `2002 NAICS US`,
          ISIC3.1_4d = `ISIC 3.1`) %>%
   filter(NAICS2002_6d != "0") %>%
-  mutate(NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+  mutate(NAICS2002_5d = str_sub(NAICS2002_6d, start = 1, end = 5),
+         NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+         NAICS2002_3d = str_sub(NAICS2002_6d, start = 1, end = 3),
          NAICS2002_2d = str_sub(NAICS2002_6d, start = 1, end = 2),
          ISIC3.1_3d = str_sub(ISIC3.1_4d, start = 1, end = 3),
          ISIC3.1_2d = str_sub(ISIC3.1_4d, start = 1, end = 2),
@@ -238,7 +246,7 @@ naics2002_isic31 <- naics2002_isic31_r %>%
                                 ISIC3.1_2d == "95" | ISIC3.1_2d == "96" | ISIC3.1_2d == "97" ~ "P",
                                 ISIC3.1_2d == "99" ~ "Q",
                                 TRUE ~ NA_character_)) %>%
-  select(NAICS2002_6d, NAICS2002_4d, NAICS2002_2d,
+  select(NAICS2002_6d, NAICS2002_5d, NAICS2002_4d, NAICS2002_3d, NAICS2002_2d,
          ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
   arrange(NAICS2002_6d)
 
@@ -258,7 +266,9 @@ isic31.temp
 # create df
 naics.238000 <- tibble(NAICS2002_6d = "238000",
                        ISIC3.1_4d = isic31.temp) %>%
-  mutate(NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+  mutate(NAICS2002_5d = str_sub(NAICS2002_6d, start = 1, end = 5),
+         NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+         NAICS2002_3d = str_sub(NAICS2002_6d, start = 1, end = 3),
          NAICS2002_2d = str_sub(NAICS2002_6d, start = 1, end = 2),
          ISIC3.1_3d = str_sub(ISIC3.1_4d, start = 1, end = 3),
          ISIC3.1_2d = str_sub(ISIC3.1_4d, start = 1, end = 2),
@@ -281,7 +291,7 @@ naics.238000 <- tibble(NAICS2002_6d = "238000",
                                 ISIC3.1_2d == "95" | ISIC3.1_2d == "96" | ISIC3.1_2d == "97" ~ "P",
                                 ISIC3.1_2d == "99" ~ "Q",
                                 TRUE ~ NA_character_)) %>%
-  select(NAICS2002_6d, NAICS2002_4d, NAICS2002_2d,
+  select(NAICS2002_6d, NAICS2002_5d, NAICS2002_4d, NAICS2002_3d, NAICS2002_2d,
          ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
   arrange(NAICS2002_6d)
 

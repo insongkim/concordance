@@ -5,10 +5,12 @@
 \alias{naics2012_isic4}
 \title{NAICS2012-ISIC4 Concordance}
 \format{
-A data frame with 1663 rows and 7 variables:
+A data frame with 1663 rows and 9 variables:
 \describe{
   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+  \item{NAICS2012_5d}{5-digit NAICS2012 Code}
   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+  \item{NAICS2012_3d}{3-digit NAICS2012 Code}
   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
   \item{ISIC4_4d}{4-digit ISIC4 Code}
   \item{ISIC4_3d}{3-digit ISIC4 Code}

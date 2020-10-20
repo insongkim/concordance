@@ -106,11 +106,11 @@ get_upstream <- function (sourcevar,
 
   } else if (str_detect(origin, "NAICS")) {
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- seq(2, 6, 1)
 
     if (!(digits %in% origin.digits)) {
 
-      stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")
+      stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")
 
       }
 
@@ -301,19 +301,19 @@ get_upstream <- function (sourcevar,
     if (year == "2002"){
 
       bea_naics <- concordance::bea2002_naics2002
-      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
+      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_5d", "NAICS_4d", "NAICS_3d", "NAICS_2d")
       class <- "NAICS2002"
 
     } else if (year == "2007"){
 
       bea_naics <- concordance::bea2007_naics2007
-      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
+      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_5d", "NAICS_4d", "NAICS_3d", "NAICS_2d")
       class <- "NAICS2007"
 
     } else {
 
       bea_naics <- concordance::bea2012_naics2012
-      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_4d", "NAICS_2d")
+      colnames(bea_naics) <- c("BEA", "NAICS_6d", "NAICS_5d", "NAICS_4d", "NAICS_3d", "NAICS_2d")
       class <- "NAICS2012"
 
     }
@@ -352,10 +352,20 @@ get_upstream <- function (sourcevar,
         colnames(matched.df)[1] <- "NAICS_2d"
         matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_2d")
 
+      } else if (digits == 3) {
+
+        colnames(matched.df)[1] <- "NAICS_3d"
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_3d")
+
       } else if (digits == 4) {
 
         colnames(matched.df)[1] <- "NAICS_4d"
         matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_4d")
+
+      } else if (digits == 5) {
+
+        colnames(matched.df)[1] <- "NAICS_5d"
+        matches.1 <- left_join(matched.df, bea_naics, by = "NAICS_5d")
 
       } else {
 

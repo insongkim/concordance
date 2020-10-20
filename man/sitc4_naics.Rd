@@ -5,7 +5,7 @@
 \alias{sitc4_naics}
 \title{SITC4-NAICS Concordance}
 \format{
-A data frame with 5714 rows and 8 variables:
+A data frame with 5714 rows and 10 variables:
 \describe{
   \item{SITC4_5d}{5-digit SITC4 Code}
   \item{SITC4_4d}{4-digit SITC4 Code}
@@ -13,7 +13,9 @@ A data frame with 5714 rows and 8 variables:
   \item{SITC4_2d}{2-digit SITC4 Code}
   \item{SITC4_1d}{1-digit SITC4 Code}
   \item{NAICS_6d}{6-digit NAICS Code}
+  \item{NAICS_5d}{5-digit NAICS Code}
   \item{NAICS_4d}{4-digit NAICS Code}
+  \item{NAICS_3d}{3-digit NAICS Code}
   \item{NAICS_2d}{2-digit NAICS Code}
 }
 }

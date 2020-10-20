@@ -8,10 +8,14 @@
 A data frame with 1184 rows and 6 variables:
 \describe{
   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+  \item{NAICS2012_5d}{5-digit NAICS2012 Code}
   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+  \item{NAICS2012_3d}{3-digit NAICS2012 Code}
   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+  \item{NAICS2002_5d}{5-digit NAICS2002 Code}
   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+  \item{NAICS2002_3d}{3-digit NAICS2002 Code}
   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 }
 }

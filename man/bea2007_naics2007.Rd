@@ -5,11 +5,13 @@
 \alias{bea2007_naics2007}
 \title{BEA2007-NAICS2007 Concordance}
 \format{
-A data frame with 1,376 rows and 4 variables:
+A data frame with 1,376 rows and 6 variables:
 \describe{
   \item{BEA2007}{6-digit BEA2007 Code}
   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+  \item{NAICS2007_5d}{5-digit NAICS2007 Code}
   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+  \item{NAICS2007_3d}{3-digit NAICS2007 Code}
   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 }
 }

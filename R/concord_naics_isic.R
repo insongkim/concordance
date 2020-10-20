@@ -2,10 +2,10 @@
 #'
 #' Concords North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 #'
-#' @param sourcevar An input character vector of NAICS or ISIC codes. The function accepts 2, 4, 6-digit codes for NAICS and 1 to 4-digit codes for ISIC.
+#' @param sourcevar An input character vector of NAICS or ISIC codes. The function accepts 2 to 6-digit codes for NAICS and 1 to 4-digit codes for ISIC.
 #' @param origin A string setting the input industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
 #' @param destination A string setting the output industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for NAICS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2 to 6 digits for NAICS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -46,7 +46,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC3.1_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d,
+      select(.data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d,
              .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2002_6d) & is.na(.data$ISIC4_4d))) %>%
@@ -65,7 +65,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC3.1_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d,
+      select(.data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d,
              .data$ISIC3_4d, .data$ISIC3_3d, .data$ISIC3_2d, .data$ISIC3_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2002_6d) & is.na(.data$ISIC3_4d))) %>%
@@ -84,7 +84,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC3.1_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2002_6d, .data$NAICS2002_4d, .data$NAICS2002_2d,
+      select(.data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d,
              .data$ISIC2_4d, .data$ISIC2_3d, .data$ISIC2_2d, .data$ISIC2_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2002_6d) & is.na(.data$ISIC2_4d))) %>%
@@ -108,7 +108,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d,
+      select(.data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2007_6d) & is.na(.data$ISIC3.1_4d))) %>%
@@ -127,7 +127,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d,
+      select(.data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d,
              .data$ISIC3_4d, .data$ISIC3_3d, .data$ISIC3_2d, .data$ISIC3_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2007_6d) & is.na(.data$ISIC3_4d))) %>%
@@ -146,7 +146,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2007_6d, .data$NAICS2007_4d, .data$NAICS2007_2d,
+      select(.data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d,
              .data$ISIC2_4d, .data$ISIC2_3d, .data$ISIC2_2d, .data$ISIC2_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2007_6d) & is.na(.data$ISIC2_4d))) %>%
@@ -170,7 +170,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d,
+      select(.data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2012_6d) & is.na(.data$ISIC3.1_4d))) %>%
@@ -189,7 +189,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d,
+      select(.data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d,
              .data$ISIC3_4d, .data$ISIC3_3d, .data$ISIC3_2d, .data$ISIC3_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2012_6d) & is.na(.data$ISIC3_4d))) %>%
@@ -208,7 +208,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2012_6d, .data$NAICS2012_4d, .data$NAICS2012_2d,
+      select(.data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d,
              .data$ISIC2_4d, .data$ISIC2_3d, .data$ISIC2_2d, .data$ISIC2_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2012_6d) & is.na(.data$ISIC2_4d))) %>%
@@ -232,7 +232,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d,
+      select(.data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d,
              .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2017_6d) & is.na(.data$ISIC3.1_4d))) %>%
@@ -251,7 +251,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d,
+      select(.data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d,
              .data$ISIC3_4d, .data$ISIC3_3d, .data$ISIC3_2d, .data$ISIC3_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2017_6d) & is.na(.data$ISIC3_4d))) %>%
@@ -270,7 +270,7 @@ concord_naics_isic <- function (sourcevar,
                             by = "ISIC4_4d")
 
     dictionary <- dictionary %>%
-      select(.data$NAICS2017_6d, .data$NAICS2017_4d, .data$NAICS2017_2d,
+      select(.data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d,
              .data$ISIC2_4d, .data$ISIC2_3d, .data$ISIC2_2d, .data$ISIC2_1d) %>%
       distinct() %>%
       filter(!(is.na(.data$NAICS2017_6d) & is.na(.data$ISIC2_4d))) %>%
@@ -307,9 +307,9 @@ concord_naics_isic <- function (sourcevar,
   # set acceptable digits for inputs and outputs
   if (str_detect(origin, "NAICS") & str_detect(destination, "ISIC")){
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- seq(2, 6, 1)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
 
     destination.digits <- c(1, 2, 3, 4)
 
@@ -321,9 +321,9 @@ concord_naics_isic <- function (sourcevar,
 
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
 
-    destination.digits <- c(2, 4, 6)
+    destination.digits <- seq(2, 6, 1)
 
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for NAICS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2 to 6-digit outputs for NAICS codes.")}
 
   } else {
 
@@ -393,7 +393,7 @@ concord_naics_isic <- function (sourcevar,
 
       if(nrow(x) == 0){
 
-        out.sub <- list(match = NA,
+        out.sub <- list(match = NA_character_,
                         weight = NA)
 
       } else {

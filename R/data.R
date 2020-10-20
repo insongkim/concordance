@@ -789,13 +789,15 @@
 #'
 #' A dataset containing concordances between HS (combined) and NAICS (combined) classifications.
 #'
-#' @format A data frame with 10399 rows and 6 variables:
+#' @format A data frame with 10399 rows and 8 variables:
 #' \describe{
 #'   \item{HS_6d}{6-digit HS Code}
 #'   \item{HS_4d}{4-digit HS Code}
 #'   \item{HS_2d}{2-digit HS Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -805,13 +807,15 @@
 #'
 #' A dataset containing concordances between HS0 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8058 rows and 6 variables:
+#' @format A data frame with 8058 rows and 8 variables:
 #' \describe{
 #'   \item{HS0_6d}{6-digit HS0 Code}
 #'   \item{HS0_4d}{4-digit HS0 Code}
 #'   \item{HS0_2d}{2-digit HS0 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -821,13 +825,15 @@
 #'
 #' A dataset containing concordances between HS1 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8297 rows and 6 variables:
+#' @format A data frame with 8297 rows and 8 variables:
 #' \describe{
 #'   \item{HS1_6d}{6-digit HS1 Code}
 #'   \item{HS1_4d}{4-digit HS1 Code}
 #'   \item{HS1_2d}{2-digit HS1 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -837,13 +843,15 @@
 #'
 #' A dataset containing concordances between HS2 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8609 rows and 6 variables:
+#' @format A data frame with 8609 rows and 8 variables:
 #' \describe{
 #'   \item{HS2_6d}{6-digit HS2 Code}
 #'   \item{HS2_4d}{4-digit HS2 Code}
 #'   \item{HS2_2d}{2-digit HS2 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -853,13 +861,15 @@
 #'
 #' A dataset containing concordances between HS3 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8545 rows and 6 variables:
+#' @format A data frame with 8545 rows and 8 variables:
 #' \describe{
 #'   \item{HS3_6d}{6-digit HS3 Code}
 #'   \item{HS3_4d}{4-digit HS3 Code}
 #'   \item{HS3_2d}{2-digit HS3 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -869,13 +879,15 @@
 #'
 #' A dataset containing concordances between HS4 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8790 rows and 6 variables:
+#' @format A data frame with 8790 rows and 8 variables:
 #' \describe{
 #'   \item{HS4_6d}{6-digit HS4 Code}
 #'   \item{HS4_4d}{4-digit HS4 Code}
 #'   \item{HS4_2d}{2-digit HS4 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -885,13 +897,15 @@
 #'
 #' A dataset containing concordances between HS5 and NAICS (combined) classifications.
 #'
-#' @format A data frame with 8973 rows and 6 variables:
+#' @format A data frame with 8973 rows and 8 variables:
 #' \describe{
 #'   \item{HS5_6d}{6-digit HS5 Code}
 #'   \item{HS5_4d}{4-digit HS5 Code}
 #'   \item{HS5_2d}{2-digit HS5 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -1173,7 +1187,7 @@
 #'
 #' A dataset containing concordances between SITC1 and NAICS (combined) classification via HS (combined).
 #'
-#' @format A data frame with 3797 rows and 8 variables:
+#' @format A data frame with 3797 rows and 10 variables:
 #' \describe{
 #'   \item{SITC1_5d}{5-digit SITC1 Code}
 #'   \item{SITC1_4d}{4-digit SITC1 Code}
@@ -1181,7 +1195,9 @@
 #'   \item{SITC1_2d}{2-digit SITC1 Code}
 #'   \item{SITC1_1d}{1-digit SITC1 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -1191,7 +1207,7 @@
 #'
 #' A dataset containing concordances between SITC2 and NAICS (combined) classification via HS (combined).
 #'
-#' @format A data frame with 5065 rows and 8 variables:
+#' @format A data frame with 5065 rows and 10 variables:
 #' \describe{
 #'   \item{SITC2_5d}{5-digit SITC2 Code}
 #'   \item{SITC2_4d}{4-digit SITC2 Code}
@@ -1199,7 +1215,9 @@
 #'   \item{SITC2_2d}{2-digit SITC2 Code}
 #'   \item{SITC2_1d}{1-digit SITC2 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -1209,7 +1227,7 @@
 #'
 #' A dataset containing concordances between SITC3 and NAICS (combined) classification via HS (combined).
 #'
-#' @format A data frame with 6024 rows and 8 variables:
+#' @format A data frame with 6024 rows and 10 variables:
 #' \describe{
 #'   \item{SITC3_5d}{5-digit SITC3 Code}
 #'   \item{SITC3_4d}{4-digit SITC3 Code}
@@ -1217,7 +1235,9 @@
 #'   \item{SITC3_2d}{2-digit SITC3 Code}
 #'   \item{SITC3_1d}{1-digit SITC3 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -1227,7 +1247,7 @@
 #'
 #' A dataset containing concordances between SITC4 and NAICS (combined) classification via HS (combined).
 #'
-#' @format A data frame with 5714 rows and 8 variables:
+#' @format A data frame with 5714 rows and 10 variables:
 #' \describe{
 #'   \item{SITC4_5d}{5-digit SITC4 Code}
 #'   \item{SITC4_4d}{4-digit SITC4 Code}
@@ -1235,7 +1255,9 @@
 #'   \item{SITC4_2d}{2-digit SITC4 Code}
 #'   \item{SITC4_1d}{1-digit SITC4 Code}
 #'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
 #'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
 #'   \item{NAICS_2d}{2-digit NAICS Code}
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html; \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}; Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
@@ -1245,10 +1267,12 @@
 #'
 #' A dataset containing concordances between NAICS2002 and ISIC3.1 classifications.
 #'
-#' @format A data frame with 1960 rows and 7 variables:
+#' @format A data frame with 1960 rows and 9 variables:
 #' \describe{
 #'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_5d}{5-digit NAICS2002 Code}
 #'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #'   \item{ISIC3.1_4d}{4-digit ISIC3.1 Code}
 #'   \item{ISIC3.1_3d}{3-digit ISIC3.1 Code}
@@ -1262,10 +1286,12 @@
 #'
 #' A dataset containing concordances between NAICS2007 and ISIC4 classifications.
 #'
-#' @format A data frame with 1765 rows and 7 variables:
+#' @format A data frame with 1765 rows and 9 variables:
 #' \describe{
 #'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_5d}{5-digit NAICS2007 Code}
 #'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_3d}{3-digit NAICS2007 Code}
 #'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 #'   \item{ISIC4_4d}{4-digit ISIC4 Code}
 #'   \item{ISIC4_3d}{3-digit ISIC4 Code}
@@ -1279,10 +1305,12 @@
 #'
 #' A dataset containing concordances between NAICS2012 and ISIC4 classifications.
 #'
-#' @format A data frame with 1663 rows and 7 variables:
+#' @format A data frame with 1663 rows and 9 variables:
 #' \describe{
 #'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_5d}{5-digit NAICS2012 Code}
 #'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_3d}{3-digit NAICS2012 Code}
 #'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 #'   \item{ISIC4_4d}{4-digit ISIC4 Code}
 #'   \item{ISIC4_3d}{3-digit ISIC4 Code}
@@ -1296,10 +1324,12 @@
 #'
 #' A dataset containing concordances between NAICS2017 and ISIC4 classifications.
 #'
-#' @format A data frame with 1653 rows and 7 variables:
+#' @format A data frame with 1653 rows and 9 variables:
 #' \describe{
 #'   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+#'   \item{NAICS2017_5d}{5-digit NAICS2017 Code}
 #'   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+#'   \item{NAICS2017_3d}{3-digit NAICS2017 Code}
 #'   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
 #'   \item{ISIC4_4d}{4-digit ISIC4 Code}
 #'   \item{ISIC4_3d}{3-digit ISIC4 Code}
@@ -1722,13 +1752,17 @@
 #'
 #' A dataset containing concordances between NAICS2017 and NAICS2012 classification.
 #'
-#' @format A data frame with 1069 rows and 6 variables:
+#' @format A data frame with 1069 rows and 10 variables:
 #' \describe{
 #'   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+#'   \item{NAICS2017_5d}{5-digit NAICS2017 Code}
 #'   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+#'   \item{NAICS2017_3d}{3-digit NAICS2017 Code}
 #'   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
 #'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_5d}{5-digit NAICS2012 Code}
 #'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_3d}{3-digit NAICS2012 Code}
 #'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1738,13 +1772,17 @@
 #'
 #' A dataset containing concordances between NAICS2012 and NAICS2007 classification.
 #'
-#' @format A data frame with 1184 rows and 6 variables:
+#' @format A data frame with 1184 rows and 10 variables:
 #' \describe{
 #'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_5d}{5-digit NAICS2012 Code}
 #'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_3d}{3-digit NAICS2012 Code}
 #'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 #'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_5d}{5-digit NAICS2007 Code}
 #'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_3d}{3-digit NAICS2007 Code}
 #'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1754,13 +1792,17 @@
 #'
 #' A dataset containing concordances between NAICS2007 and NAICS2002 classification.
 #'
-#' @format A data frame with 1200 rows and 6 variables:
+#' @format A data frame with 1200 rows and 10 variables:
 #' \describe{
 #'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_5d}{5-digit NAICS2007 Code}
 #'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_3d}{3-digit NAICS2007 Code}
 #'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 #'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_5d}{5-digit NAICS2002 Code}
 #'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1770,13 +1812,17 @@
 #'
 #' A dataset containing concordances between NAICS2017 and NAICS2007 classification.
 #'
-#' @format A data frame with 1188 rows and 6 variables:
+#' @format A data frame with 1188 rows and 10 variables:
 #' \describe{
 #'   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+#'   \item{NAICS2017_5d}{5-digit NAICS2017 Code}
 #'   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+#'   \item{NAICS2017_3d}{3-digit NAICS2017 Code}
 #'   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
 #'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_5d}{5-digit NAICS2007 Code}
 #'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_3d}{3-digit NAICS2007 Code}
 #'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1786,13 +1832,17 @@
 #'
 #' A dataset containing concordances between NAICS2017 and NAICS2002 classification.
 #'
-#' @format A data frame with 1212 rows and 6 variables:
+#' @format A data frame with 1212 rows and 10 variables:
 #' \describe{
 #'   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+#'   \item{NAICS2017_5d}{5-digit NAICS2017 Code}
 #'   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+#'   \item{NAICS2017_3d}{3-digit NAICS2017 Code}
 #'   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
 #'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_5d}{5-digit NAICS2002 Code}
 #'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1805,10 +1855,14 @@
 #' @format A data frame with 1184 rows and 6 variables:
 #' \describe{
 #'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_5d}{5-digit NAICS2012 Code}
 #'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_3d}{3-digit NAICS2012 Code}
 #'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 #'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_5d}{5-digit NAICS2002 Code}
 #'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
 #' @source \url{https://www.census.gov/eos/www/naics/concordances/concordances.html}
@@ -1942,11 +1996,13 @@
 #'
 #' A dataset containing concordances between BEA2002 and NAICS2002 classification.
 #'
-#' @format A data frame with 1,335 rows and 4 variables:
+#' @format A data frame with 1,335 rows and 6 variables:
 #' \describe{
 #'   \item{BEA2002}{6-digit BEA2002 Code}
 #'   \item{NAICS2002_6d}{6-digit NAICS2002 Code}
+#'   \item{NAICS2002_5d}{5-digit NAICS2002 Code}
 #'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
 #' @source \url{https://www.bea.gov/industry/benchmark-input-output-data}
@@ -1956,11 +2012,13 @@
 #'
 #' A dataset containing concordances between BEA2007 and NAICS2007 classification.
 #'
-#' @format A data frame with 1,376 rows and 4 variables:
+#' @format A data frame with 1,376 rows and 6 variables:
 #' \describe{
 #'   \item{BEA2007}{6-digit BEA2007 Code}
 #'   \item{NAICS2007_6d}{6-digit NAICS2007 Code}
+#'   \item{NAICS2007_5d}{5-digit NAICS2007 Code}
 #'   \item{NAICS2007_4d}{4-digit NAICS2007 Code}
+#'   \item{NAICS2007_3d}{3-digit NAICS2007 Code}
 #'   \item{NAICS2007_2d}{2-digit NAICS2007 Code}
 #' }
 #' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
@@ -1970,11 +2028,13 @@
 #'
 #' A dataset containing concordances between BEA2012 and NAICS2012 classification.
 #'
-#' @format A data frame with 1,376 rows and 4 variables:
+#' @format A data frame with 1,376 rows and 6 variables:
 #' \describe{
 #'   \item{BEA2012}{6-digit BEA2012 Code}
 #'   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+#'   \item{NAICS2012_5d}{5-digit NAICS2012 Code}
 #'   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+#'   \item{NAICS2012_3d}{3-digit NAICS2012 Code}
 #'   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 #' }
 #' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}

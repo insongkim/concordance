@@ -14,13 +14,13 @@ SITC-NAICS concordances are mapped through HS (combined):
 concord_sitc_naics(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 }
 \arguments{
-\item{sourcevar}{An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS.}
+\item{sourcevar}{An input character vector of SITC or NAICS codes. The function accepts 1 to 5-digit codes for SITC and 2 to 6-digit codes for NAICS.}
 
 \item{origin}{A string setting the input industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
 \item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
-\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit codes for SITC and 2, 4, 6-digit codes for NAICS. The default is 4 digits.}
+\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 5-digit codes for SITC and 2 to 6-digit codes for NAICS. The default is 4 digits.}
 
 \item{all}{Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.}
 }

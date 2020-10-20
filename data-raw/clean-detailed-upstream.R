@@ -11,6 +11,7 @@ library(jsonlite)
 library(readstata13)
 library(concordance)
 
+
 ################################################################################
 ## BEA 2002
 ################################################################################
@@ -24,6 +25,7 @@ names(bea2002_desc)
 # save
 save(bea2002_desc,
      file = "./data/bea2002_desc.RData", compress = "xz")
+
 
 ################################################################################
 ## BEA 2012
@@ -39,6 +41,7 @@ names(bea2012_desc)
 save(bea2012_desc,
      file = "./data/bea2012_desc.RData", compress = "xz")
 
+
 ################################################################################
 # BEA2002 to NAICS2002
 ################################################################################
@@ -49,12 +52,15 @@ bea2002_naics2002 <- read_csv("./data-raw/2002_BEA_to_2002_NAICS.csv", col_types
 # check names
 names(bea2002_naics2002)
 
+bea2002_naics2002$NAICS2002_5d <- substr(bea2002_naics2002$NAICS2002_6d , start = 1, stop = 5)
 bea2002_naics2002$NAICS2002_4d <- substr(bea2002_naics2002$NAICS2002_6d , start = 1, stop = 4)
+bea2002_naics2002$NAICS2002_3d <- substr(bea2002_naics2002$NAICS2002_6d , start = 1, stop = 3)
 bea2002_naics2002$NAICS2002_2d <- substr(bea2002_naics2002$NAICS2002_4d , start = 1, stop = 2)
 
 # save
 save(bea2002_naics2002 ,
      file = "./data/bea2002_naics2002.RData", compress = "xz")
+
 
 ################################################################################
 # BEA2007 to NAICS2007
@@ -71,7 +77,9 @@ names(bea2007_naics2007)
 bea2007_naics2007$BEA2007 <- bea2007_naics2007$BEA2012
 bea2007_naics2007$NAICS2007_6d <- concord(bea2007_naics2007$NAICS2012_6d, "NAICS2012", "NAICS2007", dest.digit = 6, all = FALSE)
 
+bea2007_naics2007$NAICS2007_5d <- substr(bea2007_naics2007$NAICS2007_6d , start = 1, stop = 5)
 bea2007_naics2007$NAICS2007_4d <- substr(bea2007_naics2007$NAICS2007_6d , start = 1, stop = 4)
+bea2007_naics2007$NAICS2007_3d <- substr(bea2007_naics2007$NAICS2007_6d , start = 1, stop = 3)
 bea2007_naics2007$NAICS2007_2d <- substr(bea2007_naics2007$NAICS2007_4d , start = 1, stop = 2)
 
 # get rid of the 2012 variables
@@ -80,6 +88,7 @@ bea2007_naics2007 <- bea2007_naics2007[, -c(1,2)]
 # save
 save(bea2007_naics2007 ,
      file = "./data/bea2007_naics2007.RData", compress = "xz")
+
 
 ################################################################################
 # BEA2012 to NAICS2012
@@ -91,12 +100,15 @@ bea2012_naics2012 <- read_csv("./data-raw/2012_BEA_to_2012_NAICS.csv", col_types
 # check names
 names(bea2012_naics2012)
 
+bea2012_naics2012$NAICS2012_5d <- substr(bea2012_naics2012$NAICS2012_6d , start = 1, stop = 5)
 bea2012_naics2012$NAICS2012_4d <- substr(bea2012_naics2012$NAICS2012_6d , start = 1, stop = 4)
+bea2012_naics2012$NAICS2012_3d <- substr(bea2012_naics2012$NAICS2012_6d , start = 1, stop = 3)
 bea2012_naics2012$NAICS2012_2d <- substr(bea2012_naics2012$NAICS2012_4d , start = 1, stop = 2)
 
 # save
 save(bea2012_naics2012 ,
      file = "./data/bea2012_naics2012.RData", compress = "xz")
+
 
 ################################################################################
 # Antras and Chor (2012, 2013)

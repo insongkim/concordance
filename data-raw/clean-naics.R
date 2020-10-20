@@ -33,13 +33,18 @@ naics2017_naics2012 %>% filter(nchar(NAICS2012_6d) != 6)
 
 # create vars
 naics2017_naics2012 <- naics2017_naics2012 %>%
-  mutate(NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+  mutate(NAICS2017_5d = str_sub(NAICS2017_6d, start = 1, end = 5),
+         NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+         NAICS2017_3d = str_sub(NAICS2017_6d, start = 1, end = 3),
          NAICS2017_2d = str_sub(NAICS2017_6d, start = 1, end = 2),
+         NAICS2012_5d = str_sub(NAICS2012_6d, start = 1, end = 5),
          NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
-         NAICS2012_2d = str_sub(NAICS2012_6d, start = 1, end = 2)) %>%
+         NAICS2012_3d = str_sub(NAICS2012_6d, start = 1, end = 3),
+         NAICS2012_2d = str_sub(NAICS2012_6d, start = 1, end = 2)
+         ) %>%
   distinct() %>%
-  select(NAICS2017_6d, NAICS2017_4d, NAICS2017_2d,
-         NAICS2012_6d, NAICS2012_4d, NAICS2012_2d) %>%
+  select(NAICS2017_6d, NAICS2017_5d, NAICS2017_4d, NAICS2017_3d, NAICS2017_2d,
+         NAICS2012_6d, NAICS2012_5d, NAICS2012_4d, NAICS2012_3d, NAICS2012_2d) %>%
   arrange(NAICS2017_6d) %>%
   mutate(NAICS2017_2d = if_else(NAICS2017_2d == "31", "31-33", NAICS2017_2d),
          NAICS2017_2d = if_else(NAICS2017_2d == "32", "31-33", NAICS2017_2d),
@@ -89,13 +94,17 @@ naics2012_naics2007 %>% filter(nchar(NAICS2007_6d) != 6)
 
 # create vars
 naics2012_naics2007 <- naics2012_naics2007 %>%
-  mutate(NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+  mutate(NAICS2012_5d = str_sub(NAICS2012_6d, start = 1, end = 5),
+         NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+         NAICS2012_3d = str_sub(NAICS2012_6d, start = 1, end = 3),
          NAICS2012_2d = str_sub(NAICS2012_6d, start = 1, end = 2),
+         NAICS2007_5d = str_sub(NAICS2007_6d, start = 1, end = 5),
          NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+         NAICS2007_3d = str_sub(NAICS2007_6d, start = 1, end = 3),
          NAICS2007_2d = str_sub(NAICS2007_6d, start = 1, end = 2)) %>%
   distinct() %>%
-  select(NAICS2012_6d, NAICS2012_4d, NAICS2012_2d,
-         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  select(NAICS2012_6d, NAICS2012_5d, NAICS2012_4d, NAICS2012_3d, NAICS2012_2d,
+         NAICS2007_6d, NAICS2007_5d, NAICS2007_4d, NAICS2007_3d, NAICS2007_2d) %>%
   arrange(NAICS2012_6d) %>%
   mutate(NAICS2012_2d = if_else(NAICS2012_2d == "31", "31-33", NAICS2012_2d),
          NAICS2012_2d = if_else(NAICS2012_2d == "32", "31-33", NAICS2012_2d),
@@ -145,13 +154,17 @@ naics2007_naics2002 %>% filter(nchar(NAICS2002_6d) != 6)
 
 # create vars
 naics2007_naics2002 <- naics2007_naics2002 %>%
-  mutate(NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+  mutate(NAICS2007_5d = str_sub(NAICS2007_6d, start = 1, end = 5),
+         NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+         NAICS2007_3d = str_sub(NAICS2007_6d, start = 1, end = 3),
          NAICS2007_2d = str_sub(NAICS2007_6d, start = 1, end = 2),
+         NAICS2002_5d = str_sub(NAICS2002_6d, start = 1, end = 5),
          NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+         NAICS2002_3d = str_sub(NAICS2002_6d, start = 1, end = 3),
          NAICS2002_2d = str_sub(NAICS2002_6d, start = 1, end = 2)) %>%
   distinct() %>%
-  select(NAICS2007_6d, NAICS2007_4d, NAICS2007_2d,
-         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  select(NAICS2007_6d, NAICS2007_5d, NAICS2007_4d, NAICS2007_3d, NAICS2007_2d,
+         NAICS2002_6d, NAICS2002_5d, NAICS2002_4d, NAICS2002_3d, NAICS2002_2d) %>%
   arrange(NAICS2007_6d) %>%
   mutate(NAICS2007_2d = if_else(NAICS2007_2d == "31", "31-33", NAICS2007_2d),
          NAICS2007_2d = if_else(NAICS2007_2d == "32", "31-33", NAICS2007_2d),
@@ -190,13 +203,17 @@ naics2017_naics2007 <- full_join(naics2017_naics2012 %>%
 
 naics2017_naics2007 <- naics2017_naics2007 %>%
   select(-NAICS2012_6d) %>%
-  mutate(NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+  mutate(NAICS2017_5d = str_sub(NAICS2017_6d, start = 1, end = 5),
+         NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+         NAICS2017_3d = str_sub(NAICS2017_6d, start = 1, end = 3),
          NAICS2017_2d = str_sub(NAICS2017_6d, start = 1, end = 2),
+         NAICS2007_5d = str_sub(NAICS2007_6d, start = 1, end = 5),
          NAICS2007_4d = str_sub(NAICS2007_6d, start = 1, end = 4),
+         NAICS2007_3d = str_sub(NAICS2007_6d, start = 1, end = 3),
          NAICS2007_2d = str_sub(NAICS2007_6d, start = 1, end = 2)) %>%
   distinct() %>%
-  select(NAICS2017_6d, NAICS2017_4d, NAICS2017_2d,
-         NAICS2007_6d, NAICS2007_4d, NAICS2007_2d) %>%
+  select(NAICS2017_6d, NAICS2017_5d, NAICS2017_4d, NAICS2017_3d, NAICS2017_2d,
+         NAICS2007_6d, NAICS2007_5d, NAICS2007_4d, NAICS2007_3d, NAICS2007_2d) %>%
   arrange(NAICS2017_6d) %>%
   mutate(NAICS2017_2d = if_else(NAICS2017_2d == "31", "31-33", NAICS2017_2d),
          NAICS2017_2d = if_else(NAICS2017_2d == "32", "31-33", NAICS2017_2d),
@@ -235,13 +252,17 @@ naics2017_naics2002 <- full_join(naics2017_naics2007 %>%
 
 naics2017_naics2002 <- naics2017_naics2002 %>%
   select(-NAICS2007_6d) %>%
-  mutate(NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+  mutate(NAICS2017_5d = str_sub(NAICS2017_6d, start = 1, end = 5),
+         NAICS2017_4d = str_sub(NAICS2017_6d, start = 1, end = 4),
+         NAICS2017_3d = str_sub(NAICS2017_6d, start = 1, end = 3),
          NAICS2017_2d = str_sub(NAICS2017_6d, start = 1, end = 2),
+         NAICS2002_5d = str_sub(NAICS2002_6d, start = 1, end = 5),
          NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+         NAICS2002_3d = str_sub(NAICS2002_6d, start = 1, end = 3),
          NAICS2002_2d = str_sub(NAICS2002_6d, start = 1, end = 2)) %>%
   distinct() %>%
-  select(NAICS2017_6d, NAICS2017_4d, NAICS2017_2d,
-         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  select(NAICS2017_6d, NAICS2017_5d, NAICS2017_4d, NAICS2017_3d, NAICS2017_2d,
+         NAICS2002_6d, NAICS2002_5d, NAICS2002_4d, NAICS2002_3d, NAICS2002_2d) %>%
   arrange(NAICS2017_6d) %>%
   mutate(NAICS2017_2d = if_else(NAICS2017_2d == "31", "31-33", NAICS2017_2d),
          NAICS2017_2d = if_else(NAICS2017_2d == "32", "31-33", NAICS2017_2d),
@@ -280,13 +301,17 @@ naics2012_naics2002 <- full_join(naics2012_naics2007 %>%
 
 naics2012_naics2002 <- naics2012_naics2002 %>%
   select(-NAICS2007_6d) %>%
-  mutate(NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+  mutate(NAICS2012_5d = str_sub(NAICS2012_6d, start = 1, end = 5),
+         NAICS2012_4d = str_sub(NAICS2012_6d, start = 1, end = 4),
+         NAICS2012_3d = str_sub(NAICS2012_6d, start = 1, end = 3),
          NAICS2012_2d = str_sub(NAICS2012_6d, start = 1, end = 2),
+         NAICS2002_5d = str_sub(NAICS2002_6d, start = 1, end = 5),
          NAICS2002_4d = str_sub(NAICS2002_6d, start = 1, end = 4),
+         NAICS2002_3d = str_sub(NAICS2002_6d, start = 1, end = 3),
          NAICS2002_2d = str_sub(NAICS2002_6d, start = 1, end = 2)) %>%
   distinct() %>%
-  select(NAICS2012_6d, NAICS2012_4d, NAICS2012_2d,
-         NAICS2002_6d, NAICS2002_4d, NAICS2002_2d) %>%
+  select(NAICS2012_6d, NAICS2012_5d, NAICS2012_4d, NAICS2012_3d, NAICS2012_2d,
+         NAICS2002_6d, NAICS2002_5d, NAICS2002_4d, NAICS2002_3d, NAICS2002_2d) %>%
   arrange(NAICS2012_6d) %>%
   mutate(NAICS2012_2d = if_else(NAICS2012_2d == "31", "31-33", NAICS2012_2d),
          NAICS2012_2d = if_else(NAICS2012_2d == "32", "31-33", NAICS2012_2d),

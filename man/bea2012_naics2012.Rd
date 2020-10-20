@@ -5,11 +5,13 @@
 \alias{bea2012_naics2012}
 \title{BEA2012-NAICS2012 Concordance}
 \format{
-A data frame with 1,376 rows and 4 variables:
+A data frame with 1,376 rows and 6 variables:
 \describe{
   \item{BEA2012}{6-digit BEA2012 Code}
   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+  \item{NAICS2012_5d}{5-digit NAICS2012 Code}
   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+  \item{NAICS2012_3d}{3-digit NAICS2012 Code}
   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 }
 }

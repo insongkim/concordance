@@ -5,13 +5,15 @@
 \alias{hs0_naics}
 \title{HS0-NAICS Concordance}
 \format{
-A data frame with 8058 rows and 6 variables:
+A data frame with 8058 rows and 8 variables:
 \describe{
   \item{HS0_6d}{6-digit HS0 Code}
   \item{HS0_4d}{4-digit HS0 Code}
   \item{HS0_2d}{2-digit HS0 Code}
   \item{NAICS_6d}{6-digit NAICS Code}
+  \item{NAICS_5d}{5-digit NAICS Code}
   \item{NAICS_4d}{4-digit NAICS Code}
+  \item{NAICS_3d}{3-digit NAICS Code}
   \item{NAICS_2d}{2-digit NAICS Code}
 }
 }

@@ -5,13 +5,17 @@
 \alias{naics2017_naics2012}
 \title{NAICS2017-NAICS2012 Concordance}
 \format{
-A data frame with 1069 rows and 6 variables:
+A data frame with 1069 rows and 10 variables:
 \describe{
   \item{NAICS2017_6d}{6-digit NAICS2017 Code}
+  \item{NAICS2017_5d}{5-digit NAICS2017 Code}
   \item{NAICS2017_4d}{4-digit NAICS2017 Code}
+  \item{NAICS2017_3d}{3-digit NAICS2017 Code}
   \item{NAICS2017_2d}{2-digit NAICS2017 Code}
   \item{NAICS2012_6d}{6-digit NAICS2012 Code}
+  \item{NAICS2012_5d}{5-digit NAICS2012 Code}
   \item{NAICS2012_4d}{4-digit NAICS2012 Code}
+  \item{NAICS2012_3d}{3-digit NAICS2012 Code}
   \item{NAICS2012_2d}{2-digit NAICS2012 Code}
 }
 }

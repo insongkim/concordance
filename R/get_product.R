@@ -60,9 +60,9 @@ get_product <- function (pattern,
 
   } else if (str_detect(origin, "NAICS")) {
 
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- seq(2, 6, 1)
 
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
 
   } else if (str_detect(origin, "HS")) {
 
