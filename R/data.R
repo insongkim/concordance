@@ -2040,6 +2040,122 @@
 #' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
 "bea2012_naics2012"
 
+#' HS1-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS1 and BEC4 classifications.
+#'
+#' @format A data frame with 5334 rows and 6 variables:
+#' \describe{
+#'   \item{HS1_6d}{6-digit HS1 Code}
+#'   \item{HS1_4d}{4-digit HS1 Code}
+#'   \item{HS1_2d}{2-digit HS1 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs1_bec4"
+
+#' HS2-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS2 and BEC4 classifications.
+#'
+#' @format A data frame with 5351 rows and 6 variables:
+#' \describe{
+#'   \item{HS2_6d}{6-digit HS2 Code}
+#'   \item{HS2_4d}{4-digit HS2 Code}
+#'   \item{HS2_2d}{2-digit HS2 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs2_bec4"
+
+#' HS3-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS3 and BEC4 classifications.
+#'
+#' @format A data frame with 5050 rows and 6 variables:
+#' \describe{
+#'   \item{HS3_6d}{6-digit HS3 Code}
+#'   \item{HS3_4d}{4-digit HS3 Code}
+#'   \item{HS3_2d}{2-digit HS3 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs3_bec4"
+
+#' HS4-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS4 and BEC4 classifications.
+#'
+#' @format A data frame with 5283 rows and 6 variables:
+#' \describe{
+#'   \item{HS4_6d}{6-digit HS4 Code}
+#'   \item{HS4_4d}{4-digit HS4 Code}
+#'   \item{HS4_2d}{2-digit HS4 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs4_bec4"
+
+#' HS5-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS5 and BEC4 classifications.
+#'
+#' @format A data frame with 5511 rows and 6 variables:
+#' \describe{
+#'   \item{HS5_6d}{6-digit HS5 Code}
+#'   \item{HS5_4d}{4-digit HS5 Code}
+#'   \item{HS5_2d}{2-digit HS5 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs5_bec4"
+
+#' SITC2-BEC4 Concordance
+#'
+#' A dataset containing concordances between SITC2 and BEC4 classifications.
+#'
+#' @format A data frame with 2597 rows and 8 variables:
+#' \describe{
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"sitc2_bec4"
+
+#' SITC3-BEC4 Concordance
+#'
+#' A dataset containing concordances between SITC3 and BEC4 classifications.
+#'
+#' @format A data frame with 3404 rows and 8 variables:
+#' \describe{
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#'   \item{BEC}{Original BEC4 Code}
+#'   \item{BEC_2d}{2-digit BEC4 Code}
+#'   \item{BEC_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"sitc3_bec4"
+
 #' Sigma Table (3-Digit HS0)
 #'
 #' A dataset containing import demand elasticities by HS0 3-digit codes from Broda and Weinstein (QJE, 2006) for 73 countries.
