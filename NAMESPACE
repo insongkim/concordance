@@ -2,6 +2,7 @@
 
 export(concord)
 export(concord_hs)
+export(concord_hs_bec)
 export(concord_hs_isic)
 export(concord_hs_naics)
 export(concord_hs_sitc)

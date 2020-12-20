@@ -5,14 +5,14 @@
 \alias{hs4_bec4}
 \title{HS4-BEC4 Concordance}
 \format{
-A data frame with 5283 rows and 6 variables:
+A data frame with 5,283 rows and 6 variables:
 \describe{
   \item{HS4_6d}{6-digit HS4 Code}
   \item{HS4_4d}{4-digit HS4 Code}
   \item{HS4_2d}{2-digit HS4 Code}
-  \item{BEC}{Original BEC4 Code}
-  \item{BEC_2d}{2-digit BEC4 Code}
-  \item{BEC_1d}{1-digit BEC4 Code}
+  \item{BEC4_3d}{3-digit BEC4 Code}
+  \item{BEC4_2d}{2-digit BEC4 Code}
+  \item{BEC4_1d}{1-digit BEC4 Code}
 }
 }
 \source{

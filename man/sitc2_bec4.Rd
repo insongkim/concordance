@@ -5,16 +5,16 @@
 \alias{sitc2_bec4}
 \title{SITC2-BEC4 Concordance}
 \format{
-A data frame with 2597 rows and 8 variables:
+A data frame with 2,597 rows and 8 variables:
 \describe{
   \item{SITC2_5d}{5-digit SITC2 Code}
   \item{SITC2_4d}{4-digit SITC2 Code}
   \item{SITC2_3d}{3-digit SITC2 Code}
   \item{SITC2_2d}{2-digit SITC2 Code}
   \item{SITC2_1d}{1-digit SITC2 Code}
-  \item{BEC}{Original BEC4 Code}
-  \item{BEC_2d}{2-digit BEC4 Code}
-  \item{BEC_1d}{1-digit BEC4 Code}
+  \item{BEC4_3d}{3-digit BEC4 Code}
+  \item{BEC4_2d}{2-digit BEC4 Code}
+  \item{BEC4_1d}{1-digit BEC4 Code}
 }
 }
 \source{
