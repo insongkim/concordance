@@ -1,11 +1,11 @@
-#' Converting HS and BEC Codes
+#' Converting SITC and BEC Codes
 #'
-#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from Broad Economic Classification codes (BEC Revision 4).
+#' Concords Harmonized System codes (SITC1, SITC2, SITC3, SITC4) to and from Broad Economic Classification codes (BEC Revision 4).
 #'
-#' @param sourcevar An input character vector of HS or BEC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 3-digit codes for BEC.
-#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "BEC4" (2016).
-#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "BEC4" (2016).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 3 digits for BEC codes. The default is 2 digits.
+#' @param sourcevar An input character vector of SITC or BEC codes. The function accepts 1 to 5-digit codes for SITC and 1 to 3-digit codes for BEC.
+#' @param origin A string setting the input industry classification:  "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "BEC4" (2016).
+#' @param destination A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006),"BEC4" (2016).
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 5 digits for SITC and 1 to 3 digits for BEC codes. The default is 2 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -19,87 +19,70 @@
 #' @examples
 #' ## HS combined to BEC4
 #' # one input: one-to-one match
-#' concord_hs_bec(sourcevar = "120600",
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = "73161",
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = FALSE)
 #'
-#' concord_hs_bec(sourcevar = "120600",
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = "73161",
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = TRUE)
 #'
 #' # two inputs: multiple-to-one match
-#' concord_hs_bec(sourcevar = c("010110", "010210"),
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = c("04300", "05484"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = FALSE)
 #'
-#' concord_hs_bec(sourcevar = c("010110", "010210"),
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = c("04300", "05484"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = TRUE)
 #'
 #' # two inputs: repeated
-#' concord_hs_bec(sourcevar = c("120600", "120600"),
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = c("04300", "04300"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = FALSE)
 #'
-#' # one to multiple matches
-#' concord_hs_bec(sourcevar = c("010120", "030571"),
-#'                 origin = "HS", destination = "BEC4",
-#'                 dest.digit = 3, all = TRUE)
-#'
 #' # if no match, will return NA and give warning message
-#' concord_hs_bec(sourcevar = c("120600", "120610"),
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = c("04300", "04301"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 3, all = FALSE)
 #'
 #' # 4-digit inputs, 2-digit outputs
-#' concord_hs_bec(sourcevar = c("1206", "8546"),
-#'                 origin = "HS", destination = "BEC4",
+#' concord_sitc_bec(sourcevar = c("0430", "5121"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 2, all = TRUE)
 #'
-#' # 6-digit inputs, 1-digit outputs
-#' concord_hs_bec(sourcevar = c("120600", "854610"),
-#'                 origin = "HS", destination = "BEC4",
+#' # 3-digit inputs, 1-digit outputs
+#' concord_sitc_bec(sourcevar = c("043", "512"),
+#'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 1, all = TRUE)
 #'
 #' ## BEC4 to HS combined
-#' concord_hs_bec(sourcevar = c("1", "7"),
-#'                 origin = "BEC4", destination = "HS",
-#'                 dest.digit = 6, all = FALSE)
-concord_hs_bec <- function (sourcevar,
-                             origin,
-                             destination,
-                             dest.digit = 2,
-                             all = FALSE) {
+#' concord_sitc_bec(sourcevar = c("1", "7"),
+#'                 origin = "BEC4", destination = "SITC1",
+#'                 dest.digit = 5, all = FALSE)
+concord_sitc_bec <- function (sourcevar,
+                            origin,
+                            destination,
+                            dest.digit = 2,
+                            all = FALSE) {
   
   # load specific conversion dictionary
-  # HS and BEC4
-  if ((origin == "HS0" & destination == "BEC4") | (origin == "BEC4" & destination == "HS0")) {
+  # SITC and BEC4
+  if ((origin == "SITC1" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC1")) {
     
-    dictionary <- concordance::hs0_bec4
+    dictionary <- concordance::sitc1_bec4
     
-  } else if ((origin == "HS1" & destination == "BEC4") | (origin == "BEC4" & destination == "HS1")) {
+  } else if ((origin == "SITC2" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC2")) {
     
-    dictionary <- concordance::hs1_bec4
-
-  } else if ((origin == "HS2" & destination == "BEC4") | (origin == "BEC4" & destination == "HS2")) {
+    dictionary <- concordance::sitc2_bec4
     
-    dictionary <- concordance::hs2_bec4
+  } else if ((origin == "SITC3" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC3")) {
     
-  } else if ((origin == "HS3" & destination == "BEC4") | (origin == "BEC4" & destination == "HS3")) {
+    dictionary <- concordance::sitc3_bec4
     
-    dictionary <- concordance::hs3_bec4
+  } else if ((origin == "SITC4" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC4")) {
     
-  } else if ((origin == "HS4" & destination == "BEC4") | (origin == "BEC4" & destination == "HS4")) {
-    
-    dictionary <- concordance::hs4_bec4
-    
-  } else if ((origin == "HS5" & destination == "BEC4") | (origin == "BEC4" & destination == "HS5")) {
-    
-    dictionary <- concordance::hs5_bec4
-    
-  } else if ((origin == "HS" & destination == "BEC4") | (origin == "BEC4" & destination == "HS")) {
-    
-    dictionary <- concordance::hs_bec4
+    dictionary <- concordance::sitc4_bec4
     
   } else {
     
@@ -118,25 +101,25 @@ concord_hs_bec <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
   
   # set acceptable digits for inputs and outputs
-  if ((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "BEC4")){
+  if ((origin == "SITC1" | origin == "SITC2" | origin == "SITC3" | origin == "SITC4") & (destination == "BEC4")){
     
-    origin.digits <- c(2, 4, 6)
+    origin.digits <- c(1, 2, 3, 4, 5)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for HS codes.")}
     
     destination.digits <- c(1, 2, 3)
     
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3-digit outputs for BEC4 codes.")}
     
-  } else if ((origin == "BEC4") & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5")) {
+  } else if ((origin == "BEC4") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4")) {
     
     if (max(digits > 3)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC4 codes.")
+      
+    }
     
-      }
+    destination.digits <- c(1, 2, 3, 4, 5)
     
-    destination.digits <- c(2, 4, 6)
-    
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 4, 6-digit outputs for HS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4, 5-digit outputs for HS codes.")}
     
   } else {
     
@@ -233,15 +216,15 @@ concord_hs_bec <- function (sourcevar,
       pull(match)
     
   }
-
+  
   # get rid of trailing zeroes
   if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < 3) {
     
     out <- sub("0+$", "", as.character(out))
     
     warning(paste("Most fine-grained matches for BEC4 codes are provided."))
-  
-    }
+    
+  }
   
   return(out)
   

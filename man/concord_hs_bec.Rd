@@ -19,7 +19,7 @@ concord_hs_bec(sourcevar, origin, destination, dest.digit = 2, all = FALSE)
 
 \item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "BEC4" (2016).}
 
-\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 3 digits for BEC codes. The default is based on original concordance table.}
+\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 3 digits for BEC codes. The default is 2 digits.}
 
 \item{all}{Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.}
 }
@@ -44,11 +44,11 @@ concord_hs_bec(sourcevar = "120600",
                 dest.digit = 3, all = TRUE)
 
 # two inputs: multiple-to-one match
-concord_hs_bec(sourcevar = c("010110", "010119"),
+concord_hs_bec(sourcevar = c("010110", "010210"),
                 origin = "HS", destination = "BEC4",
                 dest.digit = 3, all = FALSE)
 
-concord_hs_bec(sourcevar = c("010110", "010119"),
+concord_hs_bec(sourcevar = c("010110", "010210"),
                 origin = "HS", destination = "BEC4",
                 dest.digit = 3, all = TRUE)
 
@@ -58,7 +58,7 @@ concord_hs_bec(sourcevar = c("120600", "120600"),
                 dest.digit = 3, all = FALSE)
 
 # one to multiple matches
-concord_hs_bec(sourcevar = c("1206", "1001"),
+concord_hs_bec(sourcevar = c("010120", "030571"),
                 origin = "HS", destination = "BEC4",
                 dest.digit = 3, all = TRUE)
 
@@ -72,10 +72,10 @@ concord_hs_bec(sourcevar = c("1206", "8546"),
                 origin = "HS", destination = "BEC4",
                 dest.digit = 2, all = TRUE)
 
-# 6-digit inputs, 3-digit outputs
+# 6-digit inputs, 1-digit outputs
 concord_hs_bec(sourcevar = c("120600", "854610"),
                 origin = "HS", destination = "BEC4",
-                dest.digit = 3, all = TRUE)
+                dest.digit = 1, all = TRUE)
 
 ## BEC4 to HS combined
 concord_hs_bec(sourcevar = c("1", "7"),
