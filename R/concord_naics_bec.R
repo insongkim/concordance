@@ -1,11 +1,11 @@
-#' Converting SITC and BEC Codes
+#' Converting NAICS and BEC Codes
 #'
-#' Concords Standard International Trade Classification codes (SITC1, SITC2, SITC3, SITC4) to and from Broad Economic Classification codes (BEC Revision 4).
+#' Concords North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined) to and from Broad Economic Classification codes (BEC Revision 4).
 #'
-#' @param sourcevar An input character vector of SITC or BEC codes. The function accepts 1 to 5-digit codes for SITC and 1 to 3-digit codes for BEC.
-#' @param origin A string setting the input industry classification:  "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "BEC4" (2016).
-#' @param destination A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "BEC4" (2016).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 5 digits for SITC and 1 to 3 digits for BEC codes. The default is 2 digits.
+#' @param sourcevar An input character vector of NAICS or BEC codes. The function accepts 2 to 6-digit codes for NAICS and 1 to 3-digit codes for BEC.
+#' @param origin A string setting the input industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "BEC4" (2016).
+#' @param destination A string setting the output industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "BEC4" (2016).
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2 to 6 digits for NAICS and 1 to 3 digits for BEC codes. The default is 2 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -61,28 +61,32 @@
 #'                 origin = "BEC4", destination = "SITC1",
 #'                 dest.digit = 5, all = FALSE)
 concord_sitc_bec <- function (sourcevar,
-                            origin,
-                            destination,
-                            dest.digit = 2,
-                            all = FALSE) {
+                              origin,
+                              destination,
+                              dest.digit = 2,
+                              all = FALSE) {
   
   # load specific conversion dictionary
-  # SITC and BEC4
-  if ((origin == "SITC1" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC1")) {
+  # HS and BEC4
+  if ((origin == "NAICS2002" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2002")) {
     
-    dictionary <- concordance::sitc1_bec4
+    dictionary <- concordance::hs2_bec4
     
-  } else if ((origin == "SITC2" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC2")) {
+  } else if ((origin == "NAICS2007" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2007")) {
     
-    dictionary <- concordance::sitc2_bec4
+    dictionary <- concordance::hs3_bec4
     
-  } else if ((origin == "SITC3" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC3")) {
+  } else if ((origin == "NAICS2012" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2012")) {
     
-    dictionary <- concordance::sitc3_bec4
+    dictionary <- concordance::hs4_bec4
     
-  } else if ((origin == "SITC4" & destination == "BEC4") | (origin == "BEC4" & destination == "SITC4")) {
+  } else if ((origin == "NAICS2017" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2017")) {
     
-    dictionary <- concordance::sitc4_bec4
+    dictionary <- concordance::hs5_bec4
+    
+  } else if ((origin == "NAICS" & destination == "BEC4") | (origin == "BEC4" & destination == "HS")) {
+    
+    dictionary <- concordance::hs_bec4
     
   } else {
     
@@ -101,31 +105,35 @@ concord_sitc_bec <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
   
   # set acceptable digits for inputs and outputs
-  if ((origin == "SITC1" | origin == "SITC2" | origin == "SITC3" | origin == "SITC4") & (destination == "BEC4")){
+  if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin = "NAICS2017") & (destination == "BEC4")){
     
-    origin.digits <- c(1, 2, 3, 4, 5)
+    origin.digits <- c(2, 3, 4, 5, 6)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for HS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 3, 4, 5, 6-digit inputs for HS codes.")}
     
     destination.digits <- c(1, 2, 3)
     
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3-digit outputs for BEC4 codes.")}
     
-  } else if ((origin == "BEC4") & (destination == "SITC1" | destination == "SITC2" | destination == "SITC3" | destination == "SITC4")) {
+  } else if ((origin == "BEC4") & (destination == "NAICS" | destination == "NAICS2002" | destination == "NAICS2007" | destination == "NAICS2012" | destination = "NAICS2017")) {
     
     if (max(digits > 3)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC4 codes.")
       
     }
     
-    destination.digits <- c(1, 2, 3, 4, 5)
+    destination.digits <- c(2, 3, 4, 5, 6)
     
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4, 5-digit outputs for HS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 3, 4, 5, 6-digit outputs for HS codes.")}
     
   } else {
     
     stop("Concordance not supported.")
     
   }
+  
+  
+  
+  
   
   # get column names of dictionary
   origin.codes <- names(dictionary)
