@@ -15,7 +15,6 @@
 #' \itemize{
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
 #' # one input: one-to-one match
 #' concord_sitc_bec(sourcevar = "73161",
@@ -56,10 +55,10 @@
 #'                 dest.digit = 1, all = TRUE)
 #'
 concord_sitc_bec <- function (sourcevar,
-                            origin,
-                            destination,
-                            dest.digit = 2,
-                            all = FALSE) {
+                              origin,
+                              destination,
+                              dest.digit = 2,
+                              all = FALSE) {
   
   # load specific conversion dictionary
   # SITC and BEC4

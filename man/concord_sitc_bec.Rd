@@ -29,9 +29,6 @@ The matched output(s) for each element of the input vector. Either a list object
 \description{
 Concords Standard International Trade Classification codes (SITC1, SITC2, SITC3, SITC4) to and from Broad Economic Classification codes (BEC Revision 4).
 }
-\note{
-Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
-}
 \examples{
 # one input: one-to-one match
 concord_sitc_bec(sourcevar = "73161",

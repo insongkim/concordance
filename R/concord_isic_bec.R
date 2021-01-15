@@ -1,11 +1,11 @@
-#' Converting NAICS and BEC Codes
+#' Converting ISIC and BEC Codes
 #'
-#' Concords North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined) to and from Broad Economic Classification codes (BEC Revision 4) via the bridge of Harmonized System codes.
+#' Concords International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4) to and from Broad Economic Classification codes (BEC Revision 4) via the bridge of Harmonized System codes.
 #'
-#' @param sourcevar An input character vector of NAICS or BEC codes. The function accepts 2 to 6-digit codes for NAICS and 1 to 3-digit codes for BEC.
-#' @param origin A string setting the input industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "BEC4" (2016).
-#' @param destination A string setting the output industry classification: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "BEC4" (2016).
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2 to 6 digits for NAICS and 1 to 3 digits for BEC codes. The default is 2 digits.
+#' @param sourcevar An input character vector of ISIC or BEC codes. The function accepts 1 to 4-digit codes for ISIC and 1 to 3-digit codes for BEC.
+#' @param origin A string setting the input industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
+#' @param destination A string setting the output industry classification: "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 1 to 4 digits for ISIC and 1 to 3 digits for BEC codes. The default is 2 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -16,69 +16,64 @@
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
 #' @examples
-#' # one input: one-to-one match
-#' concord_naics_bec(sourcevar = "11111",
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 2, all = FALSE)
-#'
-#' concord_naics_bec(sourcevar = "212325",
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 2, all = TRUE)
-#'
-#' # two inputs: multiple-to-multiple match
-#' concord_naics_bec(sourcevar = c("11291", "31511"),
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 2, all = FALSE)
+#' # one input: one-to-multiple match
+#' concord_isic_bec(sourcevar = "1110",
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 2, all = FALSE)
 #' 
-#' concord_naics_bec(sourcevar = c("11291", "31511"),
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 2, all = TRUE)
+#' concord_isic_bec(sourcevar = "1110",
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 2, all = TRUE)
+#' 
+#' # two inputs: multiple-to-multiple match
+#' concord_isic_bec(sourcevar = c("3211", "2901"),
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 2, all = FALSE)
+#' 
+#' concord_isic_bec(sourcevar = c("3211", "2901"),
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 2, all = TRUE)
 #' 
 #' # repeated inputs
-#' concord_naics_bec(sourcevar = c("11251", "11251"),
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 2, all = FALSE)
+#' concord_isic_bec(sourcevar = c("3720", "3720"),
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 2, all = FALSE)
 #' 
 #' # if no match, will return NA and give warning message
-#' concord_naics_bec(sourcevar = c("23721", "23721"),
+#' concord_naics_bec(sourcevar = c("3721", "2911"),
 #'                   origin = "NAICS2002", destination = "BEC4",
 #'                   dest.digit = 2, all = FALSE)
 #' 
-#' # 4-digit inputs, 1-digit outputs
-#' concord_naics_bec(sourcevar = c("1129", "3151"),
-#'                   origin = "NAICS2002", destination = "BEC4",
-#'                   dest.digit = 1, all = TRUE)
-concord_naics_bec <- function (sourcevar,
-                               origin,
-                               destination,
-                               dest.digit = 2,
-                               all = FALSE) {
+#' # 3-digit inputs, 1-digit outputs
+#' concord_isic_bec(sourcevar = c("372", "381"),
+#'                  origin = "ISIC2", destination = "BEC4",
+#'                  dest.digit = 1, all = TRUE)
+concord_isic_bec <- function (sourcevar,
+                              origin,
+                              destination,
+                              dest.digit = 2,
+                              all = FALSE) {
   
   # load corresponding conversion dictionary and HS bridge based on years
-  if ((origin == "NAICS2002" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2002")) {
+  if ((origin == "ISIC2" & destination == "BEC4") | (origin == "BEC4" & destination == "ISIC2")) {
+    
+    dictionary <- concordance::hs0_bec4
+    hs.bridge <- "HS0"
+    
+  } else if ((origin == "ISIC3" & destination == "BEC4") | (origin == "BEC4" & destination == "ISIC3")) {
+    
+    dictionary <- concordance::hs0_bec4
+    hs.bridge <- "HS0"
+    
+  } else if ((origin == "ISIC3.1" & destination == "BEC4") | (origin == "BEC4" & destination == "ISIC3.1")) {
     
     dictionary <- concordance::hs2_bec4
     hs.bridge <- "HS2"
     
-  } else if ((origin == "NAICS2007" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2007")) {
+  } else if ((origin == "ISIC4" & destination == "BEC4") | (origin == "BEC4" & destination == "ISIC4")) {
     
     dictionary <- concordance::hs3_bec4
     hs.bridge <- "HS3"
-    
-  } else if ((origin == "NAICS2012" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2012")) {
-    
-    dictionary <- concordance::hs4_bec4
-    hs.bridge <- "HS4"
-    
-  } else if ((origin == "NAICS2017" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2017")) {
-    
-    dictionary <- concordance::hs5_bec4
-    hs.bridge <- "HS5"
-    
-  } else if ((origin == "NAICS" & destination == "BEC4") | (origin == "BEC4" & destination == "HS")) {
-    
-    dictionary <- concordance::hs_bec4
-    hs.bridge <- "HS"
     
   } else {
     
@@ -97,25 +92,25 @@ concord_naics_bec <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
   
   # set acceptable digits for inputs and outputs
-  if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017") & (destination == "BEC4")){
+  if ((origin == "ISIC2" | origin == "ISIC3" | origin == "ISIC3.1" | origin == "ISIC4") & (destination == "BEC4")){
     
-    origin.digits <- c(2, 3, 4, 5, 6)
+    origin.digits <- c(1, 2, 3, 4)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 3, 4, 5, 6-digit inputs for HS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
     
     destination.digits <- c(1, 2, 3)
     
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3-digit outputs for BEC4 codes.")}
     
-  } else if ((origin == "BEC4") & (destination == "NAICS" | destination == "NAICS2002" | destination == "NAICS2007" | destination == "NAICS2012" | destination == "NAICS2017")) {
+  } else if ((origin == "BEC4") & (destination == "ISIC2" | destination == "ISIC3" | destination == "ISIC3.1" | destination == "ISIC4")) {
     
     if (max(digits > 3)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC4 codes.")
       
     }
     
-    destination.digits <- c(2, 3, 4, 5, 6)
+    destination.digits <- c(1, 2, 3, 4)
     
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 3, 4, 5, 6-digit outputs for HS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3, 4-digit outputs for HS codes.")}
     
   } else {
     
@@ -136,7 +131,7 @@ concord_naics_bec <- function (sourcevar,
     
     if (!origin.var %in% origin.codes){stop("Origin code not supported.")}
     if (!destination.var %in% destination.codes){stop("Destination code not supported.")}
-  
+    
     # match to HS codes
     sourcevar.hs <- concord(sourcevar, origin, hs.bridge, dest.digit = 6, all = TRUE)
     
@@ -199,10 +194,10 @@ concord_naics_bec <- function (sourcevar,
     hs.codes <- matched.df %>% select(all_of(destination.var)) %>% 
       pull()
     
-    suppressWarnings(sourcevar.naics <- concord(hs.codes, hs.bridge, destination, dest.digit = dest.digit, all = TRUE))
+    suppressWarnings(sourcevar.isic <- concord(hs.codes, hs.bridge, destination, dest.digit = dest.digit, all = TRUE))
     
     # stack vectors of matched codes
-    sourcevar.post <- map_df(sourcevar.naics, function(x){
+    sourcevar.post <- map_df(sourcevar.isic, function(x){
       
       out <- tibble(code = pluck(x, 1))
       
@@ -215,8 +210,8 @@ concord_naics_bec <- function (sourcevar,
     # create df based on inputs
     bec <- matched.df %>% select(all_of(origin.var)) %>% 
       pull()
-
-    matches.1 <- map2_df(1:nrow(matched.df), sourcevar.naics, function(x, y){
+    
+    matches.1 <- map2_df(1:nrow(matched.df), sourcevar.isic, function(x, y){
       
       out <- tibble(input = rep(bec[[x]], length(pluck(sourcevar.post[[x]], 1))),
                     code = pluck(y, 1))
@@ -302,3 +297,4 @@ concord_naics_bec <- function (sourcevar,
   return(out)
   
 }
+

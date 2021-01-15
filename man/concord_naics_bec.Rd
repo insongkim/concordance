@@ -29,9 +29,6 @@ The matched output(s) for each element of the input vector. Either a list object
 \description{
 Concords North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined) to and from Broad Economic Classification codes (BEC Revision 4) via the bridge of Harmonized System codes.
 }
-\note{
-Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
-}
 \examples{
 # one input: one-to-one match
 concord_naics_bec(sourcevar = "11111",

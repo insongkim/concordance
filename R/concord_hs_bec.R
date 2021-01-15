@@ -65,10 +65,10 @@
 #'                 origin = "BEC4", destination = "HS",
 #'                 dest.digit = 6, all = FALSE)
 concord_hs_bec <- function (sourcevar,
-                             origin,
-                             destination,
-                             dest.digit = 2,
-                             all = FALSE) {
+                            origin,
+                            destination,
+                            dest.digit = 2,
+                            all = FALSE) {
   
   # load specific conversion dictionary
   # HS and BEC4
