@@ -17,7 +17,7 @@ concord_sitc_bec(sourcevar, origin, destination, dest.digit = 2, all = FALSE)
 
 \item{origin}{A string setting the input industry classification:  "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "BEC4" (2016).}
 
-\item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006),"BEC4" (2016).}
+\item{destination}{A string setting the output industry classification: "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "BEC4" (2016).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 1 to 5 digits for SITC and 1 to 3 digits for BEC codes. The default is 2 digits.}
 
@@ -27,13 +27,12 @@ concord_sitc_bec(sourcevar, origin, destination, dest.digit = 2, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords Harmonized System codes (SITC1, SITC2, SITC3, SITC4) to and from Broad Economic Classification codes (BEC Revision 4).
+Concords Standard International Trade Classification codes (SITC1, SITC2, SITC3, SITC4) to and from Broad Economic Classification codes (BEC Revision 4).
 }
 \note{
 Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
-## HS combined to BEC4
 # one input: one-to-one match
 concord_sitc_bec(sourcevar = "73161",
                 origin = "SITC1", destination = "BEC4",
@@ -72,8 +71,4 @@ concord_sitc_bec(sourcevar = c("043", "512"),
                 origin = "SITC1", destination = "BEC4",
                 dest.digit = 1, all = TRUE)
 
-## BEC4 to HS combined
-concord_sitc_bec(sourcevar = c("1", "7"),
-                origin = "BEC4", destination = "SITC1",
-                dest.digit = 5, all = FALSE)
 }

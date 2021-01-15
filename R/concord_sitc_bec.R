@@ -17,7 +17,6 @@
 #' }
 #' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
-#' ## HS combined to BEC4
 #' # one input: one-to-one match
 #' concord_sitc_bec(sourcevar = "73161",
 #'                 origin = "SITC1", destination = "BEC4",
@@ -56,10 +55,6 @@
 #'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 1, all = TRUE)
 #'
-#' ## BEC4 to HS combined
-#' concord_sitc_bec(sourcevar = c("1", "7"),
-#'                 origin = "BEC4", destination = "SITC1",
-#'                 dest.digit = 5, all = FALSE)
 concord_sitc_bec <- function (sourcevar,
                             origin,
                             destination,
@@ -218,7 +213,7 @@ concord_sitc_bec <- function (sourcevar,
   }
   
   # get rid of trailing zeroes
-  if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < 3) {
+  if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < dest.digit) {
     
     out <- sub("0+$", "", as.character(out))
     

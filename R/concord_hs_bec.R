@@ -17,7 +17,6 @@
 #' }
 #' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 #' @examples
-#' ## HS combined to BEC4
 #' # one input: one-to-one match
 #' concord_hs_bec(sourcevar = "120600",
 #'                 origin = "HS", destination = "BEC4",
@@ -235,7 +234,7 @@ concord_hs_bec <- function (sourcevar,
   }
 
   # get rid of trailing zeroes
-  if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < 3) {
+  if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < dest.digit) {
     
     out <- sub("0+$", "", as.character(out))
     

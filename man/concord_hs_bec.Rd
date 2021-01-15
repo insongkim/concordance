@@ -33,7 +33,6 @@ Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to 
 Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
 }
 \examples{
-## HS combined to BEC4
 # one input: one-to-one match
 concord_hs_bec(sourcevar = "120600",
                 origin = "HS", destination = "BEC4",
