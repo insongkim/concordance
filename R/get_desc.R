@@ -3,7 +3,7 @@
 #' Returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC".
+#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @source Data consolidated from
 #' \itemize{
@@ -73,8 +73,8 @@
 #' # SITC4
 #' get_desc(sourcevar = c("4221", "7732"), origin = "SITC4")
 #'
-#' # BEC
-#' get_desc(sourcevar = c("001", "111"), origin = "BEC")
+#' # BEC4
+#' get_desc(sourcevar = c("001", "111"), origin = "BEC4")
 get_desc <- function (sourcevar,
                       origin) {
 
@@ -161,7 +161,7 @@ get_desc <- function (sourcevar,
 
     desc.df <- concordance::sitc4_desc
 
-  } else if (origin == "BEC"){
+  } else if (origin == "BEC4"){
 
     desc.df <- concordance::bec_desc
 
@@ -209,7 +209,7 @@ get_desc <- function (sourcevar,
 
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for SITC codes.")}
 
-  } else if (origin == "BEC") {
+  } else if (origin == "BEC4") {
 
     origin.digits <- c(1, 2, 3)
 
