@@ -54,8 +54,8 @@ concord_isic_bec(sourcevar = c("3720", "3720"),
                  dest.digit = 2, all = FALSE)
 
 # if no match, will return NA and give warning message
-concord_naics_bec(sourcevar = c("3721", "2911"),
-                  origin = "NAICS2002", destination = "BEC4",
+concord_isic_bec(sourcevar = c("3721", "2911"),
+                  origin = "ISIC2", destination = "BEC4",
                   dest.digit = 2, all = FALSE)
 
 # 3-digit inputs, 1-digit outputs

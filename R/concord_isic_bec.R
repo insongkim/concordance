@@ -40,8 +40,8 @@
 #'                  dest.digit = 2, all = FALSE)
 #' 
 #' # if no match, will return NA and give warning message
-#' concord_naics_bec(sourcevar = c("3721", "2911"),
-#'                   origin = "NAICS2002", destination = "BEC4",
+#' concord_isic_bec(sourcevar = c("3721", "2911"),
+#'                   origin = "ISIC2", destination = "BEC4",
 #'                   dest.digit = 2, all = FALSE)
 #' 
 #' # 3-digit inputs, 1-digit outputs
@@ -146,19 +146,6 @@ concord_isic_bec <- function (sourcevar,
     sourcevar.post <- sourcevar.post %>%
       pull(.data$code)
     
-    # check if concordance is available for HS codes
-    # all.origin.codes <- dictionary %>%
-      # pull(!!as.name(origin.var))
-    
-    # if (!all(sourcevar.post %in% all.origin.codes)){
-      
-      # no.code <- sourcevar.post[!sourcevar.post %in% all.origin.codes]
-      # no.code <- paste0(no.code, collapse = ", ")
-      
-      # warning(paste("Matches for ", str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
-      
-    # }
-    
     # create df based on inputs
     matched.df <- map2_df(1:length(sourcevar), sourcevar.hs, function(x, y){
       
@@ -175,7 +162,7 @@ concord_isic_bec <- function (sourcevar,
     # get rid of NAs
     matches.1 <- matches.1 %>% drop_na()
     
-  } else {
+  } else { # if the other direction
     
     # allow origin / destination to be entered in any case
     origin.var <- paste(toupper(origin), "_", digits, "d", sep = "")
