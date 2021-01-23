@@ -12,6 +12,7 @@
 #'   \item UN Comtrade <https://comtrade.un.org/>
 #'   \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
 #' }
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110, use BEC4 code 007 instead of 7)---results may be buggy otherwise. Also note that the results may not be informative for broad categories like BEC4.
 #' @import tibble tidyr purrr dplyr stringr
 #' @importFrom rlang := !! .data
 #' @export

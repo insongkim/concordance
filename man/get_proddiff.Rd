@@ -50,6 +50,9 @@ get_proddiff(sourcevar = c("1206", "1001", "8546"), origin = "HS", setting = "CO
 
 # NAICS input
 get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
+
+# BEC4 input
+get_proddiff(sourcevar = c("11", "21"), origin = "BEC4", setting = "CON", prop = "")
 }
 \references{
 Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.

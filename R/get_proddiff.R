@@ -36,6 +36,9 @@
 #'
 #' # NAICS input
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
+#' 
+#' # BEC4 input
+#' get_proddiff(sourcevar = c("11", "21"), origin = "BEC4", setting = "CON", prop = "")
 get_proddiff <- function (sourcevar,
                           origin,
                           setting = "CON",

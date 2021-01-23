@@ -42,6 +42,12 @@ get_product <- function (pattern,
                          type = "regex",
                          ignore.case = TRUE) {
 
+  # check origin of BEC4
+  if (origin == "BEC4" & digits > 3){
+    digits <- 2
+    warning(paste("BEC4 codes only accept 1, 2, 3-digit. If you are using 4 digits as the default, it is now reset to 2 digits."))
+  }
+  
   # sanity check
   if (length(pattern) == 0) {return(character(0))}
 

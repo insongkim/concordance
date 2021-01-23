@@ -54,6 +54,12 @@ concord_naics_bec <- function (sourcevar,
                                dest.digit = 2,
                                all = FALSE) {
   
+  # check dest.digit of BEC4
+  if (destination == "BEC4" & dest.digit > 3){
+    dest.digit <- 2
+    warning(paste("BEC4 codes only accept 1, 2, 3-digit. If you are using 4 digits as the default, it is now reset to 2 digits."))
+  } 
+  
   # load corresponding conversion dictionary and HS bridge based on years
   if ((origin == "NAICS2002" & destination == "BEC4") | (origin == "BEC4" & destination == "NAICS2002")) {
     

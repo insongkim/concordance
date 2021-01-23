@@ -26,6 +26,9 @@ Uses keywords ("part(s)", "intermediate", and "component") to identify intermedi
 \description{
 Calculates and returns the level (proportion) of intermediate goods production in an industry based on product descriptions.
 }
+\note{
+Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110, use BEC4 code 007 instead of 7)---results may be buggy otherwise. Also note that the results may not be informative for broad categories like BEC4.
+}
 \examples{
 # NAICS
 get_intermediate(sourcevar = c("11", "31-33", "42"), origin = "NAICS2017")
