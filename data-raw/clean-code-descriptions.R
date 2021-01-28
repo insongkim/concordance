@@ -661,7 +661,7 @@ bec4.desc.3d <- bec4.desc.r$results %>%
   filter(parent != "#") %>%
   mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
   rename(code = id) %>%
-  mutate(code = str_pad(code, width = 3, side = "left", pad = "0")) %>%
+  mutate(code = str_pad(code, width = 3, side = "right", pad = "0")) %>%
   select(code, desc) %>%
   arrange(code)
 

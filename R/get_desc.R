@@ -74,7 +74,7 @@
 #' get_desc(sourcevar = c("4221", "7732"), origin = "SITC4")
 #'
 #' # BEC4
-#' get_desc(sourcevar = c("001", "111"), origin = "BEC4")
+#' get_desc(sourcevar = c("111", "112"), origin = "BEC4")
 get_desc <- function (sourcevar,
                       origin) {
 
