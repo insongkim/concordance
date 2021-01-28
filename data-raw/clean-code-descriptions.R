@@ -650,13 +650,14 @@ save(sitc4_desc,
 
 
 ################################################################################
-## BEC
+## BEC rev.4
 ################################################################################
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
 # https://comtrade.un.org/data/cache/classificationBEC.json
 # read json
-bec.desc.r <- fromJSON(file.path("./data-raw", "classificationBEC.json"))
+bec4.desc.r <- fromJSON(file.path("./data-raw", "classificationBEC.json"))
 
-bec.desc.3d <- bec.desc.r$results %>%
+bec4.desc.3d <- bec4.desc.r$results %>%
   filter(parent != "#") %>%
   mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
   rename(code = id) %>%
@@ -664,24 +665,24 @@ bec.desc.3d <- bec.desc.r$results %>%
   select(code, desc) %>%
   arrange(code)
 
-bec.desc.2d <- bec.desc.r$results %>%
+bec4.desc.2d <- bec4.desc.r$results %>%
   filter(nchar(id) == 2) %>%
   mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
   rename(code = id) %>%
   select(code, desc) %>%
   arrange(code)
 
-bec.desc.1d <- bec.desc.r$results %>%
+bec4.desc.1d <- bec4.desc.r$results %>%
   filter(nchar(id) == 1) %>%
   mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
   rename(code = id) %>%
   select(code, desc) %>%
   arrange(code)
 
-bec_desc <- rbind(bec.desc.3d, bec.desc.2d, bec.desc.1d) %>%
+bec4_desc <- rbind(bec4.desc.3d, bec4.desc.2d, bec4.desc.1d) %>%
   arrange(code)
 
 # save
-save(bec_desc,
-     file = "./data/bec_desc.RData", compress = "xz")
+save(bec4_desc,
+     file = "./data/bec4_desc.RData", compress = "xz")
 

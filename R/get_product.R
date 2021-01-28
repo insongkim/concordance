@@ -47,7 +47,7 @@ get_product <- function (pattern,
     digits <- 2
     warning(paste("BEC4 codes only accept 1, 2, 3-digit. If you are using 4 digits as the default, it is now reset to 2 digits."))
   }
-  
+
   # sanity check
   if (length(pattern) == 0) {return(character(0))}
 
@@ -169,7 +169,7 @@ get_product <- function (pattern,
 
   } else if (origin == "BEC4"){
 
-    desc.df <- concordance::bec_desc
+    desc.df <- concordance::bec4_desc
 
   } else {
 

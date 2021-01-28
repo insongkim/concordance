@@ -244,18 +244,18 @@
 #' @source \url{https://comtrade.un.org/data/cache/classificationS4.json}
 "sitc4_desc"
 
-#' BEC Description
+#' BEC4 Description
 #'
-#' A dataset containing the description of products under the BEC
+#' A dataset containing the description of products under the BEC4
 #' classification.
 #'
 #' @format A data frame with 50 rows and 2 variables:
 #' \describe{
-#'   \item{code}{BEC Code}
-#'   \item{desc}{BEC Description}
+#'   \item{code}{BEC4 Code}
+#'   \item{desc}{BEC4 Description}
 #' }
 #' @source \url{https://comtrade.un.org/data/cache/classificationBEC.json}
-"bec_desc"
+"bec4_desc"
 
 #' BEA Description for year 2002
 #'

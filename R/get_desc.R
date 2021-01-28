@@ -163,7 +163,7 @@ get_desc <- function (sourcevar,
 
   } else if (origin == "BEC4"){
 
-    desc.df <- concordance::bec_desc
+    desc.df <- concordance::bec4_desc
 
   } else {
 
