@@ -62,4 +62,8 @@ concord_naics_bec(sourcevar = c("23721", "23721"),
 concord_naics_bec(sourcevar = c("1129", "3151"),
                   origin = "NAICS2002", destination = "BEC4",
                   dest.digit = 1, all = TRUE)
+## BEC4 to NAICS2002
+concord_naics_bec(sourcevar = c("1", "7"),
+                origin = "BEC4", destination = "NAICS2002",
+                dest.digit = 6, all = FALSE)
 }

@@ -62,4 +62,8 @@ concord_isic_bec(sourcevar = c("3721", "2911"),
 concord_isic_bec(sourcevar = c("372", "381"),
                  origin = "ISIC2", destination = "BEC4",
                  dest.digit = 1, all = TRUE)
+## BEC4 to ISIC2
+concord_isic_bec(sourcevar = c("1", "7"),
+                origin = "BEC4", destination = "ISIC2",
+                dest.digit = 4, all = FALSE)
 }

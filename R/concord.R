@@ -16,7 +16,7 @@
 #'   \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
 #'   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
 #' }
-#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise. 
 #' @examples
 #' # HS to NAICS
 #' concord(sourcevar = c("120600", "854690"),

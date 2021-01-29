@@ -53,7 +53,10 @@
 #' concord_sitc_bec(sourcevar = c("043", "512"),
 #'                 origin = "SITC1", destination = "BEC4",
 #'                 dest.digit = 1, all = TRUE)
-#'
+#' ## BEC4 to SITC1
+#' concord_sitc_bec(sourcevar = c("1", "7"),
+#'                 origin = "BEC4", destination = "SITC1",
+#'                 dest.digit = 5, all = FALSE)
 concord_sitc_bec <- function (sourcevar,
                               origin,
                               destination,
@@ -173,6 +176,15 @@ concord_sitc_bec <- function (sourcevar,
     ungroup() %>%
     select(-n, -.data$n_sum) %>%
     rename(match = !!as.name(destination))
+  
+  # get rid of trailing zeroes
+  if (destination == "BEC4" & min(nchar(sub("0*$", "", dest.var$match)), na.rm = TRUE) < dest.digit) {
+    
+    dest.var$match <- sub("0+$", "", as.character(dest.var$match))
+    
+    warning(paste("Some of the matches are not available at the specified dest.digit. Instead, most fine-grained matches for BEC4 codes are provided."))
+    
+  }
 
   # keep info on all matches and weights?
   if (all == TRUE){
@@ -214,15 +226,6 @@ concord_sitc_bec <- function (sourcevar,
     # handle repeated inputs
     out <- dest.var.sub[match(sourcevar, dest.var.sub %>% pull(!!as.name(origin))), "match"] %>%
       pull(match)
-
-  }
-
-  # get rid of trailing zeroes
-  if (destination == "BEC4" & min(nchar(sub("0*$", "", out)), na.rm = TRUE) < dest.digit) {
-
-    out <- sub("0+$", "", as.character(out))
-
-    warning(paste("Most fine-grained matches for BEC4 codes are provided."))
 
   }
 

@@ -14,7 +14,7 @@
 #' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @export
-#' @note Always include leading zeroes in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise. 
 #' @examples
 #' # HS
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS")
