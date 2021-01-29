@@ -2,7 +2,7 @@ Package: concordance
 Type: Package
 Title: Product Concordance
 Version: 2.1.0
-Date: 2020-10-12
+Date: 2021-01-27
 Authors@R: c(
   person("Steven", "Liao", email = "steven.liao@ucr.edu", role = c("aut", "cre")),
   person("In Song", "Kim", email = "insong@mit.edu", role = c("aut")),
@@ -15,7 +15,7 @@ Description: A set of utilities for matching products in different
 	     System (HS0, HS1, HS2, HS3, HS4, HS5, HS combined), the Standard 
 	     International Trade Classification (SITC1, SITC2, SITC3, SITC4), 
 	     the North American Industry Classification System (NAICS 2002, 2007, 
-	     2012, 2017, combined), as well as the Broad Economic Categories (BEC), 
+	     2012, 2017, combined), as well as the Broad Economic Categories (BEC4), 
 	     the International Standard of Industrial Classification (ISIC2, ISIC3, 
 	     ISIC3.1, ISIC4), and the Standard Industrial Classification (SIC). It 
 	     also provides code nomenclature/descriptions look-up, product code 

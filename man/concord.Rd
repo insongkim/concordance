@@ -17,9 +17,9 @@ concord(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
+\item{origin}{A string setting the input coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).}
+\item{destination}{A string setting the output coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 4 digits.}
 
@@ -72,4 +72,9 @@ concord(sourcevar = c("22240", "77324"),
 concord(sourcevar = c("111120", "326199"),
         origin = "NAICS", destination = "SITC4",
         dest.digit = 5, all = TRUE)
+
+# BEC4 to NAICS2017
+concord(sourcevar = c("11", "21"), 
+        origin = "BEC4", destination = "NAICS2017", 
+        dest.digit = 4, all = FALSE)
 }

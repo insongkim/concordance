@@ -3,7 +3,7 @@
 #' Returns Rauch's classification of product differentiation. Rauch classifies 4-digit SITC2 codes according to three possible types: differentiated products ("n"), reference priced ("r"), and homogeneous goods traded on an organized exchange ("w").
 #'
 #' @param sourcevar An input character vector of industry/product codes.
-#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008).
+#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC4" (2016).
 #' @param setting Choose "CON" (conservative, default) or "LIB" (liberal) classification.
 #' @param prop Can be set to "n", "r", or "w", in which case the function will return, respectively, the proportion of type "n", "r", or "w" in the resulting vector of Rauch indices. If prop is not set to any of these, then the function returns, for each input code, a dataframe that summarizes all the frequencies and proportions of type "w", "r", and "n".
 #' @return Concords each element of the input vector to 4-digit SITC2 codes, then uses the corresponding codes as input to extract Rauch product differentiation indices.
@@ -12,7 +12,7 @@
 #' @export
 #' @source Data from Jon Haveman's International Trade Data page <http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch>.
 #' @references Rauch, James E. 1999. "Networks Versus Markets in International Trade," Journal of International Economics 48(1): 7--35.
-#' @note Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise. 
 #' @examples
 #' # SITC2 input
 #' get_proddiff(sourcevar = c("22240", "04110"), origin = "SITC2", setting = "CON", prop = "")
@@ -36,6 +36,9 @@
 #'
 #' # NAICS input
 #' get_proddiff(sourcevar = c("111120", "326199"), origin = "NAICS", setting = "CON", prop = "")
+#' 
+#' # BEC4 input
+#' get_proddiff(sourcevar = c("11", "21"), origin = "BEC4", setting = "CON", prop = "")
 get_proddiff <- function (sourcevar,
                           origin,
                           setting = "CON",

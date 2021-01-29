@@ -32,11 +32,12 @@ concordance between the classifications below:
   * "ISIC3" (1989)
   * "ISIC3.1" (2002)
   * "ISIC4" (2008)
+- Broad Economic Categories (BEC)
+  * "BEC4" (2016)
 
 Support between the above and the below classifications will be offered 
 soon:
 
-- Broad Economic Categories (BEC)
 - Standard Industrial Classification (SIC)
 
 Additionally, the package provides functions for: 
@@ -45,7 +46,7 @@ Additionally, the package provides functions for:
 - Product code look-up based on user-specified keywords
 - Rauch classification (product differentiation) look-up (via concordance to SITC2)
 - Trade elasticity look-up (via concordance to HS0 or SITC3 codes)
-- Industry upstreamness/downstreamness look-up (via concordance to ISIC3 codes)
+- Industry upstreamness/downstreamness look-up (via concordance to ISIC3 and NAICS codes)
 - Industry intermediateness look-up (via product descriptions)
 
 
