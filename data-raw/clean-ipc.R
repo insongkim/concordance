@@ -9,6 +9,8 @@ library(openxlsx)
 library(tidyverse)
 library(stringr)
 
+#1. make tidy : description
+
 tidy.ipc <- function(dat){
   desc.1 <- dat$desc
   desc.2 <- tolower(desc.1)
@@ -32,7 +34,7 @@ tidy.ipc <- function(dat){
   return(dat)
 }
 
-#ipc 2008
+#(1) ipc 2008
 
 ipc2008.a <- read.xlsx("ipc2008_desc.xlsx", sheet = 1)
 str(ipc2008.a)
@@ -109,10 +111,9 @@ str(ipc2008.h.final)
 ipc2008 <- rbind(ipc2008.a.final, ipc2008.b.final, ipc2008.c.final, ipc2008.d.final,
                  ipc2008.e.final, ipc2008.f.final, ipc2008.g.final, ipc2008.h.final)
 
-save(ipc2008, file = "ipc2008_desc.RData")
-#write.csv(ipc2008, "ipc2008 (clean).csv", row.names = F)
+#write.csv(ipc2008, "ipc2008.csv", row.names = F)
 
-#ipc 2009
+#(2) ipc 2009
 
 ipc2009.a <- read.xlsx("ipc2009_desc.xlsx", sheet = 1)
 str(ipc2009.a)
@@ -189,10 +190,9 @@ str(ipc2009.h.final)
 ipc2009 <- rbind(ipc2009.a.final, ipc2009.b.final, ipc2009.c.final, ipc2009.d.final,
                  ipc2009.e.final, ipc2009.f.final, ipc2009.g.final, ipc2009.h.final)
 
-save(ipc2009, file = "ipc2009_desc.RData")
-#write.csv(ipc2009, "ipc2009 (clean).csv", row.names = F)
+#write.csv(ipc2009, "ipc2009.csv", row.names = F)
 
-#ipc 2010
+#(3) ipc 2010
 
 ipc2010.a <- read.xlsx("ipc2010_desc.xlsx", sheet = 1)
 str(ipc2010.a)
@@ -269,10 +269,9 @@ str(ipc2010.h.final)
 ipc2010 <- rbind(ipc2010.a.final, ipc2010.b.final, ipc2010.c.final, ipc2010.d.final,
                  ipc2010.e.final, ipc2010.f.final, ipc2010.g.final, ipc2010.h.final)
 
-save(ipc2010, file = "ipc2010_desc.RData")
-#write.csv(ipc2010, "ipc2010 (clean).csv", row.names = F)
+#write.csv(ipc2010, "ipc2010.csv", row.names = F)
 
-#ipc 2011
+#(4) ipc 2011
 
 ipc2011.a <- read.xlsx("ipc2011_desc.xlsx", sheet = 1)
 str(ipc2011.a)
@@ -349,10 +348,9 @@ str(ipc2011.h.final)
 ipc2011 <- rbind(ipc2011.a.final, ipc2011.b.final, ipc2011.c.final, ipc2011.d.final,
                  ipc2011.e.final, ipc2011.f.final, ipc2011.g.final, ipc2011.h.final)
 
-save(ipc2011, file = "ipc2011_desc.RData")
-#write.csv(ipc2011, "ipc2011 (clean).csv", row.names = F)
+#write.csv(ipc2011, "ipc2011.csv", row.names = F)
 
-#ipc 2012
+#(5) ipc 2012
 
 ipc2012.a <- read.xlsx("ipc2012_desc.xlsx", sheet = 1)
 str(ipc2012.a)
@@ -429,10 +427,9 @@ str(ipc2012.h.final)
 ipc2012 <- rbind(ipc2012.a.final, ipc2012.b.final, ipc2012.c.final, ipc2012.d.final,
                  ipc2012.e.final, ipc2012.f.final, ipc2012.g.final, ipc2012.h.final)
 
-save(ipc2012, file = "ipc2012_desc.RData")
-#write.csv(ipc2012, "ipc2012 (clean).csv", row.names = F)
+#write.csv(ipc2012, "ipc2012.csv", row.names = F)
 
-#ipc 2013
+#(6) ipc 2013
 
 ipc2013.a <- read.xlsx("ipc2013_desc.xlsx", sheet = 1)
 str(ipc2013.a)
@@ -509,10 +506,9 @@ str(ipc2013.h.final)
 ipc2013 <- rbind(ipc2013.a.final, ipc2013.b.final, ipc2013.c.final, ipc2013.d.final,
                  ipc2013.e.final, ipc2013.f.final, ipc2013.g.final, ipc2013.h.final)
 
-save(ipc2013, file = "ipc2013_desc.RData")
-#write.csv(ipc2013, "ipc2013 (clean).csv", row.names = F)
+#write.csv(ipc2013, "ipc2013.csv", row.names = F)
 
-#ipc 2014
+#(7) ipc 2014
 
 ipc2014.a <- read.xlsx("ipc2014_desc.xlsx", sheet = 1)
 str(ipc2014.a)
@@ -589,5 +585,195 @@ str(ipc2014.h.final)
 ipc2014 <- rbind(ipc2014.a.final, ipc2014.b.final, ipc2014.c.final, ipc2014.d.final,
                  ipc2014.e.final, ipc2014.f.final, ipc2014.g.final, ipc2014.h.final)
 
-save(ipc2014, file = "ipc2014_desc.RData")
-#write.csv(ipc2014, "ipc2014 (clean).csv", row.names = F)
+#write.csv(ipc2014, "ipc2014.csv", row.names = F)
+
+#2. make tidy : code
+
+#(1) ipc 2008
+
+ipc2008$subclass <- substr(ipc2008$code, 1, 4)
+
+temp.group <- substr(ipc2008$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2008$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2008$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2008$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2008 <- ipc2008 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2008$code[ipc2008$group == "/"] <- gsub('.{2}$', '', ipc2008$code[ipc2008$group == "/"])
+
+ipc2008.new <- ipc2008 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2008.new, file = "ipc2008_desc.RData")
+#write.csv(ipc2008.new, "ipc2008 (clean).csv", row.names = F)
+
+#(2) ipc 2009
+
+ipc2009$subclass <- substr(ipc2009$code, 1, 4)
+
+temp.group <- substr(ipc2009$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2009$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2009$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2009$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2009 <- ipc2009 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2009$code[ipc2009$group == "/"] <- gsub('.{2}$', '', ipc2009$code[ipc2009$group == "/"])
+
+ipc2009.new <- ipc2009 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2009.new, file = "ipc2009_desc.RData")
+#write.csv(ipc2009.new, "ipc2009 (clean).csv", row.names = F)
+
+#(3) ipc 2010
+
+ipc2010$subclass <- substr(ipc2010$code, 1, 4)
+
+temp.group <- substr(ipc2010$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2010$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2010$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2010$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2010 <- ipc2010 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2010$code[ipc2010$group == "/"] <- gsub('.{2}$', '', ipc2010$code[ipc2010$group == "/"])
+
+ipc2010.new <- ipc2010 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2010.new, file = "ipc2010_desc.RData")
+#write.csv(ipc2010.new, "ipc2010 (clean).csv", row.names = F)
+
+#(4) ipc 2011
+
+ipc2011$subclass <- substr(ipc2011$code, 1, 4)
+
+temp.group <- substr(ipc2011$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2011$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2011$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2011$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2011 <- ipc2011 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2011$code[ipc2011$group == "/"] <- gsub('.{2}$', '', ipc2011$code[ipc2011$group == "/"])
+
+ipc2011.new <- ipc2011 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2011.new, file = "ipc2011_desc.RData")
+#write.csv(ipc2011.new, "ipc2011 (clean).csv", row.names = F)
+
+#(5) ipc 2012
+
+ipc2012$subclass <- substr(ipc2012$code, 1, 4)
+
+temp.group <- substr(ipc2012$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2012$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2012$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2012$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2012 <- ipc2012 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2012$code[ipc2012$group == "/"] <- gsub('.{2}$', '', ipc2012$code[ipc2012$group == "/"])
+
+ipc2012.new <- ipc2012 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2012.new, file = "ipc2012_desc.RData")
+#write.csv(ipc2012.new, "ipc2012 (clean).csv", row.names = F)
+
+#(6) ipc 2013
+
+ipc2013$subclass <- substr(ipc2013$code, 1, 4)
+
+temp.group <- substr(ipc2013$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2013$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2013$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2013$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2013 <- ipc2013 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2013$code[ipc2013$group == "/"] <- gsub('.{2}$', '', ipc2013$code[ipc2013$group == "/"])
+
+ipc2013.new <- ipc2013 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2013.new, file = "ipc2013_desc.RData")
+#write.csv(ipc2013.new, "ipc2013 (clean).csv", row.names = F)
+
+#(7) ipc 2014
+
+ipc2014$subclass <- substr(ipc2014$code, 1, 4)
+
+temp.group <- substr(ipc2014$code, 5, 8)
+#remove leading zeros
+#https://stackoverflow.com/questions/49186893/remove-leading-0s-with-stringr-in-r
+temp.group.new <- sub("^0+", "", temp.group)     
+
+temp.subgroup.1 <- substr(ipc2014$code, 9, 10) 
+temp.subgroup.2 <- substr(ipc2014$code, 11, 14) 
+#remove trailing zeros
+#https://statisticsglobe.com/remove-leading-and-trailing-zeros-in-r
+temp.subgroup.2.new <- sub("0+$", "", temp.subgroup.2)  
+temp.subgroup.new <- paste(temp.subgroup.1, temp.subgroup.2.new, sep = "")
+
+ipc2014$group <- paste(temp.group.new, temp.subgroup.new, sep = "/")
+
+#https://www.delftstack.com/howto/r/remove-last-character-in-r/
+ipc2014 <- ipc2014 %>% select(-code) %>% mutate(code = paste(subclass, group, sep = " "))
+ipc2014$code[ipc2014$group == "/"] <- gsub('.{2}$', '', ipc2014$code[ipc2014$group == "/"])
+
+ipc2014.new <- ipc2014 %>% select(-subclass, -group) %>% select(code, desc)
+
+save(ipc2014.new, file = "ipc2014_desc.RData")
+#write.csv(ipc2014.new, "ipc2014 (clean).csv", row.names = F)
