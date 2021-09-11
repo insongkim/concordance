@@ -114,6 +114,7 @@ temp.desc.11  <- gsub(", i.e.,.*", "", temp.desc.10)
 uspc.final.3$temp.desc <- gsub(", etc..*", ", etc.", temp.desc.11)
 
 #save
+uspc.final.3$code <- as.character(uspc.final.3$code)
 names(uspc.final.2) <- c("code", "desc")
 names(uspc.final.3) <- c("code", "desc")
 

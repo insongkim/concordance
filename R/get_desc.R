@@ -9,12 +9,14 @@
 #' \itemize{
 #'   \item The U.S. Census Bureau <https://www.census.gov/>
 #'   \item The U.S. Bureau of Labor Statistics <https://www.bls.gov/>
+#'   \item The U.S. Patent and Trademark Office <https://www.uspto.gov>
 #'   \item UN Comtrade <https://comtrade.un.org/>
 #'   \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
+#'   \item WIPO IP Portal <https://ipportal.wipo.int>
 #' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @export
-#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise. 
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4, IPC2008-IPC2014 and USPC2012 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007, A01B 1/00 instead of A01B 1, or 002/455 instead of 2/455). Results may be buggy otherwise. 
 #' @examples
 #' # HS
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS")
@@ -75,179 +77,283 @@
 #'
 #' # BEC4
 #' get_desc(sourcevar = c("111", "112"), origin = "BEC4")
+#'
+#' # IPC2008
+#' get_desc(sourcevar = c("A01B", "A01B 1/00"), origin = "IPC2008")
+#'
+#' # IPC2009
+#' get_desc(sourcevar = c("A01B", "A01B 1/00"), origin = "IPC2009")
+#'
+#' # IPC2010
+#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2010")
+#'
+#' # IPC2011
+#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2011")
+#'
+#' # IPC2012
+#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2012")
+#'
+#' # IPC2013
+#' get_desc(sourcevar = c("A01B", "A01B 3/421"), origin = "IPC2013")
+#'
+#' # IPC2014
+#' get_desc(sourcevar = c("A01B", "A01B 3/421"), origin = "IPC2014")
+#'
+#' # UPC2008
+#' get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2008")
 get_desc <- function (sourcevar,
                       origin) {
-
+  
   # sanity check
   if (length(sourcevar) == 0) {return(character(0))}
-
+  
   # allow origin to be entered in any case
   origin <- toupper(origin)
-
+  
   # load description data
   if (origin == "NAICS2017") {
-
+    
     desc.df <- concordance::naics2017_desc
-
+    
   } else if (origin == "NAICS2012"){
-
+    
     desc.df <- concordance::naics2012_desc
-
+    
   } else if (origin == "NAICS2007"){
-
+    
     desc.df <- concordance::naics2007_desc
-
+    
   } else if (origin == "NAICS2002"){
-
+    
     desc.df <- concordance::naics2002_desc
-
+    
   } else if (origin == "HS"){
-
+    
     desc.df <- concordance::hs_desc
-
+    
   } else if (origin == "HS0"){
-
+    
     desc.df <- concordance::hs0_desc
-
+    
   } else if (origin == "HS1"){
-
+    
     desc.df <- concordance::hs1_desc
-
+    
   } else if (origin == "HS2"){
-
+    
     desc.df <- concordance::hs2_desc
-
+    
   } else if (origin == "HS3"){
-
+    
     desc.df <- concordance::hs3_desc
-
+    
   } else if (origin == "HS4"){
-
+    
     desc.df <- concordance::hs4_desc
-
+    
   } else if (origin == "HS5"){
-
+    
     desc.df <- concordance::hs5_desc
-
+    
   } else if (origin == "ISIC2"){
-
+    
     desc.df <- concordance::isic2_desc
-
+    
   } else if (origin == "ISIC3"){
-
+    
     desc.df <- concordance::isic3_desc
-
+    
   } else if (origin == "ISIC3.1"){
-
+    
     desc.df <- concordance::isic3.1_desc
-
+    
   } else if (origin == "ISIC4"){
-
+    
     desc.df <- concordance::isic4_desc
-
+    
   } else if (origin == "SITC1"){
-
+    
     desc.df <- concordance::sitc1_desc
-
+    
   } else if (origin == "SITC2"){
-
+    
     desc.df <- concordance::sitc2_desc
-
+    
   } else if (origin == "SITC3"){
-
+    
     desc.df <- concordance::sitc3_desc
-
+    
   } else if (origin == "SITC4"){
-
+    
     desc.df <- concordance::sitc4_desc
-
+    
   } else if (origin == "BEC4"){
-
+    
     desc.df <- concordance::bec4_desc
-
+    
+  } else if (origin == "IPC2008"){
+    
+    desc.df <- concordance::ipc2008_desc
+    
+  } else if (origin == "IPC2009"){
+    
+    desc.df <- concordance::ipc2009_desc
+    
+  } else if (origin == "IPC2010"){
+    
+    desc.df <- concordance::ipc2010_desc
+    
+  } else if (origin == "IPC2011"){
+    
+    desc.df <- concordance::ipc2011_desc
+    
+  } else if (origin == "IPC2012"){
+    
+    desc.df <- concordance::ipc2012_desc
+    
+  } else if (origin == "IPC2013"){
+    
+    desc.df <- concordance::ipc2013_desc
+    
+  } else if (origin == "IPC2014"){
+    
+    desc.df <- concordance::ipc2014_desc
+    
+  } else if (origin == "USPC2012"){
+    
+    desc.df <- concordance::uspc2012_desc
+    
   } else {
-
+    
     stop("Conversion dictionary not available.")
-
+    
   }
-
+  
   # check whether input codes have the same digits
   # NAICS code has some unusual 2-digit codes, exclude them when counting digits
   exempt.naics <- c("31-33", "44-45", "48-49")
   sourcevar.sub <- sourcevar[!sourcevar %in% exempt.naics]
-
+  
   # avoid errors in the case where users only put in unusal 2-digit codes
   if(all(length(sourcevar.sub) == 0 & sourcevar %in% exempt.naics)) {
-
+    
     sourcevar.sub <- "31"
-
+    
   }
-
+  
   # get the number of unique digits, excluding NAs
   digits <- unique(nchar(sourcevar.sub))
   digits <- digits[!is.na(digits)]
-
+  
   # check whether input codes have the same digits
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
-
+  
   # set acceptable digits
   if (str_detect(origin, "HS")){
-
+    
     origin.digits <- c(2, 4, 6)
-
+    
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 4, 6-digit inputs for HS codes.")}
-
+    
   } else if (str_detect(origin, "NAICS")) {
-
+    
     origin.digits <- seq(2, 6, 1)
-
+    
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
-
+    
   } else if (str_detect(origin, "SITC")) {
-
+    
     origin.digits <- c(1, 2, 3, 4, 5)
-
+    
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4, 5-digit inputs for SITC codes.")}
-
+    
   } else if (origin == "BEC4") {
-
+    
     origin.digits <- c(1, 2, 3)
-
+    
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC codes.")}
-
+    
   } else if (str_detect(origin, "ISIC")) {
-
+    
     origin.digits <- c(1, 2, 3, 4)
-
+    
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
-
+    
+  } else if (str_detect(origin, "IPC2008")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2008 codes.")}
+    
+  } else if (str_detect(origin, "IPC2009")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2009 codes.")}
+    
+  } else if (str_detect(origin, "IPC2010")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2010 codes.")}
+    
+  } else if (str_detect(origin, "IPC2011")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2011 codes.")}
+    
+  } else if (str_detect(origin, "IPC2012")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2012 codes.")}
+    
+  } else if (str_detect(origin, "IPC2013")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2013 codes.")}
+    
+  } else if (str_detect(origin, "IPC2014")) {
+    
+    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2014 codes.")}
+    
+  } else if (str_detect(origin, "UPC2012")) {
+    
+    origin.digits <- c(1, 2, 3, 4)
+    
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 3, 5, 6, 7, 8, 9, 10, 11-digit inputs for UPC2012 codes.")}
+    
   } else {
-
+    
     stop("Concordance not supported.")
-
+    
   }
-
+  
   # check if concordance is available for sourcevar
   all.origin.codes <- desc.df$code
-
+  
   # return NA and give warning message if concordance is missing
   if (!all(sourcevar %in% all.origin.codes)){
-
+    
     no.code <- sourcevar[!sourcevar %in% all.origin.codes]
     no.code <- paste0(no.code, collapse = ", ")
-
+    
     warning(paste(str_extract(origin, "[^_]+"), " code(s): ", no.code, " not found and returned NA. Please double check input code and classification.\n", sep = ""))
-
+    
   }
-
+  
   # match description
   matches <- which(all.origin.codes %in% sourcevar)
   dest.var <- desc.df[matches, c("code", "desc")]
-
+  
   # handle repeated inputs
   out <- dest.var[match(sourcevar, dest.var$code),] %>%
     pull(desc)
-
+  
   return(out)
-
+  
 }
