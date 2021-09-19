@@ -3,7 +3,7 @@
 #' Returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
+#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016), "IPC2012", "USPC2012".
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @source Data consolidated from
 #' \itemize{
@@ -78,29 +78,11 @@
 #' # BEC4
 #' get_desc(sourcevar = c("111", "112"), origin = "BEC4")
 #'
-#' # IPC2008
-#' get_desc(sourcevar = c("A01B", "A01B 1/00"), origin = "IPC2008")
-#'
-#' # IPC2009
-#' get_desc(sourcevar = c("A01B", "A01B 1/00"), origin = "IPC2009")
-#'
-#' # IPC2010
-#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2010")
-#'
-#' # IPC2011
-#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2011")
-#'
 #' # IPC2012
 #' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2012")
-#'
-#' # IPC2013
-#' get_desc(sourcevar = c("A01B", "A01B 3/421"), origin = "IPC2013")
-#'
-#' # IPC2014
-#' get_desc(sourcevar = c("A01B", "A01B 3/421"), origin = "IPC2014")
-#'
-#' # UPC2008
-#' get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2008")
+#' 
+#' # UPC2012
+#' get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2012")
 get_desc <- function (sourcevar,
                       origin) {
   
@@ -191,33 +173,9 @@ get_desc <- function (sourcevar,
     
     desc.df <- concordance::bec4_desc
     
-  } else if (origin == "IPC2008"){
-    
-    desc.df <- concordance::ipc2008_desc
-    
-  } else if (origin == "IPC2009"){
-    
-    desc.df <- concordance::ipc2009_desc
-    
-  } else if (origin == "IPC2010"){
-    
-    desc.df <- concordance::ipc2010_desc
-    
-  } else if (origin == "IPC2011"){
-    
-    desc.df <- concordance::ipc2011_desc
-    
   } else if (origin == "IPC2012"){
     
     desc.df <- concordance::ipc2012_desc
-    
-  } else if (origin == "IPC2013"){
-    
-    desc.df <- concordance::ipc2013_desc
-    
-  } else if (origin == "IPC2014"){
-    
-    desc.df <- concordance::ipc2014_desc
     
   } else if (origin == "USPC2012"){
     
@@ -279,47 +237,11 @@ get_desc <- function (sourcevar,
     
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
     
-  } else if (str_detect(origin, "IPC2008")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2008 codes.")}
-    
-  } else if (str_detect(origin, "IPC2009")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2009 codes.")}
-    
-  } else if (str_detect(origin, "IPC2010")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2010 codes.")}
-    
-  } else if (str_detect(origin, "IPC2011")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2011 codes.")}
-    
   } else if (str_detect(origin, "IPC2012")) {
     
     origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2012 codes.")}
-    
-  } else if (str_detect(origin, "IPC2013")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2013 codes.")}
-    
-  } else if (str_detect(origin, "IPC2014")) {
-    
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
-    
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 9, 10, 11, 12, 13-digit inputs for IPC2014 codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13-digit inputs for IPC2012 codes.")}
     
   } else if (str_detect(origin, "UPC2012")) {
     

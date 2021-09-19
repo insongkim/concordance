@@ -106,7 +106,22 @@ uspc.to.ipc <- dat.final
 uspc.to.ipc.1 <- uspc.to.ipc %>% mutate(uspc.code = uspc.subclass, ipc.code = paste(ipc.subclass, ipc.group, sep = " ")) %>% select(uspc.code, ipc.code)
 uspc.to.ipc.1$uspc.code <- as.character(uspc.to.ipc.1$uspc.code)
 str(uspc.to.ipc.1)
-
-write.csv(uspc.to.ipc.1, file = "2012_USPC_to_IPC.csv", row.names=FALSE)
-save(uspc.to.ipc.1, file = "uspc2012_ipc2012.RData")
  
+#create new variables : with different layers of classes and subclasses, matched between IPC and USPC
+str(uspc.to.ipc.1)
+uspc.to.ipc.1$uspc.code.2 <- substr(uspc.to.ipc.1$uspc.code, 1, 3)
+uspc.to.ipc.1$ipc.code.2 <- sub("/.*", "", uspc.to.ipc.1$ipc.code)
+uspc.to.ipc.1$ipc.code.3 <- substr(uspc.to.ipc.1$ipc.code, 1, 4) 
+uspc.to.ipc.1$ipc.code.4 <- substr(uspc.to.ipc.1$ipc.code, 1, 3) 
+uspc.to.ipc.1$ipc.code.5 <- substr(uspc.to.ipc.1$ipc.code, 1, 1) 
+#view(uspc.to.ipc.1)
+
+#rename
+uspc2012_ipc2012 <- uspc.to.ipc.1 %>% select(uspc_subclass = uspc.code, uspc_class = uspc.code.2, ipc_subroup = ipc.code, 
+                                             ipc_group = ipc.code.2, ipc_subclass = ipc.code.3, ipc_class = ipc.code.4, ipc_section = ipc.code.5)
+uspc.to.ipc.raw <- uspc.to.ipc.1 %>% select(uspc.code, ipc.code)
+
+#save
+write.csv(uspc.to.ipc.raw, file = "2012_USPC_to_IPC.csv", row.names=FALSE)
+write.csv(uspc2012_ipc2012, file = "2012_USPC_to_IPC (clean).csv", row.names=FALSE)
+save(uspc2012_ipc2012, file = "uspc2012_ipc2012.RData")

@@ -118,7 +118,10 @@ uspc.final.3$code <- as.character(uspc.final.3$code)
 names(uspc.final.2) <- c("code", "desc")
 names(uspc.final.3) <- c("code", "desc")
 
-save(uspc.final.3, file = "uspc2012_desc.RData")
+#rename
+uspc2012_desc <- uspc.final.3
+
+save(uspc2012_desc, file = "uspc2012_desc.RData")
 #write.csv(uspc.final, "uspc2012.csv", row.names = F)
 write.csv(uspc.final.2, "uspc2012 description.csv", row.names = F)
-write.csv(uspc.final.3, "uspc2012 description (clean).csv", row.names = F)
+write.csv(uspc2012_desc, "uspc2012 description (clean).csv", row.names = F)

@@ -613,8 +613,11 @@ ipc2008$code[ipc2008$group == "/"] <- gsub('.{2}$', '', ipc2008$code[ipc2008$gro
 
 ipc2008.new <- ipc2008 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2008.new, file = "ipc2008_desc.RData")
-#write.csv(ipc2008.new, "ipc2008 (clean).csv", row.names = F)
+#rename
+ipc2008_desc <- ipc2008.new
+
+save(ipc2008_desc, file = "ipc2008_desc.RData")
+#write.csv(ipc2008_desc, "ipc2008 (clean).csv", row.names = F)
 
 #(2) ipc 2009
 
@@ -640,8 +643,11 @@ ipc2009$code[ipc2009$group == "/"] <- gsub('.{2}$', '', ipc2009$code[ipc2009$gro
 
 ipc2009.new <- ipc2009 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2009.new, file = "ipc2009_desc.RData")
-#write.csv(ipc2009.new, "ipc2009 (clean).csv", row.names = F)
+#rename
+ipc2009_desc <- ipc2009.new
+
+save(ipc2009_desc, file = "ipc2009_desc.RData")
+#write.csv(ipc2009_desc, "ipc2009 (clean).csv", row.names = F)
 
 #(3) ipc 2010
 
@@ -667,8 +673,11 @@ ipc2010$code[ipc2010$group == "/"] <- gsub('.{2}$', '', ipc2010$code[ipc2010$gro
 
 ipc2010.new <- ipc2010 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2010.new, file = "ipc2010_desc.RData")
-#write.csv(ipc2010.new, "ipc2010 (clean).csv", row.names = F)
+#rename
+ipc2010_desc <- ipc2010.new
+
+save(ipc2010_desc, file = "ipc2010_desc.RData")
+#write.csv(ipc2010_desc, "ipc2010 (clean).csv", row.names = F)
 
 #(4) ipc 2011
 
@@ -694,8 +703,11 @@ ipc2011$code[ipc2011$group == "/"] <- gsub('.{2}$', '', ipc2011$code[ipc2011$gro
 
 ipc2011.new <- ipc2011 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2011.new, file = "ipc2011_desc.RData")
-#write.csv(ipc2011.new, "ipc2011 (clean).csv", row.names = F)
+#rename
+ipc2011_desc <- ipc2011.new
+
+save(ipc2011_desc, file = "ipc2011_desc.RData")
+#write.csv(ipc2011_desc, "ipc2011 (clean).csv", row.names = F)
 
 #(5) ipc 2012
 
@@ -721,8 +733,11 @@ ipc2012$code[ipc2012$group == "/"] <- gsub('.{2}$', '', ipc2012$code[ipc2012$gro
 
 ipc2012.new <- ipc2012 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2012.new, file = "ipc2012_desc.RData")
-#write.csv(ipc2012.new, "ipc2012 (clean).csv", row.names = F)
+#rename
+ipc2012_desc <- ipc2012.new
+
+save(ipc2012_desc, file = "ipc2012_desc.RData")
+#write.csv(ipc2012_desc, "ipc2012 (clean).csv", row.names = F)
 
 #(6) ipc 2013
 
@@ -748,8 +763,11 @@ ipc2013$code[ipc2013$group == "/"] <- gsub('.{2}$', '', ipc2013$code[ipc2013$gro
 
 ipc2013.new <- ipc2013 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2013.new, file = "ipc2013_desc.RData")
-#write.csv(ipc2013.new, "ipc2013 (clean).csv", row.names = F)
+#rename
+ipc2013_desc <- ipc2013.new
+
+save(ipc2013_desc, file = "ipc2013_desc.RData")
+#write.csv(ipc2013_desc, "ipc2013 (clean).csv", row.names = F)
 
 #(7) ipc 2014
 
@@ -775,5 +793,8 @@ ipc2014$code[ipc2014$group == "/"] <- gsub('.{2}$', '', ipc2014$code[ipc2014$gro
 
 ipc2014.new <- ipc2014 %>% select(-subclass, -group) %>% select(code, desc)
 
-save(ipc2014.new, file = "ipc2014_desc.RData")
-#write.csv(ipc2014.new, "ipc2014 (clean).csv", row.names = F)
+#rename
+ipc2014_desc <- ipc2014.new
+
+save(ipc2014_desc, file = "ipc2014_desc.RData")
+#write.csv(ipc2014_desc, "ipc2014 (clean).csv", row.names = F)

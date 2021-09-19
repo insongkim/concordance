@@ -281,6 +281,30 @@
 #' @source \url{https://apps.bea.gov/iTable/index_industry_io.cfm}
 "bea2012_desc"
 
+#' IPC Description for year 2012
+#'
+#' A dataset containing the description of utility patents under the WIPO classification in 2012
+#'
+#' @format A data frame with 71664 rows and 2 variables:
+#' \describe{
+#'   \item{code}{IPC Code}
+#'   \item{desc}{IPC Description}
+#' }
+#' @source \url{https://www.wipo.int/classifications/ipc/en/ITsupport/Version20120101/index.html}
+"ipc2012_desc"
+
+#' USPC Description for year 2012
+#'
+#' A dataset containing the description of utility patents under the USPC classification in 2012
+#'
+#' @format A data frame with 164908 rows and 2 variables:
+#' \describe{
+#'   \item{code}{USPC Code}
+#'   \item{desc}{USPC Description}
+#' }
+#' @source \url{https://www.uspto.gov/web/patents/classification/selectnumwithtitle.htm}
+"uspc2012_desc"
+
 #' HS0-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS0 and SITC1 classification.
@@ -2220,6 +2244,38 @@
 #'   \item{BEC4_3d}{3-digit BEC4 Code}
 #'   \item{BEC4_2d}{2-digit BEC4 Code}
 #'   \item{BEC4_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"sitc4_bec4"
+
+#' USPC2012-IPC2012 Concordance
+#'
+#' A dataset containing concordances between USPC2012 and IPC2012 classifications.
+#'
+#' @format A data frame with 258,216 rows and 7 variables:
+#' \describe{
+#'   \item{uspc_subclass}{USPC subclass}
+#'   \item{uspc_class}{USPC class}
+#'   \item{ipc_subgroup}{IPC subgroup}
+#'   \item{ipc_group}{IPC group}
+#'   \item{ipc_subclass}{IPC subclass}
+#'   \item{ipc_class}{IPC class}
+#'   \item{ipc_section}{IPC section}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"sitc4_bec4"
+
+#' USPC2012-NAICS2002 Concordance
+#'
+#' A dataset containing concordances between USPC2012 and IPC2012 classifications.
+#'
+#' @format A data frame with 862,586 rows and 5 variables:
+#' \describe{
+#'   \item{uspc_subclass}{USPC subclass}
+#'   \item{uspc_class}{USPC class}
+#'   \item{NAICS2002_4d}{4-digit NAICS2002 Code}
+#'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
+#'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
 #' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
 "sitc4_bec4"
