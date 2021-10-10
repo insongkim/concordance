@@ -9,6 +9,7 @@ Data consolidated from
   \item Pierce and Schott (2009, 2018) <https://faculty.som.yale.edu/peterschott/international-trade-data/>
   \item World Integrated Trade Solution (WITS), World Bank <https://wits.worldbank.org/product_concordance.html>
   \item United Nations Trade Statistics <https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp>
+  \item United States Patent and Trademark Office <https://www.uspto.gov/web/offices/ac/ido/oeip/taf/naics/doc/naics_info.htm>
 }
 }
 \usage{
@@ -17,9 +18,9 @@ concord(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of industry/product codes to be converted.}
 
-\item{origin}{A string setting the input coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
+\item{origin}{A string setting the input coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016), "USPC" (2012).}
 
-\item{destination}{A string setting the output coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
+\item{destination}{A string setting the output coding scheme. Currently supports: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016), "USPC" (2012).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for outputs. The default is 4 digits.}
 
@@ -32,7 +33,7 @@ The matched output(s) for each element of the input vector. Either a list object
 Concords different classification codes used in international trade.
 }
 \note{
-Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise.
 }
 \examples{
 # HS to NAICS
@@ -77,4 +78,9 @@ concord(sourcevar = c("111120", "326199"),
 concord(sourcevar = c("11", "21"), 
         origin = "BEC4", destination = "NAICS2017", 
         dest.digit = 4, all = FALSE)
+     
+# USPC to NAICS2002   
+concord(sourcevar = c("422/276", "514/928"),
+        origin = "USPC", destination = "NAICS2002",
+        dest.digit = 4, all = TRUE)
 }

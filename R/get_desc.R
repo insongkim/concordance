@@ -1,6 +1,6 @@
 #' Looking Up Product Description
 #'
-#' Returns the description of product codes.
+#' Returns the description of product codes. 
 #'
 #' @param sourcevar A character vector of input codes.
 #' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016), "IPC2012", "USPC2012".

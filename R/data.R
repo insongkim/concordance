@@ -1,7 +1,7 @@
 #' NAICS 2002 Description
 #'
 #' A dataset containing the description of products under the NAICS 2002
-#' classification.
+#' classification. 
 #'
 #' @format A data frame with 2341 rows and 2 variables:
 #' \describe{
@@ -2262,12 +2262,12 @@
 #'   \item{ipc_class}{IPC class}
 #'   \item{ipc_section}{IPC section}
 #' }
-#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
-"sitc4_bec4"
+#' @source https://www.uspto.gov/web/patents/classification/selectnumwithtitle.htm
+"uspc2012_ipc2012"
 
 #' USPC2012-NAICS2002 Concordance
 #'
-#' A dataset containing concordances between USPC2012 and IPC2012 classifications.
+#' A dataset containing concordances between USPC2012 and NAICS2002 classifications.
 #'
 #' @format A data frame with 862,586 rows and 5 variables:
 #' \describe{
@@ -2277,8 +2277,8 @@
 #'   \item{NAICS2002_3d}{3-digit NAICS2002 Code}
 #'   \item{NAICS2002_2d}{2-digit NAICS2002 Code}
 #' }
-#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
-"sitc4_bec4"
+#' @source https://www.uspto.gov/web/offices/ac/ido/oeip/taf/naics/doc/naics_info.htm
+"uspc2012_naics2002"
 
 #' Sigma Table (3-Digit HS0)
 #'

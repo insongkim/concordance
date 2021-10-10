@@ -8,8 +8,10 @@ Data consolidated from
 \itemize{
   \item The U.S. Census Bureau <https://www.census.gov/>
   \item The U.S. Bureau of Labor Statistics <https://www.bls.gov/>
+  \item The U.S. Patent and Trademark Office <https://www.uspto.gov>
   \item UN Comtrade <https://comtrade.un.org/>
   \item UN Trade Statistics <https://unstats.un.org/unsd/trade/default.asp>
+  \item WIPO IP Portal <https://ipportal.wipo.int>
 }
 }
 \usage{
@@ -18,7 +20,7 @@ get_desc(sourcevar, origin)
 \arguments{
 \item{sourcevar}{A character vector of input codes.}
 
-\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
+\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016), "IPC2012", "USPC2012".}
 }
 \value{
 A character vector giving the title/description of each element of the input codes.
@@ -27,7 +29,7 @@ A character vector giving the title/description of each element of the input cod
 Returns the description of product codes.
 }
 \note{
-Always include leading zeroes in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4, IPC2008-IPC2014 and USPC2012 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007, A01B 1/00 instead of A01B 1, or 002/455 instead of 2/455). Results may be buggy otherwise.
 }
 \examples{
 # HS
@@ -89,4 +91,10 @@ get_desc(sourcevar = c("4221", "7732"), origin = "SITC4")
 
 # BEC4
 get_desc(sourcevar = c("111", "112"), origin = "BEC4")
+
+# IPC2012
+get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2012")
+
+# UPC2012
+get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2012")
 }
