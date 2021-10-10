@@ -79,10 +79,10 @@
 #' get_desc(sourcevar = c("111", "112"), origin = "BEC4")
 #'
 #' # IPC2012
-#' get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2012")
+#' get_desc(sourcevar = c("A01B 1/02", "A01B 1/04"), origin = "IPC2012")
 #' 
 #' # UPC2012
-#' get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2012")
+#' get_desc(sourcevar = c("002/2.11", "002/2.15"), origin = "USPC2012")
 get_desc <- function (sourcevar,
                       origin) {
   
@@ -237,15 +237,15 @@ get_desc <- function (sourcevar,
     
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 2, 3, 4-digit inputs for ISIC codes.")}
     
-  } else if (str_detect(origin, "IPC2012")) {
+  } else if (str_detect(origin, "IPC")) {
     
-    origin.digits <- c(1, 3, 4, 9, 10, 11, 12, 13)
+    origin.digits <- c(1, 3, 4, 6:12)
     
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13-digit inputs for IPC2012 codes.")}
     
-  } else if (str_detect(origin, "UPC2012")) {
+  } else if (str_detect(origin, "USPC")) {
     
-    origin.digits <- c(1, 2, 3, 4)
+    origin.digits <- c(3, 5:11)
     
     if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 3, 5, 6, 7, 8, 9, 10, 11-digit inputs for UPC2012 codes.")}
     

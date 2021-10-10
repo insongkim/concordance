@@ -83,4 +83,9 @@ concord(sourcevar = c("11", "21"),
 concord(sourcevar = c("422/276", "514/928"),
         origin = "USPC", destination = "NAICS2002",
         dest.digit = 4, all = TRUE)
+     
+# USPC to IPC   
+concord(sourcevar = c("002", "004"),
+        origin = "USPC", destination = "IPC",
+        dest.digit = 1, all = TRUE)
 }

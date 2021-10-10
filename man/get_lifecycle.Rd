@@ -31,6 +31,22 @@ The mean time lapse between the cited-patent's grant date and a subsequetion cit
 \description{
 Returns product lifecycle lengths by industry, using forward citatin lag, based on Bronwyn et al. (2001) and Bilir (2014).
 }
+\examples{
+# NAICS
+get_lifecycle(sourcevar = c("31", "32", "33"), origin = "NAICS",
+              setting = "MeanACL")
+
+get_lifecycle(sourcevar = c("3111", "3331"), origin = "NAICS",
+              setting = "MeanACL")
+
+# USPC
+get_lifecycle(sourcevar = c("002", "280"), origin = "USPC",
+              setting = "MeanACL")
+
+# USPC
+get_lifecycle(sourcevar = c("002/102", "800/292"), origin = "USPC",
+              setting = "MeanACL")
+}
 \references{
 \itemize{
   \item{Hall, Bronwyn H., Adam B. Jaffe, and Manuel Trajtenberg. "The NBER patent citation data file: Lessons, insights and methodological tools." (2001).}

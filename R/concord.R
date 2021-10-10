@@ -66,6 +66,11 @@
 #' concord(sourcevar = c("422/276", "514/928"),
 #'         origin = "USPC", destination = "NAICS2002",
 #'         dest.digit = 4, all = TRUE)
+#'      
+#' # USPC to IPC   
+#' concord(sourcevar = c("002", "004"),
+#'         origin = "USPC", destination = "IPC",
+#'         dest.digit = 1, all = TRUE)
 concord <- function (sourcevar,
                      origin,
                      destination,
@@ -176,7 +181,7 @@ concord <- function (sourcevar,
                             dest.digit,
                             all)  
 
-    # NAICS to/from BEC
+  # USPC to/from NAICS
   } else if ((str_detect(origin, "NAICS") & str_detect(destination, "USPC")) |
              (str_detect(origin, "USPC") & str_detect(destination, "NAICS"))) {
     
@@ -184,7 +189,17 @@ concord <- function (sourcevar,
                               origin,
                               destination,
                               dest.digit,
-                              all)
+                              all)  
+    
+  # USPC to/from IPC
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "IPC")) |
+             (str_detect(origin, "IPC") & str_detect(destination, "USPC"))) {
+    
+    out <- concord_uspc_ipc(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
     
   # Within SITC
   } else if ((str_detect(origin, "SITC") & str_detect(destination, "SITC"))) {

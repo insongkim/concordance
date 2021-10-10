@@ -93,8 +93,8 @@ get_desc(sourcevar = c("4221", "7732"), origin = "SITC4")
 get_desc(sourcevar = c("111", "112"), origin = "BEC4")
 
 # IPC2012
-get_desc(sourcevar = c("A01B", "A01B 1/04"), origin = "IPC2012")
+get_desc(sourcevar = c("A01B 1/02", "A01B 1/04"), origin = "IPC2012")
 
 # UPC2012
-get_desc(sourcevar = c("002/2.11", "002/455"), origin = "USPC2012")
+get_desc(sourcevar = c("002/2.11", "002/2.15"), origin = "USPC2012")
 }
