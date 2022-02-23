@@ -247,6 +247,6 @@ concord_hs_bec <- function (sourcevar,
       pull(match)
     
   }
-  
+  return(out)
 }
 
