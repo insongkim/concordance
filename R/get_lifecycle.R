@@ -1,9 +1,9 @@
 #' Looking Up Product Lifecycle 
 #'
-#' Returns product lifecycle lengths by industry, using forward citatin lag, based on Bronwyn et al. (2001) and Bilir (2014).
+#' Returns product lifecycle lengths by manufacturing industry, using forward citatin lags, based on Bronwyn et al. (2001) and Bilir (2014).
 #'
 #' @param sourcevar An input character vector of industry codes to look up.
-#' @param origin A string indicating one of the following industry/product/patent classifications: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "USPC2012", "USPC". 
+#' @param origin A string indicating one of the following industry/product/patent classifications: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "USPC2012", "USPC (combined)". 
 #' @param setting Choose one of the three available measures from Bilir (2014).
 #' \itemize{
 #'   \item{"MeanACL": The mean citation time for each patent class (USPC). This is the default measure. Larger values are associated with longer product lifecycles and larger imitation risks.}
@@ -50,16 +50,18 @@ get_lifecycle <- function(sourcevar,
     digits <- unique(nchar(sourcevar))
     digits <- digits[!is.na(digits)]
     
-    if (length(digits) > 1) {
-      stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")
+    if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017")){
+      if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
+    } else {
+      if (!(all(digits == 3) | all(digits >= 5 & digits <= 11))) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
     }
     
-    if (digits == 3){
+    if (all(digits == 3)){
       history <- concordance::lifecycle_USPC2012_class
-    } else if (digits > 3 & digits <= 11) {
+    } else if (all(digits >= 5 & digits <= 11)) {
       history <- concordance::lifecycle_USPC2012_subclass 
     } else {
-      stop("'sourcevar' only accepts 2 to 4-digit inputs for NAICS codes, and 3-digit inputs for USPC codes (class).")
+      stop("'sourcevar' only accepts 2 to 4-digit inputs for NAICS codes, and 3-digit inputs for USPC codes (class) and 5.")
     }
     
   } else if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017"))  {

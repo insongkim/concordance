@@ -180,7 +180,17 @@ concord <- function (sourcevar,
                             destination,
                             dest.digit,
                             all)  
-
+    
+  # USPC to/from IPC
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "IPC")) |
+             (str_detect(origin, "IPC") & str_detect(destination, "USPC"))) {
+    
+    out <- concord_uspc_ipc(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+    
   # USPC to/from NAICS
   } else if ((str_detect(origin, "NAICS") & str_detect(destination, "USPC")) |
              (str_detect(origin, "USPC") & str_detect(destination, "NAICS"))) {
@@ -191,11 +201,91 @@ concord <- function (sourcevar,
                               dest.digit,
                               all)  
     
-  # USPC to/from IPC
-  } else if ((str_detect(origin, "USPC") & str_detect(destination, "IPC")) |
-             (str_detect(origin, "IPC") & str_detect(destination, "USPC"))) {
+  # USPC to/from ISIC
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "ISIC")) |
+             (str_detect(origin, "ISIC") & str_detect(destination, "USPC"))) {
     
-    out <- concord_uspc_ipc(sourcevar,
+    out <- concord_isic_uspc(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+    
+  # USPC to/from SITC
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "SITC")) |
+             (str_detect(origin, "SITC") & str_detect(destination, "USPC"))) {
+    
+    out <- concord_sitc_uspc(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
+    
+  # USPC to/from HS
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "HS")) |
+             (str_detect(origin, "HS") & str_detect(destination, "USPC"))) {
+    
+    out <- concord_hs_uspc(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
+    
+  # USPC to/from BEC
+  } else if ((str_detect(origin, "USPC") & str_detect(destination, "BEC")) |
+             (str_detect(origin, "BEC") & str_detect(destination, "USPC"))) {
+    
+    out <- concord_bec_uspc(sourcevar,
+                           origin,
+                           destination,
+                           dest.digit,
+                           all)
+    
+  # IPC to/from NAICS
+  } else if ((str_detect(origin, "IPC") & str_detect(destination, "NAICS")) |
+             (str_detect(origin, "NAICS") & str_detect(destination, "IPC"))) {
+    
+    out <- concord_naics_ipc(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+    
+  # IPC to/from ISIC
+  } else if ((str_detect(origin, "IPC") & str_detect(destination, "ISIC")) |
+             (str_detect(origin, "ISIC") & str_detect(destination, "IPC"))) {
+    
+    out <- concord_isic_ipc(sourcevar,
+                             origin,
+                             destination,
+                             dest.digit,
+                             all)
+    
+  # IPC to/from SITC
+  } else if ((str_detect(origin, "IPC") & str_detect(destination, "SITC")) |
+             (str_detect(origin, "SITC") & str_detect(destination, "IPC"))) {
+    
+    out <- concord_sitc_ipc(sourcevar,
+                            origin,
+                            destination,
+                            dest.digit,
+                            all)
+    
+  # IPC to/from HS
+  } else if ((str_detect(origin, "IPC") & str_detect(destination, "HS")) |
+             (str_detect(origin, "HS") & str_detect(destination, "IPC"))) {
+    
+    out <- concord_hs_ipc(sourcevar,
+                           origin,
+                           destination,
+                           dest.digit,
+                           all)
+    
+  # IPC to/from BEC
+  } else if ((str_detect(origin, "IPC") & str_detect(destination, "BEC")) |
+             (str_detect(origin, "BEC") & str_detect(destination, "IPC"))) {
+    
+    out <- concord_bec_ipc(sourcevar,
                             origin,
                             destination,
                             dest.digit,

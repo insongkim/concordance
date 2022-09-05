@@ -3,9 +3,9 @@
 #' Concords the Unites State Patent Classification codes (USPC 2012) to and from NAICS codes (NAICS 2002, NAICS 2007, NAICS 2012, NAICS 2017, NAICS combined).
 #'
 #' @param sourcevar An input character vector of USPC or NAICS codes. The function accepts 3-digit codes for USPC (class) and 5 to 11-digit codes for USPC (subclass), and 2 to 4-digit codes for NAICS.
-#' @param origin A string setting the input patent and industry classification: "USPC" (combined), "USPC2012", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".
-#' @param destination A string setting the output patent and industry classification: "USPC" (combined), "USPC2012", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".
-#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 3 digits for USPC (class) and 5 to 11-digits for USPC (subclass), and 2 to 4-digits for NAICS. The default is 3 digits.
+#' @param origin A string setting the input industry/patent classification: "USPC" (combined), "USPC2012", "NAICS" (combined), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".
+#' @param destination A string setting the output industry/patent classification: "USPC" (combined), "USPC2012", "NAICS" (combined), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".
+#' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 3 digits for USPC (class) and 5 to 11-digits for USPC (subclass), and 2 to 4-digits for NAICS. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 #' @import tibble tidyr purrr dplyr stringr
@@ -62,17 +62,17 @@
 concord_uspc_naics <- function (sourcevar,
                             origin,
                             destination,
-                            dest.digit = 3,
+                            dest.digit = 4,
                             all = FALSE) {
   
-  # check dest.digit of BEC4
-  if (destination == "USPC" & dest.digit > 3){
+  # check dest.digit of USPC
+  if ((destination == "USPC2012" | destination == "USPC") & (dest.digit < 3 | dest.digit == 4 | dest.digit > 11)){
     dest.digit <- 5
-    warning(paste("USPC codes only accept 3 digits for class and 5 to 11 digits for subclass. If you are using more than 3 digits as the default, it is now reset to subclass."))
+    warning(paste("USPC codes only accept 3 digits for class and 5 to 11 digits for subclass. If you are using less than 3 digits, 4 digits, or more than 11 digits as the default, it is now reset to subclass."))
   }
   
   # load specific conversion dictionary
-  # HS and BEC4
+  # NAICS and USPC
   if (((origin == "USPC2012" | origin == "USPC") & destination == "NAICS") | (origin == "NAICS" & (destination == "USPC2012" | destination == "USPC"))) {
     
     dictionary <- concordance::uspc2012_naics2002
@@ -106,25 +106,33 @@ concord_uspc_naics <- function (sourcevar,
   digits <- unique(nchar(sourcevar))
   digits <- digits[!is.na(digits)]
   
-  # check whether input codes have the same digits
-  if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
+  if (length(digits) >= 1){
+    # check whether input codes have the same digits
+    if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017")){
+      if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
+    } else {
+      if (!(all(digits == 3) | all(digits >= 5 & digits <= 11))) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
+    }
+  } else {stop("There is no USPC as a bridge, matched with 'sourcevar'.")}
   
   # set acceptable digits for inputs and outputs
   if ((origin == "NAICS" | origin == "NAICS2002" | origin == "NAICS2007" | origin == "NAICS2012" | origin == "NAICS2017") & (destination == "USPC" | destination == "USPC2012")){
     
     origin.digits <- c(2, 3, 4)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2 to 6-digit inputs for NAICS codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 2, 3, 4-digit inputs for NAICS codes.")}
     
-    if (dest.digit < 3 | dest.digit > 11) {stop("'dest.digit' only accepts 3-digit inputs for USPC codes (class) and 5 to 11-digits inputs for USPC codes (subclass), including regular expressions.")}
+    destination.digits <- c(3, 5, 6, 7, 8, 9, 10, 11)
+    
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 3-digit inputs for USPC codes (class) and 5 to 11-digits inputs for USPC codes (subclass), including regular expressions.")}
     
   } else if ((origin == "USPC" | origin == "USPC2012") & (destination == "NAICS" | destination == "NAICS2002" | destination == "NAICS2007" | destination == "NAICS2012" | destination == "NAICS2017")) {
     
-    if (digits < 3 | digits > 11) {stop("'sourcevar' only accepts 3-digit inputs for USPC codes (class) and 5 to 11-digits inputs for USPC codes (subclass), including regular expressions.")}
+    if (!all(digits == 3 | (digits >= 5 & digits <= 11))) {stop("'sourcevar' only accepts 3-digit inputs for USPC codes (class) and 5 to 11-digits inputs for USPC codes (subclass), including regular expressions.")}
     
     destination.digits <- c(2, 3, 4)
     
-    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2 to 6-digit outputs for NAICS codes.")}
+    if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 2, 3, 4-digit outputs for NAICS codes.")}
     
   } else {
     

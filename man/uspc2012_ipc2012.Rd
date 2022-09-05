@@ -9,7 +9,7 @@ A data frame with 258,216 rows and 7 variables:
 \describe{
   \item{uspc_subclass}{USPC subclass}
   \item{uspc_class}{USPC class}
-  \item{ipc_subgroup}{IPC subgroup}
+  \item{ipc_subroup}{IPC subgroup}
   \item{ipc_group}{IPC group}
   \item{ipc_subclass}{IPC subclass}
   \item{ipc_class}{IPC class}

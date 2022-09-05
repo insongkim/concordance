@@ -2256,7 +2256,7 @@
 #' \describe{
 #'   \item{uspc_subclass}{USPC subclass}
 #'   \item{uspc_class}{USPC class}
-#'   \item{ipc_subgroup}{IPC subgroup}
+#'   \item{ipc_subroup}{IPC subgroup}
 #'   \item{ipc_group}{IPC group}
 #'   \item{ipc_subclass}{IPC subclass}
 #'   \item{ipc_class}{IPC class}
@@ -2345,3 +2345,78 @@
 #' @references Antras, Pol, and Davin Chor. 2012. "Measuring the Upstreamness of Production and Trade Flows." American Economic Review: Papers and Proceedings, Volume 102, Issue 3: 412-416.
 #' @source \url{https://scholar.harvard.edu/antras/publications/measuring-upstreamness-production-and-trade-flows}
 "upstream_us_detailed"
+
+#' Product Life-cycle (USPC, Class)
+#'
+#' A dataset containing patent citation lags, averaged by patent class in 2012, based on Bilir (2014).
+#'
+#' @format A data frame with 3 rows and 4 variables:
+#' \describe{
+#'   \item{source}{Patent classification as class-level, including leading zeros}
+#'   \item{MeanACL}{The mean of patent durations by patent classification}
+#'   \item{MeanP75CL}{The 75th percentile of patent durations by patent classification}
+#'   \item{MeanP85CL}{The 85th percentile of patent durations by patent classification}
+#' }
+#' @references Bilir, L. Kamran. 2014. "Patent Laws, Product Life-Cycle Lengths, and Multinational Activity." American Economic Review, 104(7), 1979-2013.
+#' @source \url{https://www.aeaweb.org/articles?id=10.1257/aer.104.7.1979}
+"lifecycle_USPC2012_class"
+
+#' Product Life-cycle (USPC, Subclass)
+#'
+#' A dataset containing patent citation lags, averaged by patent subclass in 2012, based on Bilir (2014).
+#'
+#' @format A data frame with 3 rows and 4 variables:
+#' \describe{
+#'   \item{source}{Patent classification as subclass-level, including leading zeros and regular expressions}
+#'   \item{MeanACL}{The mean of patent durations by patent classification}
+#'   \item{MeanP75CL}{The 75th percentile of patent durations by patent classification}
+#'   \item{MeanP85CL}{The 85th percentile of patent durations by patent classification}
+#' }
+#' @references Bilir, L. Kamran. 2014. "Patent Laws, Product Life-Cycle Lengths, and Multinational Activity." American Economic Review, 104(7), 1979-2013.
+#' @source \url{https://www.aeaweb.org/articles?id=10.1257/aer.104.7.1979}
+"lifecycle_USPC2012_subclass"
+
+#' Product Life-cycle (NAICS, 2-digits)
+#'
+#' A dataset containing patent citation lags, averaged across all patent classes pertaining to each manufacturing industry (NAICS, 2 digits) in 2002, based on Bilir (2014).
+#'
+#' @format A data frame with 3 rows and 4 variables:
+#' \describe{
+#'   \item{source}{2-digit NAICS2002 Code}
+#'   \item{MeanACL}{The mean of patent durations by patent class}
+#'   \item{MeanP75CL}{The 75th percentile of patent durations by patent class}
+#'   \item{MeanP85CL}{The 85th percentile of patent durations by patent class}
+#' }
+#' @references Bilir, L. Kamran. 2014. "Patent Laws, Product Life-Cycle Lengths, and Multinational Activity." American Economic Review, 104(7), 1979-2013.
+#' @source \url{https://www.aeaweb.org/articles?id=10.1257/aer.104.7.1979}
+"lifecycle_NAICS2002_2d"
+
+#' Product Life-cycle (NAICS, 3-digits)
+#'
+#' A dataset containing patent citation lags, averaged across all patent classes pertaining to each manufacturing industry (NAICS, 3 digits) in 2002, based on Bilir (2014).
+#'
+#' @format A data frame with 3 rows and 4 variables:
+#' \describe{
+#'   \item{source}{3-digit NAICS2002 Code}
+#'   \item{MeanACL}{The mean of patent durations by patent class}
+#'   \item{MeanP75CL}{The 75th percentile of patent durations by patent class}
+#'   \item{MeanP85CL}{The 85th percentile of patent durations by patent class}
+#' }
+#' @references Bilir, L. Kamran. 2014. "Patent Laws, Product Life-Cycle Lengths, and Multinational Activity." American Economic Review, 104(7), 1979-2013.
+#' @source \url{https://www.aeaweb.org/articles?id=10.1257/aer.104.7.1979}
+"lifecycle_NAICS2002_3d"
+
+#' Product Life-cycle (NAICS, 4-digits)
+#'
+#' A dataset containing patent citation lags, averaged across all patent classes pertaining to each manufacturing industry (NAICS, 4 digits) in 2002, based on Bilir (2014).
+#'
+#' @format A data frame with 3 rows and 4 variables:
+#' \describe{
+#'   \item{source}{4-digit NAICS2002 Code}
+#'   \item{MeanACL}{The mean of patent durations by patent class}
+#'   \item{MeanP75CL}{The 75th percentile of patent durations by patent class}
+#'   \item{MeanP85CL}{The 85th percentile of patent durations by patent class}
+#' }
+#' @references Bilir, L. Kamran. 2014. "Patent Laws, Product Life-Cycle Lengths, and Multinational Activity." American Economic Review, 104(7), 1979-2013.
+#' @source \url{https://www.aeaweb.org/articles?id=10.1257/aer.104.7.1979}
+"lifecycle_NAICS2002_4d"

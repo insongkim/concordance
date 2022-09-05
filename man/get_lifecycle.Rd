@@ -16,7 +16,7 @@ get_lifecycle(sourcevar, origin, setting = "MeanACL")
 \arguments{
 \item{sourcevar}{An input character vector of industry codes to look up.}
 
-\item{origin}{A string indicating one of the following industry/product/patent classifications: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "USPC2012", "USPC".}
+\item{origin}{A string indicating one of the following industry/product/patent classifications: "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined), "USPC2012", "USPC (combined)".}
 
 \item{setting}{Choose one of the three available measures from Bilir (2014).
 \itemize{
@@ -29,7 +29,7 @@ get_lifecycle(sourcevar, origin, setting = "MeanACL")
 The mean time lapse between the cited-patent's grant date and a subsequetion citation, averaged at each patent class (USPC) and at each industry (NAICS).
 }
 \description{
-Returns product lifecycle lengths by industry, using forward citatin lag, based on Bronwyn et al. (2001) and Bilir (2014).
+Returns product lifecycle lengths by manufacturing industry, using forward citatin lags, based on Bronwyn et al. (2001) and Bilir (2014).
 }
 \examples{
 # NAICS

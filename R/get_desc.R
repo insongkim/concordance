@@ -173,11 +173,11 @@ get_desc <- function (sourcevar,
     
     desc.df <- concordance::bec4_desc
     
-  } else if (origin == "IPC2012"){
+  } else if (origin == "IPC2012" | origin == "IPC"){
     
     desc.df <- concordance::ipc2012_desc
     
-  } else if (origin == "USPC2012"){
+  } else if (origin == "USPC2012" | origin == "USPC"){
     
     desc.df <- concordance::uspc2012_desc
     
@@ -241,13 +241,13 @@ get_desc <- function (sourcevar,
     
     origin.digits <- c(1, 3, 4, 6:12)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13-digit inputs for IPC2012 codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 1, 3, 4, 10, 11, 12, 13-digit inputs for IPC codes.")}
     
   } else if (str_detect(origin, "USPC")) {
     
     origin.digits <- c(3, 5:11)
     
-    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 3, 5, 6, 7, 8, 9, 10, 11-digit inputs for UPC2012 codes.")}
+    if (!(digits %in% origin.digits)) {stop("'sourcevar' only accepts 3, 5, 6, 7, 8, 9, 10, 11-digit inputs for UPC codes.")}
     
   } else {
     

@@ -10,16 +10,16 @@ Concordance tables provided by:
 }
 }
 \usage{
-concord_uspc_naics(sourcevar, origin, destination, dest.digit = 3, all = FALSE)
+concord_uspc_naics(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 }
 \arguments{
 \item{sourcevar}{An input character vector of USPC or NAICS codes. The function accepts 3-digit codes for USPC (class) and 5 to 11-digit codes for USPC (subclass), and 2 to 4-digit codes for NAICS.}
 
-\item{origin}{A string setting the input patent and industry classification: "USPC" (combined), "USPC2012", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".}
+\item{origin}{A string setting the input industry/patent classification: "USPC" (combined), "USPC2012", "NAICS" (combined), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".}
 
-\item{destination}{A string setting the output patent and industry classification: "USPC" (combined), "USPC2012", "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".}
+\item{destination}{A string setting the output industry/patent classification: "USPC" (combined), "USPC2012", "NAICS" (combined), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017".}
 
-\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 3 digits for USPC (class) and 5 to 11-digits for USPC (subclass), and 2 to 4-digits for NAICS. The default is 3 digits.}
+\item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 3 digits for USPC (class) and 5 to 11-digits for USPC (subclass), and 2 to 4-digits for NAICS. The default is 4 digits.}
 
 \item{all}{Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.}
 }
