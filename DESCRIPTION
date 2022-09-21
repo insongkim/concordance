@@ -24,7 +24,7 @@ Description: A set of utilities for matching products in different
 	     to HS0 or SITC3 codes), upstreamness/downstreamness look-up (via 
 	     concordance to ISIC3 and NAICS codes), and intermediateness look-up (via product 
 	     descriptions).
-License: GPL-2
+License: MIT + file LICENSE
 Depends: R (>= 3.6.0)
 Imports: 
     dplyr (>= 0.8.5),
