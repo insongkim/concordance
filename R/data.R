@@ -1512,7 +1512,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS5 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
@@ -1528,7 +1528,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS4 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
@@ -1544,7 +1544,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS3 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
@@ -1560,7 +1560,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS2 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
@@ -1576,7 +1576,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS1 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
@@ -1592,7 +1592,7 @@
 #'
 #' A dataset containing concordances between HS6 and HS0 classification.
 #'
-#' @format A data frame with 5388 rows and 6 variables:
+#' @format A data frame with 5613 rows and 6 variables:
 #' \describe{
 #'   \item{HS6_6d}{6-digit HS6 Code}
 #'   \item{HS6_4d}{4-digit HS6 Code}
