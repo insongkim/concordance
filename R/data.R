@@ -2275,7 +2275,7 @@
 #' @source \url{https://scholar.harvard.edu/antras/publications/measurement-upstreamness-and-downstreamness-global-valuechains}
 "upstream"
 
-#' US Detaled Upstreamness Table
+#' US Detailed Upstreamness Table
 #'
 #' A dataset containing upstreamness estimates for 426 industries in 2002 and 405 industries in 2007 and 2012 based on Antras and Chor (2012).
 #'
