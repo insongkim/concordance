@@ -1,10 +1,10 @@
 #' Concord Within HS Codes
 #'
-#' Concords codes within the Harmonized System classification (HS0, HS1, HS2, HS3, HS4, HS5).
+#' Concords codes within the Harmonized System classification (HS0, HS1, HS2, HS3, HS4, HS5, HS6).
 #'
 #' @param sourcevar An input character vector of HS codes. The function accepts 2, 4, 6-digit HS codes.
-#' @param origin A string setting the input industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), and "HS5" (2017).
-#' @param destination A string setting the output industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), and "HS5" (2017).
+#' @param origin A string setting the input industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), and "HS6" (2022).
+#' @param destination A string setting the output industry classification: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), and "HS6" (2022).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6-digit HS codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
