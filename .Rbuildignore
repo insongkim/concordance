@@ -4,3 +4,4 @@ data-raw
 .travis.yml
 cran-comments.md
 ^CRAN-RELEASE$
+^LICENSE\.md$

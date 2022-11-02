@@ -5,7 +5,7 @@
 \alias{hs_desc}
 \title{HS (Combined) Description}
 \format{
-A data frame with 7911 rows and 2 variables:
+A data frame with 8261 rows and 2 variables:
 \describe{
   \item{code}{HS Code}
   \item{desc}{HS Description}
@@ -16,6 +16,6 @@ hs_desc
 }
 \description{
 A dataset containing the description of products under the HS (Combined)
-classification.
+classification (H0 to H6).
 }
 \keyword{datasets}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{upstream_us_detailed}
 \alias{upstream_us_detailed}
-\title{US Detaled Upstreamness Table}
+\title{US Detailed Upstreamness Table}
 \format{
 A data frame with 1,236 rows and 4 variables:
 \describe{

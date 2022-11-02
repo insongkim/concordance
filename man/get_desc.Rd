@@ -18,7 +18,7 @@ get_desc(sourcevar, origin)
 \arguments{
 \item{sourcevar}{A character vector of input codes.}
 
-\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
+\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
 }
 \value{
 A character vector giving the title/description of each element of the input codes.
@@ -53,6 +53,9 @@ get_desc(sourcevar = c("120600", "854690"), origin = "HS4")
 
 # HS5
 get_desc(sourcevar = c("120600", "854690"), origin = "HS5")
+
+# HS6
+get_desc(sourcevar = c("120600", "854690"), origin = "HS6")
 
 # NAICS 2002
 get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2002")

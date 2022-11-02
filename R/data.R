@@ -128,12 +128,25 @@
 #' @source \url{https://comtrade.un.org/data/cache/classificationH5.json}
 "hs5_desc"
 
+#' HS6 Description
+#'
+#' A dataset containing the description of products under the HS6
+#' classification.
+#'
+#' @format A data frame with 6939 rows and 2 variables:
+#' \describe{
+#'   \item{code}{HS6 Code}
+#'   \item{desc}{HS6 Description}
+#' }
+#' @source \url{https://comtrade.un.org/data/cache/classificationH6.json}
+"hs6_desc"
+
 #' HS (Combined) Description
 #'
 #' A dataset containing the description of products under the HS (Combined)
-#' classification.
+#' classification (H0 to H6).
 #'
-#' @format A data frame with 7911 rows and 2 variables:
+#' @format A data frame with 8261 rows and 2 variables:
 #' \describe{
 #'   \item{code}{HS Code}
 #'   \item{desc}{HS Description}

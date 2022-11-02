@@ -3,7 +3,7 @@
 #' Returns the description of product codes.
 #'
 #' @param sourcevar A character vector of input codes.
-#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
+#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
 #' @return A character vector giving the title/description of each element of the input codes.
 #' @source Data consolidated from
 #' \itemize{
@@ -14,7 +14,7 @@
 #' }
 #' @import tibble tidyr purrr dplyr stringr
 #' @export
-#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise. 
+#' @note Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise.
 #' @examples
 #' # HS
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS")
@@ -39,6 +39,9 @@
 #'
 #' # HS5
 #' get_desc(sourcevar = c("120600", "854690"), origin = "HS5")
+#'
+#' # HS6
+#' get_desc(sourcevar = c("120600", "854690"), origin = "HS6")
 #'
 #' # NAICS 2002
 #' get_desc(sourcevar = c("111120", "326199"), origin = "NAICS2002")
@@ -128,6 +131,10 @@ get_desc <- function (sourcevar,
   } else if (origin == "HS5"){
 
     desc.df <- concordance::hs5_desc
+
+  } else if (origin == "HS6"){
+
+    desc.df <- concordance::hs6_desc
 
   } else if (origin == "ISIC2"){
 

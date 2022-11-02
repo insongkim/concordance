@@ -215,6 +215,25 @@ save(hs5_desc,
 
 
 ################################################################################
+## HS6
+################################################################################
+# https://comtrade.un.org/data/cache/classificationH6.json
+# read json
+hs6.desc.r <- fromJSON(file.path("./data-raw", "classificationH6.json"))
+
+hs6_desc <- hs6.desc.r$results %>%
+  filter(parent != "#") %>%
+  mutate(desc = str_replace_all(text, "^(.*?) - ", "")) %>%
+  rename(code = id) %>%
+  select(code, desc) %>%
+  arrange(code)
+
+# save
+save(hs6_desc,
+     file = "./data/hs6_desc.RData", compress = "xz")
+
+
+################################################################################
 ## HS Combined
 ################################################################################
 # combine all HS codes
@@ -223,7 +242,9 @@ hs_desc <- rbind(hs0_desc %>% mutate(classification = "HS0"),
                  hs2_desc %>% mutate(classification = "HS2"),
                  hs3_desc %>% mutate(classification = "HS3"),
                  hs4_desc %>% mutate(classification = "HS4"),
-                 hs5_desc %>% mutate(classification = "HS5"))
+                 hs5_desc %>% mutate(classification = "HS5"),
+                 hs6_desc %>% mutate(classification = "HS6")
+                 )
 
 # drop duplicates
 hs_desc <- hs_desc %>%
