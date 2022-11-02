@@ -33,7 +33,31 @@ concord_hs <- function (sourcevar,
                         all = FALSE) {
 
   # load specific conversion dictionary
-  if ((origin == "HS5" & destination == "HS4") | (origin == "HS4" & destination == "HS5")) {
+  if ((origin == "HS6" & destination == "HS5") | (origin == "HS5" & destination == "HS6")) {
+
+    dictionary <- concordance::hs6_hs5
+
+  } else if ((origin == "HS6" & destination == "HS4") | (origin == "HS4" & destination == "HS6")){
+
+    dictionary <- concordance::hs6_hs4
+
+  } else if ((origin == "HS6" & destination == "HS3") | (origin == "HS3" & destination == "HS6")){
+
+    dictionary <- concordance::hs6_hs3
+
+  } else if ((origin == "HS6" & destination == "HS2") | (origin == "HS2" & destination == "HS6")){
+
+    dictionary <- concordance::hs6_hs2
+
+  } else if ((origin == "HS6" & destination == "HS1") | (origin == "HS1" & destination == "HS6")){
+
+    dictionary <- concordance::hs6_hs1
+
+  } else if ((origin == "HS6" & destination == "HS0") | (origin == "HS0" & destination == "HS6")){
+
+    dictionary <- concordance::hs6_hs0
+    
+  } else if ((origin == "HS5" & destination == "HS4") | (origin == "HS4" & destination == "HS5")) {
 
     dictionary <- concordance::hs5_hs4
 
