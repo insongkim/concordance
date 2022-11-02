@@ -1508,6 +1508,102 @@
 #' @source Data from Jon Haveman's International Trade Data page: \url{http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeData.html#Rauch}
 "sitc2_rauch"
 
+#' HS6-HS5 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS5 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS5_6d}{6-digit HS5 Code}
+#'   \item{HS5_4d}{4-digit HS5 Code}
+#'   \item{HS5_2d}{2-digit HS5 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs5"
+
+#' HS6-HS4 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS4 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS4_6d}{6-digit HS4 Code}
+#'   \item{HS4_4d}{4-digit HS4 Code}
+#'   \item{HS4_2d}{2-digit HS4 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs4"
+
+#' HS6-HS3 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS3 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS3_6d}{6-digit HS3 Code}
+#'   \item{HS3_4d}{4-digit HS3 Code}
+#'   \item{HS3_2d}{2-digit HS3 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs3"
+
+#' HS6-HS2 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS2 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS2_6d}{6-digit HS2 Code}
+#'   \item{HS2_4d}{4-digit HS2 Code}
+#'   \item{HS2_2d}{2-digit HS2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs2"
+
+#' HS6-HS1 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS1 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS1_6d}{6-digit HS1 Code}
+#'   \item{HS1_4d}{4-digit HS1 Code}
+#'   \item{HS1_2d}{2-digit HS1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs1"
+
+#' HS6-HS0 Concordance
+#'
+#' A dataset containing concordances between HS6 and HS0 classification.
+#'
+#' @format A data frame with 5613 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{HS0_6d}{6-digit HS0 Code}
+#'   \item{HS0_4d}{4-digit HS0 Code}
+#'   \item{HS0_2d}{2-digit HS0 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_hs0"
+
 #' HS5-HS4 Concordance
 #'
 #' A dataset containing concordances between HS5 and HS4 classification.

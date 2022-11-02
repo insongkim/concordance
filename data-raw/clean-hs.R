@@ -11,6 +11,211 @@ library(readxl)
 
 
 ################################################################################
+# HS6 to HS5
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2017ConversionAndCorrelationTables.xlsx
+hs6_hs5_r <- read_excel("./data-raw/HS2022toHS2017ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+hs6_hs5 <- hs6_hs5_r %>%
+  rename(HS6_6d = `From HS2022`,
+         HS5_6d = `To HS2017`)
+
+# check digits
+hs6_hs5 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs5 %>% filter(nchar(HS5_6d) != 6)
+
+# create vars
+hs6_hs5 <- hs6_hs5 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS5_4d = str_sub(HS5_6d, start = 1, end = 4),
+         HS5_2d = str_sub(HS5_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS5_6d, HS5_4d, HS5_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs5,
+     file = "./data/hs6_hs5.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to HS4
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2012ConversionAndCorrelationTables.xlsx
+hs6_hs4_r <- read_excel("./data-raw/HS2022toHS2012ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+hs6_hs4 <- hs6_hs4_r %>%
+  rename(HS6_6d = `From HS 2022`,
+         HS4_6d = `To HS 2012`)
+
+# check digits
+hs6_hs4 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs4 %>% filter(nchar(HS4_6d) != 6)
+
+# create vars
+hs6_hs4 <- hs6_hs4 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS4_4d = str_sub(HS4_6d, start = 1, end = 4),
+         HS4_2d = str_sub(HS4_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS4_6d, HS4_4d, HS4_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs4,
+     file = "./data/hs6_hs4.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to HS3
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2007ConversionAndCorrelationTables.xlsx
+hs6_hs3_r <- read_excel("./data-raw/HS2022toHS2007ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+head(hs6_hs3_r)
+hs6_hs3 <- hs6_hs3_r %>%
+  rename(HS6_6d = `From HS 2022`,
+         HS3_6d = `From HS 2007`)
+
+# check digits
+hs6_hs3 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs3 %>% filter(nchar(HS3_6d) != 6)
+
+# create vars
+hs6_hs3 <- hs6_hs3 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS3_4d = str_sub(HS3_6d, start = 1, end = 4),
+         HS3_2d = str_sub(HS3_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS3_6d, HS3_4d, HS3_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs3,
+     file = "./data/hs6_hs3.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to HS2
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS2002ConversionAndCorrelationTables.xlsx
+hs6_hs2_r <- read_excel("./data-raw/HS2022toHS2002ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+hs6_hs2 <- hs6_hs2_r %>%
+  rename(HS6_6d = `From HS 2022`,
+         HS2_6d = `From HS 2002`)
+
+# check digits
+hs6_hs2 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs2 %>% filter(nchar(HS2_6d) != 6)
+
+# create vars
+hs6_hs2 <- hs6_hs2 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS2_4d = str_sub(HS2_6d, start = 1, end = 4),
+         HS2_2d = str_sub(HS2_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS2_6d, HS2_4d, HS2_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs2,
+     file = "./data/hs6_hs2.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to HS1
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS1996ConversionAndCorrelationTables.xlsx
+hs6_hs1_r <- read_excel("./data-raw/HS2022toHS1996ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+hs6_hs1 <- hs6_hs1_r %>%
+  rename(HS6_6d = `From HS 2022`,
+         HS1_6d = `To HS 1996`)
+
+# check digits
+hs6_hs1 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs1 %>% filter(nchar(HS1_6d) != 6)
+
+# create vars
+hs6_hs1 <- hs6_hs1 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS1_4d = str_sub(HS1_6d, start = 1, end = 4),
+         HS1_2d = str_sub(HS1_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS1_6d, HS1_4d, HS1_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs1,
+     file = "./data/hs6_hs1.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to HS0
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+# https://unstats.un.org/unsd/classifications/Econ/tables/HS2022toHS1992ConversionAndCorrelationTables.xlsx
+hs6_hs0_r <- read_excel("./data-raw/HS2022toHS1992ConversionAndCorrelationTables.xlsx",
+                        sheet = 1, col_names = TRUE, skip = 0)
+
+# subset and clean
+hs6_hs0 <- hs6_hs0_r %>%
+  rename(HS6_6d = `From HS 2022`,
+         HS0_6d = `From HS 1992`)
+
+# check digits
+hs6_hs0 %>% filter(nchar(HS6_6d) != 6)
+hs6_hs0 %>% filter(nchar(HS0_6d) != 6)
+
+# create vars
+hs6_hs0 <- hs6_hs0 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         HS0_4d = str_sub(HS0_6d, start = 1, end = 4),
+         HS0_2d = str_sub(HS0_6d, start = 1, end = 2)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         HS0_6d, HS0_4d, HS0_2d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_hs0,
+     file = "./data/hs6_hs0.RData", compress = "xz")
+
+
+################################################################################
 # HS5 to HS4
 ################################################################################
 # load UN data

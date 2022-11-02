@@ -30,7 +30,7 @@ get_sigma(
 Concords vector of input codes to 3-digit HS0 codes and then extracts the corresponding product-level import demand elasticities in the country selected by the user. For the United States (only), Broda and Weinstein (2006) have also estimated elasticities based on more fine-grained 5-digit SITC3 codes. Set \code{use_SITC} to TRUE to obtain elasticities in the United States via this method.
 }
 \description{
-Returns product-level import demand elasticities based on 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
+Returns product-level import demand price elasticities based on 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 }
 \note{
 Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.

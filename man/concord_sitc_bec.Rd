@@ -67,7 +67,8 @@ concord_sitc_bec(sourcevar = c("0430", "5121"),
 concord_sitc_bec(sourcevar = c("043", "512"),
                 origin = "SITC1", destination = "BEC4",
                 dest.digit = 1, all = TRUE)
-## BEC4 to SITC1
+
+# BEC4 to SITC1
 concord_sitc_bec(sourcevar = c("1", "7"),
                 origin = "BEC4", destination = "SITC1",
                 dest.digit = 5, all = FALSE)

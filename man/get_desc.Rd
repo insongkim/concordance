@@ -27,7 +27,7 @@ A character vector giving the title/description of each element of the input cod
 Returns the description of product codes.
 }
 \note{
-Always include leading zeroes in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.
+Please include leading zeros in codes (e.g., use HS code 010110 instead of 10110). For BEC4 only, use original codes or add trailing zeroes if necessary (e.g., 7 or 700 instead of 007). Results may be buggy otherwise.
 }
 \examples{
 # HS
