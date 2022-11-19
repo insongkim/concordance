@@ -186,6 +186,40 @@ save(hs5_bec4,
      file = "./data/hs5_bec4.RData", compress = "xz")
 
 ################################################################################
+# HS6 to BEC4
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+hs6_bec4 <- read_csv("./data-raw/HS2022 to BEC Conversion and Correlation Tables.csv")
+
+# rename vars
+hs6_bec4 <- hs6_bec4[ , 1:2]
+colnames(hs6_bec4)[1] <- "HS6_6d"
+colnames(hs6_bec4)[2] <- "BEC4_3d"
+hs6_bec4$BEC4_3d <- as.character(hs6_bec4$BEC4_3d)
+
+# check digits
+hs6_bec4 %>% filter(nchar(HS6_6d) != 6)
+
+# augment BEC codes
+hs6_bec4$BEC4_3d <- str_pad(hs6_bec4$BEC4_3d, width = 3, side = "right", pad = "0")
+
+# create vars
+hs6_bec4 <- hs6_bec4 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         BEC4_2d = str_sub(BEC4_3d, start = 1, end = 2),
+         BEC4_1d = str_sub(BEC4_3d, start = 1, end = 1)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         BEC4_3d, BEC4_2d, BEC4_1d) %>%
+  arrange(BEC4_3d)
+
+# save
+save(hs6_bec4,
+     file = "./data/hs6_bec4.RData", compress = "xz")
+
+################################################################################
 # HS0 to BEC4
 ################################################################################
 # load UN data
@@ -233,6 +267,7 @@ load("./data/hs2_bec4.RData")
 load("./data/hs3_bec4.RData")
 load("./data/hs4_bec4.RData")
 load("./data/hs5_bec4.RData")
+load("./data/hs6_bec4.RData")
 
 # combine
 hs.bec4.r <- rbind(hs0_bec4 %>% rename(HS_6d = HS0_6d,
@@ -252,7 +287,10 @@ hs.bec4.r <- rbind(hs0_bec4 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_bec4 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_bec4 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
                    
 
 # clean
