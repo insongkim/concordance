@@ -726,6 +726,78 @@
 #' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
 "hs5_sitc4"
 
+#' HS6-SITC1 Concordance
+#'
+#' A dataset containing concordances between HS6 and SITC1 classifications.
+#'
+#' @format A data frame with 5605 rows and 8 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{SITC1_5d}{5-digit SITC1 Code}
+#'   \item{SITC1_4d}{4-digit SITC1 Code}
+#'   \item{SITC1_3d}{3-digit SITC1 Code}
+#'   \item{SITC1_2d}{2-digit SITC1 Code}
+#'   \item{SITC1_1d}{1-digit SITC1 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_sitc1"
+
+#' HS6-SITC2 Concordance
+#'
+#' A dataset containing concordances between HS6 and SITC2 classifications.
+#'
+#' @format A data frame with 5611 rows and 8 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{SITC2_5d}{5-digit SITC2 Code}
+#'   \item{SITC2_4d}{4-digit SITC2 Code}
+#'   \item{SITC2_3d}{3-digit SITC2 Code}
+#'   \item{SITC2_2d}{2-digit SITC2 Code}
+#'   \item{SITC2_1d}{1-digit SITC2 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_sitc2"
+
+#' HS6-SITC3 Concordance
+#'
+#' A dataset containing concordances between HS6 and SITC3 classifications.
+#'
+#' @format A data frame with 5611 rows and 8 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{SITC3_5d}{5-digit SITC3 Code}
+#'   \item{SITC3_4d}{4-digit SITC3 Code}
+#'   \item{SITC3_3d}{3-digit SITC3 Code}
+#'   \item{SITC3_2d}{2-digit SITC3 Code}
+#'   \item{SITC3_1d}{1-digit SITC3 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_sitc3"
+
+#' HS6-SITC4 Concordance
+#'
+#' A dataset containing concordances between HS6 and SITC4 classifications.
+#'
+#' @format A data frame with 5611 rows and 8 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{SITC4_5d}{5-digit SITC4 Code}
+#'   \item{SITC4_4d}{4-digit SITC4 Code}
+#'   \item{SITC4_3d}{3-digit SITC4 Code}
+#'   \item{SITC4_2d}{2-digit SITC4 Code}
+#'   \item{SITC4_1d}{1-digit SITC4 Code}
+#' }
+#' @source \url{https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp}
+"hs6_sitc4"
+
 #' HS-SITC1 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and SITC1 classifications.
@@ -2244,6 +2316,22 @@
 #' }
 #' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
 "hs5_bec4"
+
+#' HS6-BEC4 Concordance
+#'
+#' A dataset containing concordances between HS6 and BEC4 classifications.
+#'
+#' @format A data frame with 5927 rows and 6 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{BEC4_3d}{3-digit BEC4 Code}
+#'   \item{BEC4_2d}{2-digit BEC4 Code}
+#'   \item{BEC4_1d}{1-digit BEC4 Code}
+#' }
+#' @source https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+"hs6_bec4"
 
 #' HS-BEC4 Concordance
 #'

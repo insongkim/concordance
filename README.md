@@ -14,6 +14,7 @@ concordance between the classifications below:
   * "HS3" (2007)
   * "HS4" (2012) 
   * "HS5" (2017)
+  * "HS6" (2022)
   * "HS" (HS combined)
 - Standard International Trade Classification
   * "SITC1" (1950)
