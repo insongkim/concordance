@@ -33,6 +33,16 @@ concord_hs(sourcevar = c("0101", "3823"),
            origin = "HS0", destination = "HS6",
            dest.digit = 2, all = TRUE)
 
+# HS6 to HS1
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS1",
+           dest.digit = 2, all = TRUE)
+
+# HS6 to HS1
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS1",
+           dest.digit = 4, all = TRUE)
+
 # HS to SITC
 concord_hs_sitc(sourcevar = "120600",
                                 origin = "HS6", destination = "SITC4",
