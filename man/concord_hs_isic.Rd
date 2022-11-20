@@ -27,7 +27,7 @@ concord_hs_isic(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
 }
 \description{
-Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
+Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS6, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 }
 \note{
 Always include leading zeros in codes (e.g., use HS code 010110 instead of 10110)---results may be buggy otherwise.

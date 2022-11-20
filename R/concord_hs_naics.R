@@ -1,6 +1,6 @@
 #' Converting HS and NAICS Codes
 #'
-#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
+#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS6, HS combined) to and from North American Industry Classification System codes (NAICS2002, NAICS2007, NAICS2012, NAICS2017, NAICS combined).
 #'
 #' @param sourcevar An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and 2 to 6-digit codes for NAICS.
 #' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).
@@ -781,7 +781,107 @@ concord_hs_naics <- function (sourcevar,
              .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
       distinct()
 
-  } else {
+  } else if ((origin == "HS6" & destination == "NAICS") | (origin == "NAICS" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_naics
+    
+  } else if ((origin == "HS6" & destination == "NAICS2002") | (origin == "NAICS2002" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_naics
+    
+    # load version codes
+    naics.vec <- concordance::naics2002_desc
+    
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+    
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2002_6d = .data$NAICS_6d,
+             NAICS2002_5d = .data$NAICS_5d,
+             NAICS2002_4d = .data$NAICS_4d,
+             NAICS2002_3d = .data$NAICS_3d,
+             NAICS2002_2d = .data$NAICS_2d) %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$NAICS2002_6d, .data$NAICS2002_5d, .data$NAICS2002_4d, .data$NAICS2002_3d, .data$NAICS2002_2d) %>%
+      distinct()
+    
+  } else if ((origin == "HS6" & destination == "NAICS2007") | (origin == "NAICS2007" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_naics
+    
+    # load version codes
+    naics.vec <- concordance::naics2007_desc
+    
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+    
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2007_6d = .data$NAICS_6d,
+             NAICS2007_5d = .data$NAICS_5d,
+             NAICS2007_4d = .data$NAICS_4d,
+             NAICS2007_3d = .data$NAICS_3d,
+             NAICS2007_2d = .data$NAICS_2d) %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$NAICS2007_6d, .data$NAICS2007_5d, .data$NAICS2007_4d, .data$NAICS2007_3d, .data$NAICS2007_2d) %>%
+      distinct()
+    
+  } else if ((origin == "HS6" & destination == "NAICS2012") | (origin == "NAICS2012" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_naics
+    
+    # load version codes
+    naics.vec <- concordance::naics2012_desc
+    
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+    
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2012_6d = .data$NAICS_6d,
+             NAICS2012_5d = .data$NAICS_5d,
+             NAICS2012_4d = .data$NAICS_4d,
+             NAICS2012_3d = .data$NAICS_3d,
+             NAICS2012_2d = .data$NAICS_2d) %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$NAICS2012_6d, .data$NAICS2012_5d, .data$NAICS2012_4d, .data$NAICS2012_3d, .data$NAICS2012_2d) %>%
+      distinct()
+    
+  } else if ((origin == "HS6" & destination == "NAICS2017") | (origin == "NAICS2017" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_naics
+    
+    # load version codes
+    naics.vec <- concordance::naics2017_desc
+    
+    naics.vec <- naics.vec %>%
+      filter(nchar(.data$code) == 6) %>%
+      pull(.data$code) %>%
+      unique()
+    
+    # subset and clean
+    dictionary <- dictionary %>%
+      filter(.data$NAICS_6d %in% naics.vec) %>%
+      rename(NAICS2017_6d = .data$NAICS_6d,
+             NAICS2017_5d = .data$NAICS_5d,
+             NAICS2017_4d = .data$NAICS_4d,
+             NAICS2017_3d = .data$NAICS_3d,
+             NAICS2017_2d = .data$NAICS_2d) %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$NAICS2017_6d, .data$NAICS2017_5d, .data$NAICS2017_4d, .data$NAICS2017_3d, .data$NAICS2017_2d) %>%
+      distinct()
+    
+  }  else {
 
     stop("Conversion dictionary not available.")
 

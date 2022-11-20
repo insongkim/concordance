@@ -102,6 +102,10 @@ concord_hs_bec <- function (sourcevar,
     
     dictionary <- concordance::hs5_bec4
     
+  } else if ((origin == "HS6" & destination == "BEC4") | (origin == "BEC4" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_bec4
+    
   } else if ((origin == "HS" & destination == "BEC4") | (origin == "BEC4" & destination == "HS")) {
     
     dictionary <- concordance::hs_bec4
@@ -123,7 +127,7 @@ concord_hs_bec <- function (sourcevar,
   if (length(digits) > 1) {stop("'sourcevar' has codes with different number of digits. Please ensure that input codes are at the same length.")}
   
   # set acceptable digits for inputs and outputs
-  if ((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5") & (destination == "BEC4")){
+  if ((origin == "HS" | origin == "HS0" | origin == "HS1" | origin == "HS2" | origin == "HS3" | origin == "HS4" | origin == "HS5" | origin == "HS6") & (destination == "BEC4")){
     
     origin.digits <- c(2, 4, 6)
     
@@ -133,7 +137,7 @@ concord_hs_bec <- function (sourcevar,
     
     if ((!dest.digit %in% destination.digits)) {stop("'dest.digit' only accepts 1, 2, 3-digit outputs for BEC4 codes.")}
     
-  } else if ((origin == "BEC4") & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5")) {
+  } else if ((origin == "BEC4") & (destination == "HS" | destination == "HS0" | destination == "HS1" | destination == "HS2" | destination == "HS3" | destination == "HS4" | destination == "HS5" | destination == "HS6")) {
     
     if (max(digits > 3)) {stop("'sourcevar' only accepts 1, 2, 3-digit inputs for BEC4 codes.")
     

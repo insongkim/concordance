@@ -996,6 +996,24 @@
 #' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
 "hs5_naics"
 
+#' HS6-NAICS Concordance
+#'
+#' A dataset containing concordances between HS6 and NAICS (combined) classifications.
+#'
+#' @format A data frame with 9451 rows and 8 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{NAICS_6d}{6-digit NAICS Code}
+#'   \item{NAICS_5d}{5-digit NAICS Code}
+#'   \item{NAICS_4d}{4-digit NAICS Code}
+#'   \item{NAICS_3d}{3-digit NAICS Code}
+#'   \item{NAICS_2d}{2-digit NAICS Code}
+#' }
+#' @source Pierce and Schott (2009, 2018), \url{https://spinup-000d1a-wp-offload-media.s3.amazonaws.com/faculty/wp-content/uploads/sites/47/2019/06/hssicnaics_20181015.zip}
+"hs6_naics"
+
 #' HS-ISIC2 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and ISIC2 classifications.
@@ -1115,6 +1133,23 @@
 #' @source https://wits.worldbank.org/product_concordance.html
 "hs5_isic2"
 
+#' HS6-ISIC2 Concordance
+#'
+#' A dataset containing concordances between HS6 and ISIC2 classifications.
+#'
+#' @format A data frame with 5613 rows and 7 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{ISIC2_4d}{4-digit ISIC2 Code}
+#'   \item{ISIC2_3d}{3-digit ISIC2 Code}
+#'   \item{ISIC2_2d}{2-digit ISIC2 Code}
+#'   \item{ISIC2_1d}{1-digit ISIC2 Code}
+#' }
+#' @source https://wits.worldbank.org/product_concordance.html
+"hs6_isic2"
+
 #' HS-ISIC3 Concordance
 #'
 #' A dataset containing concordances between HS (combined) and ISIC3 classifications.
@@ -1233,6 +1268,23 @@
 #' }
 #' @source https://wits.worldbank.org/product_concordance.html
 "hs5_isic3"
+
+#' HS6-ISIC3 Concordance
+#'
+#' A dataset containing concordances between HS6 and ISIC3 classifications.
+#'
+#' @format A data frame with 5613 rows and 7 variables:
+#' \describe{
+#'   \item{HS6_6d}{6-digit HS6 Code}
+#'   \item{HS6_4d}{4-digit HS6 Code}
+#'   \item{HS6_2d}{2-digit HS6 Code}
+#'   \item{ISIC3_4d}{4-digit ISIC3 Code}
+#'   \item{ISIC3_3d}{3-digit ISIC3 Code}
+#'   \item{ISIC3_2d}{2-digit ISIC3 Code}
+#'   \item{ISIC3_1d}{1-digit ISIC3 Code}
+#' }
+#' @source https://wits.worldbank.org/product_concordance.html
+"hs6_isic3"
 
 #' HS-ISIC3.1 Concordance
 #'

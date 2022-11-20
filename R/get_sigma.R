@@ -3,7 +3,7 @@
 #' Returns product-level import demand price elasticities based on 3-digit HS0 estimates from Broda and Weinstein (QJE, 2006) for 73 countries.
 #'
 #' @param sourcevar An input character vector of industry/product codes.
-#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
+#' @param origin A string setting the input coding scheme. Supports the following classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).
 #' @param country A string setting the ISO 3-letter country code for which to return import demand elasticities (default = "USA"). For a list of available countries, load the package and type "unique(sigma_hs0_3d$iso3c)".
 #' @param use_SITC Set to FALSE by default. Set to TRUE if you wish to look up elasticities via 5-digit SITC3 codes instead. Only available for the United States.
 #' @param give_avg Set to FALSE if you wish to obtain the full vector of elasticities for all matching codes of each element in the input vector. When set to TRUE (as by default) each output element will be a simple average of all elasticities (of matched codes) in the corresponding vector.
