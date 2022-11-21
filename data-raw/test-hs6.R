@@ -43,6 +43,31 @@ concord_hs(sourcevar = c("0101", "3823"),
            origin = "HS6", destination = "HS1",
            dest.digit = 4, all = TRUE)
 
+# HS6 to HS1
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS1",
+           dest.digit = 6, all = TRUE)
+
+# HS6 to HS2
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS2",
+           dest.digit = 4, all = TRUE)
+
+# HS6 to HS3
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS3",
+           dest.digit = 4, all = TRUE)
+
+# HS6 to HS4
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS4",
+           dest.digit = 4, all = FALSE)
+
+# HS6 to HS5
+concord_hs(sourcevar = c("0101", "3823"),
+           origin = "HS6", destination = "HS5",
+           dest.digit = 4, all = FALSE)
+
 # HS to SITC
 concord_hs_sitc(sourcevar = "120600",
                                 origin = "HS6", destination = "SITC4",
@@ -72,15 +97,35 @@ concord_hs_sitc(sourcevar = "120600",
                                 origin = "SITC4", destination = "HS6",
                                 dest.digit = 6, all = FALSE)
                 
-                ## SITC4 to HS6
+                ## SITC2 to HS6
                 concord_hs_sitc(sourcevar = c("22240", "77322"),
                                 origin = "SITC2", destination = "HS6",
                                 dest.digit = 6, all = FALSE)
                 
-                ## SITC4 to HS6
+                ## SITC1 to HS6
                 concord_hs_sitc(sourcevar = c("22240", "77322"),
                                 origin = "SITC1", destination = "HS6",
                                 dest.digit = 6, all = FALSE)
+                
+                ## SITC3 to HS6
+                concord_hs_sitc(sourcevar = c("22240", "77322"),
+                                origin = "SITC3", destination = "HS6",
+                                dest.digit = 6, all = FALSE)
+                
+                ## SITC3 to HS6
+                concord_hs_sitc(sourcevar = c("22240", "22240"),
+                                origin = "SITC3", destination = "HS6",
+                                dest.digit = 6, all = FALSE)
+                
+                ## SITC3 to HS6
+                concord_hs_sitc(sourcevar = c("22240", "77322"),
+                                origin = "SITC3", destination = "HS6",
+                                dest.digit = 2, all = FALSE)
+                
+                ## SITC3 to HS6
+                concord_hs_sitc(sourcevar = c("22240", "77322"),
+                                origin = "SITC3", destination = "HS6",
+                                dest.digit = 4, all = FALSE)
                 
                 # HS to BEC
                 # one input: one-to-one match
@@ -136,6 +181,7 @@ concord_hs_sitc(sourcevar = "120600",
                                origin = "BEC4", destination = "HS6",
                                dest.digit = 2, all = FALSE)
                 
+                # HS6 and ISIC
                 ## HS6 to ISIC4
                 concord_hs_isic(sourcevar = c("120600", "854690"),
                                 origin = "HS6", destination = "ISIC4",
@@ -196,8 +242,12 @@ concord_hs_sitc(sourcevar = "120600",
                                 origin = "ISIC3.1", destination = "HS6",
                                 dest.digit = 6, all = FALSE)
                 
-                # HS and NAICS
+                ## ISIC3.1 to HS6
+                concord_hs_isic(sourcevar = c("0111", "2599"),
+                                origin = "ISIC3.1", destination = "HS6",
+                                dest.digit = 4, all = FALSE)
                 
+                # HS and NAICS
                 ## HS combined to NAICS
                 # one input: one-to-one match
                 concord_hs_naics(sourcevar = "120600",
@@ -270,7 +320,7 @@ concord_hs_sitc(sourcevar = "120600",
                                  origin = "NAICS", destination = "HS6",
                                  dest.digit = 2, all = FALSE)
                 
-                # HS to NAICS
+                # concord wrap function
                 concord(sourcevar = c("120600", "854690"),
                         origin = "HS", destination = "NAICS",
                         dest.digit = 6, all = TRUE)
@@ -367,6 +417,10 @@ concord_hs_sitc(sourcevar = "120600",
                              setting = "GVC_Ui", detailed = FALSE)
                 
                 get_upstream(sourcevar = c("0101", "0301", "7014", "8420"), origin = "HS6",
+                             country = "KOR", year = "2005",
+                             setting = "GVC_Ui", detailed = FALSE)
+                
+                get_upstream(sourcevar = c("0101"), origin = "HS6",
                              country = "KOR", year = "2005",
                              setting = "GVC_Ui", detailed = FALSE)
                 
