@@ -34,6 +34,7 @@ Imports:
     tibble (>= 3.0.0),
     tidyr (>= 1.0.2)
 LazyData: true
+LazyDataCompression:xz
 BugReports: https://github.com/insongkim/concordance/issues
 RoxygenNote: 7.2.1
 Encoding: UTF-8
