@@ -936,6 +936,145 @@ hs5_sitc1 <- hs5_sitc1 %>%
 save(hs5_sitc1,
      file = "./data/hs5_sitc1.RData", compress = "xz")
 
+################################################################################
+# HS6 to SITC4
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+hs6.sitc4.r <- read_excel("./data-raw/HS2022toSITC4ConversionAndCorrelationTables.xlsx")
+
+# subset and clean
+hs6_sitc4 <- hs6.sitc4.r %>%
+  rename(HS6_6d = `From HS 2022`,
+         SITC4_5d = `To SITC Rev. 4`) %>%
+  mutate(SITC4_5d = str_pad(SITC4_5d, width = 5, side = "right", pad = "0"))
+
+# check digits
+hs6_sitc4 %>% filter(nchar(HS6_6d) != 6)
+hs6_sitc4 %>% filter(nchar(SITC4_5d) != 5)
+
+# create vars
+hs6_sitc4 <- hs6_sitc4 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         SITC4_4d = str_sub(SITC4_5d, start = 1, end = 4),
+         SITC4_3d = str_sub(SITC4_5d, start = 1, end = 3),
+         SITC4_2d = str_sub(SITC4_5d, start = 1, end = 2),
+         SITC4_1d = str_sub(SITC4_5d, start = 1, end = 1)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         SITC4_5d, SITC4_4d, SITC4_3d, SITC4_2d, SITC4_1d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_sitc4,
+     file = "./data/hs6_sitc4.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to SITC3
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+hs6.sitc3.r <- read_excel("./data-raw/HS2022toSITC3ConversionAndCorrelationTables.xlsx")
+
+# subset and clean
+hs6_sitc3 <- hs6.sitc3.r %>%
+  rename(HS6_6d = `From HS 2022`,
+         SITC3_5d = `To SITC Rev. 3`) %>%
+  mutate(SITC3_5d = str_pad(SITC3_5d, width = 5, side = "right", pad = "0"))
+
+# check digits
+hs6_sitc3 %>% filter(nchar(HS6_6d) != 6)
+hs6_sitc3 %>% filter(nchar(SITC3_5d) != 5)
+
+# create vars
+hs6_sitc3 <- hs6_sitc3 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         SITC3_4d = str_sub(SITC3_5d, start = 1, end = 4),
+         SITC3_3d = str_sub(SITC3_5d, start = 1, end = 3),
+         SITC3_2d = str_sub(SITC3_5d, start = 1, end = 2),
+         SITC3_1d = str_sub(SITC3_5d, start = 1, end = 1)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         SITC3_5d, SITC3_4d, SITC3_3d, SITC3_2d, SITC3_1d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_sitc3,
+     file = "./data/hs6_sitc3.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to SITC2
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+hs6.sitc2.r <- read_excel("./data-raw/HS2022toSITC2ConversionAndCorrelationTables.xlsx")
+
+# subset and clean
+hs6_sitc2 <- hs6.sitc2.r %>%
+  rename(HS6_6d = `From HS 2022`,
+         SITC2_5d = `To SITC Rev. 2`) %>%
+  mutate(SITC2_5d = str_pad(SITC2_5d, width = 5, side = "right", pad = "0"))
+
+# check digits
+hs6_sitc2 %>% filter(nchar(HS6_6d) != 6)
+hs6_sitc2 %>% filter(nchar(SITC2_5d) != 5)
+
+# create vars
+hs6_sitc2 <- hs6_sitc2 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         SITC2_4d = str_sub(SITC2_5d, start = 1, end = 4),
+         SITC2_3d = str_sub(SITC2_5d, start = 1, end = 3),
+         SITC2_2d = str_sub(SITC2_5d, start = 1, end = 2),
+         SITC2_1d = str_sub(SITC2_5d, start = 1, end = 1)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         SITC2_5d, SITC2_4d, SITC2_3d, SITC2_2d, SITC2_1d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_sitc2,
+     file = "./data/hs6_sitc2.RData", compress = "xz")
+
+
+################################################################################
+# HS6 to SITC1
+################################################################################
+# load UN data
+# https://unstats.un.org/unsd/trade/classifications/correspondence-tables.asp
+hs6.sitc1.r <- read_excel("./data-raw/HS2022toSITC1ConversionAndCorrelationTables.xlsx")
+
+# subset and clean
+hs6_sitc1 <- hs6.sitc1.r %>%
+  rename(HS6_6d = `From HS 2022`,
+         SITC1_5d = `To SITC Rev. 1`) %>%
+  mutate(SITC1_5d = str_pad(SITC1_5d, width = 5, side = "right", pad = "0"))
+
+# check digits
+hs6_sitc1 %>% filter(nchar(HS6_6d) != 6)
+hs6_sitc1 %>% filter(nchar(SITC1_5d) != 5)
+
+# create vars
+hs6_sitc1 <- hs6_sitc1 %>%
+  mutate(HS6_4d = str_sub(HS6_6d, start = 1, end = 4),
+         HS6_2d = str_sub(HS6_6d, start = 1, end = 2),
+         SITC1_4d = str_sub(SITC1_5d, start = 1, end = 4),
+         SITC1_3d = str_sub(SITC1_5d, start = 1, end = 3),
+         SITC1_2d = str_sub(SITC1_5d, start = 1, end = 2),
+         SITC1_1d = str_sub(SITC1_5d, start = 1, end = 1)) %>%
+  distinct() %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         SITC1_5d, SITC1_4d, SITC1_3d, SITC1_2d, SITC1_1d) %>%
+  arrange(HS6_6d)
+
+# save
+save(hs6_sitc1,
+     file = "./data/hs6_sitc1.RData", compress = "xz")
+
 
 ################################################################################
 # HS (combined) to SITC4
@@ -947,6 +1086,7 @@ load("./data/hs2_sitc4.RData")
 load("./data/hs3_sitc4.RData")
 load("./data/hs4_sitc4.RData")
 load("./data/hs5_sitc4.RData")
+load("./data/hs6_sitc4.RData")
 
 # combine
 hs.sitc4.r <- rbind(hs0_sitc4 %>% rename(HS_6d = HS0_6d,
@@ -966,7 +1106,10 @@ hs.sitc4.r <- rbind(hs0_sitc4 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_sitc4 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_sitc4 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_sitc4 <- hs.sitc4.r %>%
@@ -995,6 +1138,7 @@ load("./data/hs2_sitc3.RData")
 load("./data/hs3_sitc3.RData")
 load("./data/hs4_sitc3.RData")
 load("./data/hs5_sitc3.RData")
+load("./data/hs6_sitc3.RData")
 
 # combine
 hs.sitc3.r <- rbind(hs0_sitc3 %>% rename(HS_6d = HS0_6d,
@@ -1014,7 +1158,10 @@ hs.sitc3.r <- rbind(hs0_sitc3 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_sitc3 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_sitc3 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_sitc3 <- hs.sitc3.r %>%
@@ -1043,6 +1190,7 @@ load("./data/hs2_sitc2.RData")
 load("./data/hs3_sitc2.RData")
 load("./data/hs4_sitc2.RData")
 load("./data/hs5_sitc2.RData")
+load("./data/hs6_sitc2.RData")
 
 # combine
 hs.sitc2.r <- rbind(hs0_sitc2 %>% rename(HS_6d = HS0_6d,
@@ -1062,7 +1210,10 @@ hs.sitc2.r <- rbind(hs0_sitc2 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_sitc2 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_sitc2 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_sitc2 <- hs.sitc2.r %>%
@@ -1091,6 +1242,7 @@ load("./data/hs2_sitc1.RData")
 load("./data/hs3_sitc1.RData")
 load("./data/hs4_sitc1.RData")
 load("./data/hs5_sitc1.RData")
+load("./data/hs6_sitc1.RData")
 
 # combine
 hs.sitc1.r <- rbind(hs0_sitc1 %>% rename(HS_6d = HS0_6d,
@@ -1110,7 +1262,10 @@ hs.sitc1.r <- rbind(hs0_sitc1 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_sitc1 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_sitc1 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_sitc1 <- hs.sitc1.r %>%

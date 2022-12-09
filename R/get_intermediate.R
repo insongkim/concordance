@@ -3,7 +3,7 @@
 #' Calculates and returns the level (proportion) of intermediate goods production in an industry based on product descriptions.
 #'
 #' @param sourcevar An input character vector of industry codes to look up.
-#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC4" (2016).
+#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC4" (2016).
 #' @return Uses keywords ("part(s)", "intermediate", and "component") to identify intermediate-goods producing industries (at the most disaggregated level in the description data), and then calculates and returns the proportion these industries occupy among each input code.
 #' @source Product descriptions consolidated from
 #' \itemize{
@@ -76,6 +76,10 @@ get_intermediate <- function (sourcevar,
   } else if (origin == "HS5"){
 
     desc.df <- concordance::hs5_desc
+    
+  } else if (origin == "HS6"){
+    
+    desc.df <- concordance::hs6_desc
 
   } else if (origin == "ISIC2"){
 

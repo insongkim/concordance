@@ -1325,3 +1325,31 @@ save(hs5_naics,
 # # save
 # save(hs5_naics2017,
 #      file = "./data/hs5_naics2017.RData", compress = "xz")
+
+################################################################################
+# HS6 to NAICS (combined)
+################################################################################
+# HS6 --> HS5 --> NAICS
+load("./data/hs6_hs5.RData")
+load("./data/hs5_naics.RData")
+
+# merge
+hs6_naics <- left_join(hs6_hs5,
+                       hs5_naics,
+                       by = "HS5_6d")
+
+# subset and clean
+names(hs6_naics)
+
+hs6_naics <- hs6_naics %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         NAICS_6d, NAICS_5d, NAICS_4d, NAICS_3d, NAICS_2d) %>%
+  distinct() %>%
+  arrange(HS6_6d)
+
+# check
+unique(hs6_naics$NAICS_2d)
+
+# save
+save(hs6_naics,
+     file = "./data/hs6_naics.RData", compress = "xz")

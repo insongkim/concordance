@@ -23,7 +23,7 @@ get_upstream(
 \arguments{
 \item{sourcevar}{An input character vector of industry codes to look up.}
 
-\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
+\item{origin}{A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008), "BEC4" (2016).}
 
 \item{country}{A string setting the ISO 3-letter country code for which to return values (default = "USA"). Antras and Chor (2018) provide estimates for 40 countries and the Rest of the World (RoW). For a list of available countries, load the package and type "unique(upstream$ISO3C)".}
 

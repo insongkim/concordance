@@ -3,7 +3,7 @@
 #' Returns product codes for which descriptions match user-specified keywords.
 #'
 #' @param pattern String pattern to look for. The function utilizes the function \code{stringr::str_detect} for pattern detection.
-#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC4" (2016).
+#' @param origin A string indicating one of the following industry/product classifications: "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "HS" (combined), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "ISIC2" (1968), "ISIC3" (1989), "ISIC4" (2008), "BEC4" (2016).
 #' @param digits An integer indicating the preferred number of digits for output codes. The default is 4 digits. Allows 1 to 5-digit codes for the SITC classification; 2, 4, 6-digit codes for NAICS and HS classifications; 1 to 4-digit codes for the ISIC classification; 1 to 3-digit codes for the BEC classification.
 #' @param type A string indicating the type of pattern interpretation. Three options are available: \code{regex}, \code{fixed}, and \code{coll}. The default interpretation is a regular expression. See ?str_detect for further details.
 #' @param ignore.case If TRUE (by default), pattern dection will ignore case differences.
@@ -138,6 +138,10 @@ get_product <- function (pattern,
   } else if (origin == "HS5"){
 
     desc.df <- concordance::hs5_desc
+    
+  } else if (origin == "HS6"){
+    
+    desc.df <- concordance::hs6_desc
 
   } else if (origin == "ISIC2"){
 

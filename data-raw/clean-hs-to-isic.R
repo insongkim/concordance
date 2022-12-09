@@ -231,6 +231,34 @@ unique(hs5_isic2$ISIC2_1d)
 save(hs5_isic2,
      file = "./data/hs5_isic2.RData", compress = "xz")
 
+################################################################################
+# HS6 to ISIC2
+################################################################################
+# HS6 --> HS3 --> ISIC2
+load("./data/hs6_hs3.RData")
+
+# merge
+hs6_isic2 <- left_join(hs6_hs3,
+                       hs3_isic2,
+                       by = "HS3_6d")
+
+# subset and clean
+names(hs6_isic2)
+
+hs6_isic2 <- hs6_isic2 %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         ISIC2_4d, ISIC2_3d, ISIC2_2d, ISIC2_1d) %>%
+  distinct() %>%
+  arrange(HS6_6d)
+
+# check
+unique(hs6_isic2$ISIC2_1d)
+
+# save
+save(hs6_isic2,
+     file = "./data/hs6_isic2.RData", compress = "xz")
+
+
 
 ################################################################################
 # HS (combined) to ISIC2
@@ -242,6 +270,7 @@ load("./data/hs2_isic2.RData")
 load("./data/hs3_isic2.RData")
 load("./data/hs4_isic2.RData")
 load("./data/hs5_isic2.RData")
+load("./data/hs6_isic2.RData")
 
 # combine
 hs.isic2.r <- rbind(hs0_isic2 %>% rename(HS_6d = HS0_6d,
@@ -261,7 +290,10 @@ hs.isic2.r <- rbind(hs0_isic2 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_isic2 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_isic2 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_isic2 <- hs.isic2.r %>%
@@ -584,6 +616,33 @@ unique(hs5_isic3$ISIC3_1d)
 save(hs5_isic3,
      file = "./data/hs5_isic3.RData", compress = "xz")
 
+################################################################################
+# HS6 to ISIC3
+################################################################################
+# HS6 --> HS3 --> ISIC3
+load("./data/hs6_hs3.RData")
+
+# merge
+hs6_isic3 <- left_join(hs6_hs3,
+                       hs3_isic3,
+                       by = "HS3_6d")
+
+# subset and clean
+names(hs6_isic3)
+
+hs6_isic3 <- hs6_isic3 %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         ISIC3_4d, ISIC3_3d, ISIC3_2d, ISIC3_1d) %>%
+  distinct() %>%
+  arrange(HS6_6d)
+
+# check
+unique(hs6_isic3$ISIC3_1d)
+
+# save
+save(hs6_isic3,
+     file = "./data/hs6_isic3.RData", compress = "xz")
+
 
 ################################################################################
 # HS (combined) to ISIC3
@@ -595,6 +654,7 @@ load("./data/hs2_isic3.RData")
 load("./data/hs3_isic3.RData")
 load("./data/hs4_isic3.RData")
 load("./data/hs5_isic3.RData")
+load("./data/hs6_isic3.RData")
 
 # combine
 hs.isic3.r <- rbind(hs0_isic3 %>% rename(HS_6d = HS0_6d,
@@ -614,7 +674,10 @@ hs.isic3.r <- rbind(hs0_isic3 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_isic3 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_isic3 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_isic3 <- hs.isic3.r %>%
@@ -806,6 +869,33 @@ unique(hs5_isic31$ISIC3.1_1d)
 # save(hs5_isic31,
 #      file = "./data/hs5_isic31.RData", compress = "xz")
 
+################################################################################
+# HS6 to ISIC3.1
+################################################################################
+# HS6 --> ISIC3 --> ISIC3.1
+load("./data/hs6_isic3.RData")
+load("./data/isic31_isic3.RData")
+
+# merge
+hs6_isic31 <- left_join(hs6_isic3,
+                        isic31_isic3,
+                        by = "ISIC3_4d")
+
+# subset and clean
+names(hs6_isic31)
+
+hs6_isic31 <- hs6_isic31 %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         ISIC3.1_4d, ISIC3.1_3d, ISIC3.1_2d, ISIC3.1_1d) %>%
+  distinct() %>%
+  arrange(HS6_6d)
+
+# check
+unique(hs6_isic31$ISIC3.1_1d)
+
+# # save
+# save(hs6_isic31,
+#      file = "./data/hs6_isic31.RData", compress = "xz")
 
 ################################################################################
 # HS (combined) to ISIC3.1
@@ -828,7 +918,10 @@ hs.isic31.r <- rbind(hs0_isic31 %>% rename(HS_6d = HS0_6d,
                                            HS_2d = HS4_2d),
                      hs5_isic31 %>% rename(HS_6d = HS5_6d,
                                            HS_4d = HS5_4d,
-                                           HS_2d = HS5_2d))
+                                           HS_2d = HS5_2d),
+                     hs6_isic31 %>% rename(HS_6d = HS6_6d,
+                                           HS_4d = HS6_4d,
+                                           HS_2d = HS6_2d))
 
 # clean
 hs_isic31 <- hs.isic31.r %>%
@@ -1022,6 +1115,34 @@ unique(hs5_isic4$ISIC4_1d)
 
 
 ################################################################################
+# HS6 to ISIC4
+################################################################################
+# HS6 --> ISIC3 --> ISIC4
+load("./data/hs6_isic3.RData")
+load("./data/isic4_isic3.RData")
+
+# merge
+hs6_isic4 <- left_join(hs6_isic3,
+                       isic4_isic3,
+                       by = "ISIC3_4d")
+
+# subset and clean
+names(hs6_isic4)
+
+hs6_isic4 <- hs6_isic4 %>%
+  select(HS6_6d, HS6_4d, HS6_2d,
+         ISIC4_4d, ISIC4_3d, ISIC4_2d, ISIC4_1d) %>%
+  distinct() %>%
+  arrange(HS6_6d)
+
+# check
+unique(hs6_isic4$ISIC4_1d)
+
+# # save
+# save(hs6_isic4,
+#      file = "./data/hs6_isic4.RData", compress = "xz")
+
+################################################################################
 # HS (combined) to ISIC4
 ################################################################################
 # combine
@@ -1042,7 +1163,10 @@ hs.isic4.r <- rbind(hs0_isic4 %>% rename(HS_6d = HS0_6d,
                                          HS_2d = HS4_2d),
                     hs5_isic4 %>% rename(HS_6d = HS5_6d,
                                          HS_4d = HS5_4d,
-                                         HS_2d = HS5_2d))
+                                         HS_2d = HS5_2d),
+                    hs6_isic4 %>% rename(HS_6d = HS6_6d,
+                                         HS_4d = HS6_4d,
+                                         HS_2d = HS6_2d))
 
 # clean
 hs_isic4 <- hs.isic4.r %>%

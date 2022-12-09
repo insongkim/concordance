@@ -1,10 +1,10 @@
 #' Converting HS and ISIC Codes
 #'
-#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
+#' Concords Harmonized System codes (HS0, HS1, HS2, HS3, HS4, HS5, HS6, HS combined) to and from International Standard Industrial Classification codes (ISIC Revision 2, 3, 3.1, 4).
 #'
 #' @param sourcevar An input character vector of HS or ISIC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 4-digit codes for ISIC.
-#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
-#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
+#' @param origin A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
+#' @param destination A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "ISIC2" (1968), "ISIC3" (1989), "ISIC3.1" (2002), "ISIC4" (2008).
 #' @param dest.digit An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 4 digits for ISIC codes. The default is 4 digits.
 #' @param all Either TRUE or FALSE. If TRUE, the function will return (1) all matched outputs for each input, and (2) the share of occurrences for each matched output among all matched outputs. Users can use the shares as weights for more precise concordances. If FALSE, the function will only return the matched output with the largest share of occurrences (the mode match). If the mode consists of multiple matches, the function will return the first matched output.
 #' @return The matched output(s) for each element of the input vector. Either a list object when all = TRUE or a character vector when all = FALSE.
@@ -61,6 +61,10 @@ concord_hs_isic <- function (sourcevar,
   } else if ((origin == "HS5" & destination == "ISIC2") | (origin == "ISIC2" & destination == "HS5")) {
 
     dictionary <- concordance::hs5_isic2
+    
+  } else if ((origin == "HS6" & destination == "ISIC2") | (origin == "ISIC2" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_isic2
 
   # HS and ISIC3
   } else if ((origin == "HS" & destination == "ISIC3") | (origin == "ISIC3" & destination == "HS")) {
@@ -90,6 +94,10 @@ concord_hs_isic <- function (sourcevar,
   } else if ((origin == "HS5" & destination == "ISIC3") | (origin == "ISIC3" & destination == "HS5")) {
 
     dictionary <- concordance::hs5_isic3
+    
+  } else if ((origin == "HS6" & destination == "ISIC3") | (origin == "ISIC3" & destination == "HS6")) {
+    
+    dictionary <- concordance::hs6_isic3
 
   # HS and ISIC3.1
   } else if ((origin == "HS" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS")) {
@@ -203,6 +211,24 @@ concord_hs_isic <- function (sourcevar,
       distinct() %>%
       filter(!(is.na(.data$HS5_6d) & is.na(.data$ISIC3.1_4d))) %>%
       arrange(.data$HS5_6d)
+    
+  } else if ((origin == "HS6" & destination == "ISIC3.1") | (origin == "ISIC3.1" & destination == "HS6")) {
+    
+    # HS6 --> ISIC3 --> ISIC3.1
+    dictionary.1 <- concordance::hs6_isic3
+    dictionary.2 <- concordance::isic31_isic3
+    
+    # merge
+    dictionary <- full_join(dictionary.1,
+                            dictionary.2,
+                            by = "ISIC3_4d")
+    
+    dictionary <- dictionary %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$ISIC3.1_4d, .data$ISIC3.1_3d, .data$ISIC3.1_2d, .data$ISIC3.1_1d) %>%
+      distinct() %>%
+      filter(!(is.na(.data$HS6_6d) & is.na(.data$ISIC3.1_4d))) %>%
+      arrange(.data$HS6_6d)
 
   # HS and ISIC4
   } else if ((origin == "HS" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS")) {
@@ -316,6 +342,24 @@ concord_hs_isic <- function (sourcevar,
       distinct() %>%
       filter(!(is.na(.data$HS5_6d) & is.na(.data$ISIC4_4d))) %>%
       arrange(.data$HS5_6d)
+    
+  } else if ((origin == "HS6" & destination == "ISIC4") | (origin == "ISIC4" & destination == "HS6")) {
+    
+    # HS5 --> ISIC3 --> ISIC4
+    dictionary.1 <- concordance::hs6_isic3
+    dictionary.2 <- concordance::isic4_isic3
+    
+    # merge
+    dictionary <- full_join(dictionary.1,
+                            dictionary.2,
+                            by = "ISIC3_4d")
+    
+    dictionary <- dictionary %>%
+      select(.data$HS6_6d, .data$HS6_4d, .data$HS6_2d,
+             .data$ISIC4_4d, .data$ISIC4_3d, .data$ISIC4_2d, .data$ISIC4_1d) %>%
+      distinct() %>%
+      filter(!(is.na(.data$HS6_6d) & is.na(.data$ISIC4_4d))) %>%
+      arrange(.data$HS6_6d)
 
   } else {
 
