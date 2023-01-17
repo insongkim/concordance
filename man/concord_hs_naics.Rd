@@ -12,9 +12,9 @@ concord_hs_naics(sourcevar, origin, destination, dest.digit = 6, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of HS or NAICS codes. The function accepts 2, 4, 6-digit codes for HS and 2 to 6-digit codes for NAICS.}
 
-\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
+\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
-\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
+\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "NAICS2002", "NAICS2007", "NAICS2012", "NAICS2017", "NAICS" (combined).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS and 2 to 6-digit codes for NAICS. The default is 6 digits.}
 

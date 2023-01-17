@@ -16,9 +16,9 @@ concord_hs_sitc(sourcevar, origin, destination, dest.digit = 4, all = FALSE)
 \arguments{
 \item{sourcevar}{An input character vector of HS or SITC codes. The function accepts 2, 4, 6-digit codes for HS and 1 to 5-digit codes for SITC.}
 
-\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), and "SITC4" (2006).}
+\item{origin}{A string setting the input industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), and "SITC4" (2006).}
 
-\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006).}
+\item{destination}{A string setting the output industry classification: "HS" (combined), "HS0" (1988/92), "HS1" (1996), "HS2" (2002), "HS3" (2007), "HS4" (2012), "HS5" (2017), "HS6" (2022), "SITC1" (1950), "SITC2" (1974), "SITC3" (1985), "SITC4" (2006).}
 
 \item{dest.digit}{An integer indicating the preferred number of digits for output codes. Allows 2, 4, or 6 digits for HS codes and 1 to 5 digits for SITC codes. The default is 4 digits.}
 

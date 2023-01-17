@@ -5,7 +5,7 @@ Authors
 -------------------------
 Steven Liao (steven.liao@ucr.edu), In Song Kim (insong@mit.edu), Sayumi Miyano (smiyano@princeton.edu), Hao Zhang (hzhang3@mit.edu)
 
-We have invested a lot of time and effort in creating, maintaining, and expanding the `concordance` package. If you use our package in your research, we would really appreciate it if you can cite it. To cite the package, use:
+We have invested considerable time and effort in creating, maintaining, and expanding the `concordance` package. If you use our package in your research, we would really appreciate it if you could cite it. To cite the package, use:
 
 ```
   Steven Liao, In Song Kim, Sayumi Miyano, Hao Zhang (2020). concordance: Product Concordance. 
@@ -20,7 +20,7 @@ A BibTeX entry for LaTeX users is:
     author = {Steven Liao and In Song Kim and Sayumi Miyano and Hao Zhang},
     year = {2020},
     note = {R package version 2.0.0},
-    url = {https://CRAN.R-project.org/package=concordance},
+    url = {https://CRAN.R-project.org/package=concordance}
   }
 ```
 

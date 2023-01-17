@@ -2,7 +2,7 @@ Package: concordance
 Type: Package
 Title: Product Concordance
 Version: 2.1.0
-Date: 2022-12-08
+Date: 2023-01-16
 Authors@R: c(
   person("Steven", "Liao", email = "steven.liao@ucr.edu", role = c("aut", "cre")),
   person("In Song", "Kim", email = "insong@mit.edu", role = c("aut")),
