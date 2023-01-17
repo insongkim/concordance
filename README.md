@@ -1,8 +1,31 @@
 # concordance: Product Concordance
 [![R-CMD-check](https://github.com/insongkim/concordance/workflows/R-CMD-check/badge.svg)](https://github.com/insongkim/concordance/actions) ![CRAN downloads](http://cranlogs.r-pkg.org/badges/grand-total/concordance)  [![CRAN status](https://www.r-pkg.org/badges/version/concordance)](https://CRAN.R-project.org/package=concordance)
 
-Authors: Steven Liao (steven.liao@ucr.edu), In Song Kim (insong@mit.edu), Sayumi Miyano (smiyano@princeton.edu), Hao Zhang (hzhang3@mit.edu)
+Authors
+-------------------------
+Steven Liao (steven.liao@ucr.edu), In Song Kim (insong@mit.edu), Sayumi Miyano (smiyano@princeton.edu), Hao Zhang (hzhang3@mit.edu)
 
+We have invested a lot of time and effort in creating, maintaining, and expanding the `concordance` package. If you use our package in your research, we would really appreciate it if you can cite it. To cite the package, use:
+
+```
+  Steven Liao, In Song Kim, Sayumi Miyano, Hao Zhang (2020). concordance: Product Concordance. 
+  R package version 2.0.0. https://CRAN.R-project.org/package=concordance
+```
+  
+A BibTeX entry for LaTeX users is:
+
+```
+  @Manual{,
+    title = {concordance: Product Concordance},
+    author = {Steven Liao and In Song Kim and Sayumi Miyano and Hao Zhang},
+    year = {2020},
+    note = {R package version 2.0.0},
+    url = {https://CRAN.R-project.org/package=concordance},
+  }
+```
+
+Description
+-------------------------
 This R package provides a set of utilities for matching products in different 
 classification codes used in international trade research. It currently supports 
 concordance between the classifications below:
@@ -35,8 +58,7 @@ concordance between the classifications below:
 - Broad Economic Categories (BEC)
   * "BEC4" (2016)
 
-Support between the above and the below classifications will be offered 
-soon:
+Support between the above and the below classifications will be offered in the future:
 
 - Standard Industrial Classification (SIC)
 
@@ -48,7 +70,6 @@ Additionally, the package provides functions for:
 - Trade elasticity look-up (via concordance to HS0 or SITC3 codes)
 - Industry upstreamness/downstreamness look-up (via concordance to ISIC3 and NAICS codes)
 - Industry intermediateness look-up (via product descriptions)
-
 
 Installation Instructions
 -------------------------
@@ -73,28 +94,6 @@ install_github("insongkim/concordance", dependencies=TRUE)
 ```
 
 If `concordance` was previously installed, please uninstall the package, restart R, and then reinstall the developer version following instructions above.
-
-Citation
--------------------------
-
-To cite `concordance` in publications use:
-
-```
-  Steven Liao, In Song Kim, Sayumi Miyano, Hao Zhang (2020). concordance: Product Concordance. 
-  R package version 2.0.0. https://CRAN.R-project.org/package=concordance
-```
-  
-A BibTeX entry for LaTeX users is:
-
-```
-  @Manual{,
-    title = {concordance: Product Concordance},
-    author = {Steven Liao and In Song Kim and Sayumi Miyano and Hao Zhang},
-    year = {2020},
-    note = {R package version 2.0.0},
-    url = {https://CRAN.R-project.org/package=concordance},
-  }
-```
 
 Usage Examples
 -------------------------
